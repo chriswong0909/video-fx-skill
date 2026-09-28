@@ -1,0 +1,10 @@
+<!-- FX-010 相框加清單 | 需要 #cam wrapper, #panel 背景(z1), 行 .row -->
+<script>
+tl.set('#panel',{opacity:1},T.start);
+tl.to('#cam',{scale:.62,y:-100,clipPath:'inset(250px 90px 670px 90px round 58px)',duration:.55,ease:'power3.inOut'},T.start);
+tl.fromTo('#pipFrame',{opacity:0,scale:1.06},{opacity:1,scale:1,duration:.35},T.start+.45);
+T.rows.forEach((t,i)=>{const id='#r'+(i+1); tl.set(id,{opacity:1},t-.02);
+ tl.from(id+' .num',{opacity:0,x:-30,duration:.3},t-.02); tl.from(id+' .txt',{opacity:0,x:40,duration:.38},t+.04);});
+tl.to('#cam',{scale:1,y:0,clipPath:'inset(0px 0px 0px 0px round 0px)',duration:.45,ease:'power3.inOut'},T.end);
+</script>
+<!-- 完整版見 projects: hyperframes-student-kit/video-projects/doctor2-editorial/index.html -->

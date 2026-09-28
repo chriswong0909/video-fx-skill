@@ -1,0 +1,10 @@
+<!-- FX-004 窗光斜影背景 | 要做成 clip -->
+<style>
+#fx004{position:absolute;inset:0;z-index:5;background:#efe4d6;overflow:hidden}
+#fx004 .shade{position:absolute;left:-300px;top:-250px;width:1700px;height:2400px;transform:rotate(-28deg);background:repeating-linear-gradient(90deg,rgba(120,90,60,0) 0px,rgba(120,90,60,.2) 70px,rgba(120,90,60,.2) 120px,rgba(120,90,60,0) 190px,rgba(120,90,60,0) 330px)}
+#fx004 .glow{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(255,246,228,.9),rgba(255,246,228,0) 60%)}
+</style>
+<div id="fx004" class="clip" data-start="6.36" data-duration="0.98" data-track-index="3"><div class="shade"></div><div class="glow"></div>
+ <!-- 疊 FX-001 大字 -->
+</div>
+<script>tl.fromTo('#fx004 .shade',{x:0},{x:60,duration:1,ease:'none'},T.start);</script>

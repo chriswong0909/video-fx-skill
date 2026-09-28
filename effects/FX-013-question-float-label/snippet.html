@@ -1,0 +1,9 @@
+<!-- FX-013 問題浮動 -->
+<style>.fx013q{position:absolute;z-index:7;font-family:"SerifTC";font-weight:900;font-size:120px;color:#e98a2e;opacity:0}</style>
+<span class="fx013q" id="q1" style="left:150px;top:190px">？</span><span class="fx013q" id="q2" style="left:830px;top:150px;font-size:150px">？</span>
+<script>
+tl.set(['#q1','#q2'],{opacity:.85},T.start);
+tl.from('#q1',{y:40,rotation:-20,duration:.5,ease:'back.out(2)'},T.start); tl.from('#q2',{y:40,rotation:20,duration:.5,ease:'back.out(2)'},T.start+.25);
+tl.to('#q1',{y:-20,duration:1.4,ease:'sine.inOut'},T.start+.5); tl.to('#q2',{y:-26,duration:1.2,ease:'sine.inOut'},T.start+.75);
+tl.set(['#q1','#q2'],{opacity:0},T.end);
+</script>

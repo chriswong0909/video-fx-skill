@@ -1,0 +1,15 @@
+<!-- FX-002 頭像資料卡 | 依賴：assets/avatar.png, SansTC 300/700 -->
+<style>
+#fx002{position:absolute;left:0;right:0;top:0;height:330px;z-index:8;opacity:0;background:linear-gradient(#f6ede4,#f1e6dc);display:flex;align-items:center;gap:36px;padding:60px 64px 30px;box-shadow:0 8px 30px rgba(60,30,10,.18)}
+#fx002 .ring{width:196px;height:196px;border-radius:50%;padding:7px;background:conic-gradient(#f9ce34,#ee2a7b,#6228d7,#f9ce34)}
+#fx002 img{width:100%;height:100%;border-radius:50%;border:6px solid #f6ede4;object-fit:cover;display:block}
+#fx002 .nm{font-family:"SansTC";font-weight:700;font-size:60px;color:#2b1d16}
+#fx002 .sub{font-family:"SansTC";font-weight:300;font-size:40px;color:#6f5a4c;margin-top:8px}
+</style>
+<div id="fx002"><div class="ring"><img src="assets/avatar.png"></div><div><div class="nm">名稱</div><div class="sub">副標</div></div></div>
+<script>
+tl.set('#fx002',{opacity:1},0); tl.set('#fx002',{opacity:0},T.end);
+tl.from('#fx002',{y:-330,duration:.45,ease:'power3.out'},0);
+tl.from('#fx002 .ring',{scale:.6,opacity:0,duration:.4,ease:'back.out(2)'},.2);
+tl.from('#fx002 .nm',{opacity:0,x:-20,duration:.3},.35); tl.from('#fx002 .sub',{opacity:0,x:-20,duration:.3},.5);
+</script>

@@ -1,0 +1,20 @@
+<!-- FX-005 橫向卡片畫廊 | 要做成 clip | ITEMS 時間：T.items[i] -->
+<style>
+#fx005{position:absolute;inset:0;z-index:5;background:#efe6da;overflow:hidden}
+#fx005 .track{position:absolute;left:0;top:0;height:1920px;width:3200px}
+#fx005 .card{position:absolute;top:640px;width:600px;height:820px;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(80,50,30,.28)}
+#fx005 .lab{position:absolute;top:470px;width:600px;text-align:center;font-family:"SerifTC";font-weight:900;font-size:104px;color:#8e241f}
+#fx005 .lab span{display:inline-block;transform:skewX(-10deg)}
+</style>
+<div id="fx005" class="clip" data-start="10.92" data-duration="3.74" data-track-index="4"><div class="track">
+ <div class="lab" style="left:240px"><span>項目一</span></div><div class="card" style="left:240px;background:#c98b6b"></div>
+ <div class="lab" style="left:880px"><span>項目二</span></div><div class="card" style="left:880px;background:#2c2a33"></div>
+ <div class="lab" style="left:1520px"><span>項目三</span></div><div class="card" style="left:1520px;background:#e8b5a5"></div>
+</div></div>
+<script>
+const L=document.querySelectorAll('#fx005 .lab span'), K=document.querySelectorAll('#fx005 .card');
+tl.fromTo('#fx005 .track',{x:260},{x:0,duration:.9,ease:'power2.out'},T.items[0]);
+T.items.forEach((t,i)=>{ if(i>0) tl.to('#fx005 .track',{x:-640*i,duration:.8,ease:'power2.inOut'},t-.08);
+  tl.from(L[i],{opacity:0,y:40,filter:'blur(10px)',duration:.4,ease:'power3.out'},t);
+  tl.from(K[i],{opacity:0,y:80,rotation:3,duration:.55,ease:'power3.out'},t-.25); });
+</script>

@@ -1,0 +1,4 @@
+<!-- FX-014 心電圖線 -->
+<svg id="ecg" viewBox="0 0 1080 160" style="position:absolute;left:0;top:1080px;width:1080px;height:160px;z-index:5">
+ <path id="ecgPath" d="M40 100 L360 100 L380 70 L400 100 L430 100 L455 20 L485 150 L510 100 L560 100 L585 80 L610 100 L1040 100" fill="none" stroke="var(--brand,#0099ce)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<script>tl.fromTo('#ecgPath',{attr:{'stroke-dasharray':1180,'stroke-dashoffset':1180}},{attr:{'stroke-dashoffset':0},duration:.9,ease:'power1.inOut'},T.start);</script>

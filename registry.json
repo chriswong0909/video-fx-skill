@@ -1,0 +1,660 @@
+{
+ "generated": "2026-09-28",
+ "count": 15,
+ "by_category": {
+  "caption": [
+   "FX-001",
+   "FX-007",
+   "FX-008",
+   "FX-012",
+   "FX-013"
+  ],
+  "hook": [
+   "FX-002"
+  ],
+  "cutaway": [
+   "FX-003",
+   "FX-004"
+  ],
+  "list-chart": [
+   "FX-005"
+  ],
+  "transition": [
+   "FX-006"
+  ],
+  "camera": [
+   "FX-009"
+  ],
+  "layout": [
+   "FX-010"
+  ],
+  "grade-light": [
+   "FX-011",
+   "FX-015"
+  ],
+  "accent": [
+   "FX-014"
+  ]
+ },
+ "effects": [
+  {
+   "id": "FX-001",
+   "name": "兩層金色斜體字幕",
+   "name_en": "two-tier-gold-caption",
+   "category": "caption",
+   "tags": [
+    "kinetic-type",
+    "serif",
+    "gradient-text",
+    "word-sync"
+   ],
+   "mood": [
+    "warm",
+    "editorial",
+    "premium"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "education",
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-002",
+    "FX-009",
+    "FX-015"
+   ],
+   "conflicts_with": [
+    "FX-012"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 0:00–0:10",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-001-two-tier-gold-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "上面一行細、幼身白色無襯線字逐詞出現；重點詞用超大粗襯線字，金橙漸變、斜體（skew -10°），逐字模糊放大入場。"
+  },
+  {
+   "id": "FX-002",
+   "name": "頭像資料卡開場",
+   "name_en": "profile-hook-card",
+   "category": "hook",
+   "tags": [
+    "profile",
+    "social",
+    "header"
+   ],
+   "mood": [
+    "warm",
+    "friendly",
+    "editorial"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "medical",
+    "education"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-009"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "avatar-image"
+   ],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 0:00–3:00",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-002-profile-hook-card",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "開頭 0–3 秒頂部出現淺色資料卡：圓形頭像（漸變彩環）+ 名稱 + 副標，由上滑入，建立「呢個係邊個」嘅信任感。"
+  },
+  {
+   "id": "FX-003",
+   "name": "全屏物件過場",
+   "name_en": "fullscreen-object-cutaway",
+   "category": "cutaway",
+   "tags": [
+    "b-roll",
+    "illustration",
+    "object",
+    "label"
+   ],
+   "mood": [
+    "warm",
+    "editorial"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "education",
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-004",
+    "FX-015"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "illustration-or-photo"
+   ],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 3:00–4:00（腦）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "medium",
+   "path": "effects/FX-003-fullscreen-object-cutaway",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講到某個名詞時，切去全屏純色／暖色背景，中間一個立體感物件（ref1 用腦部相片），上方細字 + 米色標籤框大字，物件緩慢旋轉；原聲繼續。"
+  },
+  {
+   "id": "FX-004",
+   "name": "窗光斜影背景",
+   "name_en": "window-light-backdrop",
+   "category": "cutaway",
+   "tags": [
+    "background",
+    "light",
+    "shadow",
+    "typography"
+   ],
+   "mood": [
+    "warm",
+    "calm",
+    "premium"
+   ],
+   "fits": [
+    "podcast-clip",
+    "lifestyle",
+    "education",
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-003"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 4:00–5:30（方糖）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-004-window-light-backdrop",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "米白底，斜斜嘅窗框陰影慢慢移動，好似陽光照入房；中間放金色大字（可配物件）。"
+  },
+  {
+   "id": "FX-005",
+   "name": "橫向卡片畫廊",
+   "name_en": "horizontal-card-gallery",
+   "category": "list-chart",
+   "tags": [
+    "list",
+    "cards",
+    "scroll",
+    "gallery"
+   ],
+   "mood": [
+    "warm",
+    "editorial"
+   ],
+   "fits": [
+    "education",
+    "medical",
+    "product",
+    "podcast-clip"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-006"
+   ],
+   "conflicts_with": [
+    "FX-010"
+   ],
+   "needs": [
+    "list-content"
+   ],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 17:00–18:9（BREAD/PASTA/RICE）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "medium",
+   "path": "effects/FX-005-horizontal-card-gallery",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全屏淺色底，一排直身卡片（每張有圖 + 上方斜體標題）橫向滑過，講到邊項就停喺邊張。"
+  },
+  {
+   "id": "FX-006",
+   "name": "模糊畫面浮雕大字",
+   "name_en": "blur-emboss-title",
+   "category": "transition",
+   "tags": [
+    "blur",
+    "emboss",
+    "big-type",
+    "emphasis"
+   ],
+   "mood": [
+    "warm",
+    "dramatic",
+    "premium"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-005"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 16:3–17:0（STARCHES）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-006-blur-emboss-title",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者畫面 0.3 秒內模糊 + 變暗，上面浮現巨型浮雕字（淺啡色、左上高光、右下深陰影），逐行出現；下一句硬切返清晰畫面。"
+  },
+  {
+   "id": "FX-007",
+   "name": "紅條標題",
+   "name_en": "red-bar-title",
+   "category": "caption",
+   "tags": [
+    "title",
+    "highlight-bar",
+    "top"
+   ],
+   "mood": [
+    "warm",
+    "editorial"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "education"
+   ],
+   "pairs_with": [
+    "FX-009",
+    "FX-001"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 13:4–15:0（carbs）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-007-red-bar-title",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "畫面頂部一個大標題，字嘅下半部有一條紅色色塊由左掃出，字本身米白斜體帶深紅陰影；下面再跟一行細字。"
+  },
+  {
+   "id": "FX-008",
+   "name": "空心框字",
+   "name_en": "outline-box-caps",
+   "category": "caption",
+   "tags": [
+    "outline",
+    "stroke",
+    "box"
+   ],
+   "mood": [
+    "editorial",
+    "clean"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "education"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-009"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 15:5–16:3（TWO CATEGORIES）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-008-outline-box-caps",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "白色描邊、透明填色嘅大字，外面包一個白色圓角框，模糊淡入。"
+  },
+  {
+   "id": "FX-009",
+   "name": "按句推鏡硬切",
+   "name_en": "sentence-punch-in",
+   "category": "camera",
+   "tags": [
+    "punch-in",
+    "reframe",
+    "jump-cut",
+    "zoom"
+   ],
+   "mood": [
+    "editorial",
+    "energetic",
+    "warm",
+    "clinical"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "medical",
+    "education",
+    "interview"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-002",
+    "FX-007",
+    "FX-012"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast（整條）+ 原創",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-editorial",
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-009-sentence-punch-in",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "單機位口播，每句之間硬切去唔同景別（中景 ↔ 近景），每個鏡頭入面再慢慢推近 3–5%，製造多機位感。"
+  },
+  {
+   "id": "FX-010",
+   "name": "相框加清單版面",
+   "name_en": "pip-editorial-list",
+   "category": "layout",
+   "tags": [
+    "pip",
+    "list",
+    "editorial",
+    "numbered"
+   ],
+   "mood": [
+    "clinical",
+    "editorial",
+    "clean"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "talking-head"
+   ],
+   "pairs_with": [
+    "FX-012",
+    "FX-009",
+    "FX-014"
+   ],
+   "conflicts_with": [
+    "FX-005"
+   ],
+   "needs": [
+    "list-content"
+   ],
+   "brand_color_ready": true,
+   "source": "original（doctor2-editorial）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-editorial"
+   ],
+   "difficulty": "medium",
+   "path": "effects/FX-010-pip-editorial-list",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講到列舉時，講者畫面縮入頂部圓角相框（品牌色邊框 + 小色塊），下面米白底逐條彈出編號清單（01/02/03，數字斜體品牌色，後面小黃色塊）。講者全程見到，原聲不斷。"
+  },
+  {
+   "id": "FX-011",
+   "name": "人像分層補光",
+   "name_en": "matte-relight",
+   "category": "grade-light",
+   "tags": [
+    "matting",
+    "relight",
+    "background-blur",
+    "depth"
+   ],
+   "mood": [
+    "clinical",
+    "premium",
+    "clean"
+   ],
+   "fits": [
+    "talking-head",
+    "medical",
+    "interview"
+   ],
+   "pairs_with": [
+    "FX-009",
+    "FX-012"
+   ],
+   "conflicts_with": [
+    "FX-015"
+   ],
+   "needs": [
+    "matting",
+    "python-onnxruntime"
+   ],
+   "brand_color_ready": true,
+   "source": "original（doctor2-editorial）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-editorial"
+   ],
+   "difficulty": "hard",
+   "path": "effects/FX-011-matte-relight",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "用人像摳圖（RVM）分開講者同背景：背景虛化、壓暗、降飽和；講者臉部加柔和主光、一邊輕微變暗做立體感、加淡輪廓光。效果似專業打光 + 淺景深。"
+  },
+  {
+   "id": "FX-012",
+   "name": "關鍵詞色塊字幕",
+   "name_en": "keyword-box-caption",
+   "category": "caption",
+   "tags": [
+    "kinetic-type",
+    "highlight-box",
+    "brand-color",
+    "word-sync"
+   ],
+   "mood": [
+    "clinical",
+    "clean",
+    "editorial"
+   ],
+   "fits": [
+    "medical",
+    "talking-head",
+    "corporate",
+    "education"
+   ],
+   "pairs_with": [
+    "FX-009",
+    "FX-010",
+    "FX-014"
+   ],
+   "conflicts_with": [
+    "FX-001"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "original（doctor2-editorial，參考 ref1 carbs 標題）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-editorial"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-012-keyword-box-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "兩層字幕品牌版：細白字帶句，關鍵詞用品牌色實心色塊（bar，白字）或米白 chip（品牌色字）由左掃出，字逐隻升上；可加小黃色底線、警告三角、剔號。"
+  },
+  {
+   "id": "FX-013",
+   "name": "問題浮動符號 + 紅標籤",
+   "name_en": "question-float-label",
+   "category": "caption",
+   "tags": [
+    "question",
+    "label",
+    "top-title",
+    "decorative"
+   ],
+   "mood": [
+    "warm",
+    "playful",
+    "editorial"
+   ],
+   "fits": [
+    "podcast-clip",
+    "education",
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-009",
+    "FX-001"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast 10:0–11:5（GIVE YOUR BODY）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-013-question-float-label",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者頭頂：細字 + 超大深紅粗襯線字 + 下面紅底白字小標籤；兩邊有橙色問號彈出並慢慢上下浮動。"
+  },
+  {
+   "id": "FX-014",
+   "name": "心電圖線描繪",
+   "name_en": "ecg-line-draw",
+   "category": "accent",
+   "tags": [
+    "line-draw",
+    "svg",
+    "medical",
+    "heart"
+   ],
+   "mood": [
+    "clinical",
+    "medical"
+   ],
+   "fits": [
+    "medical"
+   ],
+   "pairs_with": [
+    "FX-012",
+    "FX-010"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "original（doctor2-editorial）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-editorial",
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-014-ecg-line-draw",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一條心電圖線由左至右畫出（stroke-dashoffset），講到心臟相關詞語時做點綴；變奏：不規則心律版本。"
+  },
+  {
+   "id": "FX-015",
+   "name": "暖色 podcast 調色",
+   "name_en": "warm-podcast-grade",
+   "category": "grade-light",
+   "tags": [
+    "color-grade",
+    "warm",
+    "ffmpeg"
+   ],
+   "mood": [
+    "warm",
+    "cozy",
+    "editorial"
+   ],
+   "fits": [
+    "podcast-clip",
+    "talking-head",
+    "lifestyle"
+   ],
+   "pairs_with": [
+    "FX-001",
+    "FX-003",
+    "FX-004"
+   ],
+   "conflicts_with": [
+    "FX-011"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref1-glucose-podcast（整體色調）",
+   "learned": "2026-09-28",
+   "used_in": [
+    "doctor2-ref1style"
+   ],
+   "difficulty": "easy",
+   "path": "effects/FX-015-warm-podcast-grade",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "整體偏桃杏暖色、輕微降飽和、黑位微提，加四角暖啡暈影，似 ref1 嘅 podcast 色調。"
+  }
+ ]
+}

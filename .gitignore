@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+*.mp4
+*.mov
+*.wav
+*.onnx
+work/

@@ -1,0 +1,18 @@
+<!-- FX-003 全屏物件過場 | 依賴：SerifTC 900 | 要做成 clip -->
+<style>
+#fx003{position:absolute;inset:0;z-index:5;background:radial-gradient(ellipse at 50% 45%,#8a6452,#5e3f31 60%,#3e271e)}
+#fx003 .lab{position:absolute;left:0;right:0;top:430px;text-align:center}
+#fx003 .box{display:inline-block;background:#f3e6d3;color:#4a2f22;font-family:"SerifTC";font-weight:900;font-size:130px;padding:6px 38px 14px;border-radius:14px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+</style>
+<div id="fx003" class="clip" data-start="4.04" data-duration="2.32" data-track-index="2">
+ <div class="lab"><span class="box">衰退</span></div>
+ <svg id="fx003obj" viewBox="-220 -220 440 440" style="position:absolute;left:190px;top:780px;width:700px;height:700px">
+  <defs><radialGradient id="fx003g" cx="35%" cy="30%" r="80%"><stop offset="0" stop-color="#f3a08f"/><stop offset=".45" stop-color="#c2463b"/><stop offset="1" stop-color="#6e1a18"/></radialGradient></defs>
+  <path d="M0 -50 C -45 -150 -200 -110 -180 10 C -165 95 -60 140 0 180 C 60 140 165 95 180 10 C 200 -110 45 -150 0 -50 Z" fill="url(#fx003g)"/>
+ </svg>
+</div>
+<script>
+tl.from('#fx003obj',{scale:.75,opacity:0,y:60,duration:.6,ease:'power3.out'},T.start);
+tl.to('#fx003obj',{rotation:-4,duration:2.2,ease:'sine.inOut'},T.start+.06);
+tl.from('#fx003 .box',{opacity:0,scale:.7,duration:.4,ease:'back.out(1.8)'},T.label);
+</script>

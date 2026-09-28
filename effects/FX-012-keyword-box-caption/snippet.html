@@ -1,0 +1,11 @@
+<!-- FX-012 關鍵詞色塊字幕 | CSS 變數 --brand --off --accent -->
+<style>.fx012{position:relative;display:inline-flex;padding:6px 34px 14px;font-family:"SerifTC";font-weight:900;font-size:120px;line-height:1.1}
+.fx012 .bg{position:absolute;inset:0;transform-origin:0 50%;border-radius:6px}
+.fx012 .ch{position:relative;display:inline-block}
+.fx012.bar{color:#fff}.fx012.bar .bg{background:var(--brand,#0099ce)}
+.fx012.chip{color:var(--brand,#0099ce)}.fx012.chip .bg{background:var(--off,#f6f3ee)}</style>
+<span class="fx012 bar" id="kb1"><span class="bg"></span><span class="ch">惡</span><span class="ch">化</span></span>
+<script>
+tl.from('#kb1 .bg',{scaleX:0,duration:.32,ease:'power3.out'},T.w-.05);
+tl.from(document.querySelectorAll('#kb1 .ch'),{opacity:0,y:36,duration:.36,ease:'power3.out',stagger:.045},T.w+.04);
+</script>

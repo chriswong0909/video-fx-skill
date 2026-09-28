@@ -1,0 +1,11 @@
+<!-- FX-006 模糊浮雕大字 | #cam 係 video 外層 wrapper -->
+<style>#fx006{position:absolute;inset:0;z-index:6}
+#fx006 .e{position:absolute;left:0;right:0;text-align:center;font-family:"SerifTC";font-weight:900;font-size:260px;color:#c89b6d;text-shadow:-3px -3px 2px rgba(255,235,210,.55),5px 6px 6px rgba(40,18,6,.8)}</style>
+<div id="fx006" class="clip" data-start="16.24" data-duration="1.02" data-track-index="5"><div class="e" style="top:560px">盡早</div><div class="e" style="top:880px">搵醫生</div></div>
+<script>
+tl.fromTo('#cam',{filter:'blur(0px) brightness(1)'},{filter:'blur(22px) brightness(.55)',duration:.3,immediateRender:false},T.start-.04);
+tl.set('#cam',{filter:'blur(0px) brightness(1)'},T.end);
+const E=document.querySelectorAll('#fx006 .e');
+tl.from(E[0],{opacity:0,scale:1.3,filter:'blur(16px)',duration:.4,ease:'power3.out'},T.start);
+tl.from(E[1],{opacity:0,scale:1.3,filter:'blur(16px)',duration:.4,ease:'power3.out'},T.line2);
+</script>
