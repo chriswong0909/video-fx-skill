@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 英文細階單字 → 中文每張 2–3 個字，字級最少 200px。
+cjk_notes: "英文細階單字 → 中文每張 2–3 個字，字級最少 200px。"
 difficulty: easy
 ---
 

@@ -31,9 +31,18 @@ const effects = reg.effects.map(e => {
     vid: vid ? 'data:video/mp4;base64,'+vid : null, img: img ? 'data:image/jpeg;base64,'+img : null };
 });
 const latest = effects.map(e=>e.learned).sort().pop() || '';
-const data = JSON.stringify({ generated: reg.generated, latest, effects }).replace(/</g, '\\u003c');
+const sounds = (reg.sounds||[]).map(x => {
+  const dir = path.join(root, x.path);
+  const txt = fs.readFileSync(path.join(dir, 'sound.md'), 'utf8').replace(/^---\n[\s\S]*?\n---\n?/, '');
+  const pk = fs.existsSync(path.join(dir,'peaks.json')) ? JSON.parse(fs.readFileSync(path.join(dir,'peaks.json'),'utf8')) : {peaks:[]};
+  const au = b64(path.join(dir, 'sound.mp3'));
+  return { id:x.id, name:x.name, en:x.name_en, cat:x.category, dur:Number(x.duration)||pk.duration||0, vol:x.volume||'', mood:x.mood||[], vtypes:x.video_types||[], pace:x.pace||[],
+    pairs:x.pairs_with||[], source:x.source||'', license:x.license||'', learned:x.learned||'', used:[].concat(x.used_in||[]), status:x.status||'active', summary:x.summary||'',
+    body: md(txt.replace(/##\s*聲效\s*\n+[^\n]+\n?/, '')), peaks: pk.peaks, audio: au ? 'data:audio/mpeg;base64,'+au : null };
+});
+const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds }).replace(/</g, '\\u003c');
 const tpl = fs.readFileSync(path.join(root, 'gallery', 'template.html'), 'utf8');
 const frag = tpl.replace('/*__DATA__*/null', data);
 fs.writeFileSync(path.join(root, 'gallery', 'artifact.html'), frag);
 fs.writeFileSync(path.join(root, 'gallery', 'index.html'), '<!doctype html><html lang="zh-Hant-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>\n'+frag+'\n</body></html>');
-console.log(`gallery: ${effects.length} effects, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);
+console.log(`gallery: ${effects.length} effects, ${sounds.length} sounds, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);

@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: good
-cjk_notes: 漸變同發光要配 Black 字重先顯；筆畫密要加強 glow 對比。
+cjk_notes: "漸變同發光要配 Black 字重先顯；筆畫密要加強 glow 對比。"
 placement: inline
 difficulty: easy
 ---

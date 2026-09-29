@@ -17,7 +17,7 @@ learned: 2026-09-28
 used_in: [doctor2-editorial]
 status: active
 cjk_fit: good
-cjk_notes: 清單字最少 72px；編號可保留拉丁斜體數字。
+cjk_notes: "清單字最少 72px；編號可保留拉丁斜體數字。"
 placement: layout
 difficulty: medium
 ---

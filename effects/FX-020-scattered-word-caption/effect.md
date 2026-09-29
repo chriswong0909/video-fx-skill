@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: []
 status: active
 cjk_fit: adjust
-cjk_notes: 中文冇空格，要先按意群分詞；散落後閱讀次序易亂，只用喺 8 個字以內嘅短句。
+cjk_notes: "中文冇空格，要先按意群分詞；散落後閱讀次序易亂，只用喺 8 個字以內嘅短句。"
 placement: free
 difficulty: medium
 ---

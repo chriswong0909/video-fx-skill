@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 原標籤 24px 太細，最少 64px；每個標籤最多 6 個字。
+cjk_notes: "原標籤 24px 太細，最少 64px；每個標籤最多 6 個字。"
 difficulty: medium
 ---
 

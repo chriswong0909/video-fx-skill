@@ -17,7 +17,7 @@ learned: 2026-09-28
 used_in: [doctor2-ref1style, doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 卡闊 600px，標題 100px 最多 5 個字；skew 對中文效果一般，可唔斜。
+cjk_notes: "卡闊 600px，標題 100px 最多 5 個字；skew 對中文效果一般，可唔斜。"
 difficulty: medium
 ---
 

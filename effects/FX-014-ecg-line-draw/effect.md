@@ -18,6 +18,7 @@ used_in: [doctor2-editorial, doctor2-ref1style, doctor-stairs-breath]
 status: active
 cjk_fit: good
 difficulty: easy
+cjk_notes: ""
 ---
 
 ## 效果

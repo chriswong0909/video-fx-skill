@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: []
 status: active
 cjk_fit: good
-cjk_notes: 方塊字被頭遮住會難認：揀筆畫少嘅字，遮蓋唔好超過字高 25%。
+cjk_notes: "方塊字被頭遮住會難認：揀筆畫少嘅字，遮蓋唔好超過字高 25%。"
 placement: behind-subject
 difficulty: hard
 ---

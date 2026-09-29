@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: []
 status: active
 cjk_fit: adjust
-cjk_notes: 通知字最少 64px，每條最多 10 個字。
+cjk_notes: "通知字最少 64px，每條最多 10 個字。"
 difficulty: easy
 ---
 

@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: []
 status: active
 cjk_fit: good
-cjk_notes: 每個標籤最多 6 個字。
+cjk_notes: "每個標籤最多 6 個字。"
 placement: center
 difficulty: easy
 ---

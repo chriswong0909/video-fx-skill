@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: []
 status: active
 cjk_fit: poor
-cjk_notes: 英文草書冇中文對應；要用有授權嘅中文手寫字型，或者改用 FX-022 手繪圈註。
+cjk_notes: "英文草書冇中文對應；要用有授權嘅中文手寫字型，或者改用 FX-022 手繪圈註。"
 difficulty: easy
 ---
 

@@ -8,7 +8,7 @@
 
 ## 分鏡點做
 1. 轉錄（ASR）→ 按句切鏡頭（每鏡 1–4 秒）。
-2. 每鏡填：時間、講緊咩、畫面描述、FX-id、素材（來源 code / higgsfield / canva / client / footage）、生成描述、credits。
+2. 每鏡填：時間、講緊咩、畫面描述、FX-id、素材（來源 code / higgsfield / canva / client / footage）、生成描述、credits；要聲效就加 `sfx`（`[{"sfx":"SFX-001","t":3.8}]`，t 係全片秒數，由 registry.json 嘅 sounds 按 pairs_with 揀）。分鏡網頁可以直接撳嚟試聽。
 3. 寫入 `storyboards/<project>.json`（格式見 `_example.json`）。
 4. `node scripts/build-storyboard.mjs storyboards/<project>.json` → `.html`。
 5. 將 html stage 去雲端，用 Artifact 發佈（每個專案一條連結，修改就重新發佈同一條）。

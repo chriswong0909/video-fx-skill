@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 英文一個大詞約等於中文 2–4 字；細字最少 76px；大字 6 個字以上減到 140px。
+cjk_notes: "英文一個大詞約等於中文 2–4 字；細字最少 76px；大字 6 個字以上減到 140px。"
 placement: headroom
 difficulty: easy
 ---

@@ -1,4 +1,4 @@
-# 人像分層補光（FX-011 背後技術）
+# 人像分層補光（技術筆記；原 FX-011 已移除）
 
 - RobustVideoMatting `rvm_mobilenetv3_fp32.onnx`（GitHub releases, 15MB），onnxruntime CPU，`downsample_ratio=0.25`。
 - 約 0.28 秒／幀（1080×1920，4 核）。分段處理時每段前面多跑 30 幀暖機，接駁位冇閃。

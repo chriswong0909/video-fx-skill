@@ -17,7 +17,7 @@ learned: 2026-09-28
 used_in: [doctor2-ref1style, doctor-stairs-breath]
 status: active
 cjk_fit: good
-cjk_notes: 220px 每行最多 4 個字。
+cjk_notes: "220px 每行最多 4 個字。"
 difficulty: easy
 ---
 

@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 標籤最少 64px。
+cjk_notes: "標籤最少 64px。"
 placement: layout
 difficulty: easy
 ---

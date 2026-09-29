@@ -17,7 +17,7 @@ learned: 2026-09-28
 used_in: [doctor2-ref1style]
 status: active
 cjk_fit: adjust
-cjk_notes: 超大字改黑體 Black 比襯線清楚。
+cjk_notes: "超大字改黑體 Black 比襯線清楚。"
 placement: headroom
 difficulty: easy
 ---

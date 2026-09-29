@@ -18,6 +18,7 @@ used_in: []
 status: active
 cjk_fit: good
 difficulty: medium
+cjk_notes: ""
 ---
 
 ## 效果

@@ -6,6 +6,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const inFile = path.resolve(process.argv[2]); const sb = JSON.parse(fs.readFileSync(inFile, 'utf8'));
 const reg = JSON.parse(fs.readFileSync(path.join(root, 'registry.json'), 'utf8')); const byId = Object.fromEntries(reg.effects.map(e => [e.id, e]));
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const sById = Object.fromEntries((reg.sounds || []).map(x => [x.id, x]));
+const sAudio = id => { const x = sById[id]; if (!x) return ''; const f = path.join(root, x.path, 'sound.mp3'); return fs.existsSync(f) ? 'data:audio/mpeg;base64,' + fs.readFileSync(f).toString('base64') : ''; };
 const thumb = id => { const e = byId[id]; if (!e) return ''; const f = path.join(root, e.path, 'preview.jpg'); return fs.existsSync(f) ? 'data:image/jpeg;base64,' + fs.readFileSync(f).toString('base64') : ''; };
 const fmt = t => { t = +t; const m = Math.floor(t / 60); return `${m}:${(t - m * 60).toFixed(1).padStart(4, '0')}`; };
 const SRC = { code: '代碼自製', higgsfield: 'Higgsfield', canva: 'Canva', client: '客戶提供', footage: '原片', stock: '素材庫' };
@@ -15,6 +17,7 @@ const shots = sb.shots.map((s, i) => {
   const fx = (s.fx || []).map(id => `<figure class="fx"><img src="${thumb(id)}" alt=""><figcaption><b>${esc(id)}</b> ${esc(byId[id]?.name || '未入庫')}</figcaption></figure>`).join('');
   return `<article class="shot"><div class="tc">${String(i + 1).padStart(2, '0')}<span>${fmt(s.t0)}–${fmt(s.t1)}</span></div>
   <div class="main"><p class="line">「${esc(s.line)}」</p><p class="vis">${esc(s.visual)}</p>${s.notes ? `<p class="note">${esc(s.notes)}</p>` : ''}
+  ${(s.sfx || []).length ? `<p class="sfx">聲效：${s.sfx.map(c => `<button class="sb" onclick="new Audio(this.dataset.a).play()" data-a="${sAudio(c.sfx)}">▶ ${esc(c.sfx)} ${esc(sById[c.sfx]?.name || '未入庫')} <em>@${(+c.t).toFixed(1)}s</em></button>`).join(' ')}</p>` : ''}
   ${(s.assets || []).length ? `<ul class="as">${s.assets.map(a => `<li><span class="src ${esc(a.source)}">${esc(SRC[a.source] || a.source)}</span>${esc(a.what)}${a.credits ? ` <em>${a.credits} credits</em>` : ''}</li>`).join('')}</ul>` : ''}</div>
   <div class="fxs">${fx}</div></article>`;
 }).join('\n');
@@ -31,6 +34,7 @@ const html = `<title>${esc(sb.title)} 分鏡</title>
 .line{margin:0;font-weight:700}.vis{margin:6px 0 0}.note{margin:6px 0 0;color:var(--mu);font-size:13.5px}
 .as{margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:4px;font-size:13.5px}.as em{color:var(--mu);font-style:normal;font-family:ui-monospace,monospace;font-size:12px}
 .src{display:inline-block;font-size:11.5px;border-radius:4px;padding:1px 7px;margin-right:8px;border:1px solid var(--ln)}.src.higgsfield{color:var(--hf);border-color:var(--hf)}.src.canva{color:var(--cv);border-color:var(--cv)}.src.client{color:var(--cl);border-color:var(--cl)}
+.sfx{margin:6px 0 0;font-size:13px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}.sb{font:inherit;font-size:12.5px;border:1px solid #c2410c55;background:#c2410c14;color:inherit;border-radius:6px;padding:3px 8px;cursor:pointer}.sb em{font-style:normal;opacity:.65}
 .fxs{display:flex;gap:8px;flex-wrap:wrap}.fx{margin:0;width:92px}.fx img{width:92px;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:#111;display:block}.fx figcaption{font-size:11.5px;color:var(--mu);line-height:1.3;margin-top:4px}.fx b{color:var(--ink);font-family:ui-monospace,monospace;font-weight:500}
 table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--ln);vertical-align:top}th{color:var(--mu);font-weight:500}td.n{font-family:ui-monospace,monospace;text-align:right}.tw{overflow-x:auto;background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:6px 10px}
 .gate{border:1px solid var(--ac);border-radius:10px;padding:12px 16px;background:var(--sf)}

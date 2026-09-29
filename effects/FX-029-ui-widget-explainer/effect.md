@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: UI 字最少 64px；中文打字機每字約 0.06 秒。
+cjk_notes: "UI 字最少 64px；中文打字機每字約 0.06 秒。"
 difficulty: medium
 ---
 

@@ -20,8 +20,22 @@ for(const d of fs.readdirSync(dir).filter(n=>/^FX-\d{3}/.test(n)).sort()){
 const ids=new Set(effects.map(e=>e.id));
 for(const e of effects) for(const k of ['pairs_with','conflicts_with']) for(const r of (e[k]||[])) if(!ids.has(r)) errors.push(`${e.id}: ${k} -> unknown ${r}`);
 const byCat={}; for(const e of effects)(byCat[e.category]??=[]).push(e.id);
-fs.writeFileSync(path.join(root,'registry.json'), JSON.stringify({generated:new Date().toISOString().slice(0,10),count:effects.length,by_category:byCat,effects},null,1)+'\n');
+// ---- 聲效 sounds/SFX-###-*/sound.md ----
+const sdir=path.join(root,'sounds'); const sounds=[];
+if(fs.existsSync(sdir)) for(const d of fs.readdirSync(sdir).filter(n=>/^SFX-\d{3}/.test(n)).sort()){
+  const f=path.join(sdir,d,'sound.md'); if(!fs.existsSync(f)){errors.push(`${d}: missing sound.md`);continue;}
+  const txt=fs.readFileSync(f,'utf8'); const m=txt.match(/^---\n([\s\S]*?)\n---/); if(!m){errors.push(`${d}: no front matter`);continue;}
+  const s=parse(m[1]); s.path=`sounds/${d}`; s.has_audio=fs.existsSync(path.join(sdir,d,'sound.mp3'));
+  const when=txt.slice(m[0].length).match(/##\s*幾時用\s*\n+-\s*([^\n]+)/); s.summary=when?when[1].trim():'';
+  for(const r of (s.pairs_with||[])) if(!ids.has(r)) errors.push(`${s.id}: pairs_with -> unknown ${r}`);
+  sounds.push(s);
+}
+const sndByCat={}; for(const s of sounds)(sndByCat[s.category]??=[]).push(s.id);
+fs.writeFileSync(path.join(root,'registry.json'), JSON.stringify({generated:new Date().toISOString().slice(0,10),count:effects.length,by_category:byCat,effects,sound_count:sounds.length,sounds_by_category:sndByCat,sounds},null,1)+'\n');
+if(sounds.length){ let sm=`# 聲效目錄（自動生成，勿手改）\n\n共 ${sounds.length} 個聲效\n\n| ID | 名稱 | 類別 | 秒 | 建議音量 | 配搭效果 | 授權 |\n|---|---|---|---|---|---|---|\n`;
+  for(const s of sounds) sm+=`| [${s.id}](${s.path.replace('sounds/','')}/sound.md) | ${s.name} | ${s.category} | ${s.duration} | ${s.volume} | ${(s.pairs_with||[]).join(', ')} | ${s.license||''} |\n`;
+  fs.writeFileSync(path.join(sdir,'INDEX.md'),sm); }
 let md=`# 效果目錄（自動生成，勿手改）\n\n共 ${effects.length} 個效果\n\n| ID | 名稱 | 類別 | 情緒 | 適合 | 出處 |\n|---|---|---|---|---|---|\n`;
 for(const e of effects) md+=`| [${e.id}](${e.path.replace('effects/','')}/effect.md) | ${e.name} | ${e.category} | ${(e.mood||[]).join(', ')} | ${(e.fits||[]).join(', ')} | ${e.source||''} |\n`;
 fs.writeFileSync(path.join(dir,'INDEX.md'),md);
-console.log(`registry.json: ${effects.length} effects`); if(errors.length){console.error('WARN:\n'+errors.join('\n')); process.exitCode=1;}
+console.log(`registry.json: ${effects.length} effects, ${sounds.length} sounds`); if(errors.length){console.error('WARN:\n'+errors.join('\n')); process.exitCode=1;}

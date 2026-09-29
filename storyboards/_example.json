@@ -1,6 +1,6 @@
 {"title":"doctor2 氣喘警號（示範）","source":"doctor2.mp4","duration":"18.8 秒（原長度）","ratio":"9:16","style":"ref7 深藍膠囊醫療風",
  "shots":[
-  {"t0":0,"t1":2.7,"line":"有啲人以為自己氣喘係因為體能下降","visual":"講者推鏡，頭頂大字「氣喘」喺人物後面","fx":["FX-016","FX-009"],"assets":[{"source":"code","what":"人像摳圖 alpha 層（RVM）"}]},
-  {"t0":2.7,"t1":6.4,"line":"其實如果係因為心臟功能衰退而氣喘","visual":"膠囊遮罩 3D 心臟 + 標註線「心臟功能衰退」","fx":["FX-036","FX-037"],"assets":[{"source":"higgsfield","what":"3D 心臟（去背）","prompt":"glossy 3D anatomical heart, soft studio light, navy background, clean medical render","credits":2}]},
+  {"t0":0,"t1":2.7,"line":"有啲人以為自己氣喘係因為體能下降","visual":"講者推鏡，頭頂大字「氣喘」喺人物後面","fx":["FX-016","FX-040"],"sfx":[{"sfx":"SFX-003","t":0.0},{"sfx":"SFX-011","t":0.9}],"assets":[{"source":"code","what":"人像摳圖 alpha 層（RVM）"}]},
+  {"t0":2.7,"t1":6.4,"line":"其實如果係因為心臟功能衰退而氣喘","visual":"膠囊遮罩 3D 心臟 + 標註線「心臟功能衰退」","fx":["FX-036","FX-037"],"sfx":[{"sfx":"SFX-004","t":3.0}],"assets":[{"source":"higgsfield","what":"3D 心臟（去背）","prompt":"glossy 3D anatomical heart, soft studio light, navy background, clean medical render","credits":2}]},
   {"t0":9.1,"t1":14.7,"line":"心臟衰竭、心律不正、心血管收窄","visual":"圓角講者卡 + 膠囊清單三項","fx":["FX-038"],"notes":"醫學圖示需醫生確認"}
  ]}

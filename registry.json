@@ -181,6 +181,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-004-window-light-backdrop",
    "has_snippet": true,
    "has_preview": true,
@@ -437,6 +438,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-014-ecg-line-draw",
    "has_snippet": true,
    "has_preview": true,
@@ -486,6 +488,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-015-warm-podcast-grade",
    "has_snippet": true,
    "has_preview": true,
@@ -846,6 +849,7 @@
    "cjk_fit": "good",
    "placement": "on-text",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-022-hand-drawn-annotation",
    "has_snippet": true,
    "has_preview": true,
@@ -895,6 +899,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "medium",
+   "cjk_notes": "",
    "path": "effects/FX-023-flying-element-swarm",
    "has_snippet": true,
    "has_preview": true,
@@ -948,6 +953,7 @@
    "cjk_fit": "good",
    "placement": "layout",
    "difficulty": "medium",
+   "cjk_notes": "",
    "path": "effects/FX-024-retro-tv-frame",
    "has_snippet": true,
    "has_preview": true,
@@ -997,6 +1003,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-025-dashed-path-connector",
    "has_snippet": true,
    "has_preview": true,
@@ -1311,6 +1318,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "medium",
+   "cjk_notes": "",
    "path": "effects/FX-031-glass-widget-scene",
    "has_snippet": true,
    "has_preview": true,
@@ -1461,6 +1469,7 @@
    "status": "active",
    "cjk_fit": "good",
    "difficulty": "easy",
+   "cjk_notes": "",
    "path": "effects/FX-034-growth-chart-card",
    "has_snippet": true,
    "has_preview": true,
@@ -3178,6 +3187,753 @@
    "has_snippet": true,
    "has_preview": true,
    "summary": "講者坐喺畫面一邊（乾淨淺灰背景），另一邊由上而下逐項出現一列白色細長標籤（項目名 + 右邊細字），好似網站分類清單；講者全程喺畫面。"
+  }
+ ],
+ "sound_count": 18,
+ "sounds_by_category": {
+  "whoosh": [
+   "SFX-001",
+   "SFX-002"
+  ],
+  "riser": [
+   "SFX-003",
+   "SFX-012"
+  ],
+  "pop": [
+   "SFX-004",
+   "SFX-005"
+  ],
+  "ui": [
+   "SFX-006",
+   "SFX-007"
+  ],
+  "ding": [
+   "SFX-008",
+   "SFX-009",
+   "SFX-010"
+  ],
+  "impact": [
+   "SFX-011",
+   "SFX-018"
+  ],
+  "foley": [
+   "SFX-013",
+   "SFX-014",
+   "SFX-015"
+  ],
+  "accent": [
+   "SFX-016",
+   "SFX-017"
+  ]
+ },
+ "sounds": [
+  {
+   "id": "SFX-001",
+   "name": "柔和風聲轉場",
+   "name_en": "Soft whoosh",
+   "category": "whoosh",
+   "duration": "0.75",
+   "volume": "0.35",
+   "mood": [
+    "專業醫療",
+    "溫暖生活",
+    "高級編輯感"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-040",
+    "FX-006",
+    "FX-046",
+    "FX-003"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-001-whoosh-soft",
+   "has_audio": true,
+   "summary": "推鏡、全屏過場入場、畫面左右滑走。聲音中心對準動作最快嗰格（約 0.3 秒後）。"
+  },
+  {
+   "id": "SFX-002",
+   "name": "快速嗖聲",
+   "name_en": "Fast whoosh",
+   "category": "whoosh",
+   "duration": "0.38",
+   "volume": "0.3",
+   "mood": [
+    "活潑年輕",
+    "高級編輯感"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-046",
+    "FX-026",
+    "FX-054",
+    "FX-005"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-002-whoosh-fast",
+   "has_audio": true,
+   "summary": "快節奏橫掃切換、閃卡、卡片快速滑入。"
+  },
+  {
+   "id": "SFX-003",
+   "name": "反向吸入",
+   "name_en": "Reverse suck-in",
+   "category": "riser",
+   "duration": "0.90",
+   "volume": "0.35",
+   "mood": [
+    "高級編輯感",
+    "活潑年輕"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-006",
+    "FX-017",
+    "FX-053",
+    "FX-063"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-003-suck-in",
+   "has_audio": true,
+   "summary": "大字或全屏畫面出現之前 0.9 秒開始，完結一刻正正係畫面出現。"
+  },
+  {
+   "id": "SFX-004",
+   "name": "彈字泡泡聲",
+   "name_en": "Bubble pop",
+   "category": "pop",
+   "duration": "0.16",
+   "volume": "0.4",
+   "mood": [
+    "活潑年輕",
+    "溫暖生活"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-044",
+    "FX-057",
+    "FX-037",
+    "FX-055",
+    "FX-033"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-004-pop-bubble",
+   "has_audio": true,
+   "summary": "膠囊字、徽章、圖示、通知逐個彈出；每個元素出現嗰格落聲。"
+  },
+  {
+   "id": "SFX-005",
+   "name": "柔和 pop",
+   "name_en": "Soft pop",
+   "category": "pop",
+   "duration": "0.14",
+   "volume": "0.45",
+   "mood": [
+    "專業醫療",
+    "溫暖生活"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-032",
+    "FX-067",
+    "FX-038",
+    "FX-064"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-005-pop-soft",
+   "has_audio": true,
+   "summary": "清單逐項出、名牌出現；比泡泡聲穩重，適合醫療。"
+  },
+  {
+   "id": "SFX-006",
+   "name": "UI 點擊",
+   "name_en": "UI click",
+   "category": "ui",
+   "duration": "0.06",
+   "volume": "0.45",
+   "mood": [
+    "專業醫療",
+    "高級編輯感"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-029",
+    "FX-035",
+    "FX-031"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-006-click-ui",
+   "has_audio": true,
+   "summary": "UI 元件、按鈕、剔選、畫面點擊示範。"
+  },
+  {
+   "id": "SFX-007",
+   "name": "打字聲",
+   "name_en": "Typing ticks",
+   "category": "ui",
+   "duration": "1.20",
+   "volume": "0.3",
+   "mood": [
+    "專業醫療",
+    "新聞資訊"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-066",
+    "FX-052",
+    "FX-059"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-007-type-ticks",
+   "has_audio": true,
+   "summary": "逐字打出、數字逐位出；長度可以剪到同動畫一樣。"
+  },
+  {
+   "id": "SFX-008",
+   "name": "重點 ding",
+   "name_en": "Highlight ding",
+   "category": "ding",
+   "duration": "1.60",
+   "volume": "0.3",
+   "mood": [
+    "專業醫療",
+    "溫暖生活"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-065",
+    "FX-027",
+    "FX-022",
+    "FX-050"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-008-ding",
+   "has_audio": true,
+   "summary": "金句、重點字、圈註出現；一條片 1–3 次。"
+  },
+  {
+   "id": "SFX-009",
+   "name": "上升提示音",
+   "name_en": "Positive chime",
+   "category": "ding",
+   "duration": "1.10",
+   "volume": "0.3",
+   "mood": [
+    "溫暖生活",
+    "活潑年輕"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-044",
+    "FX-057",
+    "FX-034"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-009-chime-up",
+   "has_audio": true,
+   "summary": "正確答案、建議做法、正面結果、增長曲線。"
+  },
+  {
+   "id": "SFX-010",
+   "name": "錯誤警示聲",
+   "name_en": "Error buzz",
+   "category": "ding",
+   "duration": "0.50",
+   "volume": "0.3",
+   "mood": [
+    "活潑年輕",
+    "專業醫療"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-047",
+    "FX-045",
+    "FX-013"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-010-error-buzz",
+   "has_audio": true,
+   "summary": "打交叉、迷思、錯誤做法、警告橫額。"
+  },
+  {
+   "id": "SFX-011",
+   "name": "低頻重擊",
+   "name_en": "Low impact",
+   "category": "impact",
+   "duration": "1.40",
+   "volume": "0.4",
+   "mood": [
+    "高級編輯感",
+    "專業醫療"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-053",
+    "FX-048",
+    "FX-062"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-011-impact-low",
+   "has_audio": true,
+   "summary": "大字砸落、章節標題、物件跌落著地嗰格。"
+  },
+  {
+   "id": "SFX-012",
+   "name": "上升張力",
+   "name_en": "Short riser",
+   "category": "riser",
+   "duration": "2.00",
+   "volume": "0.3",
+   "mood": [
+    "高級編輯感",
+    "活潑年輕"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-006",
+    "FX-053",
+    "FX-063"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-012-riser",
+   "has_audio": true,
+   "summary": "Hook 開場前、揭曉答案之前 2 秒；完結位接 impact 或 ding。"
+  },
+  {
+   "id": "SFX-013",
+   "name": "相機快門",
+   "name_en": "Camera shutter",
+   "category": "foley",
+   "duration": "0.30",
+   "volume": "0.45",
+   "mood": [
+    "高級編輯感",
+    "溫暖生活"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-058",
+    "FX-061",
+    "FX-010"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-013-shutter",
+   "has_audio": true,
+   "summary": "相片插入、出相、定格、海報框出現。"
+  },
+  {
+   "id": "SFX-014",
+   "name": "卡片滑入",
+   "name_en": "Card slide",
+   "category": "foley",
+   "duration": "0.45",
+   "volume": "0.4",
+   "mood": [
+    "專業醫療",
+    "溫暖生活"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-005",
+    "FX-032",
+    "FX-021",
+    "FX-041"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-014-card-slide",
+   "has_audio": true,
+   "summary": "卡片、紙張、相片滑入畫面。"
+  },
+  {
+   "id": "SFX-015",
+   "name": "心跳",
+   "name_en": "Heartbeat",
+   "category": "foley",
+   "duration": "1.80",
+   "volume": "0.5",
+   "mood": [
+    "專業醫療"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-014",
+    "FX-050",
+    "FX-028"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-015-heartbeat",
+   "has_audio": true,
+   "summary": "心臟、脈搏、緊張時刻、心電圖描繪。"
+  },
+  {
+   "id": "SFX-016",
+   "name": "閃光",
+   "name_en": "Sparkle",
+   "category": "accent",
+   "duration": "1.20",
+   "volume": "0.3",
+   "mood": [
+    "溫暖生活",
+    "活潑年輕"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-063",
+    "FX-027",
+    "FX-049",
+    "FX-042"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-016-sparkle",
+   "has_audio": true,
+   "summary": "發光字、光束、Logo 結尾、線稿變彩色。"
+  },
+  {
+   "id": "SFX-017",
+   "name": "故障雜訊",
+   "name_en": "Glitch burst",
+   "category": "accent",
+   "duration": "0.40",
+   "volume": "0.3",
+   "mood": [
+    "活潑年輕",
+    "高級編輯感"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-054"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-017-glitch",
+   "has_audio": true,
+   "summary": "RGB 分離、故障字；對準畫面閃爍幀。"
+  },
+  {
+   "id": "SFX-018",
+   "name": "低頻下沉",
+   "name_en": "Sub drop",
+   "category": "impact",
+   "duration": "1.20",
+   "volume": "0.45",
+   "mood": [
+    "高級編輯感"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "動畫解說",
+    "產品廣告",
+    "紀錄 Vlog",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-006",
+    "FX-053",
+    "FX-017"
+   ],
+   "source": "synth: tools/sfx.py",
+   "license": "自製合成，無版權限制，可商用",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "sounds/SFX-018-sub-drop",
+   "has_audio": true,
+   "summary": "揭曉、轉入重要段落；可以同 riser 或 suck-in 接住用。"
   }
  ]
 }

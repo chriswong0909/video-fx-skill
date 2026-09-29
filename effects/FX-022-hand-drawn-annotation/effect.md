@@ -19,6 +19,7 @@ status: active
 cjk_fit: good
 placement: on-text
 difficulty: easy
+cjk_notes: ""
 ---
 
 ## 效果

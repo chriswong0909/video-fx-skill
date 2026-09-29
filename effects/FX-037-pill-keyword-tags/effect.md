@@ -17,7 +17,7 @@ learned: 2026-09-29
 used_in: [doctor-stairs-breath]
 status: active
 cjk_fit: adjust
-cjk_notes: 英文大楷 → 中文用 Black；膠囊同浮動標籤最少 64px。
+cjk_notes: "英文大楷 → 中文用 Black；膠囊同浮動標籤最少 64px。"
 placement: headroom
 difficulty: easy
 ---
