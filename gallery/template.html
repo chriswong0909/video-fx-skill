@@ -117,7 +117,8 @@ footer{color:var(--muted);font-size:12.5px}
  <div class="tabs" role="tablist"><button class="tab" role="tab" data-tab="fx" id="tabfx"></button><button class="tab" role="tab" data-tab="sfx" id="tabsfx"></button><button class="tab" role="tab" data-tab="grade" id="tabgr"></button></div>
  <section id="sfxView" hidden>
   <div class="bar" role="toolbar" aria-label="聲效篩選" style="margin-bottom:16px">
-   <div id="scats" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+   <div class="frow"><span class="flab">來源</span><div id="spacks" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+   <div class="frow"><span class="flab">類別</span><div id="scats" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
    <div class="search"><input id="sq" type="search" placeholder="搜尋：轉場、醫療、FX-040…" aria-label="搜尋聲效"></div>
   </div>
   <p class="shint" style="margin-bottom:14px">撳 ▶ 試聽；撳波形可以跳位。音量以手機喇叭為準，建議先戴耳機聽。「配搭效果」撳落去會跳去嗰個視覺效果。</p>
@@ -156,9 +157,9 @@ const catName=c=>CAT[c]||c, cc=c=>`var(--c-${c},var(--muted))`;
 const hasOld=new Set(FX.map(e=>e.learned)).size>1; const isNew=e=>hasOld&&e.learned===D.latest;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=s=>document.querySelector(s), h=(s)=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let state={cat:'all',vt:'all',pace:'all',q:'',sort:'id',tab:'fx',scat:'all',sq:''};
+let state={cat:'all',vt:'all',pace:'all',q:'',sort:'id',tab:'fx',scat:'all',spack:'curated',sq:''};
 try{const s=JSON.parse(localStorage.getItem('vfx-state')||'null'); if(s) state={...state,...s,q:'',sq:''};}catch(e){}
-const save=()=>{try{localStorage.setItem('vfx-state',JSON.stringify({cat:state.cat,vt:state.vt,pace:state.pace,sort:state.sort,tab:state.tab,scat:state.scat}));}catch(e){}};
+const save=()=>{try{localStorage.setItem('vfx-state',JSON.stringify({cat:state.cat,vt:state.vt,pace:state.pace,sort:state.sort,tab:state.tab,scat:state.scat,spack:state.spack}));}catch(e){}};
 const cats=[...new Set(FX.map(e=>e.cat))];
 const refs=new Set(FX.map(e=>(e.source.match(/^(ref[\w-]+)/)||[])[1]).filter(Boolean));
 $('#sub').textContent=`${FX.length} 個效果 · 更新 ${D.generated}`;
@@ -234,7 +235,7 @@ function renderFilters(){
  $('#paces').innerHTML=`<button class="chip" data-pace="all" aria-pressed="${state.pace==='all'}">全部</button>`+PACES.map(([v,l])=>`<button class="chip" data-pace="${v}" aria-pressed="${state.pace===v}">${h(l)} <span class="n">${cnt('pace',v)}</span></button>`).join('');
 }
 // ---------- 聲效 ----------
-const SCAT={whoosh:'轉場風聲',pop:'彈出',ui:'介面',ding:'提示音',impact:'重擊',riser:'張力',foley:'擬音',accent:'點綴',music:'背景音樂',ambience:'環境聲'};
+const SCAT={whoosh:'轉場風聲',pop:'彈出',ui:'介面',ding:'提示音',impact:'重擊',riser:'張力',foley:'擬音',accent:'點綴',music:'短音樂',ambience:'環境聲'};
 const scats=[...new Set(SX.map(s=>s.cat))];
 $('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`;
 function setTab(t){state.tab=t;save();
@@ -245,13 +246,18 @@ function setTab(t){state.tab=t;save();
 function waveSvg(pk,id){const n=pk.length||1,w=100/n;
  const bars=pk.map((p,i)=>{const hh=Math.max(4,p*100);return `<rect x="${(i*w+w*.18).toFixed(2)}" y="${((100-hh)/2).toFixed(2)}" width="${(w*.64).toFixed(2)}" height="${hh.toFixed(2)}" rx="0.6"/>`}).join('');
  return `<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><clipPath id="c${id}"><rect id="r${id}" x="0" y="0" width="0" height="100"/></clipPath><g class="bg">${bars}</g><g class="fg" clip-path="url(#c${id})">${bars}</g></svg>`;}
-function smatch(s){ if(state.scat!=='all'&&s.cat!==state.scat) return false; if(!state.sq) return true;
+const PACKN={curated:'精選（自製）','kenney-interface':'Kenney 介面','kenney-impact':'Kenney 撞擊','kenney-casino':'Kenney 紙牌籌碼','kenney-rpg':'Kenney 生活擬音','kenney-digital':'Kenney 數碼','kenney-scifi':'Kenney 科幻','kenney-jingles':'Kenney 短音樂'};
+const spacks=[...new Set(SX.map(s=>s.pack||'curated'))];
+let sLimit=60;
+function smatch(s){ if(state.spack!=='all'&&(s.pack||'curated')!==state.spack) return false; if(state.scat!=='all'&&s.cat!==state.scat) return false; if(!state.sq) return true;
  const hay=[s.id,s.name,s.en,SCAT[s.cat]||s.cat,s.summary,...s.mood,...s.pairs,...s.pairs.map(p=>byId[p]?.name||'')].join(' ').toLowerCase();
  return state.sq.toLowerCase().split(/\s+/).every(t=>hay.includes(t));}
 function renderSounds(){
  if(state.scat!=='all'&&!scats.includes(state.scat)) state.scat='all';
+ if(!state.spack||(state.spack!=='all'&&!spacks.includes(state.spack))) state.spack='curated';
+ $('#spacks').innerHTML=`<button class="chip" data-sp="all" aria-pressed="${state.spack==='all'}">全部 <span class="n">${SX.length}</span></button>`+spacks.map(p=>`<button class="chip" data-sp="${h(p)}" aria-pressed="${state.spack===p}">${h(PACKN[p]||p)} <span class="n">${SX.filter(s=>(s.pack||'curated')===p).length}</span></button>`).join('');
  $('#scats').innerHTML=`<button class="chip" data-sc="all" aria-pressed="${state.scat==='all'}">全部 <span class="n">${SX.length}</span></button>`+scats.map(c=>`<button class="chip" data-sc="${h(c)}" aria-pressed="${state.scat===c}">${h(SCAT[c]||c)} <span class="n">${SX.filter(s=>s.cat===c).length}</span></button>`).join('');
- const list=SX.filter(smatch);
+ const all=SX.filter(smatch), list=all.slice(0,sLimit);
  $('#sgrid').innerHTML=list.length?list.map(s=>`<article class="snd" id="snd-${s.id}">
   <div class="srow"><button class="play" data-play="${s.id}" aria-pressed="false" aria-label="播放 ${h(s.name)}">▶</button><div class="wave" data-seek="${s.id}">${waveSvg(s.peaks||[],s.id)}</div></div>
   <div><span class="cat"><span class="dot" style="--cc:var(--c-sound)"></span>${h(SCAT[s.cat]||s.cat)} · <span class="tc">${s.id}</span> · <span class="tc">${(+s.dur).toFixed(2)}s</span> · 音量 <span class="tc">${h(s.vol)}</span></span><h3>${h(s.name)} <span class="tc" style="font-weight:400;font-size:12px;color:var(--muted)">${h(s.en)}</span></h3></div>
@@ -259,7 +265,8 @@ function renderSounds(){
   <div class="sub"><span>節奏：${h(s.pace.join('、'))}</span><span>情緒：${h(s.mood.join('、'))||'—'}</span></div>
   ${s.pairs.length?`<div class="links">${chips(s.pairs)}</div>`:''}
   <details><summary>用法同授權</summary><div class="body">${s.body}</div><p style="margin-top:6px">來源：${h(s.source)}<br>授權：${h(s.license)}</p></details>
- </article>`).join(''):`<div class="empty">冇符合嘅聲效。</div>`;}
+ </article>`).join(''):`<div class="empty">冇符合嘅聲效。</div>`;
+ if(all.length>list.length) $('#sgrid').insertAdjacentHTML('beforeend',`<button class="chip" id="smore" style="grid-column:1/-1;justify-content:center">顯示多 ${Math.min(60,all.length-list.length)} 個（仲有 ${all.length-list.length} 個）</button>`);}
 const players={}; let raf=0;
 function stopAll(){for(const k in players){players[k].pause();players[k].currentTime=0;paint(k,0);const b=document.querySelector(`[data-play="${k}"]`);if(b){b.textContent='▶';b.setAttribute('aria-pressed','false');}}}
 function paint(id,f){const r=document.getElementById('r'+id); if(r) r.setAttribute('width',(f*100).toFixed(2));}
@@ -270,17 +277,19 @@ function play(id,at){const s=SX.find(x=>x.id===id); if(!s||!s.audio) return;
  a.onended=()=>{paint(id,1);setTimeout(()=>paint(id,0),250);if(b){b.textContent='▶';b.setAttribute('aria-pressed','false');}};
  if(at!=null){a.currentTime=at*(a.duration||s.dur);} else if(!a.paused){a.pause();a.currentTime=0;paint(id,0);if(b){b.textContent='▶';b.setAttribute('aria-pressed','false');}return;} else a.currentTime=0;
  a.play().then(()=>{if(b){b.textContent='■';b.setAttribute('aria-pressed','true');} if(!raf) raf=requestAnimationFrame(tick);}).catch(()=>{});}
-function goSound(id){ if($('#dlg').open) $('#dlg').close(); state.scat='all'; state.sq=''; $('#sq').value=''; renderSounds(); setTab('sfx');
+function goSound(id){ if($('#dlg').open) $('#dlg').close(); state.scat='all'; state.spack='all'; state.sq=''; sLimit=Math.max(sLimit,SX.findIndex(x=>x.id===id)+1); $('#sq').value=''; renderSounds(); setTab('sfx');
  const el=document.getElementById('snd-'+id); if(el){el.scrollIntoView({block:'center',behavior:reduce?'auto':'smooth'}); el.style.outline='2px solid var(--accent)'; setTimeout(()=>el.style.outline='',1600); play(id);} }
 document.addEventListener('click',ev=>{
  const tb=ev.target.closest('[data-tab]'); if(tb){setTab(tb.dataset.tab);return;}
- const sc=ev.target.closest('[data-sc]'); if(sc){state.scat=sc.dataset.sc;save();renderSounds();return;}
+ const sc=ev.target.closest('[data-sc]'); if(sc){state.scat=sc.dataset.sc;sLimit=60;save();renderSounds();return;}
+ const sp=ev.target.closest('[data-sp]'); if(sp){state.spack=sp.dataset.sp;sLimit=60;save();renderSounds();return;}
+ if(ev.target.id==='smore'){sLimit+=60;renderSounds();return;}
  const pl=ev.target.closest('[data-play]'); if(pl){play(pl.dataset.play);return;}
  const sk=ev.target.closest('[data-seek]'); if(sk){const r=sk.getBoundingClientRect();play(sk.dataset.seek,Math.min(.98,Math.max(0,(ev.clientX-r.left)/r.width)));return;}
  const sg=ev.target.closest('[data-sgo]'); if(sg){goSound(sg.dataset.sgo);return;}
  if(ev.target.closest('#sfxView [data-go]')){ev.stopImmediatePropagation(); stopAll(); setTab('fx'); open(ev.target.closest('[data-go]').dataset.go);}
 },true);
-$('#sq').addEventListener('input',ev=>{state.sq=ev.target.value.trim();renderSounds();});
+$('#sq').addEventListener('input',ev=>{state.sq=ev.target.value.trim();sLimit=60;renderSounds();});
 function renderGrades(){
  const VT=['醫療健康','口播知識','訪問對談','動畫解說','產品廣告','紀錄 Vlog','新聞資訊','品牌企業'];
  $('#grRec').innerHTML='<span><b>推薦</b></span>'+VT.map(v=>{const g=GX.find(x=>(x.deflt||[]).includes(v));return g?`<span>${h(v)} → <b>${g.id} ${h(g.name)}</b></span>`:''}).join('');

@@ -12,6 +12,12 @@
 - 唔好由參考片抽聲效（人聲音樂混埋、版權屬原作者）；參考片只記錄「幾時落聲」，寫喺 analysis.md 嘅聲效欄。
 - 入庫後 `node scripts/build-registry.mjs && node scripts/build-gallery.mjs`，重新發佈效果目錄。
 
+## 2b. 聲效包（Kenney CC0）
+- `sounds/PACKS.md` 列出每個包嘅來源同授權；sound.md 有 `pack`、`curated`、`source_file`、`license`。
+- 揀聲效優先次序：精選（curated，有 pairs_with）→ Kenney 擬音（kenney-casino 紙卡、kenney-rpg 翻書／開門、kenney-impact 撞擊）→ 其他。
+- Kenney 短音樂（kenney-jingles）只用喺片頭片尾 1–3 秒，唔好當背景音樂 loop。
+- 匯入新包：`python3 tools/import_pack.py <資料夾> <pack-slug> --license "..." --source "..."`（授權唔清楚唔匯入）。
+
 ## 3. 點樣落聲
 - 對準**畫面動作**：接觸格、出現格、推鏡最快嗰格；唔係對準句子開頭。whoosh 嘅聲音中心喺約 40% 位，所以要早 0.3 秒落。riser／suck-in 要喺動作之前開始，完結一刻 = 畫面出現。
 - 密度：口播片平均每 3–5 秒最多 1 個；同一個聲效每 60 秒最多 3 次；ding 全片 1–3 次。

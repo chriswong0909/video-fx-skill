@@ -35,9 +35,9 @@ const sounds = (reg.sounds||[]).map(x => {
   const dir = path.join(root, x.path);
   const txt = fs.readFileSync(path.join(dir, 'sound.md'), 'utf8').replace(/^---\n[\s\S]*?\n---\n?/, '');
   const pk = fs.existsSync(path.join(dir,'peaks.json')) ? JSON.parse(fs.readFileSync(path.join(dir,'peaks.json'),'utf8')) : {peaks:[]};
-  const au = b64(path.join(dir, 'sound.mp3'));
+  const au = b64(path.join(dir, fs.existsSync(path.join(dir,'preview.mp3')) ? 'preview.mp3' : 'sound.mp3'));
   return { id:x.id, name:x.name, en:x.name_en, cat:x.category, dur:Number(x.duration)||pk.duration||0, vol:x.volume||'', mood:x.mood||[], vtypes:x.video_types||[], pace:x.pace||[],
-    pairs:x.pairs_with||[], source:x.source||'', license:x.license||'', learned:x.learned||'', used:[].concat(x.used_in||[]), status:x.status||'active', summary:x.summary||'',
+    pairs:x.pairs_with||[], source:x.source||'', license:x.license||'', pack:x.pack||'curated', curated:x.curated!==false, learned:x.learned||'', used:[].concat(x.used_in||[]), status:x.status||'active', summary:x.summary||'',
     body: md(txt.replace(/##\s*聲效\s*\n+[^\n]+\n?/, '')), peaks: pk.peaks, audio: au ? 'data:audio/mpeg;base64,'+au : null };
 });
 const gb = b64(path.join(root,'grades','_before.jpg'));
