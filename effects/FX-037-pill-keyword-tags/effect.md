@@ -3,6 +3,7 @@ id: FX-037
 name: 膠囊關鍵詞 + 浮動小標籤
 name_en: pill-keyword-tags
 category: text-fx
+family: [SP-001]
 tags: [pill, tags, keyword, floating]
 mood: [clean, modern, clinical]
 fits: [medical, education, product, talking-head]

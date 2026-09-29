@@ -3,6 +3,7 @@ id: FX-080
 name: 面部打格仔
 name_en: face-mosaic
 category: accent
+family: [SP-005]
 tags: [mosaic, pixelate, censor, comedy]
 mood: [playful, comedic]
 fits: [commentary, vlog, storytelling]

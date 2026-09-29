@@ -1,8 +1,9 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-068 章節導航條 | 1080×1920 | 依賴：SansTC | 全片 layer，唔使做 clip -->
 <style>
-#fx068{position:absolute;left:40px;right:40px;top:230px;height:56px;display:flex;gap:2px;z-index:9;font:700 40px/56px 'SansTC'}
+#fx068{position:absolute;left:40px;right:40px;top:230px;height:56px;display:flex;gap:2px;z-index:9;font:700 40px/56px var(--f-body,'SansTC')}
 #fx068 span{flex:1;text-align:center;background:rgba(10,20,40,.55);color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden}
-#fx068 span.on{background:var(--brand,#2a6be0);color:#fff}
+#fx068 span.on{background:var(--c-accent,#2a6be0);color:#fff}
 </style>
 <div id="fx068"><span class="on">亞裔易中風？</span><span>中風先兆</span><span>黃金時間</span></div>
 <script>
@@ -10,7 +11,7 @@
 const fx068 = document.querySelectorAll('#fx068 span');
 CH.forEach((c,i)=>{ if(!i) return;
   tl.to(fx068[i-1],{backgroundColor:'rgba(10,20,40,.55)',color:'rgba(255,255,255,.55)',duration:.25},c.t);
-  tl.fromTo(fx068[i],{backgroundImage:'linear-gradient(90deg,var(--brand,#2a6be0) 0%,rgba(10,20,40,.55) 0%)'},
-    {backgroundImage:'linear-gradient(90deg,var(--brand,#2a6be0) 100%,rgba(10,20,40,.55) 100%)',color:'#fff',duration:.35,ease:'power2.out'},c.t);
+  tl.fromTo(fx068[i],{backgroundImage:'linear-gradient(90deg,var(--c-accent,#2a6be0) 0%,rgba(10,20,40,.55) 0%)'},
+    {backgroundImage:'linear-gradient(90deg,var(--c-accent,#2a6be0) 100%,rgba(10,20,40,.55) 100%)',color:'#fff',duration:.35,ease:EASE.out},c.t);
 });
 </script>

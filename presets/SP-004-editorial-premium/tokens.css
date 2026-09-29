@@ -1,0 +1,10 @@
+/* SP-004 高級編輯感 — 由 preset.json 生成（python3 scripts/presets.py build）；品牌檔可以喺之後覆蓋顏色 */
+:root{
+  --c-bg:#0e0e0e; --c-surface:#1a1a1a; --c-text:#f4f2ee;
+  --c-accent:#d8b26e; --c-alert:#c0392b; --c-positive:#f4f2ee;
+  --c-caption-box:transparent; --c-caption-text:#f4f2ee;
+  --f-display:'SerifTC'; --f-body:'SansTC'; --f-num:'SerifTC';
+  --fs-hero:150px; --fs-sub:72px; --fs-label:64px; --fs-caption:80px; --fs-foot:52px;
+  --ease-out:power2.out; --ease-pop:power3.out; --ease-move:power1.inOut; --ease-in:power2.in;
+  --dur-in:.6s; --dur-out:.4s; --dur-move:1s; --stagger:.12s;
+}

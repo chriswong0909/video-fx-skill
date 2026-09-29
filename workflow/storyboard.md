@@ -1,13 +1,16 @@
 # 分鏡先行（慳 token 流程）
 
-## 四個關卡（每關都要使用者確認先過）
+## 關卡（每關都要使用者確認先過）
+0. **Treatment**：一頁導演表（`workflow/director.md`），定 thesis、hook、結構、色彩意思、風格預設。冇確認唔准揀效果。
 1. **分鏡**：只用文字 + 效果庫預覽圖，唔渲染、唔生成。
 2. **素材**：列出要生成嘅素材同 credits（Higgsfield `get_cost:true` 預先計），確認先生成。
 3. **草稿**：`--quality draft` 渲染一次，只睇一張細 contact sheet（每格 ≤ 300px）。
 4. **正式版**：`--quality high` 出片 + 換原音軌 + 核對。
 
 ## 分鏡點做
-1. 轉錄（ASR）→ 按句切鏡頭（每鏡 1–4 秒）。
+1. 用 `clean.mp4` + `work/clean-transcript.json`（已剪停頓，見 `lessons/cutting-cantonese.md`）→ 按句切鏡頭（每鏡 1–4 秒）；`edl.json` 嘅 `joins` 每個接位都要轉機位或者 FX-040。
+   每鏡加 `beat`（hook／setup／tension／proof／turn／payoff），效果強度跟 beat；超過 2.2 秒冇新視覺資訊要寫 `holdReason`。
+   效果只可以喺風格預設（`presets/SP-xxx`）嘅白名單揀；白名單以外要寫理由。
 2. 每鏡填：時間、講緊咩、畫面描述、FX-id、素材（來源 code / higgsfield / canva / client / footage）、生成描述、credits；要聲效就加 `sfx`（`[{"sfx":"SFX-001","t":3.8}]`，t 係全片秒數，由 registry.json 嘅 sounds 按 pairs_with 揀）。分鏡網頁可以直接撳嚟試聽。
 3. 寫入 `storyboards/<project>.json`（格式見 `_example.json`）。
 4. `node scripts/build-storyboard.mjs storyboards/<project>.json` → `.html`。

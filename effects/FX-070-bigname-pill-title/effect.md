@@ -3,6 +3,7 @@ id: FX-070
 name: 大字英文名 + 膠囊職銜
 name_en: bigname-pill-title
 category: text-fx
+family: [SP-001]
 tags: [lower-third, name, title, pill]
 mood: [clean, modern, trustworthy]
 fits: [interview, medical, podcast-clip]

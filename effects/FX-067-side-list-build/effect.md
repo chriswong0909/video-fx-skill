@@ -3,6 +3,7 @@ id: FX-067
 name: 講者旁清單逐項出
 name_en: side-list-build
 category: list-chart
+family: [SP-001, SP-002, SP-005]
 tags: [list, side-panel, clean, minimal]
 mood: [clean, journalistic, calm]
 fits: [news, education, interview, medical]

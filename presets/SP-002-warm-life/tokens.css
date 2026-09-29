@@ -1,0 +1,10 @@
+/* SP-002 溫暖生活 — 由 preset.json 生成（python3 scripts/presets.py build）；品牌檔可以喺之後覆蓋顏色 */
+:root{
+  --c-bg:#f6f1e9; --c-surface:#efe4d6; --c-text:#3a2a1e;
+  --c-accent:#e07a3f; --c-alert:#c0392b; --c-positive:#6a9a5b;
+  --c-caption-box:#3a2a1e; --c-caption-text:#fbfaf7;
+  --f-display:'SerifTC'; --f-body:'SansTC'; --f-num:'SerifTC';
+  --fs-hero:150px; --fs-sub:72px; --fs-label:64px; --fs-caption:80px; --fs-foot:52px;
+  --ease-out:power2.out; --ease-pop:back.out(1.4); --ease-move:sine.inOut; --ease-in:power2.in;
+  --dur-in:.45s; --dur-out:.3s; --dur-move:.8s; --stagger:.1s;
+}

@@ -3,6 +3,7 @@ id: FX-020
 name: 散落詞字幕
 name_en: scattered-word-caption
 category: text-fx
+family: [SP-002, SP-004]
 tags: [word-by-word, layout, mixed-type, b-roll]
 mood: [cinematic, calm, editorial]
 fits: [lifestyle, podcast-clip, education]

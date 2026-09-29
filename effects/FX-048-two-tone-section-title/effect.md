@@ -3,6 +3,7 @@ id: FX-048
 name: 雙色章節標題
 name_en: two-tone-section-title
 category: text-fx
+family: [SP-001, SP-002, SP-005]
 tags: [title, section, two-tone, outline]
 mood: [friendly, educational, clear]
 fits: [medical, public-health, education, explainer]

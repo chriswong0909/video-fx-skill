@@ -3,6 +3,7 @@ id: FX-016
 name: 文字喺人物後面
 name_en: text-behind-subject
 category: text-fx
+family: [SP-004]
 tags: [depth, matting, layering, big-type]
 mood: [premium, editorial, dramatic]
 fits: [talking-head, medical, fitness, product]

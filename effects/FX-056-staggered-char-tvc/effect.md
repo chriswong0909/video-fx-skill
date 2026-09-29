@@ -3,6 +3,7 @@ id: FX-056
 name: 錯落單字廣告標語
 name_en: staggered-char-tvc
 category: text-fx
+family: [SP-004]
 tags: [tvc, staggered, thin-type, product]
 mood: [elegant, premium, soft]
 fits: [product, beauty, health, brand]

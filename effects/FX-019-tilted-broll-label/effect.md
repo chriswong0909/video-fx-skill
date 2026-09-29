@@ -3,6 +3,7 @@ id: FX-019
 name: 斜放 B-roll 標籤字
 name_en: tilted-broll-label
 category: text-fx
+family: [SP-003]
 tags: [b-roll, rotated, label, list]
 mood: [energetic, playful, modern]
 fits: [fitness, lifestyle, education]

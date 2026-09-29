@@ -3,6 +3,7 @@ id: FX-031
 name: 玻璃擬態元件 + 場景
 name_en: glass-widget-scene
 category: cutaway
+family: [SP-003]
 tags: [glassmorphism, widget, 3d-scene, calendar]
 mood: [aspirational, modern, dreamy]
 fits: [creator, lifestyle, product, education]

@@ -1,9 +1,10 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-081 水松板排行榜 | 1080×1920 | 依賴：assets/cork.jpg、assets/photo.jpg、撕紙 mask、手寫圓體字 | 要做成 clip -->
 <style>
 #fx081{position:absolute;inset:0;z-index:5;background:#b98a5a url(assets/cork.jpg) center/cover}
 #fx081 .ttl{position:absolute;left:60px;top:300px;padding:30px 44px;background:#f6f5f2;font:900 88px/1.1 'RoundTC','SansTC';color:#3b3a8a;transform:rotate(-2deg);-webkit-mask:url(assets/torn.svg) center/100% 100%}
 #fx081 .ph{position:absolute;right:60px;top:320px;width:380px;border:14px solid #fff;transform:rotate(2deg);box-shadow:0 8px 18px rgba(0,0,0,.35)}
-#fx081 table{position:absolute;left:80px;right:80px;top:820px;width:920px;background:#fbfaf7;border-collapse:collapse;font:500 52px 'SansTC';color:#333;box-shadow:0 8px 18px rgba(0,0,0,.35)}
+#fx081 table{position:absolute;left:80px;right:80px;top:820px;width:920px;background:#fbfaf7;border-collapse:collapse;font:500 52px var(--f-body,'SansTC');color:#333;box-shadow:0 8px 18px rgba(0,0,0,.35)}
 #fx081 td{padding:0 18px;height:84px;border-bottom:1px solid #ddd;position:relative}
 #fx081 .mk{position:absolute;inset:14px 0;transform:scaleX(0);transform-origin:left;mix-blend-mode:multiply}
 </style>
@@ -12,9 +13,9 @@
  <table><tr><td>1</td><td>香港<i class="mk" style="background:#ffe34d"></i></td></tr><tr><td>2</td><td>新加坡<i class="mk" style="background:#4fc3f7"></i></td></tr><tr><td>3</td><td>蘇黎世</td></tr><tr><td>4</td><td>日內瓦</td></tr></table>
 </div>
 <script>
-tl.from('#fx081 .ttl',{scale:1.1,opacity:0,duration:.3,ease:'power2.out'},T.start);
+tl.from('#fx081 .ttl',{scale:1.1,opacity:0,duration:.3,ease:EASE.out},T.start);
 tl.from('#fx081 .ph',{scale:1.1,opacity:0,duration:.3},T.start+.2);
 tl.from('#fx081 tr',{opacity:0,y:10,duration:.2,stagger:.08},T.start+.5);
 tl.to('#fx081 .mk',{scaleX:1,duration:.35,stagger:.6},T.start+2.2);
-tl.fromTo('#fx081',{scale:1},{scale:1.12,transformOrigin:'50% 55%',duration:2,ease:'power1.inOut'},T.end-2);
+tl.fromTo('#fx081',{scale:1},{scale:1.12,transformOrigin:'50% 55%',duration:2,ease:EASE.move},T.end-2);
 </script>

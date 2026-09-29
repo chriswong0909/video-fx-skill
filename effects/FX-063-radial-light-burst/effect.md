@@ -3,6 +3,7 @@ id: FX-063
 name: 放射光束背光
 name_en: radial-light-burst
 category: accent
+family: [SP-003]
 tags: [rays, burst, reveal, hero]
 mood: [dramatic, playful, triumphant]
 fits: [education, product, explainer, entertainment]

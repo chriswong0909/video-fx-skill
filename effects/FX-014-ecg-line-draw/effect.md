@@ -3,6 +3,7 @@ id: FX-014
 name: 心電圖線描繪
 name_en: ecg-line-draw
 category: accent
+family: [SP-001]
 tags: [line-draw, svg, medical, heart]
 mood: [clinical, medical]
 fits: [medical]

@@ -3,6 +3,7 @@ id: FX-030
 name: 手寫草書點綴
 name_en: script-handwriting-accent
 category: accent
+family: [SP-002]
 tags: [script, handwriting, neon, mixed-type]
 mood: [personal, warm, aspirational]
 fits: [lifestyle, podcast-clip, creator, motivational]

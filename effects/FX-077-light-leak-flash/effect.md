@@ -3,6 +3,7 @@ id: FX-077
 name: 光漏閃光轉場
 name_en: light-leak-flash
 category: transition
+family: [SP-004]
 tags: [light-leak, flash, film, transition]
 mood: [cinematic, nostalgic, warm]
 fits: [storytelling, vlog, documentary, commentary]

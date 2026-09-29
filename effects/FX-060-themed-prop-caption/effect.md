@@ -3,6 +3,7 @@ id: FX-060
 name: 主題道具字幕托
 name_en: themed-prop-caption
 category: caption
+family: [SP-003]
 tags: [subtitle, prop, branded, series]
 mood: [playful, quirky, friendly]
 fits: [entertainment, education, explainer]

@@ -3,6 +3,7 @@ id: FX-025
 name: 虛線路徑連接
 name_en: dashed-path-connector
 category: accent
+family: [SP-005]
 tags: [path, connector, line-draw, diagram]
 mood: [editorial, playful, educational]
 fits: [education, podcast-clip, explainer]

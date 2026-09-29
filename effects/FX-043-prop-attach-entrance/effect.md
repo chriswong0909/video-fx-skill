@@ -3,6 +3,7 @@ id: FX-043
 name: 道具附著入場
 name_en: prop-attach-entrance
 category: accent
+family: [SP-002]
 tags: [object, overlay, entrance, illustration]
 mood: [friendly, playful, educational]
 fits: [medical, education, explainer, product]

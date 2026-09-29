@@ -3,6 +3,7 @@ id: FX-076
 name: 地面透視大字
 name_en: ground-perspective-text
 category: text-fx
+family: [SP-004]
 tags: [perspective, 3d-text, ground, keyword]
 mood: [dramatic, cinematic]
 fits: [storytelling, finance, commentary, b-roll]

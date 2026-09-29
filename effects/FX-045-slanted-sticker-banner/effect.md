@@ -3,6 +3,7 @@ id: FX-045
 name: 斜貼紙警告橫額
 name_en: slanted-sticker-banner
 category: text-fx
+family: [SP-003]
 tags: [sticker, warning, cta, tilted]
 mood: [urgent, friendly, playful]
 fits: [medical, public-health, education]

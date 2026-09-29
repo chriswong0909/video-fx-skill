@@ -3,6 +3,7 @@ id: FX-057
 name: 圓形徽章彈出
 name_en: badge-stamp-pop
 category: accent
+family: [SP-001, SP-004]
 tags: [badge, stamp, claim, product]
 mood: [premium, trustworthy, clean]
 fits: [product, health, brand, medical]

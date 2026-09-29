@@ -3,6 +3,7 @@ id: FX-035
 name: 裝置畫面 + 大數字
 name_en: device-mockup-stat
 category: list-chart
+family: [SP-003]
 tags: [mockup, proof, big-number, screen]
 mood: [confident, modern, aspirational]
 fits: [creator, business, product]

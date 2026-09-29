@@ -3,6 +3,7 @@ id: FX-064
 name: 人名職銜名牌
 name_en: name-lower-third
 category: text-fx
+family: [SP-001, SP-005]
 tags: [lower-third, name, title, interview]
 mood: [clean, trustworthy, journalistic]
 fits: [interview, documentary, medical, news]

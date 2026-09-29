@@ -1,0 +1,10 @@
+/* SP-003 活潑年輕 — 由 preset.json 生成（python3 scripts/presets.py build）；品牌檔可以喺之後覆蓋顏色 */
+:root{
+  --c-bg:#111111; --c-surface:#ffffff; --c-text:#111111;
+  --c-accent:#ffcf2e; --c-alert:#ff2d55; --c-positive:#2a6be0;
+  --c-caption-box:#111111; --c-caption-text:#ffffff;
+  --f-display:'SansTC'; --f-body:'SansTC'; --f-num:'SansTC';
+  --fs-hero:150px; --fs-sub:72px; --fs-label:64px; --fs-caption:80px; --fs-foot:52px;
+  --ease-out:power3.out; --ease-pop:back.out(2); --ease-move:power3.inOut; --ease-in:power2.in;
+  --dur-in:.25s; --dur-out:.18s; --dur-move:.45s; --stagger:.05s;
+}

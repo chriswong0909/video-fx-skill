@@ -104,6 +104,9 @@
    "name": "全屏物件過場",
    "name_en": "fullscreen-object-cutaway",
    "category": "cutaway",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "b-roll",
     "illustration",
@@ -160,6 +163,10 @@
    "name": "窗光斜影背景",
    "name_en": "window-light-backdrop",
    "category": "cutaway",
+   "family": [
+    "SP-002",
+    "SP-004"
+   ],
    "tags": [
     "background",
     "light",
@@ -211,6 +218,9 @@
    "name": "橫向卡片畫廊",
    "name_en": "horizontal-card-gallery",
    "category": "list-chart",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "list",
     "cards",
@@ -266,6 +276,10 @@
    "name": "模糊畫面浮雕大字",
    "name_en": "blur-emboss-title",
    "category": "transition",
+   "family": [
+    "SP-002",
+    "SP-004"
+   ],
    "tags": [
     "blur",
     "emboss",
@@ -316,6 +330,9 @@
    "name": "相框加清單版面",
    "name_en": "pip-editorial-list",
    "category": "layout",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "pip",
     "list",
@@ -372,6 +389,9 @@
    "name": "問題浮動符號 + 紅標籤",
    "name_en": "question-float-label",
    "category": "text-fx",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "question",
     "label",
@@ -421,6 +441,9 @@
    "name": "心電圖線描繪",
    "name_en": "ecg-line-draw",
    "category": "accent",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "line-draw",
     "svg",
@@ -468,6 +491,9 @@
    "name": "暖色 podcast 調色",
    "name_en": "warm-podcast-grade",
    "category": "grade-light",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "color-grade",
     "warm",
@@ -518,6 +544,9 @@
    "name": "文字喺人物後面",
    "name_en": "text-behind-subject",
    "category": "text-fx",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "depth",
     "matting",
@@ -571,6 +600,9 @@
    "name": "頭頂大字（無襯線）",
    "name_en": "top-headline-sans",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "kinetic-type",
     "sans",
@@ -624,6 +656,9 @@
    "name": "單字跳字幕",
    "name_en": "single-word-pop",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "word-by-word",
     "minimal",
@@ -677,6 +712,9 @@
    "name": "斜放 B-roll 標籤字",
    "name_en": "tilted-broll-label",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "b-roll",
     "rotated",
@@ -727,6 +765,10 @@
    "name": "散落詞字幕",
    "name_en": "scattered-word-caption",
    "category": "text-fx",
+   "family": [
+    "SP-002",
+    "SP-004"
+   ],
    "tags": [
     "word-by-word",
     "layout",
@@ -779,6 +821,9 @@
    "name": "標註圖解過場",
    "name_en": "labelled-diagram-cutaway",
    "category": "cutaway",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "diagram",
     "medical",
@@ -829,6 +874,10 @@
    "name": "手繪圈註",
    "name_en": "hand-drawn-annotation",
    "category": "accent",
+   "family": [
+    "SP-002",
+    "SP-005"
+   ],
    "tags": [
     "doodle",
     "scribble",
@@ -879,6 +928,9 @@
    "name": "飛舞元素群",
    "name_en": "flying-element-swarm",
    "category": "accent",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "particles",
     "butterflies",
@@ -929,6 +981,9 @@
    "name": "復古電視框",
    "name_en": "retro-tv-frame",
    "category": "layout",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "frame",
     "retro",
@@ -983,6 +1038,9 @@
    "name": "虛線路徑連接",
    "name_en": "dashed-path-connector",
    "category": "accent",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "path",
     "connector",
@@ -1033,6 +1091,9 @@
    "name": "單字閃卡",
    "name_en": "one-word-flash-card",
    "category": "transition",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "flash",
     "solid-bg",
@@ -1082,6 +1143,9 @@
    "name": "發光漸變關鍵字",
    "name_en": "glow-gradient-keyword",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "gradient-text",
     "glow",
@@ -1135,6 +1199,9 @@
    "name": "柔和 3D 圖示解說",
    "name_en": "soft-3d-icon-explainer",
    "category": "cutaway",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "icons",
     "3d",
@@ -1192,6 +1259,9 @@
    "name": "UI 元件解說",
    "name_en": "ui-widget-explainer",
    "category": "list-chart",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "ui",
     "calendar",
@@ -1244,6 +1314,9 @@
    "name": "手寫草書點綴",
    "name_en": "script-handwriting-accent",
    "category": "accent",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "script",
     "handwriting",
@@ -1294,6 +1367,9 @@
    "name": "玻璃擬態元件 + 場景",
    "name_en": "glass-widget-scene",
    "category": "cutaway",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "glassmorphism",
     "widget",
@@ -1348,6 +1424,10 @@
    "name": "清單列堆疊",
    "name_en": "app-row-stack",
    "category": "list-chart",
+   "family": [
+    "SP-001",
+    "SP-003"
+   ],
    "tags": [
     "list",
     "rows",
@@ -1401,6 +1481,9 @@
    "name": "通知彈出堆疊",
    "name_en": "notification-stack",
    "category": "accent",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "notification",
     "ios",
@@ -1449,6 +1532,10 @@
    "name": "增長曲線卡",
    "name_en": "growth-chart-card",
    "category": "list-chart",
+   "family": [
+    "SP-001",
+    "SP-003"
+   ],
    "tags": [
     "chart",
     "growth",
@@ -1499,6 +1586,9 @@
    "name": "裝置畫面 + 大數字",
    "name_en": "device-mockup-stat",
    "category": "list-chart",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "mockup",
     "proof",
@@ -1549,6 +1639,9 @@
    "name": "膠囊遮罩 + 標註線",
    "name_en": "capsule-mask-callout",
    "category": "layout",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "mask",
     "capsule",
@@ -1602,6 +1695,9 @@
    "name": "膠囊關鍵詞 + 浮動小標籤",
    "name_en": "pill-keyword-tags",
    "category": "text-fx",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "pill",
     "tags",
@@ -1658,6 +1754,9 @@
    "name": "圓角講者卡 + 膠囊清單",
    "name_en": "rounded-speaker-card-pills",
    "category": "layout",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "pip",
     "card",
@@ -1712,6 +1811,13 @@
    "name": "基本字幕（白字黑光暈）",
    "name_en": "basic-caption",
    "category": "caption",
+   "family": [
+    "SP-001",
+    "SP-002",
+    "SP-003",
+    "SP-004",
+    "SP-005"
+   ],
    "tags": [
     "subtitle",
     "cjk",
@@ -1773,6 +1879,13 @@
    "name": "平滑推鏡",
    "name_en": "smooth-punch",
    "category": "transition",
+   "family": [
+    "SP-001",
+    "SP-002",
+    "SP-003",
+    "SP-004",
+    "SP-005"
+   ],
    "tags": [
     "camera",
     "punch-in",
@@ -1829,6 +1942,9 @@
    "name": "皺紙紋背景",
    "name_en": "paper-texture-backdrop",
    "category": "cutaway",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "background",
     "paper",
@@ -1881,6 +1997,9 @@
    "name": "線稿變彩色",
    "name_en": "line-to-color-reveal",
    "category": "transition",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "illustration",
     "line-draw",
@@ -1931,6 +2050,9 @@
    "name": "道具附著入場",
    "name_en": "prop-attach-entrance",
    "category": "accent",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "object",
     "overlay",
@@ -1980,6 +2102,10 @@
    "name": "圓形插圖格逐個彈出",
    "name_en": "circle-icon-grid",
    "category": "list-chart",
+   "family": [
+    "SP-001",
+    "SP-002"
+   ],
    "tags": [
     "grid",
     "icons",
@@ -2033,6 +2159,9 @@
    "name": "斜貼紙警告橫額",
    "name_en": "slanted-sticker-banner",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "sticker",
     "warning",
@@ -2081,6 +2210,9 @@
    "name": "動態模糊橫掃切換",
    "name_en": "motion-blur-whip",
    "category": "transition",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "whip",
     "blur",
@@ -2130,6 +2262,11 @@
    "name": "打交叉禁止",
    "name_en": "cross-out-mark",
    "category": "accent",
+   "family": [
+    "SP-001",
+    "SP-003",
+    "SP-005"
+   ],
    "tags": [
     "cross",
     "prohibit",
@@ -2177,6 +2314,11 @@
    "name": "雙色章節標題",
    "name_en": "two-tone-section-title",
    "category": "text-fx",
+   "family": [
+    "SP-001",
+    "SP-002",
+    "SP-005"
+   ],
    "tags": [
     "title",
     "section",
@@ -2226,6 +2368,9 @@
    "name": "紙紋 Logo 結尾卡",
    "name_en": "paper-logo-endcard",
    "category": "transition",
+   "family": [
+    "SP-002"
+   ],
    "tags": [
     "end-card",
     "logo",
@@ -2276,6 +2421,9 @@
    "name": "同心圓脈衝標示",
    "name_en": "pulse-ring-indicator",
    "category": "accent",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "indicator",
     "pulse",
@@ -2323,6 +2471,10 @@
    "name": "實色方框字幕",
    "name_en": "solid-box-caption",
    "category": "caption",
+   "family": [
+    "SP-001",
+    "SP-005"
+   ],
    "tags": [
     "subtitle",
     "box",
@@ -2381,6 +2533,9 @@
    "name": "大字疊行 Keyup 字幕",
    "name_en": "keyup-stack-caption",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "kinetic-type",
     "stacked",
@@ -2435,6 +2590,9 @@
    "name": "全屏素材配直排大字",
    "name_en": "fullframe-stock-bigtext",
    "category": "cutaway",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "b-roll",
     "stock",
@@ -2485,6 +2643,9 @@
    "name": "故障 RGB 分離大字",
    "name_en": "glitch-rgb-text",
    "category": "transition",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "glitch",
     "rgb-split",
@@ -2534,6 +2695,9 @@
    "name": "字幕旁 3D 小圖示彈出",
    "name_en": "caption-emoji-3d-pop",
    "category": "accent",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "3d-icon",
     "sticker",
@@ -2586,6 +2750,9 @@
    "name": "錯落單字廣告標語",
    "name_en": "staggered-char-tvc",
    "category": "text-fx",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "tvc",
     "staggered",
@@ -2635,6 +2802,10 @@
    "name": "圓形徽章彈出",
    "name_en": "badge-stamp-pop",
    "category": "accent",
+   "family": [
+    "SP-001",
+    "SP-004"
+   ],
    "tags": [
     "badge",
     "stamp",
@@ -2686,6 +2857,10 @@
    "name": "黑底圓角相片插入",
    "name_en": "rounded-photo-insert",
    "category": "cutaway",
+   "family": [
+    "SP-002",
+    "SP-004"
+   ],
    "tags": [
     "photo",
     "insert",
@@ -2738,6 +2913,9 @@
    "name": "固定方框系列標題",
    "name_en": "boxed-series-title",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "title",
     "series",
@@ -2787,6 +2965,9 @@
    "name": "主題道具字幕托",
    "name_en": "themed-prop-caption",
    "category": "caption",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "subtitle",
     "prop",
@@ -2841,6 +3022,9 @@
    "name": "黑白拼貼 + 單一亮色",
    "name_en": "mono-collage-accent",
    "category": "cutaway",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "collage",
     "monochrome",
@@ -2898,6 +3082,9 @@
    "name": "物件跌落堆疊",
    "name_en": "object-drop-physics",
    "category": "accent",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "physics",
     "drop",
@@ -2949,6 +3136,9 @@
    "name": "放射光束背光",
    "name_en": "radial-light-burst",
    "category": "accent",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "rays",
     "burst",
@@ -2999,6 +3189,10 @@
    "name": "人名職銜名牌",
    "name_en": "name-lower-third",
    "category": "text-fx",
+   "family": [
+    "SP-001",
+    "SP-005"
+   ],
    "tags": [
     "lower-third",
     "name",
@@ -3052,6 +3246,10 @@
    "name": "金句雙色重點字",
    "name_en": "key-quote-twotone",
    "category": "text-fx",
+   "family": [
+    "SP-002",
+    "SP-005"
+   ],
    "tags": [
     "quote",
     "highlight",
@@ -3107,6 +3305,10 @@
    "name": "大數字逐位打出",
    "name_en": "number-type-reveal",
    "category": "list-chart",
+   "family": [
+    "SP-001",
+    "SP-005"
+   ],
    "tags": [
     "number",
     "stat",
@@ -3158,6 +3360,11 @@
    "name": "講者旁清單逐項出",
    "name_en": "side-list-build",
    "category": "list-chart",
+   "family": [
+    "SP-001",
+    "SP-002",
+    "SP-005"
+   ],
    "tags": [
     "list",
     "side-panel",
@@ -3214,6 +3421,9 @@
    "name": "章節導航條",
    "name_en": "chapter-nav-bar",
    "category": "layout",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "chapter",
     "navigation",
@@ -3270,6 +3480,9 @@
    "name": "中英雙語字幕",
    "name_en": "bilingual-caption",
    "category": "caption",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "caption",
     "bilingual",
@@ -3332,6 +3545,9 @@
    "name": "大字英文名 + 膠囊職銜",
    "name_en": "bigname-pill-title",
    "category": "text-fx",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "lower-third",
     "name",
@@ -3388,6 +3604,9 @@
    "name": "解說畫板 + 講者畫中畫",
    "name_en": "explainer-board-pip",
    "category": "layout",
+   "family": [
+    "SP-001"
+   ],
    "tags": [
     "explainer",
     "pip",
@@ -3450,6 +3669,9 @@
    "name": "圖案柱狀圖生長",
    "name_en": "pattern-bar-chart",
    "category": "list-chart",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "bar-chart",
     "data",
@@ -3507,6 +3729,9 @@
    "name": "地圖掃入發光",
    "name_en": "map-glow-reveal",
    "category": "cutaway",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "map",
     "reveal",
@@ -3561,6 +3786,9 @@
    "name": "復古菲林暗角調色",
    "name_en": "vintage-film-grade",
    "category": "grade-light",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "film",
     "grain",
@@ -3619,6 +3847,9 @@
    "name": "暫停符號故障",
    "name_en": "pause-icon-glitch",
    "category": "accent",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "pause",
     "icon",
@@ -3671,6 +3902,9 @@
    "name": "地面透視大字",
    "name_en": "ground-perspective-text",
    "category": "text-fx",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "perspective",
     "3d-text",
@@ -3727,6 +3961,9 @@
    "name": "光漏閃光轉場",
    "name_en": "light-leak-flash",
    "category": "transition",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "light-leak",
     "flash",
@@ -3783,6 +4020,9 @@
    "name": "撕紙剪報 + 螢光筆",
    "name_en": "torn-paper-clipping",
    "category": "cutaway",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "news-clipping",
     "highlight",
@@ -3841,6 +4081,9 @@
    "name": "撕紙轉場",
    "name_en": "paper-tear-transition",
    "category": "transition",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "paper",
     "tear",
@@ -3895,6 +4138,9 @@
    "name": "面部打格仔",
    "name_en": "face-mosaic",
    "category": "accent",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "mosaic",
     "pixelate",
@@ -3946,6 +4192,9 @@
    "name": "水松板排行榜",
    "name_en": "corkboard-ranking",
    "category": "list-chart",
+   "family": [
+    "SP-005"
+   ],
    "tags": [
     "ranking",
     "table",
@@ -4002,6 +4251,9 @@
    "name": "電影黑邊字幕",
    "name_en": "letterbox-caption-bar",
    "category": "layout",
+   "family": [
+    "SP-004"
+   ],
    "tags": [
     "letterbox",
     "cinematic",
@@ -4057,6 +4309,11 @@
    "name": "箭嘴因果鏈",
    "name_en": "arrow-cause-chain",
    "category": "text-fx",
+   "family": [
+    "SP-001",
+    "SP-003",
+    "SP-005"
+   ],
    "tags": [
     "arrow",
     "cause-effect",
@@ -4113,6 +4370,9 @@
    "name": "掃筆色帶名牌",
    "name_en": "brush-band-name",
    "category": "text-fx",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "lower-third",
     "name",
@@ -4168,6 +4428,9 @@
    "name": "斜切色塊問題清單",
    "name_en": "diagonal-question-panel",
    "category": "list-chart",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "agenda",
     "questions",
@@ -4226,6 +4489,9 @@
    "name": "品牌色塊幾何轉場",
    "name_en": "brand-block-wipe",
    "category": "transition",
+   "family": [
+    "SP-003"
+   ],
    "tags": [
     "brand",
     "geometric",

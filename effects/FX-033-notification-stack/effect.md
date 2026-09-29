@@ -3,6 +3,7 @@ id: FX-033
 name: 通知彈出堆疊
 name_en: notification-stack
 category: accent
+family: [SP-003]
 tags: [notification, ios, popup, social-proof]
 mood: [modern, urgent, playful]
 fits: [creator, product, tech, lifestyle]

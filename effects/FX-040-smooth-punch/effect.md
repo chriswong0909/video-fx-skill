@@ -3,6 +3,7 @@ id: FX-040
 name: 平滑推鏡
 name_en: smooth-punch
 category: transition
+family: [SP-001, SP-002, SP-003, SP-004, SP-005]
 tags: [camera, punch-in, ease, talking-head]
 mood: [clean, editorial, calm]
 fits: [talking-head, medical, education, interview, podcast-clip]

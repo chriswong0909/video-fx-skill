@@ -3,6 +3,7 @@ id: FX-004
 name: 窗光斜影背景
 name_en: window-light-backdrop
 category: cutaway
+family: [SP-002, SP-004]
 tags: [background, light, shadow, typography]
 mood: [warm, calm, premium]
 fits: [podcast-clip, lifestyle, education, medical]

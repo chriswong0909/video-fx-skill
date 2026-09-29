@@ -3,6 +3,7 @@ id: FX-074
 name: 復古菲林暗角調色
 name_en: vintage-film-grade
 category: grade-light
+family: [SP-004]
 tags: [film, grain, vignette, retro, grade]
 mood: [nostalgic, cinematic, moody]
 fits: [documentary, finance, storytelling, b-roll]

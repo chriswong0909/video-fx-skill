@@ -3,6 +3,7 @@ id: FX-052
 name: 大字疊行 Keyup 字幕
 name_en: keyup-stack-caption
 category: text-fx
+family: [SP-003]
 tags: [kinetic-type, stacked, keyup, cjk]
 mood: [energetic, bold, modern]
 fits: [talking-head, finance, education, podcast-clip]

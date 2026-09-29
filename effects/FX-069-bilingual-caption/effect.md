@@ -3,6 +3,7 @@ id: FX-069
 name: 中英雙語字幕
 name_en: bilingual-caption
 category: caption
+family: [SP-001]
 tags: [caption, bilingual, english, subtitle]
 mood: [clean, trustworthy, international]
 fits: [interview, medical, education, podcast-clip]

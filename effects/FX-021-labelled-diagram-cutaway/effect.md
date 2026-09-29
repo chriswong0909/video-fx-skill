@@ -3,6 +3,7 @@ id: FX-021
 name: 標註圖解過場
 name_en: labelled-diagram-cutaway
 category: cutaway
+family: [SP-001]
 tags: [diagram, medical, callout, explainer]
 mood: [clinical, educational]
 fits: [medical, education, science]

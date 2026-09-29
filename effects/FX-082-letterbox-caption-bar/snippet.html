@@ -1,13 +1,14 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-082 電影黑邊字幕 | 1080×1920 | 依賴：SansTC | 全片 layer -->
 <style>
 .fx082b{position:absolute;left:0;right:0;height:170px;background:#000;z-index:10}
 #fx082t{top:0}#fx082d{bottom:0}
-#fx082t span{position:absolute;top:96px;font:500 52px 'SansTC';color:#fff}
+#fx082t span{position:absolute;top:96px;font:500 52px var(--f-body,'SansTC');color:#fff}
 #fx082t .r{right:40px;color:#ffcf2e}
-#fx082cap{position:absolute;bottom:40px;left:40px;right:40px;text-align:center;font:700 72px/1.2 'SansTC';color:#fff;z-index:11}
+#fx082cap{position:absolute;bottom:40px;left:40px;right:40px;text-align:center;font:700 72px/1.2 var(--f-body,'SansTC');color:#fff;z-index:11}
 </style>
 <div id="fx082t" class="fx082b"><span style="left:40px">頻道名</span><span class="r">系列名／贊助</span></div>
 <div id="fx082d" class="fx082b"></div><div id="fx082cap"><!-- 字幕寫入呢度 --></div>
 <script>
-tl.from('.fx082b',{height:0,duration:.4,ease:'power2.out'},T.start);
+tl.from('.fx082b',{height:0,duration:.4,ease:EASE.out},T.start);
 </script>

@@ -1,10 +1,11 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-029 UI 元件解說：膠囊按鈕 + 日曆剔點 -->
 <style>#fx029{position:absolute;inset:0;background:linear-gradient(#e9eef5,#c9d3e0);z-index:5}
-.fx029pill{position:absolute;left:190px;top:900px;display:flex;gap:18px;align-items:center;background:#dce9fb;border-radius:999px;padding:22px 44px;font:700 64px 'SansTC';color:#2b3440;box-shadow:0 12px 30px rgba(40,60,90,.15)}
-.fx029cal{position:absolute;left:140px;top:260px;width:800px;background:#fff;border-radius:26px;padding:30px;display:grid;grid-template-columns:repeat(7,1fr);gap:18px;font:500 64px 'SansTC';text-align:center;box-shadow:0 20px 40px rgba(40,60,90,.18)}
+.fx029pill{position:absolute;left:190px;top:900px;display:flex;gap:18px;align-items:center;background:#dce9fb;border-radius:999px;padding:22px 44px;font:700 64px var(--f-body,'SansTC');color:#2b3440;box-shadow:0 12px 30px rgba(40,60,90,.15)}
+.fx029cal{position:absolute;left:140px;top:260px;width:800px;background:#fff;border-radius:26px;padding:30px;display:grid;grid-template-columns:repeat(7,1fr);gap:18px;font:500 64px var(--f-body,'SansTC');text-align:center;box-shadow:0 20px 40px rgba(40,60,90,.18)}
 .fx029cal .on{background:#1976f2;color:#fff;border-radius:50%}</style>
 <div id="fx029" class="clip" data-start="1.5" data-duration="9.5" data-track-index="3">
  <div class="fx029cal" id="cal"><span>17</span><span>18</span><span class="on">19</span><span class="on">20</span><span class="on">21</span><span>22</span><span>23</span></div>
  <div class="fx029pill"><span>🏋</span><span id="pt">每週訓練 3 次</span></div></div>
-<script>tl.from('#cal',{y:-60,opacity:0,duration:.4},T.start);tl.from('#cal .on',{scale:0,stagger:.12,duration:.2,ease:'back.out(2)'},T.start+.5);
+<script>tl.from('#cal',{y:-60,opacity:0,duration:.4},T.start);tl.from('#cal .on',{scale:0,stagger:.12,duration:.2,ease:EASE.pop},T.start+.5);
 const pt=document.getElementById('pt');const full=pt.textContent;[...full].forEach((c,i)=>tl.set(pt,{textContent:full.slice(0,i+1)},T.start+.3+i*.05));</script>

@@ -3,6 +3,7 @@ id: FX-038
 name: 圓角講者卡 + 膠囊清單
 name_en: rounded-speaker-card-pills
 category: layout
+family: [SP-001]
 tags: [pip, card, list, pills, 3d-object]
 mood: [clinical, clean, modern]
 fits: [medical, education, talking-head]

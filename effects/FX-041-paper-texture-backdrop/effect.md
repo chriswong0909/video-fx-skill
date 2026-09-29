@@ -3,6 +3,7 @@ id: FX-041
 name: 皺紙紋背景
 name_en: paper-texture-backdrop
 category: cutaway
+family: [SP-002]
 tags: [background, paper, texture, handmade]
 mood: [warm, friendly, educational]
 fits: [medical, education, public-health, explainer]

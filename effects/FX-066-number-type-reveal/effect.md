@@ -3,6 +3,7 @@ id: FX-066
 name: 大數字逐位打出
 name_en: number-type-reveal
 category: list-chart
+family: [SP-001, SP-005]
 tags: [number, stat, count, typewriter]
 mood: [clean, journalistic, confident]
 fits: [news, education, data, medical]

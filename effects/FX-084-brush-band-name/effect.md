@@ -3,6 +3,7 @@ id: FX-084
 name: 掃筆色帶名牌
 name_en: brush-band-name
 category: text-fx
+family: [SP-003]
 tags: [lower-third, name, brush, highlight]
 mood: [energetic, bold, youthful]
 fits: [interview, podcast-clip, education]

@@ -3,6 +3,7 @@ id: FX-036
 name: 膠囊遮罩 + 標註線
 name_en: capsule-mask-callout
 category: layout
+family: [SP-001]
 tags: [mask, capsule, callout, medical]
 mood: [clinical, clean, educational]
 fits: [medical, education, product]

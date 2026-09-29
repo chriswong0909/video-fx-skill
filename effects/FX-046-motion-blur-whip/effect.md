@@ -3,6 +3,7 @@ id: FX-046
 name: 動態模糊橫掃切換
 name_en: motion-blur-whip
 category: transition
+family: [SP-003]
 tags: [whip, blur, carousel, swap]
 mood: [energetic, friendly]
 fits: [education, explainer, medical, product]

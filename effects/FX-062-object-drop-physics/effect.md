@@ -3,6 +3,7 @@ id: FX-062
 name: 物件跌落堆疊
 name_en: object-drop-physics
 category: accent
+family: [SP-003]
 tags: [physics, drop, bounce, stacking]
 mood: [playful, energetic]
 fits: [education, product, explainer, entertainment]

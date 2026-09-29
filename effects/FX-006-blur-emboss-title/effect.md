@@ -3,6 +3,7 @@ id: FX-006
 name: 模糊畫面浮雕大字
 name_en: blur-emboss-title
 category: transition
+family: [SP-002, SP-004]
 tags: [blur, emboss, big-type, emphasis]
 mood: [warm, dramatic, premium]
 fits: [talking-head, podcast-clip, medical]

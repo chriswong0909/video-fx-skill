@@ -1,3 +1,3 @@
 <!-- FX-066 大數字逐位打出 -->
-<div id="fx066" style="position:absolute;left:0;right:0;top:320px;text-align:center;z-index:7;font:900 200px 'SansTC';color:#fff"><span id="n66"></span><span style="font-size:60px">則</span><div id="c66" style="font:700 40px 'SansTC'">議題關鍵字</div></div>
+<div id="fx066" style="position:absolute;left:0;right:0;top:320px;text-align:center;z-index:7;font:900 200px var(--f-body,'SansTC');color:#fff"><span id="n66"></span><span style="font-size:60px">則</span><div id="c66" style="font:700 40px var(--f-body,'SansTC')">議題關鍵字</div></div>
 <script>const full='455';[...full].forEach((_,i)=>tl.set('#n66',{textContent:full.slice(0,i+1)},T.start+i*.12));tl.from('#c66',{opacity:0,duration:.2},T.start+.5);</script>

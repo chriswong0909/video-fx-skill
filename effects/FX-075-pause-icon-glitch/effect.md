@@ -3,6 +3,7 @@ id: FX-075
 name: 暫停符號故障
 name_en: pause-icon-glitch
 category: accent
+family: [SP-003]
 tags: [pause, icon, glitch, stop]
 mood: [dramatic, playful, energetic]
 fits: [storytelling, finance, commentary]

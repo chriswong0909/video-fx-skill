@@ -3,6 +3,7 @@ id: FX-023
 name: 飛舞元素群
 name_en: flying-element-swarm
 category: accent
+family: [SP-002]
 tags: [particles, butterflies, motion-path, decorative]
 mood: [poetic, playful, editorial]
 fits: [podcast-clip, lifestyle, education]

@@ -3,6 +3,7 @@ id: FX-039
 name: 基本字幕（白字黑光暈）
 name_en: basic-caption
 category: caption
+family: [SP-001, SP-002, SP-003, SP-004, SP-005]
 tags: [subtitle, cjk, phrase-sync, clean]
 mood: [clean, clinical, neutral]
 fits: [talking-head, medical, education, interview, podcast-clip]

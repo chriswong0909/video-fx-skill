@@ -3,6 +3,7 @@ id: FX-059
 name: 固定方框系列標題
 name_en: boxed-series-title
 category: text-fx
+family: [SP-003]
 tags: [title, series, header, persistent]
 mood: [playful, bold, clear]
 fits: [education, entertainment, explainer]

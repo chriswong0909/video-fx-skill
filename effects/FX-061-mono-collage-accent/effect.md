@@ -3,6 +3,7 @@ id: FX-061
 name: 黑白拼貼 + 單一亮色
 name_en: mono-collage-accent
 category: cutaway
+family: [SP-004]
 tags: [collage, monochrome, cutout, accent-color, history]
 mood: [quirky, editorial, bold]
 fits: [education, history, explainer, entertainment]

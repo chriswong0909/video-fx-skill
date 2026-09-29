@@ -3,6 +3,7 @@ id: FX-082
 name: 電影黑邊字幕
 name_en: letterbox-caption-bar
 category: layout
+family: [SP-004]
 tags: [letterbox, cinematic, caption-bar, ticker]
 mood: [cinematic, premium, serious]
 fits: [interview, documentary, podcast-clip]

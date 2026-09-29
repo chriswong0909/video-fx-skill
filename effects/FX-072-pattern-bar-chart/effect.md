@@ -3,6 +3,7 @@ id: FX-072
 name: 圖案柱狀圖生長
 name_en: pattern-bar-chart
 category: list-chart
+family: [SP-004]
 tags: [bar-chart, data, flags, comparison]
 mood: [editorial, dramatic, premium]
 fits: [finance, education, news, explainer]

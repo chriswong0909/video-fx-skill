@@ -3,6 +3,7 @@ id: FX-085
 name: 斜切色塊問題清單
 name_en: diagonal-question-panel
 category: list-chart
+family: [SP-003]
 tags: [agenda, questions, diagonal, panel, list]
 mood: [energetic, bold, educational]
 fits: [interview, education, podcast-clip, medical]

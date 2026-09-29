@@ -3,6 +3,7 @@ id: FX-068
 name: 章節導航條
 name_en: chapter-nav-bar
 category: layout
+family: [SP-001]
 tags: [chapter, navigation, top-bar, progress]
 mood: [clinical, clean, editorial]
 fits: [education, medical, podcast-clip, explainer]

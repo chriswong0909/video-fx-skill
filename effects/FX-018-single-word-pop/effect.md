@@ -3,6 +3,7 @@ id: FX-018
 name: 單字跳字幕
 name_en: single-word-pop
 category: text-fx
+family: [SP-003]
 tags: [word-by-word, minimal, sans, karaoke]
 mood: [clean, energetic, modern]
 fits: [talking-head, podcast-clip, interview, education, medical]

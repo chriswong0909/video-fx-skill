@@ -3,6 +3,7 @@ id: FX-017
 name: 頭頂大字（無襯線）
 name_en: top-headline-sans
 category: text-fx
+family: [SP-003]
 tags: [kinetic-type, sans, headroom, word-sync]
 mood: [energetic, clean, modern]
 fits: [talking-head, fitness, podcast-clip, education]

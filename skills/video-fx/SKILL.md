@@ -1,16 +1,17 @@
 ---
 name: "video-fx"
-description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果時使用：必定先問三輪需求（品牌色、節奏、特別要求），出分鏡確認先生成素材同影片，按影片類型同節奏由效果庫、聲效庫同調色庫揀效果（自動推薦基本調色），渲染前做字級、字幕、面部禁區檢查，剪完入庫並同步 GitHub。"
+description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果時使用：必定先問三輪需求（品牌色、節奏、特別要求），剪停頓同口頭禪，出導演 treatment（hook、結構、風格預設）確認，再出分鏡確認先生成素材同影片，按影片類型同節奏由效果庫、聲效庫同調色庫揀效果（自動推薦基本調色），渲染前做字級、字幕、面部禁區檢查，剪完入庫並同步 GitHub。"
 ---
 
 # video-fx：會學習嘅剪片 skill（分鏡先行）
 
 本 skill 係說明書；效果庫（資料）放喺使用者電腦：`~/Documents/GitHub/video-fx-skill/`（下稱 LIBRARY，已同 GitHub 同步）。
-效果目錄網頁（視覺效果、聲效、調色三個分頁）：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ
+效果目錄網頁（視覺效果（可按風格預設篩選）、聲效、調色、教學包參考頁四個分頁）：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ
 
 ## 核心原則
 1. **一定先問需求（硬性關卡）**：被召喚或收到素材後，第一件事係問三輪問題（第 1 節）。未問完、未確認需求摘要之前，唔好轉錄、唔好分析、唔好出分鏡。
-2. **分鏡先行，逐關確認**：未經使用者確認分鏡，唔好渲染、唔好生成素材。四個關卡，每關用 AskUserQuestion 問「確認／要改」：
+2. **導演先行，逐關確認**：未經使用者確認，唔好揀效果、唔好渲染、唔好生成素材。五個關卡，每關用 AskUserQuestion 問「確認／要改」：
+   0. Treatment：一頁導演表（核心一句、觀眾問題、三個 hook 選項、結構、視覺比喻、色彩意思、風格預設），見 `workflow/director.md`
    1. 分鏡：文字 + 效果庫預覽圖，唔渲染、唔生成
    2. 素材：列出要生成嘅素材、來源同額度，確認先生成
    3. 草稿：`--quality draft` 渲染一次，只睇一張細 contact sheet
@@ -18,6 +19,9 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
    詳見 LIBRARY `workflow/storyboard.md`。
 
 **硬性規則（每條片都要遵守，詳見 `lessons/layout-safety.md`）**
+- **一條片一個風格預設**：treatment 揀 `presets/SP-###`（字體、色彩意思、緩動、轉場、字幕、調色、聲效家族、效果白名單一套過）；composition `<head>` 貼該預設 `tokens.css`（品牌檔顏色之後覆蓋）。效果只喺白名單揀，白名單以外要寫理由。出草稿前 `node scripts/check-style.mjs index.html presets/SP-xxx` 要過：字體 ≤ 2、色相 ≤ 4、緩動 ≤ 4、轉場 ≤ 2、字幕一款。
+- **先剪停頓同口頭禪**：轉錄後用 `tools/cut.py`（見 `lessons/cutting-cantonese.md`）出 clean.mp4；之後所有步驟用 clean.mp4 同 clean-transcript.json。醫療限定詞（唔、可能、建議、除非…）永遠唔自動剪。
+- **冇背景音樂**：用戶上 IG 先加；只做聲效 + 輕度人聲清理。
 - **字幕只得一種**：全片揀一款基本字幕，FX-039（白字 + 黑光暈，80px，按意群 6–12 字，單行）為預設，或者 FX-051 方框字幕，二揀一唔好混用。字幕入面唔准換色、反白；有特效字顯示緊嗰句，嗰句唔出字幕。
 - **最細字**（1080×1920）：特效大字 150px、特效細字 72px、標籤／膠囊 64px、字幕 80px、註腳 52px；大細字比例 ≤ 2.5。snippet 數值低過準則一律以準則為準。
 - **面部禁區**：特效字唔准遮面；每鏡按推鏡倍數計面部位置，渲染前自動檢查重疊。
@@ -54,20 +58,25 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 **第三輪：素材同限制**
 1. AI 生成素材：唔用／少量（例如 ≤ 20 credits）／可以放手用，出分鏡時報價
 2. 講者出鏡：全程見到講者／可以用全屏過場蓋住講者
-3. 開頭同結尾：要 hook 標題／要結尾 CTA／兩樣都要／都唔要
-4. 特別要求或禁忌：自由填寫（例如唔要某顏色、要 logo、醫生名同職銜、需唔需要補光調色）
+3. 剪停頓同口頭禪：按節奏剪（建議）／只剪呃嗯同頭尾／唔剪
+4. 觀眾要記住乜 + 特別要求或禁忌：自由填寫（例如「膝痛唔一定要換骹」；唔要某顏色、要 logo、醫生名同職銜）。Hook 一定有（treatment 出三個選項），唔做結尾 CTA
 
-**問完**：輸出「需求摘要」表（項目｜答案），入面一定有「調色」一行：寫推薦預設（例如「GR-001 專業專訪（按醫療健康推薦）」）；使用者喺特別要求講過顏色就跟佢。問一次「確認需求？」先進入第 2 節。
+**問完**：輸出「需求摘要」表（項目｜答案），入面一定有「風格預設」（按情緒：專業醫療 → SP-001、溫暖生活 → SP-002、活潑年輕 → SP-003、高級編輯感 → SP-004、新聞資訊 → SP-005）同「調色」兩行：寫推薦預設（例如「GR-001 專業專訪（按醫療健康推薦）」）；使用者喺特別要求講過顏色就跟佢。問一次「確認需求？」先進入第 2 節。
 
 ## 2. 分析（輕量）
 - 有參考片：`bash scripts/analyze-ref.sh <ref.mp4> <out_dir>` → contact sheet、剪接點、靜音段。只將一張 sheet stage 去雲端用 Read 睇，逐段列：時間｜畫面｜手法｜類別｜FX-id 或 NEW。記錄色調（3–5 色碼）、字體、節奏、字幕位置，寫入 `refs/<slug>/analysis.md` + `sheet-small.jpg`（唔放原片）。只拆手法，唔抄受版權保護嘅素材本身。
 - **參考片係英文（或非中文）**：每個有文字嘅手法按 `lessons/cjk-adaptation.md` 清單檢查，analysis.md 每段加「中文適應：good／adjust／poor + 要改咩」。用中文實際內容試渲染一格，縮到 360px 闊睇得清先算數。
 - 揀效果：由 registry.json 按 `video_types`、`pace`（跟問卷答案）再按 `fits`、`mood` 篩選；排除 banned 同 REMOVED；`cjk_fit: poor` 預設唔推薦，優先 good。覆蓋規則：1 款基本字幕 + 1 個開場手法 + 1 × camera；15 秒以上加 1 × cutaway 或 list-chart；有列舉內容用 list-chart。檢查 `pairs_with`／`conflicts_with`。見 `workflow/recommend.md`。
 - 調色分析：`python3 tools/grade.py analyze source.mp4` → 曝光、白色位偏色、膚色；有問題（偏暗、偏黃、膚色唔自然）喺分鏡講一句。
+- 剪停頓同口頭禪（轉錄之後即做）：`python3 tools/cut.py analyze source.mp4 work/asr.json work --pace <fast|medium|slow>` → 睇 `work/review.md`，review 項目逐個決定（有疑問就問使用者，連同 treatment 一齊問）→ `python3 tools/cut.py apply source.mp4 work/cuts.json work/clean.mp4`（每接位 25ms 淡入淡出 + 輕度人聲清理；唔要清理加 `--no-voice`）。`edl.json` 嘅 `joins` 每個接位分鏡時要轉機位或者 FX-040。
 - 轉錄：`tools/asr.py`（faster-whisper large-v3-turbo，language=yue，word timestamps）；低把握度字多數係口語位，要標示俾使用者核對。亂碼或重複段用 `condition_on_previous_text=False` 分段重轉。
 
+## 2.5 關卡零：Treatment（導演表）
+按 `workflow/director.md` 出一頁表：核心一句、觀眾問題、三個 hook 選項（A/B/C）、結構（hook → 2–4 body beat → payoff，寫 clean.mp4 時間）、視覺比喻、色彩意思（≤ 3 色）、風格預設、字幕、調色、聲效密度、剪輯節奏、講者佔比。問「確認 treatment？揀邊個 hook？」，**停低等答覆**，未確認唔好出分鏡。
+
 ## 3. 關卡一：分鏡
-1. 按句切鏡頭（每鏡長度跟節奏答案），寫 `storyboards/<project>.json`（格式見 `storyboards/_example.json`）：每鏡時間、講緊咩、畫面描述、FX-id、**字幕模式（基本字幕／由特效字取代，並寫出特效字）**、素材（source：canva／footage／higgsfield／stock／code）、生成描述、額度；要聲效就加 `sfx`（`[{"sfx":"SFX-001","t":3.8}]`，按效果嘅配搭聲效揀），分鏡網頁可以試聽。
+0. 出分鏡前逐個剔 `workflow/director.md` 嘅部門清單（故事節奏、字幕、動態、素材、調色一致性、聲效、QA）。
+1. 每鏡加 `beat`（hook／setup／tension／proof／turn／payoff），效果強度跟 beat；超過 2.2 秒冇新視覺資訊寫 `holdReason`。效果只喺風格預設白名單揀。按句切鏡頭（每鏡長度跟節奏答案），寫 `storyboards/<project>.json`（格式見 `storyboards/_example.json`）：每鏡時間、講緊咩、畫面描述、FX-id、**字幕模式（基本字幕／由特效字取代，並寫出特效字）**、素材（source：canva／footage／higgsfield／stock／code）、生成描述、額度；要聲效就加 `sfx`（`[{"sfx":"SFX-001","t":3.8}]`，按效果嘅配搭聲效揀），分鏡網頁可以試聽。
 2. `node scripts/build-storyboard.mjs storyboards/<project>.json` → html；stage 去雲端，用 Artifact 發佈（同一專案重用同一連結）。JSON 頂層加 `"grade": "GR-001"`；另外出調色對比圖 `python3 tools/grade.py compare source.mp4 storyboards/<project>-grade.jpg <推薦> <備選1> <備選2>`，同分鏡一齊俾使用者確認。
 3. 確認問題逐項列出：效果庫以外嘅元素、`cjk_fit: adjust` 效果要改嘅參數、講者出現比例、每個效果用咗幾次、有冇類別缺可用效果。
 4. 問使用者確認；要改就只改 JSON 再 build，唔好重寫。
@@ -88,6 +97,7 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
   - 中文字體用 Google Fonts `&text=` 子集下載
   - 本機 VM（Linux ARM64）渲染要用 playwright chromium + libxdamage，見 lessons/hyperframes-rendering.md
   - device_bash 每次最多 180 秒，背景程序會被殺，長工作要拆段
+- **一致性檢查**：`node scripts/check-style.mjs index.html presets/SP-xxx` 冇 ✗ 先出草稿。
 - **渲染前清單**：逐項剔 `lessons/preflight-checklist.md` 15 項（時間軸墊底、video 唔放入有時間嘅 div、字幕硬收、冇 Math.random 等），再行 `hyperframes lint --json` 同 `validate`。
 - **渲染前自動檢查**（`lessons/layout-safety.md` 第 6 節）：字級、字幕字數、面部禁區、機位差距、多樣性五項全過先出草稿。
 - **草稿後動態檢查**（`lessons/rhythm-variety.md` 第 6 節）：`motion.py` 冇任何 ≥ 1 秒靜止段先出正式版。

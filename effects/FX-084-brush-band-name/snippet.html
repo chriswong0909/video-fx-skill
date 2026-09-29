@@ -1,12 +1,13 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-084 掃筆色帶名牌 | 1080×1920 | 依賴：SansTC、自製筆刷 mask assets/brush.svg -->
 <style>
 #fx084{position:absolute;left:120px;top:1240px;z-index:8;transform:rotate(-3deg)}
-#fx084 .band{position:absolute;inset:-18px -40px;background:var(--accent,#ffcf2e);-webkit-mask:url(assets/brush.svg) center/100% 100%}
-#fx084 .t{position:relative;font:900 110px/1 'SansTC';color:#111;transform:skewX(-8deg);white-space:nowrap}
+#fx084 .band{position:absolute;inset:-18px -40px;background:var(--c-alert,#ffcf2e);-webkit-mask:url(assets/brush.svg) center/100% 100%}
+#fx084 .t{position:relative;font:900 110px/1 var(--f-body,'SansTC');color:#111;transform:skewX(-8deg);white-space:nowrap}
 </style>
 <div id="fx084"><div class="band"></div><div class="t">陳大文 醫生</div></div>
 <script>
-tl.fromTo('#fx084 .band',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.3,ease:'power3.out'},T.start);
-tl.from('#fx084 .t',{scale:.8,opacity:0,duration:.2,ease:'back.out(2)'},T.start+.2);
+tl.fromTo('#fx084 .band',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.3,ease:EASE.out},T.start);
+tl.from('#fx084 .t',{scale:.8,opacity:0,duration:.2,ease:EASE.pop},T.start+.2);
 tl.to('#fx084 .band',{clipPath:'inset(0 0 0 100%)',duration:.25},T.end-.25);tl.to('#fx084 .t',{opacity:0,duration:.2},T.end-.25);
 </script>

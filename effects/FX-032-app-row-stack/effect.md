@@ -3,6 +3,7 @@ id: FX-032
 name: 清單列堆疊
 name_en: app-row-stack
 category: list-chart
+family: [SP-001, SP-003]
 tags: [list, rows, icons, stack]
 mood: [clean, modern]
 fits: [creator, product, education, tech]

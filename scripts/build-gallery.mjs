@@ -26,7 +26,7 @@ const effects = reg.effects.map(e => {
   const vid = b64(path.join(dir, 'preview.mp4')); const img = b64(path.join(dir, 'preview.jpg'));
   const snip = fs.existsSync(path.join(dir, 'snippet.html')) ? fs.readFileSync(path.join(dir, 'snippet.html'), 'utf8') : '';
   return { id:e.id, name:e.name, en:e.name_en, cat:e.category, tags:e.tags||[], mood:e.mood||[], fits:e.fits||[], pairs:e.pairs_with||[], conf:e.conflicts_with||[],
-    needs:e.needs||[], source:e.source||'', status:e.status||'active', vtypes:e.video_types||[], pace:e.pace||[], cjk_fit:e.cjk_fit||'', cjk_notes:e.cjk_notes||'', placement:e.placement||'', banned_reason:e.banned_reason||'', learned:e.learned||'', used:[].concat(e.used_in||[]), diff:e.difficulty||'', summary:e.summary||'', wide: e.aspect==='16:9',
+    needs:e.needs||[], source:e.source||'', status:e.status||'active', vtypes:e.video_types||[], pace:e.pace||[], cjk_fit:e.cjk_fit||'', cjk_notes:e.cjk_notes||'', placement:e.placement||'', banned_reason:e.banned_reason||'', learned:e.learned||'', used:[].concat(e.used_in||[]), diff:e.difficulty||'', family:e.family||[], summary:e.summary||'', wide: e.aspect==='16:9',
     body: md(txt.replace(/##\s*效果\s*\n+[^\n]+\n?/, '')), snippet: snip,
     vid: vid ? 'data:video/mp4;base64,'+vid : null, img: img ? 'data:image/jpeg;base64,'+img : null };
 });
@@ -45,11 +45,12 @@ const grades = (reg.grades||[]).map(g => { const dir = path.join(root, g.path); 
   const af = b64(path.join(dir,'after.jpg'));
   return { id:g.id, name:g.name, en:g.name_en, vtypes:g.video_types||[], deflt:g.default_for||[], mood:g.mood_zh||[], filters:g.filters||'', summary:g.summary||'',
     body: md(txt.replace(/##\s*調色\s*\n+[^\n]+\n?/, '')), after: af ? 'data:image/jpeg;base64,'+af : null }; });
+const presets = fs.existsSync(path.join(root,'presets')) ? fs.readdirSync(path.join(root,'presets')).filter(n=>/^SP-\d{3}/.test(n)).sort().map(n=>{const p=JSON.parse(fs.readFileSync(path.join(root,'presets',n,'preset.json'),'utf8'));return {id:p.id,name:p.name,en:p.en,for_types:p.for_types,tokens:p.tokens,meaning:p.colour_meaning,grade:p.grade,captions:p.captions,transitions:p.transitions,sfx:p.sfx,effects:p.effects,dont:p.dont};}) : [];
 let kitref = null; const kf = path.join(root,'kitref','kitref.json');
 if (fs.existsSync(kf)) { kitref = JSON.parse(fs.readFileSync(kf,'utf8'));
   const im = p => { const b = b64(path.join(root,'kitref',p)); return b ? 'data:image/jpeg;base64,'+b : null; };
   for (const c of kitref.cards) c.img = c.img ? im(c.img) : null; for (const v of kitref.showcase) v.img = v.img ? im(v.img) : null; }
-const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, kitref, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
+const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, kitref, presets, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
 const tpl = fs.readFileSync(path.join(root, 'gallery', 'template.html'), 'utf8');
 const frag = tpl.replace('/*__DATA__*/null', data);
 fs.writeFileSync(path.join(root, 'gallery', 'artifact.html'), frag);

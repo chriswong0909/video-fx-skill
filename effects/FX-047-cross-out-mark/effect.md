@@ -3,6 +3,7 @@ id: FX-047
 name: 打交叉禁止
 name_en: cross-out-mark
 category: accent
+family: [SP-001, SP-003, SP-005]
 tags: [cross, prohibit, crayon, warning]
 mood: [clear, educational, friendly]
 fits: [medical, public-health, education]

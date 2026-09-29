@@ -3,6 +3,7 @@ id: FX-010
 name: 相框加清單版面
 name_en: pip-editorial-list
 category: layout
+family: [SP-001]
 tags: [pip, list, editorial, numbered]
 mood: [clinical, editorial, clean]
 fits: [medical, education, talking-head]

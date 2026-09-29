@@ -3,6 +3,7 @@ id: FX-027
 name: 發光漸變關鍵字
 name_en: glow-gradient-keyword
 category: text-fx
+family: [SP-003]
 tags: [gradient-text, glow, 3d, cool-tone]
 mood: [energetic, modern, premium]
 fits: [podcast-clip, talking-head, education, medical]

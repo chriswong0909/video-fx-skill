@@ -3,6 +3,7 @@ id: FX-079
 name: 撕紙轉場
 name_en: paper-tear-transition
 category: transition
+family: [SP-005]
 tags: [paper, tear, transition, reveal]
 mood: [handmade, editorial, dramatic]
 fits: [news, commentary, storytelling]

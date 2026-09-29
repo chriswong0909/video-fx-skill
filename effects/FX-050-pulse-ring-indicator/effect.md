@@ -3,6 +3,7 @@ id: FX-050
 name: 同心圓脈衝標示
 name_en: pulse-ring-indicator
 category: accent
+family: [SP-001]
 tags: [indicator, pulse, pain-point, medical]
 mood: [clinical, educational, urgent]
 fits: [medical, public-health, education]

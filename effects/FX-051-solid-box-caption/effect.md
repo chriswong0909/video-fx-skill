@@ -3,6 +3,7 @@ id: FX-051
 name: 實色方框字幕
 name_en: solid-box-caption
 category: caption
+family: [SP-001, SP-005]
 tags: [subtitle, box, broadcast, interview, brand-color]
 mood: [clean, clinical, trustworthy, broadcast]
 fits: [interview, talking-head, medical, podcast-clip, education]

@@ -3,6 +3,7 @@ id: FX-071
 name: 解說畫板 + 講者畫中畫
 name_en: explainer-board-pip
 category: layout
+family: [SP-001]
 tags: [explainer, pip, 3d-animation, board, medical]
 mood: [clinical, clean, educational]
 fits: [medical, education, interview, podcast-clip]

@@ -3,6 +3,7 @@ id: FX-073
 name: 地圖掃入發光
 name_en: map-glow-reveal
 category: cutaway
+family: [SP-004]
 tags: [map, reveal, glow, location]
 mood: [dramatic, editorial]
 fits: [news, finance, documentary, explainer]

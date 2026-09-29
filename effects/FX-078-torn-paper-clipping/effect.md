@@ -3,6 +3,7 @@ id: FX-078
 name: 撕紙剪報 + 螢光筆
 name_en: torn-paper-clipping
 category: cutaway
+family: [SP-005]
 tags: [news-clipping, highlight, paper, evidence]
 mood: [editorial, journalistic, handmade]
 fits: [news, finance, commentary, medical]

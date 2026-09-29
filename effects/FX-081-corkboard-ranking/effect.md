@@ -3,6 +3,7 @@ id: FX-081
 name: 水松板排行榜
 name_en: corkboard-ranking
 category: list-chart
+family: [SP-005]
 tags: [ranking, table, corkboard, highlight]
 mood: [handmade, editorial, playful]
 fits: [news, finance, education, commentary]

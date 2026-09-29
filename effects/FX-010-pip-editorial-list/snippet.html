@@ -1,10 +1,11 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-010 相框加清單 | 需要 #cam wrapper, #panel 背景(z1), 行 .row -->
 <script>
 tl.set('#panel',{opacity:1},T.start);
-tl.to('#cam',{scale:.62,y:-100,clipPath:'inset(250px 90px 670px 90px round 58px)',duration:.55,ease:'power3.inOut'},T.start);
+tl.to('#cam',{scale:.62,y:-100,clipPath:'inset(250px 90px 670px 90px round 58px)',duration:.55,ease:EASE.move},T.start);
 tl.fromTo('#pipFrame',{opacity:0,scale:1.06},{opacity:1,scale:1,duration:.35},T.start+.45);
 T.rows.forEach((t,i)=>{const id='#r'+(i+1); tl.set(id,{opacity:1},t-.02);
  tl.from(id+' .num',{opacity:0,x:-30,duration:.3},t-.02); tl.from(id+' .txt',{opacity:0,x:40,duration:.38},t+.04);});
-tl.to('#cam',{scale:1,y:0,clipPath:'inset(0px 0px 0px 0px round 0px)',duration:.45,ease:'power3.inOut'},T.end);
+tl.to('#cam',{scale:1,y:0,clipPath:'inset(0px 0px 0px 0px round 0px)',duration:.45,ease:EASE.move},T.end);
 </script>
 <!-- 完整版見 projects: hyperframes-student-kit/video-projects/doctor2-editorial/index.html -->

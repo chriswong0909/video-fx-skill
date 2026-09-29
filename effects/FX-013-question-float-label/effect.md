@@ -3,6 +3,7 @@ id: FX-013
 name: 問題浮動符號 + 紅標籤
 name_en: question-float-label
 category: text-fx
+family: [SP-002]
 tags: [question, label, top-title, decorative]
 mood: [warm, playful, editorial]
 fits: [podcast-clip, education, medical]

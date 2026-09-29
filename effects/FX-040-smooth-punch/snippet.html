@@ -1,3 +1,4 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-040 平滑推鏡 | 結構：#cam > #camInner(transform-origin 眼睛高度) > video；只郁 wrapper，唔好郁 video -->
 <!-- 用喺重點句：由上一個機位 0.24 秒順滑推去下一個機位，代替硬切 -->
 <script>
@@ -7,7 +8,7 @@ tl.set('#camInner',{transformOrigin:EYE},0);
 SHOTS.forEach(([a,b,f,how],i)=>{const S=FR[f]; const nx=SHOTS[i+1];
   const pushEnd=(nx&&nx[3]==='smooth')?nx[0]-.12:b;                    // 下一鏡係 smooth：鏡內慢推提早收，避免同一屬性重疊
   if(how==='smooth'){
-    tl.to('#camInner',{scale:S,duration:.24,ease:'power2.inOut'},a-.12);
+    tl.to('#camInner',{scale:S,duration:.24,ease:EASE.move},a-.12);
     if(pushEnd-(a+.12)>.05) tl.to('#camInner',{scale:S*1.03,duration:pushEnd-(a+.12),ease:'none'},a+.12);
   }else{
     tl.set('#camInner',{scale:S},a); if(pushEnd-a>.05) tl.to('#camInner',{scale:S*1.03,duration:pushEnd-a,ease:'none'},a);

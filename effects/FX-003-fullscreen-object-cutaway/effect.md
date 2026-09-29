@@ -3,6 +3,7 @@ id: FX-003
 name: 全屏物件過場
 name_en: fullscreen-object-cutaway
 category: cutaway
+family: [SP-002]
 tags: [b-roll, illustration, object, label]
 mood: [warm, editorial]
 fits: [talking-head, podcast-clip, education, medical]

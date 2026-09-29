@@ -3,6 +3,7 @@ id: FX-024
 name: 復古電視框
 name_en: retro-tv-frame
 category: layout
+family: [SP-005]
 tags: [frame, retro, pip, tv, tint]
 mood: [nostalgic, editorial, playful]
 fits: [podcast-clip, interview, film]

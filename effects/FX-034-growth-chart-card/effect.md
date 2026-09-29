@@ -3,6 +3,7 @@ id: FX-034
 name: 增長曲線卡
 name_en: growth-chart-card
 category: list-chart
+family: [SP-001, SP-003]
 tags: [chart, growth, line-draw, glass]
 mood: [aspirational, modern]
 fits: [creator, business, product, education]

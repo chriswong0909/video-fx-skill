@@ -3,6 +3,7 @@ id: FX-053
 name: 全屏素材配直排大字
 name_en: fullframe-stock-bigtext
 category: cutaway
+family: [SP-003]
 tags: [b-roll, stock, big-type, vertical-text]
 mood: [bold, energetic, cinematic]
 fits: [finance, education, talking-head]

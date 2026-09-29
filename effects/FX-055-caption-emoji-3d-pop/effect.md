@@ -3,6 +3,7 @@ id: FX-055
 name: 字幕旁 3D 小圖示彈出
 name_en: caption-emoji-3d-pop
 category: accent
+family: [SP-003]
 tags: [3d-icon, sticker, caption-accent, playful]
 mood: [playful, friendly, energetic]
 fits: [finance, education, talking-head, lifestyle]

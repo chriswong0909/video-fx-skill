@@ -3,6 +3,7 @@ id: FX-026
 name: 單字閃卡
 name_en: one-word-flash-card
 category: transition
+family: [SP-004]
 tags: [flash, solid-bg, one-word, rhythm]
 mood: [bold, minimal, dramatic]
 fits: [podcast-clip, interview, motivational]

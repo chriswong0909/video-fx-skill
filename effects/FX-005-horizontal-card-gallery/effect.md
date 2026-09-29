@@ -3,6 +3,7 @@ id: FX-005
 name: 橫向卡片畫廊
 name_en: horizontal-card-gallery
 category: list-chart
+family: [SP-002]
 tags: [list, cards, scroll, gallery]
 mood: [warm, editorial]
 fits: [education, medical, product, podcast-clip]

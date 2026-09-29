@@ -1,5 +1,6 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-061 黑白拼貼 + 單一亮色 | 要做成 clip -->
 <style>.fx061 img{position:absolute;filter:grayscale(1) contrast(1.15)}.fx061 img.hero{filter:none}</style>
 <div class="fx061 clip" data-start="5" data-duration="3" data-track-index="3" style="position:absolute;inset:0;background:#f4f4f4;z-index:5">
  <img src="assets/temple.png" style="left:190px;top:800px;width:700px"><img class="hero" src="assets/mushroom_teal.png" style="left:320px;top:560px;width:440px"></div>
-<script>tl.from('.fx061 img',{scale:.8,y:40,opacity:0,stagger:.2,duration:.3,ease:'back.out(1.6)'},T.start);</script>
+<script>tl.from('.fx061 img',{scale:.8,y:40,opacity:0,stagger:.2,duration:.3,ease:EASE.pop},T.start);</script>

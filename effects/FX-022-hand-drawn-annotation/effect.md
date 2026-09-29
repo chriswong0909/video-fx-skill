@@ -3,6 +3,7 @@ id: FX-022
 name: 手繪圈註
 name_en: hand-drawn-annotation
 category: accent
+family: [SP-002, SP-005]
 tags: [doodle, scribble, circle, underline]
 mood: [playful, editorial, human]
 fits: [podcast-clip, interview, education]

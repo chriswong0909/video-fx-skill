@@ -3,6 +3,7 @@ id: FX-044
 name: 圓形插圖格逐個彈出
 name_en: circle-icon-grid
 category: list-chart
+family: [SP-001, SP-002]
 tags: [grid, icons, symptoms, numbered-list]
 mood: [friendly, educational, clinical]
 fits: [medical, education, public-health, explainer]

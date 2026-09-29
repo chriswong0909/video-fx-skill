@@ -1,10 +1,11 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-076 地面透視大字 | 1080×1920 | 依賴：SerifTC；B-roll 要係俯拍地面／枱面 -->
 <style>
 #fx076{position:absolute;inset:0;z-index:6;perspective:900px;pointer-events:none}
-#fx076 .w{position:absolute;left:0;right:0;top:900px;text-align:center;transform:rotateX(55deg) rotateZ(-4deg);transform-origin:center;font:900 240px/1 'SerifTC';color:#e8494d;letter-spacing:.05em;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+#fx076 .w{position:absolute;left:0;right:0;top:900px;text-align:center;transform:rotateX(55deg) rotateZ(-4deg);transform-origin:center;font:900 240px/1 var(--f-display,'SerifTC');color:#e8494d;letter-spacing:.05em;text-shadow:0 3px 0 rgba(0,0,0,.35)}
 </style>
 <div id="fx076" class="clip" data-start="51.5" data-duration="2.5" data-track-index="5"><div class="w">無退路</div></div>
 <script>
-tl.from('#fx076 .w',{scale:1.25,opacity:0,duration:.25,ease:'back.out(1.6)'},T.start); // 對準物件落地嗰格
+tl.from('#fx076 .w',{scale:1.25,opacity:0,duration:.25,ease:EASE.pop},T.start); // 對準物件落地嗰格
 tl.fromTo('#fx076',{scale:1},{scale:1.05,duration:T.dur,ease:'none'},T.start);
 </script>

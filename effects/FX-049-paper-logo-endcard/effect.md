@@ -3,6 +3,7 @@ id: FX-049
 name: 紙紋 Logo 結尾卡
 name_en: paper-logo-endcard
 category: transition
+family: [SP-002]
 tags: [end-card, logo, outro, brand]
 mood: [calm, trustworthy]
 fits: [medical, public-health, corporate, education]

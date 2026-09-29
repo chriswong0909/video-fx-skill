@@ -1,0 +1,10 @@
+/* SP-001 醫療專業 — 由 preset.json 生成（python3 scripts/presets.py build）；品牌檔可以喺之後覆蓋顏色 */
+:root{
+  --c-bg:#ffffff; --c-surface:#f4f7fa; --c-text:#0b2a3a;
+  --c-accent:#0099ce; --c-alert:#e8452c; --c-positive:#1f9d6b;
+  --c-caption-box:#1063be; --c-caption-text:#ffffff;
+  --f-display:'SansTC'; --f-body:'SansTC'; --f-num:'SansTC';
+  --fs-hero:150px; --fs-sub:72px; --fs-label:64px; --fs-caption:80px; --fs-foot:52px;
+  --ease-out:power3.out; --ease-pop:back.out(1.6); --ease-move:power2.inOut; --ease-in:power2.in;
+  --dur-in:.35s; --dur-out:.25s; --dur-move:.6s; --stagger:.08s;
+}

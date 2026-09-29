@@ -1,4 +1,5 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-014 心電圖線 -->
 <svg id="ecg" viewBox="0 0 1080 160" style="position:absolute;left:0;top:1080px;width:1080px;height:160px;z-index:5">
- <path id="ecgPath" d="M40 100 L360 100 L380 70 L400 100 L430 100 L455 20 L485 150 L510 100 L560 100 L585 80 L610 100 L1040 100" fill="none" stroke="var(--brand,#0099ce)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-<script>tl.fromTo('#ecgPath',{attr:{'stroke-dasharray':1180,'stroke-dashoffset':1180}},{attr:{'stroke-dashoffset':0},duration:.9,ease:'power1.inOut'},T.start);</script>
+ <path id="ecgPath" d="M40 100 L360 100 L380 70 L400 100 L430 100 L455 20 L485 150 L510 100 L560 100 L585 80 L610 100 L1040 100" fill="none" stroke="var(--c-accent,#0099ce)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<script>tl.fromTo('#ecgPath',{attr:{'stroke-dasharray':1180,'stroke-dashoffset':1180}},{attr:{'stroke-dashoffset':0},duration:.9,ease:EASE.move},T.start);</script>

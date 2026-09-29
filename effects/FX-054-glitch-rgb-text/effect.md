@@ -3,6 +3,7 @@ id: FX-054
 name: 故障 RGB 分離大字
 name_en: glitch-rgb-text
 category: transition
+family: [SP-003]
 tags: [glitch, rgb-split, big-type, dark]
 mood: [dramatic, edgy, energetic]
 fits: [finance, tech, talking-head, education]

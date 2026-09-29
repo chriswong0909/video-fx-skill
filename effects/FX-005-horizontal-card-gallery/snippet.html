@@ -1,9 +1,10 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-005 橫向卡片畫廊 | 要做成 clip | ITEMS 時間：T.items[i] -->
 <style>
 #fx005{position:absolute;inset:0;z-index:5;background:#efe6da;overflow:hidden}
 #fx005 .track{position:absolute;left:0;top:0;height:1920px;width:3200px}
 #fx005 .card{position:absolute;top:640px;width:600px;height:820px;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(80,50,30,.28)}
-#fx005 .lab{position:absolute;top:470px;width:600px;text-align:center;font-family:"SerifTC";font-weight:900;font-size:104px;color:#8e241f}
+#fx005 .lab{position:absolute;top:470px;width:600px;text-align:center;font-family:var(--f-display,"SerifTC");font-weight:900;font-size:104px;color:#8e241f}
 #fx005 .lab span{display:inline-block;transform:skewX(-10deg)}
 </style>
 <div id="fx005" class="clip" data-start="10.92" data-duration="3.74" data-track-index="4"><div class="track">
@@ -13,8 +14,8 @@
 </div></div>
 <script>
 const L=document.querySelectorAll('#fx005 .lab span'), K=document.querySelectorAll('#fx005 .card');
-tl.fromTo('#fx005 .track',{x:260},{x:0,duration:.9,ease:'power2.out'},T.items[0]);
-T.items.forEach((t,i)=>{ if(i>0) tl.to('#fx005 .track',{x:-640*i,duration:.8,ease:'power2.inOut'},t-.08);
-  tl.from(L[i],{opacity:0,y:40,filter:'blur(10px)',duration:.4,ease:'power3.out'},t);
-  tl.from(K[i],{opacity:0,y:80,rotation:3,duration:.55,ease:'power3.out'},t-.25); });
+tl.fromTo('#fx005 .track',{x:260},{x:0,duration:.9,ease:EASE.out},T.items[0]);
+T.items.forEach((t,i)=>{ if(i>0) tl.to('#fx005 .track',{x:-640*i,duration:.8,ease:EASE.move},t-.08);
+  tl.from(L[i],{opacity:0,y:40,filter:'blur(10px)',duration:.4,ease:EASE.out},t);
+  tl.from(K[i],{opacity:0,y:80,rotation:3,duration:.55,ease:EASE.out},t-.25); });
 </script>

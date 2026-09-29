@@ -3,6 +3,7 @@ id: FX-065
 name: 金句雙色重點字
 name_en: key-quote-twotone
 category: text-fx
+family: [SP-002, SP-005]
 tags: [quote, highlight, two-tone, interview]
 mood: [inspiring, journalistic, clear]
 fits: [interview, documentary, medical, education]

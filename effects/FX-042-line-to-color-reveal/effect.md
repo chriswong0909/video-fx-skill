@@ -3,6 +3,7 @@ id: FX-042
 name: 線稿變彩色
 name_en: line-to-color-reveal
 category: transition
+family: [SP-002]
 tags: [illustration, line-draw, reveal, crayon]
 mood: [friendly, educational, warm]
 fits: [medical, education, explainer]

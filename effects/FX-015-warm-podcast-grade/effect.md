@@ -3,6 +3,7 @@ id: FX-015
 name: 暖色 podcast 調色
 name_en: warm-podcast-grade
 category: grade-light
+family: [SP-002]
 tags: [color-grade, warm, ffmpeg]
 mood: [warm, cozy, editorial]
 fits: [podcast-clip, talking-head, lifestyle]

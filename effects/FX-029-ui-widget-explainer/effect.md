@@ -3,6 +3,7 @@ id: FX-029
 name: UI 元件解說
 name_en: ui-widget-explainer
 category: list-chart
+family: [SP-001]
 tags: [ui, calendar, pill-button, chat-bubble, checklist]
 mood: [clean, modern, clinical]
 fits: [education, medical, lifestyle, product]

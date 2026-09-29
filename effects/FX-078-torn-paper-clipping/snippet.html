@@ -1,3 +1,4 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-078 撕紙剪報 + 螢光筆 | 1080×1920 | 依賴：真實新聞截圖 assets/article.png、撕紙 mask assets/torn.svg | 要做成 clip -->
 <style>
 #fx078{position:absolute;inset:0;z-index:5;background:#2b2b2b;overflow:hidden}
@@ -14,7 +15,7 @@
   <i class="hl" style="left:600px;top:830px;width:480px;background:rgba(255,60,160,.6)"></i></div>
 </div>
 <script>
-tl.from('#fx078 .paper',{y:80,opacity:0,duration:.4,ease:'power2.out'},T.start);
-tl.to('#fx078 .hl',{scaleX:1,duration:.45,stagger:.55,ease:'power1.inOut'},T.start+1);
+tl.from('#fx078 .paper',{y:80,opacity:0,duration:.4,ease:EASE.out},T.start);
+tl.to('#fx078 .hl',{scaleX:1,duration:.45,stagger:.55,ease:EASE.move},T.start+1);
 tl.fromTo('#fx078 .paper',{scale:1},{scale:1.08,y:-120,duration:T.dur,ease:'none'},T.start);
 </script>

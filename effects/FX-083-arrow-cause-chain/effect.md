@@ -3,6 +3,7 @@ id: FX-083
 name: 箭嘴因果鏈
 name_en: arrow-cause-chain
 category: text-fx
+family: [SP-001, SP-003, SP-005]
 tags: [arrow, cause-effect, keyword, logic]
 mood: [educational, energetic, clear]
 fits: [education, medical, commentary, podcast-clip]

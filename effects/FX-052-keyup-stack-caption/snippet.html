@@ -1,7 +1,8 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-052 大字疊行 keyup -->
 <style>.fx052{position:absolute;left:40px;right:40px;top:1080px;text-align:center;z-index:8;opacity:0}
-.fx052 b{display:block;font:900 110px/0.98 'SansTC';color:#fff;-webkit-text-stroke:6px #111;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.45)}
+.fx052 b{display:block;font:900 110px/0.98 var(--f-body,'SansTC');color:#fff;-webkit-text-stroke:6px #111;paint-order:stroke fill;text-shadow:0 6px 18px rgba(0,0,0,.45)}
 .fx052 b.k{font-size:165px}</style>
 <div class="fx052" id="ku1"><b>想</b><b class="k">財務</b><b class="k">自由</b></div>
 <script>tl.set('#ku1',{opacity:1},T.start);tl.set('#ku1',{opacity:0},T.end);
-tl.from(document.querySelectorAll('#ku1 b'),{scale:1.25,opacity:0,duration:.12,stagger:.08,ease:'back.out(2)'},T.start);</script>
+tl.from(document.querySelectorAll('#ku1 b'),{scale:1.25,opacity:0,duration:.12,stagger:.08,ease:EASE.pop},T.start);</script>

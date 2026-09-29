@@ -3,6 +3,7 @@ id: FX-058
 name: 黑底圓角相片插入
 name_en: rounded-photo-insert
 category: cutaway
+family: [SP-002, SP-004]
 tags: [photo, insert, rounded, archive]
 mood: [calm, documentary, premium]
 fits: [interview, documentary, entertainment, podcast-clip]

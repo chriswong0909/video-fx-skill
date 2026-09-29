@@ -1,0 +1,81 @@
+{
+ "id": "SP-005",
+ "name": "新聞手作",
+ "en": "News Handmade",
+ "mood_zh": "專業醫療",
+ "for_types": [
+  "新聞資訊",
+  "口播知識",
+  "動畫解說"
+ ],
+ "tokens": {
+  "bg": "#f4f2ee",
+  "surface": "#fbfaf7",
+  "text": "#1c1c1c",
+  "accent": "#1c3d6e",
+  "alert": "#e8452c",
+  "positive": "#ffd400",
+  "caption_box": "#1c3d6e",
+  "caption_text": "#ffffff",
+  "f_display": "'SerifTC'",
+  "f_body": "'SansTC'",
+  "f_num": "'SansTC'",
+  "ease_out": "power2.out",
+  "ease_pop": "back.out(1.8)",
+  "ease_move": "power2.inOut",
+  "ease_in": "power2.in",
+  "dur_in": ".35s",
+  "dur_out": ".25s",
+  "dur_move": ".6s",
+  "stagger": ".08s"
+ },
+ "colour_meaning": {
+  "accent": "標題、機構",
+  "alert": "問題、數字衝擊",
+  "positive": "螢光筆重點（只做底色，唔做字）"
+ },
+ "grade": "GR-006",
+ "grade_alt": [
+  "GR-001"
+ ],
+ "captions": [
+  "FX-051",
+  "FX-039"
+ ],
+ "transitions": [
+  "FX-079",
+  "FX-040"
+ ],
+ "sfx": {
+  "pack": "curated",
+  "categories": [
+   "foley",
+   "ui",
+   "impact"
+  ],
+  "density": "中"
+ },
+ "effects": [
+  "FX-022",
+  "FX-024",
+  "FX-025",
+  "FX-039",
+  "FX-040",
+  "FX-047",
+  "FX-048",
+  "FX-051",
+  "FX-064",
+  "FX-065",
+  "FX-066",
+  "FX-067",
+  "FX-078",
+  "FX-079",
+  "FX-080",
+  "FX-081",
+  "FX-083"
+ ],
+ "dont": [
+  "唔用玻璃擬態、霓虹發光",
+  "黃色只做螢光筆底，唔做字色"
+ ]
+}

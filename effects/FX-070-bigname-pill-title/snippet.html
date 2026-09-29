@@ -1,12 +1,13 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-070 大字英文名 + 膠囊職銜 | 1080×1920 | 依賴：SansTC -->
 <style>
 #fx070{position:absolute;left:90px;top:1180px;z-index:8}
-#fx070 .nm{font:900 120px/1 'SansTC';color:#fff;letter-spacing:.02em;text-shadow:0 4px 14px rgba(0,0,0,.35)}
-#fx070 .pill{display:inline-block;margin-top:14px;background:var(--brand,#2a6be0);color:#fff;font:500 64px/1 'SansTC';padding:14px 26px;border-radius:8px}
+#fx070 .nm{font:900 120px/1 var(--f-body,'SansTC');color:#fff;letter-spacing:.02em;text-shadow:0 4px 14px rgba(0,0,0,.35)}
+#fx070 .pill{display:inline-block;margin-top:14px;background:var(--c-accent,#2a6be0);color:#fff;font:500 64px/1 var(--f-body,'SansTC');padding:14px 26px;border-radius:8px}
 </style>
 <div id="fx070"><div class="nm">陳大文</div><div class="pill">東華醫院藥劑部主管</div></div>
 <script>
-tl.from('#fx070 .pill',{x:-40,opacity:0,duration:.3,ease:'power2.out'},T.start);
-tl.fromTo('#fx070 .nm',{clipPath:'inset(100% 0 0 0)',y:20},{clipPath:'inset(0% 0 0 0)',y:0,duration:.35,ease:'power3.out'},T.start+.15);
+tl.from('#fx070 .pill',{x:-40,opacity:0,duration:.3,ease:EASE.out},T.start);
+tl.fromTo('#fx070 .nm',{clipPath:'inset(100% 0 0 0)',y:20},{clipPath:'inset(0% 0 0 0)',y:0,duration:.35,ease:EASE.out},T.start+.15);
 tl.to('#fx070',{opacity:0,duration:.25},T.end-.25);
 </script>

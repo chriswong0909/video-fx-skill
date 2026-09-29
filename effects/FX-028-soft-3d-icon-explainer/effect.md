@@ -3,6 +3,7 @@ id: FX-028
 name: 柔和 3D 圖示解說
 name_en: soft-3d-icon-explainer
 category: cutaway
+family: [SP-001]
 tags: [icons, 3d, explainer, sequence, clinical]
 mood: [clean, clinical, calm, educational]
 fits: [medical, education, science]

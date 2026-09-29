@@ -3,6 +3,7 @@ id: FX-086
 name: 品牌色塊幾何轉場
 name_en: brand-block-wipe
 category: transition
+family: [SP-003]
 tags: [brand, geometric, blocks, opening, wipe]
 mood: [energetic, bold, modern]
 fits: [opening, podcast-clip, brand, interview]
