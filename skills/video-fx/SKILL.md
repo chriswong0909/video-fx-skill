@@ -107,11 +107,15 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
    - 只係某條片唔啱用 → 唔好禁用。
 4. 新技術坑寫入 `lessons/`；新品牌寫入 `brands/`；用過嘅聲效喺 sound.md `used_in` 加專案。
 5. `node scripts/build-registry.mjs` + `node scripts/build-gallery.mjs`，將 `gallery/artifact.html` 重新發佈到效果目錄同一連結（被拒就讀返網上最新版合併再發佈）。
-6. 已連接資料夾入面 git 會因 lock 檔失敗：唔好喺入面行 git。
-7. 最後同使用者講：新增／更新／禁用／移除咗邊啲效果（FX-id + 一句描述），**並提醒佢喺 Mac Terminal 行 `bash ~/Documents/GitHub/video-fx-skill/sync.sh` 同步去 GitHub**。
+6. 同步 GitHub（repo：`chriswong0909/video-fx-skill`，branch `main`）：
+   - 先喺本機 commit：device_bash `cd LIBRARY && git add -A && git commit -m "..."`（行完確認冇 `.git/index.lock` 殘留；有就刪）。
+   - **只改文字檔**（.md/.json/.html/.mjs/.py/.sh）：再用 GitHub MCP（`mcp__remote-devices__github__push_files`，用 ToolSearch 載入）將同一批檔案、同一句 commit message 推上 `main`；之後本機同步時 git 會自動略過重複 commit。
+   - **有二進制檔**（preview.mp4、preview.jpg、sound.mp3 等，GitHub MCP 推唔到）：唔好用 MCP 推，提醒使用者喺 Finder 雙擊 `Documents/GitHub/video-fx-skill/推上GitHub.command`，完成後用 `list_commits` 核對。
+   - 永遠唔好問使用者攞 token／密碼。
+7. 最後同使用者講：新增／更新／禁用／移除咗邊啲效果（FX-id + 一句描述），同埋 GitHub 已推送定係要佢雙擊同步檔。
 
 ## 類別
-caption 基本字幕（FX-039／FX-051 呢類）｜text-fx 特效字｜hook 開場｜camera 鏡頭｜cutaway 全屏過場｜list-chart 清單／卡片｜layout 版面｜transition 轉場｜grade-light 調色／補光｜accent 點綴｜sound 聲效
+caption 基本字幕（FX-039／FX-051 呢類）｜text-fx 特效字｜hook 開場｜camera 鏡頭｜cutaway 全屏過場｜list-chart 清單／卡片｜layout 版面｜transition 轉場｜grade-light 調色／補光｜accent 點綴（聲效唔入 effects，放 sounds/）
 
 ## 原則
 - 用效果時註明 FX-id。
