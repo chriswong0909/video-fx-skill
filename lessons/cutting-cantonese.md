@@ -26,7 +26,7 @@ python3 tools/cut.py apply source.mp4 work/cuts.json work/clean.mp4
 | 重複單字 | review（可能係正常疊字） |
 | 疊字白名單 | 慢慢、啱啱、好好、個個、少少、日日、成日… 唔當口吃 |
 | 醫療限定詞 | 唔／冇／可能／或者／建議／除非／通常／副作用… 喺範圍入面 → 永遠降做 review |
-| ASR 低信心（p < 0.35） | 只提示，可能講錯或者聽錯 |
+| ASR 低信心（p < 0.10） | 只喺 review.md 底部列出，方便核對字幕，唔會剪 |
 
 ## 渲染
 - 只 render 一次；每段接位 25ms 聲音淡入淡出，冇卜卜聲。

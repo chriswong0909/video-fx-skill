@@ -237,7 +237,7 @@ def analyze(video, asr, outdir, pace="medium", gap=None):
 
     # 5) 低信心字（可能講錯／ASR 錯）→ 只提示
     for w in words:
-        if w.get("p", 1) < 0.35 and len(w["core"]) >= 1:
+        if w.get("p", 1) < 0.10 and len(w["core"]) >= 1:  # 廣東話 whisper 信心普遍偏低，只標最低嗰啲
             cands.append({"kind": "low-conf", "start": snap(w["start"], fps), "end": snap(w["end"], fps),
                           "status": "keep", "why": f"ASR 信心低 ({w['p']:.2f})，可能講錯或者聽錯，只供參考", "text": w["core"]})
 
@@ -297,10 +297,16 @@ def write_review(doc, path):
          "| # | 類型 | 原片時間 | 長度 | 內容（［］= 會剪嘅位） | 原因 | 狀態 |", "|---|---|---|---|---|---|---|"]
     zh = {"head": "片頭空白", "tail": "片尾空白", "pause": "停頓", "pause-unverified": "停頓(未確認)", "filler": "口頭聲",
           "filler?": "口頭禪?", "stutter": "重複", "low-conf": "低信心"}
+    low = [c for c in doc["cuts"] if c["kind"] == "low-conf"]
     for c in doc["cuts"]:
+        if c["kind"] == "low-conf":
+            continue
         st = {"cut": "**cut**", "review": "**review**", "keep": "keep"}[c["status"]]
         L.append(f"| {c['id']} | {zh.get(c['kind'], c['kind'])} | {c['start']:.2f}–{c['end']:.2f} | {c['end']-c['start']:.2f}s | "
                  f"{c['context']} | {c['why']} | {st} |")
+    if low:
+        L += ["", f"## ASR 低信心字（{len(low)} 個，只供核對字幕用，唔會剪）",
+              "、".join(f"{c['start']:.1f}s「{c['text']}」" for c in low)]
     L += ["", "## 接位處理（剪完之後）",
           "每個接位喺 clean.mp4 會跳一下（jump cut）。分鏡時喺接位轉機位（W→M→C）或者用 FX-040 推入遮住；"
           "唔好兩個接位之間少過 1.2s 都用同一個機位。接位時間見 edl.json 嘅 `joins`。"]
@@ -328,12 +334,12 @@ def apply(video, cutsfile, out, crf=18, preset="veryfast", voice=True):
         d = b - a
         fo = max(d - FADE, 0)
         parts.append(f"[0:v]trim=start_frame={fa}:end_frame={fb},setpts=PTS-STARTPTS[v{i}]")
-        parts.append(f"[0:a]atrim=start={a:.6f}:end={b:.6f},asetpts=PTS-STARTPTS,"
+        parts.append(f"[0:a]atrim=start={a:.6f}:end={b:.6f},asetpts=PTS-STARTPTS,aformat=sample_rates=48000:channel_layouts=stereo,"
                      f"afade=t=in:st=0:d={FADE},afade=t=out:st={fo:.4f}:d={FADE}[a{i}]")
         vl += f"[v{i}][a{i}]"
     fc = ";".join(parts) + f";{vl}concat=n={len(ks)}:v=1:a=1[v][ac]"
     total = sum(b - a for a, b in ks)
-    fc += (f";[ac]{VOICE},aresample=48000,atrim=0:{total:.6f}[a]" if voice else ";[ac]anull[a]")
+    fc += (f";[ac]{VOICE},aresample=48000,aformat=sample_rates=48000:channel_layouts=stereo,atrim=0:{total:.6f}[a]" if voice else ";[ac]anull[a]")
     fcf = os.path.join(outdir, "cut-filter.txt")
     open(fcf, "w").write(fc)
     sh(["ffmpeg", "-y", "-hide_banner", "-loglevel", "error", "-i", video, "-filter_complex_script", fcf,
