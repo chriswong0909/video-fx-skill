@@ -1,0 +1,14 @@
+<!-- FX-040 平滑推鏡 | 結構同 FX-009：#cam > #camInner(transform-origin 眼睛高度) > video -->
+<!-- 用喺重點句：由上一個機位 0.24 秒順滑推去下一個機位，代替硬切 -->
+<script>
+// FR：固定機位；SHOTS=[[開始,結束,'W'|'M'|'C','cut'|'smooth'],...]
+const FR={W:1.0,M:1.3,C:1.7};
+tl.set('#camInner',{transformOrigin:'540px 640px'},0);   // 640 = 眼睛高度（按面部偵測調整）
+SHOTS.forEach(([a,b,f,how])=>{const S=FR[f];
+  if(how==='smooth'){
+    tl.to('#camInner',{scale:S,duration:.24,ease:'power2.inOut'},a-.12);          // 平滑推入
+    tl.to('#camInner',{scale:S*1.03,duration:b-a-.12,ease:'none'},a+.12);          // 鏡內慢推 3%
+  }else{
+    tl.set('#camInner',{scale:S},a);tl.to('#camInner',{scale:S*1.03,duration:b-a,ease:'none'},a);
+  }});
+</script>

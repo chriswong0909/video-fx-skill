@@ -1,0 +1,5 @@
+<!-- FX-035 裝置畫面 + 大數字 -->
+<style>#fx035dev{position:absolute;left:90px;top:760px;width:900px;height:620px;border-radius:36px;background:#111;padding:22px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.25);z-index:6}
+#fx035dev img{width:100%;display:block;border-radius:18px}#fx035num{position:absolute;left:0;right:0;top:520px;text-align:center;font:900 150px 'SansTC';background:linear-gradient(#9aa4ff,#5b5fe0);-webkit-background-clip:text;color:transparent;z-index:6}</style>
+<div id="fx035num">10 年</div><div id="fx035dev"><img id="shot" src="assets/portfolio.jpg"></div>
+<script>tl.fromTo('#shot',{y:0},{y:-200,duration:T.end-T.start,ease:'none'},T.start);tl.from('#fx035num',{scale:1.2,opacity:0,duration:.3},T.num);</script>

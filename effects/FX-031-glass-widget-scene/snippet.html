@@ -1,0 +1,6 @@
+<!-- FX-031 玻璃元件 + 場景 | 要做成 clip -->
+<style>#fx031{position:absolute;inset:0;z-index:5;overflow:hidden}#fx031 .bg{position:absolute;inset:0;background:url(assets/scene.jpg) center/cover}
+#fx031 .glass{position:absolute;left:190px;top:760px;width:700px;height:560px;border-radius:40px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(18px)}
+#fx031 .big{position:absolute;left:0;right:0;top:520px;text-align:center;font:900 170px 'SansTC';background:linear-gradient(#e3d9ff,#7c6cf0);-webkit-background-clip:text;color:transparent}</style>
+<div id="fx031" class="clip" data-start="0.5" data-duration="3.6" data-track-index="3"><div class="bg"></div><div class="big">2025</div><div class="glass"></div></div>
+<script>tl.fromTo('#fx031 .bg',{scale:1},{scale:1.06,duration:3.6,ease:'none'},T.start);tl.from('#fx031 .glass',{y:80,opacity:0,duration:.5},T.start+.1);tl.from('#fx031 .big',{opacity:0,scale:.9,duration:.4},T.big);</script>

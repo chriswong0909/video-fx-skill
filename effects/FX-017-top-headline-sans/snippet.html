@@ -1,0 +1,7 @@
+<!-- FX-017 頭頂大字 -->
+<style>.fx017{position:absolute;left:50px;right:50px;top:140px;z-index:7;opacity:0}
+.fx017 .s{font-family:"SansTC";font-weight:500;font-size:76px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.45)}
+.fx017 .b{display:block;font-family:"SansTC";font-weight:900;font-size:190px;line-height:1;color:#fff;letter-spacing:-2px;white-space:nowrap;text-shadow:0 6px 24px rgba(0,0,0,.35)}</style>
+<div class="fx017" id="h1"><span class="s w">其實如果</span><span class="b w">衰退</span></div>
+<script>const H=document.querySelectorAll('#h1 .w');tl.set('#h1',{opacity:1},T.start);tl.set('#h1',{opacity:0},T.end);
+tl.from(H[0],{opacity:0,y:16,duration:.25},T.w0);tl.from(H[1],{opacity:0,scale:1.15,transformOrigin:'0 100%',duration:.22,ease:'power4.out'},T.w1);</script>

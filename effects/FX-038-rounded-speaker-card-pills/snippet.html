@@ -1,0 +1,6 @@
+<!-- FX-038 圓角講者卡 + 膠囊清單 -->
+<script>
+tl.set('#panel',{opacity:1,background:'#1c3d6e'},T.start);
+tl.to('#cam',{scale:.55,y:-120,clipPath:'inset(300px 180px 520px 180px round 60px)',duration:.5,ease:'power3.inOut'},T.start);
+T.items.forEach((t,i)=>{tl.from('#pill'+(i+1),{x:-60,opacity:0,duration:.3},t);tl.from('#obj'+(i+1),{scale:0,duration:.35,ease:'back.out(2)'},t+.05);});
+</script>

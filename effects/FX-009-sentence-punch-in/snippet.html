@@ -1,9 +1,0 @@
-<!-- FX-009 按句推鏡 | 結構：#cam > #camInner(transform-origin 臉部) > video -->
-<style>#cam{position:absolute;inset:0;overflow:hidden;z-index:1}
-#camInner{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 660px}
-#camInner video{width:1080px;height:1920px;object-fit:cover}</style>
-<script>
-// [start,end,scaleStart,scaleEnd,yOffset]
-const SHOTS=[[0,2.72,1.85,1.92,60],[2.72,4.04,2.2,2.26,0]];
-SHOTS.forEach(([a,b,s0,s1,y])=>{tl.set('#camInner',{scale:s0,y:y},a);tl.to('#camInner',{scale:s1,duration:b-a,ease:'none'},a);});
-</script>

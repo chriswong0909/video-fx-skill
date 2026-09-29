@@ -1,0 +1,12 @@
+<!-- FX-051 實色方框字幕 | 依賴：SansTC 900 | tl、PHRASES=[[文字,開始秒,結束秒],...] 由外部提供 -->
+<style>
+#fx050{position:absolute;left:40px;right:40px;top:1530px;height:110px;z-index:7;text-align:center}
+#fx050 span{position:absolute;left:50%;top:0;transform:translateX(-50%);white-space:nowrap;opacity:0;
+ background:var(--caption-box,#1063be);color:#fff;font:900 82px/1.2 'SansTC';letter-spacing:2px;padding:8px 26px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+</style>
+<div id="fx050"></div>
+<script>
+const box050=document.getElementById('fx050');
+PHRASES.forEach(([txt,t0,t1])=>{const s=document.createElement('span');s.textContent=txt;box050.appendChild(s);
+ tl.set(s,{opacity:1},t0); tl.set(s,{opacity:0},t1);});
+</script>

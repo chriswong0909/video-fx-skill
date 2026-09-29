@@ -1,0 +1,5 @@
+<!-- FX-025 虛線路徑 -->
+<svg viewBox="0 0 1080 1920" style="position:absolute;inset:0;z-index:5">
+ <defs><mask id="fx025m"><path id="fx025mp" d="M540 1500 C 200 1300, 900 1100, 600 800" stroke="#fff" stroke-width="12" fill="none"/></mask></defs>
+ <path d="M540 1500 C 200 1300, 900 1100, 600 800" stroke="#333" stroke-width="3" stroke-dasharray="10 8" fill="none" mask="url(#fx025m)"/></svg>
+<script>tl.fromTo('#fx025mp',{attr:{'stroke-dasharray':1400,'stroke-dashoffset':1400}},{attr:{'stroke-dashoffset':0},duration:.8,ease:'power1.inOut'},T.start);</script>

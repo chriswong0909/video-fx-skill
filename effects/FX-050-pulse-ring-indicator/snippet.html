@@ -1,0 +1,6 @@
+<!-- FX-050 同心圓脈衝 -->
+<div id="fx048" style="position:absolute;left:260px;top:560px;width:120px;height:120px;z-index:6">
+ <span class="r" style="position:absolute;inset:0;border:8px solid #e8452c;border-radius:50%"></span><span class="r" style="position:absolute;inset:0;border:8px solid #f07a28;border-radius:50%"></span>
+ <span style="position:absolute;left:53px;top:53px;width:14px;height:14px;border-radius:50%;background:#e8452c"></span></div>
+<script>const rings=document.querySelectorAll('#fx048 .r');const reps=Math.ceil((T.end-T.start)/0.9)-1;
+rings.forEach((r,i)=>tl.fromTo(r,{scale:.3,opacity:1},{scale:1.4,opacity:0,duration:.9,repeat:reps,ease:'power1.out'},T.start+i*.3));</script>

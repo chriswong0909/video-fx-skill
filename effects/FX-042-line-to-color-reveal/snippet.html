@@ -1,0 +1,7 @@
+<!-- FX-042 線稿變彩色 -->
+<div id="fx040" style="position:absolute;left:190px;top:560px;width:700px;height:700px;z-index:4">
+ <img id="fx040line" src="assets/heart_line.png" style="position:absolute;inset:0;width:100%">
+ <img id="fx040col" src="assets/heart_color.png" style="position:absolute;inset:0;width:100%;clip-path:inset(100% 0 0 0)"></div>
+<script>tl.from('#fx040line',{opacity:0,duration:.3},T.start);
+tl.to('#fx040col',{clipPath:'inset(0% 0 0 0)',duration:.5,ease:'power2.out'},T.start+.45);
+tl.to('#fx040line',{opacity:0,duration:.2},T.start+.9);</script>

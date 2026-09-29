@@ -1,0 +1,6 @@
+<!-- FX-037 膠囊關鍵詞 -->
+<style>.fx037big{font:900 150px 'SansTC';color:#1c3d6e;line-height:1}.fx037pill{display:inline-block;background:#1c3d6e;color:#fff;border-radius:999px;padding:6px 22px;font:700 64px 'SansTC';transform-origin:0 50%}
+.fx037tag{position:absolute;background:#2f6fd6;color:#fff;border-radius:999px;padding:3px 12px;font:700 64px 'SansTC';z-index:8}</style>
+<div class="cap" style="top:300px"><span class="fx037big" id="pk">切除</span> <span class="fx037pill" id="pp">椎間盤</span></div>
+<span class="fx037tag" id="t1" style="left:200px;top:280px">年輕</span><span class="fx037tag" id="t2" style="left:760px;top:270px">健康</span>
+<script>tl.from('#pk',{opacity:0,y:30,duration:.3},T.w0);tl.from('#pp',{scaleX:0,duration:.25},T.w1);tl.from(['#t1','#t2'],{opacity:0,x:-40,scale:.5,stagger:.12,duration:.3,ease:'back.out(2)'},T.w1+.2);</script>

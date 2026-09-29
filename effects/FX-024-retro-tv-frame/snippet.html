@@ -1,0 +1,6 @@
+<!-- FX-024 復古電視 -->
+<style>#fx024{position:absolute;left:300px;top:760px;width:480px;height:400px;z-index:6}
+#fx024 .scr{position:absolute;left:38px;top:34px;width:330px;height:250px;overflow:hidden;border-radius:18px;filter:grayscale(1) contrast(1.1)}
+#fx024 .scr video{width:100%;height:100%;object-fit:cover}#fx024 img{position:absolute;inset:0;width:100%}</style>
+<div id="fx024"><div class="scr"><video data-start="3.5" data-duration="2.5" data-track-index="4" src="assets/clip.mp4" muted playsinline></video></div><img src="assets/tv_frame.png"></div>
+<script>tl.from('#fx024',{scale:.9,rotation:3,opacity:0,duration:.4,ease:'back.out(1.6)'},T.start);</script>

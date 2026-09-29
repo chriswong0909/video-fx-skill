@@ -16,7 +16,9 @@
 | `tools/` | asr.py（廣東話轉錄）、relight.py（人像補光） |
 
 ## 目前效果
-見 [effects/INDEX.md](effects/INDEX.md)。
+- 網頁目錄（有動態預覽）：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ
+- 本機版：`gallery/index.html`
+- 文字版：[effects/INDEX.md](effects/INDEX.md)
 
 ## 使用方法
 - **Cowork**：安裝呢個 repo 做 plugin，或者對 Claude 講「用 video-fx 幫我剪片」。Claude 會讀 `~/Documents/GitHub/video-fx-skill` 入面最新嘅效果庫。

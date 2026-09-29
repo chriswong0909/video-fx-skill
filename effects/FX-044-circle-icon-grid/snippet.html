@@ -1,0 +1,6 @@
+<!-- FX-044 圓形插圖格 -->
+<style>.fx042{position:absolute;width:380px;text-align:center;z-index:4}.fx042 .c{width:380px;height:380px;border-radius:50%;background:#f5b48a;overflow:hidden}
+.fx042 .c img{width:100%}.fx042 b{display:block;margin-top:10px;font:900 44px 'SansTC';color:#4a3326;-webkit-text-stroke:8px #fff;paint-order:stroke fill}</style>
+<div class="fx042" id="g1" style="left:130px;top:360px"><div class="c"><img src="assets/s1.png"></div><b>心絞痛</b></div>
+<div class="fx042" id="g2" style="left:570px;top:360px"><div class="c"><img src="assets/s2.png"></div><b>呼吸困難</b></div>
+<script>['#g1','#g2'].forEach((g,i)=>{tl.from(g+' .c',{scale:0,duration:.35,ease:'back.out(1.6)'},T.items[i]);tl.from(g+' b',{opacity:0,y:20,duration:.25},T.items[i]+.15);});</script>

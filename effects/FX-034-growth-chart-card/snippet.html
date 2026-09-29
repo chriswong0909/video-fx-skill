@@ -1,0 +1,6 @@
+<!-- FX-034 增長曲線 -->
+<svg id="fx034" viewBox="0 0 800 600" style="position:absolute;left:140px;top:700px;width:800px;height:600px;z-index:6">
+ <defs><linearGradient id="g34" x1="0" x2="1"><stop offset="0" stop-color="#7c9bff"/><stop offset="1" stop-color="#4b3cf0"/></linearGradient></defs>
+ <rect x="1" y="1" width="798" height="598" rx="30" fill="rgba(255,255,255,.5)" stroke="#9fb3ff"/>
+ <path id="p34" d="M40 540 C 300 520, 520 420, 760 60" stroke="url(#g34)" stroke-width="8" fill="none" stroke-linecap="round"/></svg>
+<script>tl.fromTo('#p34',{attr:{'stroke-dasharray':1000,'stroke-dashoffset':1000}},{attr:{'stroke-dashoffset':0},duration:.9,ease:'power2.out'},T.start);tl.from('#fx034',{scale:.8,duration:1.5,ease:'power2.inOut'},T.start);</script>

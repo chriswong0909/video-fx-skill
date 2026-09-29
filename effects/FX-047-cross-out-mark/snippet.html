@@ -1,0 +1,5 @@
+<!-- FX-047 打交叉 -->
+<svg id="fx045" viewBox="0 0 600 600" style="position:absolute;left:240px;top:600px;width:600px;height:600px;z-index:6">
+ <defs><filter id="crayon"><feTurbulence baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="6"/></filter></defs>
+ <g stroke="#b3202c" stroke-width="26" stroke-linecap="round" filter="url(#crayon)"><path id="x1" d="M110 90 L500 500"/><path id="x2" d="M500 90 L110 500"/></g></svg>
+<script>['#x1','#x2'].forEach((x,i)=>tl.fromTo(x,{attr:{'stroke-dasharray':560,'stroke-dashoffset':560}},{attr:{'stroke-dashoffset':0},duration:.2,ease:'power2.out'},T.start+i*.25));</script>

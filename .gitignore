@@ -1,7 +1,12 @@
 .DS_Store
 node_modules/
-*.mp4
 *.mov
 *.wav
 *.onnx
 work/
+# 影片一律唔上傳，只保留效果預覽片（細檔）
+*.mp4
+!effects/**/preview.mp4
+# 自動生成嘅網頁（用 node scripts/build-gallery.mjs 重建）
+gallery/artifact.html
+gallery/index.html

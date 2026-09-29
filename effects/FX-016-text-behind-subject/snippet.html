@@ -1,0 +1,7 @@
+<!-- FX-016 文字喺人物後面 | 需要 fg.webm（有 alpha 嘅人物層） -->
+<style>#fx016txt{position:absolute;left:0;right:0;top:300px;text-align:center;z-index:3;font-family:"SansTC";font-weight:900;font-size:220px;color:var(--brand,#1c3d6e);letter-spacing:-4px}
+#fx016fg{position:absolute;inset:0;z-index:4}</style>
+<video id="fx016bg" data-start="0" data-duration="1.2" data-track-index="0" src="assets/bg.mp4" muted playsinline style="position:absolute;inset:0;z-index:1"></video>
+<div id="fx016txt">受損</div>
+<video id="fx016fg" data-start="0" data-duration="1.2" data-track-index="2" src="assets/fg_alpha.webm" muted playsinline></video>
+<script>tl.from('#fx016txt',{y:40,opacity:0,duration:.35,ease:'power3.out'},T.start);</script>

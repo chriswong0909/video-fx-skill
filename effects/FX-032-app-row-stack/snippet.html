@@ -1,0 +1,6 @@
+<!-- FX-032 清單列堆疊 -->
+<style>#fx032{position:absolute;inset:0;z-index:5;background:#f6f6f9 linear-gradient(rgba(0,0,0,.04) 1px,transparent 1px) 0 0/40px 40px}
+#fx032 .row{position:absolute;left:220px;display:flex;align-items:center;gap:22px;font:700 64px 'SansTC';color:#222}#fx032 .ic{width:60px;height:60px;border-radius:14px;background:#fff;box-shadow:0 6px 16px rgba(0,0,0,.1)}</style>
+<div id="fx032" class="clip" data-start="7.5" data-duration="2.5" data-track-index="3">
+ <div class="row" style="top:800px"><span class="ic"></span>項目一</div><div class="row" style="top:900px"><span class="ic"></span>項目二</div><div class="row" style="top:1000px"><span class="ic"></span>項目三</div></div>
+<script>tl.from('#fx032 .row',{opacity:0,y:40,stagger:.25,duration:.3,ease:'power2.out'},T.start);</script>

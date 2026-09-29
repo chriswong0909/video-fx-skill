@@ -1,0 +1,4 @@
+<!-- FX-033 通知堆疊 -->
+<style>.fx033{position:absolute;left:110px;width:860px;height:130px;border-radius:26px;background:rgba(255,255,255,.94);box-shadow:0 16px 40px rgba(0,0,0,.15);z-index:6;font:700 64px 'SansTC';padding:30px 40px;color:#222}</style>
+<div class="fx033" id="n1" style="top:700px">未知來電</div><div class="fx033" id="n2" style="top:700px">新訊息：想合作</div>
+<script>['#n1','#n2'].forEach((n,i)=>{const t=T.start+i*.3;tl.from(n,{y:-120,opacity:0,duration:.3,ease:'back.out(1.6)'},t);if(i>0)tl.to(['#n1','#n2'].slice(0,i),{scale:.94,y:'+=18',opacity:.7,duration:.25},t);});</script>

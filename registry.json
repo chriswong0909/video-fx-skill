@@ -1,128 +1,85 @@
 {
- "generated": "2026-09-28",
- "count": 15,
+ "generated": "2026-09-29",
+ "count": 60,
  "by_category": {
-  "caption": [
-   "FX-001",
-   "FX-007",
-   "FX-008",
-   "FX-012",
-   "FX-013"
-  ],
-  "hook": [
-   "FX-002"
-  ],
   "cutaway": [
    "FX-003",
-   "FX-004"
+   "FX-004",
+   "FX-021",
+   "FX-028",
+   "FX-031",
+   "FX-041",
+   "FX-053",
+   "FX-058",
+   "FX-061"
   ],
   "list-chart": [
-   "FX-005"
+   "FX-005",
+   "FX-029",
+   "FX-032",
+   "FX-034",
+   "FX-035",
+   "FX-044",
+   "FX-066",
+   "FX-067"
   ],
   "transition": [
-   "FX-006"
-  ],
-  "camera": [
-   "FX-009"
+   "FX-006",
+   "FX-026",
+   "FX-040",
+   "FX-042",
+   "FX-046",
+   "FX-049",
+   "FX-054"
   ],
   "layout": [
-   "FX-010"
+   "FX-010",
+   "FX-024",
+   "FX-036",
+   "FX-038"
   ],
-  "grade-light": [
-   "FX-011",
-   "FX-015"
+  "text-fx": [
+   "FX-013",
+   "FX-016",
+   "FX-017",
+   "FX-018",
+   "FX-019",
+   "FX-020",
+   "FX-027",
+   "FX-037",
+   "FX-045",
+   "FX-048",
+   "FX-052",
+   "FX-056",
+   "FX-059",
+   "FX-064",
+   "FX-065"
   ],
   "accent": [
-   "FX-014"
+   "FX-014",
+   "FX-022",
+   "FX-023",
+   "FX-025",
+   "FX-030",
+   "FX-033",
+   "FX-043",
+   "FX-047",
+   "FX-050",
+   "FX-055",
+   "FX-057",
+   "FX-062",
+   "FX-063"
+  ],
+  "grade-light": [
+   "FX-015"
+  ],
+  "caption": [
+   "FX-039",
+   "FX-051",
+   "FX-060"
   ]
  },
  "effects": [
-  {
-   "id": "FX-001",
-   "name": "兩層金色斜體字幕",
-   "name_en": "two-tier-gold-caption",
-   "category": "caption",
-   "tags": [
-    "kinetic-type",
-    "serif",
-    "gradient-text",
-    "word-sync"
-   ],
-   "mood": [
-    "warm",
-    "editorial",
-    "premium"
-   ],
-   "fits": [
-    "talking-head",
-    "podcast-clip",
-    "education",
-    "medical"
-   ],
-   "pairs_with": [
-    "FX-002",
-    "FX-009",
-    "FX-015"
-   ],
-   "conflicts_with": [
-    "FX-012"
-   ],
-   "needs": [
-    "word-timestamps"
-   ],
-   "brand_color_ready": true,
-   "source": "ref1-glucose-podcast 0:00–0:10",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-ref1style"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-001-two-tier-gold-caption",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "上面一行細、幼身白色無襯線字逐詞出現；重點詞用超大粗襯線字，金橙漸變、斜體（skew -10°），逐字模糊放大入場。"
-  },
-  {
-   "id": "FX-002",
-   "name": "頭像資料卡開場",
-   "name_en": "profile-hook-card",
-   "category": "hook",
-   "tags": [
-    "profile",
-    "social",
-    "header"
-   ],
-   "mood": [
-    "warm",
-    "friendly",
-    "editorial"
-   ],
-   "fits": [
-    "talking-head",
-    "podcast-clip",
-    "medical",
-    "education"
-   ],
-   "pairs_with": [
-    "FX-001",
-    "FX-009"
-   ],
-   "conflicts_with": [],
-   "needs": [
-    "avatar-image"
-   ],
-   "brand_color_ready": true,
-   "source": "ref1-glucose-podcast 0:00–3:00",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-ref1style"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-002-profile-hook-card",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "開頭 0–3 秒頂部出現淺色資料卡：圓形頭像（漸變彩環）+ 名稱 + 副標，由上滑入，建立「呢個係邊個」嘅信任感。"
-  },
   {
    "id": "FX-003",
    "name": "全屏物件過場",
@@ -144,10 +101,20 @@
     "education",
     "medical"
    ],
+   "video_types": [
+    "口播知識",
+    "醫療健康",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
    "pairs_with": [
-    "FX-001",
     "FX-004",
-    "FX-015"
+    "FX-015",
+    "FX-021",
+    "FX-028"
    ],
    "conflicts_with": [],
    "needs": [
@@ -157,8 +124,12 @@
    "source": "ref1-glucose-podcast 3:00–4:00（腦）",
    "learned": "2026-09-28",
    "used_in": [
-    "doctor2-ref1style"
+    "doctor2-ref1style",
+    "doctor-stairs-breath"
    ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "大字每行最多 5 個字。",
    "difficulty": "medium",
    "path": "effects/FX-003-fullscreen-object-cutaway",
    "has_snippet": true,
@@ -187,8 +158,16 @@
     "education",
     "medical"
    ],
+   "video_types": [
+    "口播知識",
+    "產品廣告",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
    "pairs_with": [
-    "FX-001",
     "FX-003"
    ],
    "conflicts_with": [],
@@ -199,6 +178,8 @@
    "used_in": [
     "doctor2-ref1style"
    ],
+   "status": "active",
+   "cjk_fit": "good",
    "difficulty": "easy",
    "path": "effects/FX-004-window-light-backdrop",
    "has_snippet": true,
@@ -226,12 +207,20 @@
     "product",
     "podcast-clip"
    ],
+   "video_types": [
+    "口播知識",
+    "醫療健康",
+    "產品廣告"
+   ],
+   "pace": [
+    "中"
+   ],
    "pairs_with": [
-    "FX-001",
     "FX-006"
    ],
    "conflicts_with": [
-    "FX-010"
+    "FX-010",
+    "FX-044"
    ],
    "needs": [
     "list-content"
@@ -240,8 +229,12 @@
    "source": "ref1-glucose-podcast 17:00–18:9（BREAD/PASTA/RICE）",
    "learned": "2026-09-28",
    "used_in": [
-    "doctor2-ref1style"
+    "doctor2-ref1style",
+    "doctor-stairs-breath"
    ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "卡闊 600px，標題 100px 最多 5 個字；skew 對中文效果一般，可唔斜。",
    "difficulty": "medium",
    "path": "effects/FX-005-horizontal-card-gallery",
    "has_snippet": true,
@@ -269,8 +262,15 @@
     "podcast-clip",
     "medical"
    ],
+   "video_types": [
+    "口播知識",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
    "pairs_with": [
-    "FX-001",
     "FX-005"
    ],
    "conflicts_with": [],
@@ -279,132 +279,17 @@
    "source": "ref1-glucose-podcast 16:3–17:0（STARCHES）",
    "learned": "2026-09-28",
    "used_in": [
-    "doctor2-ref1style"
+    "doctor2-ref1style",
+    "doctor-stairs-breath"
    ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "220px 每行最多 4 個字。",
    "difficulty": "easy",
    "path": "effects/FX-006-blur-emboss-title",
    "has_snippet": true,
    "has_preview": true,
    "summary": "講者畫面 0.3 秒內模糊 + 變暗，上面浮現巨型浮雕字（淺啡色、左上高光、右下深陰影），逐行出現；下一句硬切返清晰畫面。"
-  },
-  {
-   "id": "FX-007",
-   "name": "紅條標題",
-   "name_en": "red-bar-title",
-   "category": "caption",
-   "tags": [
-    "title",
-    "highlight-bar",
-    "top"
-   ],
-   "mood": [
-    "warm",
-    "editorial"
-   ],
-   "fits": [
-    "talking-head",
-    "podcast-clip",
-    "education"
-   ],
-   "pairs_with": [
-    "FX-009",
-    "FX-001"
-   ],
-   "conflicts_with": [],
-   "needs": [],
-   "brand_color_ready": true,
-   "source": "ref1-glucose-podcast 13:4–15:0（carbs）",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-ref1style"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-007-red-bar-title",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "畫面頂部一個大標題，字嘅下半部有一條紅色色塊由左掃出，字本身米白斜體帶深紅陰影；下面再跟一行細字。"
-  },
-  {
-   "id": "FX-008",
-   "name": "空心框字",
-   "name_en": "outline-box-caps",
-   "category": "caption",
-   "tags": [
-    "outline",
-    "stroke",
-    "box"
-   ],
-   "mood": [
-    "editorial",
-    "clean"
-   ],
-   "fits": [
-    "talking-head",
-    "podcast-clip",
-    "education"
-   ],
-   "pairs_with": [
-    "FX-001",
-    "FX-009"
-   ],
-   "conflicts_with": [],
-   "needs": [],
-   "brand_color_ready": true,
-   "source": "ref1-glucose-podcast 15:5–16:3（TWO CATEGORIES）",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-ref1style"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-008-outline-box-caps",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "白色描邊、透明填色嘅大字，外面包一個白色圓角框，模糊淡入。"
-  },
-  {
-   "id": "FX-009",
-   "name": "按句推鏡硬切",
-   "name_en": "sentence-punch-in",
-   "category": "camera",
-   "tags": [
-    "punch-in",
-    "reframe",
-    "jump-cut",
-    "zoom"
-   ],
-   "mood": [
-    "editorial",
-    "energetic",
-    "warm",
-    "clinical"
-   ],
-   "fits": [
-    "talking-head",
-    "podcast-clip",
-    "medical",
-    "education",
-    "interview"
-   ],
-   "pairs_with": [
-    "FX-001",
-    "FX-002",
-    "FX-007",
-    "FX-012"
-   ],
-   "conflicts_with": [],
-   "needs": [],
-   "brand_color_ready": true,
-   "source": "ref1-glucose-podcast（整條）+ 原創",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-editorial",
-    "doctor2-ref1style"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-009-sentence-punch-in",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "單機位口播，每句之間硬切去唔同景別（中景 ↔ 近景），每個鏡頭入面再慢慢推近 3–5%，製造多機位感。"
   },
   {
    "id": "FX-010",
@@ -427,13 +312,21 @@
     "education",
     "talking-head"
    ],
+   "video_types": [
+    "醫療健康",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
    "pairs_with": [
-    "FX-012",
-    "FX-009",
     "FX-014"
    ],
    "conflicts_with": [
-    "FX-005"
+    "FX-005",
+    "FX-038",
+    "FX-024"
    ],
    "needs": [
     "list-content"
@@ -444,6 +337,10 @@
    "used_in": [
     "doctor2-editorial"
    ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "清單字最少 72px；編號可保留拉丁斜體數字。",
+   "placement": "layout",
    "difficulty": "medium",
    "path": "effects/FX-010-pip-editorial-list",
    "has_snippet": true,
@@ -451,99 +348,10 @@
    "summary": "講到列舉時，講者畫面縮入頂部圓角相框（品牌色邊框 + 小色塊），下面米白底逐條彈出編號清單（01/02/03，數字斜體品牌色，後面小黃色塊）。講者全程見到，原聲不斷。"
   },
   {
-   "id": "FX-011",
-   "name": "人像分層補光",
-   "name_en": "matte-relight",
-   "category": "grade-light",
-   "tags": [
-    "matting",
-    "relight",
-    "background-blur",
-    "depth"
-   ],
-   "mood": [
-    "clinical",
-    "premium",
-    "clean"
-   ],
-   "fits": [
-    "talking-head",
-    "medical",
-    "interview"
-   ],
-   "pairs_with": [
-    "FX-009",
-    "FX-012"
-   ],
-   "conflicts_with": [
-    "FX-015"
-   ],
-   "needs": [
-    "matting",
-    "python-onnxruntime"
-   ],
-   "brand_color_ready": true,
-   "source": "original（doctor2-editorial）",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-editorial"
-   ],
-   "difficulty": "hard",
-   "path": "effects/FX-011-matte-relight",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "用人像摳圖（RVM）分開講者同背景：背景虛化、壓暗、降飽和；講者臉部加柔和主光、一邊輕微變暗做立體感、加淡輪廓光。效果似專業打光 + 淺景深。"
-  },
-  {
-   "id": "FX-012",
-   "name": "關鍵詞色塊字幕",
-   "name_en": "keyword-box-caption",
-   "category": "caption",
-   "tags": [
-    "kinetic-type",
-    "highlight-box",
-    "brand-color",
-    "word-sync"
-   ],
-   "mood": [
-    "clinical",
-    "clean",
-    "editorial"
-   ],
-   "fits": [
-    "medical",
-    "talking-head",
-    "corporate",
-    "education"
-   ],
-   "pairs_with": [
-    "FX-009",
-    "FX-010",
-    "FX-014"
-   ],
-   "conflicts_with": [
-    "FX-001"
-   ],
-   "needs": [
-    "word-timestamps"
-   ],
-   "brand_color_ready": true,
-   "source": "original（doctor2-editorial，參考 ref1 carbs 標題）",
-   "learned": "2026-09-28",
-   "used_in": [
-    "doctor2-editorial"
-   ],
-   "difficulty": "easy",
-   "path": "effects/FX-012-keyword-box-caption",
-   "has_snippet": true,
-   "has_preview": true,
-   "summary": "兩層字幕品牌版：細白字帶句，關鍵詞用品牌色實心色塊（bar，白字）或米白 chip（品牌色字）由左掃出，字逐隻升上；可加小黃色底線、警告三角、剔號。"
-  },
-  {
    "id": "FX-013",
    "name": "問題浮動符號 + 紅標籤",
    "name_en": "question-float-label",
-   "category": "caption",
+   "category": "text-fx",
    "tags": [
     "question",
     "label",
@@ -560,18 +368,28 @@
     "education",
     "medical"
    ],
-   "pairs_with": [
-    "FX-009",
-    "FX-001"
+   "video_types": [
+    "口播知識"
    ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [],
    "conflicts_with": [],
-   "needs": [],
+   "needs": [
+    "face-box"
+   ],
    "brand_color_ready": true,
    "source": "ref1-glucose-podcast 10:0–11:5（GIVE YOUR BODY）",
    "learned": "2026-09-28",
    "used_in": [
     "doctor2-ref1style"
    ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "超大字改黑體 Black 比襯線清楚。",
+   "placement": "headroom",
    "difficulty": "easy",
    "path": "effects/FX-013-question-float-label",
    "has_snippet": true,
@@ -596,9 +414,15 @@
    "fits": [
     "medical"
    ],
+   "video_types": [
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
    "pairs_with": [
-    "FX-012",
-    "FX-010"
+    "FX-010",
+    "FX-021"
    ],
    "conflicts_with": [],
    "needs": [],
@@ -607,8 +431,11 @@
    "learned": "2026-09-28",
    "used_in": [
     "doctor2-editorial",
-    "doctor2-ref1style"
+    "doctor2-ref1style",
+    "doctor-stairs-breath"
    ],
+   "status": "active",
+   "cjk_fit": "good",
    "difficulty": "easy",
    "path": "effects/FX-014-ecg-line-draw",
    "has_snippet": true,
@@ -635,14 +462,20 @@
     "talking-head",
     "lifestyle"
    ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
    "pairs_with": [
-    "FX-001",
     "FX-003",
     "FX-004"
    ],
-   "conflicts_with": [
-    "FX-011"
-   ],
+   "conflicts_with": [],
    "needs": [],
    "brand_color_ready": true,
    "source": "ref1-glucose-podcast（整體色調）",
@@ -650,11 +483,2701 @@
    "used_in": [
     "doctor2-ref1style"
    ],
+   "status": "active",
+   "cjk_fit": "good",
    "difficulty": "easy",
    "path": "effects/FX-015-warm-podcast-grade",
    "has_snippet": true,
    "has_preview": true,
    "summary": "整體偏桃杏暖色、輕微降飽和、黑位微提，加四角暖啡暈影，似 ref1 嘅 podcast 色調。"
+  },
+  {
+   "id": "FX-016",
+   "name": "文字喺人物後面",
+   "name_en": "text-behind-subject",
+   "category": "text-fx",
+   "tags": [
+    "depth",
+    "matting",
+    "layering",
+    "big-type"
+   ],
+   "mood": [
+    "premium",
+    "editorial",
+    "dramatic"
+   ],
+   "fits": [
+    "talking-head",
+    "medical",
+    "fitness",
+    "product"
+   ],
+   "video_types": [
+    "口播知識",
+    "醫療健康",
+    "產品廣告"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-017"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "matting",
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "ref7-spine-surgeon 0:00.5–0:01.5",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "方塊字被頭遮住會難認：揀筆畫少嘅字，遮蓋唔好超過字高 25%。",
+   "placement": "behind-subject",
+   "difficulty": "hard",
+   "path": "effects/FX-016-text-behind-subject",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "超大字放喺人物（或者物件）後面，頭部遮住字嘅一部分，製造前後景深層次，好似雜誌封面。"
+  },
+  {
+   "id": "FX-017",
+   "name": "頭頂大字（無襯線）",
+   "name_en": "top-headline-sans",
+   "category": "text-fx",
+   "tags": [
+    "kinetic-type",
+    "sans",
+    "headroom",
+    "word-sync"
+   ],
+   "mood": [
+    "energetic",
+    "clean",
+    "modern"
+   ],
+   "fits": [
+    "talking-head",
+    "fitness",
+    "podcast-clip",
+    "education"
+   ],
+   "video_types": [
+    "口播知識"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-018",
+    "FX-019"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "word-timestamps",
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "ref2-fitness-bloodsugar 0:00–0:02.5, 0:06–0:07.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "英文一個大詞約等於中文 2–4 字；細字最少 76px；大字 6 個字以上減到 140px。",
+   "placement": "headroom",
+   "difficulty": "easy",
+   "path": "effects/FX-017-top-headline-sans",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者頭頂空位：一行細白字逐詞出（靠左），然後一個超大粗白色無襯線字（幾乎全闊）砸落，下面再跟細字。字幕喺頭頂，唔遮臉同手勢。"
+  },
+  {
+   "id": "FX-018",
+   "name": "單字跳字幕",
+   "name_en": "single-word-pop",
+   "category": "text-fx",
+   "tags": [
+    "word-by-word",
+    "minimal",
+    "sans",
+    "karaoke"
+   ],
+   "mood": [
+    "clean",
+    "energetic",
+    "modern"
+   ],
+   "fits": [
+    "talking-head",
+    "podcast-clip",
+    "interview",
+    "education",
+    "medical"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-027"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "word-timestamps",
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "ref2 0:12–0:14、ref4 0:13、ref5 0:11–0:14、ref3 0:10.5",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "poor",
+   "cjk_notes": "英文逐詞跳；中文 2–4 字一組會好碎。唔好做基本字幕（用 FX-039）；做特效字時每組最少 4 字、按意群斷。",
+   "placement": "lower",
+   "difficulty": "easy",
+   "path": "effects/FX-018-single-word-pop",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者胸口位置，每次只顯示一個（或兩個）詞，白色粗無襯線，跟住講嘢逐個換，冇底框。最簡單但最耐睇嘅口播字幕。"
+  },
+  {
+   "id": "FX-019",
+   "name": "斜放 B-roll 標籤字",
+   "name_en": "tilted-broll-label",
+   "category": "text-fx",
+   "tags": [
+    "b-roll",
+    "rotated",
+    "label",
+    "list"
+   ],
+   "mood": [
+    "energetic",
+    "playful",
+    "modern"
+   ],
+   "fits": [
+    "fitness",
+    "lifestyle",
+    "education"
+   ],
+   "video_types": [
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-018"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "broll"
+   ],
+   "brand_color_ready": true,
+   "source": "ref2-fitness-bloodsugar 0:03–0:06",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "每個標籤最多 6 個字。",
+   "placement": "center",
+   "difficulty": "easy",
+   "path": "effects/FX-019-tilted-broll-label",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "快速切幾個 B-roll（每個約 1 秒），每個畫面上面有一個斜放（-10° 至 -15°）嘅大白字標籤，下面有細字補充，好似清單逐項閃過（Eating clean → Training hard → Staying disciplined）。"
+  },
+  {
+   "id": "FX-020",
+   "name": "散落詞字幕",
+   "name_en": "scattered-word-caption",
+   "category": "text-fx",
+   "tags": [
+    "word-by-word",
+    "layout",
+    "mixed-type",
+    "b-roll"
+   ],
+   "mood": [
+    "cinematic",
+    "calm",
+    "editorial"
+   ],
+   "fits": [
+    "lifestyle",
+    "podcast-clip",
+    "education"
+   ],
+   "video_types": [
+    "紀錄 Vlog",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-030",
+    "FX-018"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "word-timestamps",
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "ref2-fitness-bloodsugar 0:10–0:12",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "中文冇空格，要先按意群分詞；散落後閱讀次序易亂，只用喺 8 個字以內嘅短句。",
+   "placement": "free",
+   "difficulty": "medium",
+   "path": "effects/FX-020-scattered-word-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一句話嘅詞語唔排成一行，而係散落喺畫面唔同位置逐個出現（細字 + 一個斜體襯線重點詞），好似句子喺畫面入面「生長」。常疊喺 B-roll 上。"
+  },
+  {
+   "id": "FX-021",
+   "name": "標註圖解過場",
+   "name_en": "labelled-diagram-cutaway",
+   "category": "cutaway",
+   "tags": [
+    "diagram",
+    "medical",
+    "callout",
+    "explainer"
+   ],
+   "mood": [
+    "clinical",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "science"
+   ],
+   "video_types": [
+    "醫療健康",
+    "動畫解說"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-036"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "illustration-or-photo"
+   ],
+   "brand_color_ready": true,
+   "source": "ref2-fitness-bloodsugar 0:08–0:10",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "原標籤 24px 太細，最少 64px；每個標籤最多 6 個字。",
+   "difficulty": "medium",
+   "path": "effects/FX-021-labelled-diagram-cutaway",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "淺色全屏底，中間一幅醫學插圖（例如正常 vs 高血糖血管切面並排），每部分有細標籤同指示線；頂部細字 + 大粗字標題，底部再出關鍵詞（Blood Sugar）。"
+  },
+  {
+   "id": "FX-022",
+   "name": "手繪圈註",
+   "name_en": "hand-drawn-annotation",
+   "category": "accent",
+   "tags": [
+    "doodle",
+    "scribble",
+    "circle",
+    "underline"
+   ],
+   "mood": [
+    "playful",
+    "editorial",
+    "human"
+   ],
+   "fits": [
+    "podcast-clip",
+    "interview",
+    "education"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-030"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref3-instinct-interview 0:00–0:02",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "placement": "on-text",
+   "difficulty": "easy",
+   "path": "effects/FX-022-hand-drawn-annotation",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "重點詞外面用手繪筆觸畫一個圈（或者底線、剔號），好似有人拎筆喺畫面上圈重點。"
+  },
+  {
+   "id": "FX-023",
+   "name": "飛舞元素群",
+   "name_en": "flying-element-swarm",
+   "category": "accent",
+   "tags": [
+    "particles",
+    "butterflies",
+    "motion-path",
+    "decorative"
+   ],
+   "mood": [
+    "poetic",
+    "playful",
+    "editorial"
+   ],
+   "fits": [
+    "podcast-clip",
+    "lifestyle",
+    "education"
+   ],
+   "video_types": [
+    "動畫解說",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-026",
+    "FX-025",
+    "FX-024"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "cutout-asset"
+   ],
+   "brand_color_ready": true,
+   "source": "ref3-instinct-interview 0:02–0:06",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "difficulty": "medium",
+   "path": "effects/FX-023-flying-element-swarm",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一群去背小物件（ref 用蝴蝶）由畫面一邊飛過，沿住唔同弧線、帶輕微旋轉同拍翼，喺米白紙質背景上襯托大字（believe your *instinct*）。"
+  },
+  {
+   "id": "FX-024",
+   "name": "復古電視框",
+   "name_en": "retro-tv-frame",
+   "category": "layout",
+   "tags": [
+    "frame",
+    "retro",
+    "pip",
+    "tv",
+    "tint"
+   ],
+   "mood": [
+    "nostalgic",
+    "editorial",
+    "playful"
+   ],
+   "fits": [
+    "podcast-clip",
+    "interview",
+    "film"
+   ],
+   "video_types": [
+    "訪問對談",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-025",
+    "FX-023",
+    "FX-026"
+   ],
+   "conflicts_with": [
+    "FX-010"
+   ],
+   "needs": [
+    "tv-frame-asset"
+   ],
+   "brand_color_ready": true,
+   "source": "ref3-instinct-interview 0:03.5–0:06",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "placement": "layout",
+   "difficulty": "medium",
+   "path": "effects/FX-024-retro-tv-frame",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者片段放入一部舊式 CRT 電視機框入面（黑白或紅色單色調），電視放喺米白背景上，周圍有標籤字，可以配合虛線路徑移動。"
+  },
+  {
+   "id": "FX-025",
+   "name": "虛線路徑連接",
+   "name_en": "dashed-path-connector",
+   "category": "accent",
+   "tags": [
+    "path",
+    "connector",
+    "line-draw",
+    "diagram"
+   ],
+   "mood": [
+    "editorial",
+    "playful",
+    "educational"
+   ],
+   "fits": [
+    "education",
+    "podcast-clip",
+    "explainer"
+   ],
+   "video_types": [
+    "動畫解說",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-024",
+    "FX-023",
+    "FX-028"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref3-instinct-interview 0:04.5–0:06.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "difficulty": "easy",
+   "path": "effects/FX-025-dashed-path-connector",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一條彎曲虛線由一個元素畫向另一個元素（例如由電視畫向腦），終點元素隨即出現，表示「由 A 去到 B」嘅關係或者思考路徑。"
+  },
+  {
+   "id": "FX-026",
+   "name": "單字閃卡",
+   "name_en": "one-word-flash-card",
+   "category": "transition",
+   "tags": [
+    "flash",
+    "solid-bg",
+    "one-word",
+    "rhythm"
+   ],
+   "mood": [
+    "bold",
+    "minimal",
+    "dramatic"
+   ],
+   "fits": [
+    "podcast-clip",
+    "interview",
+    "motivational"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-023",
+    "FX-018"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref3-instinct-interview 0:06.5–0:07.8",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "英文細階單字 → 中文每張 2–3 個字，字級最少 200px。",
+   "difficulty": "easy",
+   "path": "effects/FX-026-one-word-flash-card",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全屏純色卡（先白底黑字，再深紅底白字），中間只得一個粗無襯線字（always → instinct.），每張 0.4–0.7 秒硬切，好似重拍打喺節奏上。"
+  },
+  {
+   "id": "FX-027",
+   "name": "發光漸變關鍵字",
+   "name_en": "glow-gradient-keyword",
+   "category": "text-fx",
+   "tags": [
+    "gradient-text",
+    "glow",
+    "3d",
+    "cool-tone"
+   ],
+   "mood": [
+    "energetic",
+    "modern",
+    "premium"
+   ],
+   "fits": [
+    "podcast-clip",
+    "talking-head",
+    "education",
+    "medical"
+   ],
+   "video_types": [
+    "口播知識",
+    "醫療健康"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-018"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "ref4-brain-explainer 0:06–0:07.5、ref5-aging-routine 0:00–0:01.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "漸變同發光要配 Black 字重先顯；筆畫密要加強 glow 對比。",
+   "placement": "inline",
+   "difficulty": "easy",
+   "path": "effects/FX-027-glow-gradient-keyword",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "兩層字幕嘅冷色版：上下係白色細襯線／無襯線字，重點詞係粗大楷，填色係藍色漸變（淺青 → 深藍）+ 外發光，似金屬或者霓虹，好搶眼。"
+  },
+  {
+   "id": "FX-028",
+   "name": "柔和 3D 圖示解說",
+   "name_en": "soft-3d-icon-explainer",
+   "category": "cutaway",
+   "tags": [
+    "icons",
+    "3d",
+    "explainer",
+    "sequence",
+    "clinical"
+   ],
+   "mood": [
+    "clean",
+    "clinical",
+    "calm",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "science"
+   ],
+   "video_types": [
+    "醫療健康",
+    "動畫解說"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-029",
+    "FX-025",
+    "FX-018",
+    "FX-046"
+   ],
+   "conflicts_with": [
+    "FX-015"
+   ],
+   "needs": [
+    "3d-icons"
+   ],
+   "brand_color_ready": true,
+   "source": "ref4-brain-explainer 0:01–0:05",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "標題最少 72px。",
+   "difficulty": "medium",
+   "path": "effects/FX-028-soft-3d-icon-explainer",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "淡藍漸變背景（有淡淡嘅線條圖示做底紋），中間逐個出現柔和 3D 圖示（腦 → 眼 → 行路公仔），每個配一個細標題，逐個換，好似 app 教學動畫。"
+  },
+  {
+   "id": "FX-029",
+   "name": "UI 元件解說",
+   "name_en": "ui-widget-explainer",
+   "category": "list-chart",
+   "tags": [
+    "ui",
+    "calendar",
+    "pill-button",
+    "chat-bubble",
+    "checklist"
+   ],
+   "mood": [
+    "clean",
+    "modern",
+    "clinical"
+   ],
+   "fits": [
+    "education",
+    "medical",
+    "lifestyle",
+    "product"
+   ],
+   "video_types": [
+    "醫療健康",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-028",
+    "FX-018",
+    "FX-033"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref5-aging-routine 0:01.5–0:11、ref4-brain-explainer 0:10–0:12.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "UI 字最少 64px；中文打字機每字約 0.06 秒。",
+   "difficulty": "medium",
+   "path": "effects/FX-029-ui-widget-explainer",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "將講者講嘅習慣／步驟變成手機 UI 元件：日曆逐日剔藍點、膠囊按鈕（圖示 + 文字打字機效果「Train 3 Times」）、物件上面彈出藍色對話泡標籤（Taking Cold Shower）、相片卡片……一個接一個喺淺灰藍背景上出現同推走，底部配單字字幕（FX-018 深色版）。"
+  },
+  {
+   "id": "FX-030",
+   "name": "手寫草書點綴",
+   "name_en": "script-handwriting-accent",
+   "category": "accent",
+   "tags": [
+    "script",
+    "handwriting",
+    "neon",
+    "mixed-type"
+   ],
+   "mood": [
+    "personal",
+    "warm",
+    "aspirational"
+   ],
+   "fits": [
+    "lifestyle",
+    "podcast-clip",
+    "creator",
+    "motivational"
+   ],
+   "video_types": [
+    "紀錄 Vlog",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-020",
+    "FX-031",
+    "FX-035"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:05、0:06–0:07.5、0:21–0:22",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "poor",
+   "cjk_notes": "英文草書冇中文對應；要用有授權嘅中文手寫字型，或者改用 FX-022 手繪圈註。",
+   "difficulty": "easy",
+   "path": "effects/FX-030-script-handwriting-accent",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "大粗無襯線主字（Starting）旁邊／下面疊一個手寫草書字（from the Scratch），草書似用筆寫出嚟（由左至右 reveal）；變奏：霓虹發光草書（like 2025）。"
+  },
+  {
+   "id": "FX-031",
+   "name": "玻璃擬態元件 + 場景",
+   "name_en": "glass-widget-scene",
+   "category": "cutaway",
+   "tags": [
+    "glassmorphism",
+    "widget",
+    "3d-scene",
+    "calendar"
+   ],
+   "mood": [
+    "aspirational",
+    "modern",
+    "dreamy"
+   ],
+   "fits": [
+    "creator",
+    "lifestyle",
+    "product",
+    "education"
+   ],
+   "video_types": [
+    "品牌企業",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-030",
+    "FX-035",
+    "FX-033"
+   ],
+   "conflicts_with": [
+    "FX-015",
+    "FX-041"
+   ],
+   "needs": [
+    "scene-image"
+   ],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:00.5–0:04",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "difficulty": "medium",
+   "path": "effects/FX-031-glass-widget-scene",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一張夢幻場景相（花海、草地、天空，常用 AI 生成）做背景，前面浮住一個毛玻璃效果嘅 UI 元件（日曆 July 01），上面有大字漸變數字（2025）同細字，慢慢推近。"
+  },
+  {
+   "id": "FX-032",
+   "name": "清單列堆疊",
+   "name_en": "app-row-stack",
+   "category": "list-chart",
+   "tags": [
+    "list",
+    "rows",
+    "icons",
+    "stack"
+   ],
+   "mood": [
+    "clean",
+    "modern"
+   ],
+   "fits": [
+    "creator",
+    "product",
+    "education",
+    "tech"
+   ],
+   "video_types": [
+    "口播知識",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-033",
+    "FX-034",
+    "FX-035"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "icons"
+   ],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:07.5–0:10",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "行字最少 64px，行高加到約 130px。",
+   "difficulty": "easy",
+   "path": "effects/FX-032-app-row-stack",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "白色細格仔背景（底部有淡紫光暈），清單一行一行由下向上疊出嚟（圖示 + 名稱 + 細字 + 右邊細按鈕），好似 app 列表。"
+  },
+  {
+   "id": "FX-033",
+   "name": "通知彈出堆疊",
+   "name_en": "notification-stack",
+   "category": "accent",
+   "tags": [
+    "notification",
+    "ios",
+    "popup",
+    "social-proof"
+   ],
+   "mood": [
+    "modern",
+    "urgent",
+    "playful"
+   ],
+   "fits": [
+    "creator",
+    "product",
+    "tech",
+    "lifestyle"
+   ],
+   "video_types": [
+    "口播知識",
+    "品牌企業"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-032",
+    "FX-029"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:12–0:14",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "通知字最少 64px，每條最多 10 個字。",
+   "difficulty": "easy",
+   "path": "effects/FX-033-notification-stack",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "手機通知／來電提示一個接一個由上面彈落嚟疊起（最新嘅喺最上，舊嘅縮細變淡），表示「好多人搵」「好多訊息」。"
+  },
+  {
+   "id": "FX-034",
+   "name": "增長曲線卡",
+   "name_en": "growth-chart-card",
+   "category": "list-chart",
+   "tags": [
+    "chart",
+    "growth",
+    "line-draw",
+    "glass"
+   ],
+   "mood": [
+    "aspirational",
+    "modern"
+   ],
+   "fits": [
+    "creator",
+    "business",
+    "product",
+    "education"
+   ],
+   "video_types": [
+    "口播知識",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-032",
+    "FX-035"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:10–0:12",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "difficulty": "easy",
+   "path": "effects/FX-034-growth-chart-card",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "淺色格仔背景上，一張半透明卡片入面畫出一條向上彎嘅增長曲線（藍紫漸變線），卡片同時由細變大推近。"
+  },
+  {
+   "id": "FX-035",
+   "name": "裝置畫面 + 大數字",
+   "name_en": "device-mockup-stat",
+   "category": "list-chart",
+   "tags": [
+    "mockup",
+    "proof",
+    "big-number",
+    "screen"
+   ],
+   "mood": [
+    "confident",
+    "modern",
+    "aspirational"
+   ],
+   "fits": [
+    "creator",
+    "business",
+    "product"
+   ],
+   "video_types": [
+    "品牌企業",
+    "口播知識"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-034",
+    "FX-030",
+    "FX-031"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "screenshot"
+   ],
+   "brand_color_ready": true,
+   "source": "ref6-ai-creator 0:15–0:20",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "英文大數字標語（10 YEARS）轉中文（10 年）字數少咗，版面要重排。",
+   "difficulty": "medium",
+   "path": "effects/FX-035-device-mockup-stat",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一部平板／手機框入面顯示作品截圖（例如 YouTube 頻道縮圖牆），截圖慢慢捲動；上面細字 + 巨型漸變數字（10 YEARS）做「證明」。"
+  },
+  {
+   "id": "FX-036",
+   "name": "膠囊遮罩 + 標註線",
+   "name_en": "capsule-mask-callout",
+   "category": "layout",
+   "tags": [
+    "mask",
+    "capsule",
+    "callout",
+    "medical"
+   ],
+   "mood": [
+    "clinical",
+    "clean",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "product"
+   ],
+   "video_types": [
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-021",
+    "FX-037",
+    "FX-016",
+    "FX-050"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "cutout-or-photo"
+   ],
+   "brand_color_ready": true,
+   "source": "ref7-spine-surgeon 0:03.5–0:05.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "標籤最少 64px。",
+   "placement": "layout",
+   "difficulty": "easy",
+   "path": "effects/FX-036-capsule-mask-callout",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "相片／片段放入一個直身膠囊形（超大圓角）遮罩，擺喺深藍背景上；由相中某一點（患處）畫出一條幼白線去到一個細標籤（implant），下面再出大字 + 膠囊關鍵詞。"
+  },
+  {
+   "id": "FX-037",
+   "name": "膠囊關鍵詞 + 浮動小標籤",
+   "name_en": "pill-keyword-tags",
+   "category": "text-fx",
+   "tags": [
+    "pill",
+    "tags",
+    "keyword",
+    "floating"
+   ],
+   "mood": [
+    "clean",
+    "modern",
+    "clinical"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "product",
+    "talking-head"
+   ],
+   "video_types": [
+    "醫療健康",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-036",
+    "FX-038",
+    "FX-017"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "word-timestamps",
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "ref7-spine-surgeon 0:02–0:03、0:09.5–0:11、0:13–0:14.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "英文大楷 → 中文用 Black；膠囊同浮動標籤最少 64px。",
+   "placement": "headroom",
+   "difficulty": "easy",
+   "path": "effects/FX-037-pill-keyword-tags",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "大粗字（remove、patients）旁邊有細字前導，重點補充詞放入膠囊形色塊（藍底白字 disc／淺灰底深藍字 game changer）；有時周圍再飛出幾個細膠囊標籤（younger、healthier）好似貼紙。"
+  },
+  {
+   "id": "FX-038",
+   "name": "圓角講者卡 + 膠囊清單",
+   "name_en": "rounded-speaker-card-pills",
+   "category": "layout",
+   "tags": [
+    "pip",
+    "card",
+    "list",
+    "pills",
+    "3d-object"
+   ],
+   "mood": [
+    "clinical",
+    "clean",
+    "modern"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "talking-head"
+   ],
+   "video_types": [
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-037",
+    "FX-036"
+   ],
+   "conflicts_with": [
+    "FX-010"
+   ],
+   "needs": [
+    "list-content"
+   ],
+   "brand_color_ready": true,
+   "source": "ref7-spine-surgeon 0:05.5–0:09.5",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "卡闊有限：卡內字最少 72px、每行最多 7 個字；膠囊最少 64px。",
+   "placement": "layout",
+   "difficulty": "medium",
+   "path": "effects/FX-038-rounded-speaker-card-pills",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者縮入深藍背景中間嘅圓角直身卡，粗白大楷字幕放喺卡入面（講者胸口位置），卡下面逐項彈出淺灰膠囊清單（Fusion Implant、Lumbar Disc Replacement），每項旁邊有一個 3D 黃色物件同時彈出。"
+  },
+  {
+   "id": "FX-039",
+   "name": "基本字幕（白字黑光暈）",
+   "name_en": "basic-caption",
+   "category": "caption",
+   "tags": [
+    "subtitle",
+    "cjk",
+    "phrase-sync",
+    "clean"
+   ],
+   "mood": [
+    "clean",
+    "clinical",
+    "neutral"
+   ],
+   "fits": [
+    "talking-head",
+    "medical",
+    "education",
+    "interview",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康",
+    "新聞資訊"
+   ],
+   "pace": [
+    "快",
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-037",
+    "FX-006"
+   ],
+   "conflicts_with": [
+    "FX-051"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "original（doctor-stairs-breath 用戶字幕規範）",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文而設：按意群 6–12 字一組、80px。",
+   "placement": "lower",
+   "difficulty": "easy",
+   "path": "effects/FX-039-basic-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全片唯一一種字幕：思源黑體 Bold 80px 全白，加少量黑色光暈托底；冇底色、冇換色、冇關鍵詞高亮。按意群斷句，一組一行，顯示到下一組出現先換。"
+  },
+  {
+   "id": "FX-040",
+   "name": "平滑推鏡",
+   "name_en": "smooth-punch",
+   "category": "transition",
+   "tags": [
+    "camera",
+    "punch-in",
+    "ease",
+    "talking-head"
+   ],
+   "mood": [
+    "clean",
+    "editorial",
+    "calm"
+   ],
+   "fits": [
+    "talking-head",
+    "medical",
+    "education",
+    "interview",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-039",
+    "FX-017"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "face-box"
+   ],
+   "brand_color_ready": true,
+   "source": "original（doctor-stairs-breath：用戶話硬剪感太強）",
+   "learned": "2026-09-29",
+   "used_in": [
+    "doctor-stairs-breath"
+   ],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關。",
+   "placement": "layout",
+   "difficulty": "easy",
+   "path": "effects/FX-040-smooth-punch",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "單機位口播由一個機位用 0.24 秒順滑推去另一個機位（例如闊鏡 → 中鏡），代替硬切；推完之後鏡內繼續慢推 3%。"
+  },
+  {
+   "id": "FX-041",
+   "name": "皺紙紋背景",
+   "name_en": "paper-texture-backdrop",
+   "category": "cutaway",
+   "tags": [
+    "background",
+    "paper",
+    "texture",
+    "handmade"
+   ],
+   "mood": [
+    "warm",
+    "friendly",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "public-health",
+    "explainer"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-042",
+    "FX-044",
+    "FX-048"
+   ],
+   "conflicts_with": [
+    "FX-031"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:05.6–0:07.4",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-041-paper-texture-backdrop",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全片用米白皺紙做底：淡淡摺痕格紋 + 紅藍小墨點（似印刷飛墨），所有插圖同文字都放喺上面，有手作、親切嘅教育海報感。"
+  },
+  {
+   "id": "FX-042",
+   "name": "線稿變彩色",
+   "name_en": "line-to-color-reveal",
+   "category": "transition",
+   "tags": [
+    "illustration",
+    "line-draw",
+    "reveal",
+    "crayon"
+   ],
+   "mood": [
+    "friendly",
+    "educational",
+    "warm"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "explainer"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-041",
+    "FX-043",
+    "FX-048"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "illustration"
+   ],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:00.0–0:01.8",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "medium",
+   "path": "effects/FX-042-line-to-color-reveal",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "主角插圖（心臟）先以彩色線稿一筆筆畫出，然後顏色由淡到實填滿，變成蠟筆質感彩圖。開場 1–1.5 秒內完成。"
+  },
+  {
+   "id": "FX-043",
+   "name": "道具附著入場",
+   "name_en": "prop-attach-entrance",
+   "category": "accent",
+   "tags": [
+    "object",
+    "overlay",
+    "entrance",
+    "illustration"
+   ],
+   "mood": [
+    "friendly",
+    "playful",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "explainer",
+    "product"
+   ],
+   "video_types": [
+    "動畫解說"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-042",
+    "FX-041"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "cutout-asset"
+   ],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:01.8–0:04.2",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-043-prop-attach-entrance",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "主角插圖出現後，一件相關道具（聽診器）由畫面邊滑入，好似「搭」落主角身上，同主角組成一幅完整圖，表示「檢查／照顧」呢個概念。"
+  },
+  {
+   "id": "FX-044",
+   "name": "圓形插圖格逐個彈出",
+   "name_en": "circle-icon-grid",
+   "category": "list-chart",
+   "tags": [
+    "grid",
+    "icons",
+    "symptoms",
+    "numbered-list"
+   ],
+   "mood": [
+    "friendly",
+    "educational",
+    "clinical"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "public-health",
+    "explainer"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-048",
+    "FX-050",
+    "FX-045"
+   ],
+   "conflicts_with": [
+    "FX-005"
+   ],
+   "needs": [
+    "illustration"
+   ],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:08.3–0:11.7",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-044-circle-icon-grid",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "2×2（或 2×3）格，每格一個圓形底色插圖（同一個角色做唔同動作／病徵），下面一個短標籤；跟住旁白逐格彈出，最後成個格一齊停留俾觀眾睇。"
+  },
+  {
+   "id": "FX-045",
+   "name": "斜貼紙警告橫額",
+   "name_en": "slanted-sticker-banner",
+   "category": "text-fx",
+   "tags": [
+    "sticker",
+    "warning",
+    "cta",
+    "tilted"
+   ],
+   "mood": [
+    "urgent",
+    "friendly",
+    "playful"
+   ],
+   "fits": [
+    "medical",
+    "public-health",
+    "education"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-044",
+    "FX-048"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:11.9–0:13.7",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-045-slanted-sticker-banner",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一句重點提醒（出現徵狀／一定要及早求醫！）以兩行橙色粗圓體字、厚白描邊、斜 -10°，好似貼紙「啪」一聲貼落喺畫面中間，壓住下面嘅內容。"
+  },
+  {
+   "id": "FX-046",
+   "name": "動態模糊橫掃切換",
+   "name_en": "motion-blur-whip",
+   "category": "transition",
+   "tags": [
+    "whip",
+    "blur",
+    "carousel",
+    "swap"
+   ],
+   "mood": [
+    "energetic",
+    "friendly"
+   ],
+   "fits": [
+    "education",
+    "explainer",
+    "medical",
+    "product"
+   ],
+   "video_types": [
+    "動畫解說",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-041",
+    "FX-048",
+    "FX-047"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:20.0–0:22.2",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-046-motion-blur-whip",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一組插圖逐個換（飲食均衡 → 勤做運動 → 戒煙……），舊圖向左急速滑走、新圖由右邊急速滑入，過程中加橫向動態模糊，標籤字同步換。標題固定唔郁。"
+  },
+  {
+   "id": "FX-047",
+   "name": "打交叉禁止",
+   "name_en": "cross-out-mark",
+   "category": "accent",
+   "tags": [
+    "cross",
+    "prohibit",
+    "crayon",
+    "warning"
+   ],
+   "mood": [
+    "clear",
+    "educational",
+    "friendly"
+   ],
+   "fits": [
+    "medical",
+    "public-health",
+    "education"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-046",
+    "FX-044"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:24.8–0:26.6",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-047-cross-out-mark",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一個壞習慣插圖（煙）出現後，兩筆粗蠟筆紅線快速交叉畫過，表示「唔好做／戒除」。"
+  },
+  {
+   "id": "FX-048",
+   "name": "雙色章節標題",
+   "name_en": "two-tone-section-title",
+   "category": "text-fx",
+   "tags": [
+    "title",
+    "section",
+    "two-tone",
+    "outline"
+   ],
+   "mood": [
+    "friendly",
+    "educational",
+    "clear"
+   ],
+   "fits": [
+    "medical",
+    "public-health",
+    "education",
+    "explainer"
+   ],
+   "video_types": [
+    "動畫解說",
+    "醫療健康"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-041",
+    "FX-044",
+    "FX-046"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:16.0–0:18.0",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-048-two-tone-section-title",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "畫面頂部一個粗圓體章節標題，兩種顏色（深藍 + 粉紅，重點字用粉紅），厚白描邊，整段固定唔郁；換章節時舊標題快速淡走、新標題彈入。"
+  },
+  {
+   "id": "FX-049",
+   "name": "紙紋 Logo 結尾卡",
+   "name_en": "paper-logo-endcard",
+   "category": "transition",
+   "tags": [
+    "end-card",
+    "logo",
+    "outro",
+    "brand"
+   ],
+   "mood": [
+    "calm",
+    "trustworthy"
+   ],
+   "fits": [
+    "medical",
+    "public-health",
+    "corporate",
+    "education"
+   ],
+   "video_types": [
+    "動畫解說",
+    "品牌企業",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-041"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "logo"
+   ],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:35.2–0:37.4",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-049-paper-logo-endcard",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "最後 3–4 秒：所有元素淡走，只剩紙紋背景，機構 logo 喺中間輕輕放大淡入並停留，最後淡出。"
+  },
+  {
+   "id": "FX-050",
+   "name": "同心圓脈衝標示",
+   "name_en": "pulse-ring-indicator",
+   "category": "accent",
+   "tags": [
+    "indicator",
+    "pulse",
+    "pain-point",
+    "medical"
+   ],
+   "mood": [
+    "clinical",
+    "educational",
+    "urgent"
+   ],
+   "fits": [
+    "medical",
+    "public-health",
+    "education"
+   ],
+   "video_types": [
+    "醫療健康",
+    "動畫解說"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-044",
+    "FX-036"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref8-ha-heart-care 0:06.8–0:08.3",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
+   "difficulty": "easy",
+   "path": "effects/FX-050-pulse-ring-indicator",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "喺插圖身體某個位置（例如胸口）出現紅橙色同心圓，一圈圈向外擴散，標示痛楚或者問題位置。"
+  },
+  {
+   "id": "FX-051",
+   "name": "實色方框字幕",
+   "name_en": "solid-box-caption",
+   "category": "caption",
+   "tags": [
+    "subtitle",
+    "box",
+    "broadcast",
+    "interview",
+    "brand-color"
+   ],
+   "mood": [
+    "clean",
+    "clinical",
+    "trustworthy",
+    "broadcast"
+   ],
+   "fits": [
+    "interview",
+    "talking-head",
+    "medical",
+    "podcast-clip",
+    "education"
+   ],
+   "video_types": [
+    "訪問對談",
+    "醫療健康",
+    "新聞資訊"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-017",
+    "FX-046"
+   ],
+   "conflicts_with": [
+    "FX-039"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "使用者提供截圖（醫聊室訪問片，上下分割雙人畫面）",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文設計：粗黑體白字，按意群 6–10 字一組、單行。",
+   "placement": "lower",
+   "difficulty": "easy",
+   "path": "effects/FX-051-solid-box-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "白色粗黑體字放喺一個實色藍方框（#1063be）入面，直角、冇圓角、冇陰影，方框貼住文字闊度，置中擺喺畫面下方約 82% 高度。似電視新聞／訪問節目字幕，清楚、正式、有品牌感。"
+  },
+  {
+   "id": "FX-052",
+   "name": "大字疊行 Keyup 字幕",
+   "name_en": "keyup-stack-caption",
+   "category": "text-fx",
+   "tags": [
+    "kinetic-type",
+    "stacked",
+    "keyup",
+    "cjk"
+   ],
+   "mood": [
+    "energetic",
+    "bold",
+    "modern"
+   ],
+   "fits": [
+    "talking-head",
+    "finance",
+    "education",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-053",
+    "FX-055"
+   ],
+   "conflicts_with": [
+    "FX-039",
+    "FX-051"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "ref9-fire-investment 0:00–0:04",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文設計：2–4 個字一行，疊 2–3 行，每行大細唔同。",
+   "placement": "center",
+   "difficulty": "easy",
+   "path": "effects/FX-052-keyup-stack-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者胸口位置，每句拆成 2–3 行疊起嘅超大白色粗黑體字（例如「想／財務／自由」），行與行大細唔同（重點行最大），字有黑色描邊陰影；逐行「key up」彈出，一句完即換。取代普通字幕，全片每句都係大字。"
+  },
+  {
+   "id": "FX-053",
+   "name": "全屏素材配直排大字",
+   "name_en": "fullframe-stock-bigtext",
+   "category": "cutaway",
+   "tags": [
+    "b-roll",
+    "stock",
+    "big-type",
+    "vertical-text"
+   ],
+   "mood": [
+    "bold",
+    "energetic",
+    "cinematic"
+   ],
+   "fits": [
+    "finance",
+    "education",
+    "talking-head"
+   ],
+   "video_types": [
+    "口播知識",
+    "品牌企業"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-052",
+    "FX-054"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "broll"
+   ],
+   "brand_color_ready": true,
+   "source": "ref9-fire-investment 0:04–0:09、0:20–0:30",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "直排中文大字每行 1 個字，一次 2–4 個字最易讀。",
+   "placement": "center",
+   "difficulty": "easy",
+   "path": "effects/FX-053-fullframe-stock-bigtext",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講到抽象概念時切去全屏素材（錢罌、硬幣、股票圖、鈔票），上面疊超大白色／半透明直排中文字（每個 150–250px），字逐隻出現；素材本身慢推或者有物件移動（手寫粉筆字、硬幣加疊）。"
+  },
+  {
+   "id": "FX-054",
+   "name": "故障 RGB 分離大字",
+   "name_en": "glitch-rgb-text",
+   "category": "transition",
+   "tags": [
+    "glitch",
+    "rgb-split",
+    "big-type",
+    "dark"
+   ],
+   "mood": [
+    "dramatic",
+    "edgy",
+    "energetic"
+   ],
+   "fits": [
+    "finance",
+    "tech",
+    "talking-head",
+    "education"
+   ],
+   "video_types": [
+    "口播知識",
+    "品牌企業"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-053",
+    "FX-052"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref9-fire-investment 0:11–0:12、0:17–0:19",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "粗黑體 2 個字最有力；筆畫密嘅字 glitch 後都仲認得。",
+   "placement": "center",
+   "difficulty": "medium",
+   "path": "effects/FX-054-glitch-rgb-text",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全屏深色或模糊背景，一兩個超大字（辛苦、未計得清）出現時帶 RGB 色散同橫向撕裂抖動（故障效果），約 0.3 秒後穩定；可以配紅色字表示警告。"
+  },
+  {
+   "id": "FX-055",
+   "name": "字幕旁 3D 小圖示彈出",
+   "name_en": "caption-emoji-3d-pop",
+   "category": "accent",
+   "tags": [
+    "3d-icon",
+    "sticker",
+    "caption-accent",
+    "playful"
+   ],
+   "mood": [
+    "playful",
+    "friendly",
+    "energetic"
+   ],
+   "fits": [
+    "finance",
+    "education",
+    "talking-head",
+    "lifestyle"
+   ],
+   "video_types": [
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-052",
+    "FX-039"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "3d-icons"
+   ],
+   "brand_color_ready": true,
+   "source": "ref9-fire-investment 0:32–0:36",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關；圖示放喺字幕最後一個字右上角。",
+   "placement": "on-text",
+   "difficulty": "easy",
+   "path": "effects/FX-055-caption-emoji-3d-pop",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "字幕出現時，旁邊（通常右上或左下）彈出一個細 3D 小圖示（鈔票、金幣、火箭），貼住關鍵詞，有少少彈跳同旋轉，令名詞更易記。"
+  },
+  {
+   "id": "FX-056",
+   "name": "錯落單字廣告標語",
+   "name_en": "staggered-char-tvc",
+   "category": "text-fx",
+   "tags": [
+    "tvc",
+    "staggered",
+    "thin-type",
+    "product"
+   ],
+   "mood": [
+    "elegant",
+    "premium",
+    "soft"
+   ],
+   "fits": [
+    "product",
+    "beauty",
+    "health",
+    "brand"
+   ],
+   "video_types": [
+    "產品廣告"
+   ],
+   "pace": [
+    "中"
+   ],
+   "pairs_with": [
+    "FX-057",
+    "FX-016"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref10-brands-tvc 0:00–0:02",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文設計：每個字大細、高低錯落，適合 4–6 字標語。",
+   "placement": "free",
+   "difficulty": "easy",
+   "path": "effects/FX-056-staggered-char-tvc",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "廣告標語（肌膚現疲態）唔排成一行，每個字大細高低錯落，散開喺模特兒兩邊，逐隻字淡入；字用幼身黑體／明體，白色，配品牌色底。另有細小線條插畫、閃粉點綴。"
+  },
+  {
+   "id": "FX-057",
+   "name": "圓形徽章彈出",
+   "name_en": "badge-stamp-pop",
+   "category": "accent",
+   "tags": [
+    "badge",
+    "stamp",
+    "claim",
+    "product"
+   ],
+   "mood": [
+    "premium",
+    "trustworthy",
+    "clean"
+   ],
+   "fits": [
+    "product",
+    "health",
+    "brand",
+    "medical"
+   ],
+   "video_types": [
+    "產品廣告",
+    "品牌企業"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-056",
+    "FX-035"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref10-brands-tvc 0:02–0:04",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "徽章字 2–3 行，大數字 + 細字說明。",
+   "placement": "free",
+   "difficulty": "easy",
+   "path": "effects/FX-057-badge-stamp-pop",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "產品旁邊彈出一個圓形（或者花瓣形）淺色徽章，入面係大數字／賣點（100% 純正），細字說明喺下面；彈出時有輕微回彈同光澤閃過。"
+  },
+  {
+   "id": "FX-058",
+   "name": "黑底圓角相片插入",
+   "name_en": "rounded-photo-insert",
+   "category": "cutaway",
+   "tags": [
+    "photo",
+    "insert",
+    "rounded",
+    "archive"
+   ],
+   "mood": [
+    "calm",
+    "documentary",
+    "premium"
+   ],
+   "fits": [
+    "interview",
+    "documentary",
+    "entertainment",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "訪問對談",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-064",
+    "FX-039"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "photo-assets"
+   ],
+   "brand_color_ready": true,
+   "source": "ref11-mm-interview 0:12–0:15",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關；字幕照常喺相片上方或者下方。",
+   "placement": "layout",
+   "difficulty": "easy",
+   "path": "effects/FX-058-rounded-photo-insert",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講到過去作品／得獎／新聞時，切去純黑底，中間一張大圓角相片（或者電影海報、網頁截圖），佔畫面約 85% 闊，慢慢推近；字幕照常出。"
+  },
+  {
+   "id": "FX-059",
+   "name": "固定方框系列標題",
+   "name_en": "boxed-series-title",
+   "category": "text-fx",
+   "tags": [
+    "title",
+    "series",
+    "header",
+    "persistent"
+   ],
+   "mood": [
+    "playful",
+    "bold",
+    "clear"
+   ],
+   "fits": [
+    "education",
+    "entertainment",
+    "explainer"
+   ],
+   "video_types": [
+    "口播知識",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-060",
+    "FX-061"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref12-mingjai-aprilfool、ref13-mingjai-ketchup 全片",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文設計：標題 8–10 字，方框粗黑邊。",
+   "placement": "top",
+   "difficulty": "easy",
+   "path": "effects/FX-059-boxed-series-title",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "整條片頂部固定一個白底粗黑框標題（例：愚人節源自羅馬醜聞？），字粗黑、方框有少少陰影；無論講者、動畫、黑底白底都唔郁，令觀眾中途入嚟都知講咩。系列片可統一格式。"
+  },
+  {
+   "id": "FX-060",
+   "name": "主題道具字幕托",
+   "name_en": "themed-prop-caption",
+   "category": "caption",
+   "tags": [
+    "subtitle",
+    "prop",
+    "branded",
+    "series"
+   ],
+   "mood": [
+    "playful",
+    "quirky",
+    "friendly"
+   ],
+   "fits": [
+    "entertainment",
+    "education",
+    "explainer"
+   ],
+   "video_types": [
+    "口播知識",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-059",
+    "FX-061"
+   ],
+   "conflicts_with": [
+    "FX-039",
+    "FX-051"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "ref12-mingjai-aprilfool、ref13-mingjai-ketchup 全片",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "字幕黑字 44–50px，每組最多 12 字（受道具闊度限制）。",
+   "placement": "lower",
+   "difficulty": "easy",
+   "path": "effects/FX-060-themed-prop-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "字幕唔係浮喺畫面，而係印喺一件同頻道主題有關嘅道具圖上（例：頻道叫「你個腦裝屎」就用一卷廁紙拉開），全片固定位置，字幕換、道具唔郁；右下角再放頻道細 logo。字幕本身變成品牌識別。"
+  },
+  {
+   "id": "FX-061",
+   "name": "黑白拼貼 + 單一亮色",
+   "name_en": "mono-collage-accent",
+   "category": "cutaway",
+   "tags": [
+    "collage",
+    "monochrome",
+    "cutout",
+    "accent-color",
+    "history"
+   ],
+   "mood": [
+    "quirky",
+    "editorial",
+    "bold"
+   ],
+   "fits": [
+    "education",
+    "history",
+    "explainer",
+    "entertainment"
+   ],
+   "video_types": [
+    "動畫解說",
+    "口播知識"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-059",
+    "FX-060",
+    "FX-062",
+    "FX-063"
+   ],
+   "conflicts_with": [
+    "FX-015"
+   ],
+   "needs": [
+    "cutout-asset"
+   ],
+   "brand_color_ready": true,
+   "source": "ref12-mingjai-aprilfool 0:05–1:12、ref13-mingjai-ketchup 0:03–0:51",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關。",
+   "placement": "layout",
+   "difficulty": "hard",
+   "path": "effects/FX-061-mono-collage-accent",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "全屏白底或黑底，用黑白去背相片（雕像、建築、人物、物件）砌成拼貼場景，只有「主角物件」用一隻鮮色（例：藍綠 #2ee6d6）上色，其他全部黑白；物件逐件彈入、放大、移位，講故事似翻繪本。"
+  },
+  {
+   "id": "FX-062",
+   "name": "物件跌落堆疊",
+   "name_en": "object-drop-physics",
+   "category": "accent",
+   "tags": [
+    "physics",
+    "drop",
+    "bounce",
+    "stacking"
+   ],
+   "mood": [
+    "playful",
+    "energetic"
+   ],
+   "fits": [
+    "education",
+    "product",
+    "explainer",
+    "entertainment"
+   ],
+   "video_types": [
+    "動畫解說",
+    "產品廣告"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-061",
+    "FX-063"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "cutout-asset"
+   ],
+   "brand_color_ready": true,
+   "source": "ref13-mingjai-ketchup 0:05–0:08、0:48–0:50",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關。",
+   "placement": "layout",
+   "difficulty": "medium",
+   "path": "effects/FX-062-object-drop-physics",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一堆去背物件由畫面頂跌落，落入容器（購物車、碗）或者疊成金字塔，有落地回彈同輕微旋轉，表示「好多」「塞滿」「爆量」。"
+  },
+  {
+   "id": "FX-063",
+   "name": "放射光束背光",
+   "name_en": "radial-light-burst",
+   "category": "accent",
+   "tags": [
+    "rays",
+    "burst",
+    "reveal",
+    "hero"
+   ],
+   "mood": [
+    "dramatic",
+    "playful",
+    "triumphant"
+   ],
+   "fits": [
+    "education",
+    "product",
+    "explainer",
+    "entertainment"
+   ],
+   "video_types": [
+    "動畫解說",
+    "產品廣告"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-061",
+    "FX-062"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref13-mingjai-ketchup 0:26–0:29",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "同文字無關。",
+   "placement": "layout",
+   "difficulty": "easy",
+   "path": "effects/FX-063-radial-light-burst",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "主角物件（例：神秘配方、產品）出現時，後面放射出一束束亮色光（8–12 條三角形光束），慢慢旋轉，營造「重大發現」「隆重登場」感覺。"
+  },
+  {
+   "id": "FX-064",
+   "name": "人名職銜名牌",
+   "name_en": "name-lower-third",
+   "category": "text-fx",
+   "tags": [
+    "lower-third",
+    "name",
+    "title",
+    "interview"
+   ],
+   "mood": [
+    "clean",
+    "trustworthy",
+    "journalistic"
+   ],
+   "fits": [
+    "interview",
+    "documentary",
+    "medical",
+    "news"
+   ],
+   "video_types": [
+    "訪問對談",
+    "新聞資訊",
+    "醫療健康"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-065",
+    "FX-039",
+    "FX-051",
+    "FX-058"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref14-reporter-baseball 0:02–0:20",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "名 36–40px 粗、職銜 22–26px；職銜長就縮字唔好斷行。",
+   "placement": "lower",
+   "difficulty": "easy",
+   "path": "effects/FX-064-name-lower-third",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "受訪者第一次出現時，胸口位置出現一個白色半透明細名牌：左邊一條品牌色直條，右邊上行粗體人名、下行細字職銜；停留 3–5 秒後收走。"
+  },
+  {
+   "id": "FX-065",
+   "name": "金句雙色重點字",
+   "name_en": "key-quote-twotone",
+   "category": "text-fx",
+   "tags": [
+    "quote",
+    "highlight",
+    "two-tone",
+    "interview"
+   ],
+   "mood": [
+    "inspiring",
+    "journalistic",
+    "clear"
+   ],
+   "fits": [
+    "interview",
+    "documentary",
+    "medical",
+    "education"
+   ],
+   "video_types": [
+    "訪問對談",
+    "紀錄 Vlog",
+    "新聞資訊"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-064",
+    "FX-039"
+   ],
+   "conflicts_with": [
+    "FX-052"
+   ],
+   "needs": [
+    "word-timestamps"
+   ],
+   "brand_color_ready": true,
+   "source": "ref14-reporter-baseball 0:13、0:22、0:44、1:11、1:36、2:06",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "為中文設計：每行 4–8 字，最多 3 行。",
+   "placement": "center",
+   "difficulty": "easy",
+   "path": "effects/FX-065-key-quote-twotone",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "受訪者講出金句時，胸口位置出現 2–3 行粗大字：一般字白色、重點字黃色（#ffd400），每行有黑色半透明底條（或粗黑描邊）；同時細字幕照常。每條片只用喺 3–6 句最重要嘅說話。"
+  },
+  {
+   "id": "FX-066",
+   "name": "大數字逐位打出",
+   "name_en": "number-type-reveal",
+   "category": "list-chart",
+   "tags": [
+    "number",
+    "stat",
+    "count",
+    "typewriter"
+   ],
+   "mood": [
+    "clean",
+    "journalistic",
+    "confident"
+   ],
+   "fits": [
+    "news",
+    "education",
+    "data",
+    "medical"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-067",
+    "FX-034"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref15-reporter-ivod 1:44–1:46",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "數字後面跟一行 24–40px 中文說明（最多 8 字）。",
+   "placement": "headroom",
+   "difficulty": "easy",
+   "path": "effects/FX-066-number-type-reveal",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者旁邊或頭頂空位出現一個超大白色數字，逐位打出（4 → 45 → 455），打完加單位（「則」）同下面一行細字說明（議題關鍵字），乾淨利落。"
+  },
+  {
+   "id": "FX-067",
+   "name": "講者旁清單逐項出",
+   "name_en": "side-list-build",
+   "category": "list-chart",
+   "tags": [
+    "list",
+    "side-panel",
+    "clean",
+    "minimal"
+   ],
+   "mood": [
+    "clean",
+    "journalistic",
+    "calm"
+   ],
+   "fits": [
+    "news",
+    "education",
+    "interview",
+    "medical"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "醫療健康"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-066",
+    "FX-064"
+   ],
+   "conflicts_with": [
+    "FX-038",
+    "FX-010"
+   ],
+   "needs": [
+    "list-content"
+   ],
+   "brand_color_ready": true,
+   "source": "ref15-reporter-ivod 0:03–0:09",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "每項 4–8 字，字 32–40px（畫面細可以加大）。",
+   "placement": "layout",
+   "difficulty": "easy",
+   "path": "effects/FX-067-side-list-build",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者坐喺畫面一邊（乾淨淺灰背景），另一邊由上而下逐項出現一列白色細長標籤（項目名 + 右邊細字），好似網站分類清單；講者全程喺畫面。"
   }
  ]
 }

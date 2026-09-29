@@ -1,0 +1,5 @@
+<!-- FX-061 黑白拼貼 + 單一亮色 | 要做成 clip -->
+<style>.fx061 img{position:absolute;filter:grayscale(1) contrast(1.15)}.fx061 img.hero{filter:none}</style>
+<div class="fx061 clip" data-start="5" data-duration="3" data-track-index="3" style="position:absolute;inset:0;background:#f4f4f4;z-index:5">
+ <img src="assets/temple.png" style="left:190px;top:800px;width:700px"><img class="hero" src="assets/mushroom_teal.png" style="left:320px;top:560px;width:440px"></div>
+<script>tl.from('.fx061 img',{scale:.8,y:40,opacity:0,stagger:.2,duration:.3,ease:'back.out(1.6)'},T.start);</script>

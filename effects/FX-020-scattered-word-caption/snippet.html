@@ -1,0 +1,6 @@
+<!-- FX-020 散落詞 -->
+<style>.fx020{position:absolute;z-index:7;color:#fff;opacity:0;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.fx020.s{font-family:"SansTC";font-weight:500;font-size:72px}.fx020.k{font-family:"SerifTC";font-weight:900;font-size:150px;transform:skewX(-10deg)}</style>
+<span class="fx020 s" style="left:70px;top:700px">身體</span><span class="fx020 s" style="left:330px;top:700px">其實</span>
+<span class="fx020 k" style="left:120px;top:760px">默默對抗</span><span class="fx020 s" style="left:560px;top:880px">緊你</span>
+<script>document.querySelectorAll('.fx020').forEach((el,i)=>{tl.set(el,{opacity:1},T.words[i]);tl.from(el,{opacity:0,y:10,duration:.2},T.words[i]);tl.set(el,{opacity:0},T.end);});</script>

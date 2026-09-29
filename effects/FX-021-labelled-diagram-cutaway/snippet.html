@@ -1,0 +1,9 @@
+<!-- FX-021 標註圖解 | 要做成 clip -->
+<style>#fx021{position:absolute;inset:0;background:#ece8e3;z-index:5}
+#fx021 .lbl{position:absolute;font-family:"SansTC";font-weight:500;font-size:64px;color:#333}
+#fx021 svg line{stroke:#555;stroke-width:2}</style>
+<div id="fx021" class="clip" data-start="8" data-duration="2" data-track-index="3">
+ <img src="assets/diagram.png" style="position:absolute;left:190px;top:760px;width:700px">
+ <span class="lbl" style="left:180px;top:720px">正常血糖</span><span class="lbl" style="left:640px;top:720px">高血糖</span>
+</div>
+<script>tl.from('#fx021 img',{opacity:0,scale:.94,duration:.4},T.start);tl.from('#fx021 .lbl',{opacity:0,y:8,stagger:.1,duration:.25},T.start+.3);</script>
