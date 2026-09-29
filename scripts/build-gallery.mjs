@@ -26,7 +26,7 @@ const effects = reg.effects.map(e => {
   const vid = b64(path.join(dir, 'preview.mp4')); const img = b64(path.join(dir, 'preview.jpg'));
   const snip = fs.existsSync(path.join(dir, 'snippet.html')) ? fs.readFileSync(path.join(dir, 'snippet.html'), 'utf8') : '';
   return { id:e.id, name:e.name, en:e.name_en, cat:e.category, tags:e.tags||[], mood:e.mood||[], fits:e.fits||[], pairs:e.pairs_with||[], conf:e.conflicts_with||[],
-    needs:e.needs||[], source:e.source||'', status:e.status||'active', vtypes:e.video_types||[], pace:e.pace||[], cjk_fit:e.cjk_fit||'', cjk_notes:e.cjk_notes||'', placement:e.placement||'', banned_reason:e.banned_reason||'', learned:e.learned||'', used:[].concat(e.used_in||[]), diff:e.difficulty||'', summary:e.summary||'',
+    needs:e.needs||[], source:e.source||'', status:e.status||'active', vtypes:e.video_types||[], pace:e.pace||[], cjk_fit:e.cjk_fit||'', cjk_notes:e.cjk_notes||'', placement:e.placement||'', banned_reason:e.banned_reason||'', learned:e.learned||'', used:[].concat(e.used_in||[]), diff:e.difficulty||'', summary:e.summary||'', wide: e.aspect==='16:9',
     body: md(txt.replace(/##\s*效果\s*\n+[^\n]+\n?/, '')), snippet: snip,
     vid: vid ? 'data:video/mp4;base64,'+vid : null, img: img ? 'data:image/jpeg;base64,'+img : null };
 });

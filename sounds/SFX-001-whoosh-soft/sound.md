@@ -8,7 +8,7 @@ volume: 0.35
 mood: [專業醫療, 溫暖生活, 高級編輯感]
 video_types: [口播知識, 訪問對談, 醫療健康, 動畫解說, 產品廣告, 紀錄 Vlog, 新聞資訊, 品牌企業]
 pace: [中, 慢]
-pairs_with: [FX-040, FX-006, FX-046, FX-003]
+pairs_with: [FX-040, FX-006, FX-046, FX-003, FX-071, FX-068]
 source: "synth: tools/sfx.py"
 license: "自製合成，無版權限制，可商用"
 learned: 2026-09-29

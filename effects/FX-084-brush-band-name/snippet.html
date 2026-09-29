@@ -1,0 +1,12 @@
+<!-- FX-084 掃筆色帶名牌 | 1080×1920 | 依賴：SansTC、自製筆刷 mask assets/brush.svg -->
+<style>
+#fx084{position:absolute;left:120px;top:1240px;z-index:8;transform:rotate(-3deg)}
+#fx084 .band{position:absolute;inset:-18px -40px;background:var(--accent,#ffcf2e);-webkit-mask:url(assets/brush.svg) center/100% 100%}
+#fx084 .t{position:relative;font:900 110px/1 'SansTC';color:#111;transform:skewX(-8deg);white-space:nowrap}
+</style>
+<div id="fx084"><div class="band"></div><div class="t">陳大文 醫生</div></div>
+<script>
+tl.fromTo('#fx084 .band',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.3,ease:'power3.out'},T.start);
+tl.from('#fx084 .t',{scale:.8,opacity:0,duration:.2,ease:'back.out(2)'},T.start+.2);
+tl.to('#fx084 .band',{clipPath:'inset(0 0 0 100%)',duration:.25},T.end-.25);tl.to('#fx084 .t',{opacity:0,duration:.2},T.end-.25);
+</script>

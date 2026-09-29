@@ -1,0 +1,20 @@
+<!-- FX-078 撕紙剪報 + 螢光筆 | 1080×1920 | 依賴：真實新聞截圖 assets/article.png、撕紙 mask assets/torn.svg | 要做成 clip -->
+<style>
+#fx078{position:absolute;inset:0;z-index:5;background:#2b2b2b;overflow:hidden}
+#fx078 .paper{position:absolute;left:-40px;right:-40px;top:360px;height:1200px;background:#f4f2ee url(assets/paper-crumple.jpg) center/cover;
+ -webkit-mask:url(assets/torn.svg) center/100% 100%;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+#fx078 .art{position:absolute;left:80px;top:80px;width:1100px;mix-blend-mode:multiply}
+#fx078 .hl{position:absolute;height:56px;mix-blend-mode:multiply;transform-origin:left;transform:scaleX(0)}
+</style>
+<div id="fx078" class="clip" data-start="21" data-duration="6" data-track-index="3">
+ <div class="paper"><img class="art" src="assets/article.png">
+  <!-- 螢光筆位置用截圖像素座標（截圖左上 = 80,80） -->
+  <i class="hl" style="left:560px;top:690px;width:520px;background:rgba(255,230,0,.75)"></i>
+  <i class="hl" style="left:80px;top:760px;width:1000px;background:rgba(255,230,0,.75)"></i>
+  <i class="hl" style="left:600px;top:830px;width:480px;background:rgba(255,60,160,.6)"></i></div>
+</div>
+<script>
+tl.from('#fx078 .paper',{y:80,opacity:0,duration:.4,ease:'power2.out'},T.start);
+tl.to('#fx078 .hl',{scaleX:1,duration:.45,stagger:.55,ease:'power1.inOut'},T.start+1);
+tl.fromTo('#fx078 .paper',{scale:1},{scale:1.08,y:-120,duration:T.dur,ease:'none'},T.start);
+</script>

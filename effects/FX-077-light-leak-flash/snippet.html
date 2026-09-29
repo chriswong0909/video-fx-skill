@@ -1,0 +1,10 @@
+<!-- FX-077 光漏閃光轉場 | 放喺兩鏡交界，硬切點喺 T.start+0.3 | 冇外部依賴 | 要做成 clip -->
+<style>
+#fx077{position:absolute;inset:-20%;z-index:9;mix-blend-mode:screen;pointer-events:none;
+ background:radial-gradient(circle at 20% 40%,rgba(255,120,60,.95),rgba(255,60,90,.6) 40%,transparent 75%)}
+</style>
+<div id="fx077" class="clip" data-start="52.9" data-duration="0.9" data-track-index="9"></div>
+<script>
+tl.fromTo('#fx077',{opacity:0,xPercent:-20},{opacity:1,xPercent:0,duration:.3,ease:'power1.out'},T.start);
+tl.to('#fx077',{xPercent:15,opacity:0,duration:.6,ease:'power1.in'},T.start+.3);
+</script>

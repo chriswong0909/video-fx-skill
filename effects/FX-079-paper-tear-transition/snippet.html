@@ -1,0 +1,14 @@
+<!-- FX-079 撕紙轉場 | 舊畫面用截圖 assets/prev.jpg；新畫面喺下層 | 要做成 clip -->
+<style>
+#fx079{position:absolute;inset:0;z-index:9;pointer-events:none}
+#fx079 .h{position:absolute;inset:0;background:url(assets/prev.jpg) center/cover;filter:drop-shadow(0 6px 12px rgba(0,0,0,.45))}
+/* TEAR = 鋸齒路徑 y 座標（約 960px 上下 ±40 隨機），top 用 path 以上、bot 用 path 以下 */
+#fx079 .top{clip-path:polygon(0 0,100% 0,100% 49%,90% 52%,80% 47%,70% 51%,60% 48%,50% 53%,40% 47%,30% 51%,20% 48%,10% 52%,0 49%)}
+#fx079 .bot{clip-path:polygon(0 49%,10% 52%,20% 48%,30% 51%,40% 47%,50% 53%,60% 48%,70% 51%,80% 47%,90% 52%,100% 49%,100% 100%,0 100%)}
+</style>
+<div id="fx079" class="clip" data-start="26.6" data-duration="0.9" data-track-index="9"><div class="h top"></div><div class="h bot"></div></div>
+<script>
+tl.to('#fx079 .h',{x:()=>gsap.utils.random(-3,3),duration:.03,repeat:4,yoyo:true},T.start);
+tl.to('#fx079 .top',{yPercent:-60,rotation:-3,duration:.6,ease:'power2.in'},T.start+.15);
+tl.to('#fx079 .bot',{yPercent:60,rotation:2,duration:.6,ease:'power2.in'},T.start+.15);
+</script>

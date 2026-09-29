@@ -1,6 +1,6 @@
 # 效果目錄（自動生成，勿手改）
 
-共 60 個效果
+共 79 個效果
 
 | ID | 名稱 | 類別 | 情緒 | 適合 | 出處 |
 |---|---|---|---|---|---|
@@ -64,3 +64,22 @@
 | [FX-065](FX-065-key-quote-twotone/effect.md) | 金句雙色重點字 | text-fx | inspiring, journalistic, clear | interview, documentary, medical, education | ref14-reporter-baseball 0:13、0:22、0:44、1:11、1:36、2:06 |
 | [FX-066](FX-066-number-type-reveal/effect.md) | 大數字逐位打出 | list-chart | clean, journalistic, confident | news, education, data, medical | ref15-reporter-ivod 1:44–1:46 |
 | [FX-067](FX-067-side-list-build/effect.md) | 講者旁清單逐項出 | list-chart | clean, journalistic, calm | news, education, interview, medical | ref15-reporter-ivod 0:03–0:09 |
+| [FX-068](FX-068-chapter-nav-bar/effect.md) | 章節導航條 | layout | clinical, clean, editorial | education, medical, podcast-clip, explainer | ref16-stroke-talkshow 全片（頂部） |
+| [FX-069](FX-069-bilingual-caption/effect.md) | 中英雙語字幕 | caption | clean, trustworthy, international | interview, medical, education, podcast-clip | ref16-stroke-talkshow 全片 |
+| [FX-070](FX-070-bigname-pill-title/effect.md) | 大字英文名 + 膠囊職銜 | text-fx | clean, modern, trustworthy | interview, medical, podcast-clip | ref16-stroke-talkshow 0:08–0:17 |
+| [FX-071](FX-071-explainer-board-pip/effect.md) | 解說畫板 + 講者畫中畫 | layout | clinical, clean, educational | medical, education, interview, podcast-clip | ref16-stroke-talkshow 0:20–1:03 |
+| [FX-072](FX-072-pattern-bar-chart/effect.md) | 圖案柱狀圖生長 | list-chart | editorial, dramatic, premium | finance, education, news, explainer | ref17-hk-retire-north 0:03–0:10 |
+| [FX-073](FX-073-map-glow-reveal/effect.md) | 地圖掃入發光 | cutaway | dramatic, editorial | news, finance, documentary, explainer | ref17-hk-retire-north 0:23–0:28 |
+| [FX-074](FX-074-vintage-film-grade/effect.md) | 復古菲林暗角調色 | grade-light | nostalgic, cinematic, moody | documentary, finance, storytelling, b-roll | ref17-hk-retire-north 0:10–0:53、ref18-hk-retire-mgmtfee 全片 B-roll |
+| [FX-075](FX-075-pause-icon-glitch/effect.md) | 暫停符號故障 | accent | dramatic, playful, energetic | storytelling, finance, commentary | ref17-hk-retire-north 0:38–0:41 |
+| [FX-076](FX-076-ground-perspective-text/effect.md) | 地面透視大字 | text-fx | dramatic, cinematic | storytelling, finance, commentary, b-roll | ref17-hk-retire-north 0:52–0:54 |
+| [FX-077](FX-077-light-leak-flash/effect.md) | 光漏閃光轉場 | transition | cinematic, nostalgic, warm | storytelling, vlog, documentary, commentary | ref17-hk-retire-north 0:53、ref18-hk-retire-mgmtfee 0:58 |
+| [FX-078](FX-078-torn-paper-clipping/effect.md) | 撕紙剪報 + 螢光筆 | cutaway | editorial, journalistic, handmade | news, finance, commentary, medical | ref18-hk-retire-mgmtfee 0:12–0:27 |
+| [FX-079](FX-079-paper-tear-transition/effect.md) | 撕紙轉場 | transition | handmade, editorial, dramatic | news, commentary, storytelling | ref18-hk-retire-mgmtfee 0:26–0:28 |
+| [FX-080](FX-080-face-mosaic/effect.md) | 面部打格仔 | accent | playful, comedic | commentary, vlog, storytelling | ref18-hk-retire-mgmtfee 0:16–0:19 |
+| [FX-081](FX-081-corkboard-ranking/effect.md) | 水松板排行榜 | list-chart | handmade, editorial, playful | news, finance, education, commentary | ref18-hk-retire-mgmtfee 1:06–1:13 |
+| [FX-082](FX-082-letterbox-caption-bar/effect.md) | 電影黑邊字幕 | layout | cinematic, premium, serious | interview, documentary, podcast-clip | ref19-forensic-podcast 0:28–1:00 |
+| [FX-083](FX-083-arrow-cause-chain/effect.md) | 箭嘴因果鏈 | text-fx | educational, energetic, clear | education, medical, commentary, podcast-clip | ref19-forensic-podcast 0:37–0:41 |
+| [FX-084](FX-084-brush-band-name/effect.md) | 掃筆色帶名牌 | text-fx | energetic, bold, youthful | interview, podcast-clip, education | ref19-forensic-podcast 0:45–0:51 |
+| [FX-085](FX-085-diagonal-question-panel/effect.md) | 斜切色塊問題清單 | list-chart | energetic, bold, educational | interview, education, podcast-clip, medical | ref19-forensic-podcast 0:52–1:01 |
+| [FX-086](FX-086-brand-block-wipe/effect.md) | 品牌色塊幾何轉場 | transition | energetic, bold, modern | opening, podcast-clip, brand, interview | ref19-forensic-podcast 0:12–0:27 |

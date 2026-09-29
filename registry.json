@@ -1,6 +1,6 @@
 {
  "generated": "2026-09-29",
- "count": 60,
+ "count": 79,
  "by_category": {
   "cutaway": [
    "FX-003",
@@ -11,7 +11,9 @@
    "FX-041",
    "FX-053",
    "FX-058",
-   "FX-061"
+   "FX-061",
+   "FX-073",
+   "FX-078"
   ],
   "list-chart": [
    "FX-005",
@@ -21,7 +23,10 @@
    "FX-035",
    "FX-044",
    "FX-066",
-   "FX-067"
+   "FX-067",
+   "FX-072",
+   "FX-081",
+   "FX-085"
   ],
   "transition": [
    "FX-006",
@@ -30,13 +35,19 @@
    "FX-042",
    "FX-046",
    "FX-049",
-   "FX-054"
+   "FX-054",
+   "FX-077",
+   "FX-079",
+   "FX-086"
   ],
   "layout": [
    "FX-010",
    "FX-024",
    "FX-036",
-   "FX-038"
+   "FX-038",
+   "FX-068",
+   "FX-071",
+   "FX-082"
   ],
   "text-fx": [
    "FX-013",
@@ -53,7 +64,11 @@
    "FX-056",
    "FX-059",
    "FX-064",
-   "FX-065"
+   "FX-065",
+   "FX-070",
+   "FX-076",
+   "FX-083",
+   "FX-084"
   ],
   "accent": [
    "FX-014",
@@ -68,15 +83,19 @@
    "FX-055",
    "FX-057",
    "FX-062",
-   "FX-063"
+   "FX-063",
+   "FX-075",
+   "FX-080"
   ],
   "grade-light": [
-   "FX-015"
+   "FX-015",
+   "FX-074"
   ],
   "caption": [
    "FX-039",
    "FX-051",
-   "FX-060"
+   "FX-060",
+   "FX-069"
   ]
  },
  "effects": [
@@ -2604,6 +2623,7 @@
    "cjk_fit": "good",
    "cjk_notes": "為中文設計：每個字大細、高低錯落，適合 4–6 字標語。",
    "placement": "free",
+   "aspect": "16:9",
    "difficulty": "easy",
    "path": "effects/FX-056-staggered-char-tvc",
    "has_snippet": true,
@@ -2654,6 +2674,7 @@
    "cjk_fit": "good",
    "cjk_notes": "徽章字 2–3 行，大數字 + 細字說明。",
    "placement": "free",
+   "aspect": "16:9",
    "difficulty": "easy",
    "path": "effects/FX-057-badge-stamp-pop",
    "has_snippet": true,
@@ -3187,6 +3208,1075 @@
    "has_snippet": true,
    "has_preview": true,
    "summary": "講者坐喺畫面一邊（乾淨淺灰背景），另一邊由上而下逐項出現一列白色細長標籤（項目名 + 右邊細字），好似網站分類清單；講者全程喺畫面。"
+  },
+  {
+   "id": "FX-068",
+   "name": "章節導航條",
+   "name_en": "chapter-nav-bar",
+   "category": "layout",
+   "tags": [
+    "chapter",
+    "navigation",
+    "top-bar",
+    "progress"
+   ],
+   "mood": [
+    "clinical",
+    "clean",
+    "editorial"
+   ],
+   "fits": [
+    "education",
+    "medical",
+    "podcast-clip",
+    "explainer"
+   ],
+   "video_types": [
+    "口播知識",
+    "醫療健康",
+    "訪問對談",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-071",
+    "FX-069",
+    "FX-070"
+   ],
+   "conflicts_with": [
+    "FX-082"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref16-stroke-talkshow 全片（頂部）",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "每格 4–7 字；9:16 要縮做 3 格（上一章／本章／下一章）或者改用頂部細進度條，字最少 40px（標籤類 64px 準則以外嘅導航資訊）。",
+   "placement": "headroom",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-068-chapter-nav-bar",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "畫面頂部一條細長深色半透明橫條，平均分成 4–6 格，每格寫一個章節名（亞裔易中風？／糖尿病與中風／中風先兆……）；講緊嗰章嘅格仔反白或者用品牌色，其他格淡灰。觀眾一眼知道而家講到邊、仲有幾多。"
+  },
+  {
+   "id": "FX-069",
+   "name": "中英雙語字幕",
+   "name_en": "bilingual-caption",
+   "category": "caption",
+   "tags": [
+    "caption",
+    "bilingual",
+    "english",
+    "subtitle"
+   ],
+   "mood": [
+    "clean",
+    "trustworthy",
+    "international"
+   ],
+   "fits": [
+    "interview",
+    "medical",
+    "education",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "訪問對談",
+    "醫療健康",
+    "口播知識",
+    "新聞資訊",
+    "品牌企業"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-068",
+    "FX-070",
+    "FX-071"
+   ],
+   "conflicts_with": [
+    "FX-039",
+    "FX-051",
+    "FX-060"
+   ],
+   "needs": [
+    "word-timestamps",
+    "english-translation"
+   ],
+   "brand_color_ready": false,
+   "source": "ref16-stroke-talkshow 全片",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "中文 80px 白字粗黑 + 英文 52px（註腳最細準則）細一級、白色 85% 透明度；兩行置中；英文唔好超過畫面闊 86%，長句自動縮到 46px 為止。",
+   "placement": "lower",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-069-bilingual-caption",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "上行中文、下行英文嘅雙語字幕：中文較大較粗，英文細一級、較淡，兩行都係白字加柔和黑陰影，冇底色，置中喺畫面下方。屬「基本字幕」類，全片只揀一款（同 FX-039／FX-051 二揀一）。"
+  },
+  {
+   "id": "FX-070",
+   "name": "大字英文名 + 膠囊職銜",
+   "name_en": "bigname-pill-title",
+   "category": "text-fx",
+   "tags": [
+    "lower-third",
+    "name",
+    "title",
+    "pill"
+   ],
+   "mood": [
+    "clean",
+    "modern",
+    "trustworthy"
+   ],
+   "fits": [
+    "interview",
+    "medical",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "訪問對談",
+    "醫療健康",
+    "品牌企業",
+    "新聞資訊"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-069",
+    "FX-068",
+    "FX-039"
+   ],
+   "conflicts_with": [
+    "FX-064",
+    "FX-084"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref16-stroke-talkshow 0:08–0:17",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "adjust",
+   "cjk_notes": "原片英文名全大寫粗體；中文名用 Noto Sans TC 900、字距 0.02em，4 字以內；職銜膠囊 36–40px（16:9）／64px（9:16）。",
+   "placement": "lower",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-070-bigname-pill-title",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "受訪者第一次出現時，胸口左邊先滑入一個藍色圓角膠囊（白字職銜：東華醫院藥劑部主管），跟住上面由下向上抹出一行超大白色粗體名字（GINA YAM）；停 5–8 秒後一齊收走。比 FX-064 更大、更有節目感。"
+  },
+  {
+   "id": "FX-071",
+   "name": "解說畫板 + 講者畫中畫",
+   "name_en": "explainer-board-pip",
+   "category": "layout",
+   "tags": [
+    "explainer",
+    "pip",
+    "3d-animation",
+    "board",
+    "medical"
+   ],
+   "mood": [
+    "clinical",
+    "clean",
+    "educational"
+   ],
+   "fits": [
+    "medical",
+    "education",
+    "interview",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "醫療健康",
+    "動畫解說",
+    "口播知識",
+    "訪問對談"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-068",
+    "FX-069",
+    "FX-028",
+    "FX-021"
+   ],
+   "conflicts_with": [
+    "FX-003",
+    "FX-053"
+   ],
+   "needs": [
+    "3d-animation-or-photo",
+    "speaker-footage"
+   ],
+   "brand_color_ready": true,
+   "source": "ref16-stroke-talkshow 0:20–1:03",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "主題標籤 4–8 字，16:9 約 22px 粗體、9:16 最少 64px；字幕照放畫板下面。",
+   "placement": "layout",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-071-explainer-board-pip",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講解原理時，整個畫面轉做淺藍紙紋底：左上一塊大圓角畫板播 3D 醫學動畫（腦、血管、血球），右下角一個細畫中畫繼續播講者（同主持切換都得），畫板左下角貼一個白色主題標籤「什麼是中風？」，兩個角落有淡藍斜色塊點綴。講者聲音唔斷，觀眾睇圖同時見到人。"
+  },
+  {
+   "id": "FX-072",
+   "name": "圖案柱狀圖生長",
+   "name_en": "pattern-bar-chart",
+   "category": "list-chart",
+   "tags": [
+    "bar-chart",
+    "data",
+    "flags",
+    "comparison"
+   ],
+   "mood": [
+    "editorial",
+    "dramatic",
+    "premium"
+   ],
+   "fits": [
+    "finance",
+    "education",
+    "news",
+    "explainer"
+   ],
+   "video_types": [
+    "口播知識",
+    "新聞資訊",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-066",
+    "FX-074",
+    "FX-053"
+   ],
+   "conflicts_with": [
+    "FX-034"
+   ],
+   "needs": [
+    "data-source"
+   ],
+   "brand_color_ready": true,
+   "source": "ref17-hk-retire-north 0:03–0:10",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "標題 serif 中文 16:9 約 44px、9:16 最少 72px；數值標籤用數字 + 單位，唔好長句。",
+   "placement": "center",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-072-pattern-bar-chart",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "深藍灰紋理底上，一排直條由基線向上逐條生長，每條直條入面填住圖案（國旗、醫院 logo、藥物顏色等），最高嗰條旁邊彈出紅色數值標籤（HK$8,600,000）加小箭嘴；頂部一行淡灰 serif 標題。比普通柱狀圖有記憶點。"
+  },
+  {
+   "id": "FX-073",
+   "name": "地圖掃入發光",
+   "name_en": "map-glow-reveal",
+   "category": "cutaway",
+   "tags": [
+    "map",
+    "reveal",
+    "glow",
+    "location"
+   ],
+   "mood": [
+    "dramatic",
+    "editorial"
+   ],
+   "fits": [
+    "news",
+    "finance",
+    "documentary",
+    "explainer"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-074",
+    "FX-072",
+    "FX-050"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "map-svg"
+   ],
+   "brand_color_ready": true,
+   "source": "ref17-hk-retire-north 0:23–0:28",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "地圖上嘅標註字 2–5 字，serif 粗體，9:16 最少 72px。",
+   "placement": "center",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-073-map-glow-reveal",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "背景片轉暗轉糊，一幅紅色地圖由一條發光掃描線從左向右掃出嚟（邊緣火紅光），掃完地圖微微發光，目標城市位置閃一點黃光，旁邊出一行標註字（⅓香港生活費）。"
+  },
+  {
+   "id": "FX-074",
+   "name": "復古菲林暗角調色",
+   "name_en": "vintage-film-grade",
+   "category": "grade-light",
+   "tags": [
+    "film",
+    "grain",
+    "vignette",
+    "retro",
+    "grade"
+   ],
+   "mood": [
+    "nostalgic",
+    "cinematic",
+    "moody"
+   ],
+   "fits": [
+    "documentary",
+    "finance",
+    "storytelling",
+    "b-roll"
+   ],
+   "video_types": [
+    "口播知識",
+    "紀錄 Vlog",
+    "新聞資訊"
+   ],
+   "pace": [
+    "中",
+    "快",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-072",
+    "FX-073",
+    "FX-077",
+    "FX-078"
+   ],
+   "conflicts_with": [
+    "FX-015"
+   ],
+   "needs": [],
+   "brand_color_ready": false,
+   "source": "ref17-hk-retire-north 0:10–0:53、ref18-hk-retire-mgmtfee 全片 B-roll",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "唔影響文字；疊喺字幕之下。",
+   "placement": "free",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-074-vintage-film-grade",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "所有 B-roll 加一層舊菲林質感：黑位提起、對比降低、輕微偏暖黃、四角深暗角、細顆粒噪點，偶爾輕微閃光。講者鏡頭保持乾淨，B-roll 就變成「回憶／新聞片段」感，兩者一睇就分得開。"
+  },
+  {
+   "id": "FX-075",
+   "name": "暫停符號故障",
+   "name_en": "pause-icon-glitch",
+   "category": "accent",
+   "tags": [
+    "pause",
+    "icon",
+    "glitch",
+    "stop"
+   ],
+   "mood": [
+    "dramatic",
+    "playful",
+    "energetic"
+   ],
+   "fits": [
+    "storytelling",
+    "finance",
+    "commentary"
+   ],
+   "video_types": [
+    "口播知識",
+    "新聞資訊",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-054",
+    "FX-074",
+    "FX-046"
+   ],
+   "conflicts_with": [],
+   "needs": [],
+   "brand_color_ready": false,
+   "source": "ref17-hk-retire-north 0:38–0:41",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "冇文字；字幕照常。",
+   "placement": "center",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-075-pause-icon-glitch",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者講「慢著／等等」嗰刻，畫面定格轉糊，正中彈出一個大白色暫停符號（圓圈 + 兩條直槓），邊緣有 RGB 錯位同橫向故障切片，約 2 秒後故障一下消失，接住轉話題。"
+  },
+  {
+   "id": "FX-076",
+   "name": "地面透視大字",
+   "name_en": "ground-perspective-text",
+   "category": "text-fx",
+   "tags": [
+    "perspective",
+    "3d-text",
+    "ground",
+    "keyword"
+   ],
+   "mood": [
+    "dramatic",
+    "cinematic"
+   ],
+   "fits": [
+    "storytelling",
+    "finance",
+    "commentary",
+    "b-roll"
+   ],
+   "video_types": [
+    "口播知識",
+    "紀錄 Vlog",
+    "產品廣告"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-077",
+    "FX-074",
+    "FX-062"
+   ],
+   "conflicts_with": [
+    "FX-016"
+   ],
+   "needs": [
+    "top-down-footage"
+   ],
+   "brand_color_ready": true,
+   "source": "ref17-hk-retire-north 0:52–0:54",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "3 字以內最有力；serif 900 中文，平躺之後視覺上會變細，字級要比平面大 1.4 倍。",
+   "placement": "center",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-076-ground-perspective-text",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "一個關鍵詞（無退路）用紅色粗 serif 大字「印」喺地面／枱面上，跟住鏡頭透視平躺（rotateX 約 55°），好似寫喺地上；上面仲有物件跌落（硬幣、錢包），字有少少紙紋質感同陰影。"
+  },
+  {
+   "id": "FX-077",
+   "name": "光漏閃光轉場",
+   "name_en": "light-leak-flash",
+   "category": "transition",
+   "tags": [
+    "light-leak",
+    "flash",
+    "film",
+    "transition"
+   ],
+   "mood": [
+    "cinematic",
+    "nostalgic",
+    "warm"
+   ],
+   "fits": [
+    "storytelling",
+    "vlog",
+    "documentary",
+    "commentary"
+   ],
+   "video_types": [
+    "紀錄 Vlog",
+    "口播知識",
+    "品牌企業",
+    "產品廣告"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-074",
+    "FX-076",
+    "FX-049"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "light-leak-overlay"
+   ],
+   "brand_color_ready": false,
+   "source": "ref17-hk-retire-north 0:53、ref18-hk-retire-mgmtfee 0:58",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "冇文字。",
+   "placement": "free",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-077-light-leak-flash",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "轉場前後，一片橙紅或粉紅光（似舊菲林漏光）由畫面一邊湧入，整個畫面短暫過曝變暖色，約 0.6 秒後褪走，接到下一鏡。"
+  },
+  {
+   "id": "FX-078",
+   "name": "撕紙剪報 + 螢光筆",
+   "name_en": "torn-paper-clipping",
+   "category": "cutaway",
+   "tags": [
+    "news-clipping",
+    "highlight",
+    "paper",
+    "evidence"
+   ],
+   "mood": [
+    "editorial",
+    "journalistic",
+    "handmade"
+   ],
+   "fits": [
+    "news",
+    "finance",
+    "commentary",
+    "medical"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "醫療健康"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-079",
+    "FX-074",
+    "FX-081",
+    "FX-041"
+   ],
+   "conflicts_with": [
+    "FX-058"
+   ],
+   "needs": [
+    "article-screenshot"
+   ],
+   "brand_color_ready": true,
+   "source": "ref18-hk-retire-mgmtfee 0:12–0:27",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "新聞截圖本身係中文；螢光筆只劃 1–2 句重點，字要大到 9:16 縮圖睇得清（截圖放大到畫面闊 110% 再慢移）。",
+   "placement": "layout",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-078-torn-paper-clipping",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "引用新聞或研究時，切去一張皺白紙：上面貼住新聞網頁截圖（標題、來源 logo、內文），紙邊係撕爛嘅毛邊；跟住螢光筆（黃、粉紅）由左向右逐句劃過重點，鏡頭慢慢移去被劃嗰句。"
+  },
+  {
+   "id": "FX-079",
+   "name": "撕紙轉場",
+   "name_en": "paper-tear-transition",
+   "category": "transition",
+   "tags": [
+    "paper",
+    "tear",
+    "transition",
+    "reveal"
+   ],
+   "mood": [
+    "handmade",
+    "editorial",
+    "dramatic"
+   ],
+   "fits": [
+    "news",
+    "commentary",
+    "storytelling"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-078",
+    "FX-081",
+    "FX-074"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "torn-edge-mask"
+   ],
+   "brand_color_ready": false,
+   "source": "ref18-hk-retire-mgmtfee 0:26–0:28",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "冇文字。",
+   "placement": "free",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-079-paper-tear-transition",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "上一個畫面（通常係剪報紙）好似被人由中間撕開：一條不規則毛邊裂口橫住打開，上下兩半各自向外飛走，露出下面嘅新畫面；裂口邊有白色紙纖維同陰影。"
+  },
+  {
+   "id": "FX-080",
+   "name": "面部打格仔",
+   "name_en": "face-mosaic",
+   "category": "accent",
+   "tags": [
+    "mosaic",
+    "pixelate",
+    "censor",
+    "comedy"
+   ],
+   "mood": [
+    "playful",
+    "comedic"
+   ],
+   "fits": [
+    "commentary",
+    "vlog",
+    "storytelling"
+   ],
+   "video_types": [
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "快",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-075",
+    "FX-046"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "face-box"
+   ],
+   "brand_color_ready": false,
+   "source": "ref18-hk-retire-mgmtfee 0:16–0:19",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "冇文字。",
+   "placement": "free",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-080-face-mosaic",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者講到尷尬、自嘲或者「匿名」位時，佢塊面突然被馬賽克格仔遮住（好似新聞打格），格仔跟住塊面郁，1–3 秒後拎走，製造笑位。"
+  },
+  {
+   "id": "FX-081",
+   "name": "水松板排行榜",
+   "name_en": "corkboard-ranking",
+   "category": "list-chart",
+   "tags": [
+    "ranking",
+    "table",
+    "corkboard",
+    "highlight"
+   ],
+   "mood": [
+    "handmade",
+    "editorial",
+    "playful"
+   ],
+   "fits": [
+    "news",
+    "finance",
+    "education",
+    "commentary"
+   ],
+   "video_types": [
+    "新聞資訊",
+    "口播知識",
+    "動畫解說"
+   ],
+   "pace": [
+    "中",
+    "慢"
+   ],
+   "pairs_with": [
+    "FX-078",
+    "FX-079",
+    "FX-074"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "ranking-data",
+    "photo-assets"
+   ],
+   "brand_color_ready": true,
+   "source": "ref18-hk-retire-mgmtfee 1:06–1:13",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "標題用手寫感粗圓體 2 行、每行 4–6 字；表格中文城市名 9:16 最少 52px，最多顯示 6 行。",
+   "placement": "layout",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-081-corkboard-ranking",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "水松板背景上釘住幾樣嘢：左上一張撕紙標題（2024年城市生活成本排名），右上一張相片（香港夜景），中間一張白紙排行榜表格；表格逐行出，然後螢光色條（黃、藍）逐條劃過要強調嘅排名，最後鏡頭慢推入表格。"
+  },
+  {
+   "id": "FX-082",
+   "name": "電影黑邊字幕",
+   "name_en": "letterbox-caption-bar",
+   "category": "layout",
+   "tags": [
+    "letterbox",
+    "cinematic",
+    "caption-bar",
+    "ticker"
+   ],
+   "mood": [
+    "cinematic",
+    "premium",
+    "serious"
+   ],
+   "fits": [
+    "interview",
+    "documentary",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "訪問對談",
+    "紀錄 Vlog",
+    "品牌企業",
+    "新聞資訊"
+   ],
+   "pace": [
+    "慢",
+    "中"
+   ],
+   "pairs_with": [
+    "FX-083",
+    "FX-084",
+    "FX-085"
+   ],
+   "conflicts_with": [
+    "FX-068"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref19-forensic-podcast 0:28–1:00",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "字幕放喺下黑邊正中，白字粗黑 16:9 約 34px、9:16 最少 72px；上黑邊可放細字頻道名／贊助（52px 以上）。",
+   "placement": "layout",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-082-letterbox-caption-bar",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "畫面上下加一條實黑邊（似電影闊銀幕），字幕放入下面黑邊入面、唔再壓住畫面；上黑邊左角放頻道／節目名，右角放一行細黃字（贊助或者系列名）。畫面即刻有電影感，而字幕永遠唔會遮到人。"
+  },
+  {
+   "id": "FX-083",
+   "name": "箭嘴因果鏈",
+   "name_en": "arrow-cause-chain",
+   "category": "text-fx",
+   "tags": [
+    "arrow",
+    "cause-effect",
+    "keyword",
+    "logic"
+   ],
+   "mood": [
+    "educational",
+    "energetic",
+    "clear"
+   ],
+   "fits": [
+    "education",
+    "medical",
+    "commentary",
+    "podcast-clip"
+   ],
+   "video_types": [
+    "口播知識",
+    "醫療健康",
+    "動畫解說",
+    "訪問對談"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-082",
+    "FX-084",
+    "FX-039"
+   ],
+   "conflicts_with": [
+    "FX-065"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref19-forensic-podcast 0:37–0:41",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "每節 3–6 字，最多 3 節；16:9 約 56px、9:16 最少 96px（特效細字 72px 以上）；9:16 改為上下直排箭嘴。",
+   "placement": "lower",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-083-arrow-cause-chain",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "講者講「由 A 推到 B」嗰種因果時，畫面左下出一行粗體白字（屍體的傷口），跟住一個箭嘴「➔」畫出，再出第二節黃字（死者生前遭遇）；字有黑色粗描邊同陰影，逐節出、配合講者語速。"
+  },
+  {
+   "id": "FX-084",
+   "name": "掃筆色帶名牌",
+   "name_en": "brush-band-name",
+   "category": "text-fx",
+   "tags": [
+    "lower-third",
+    "name",
+    "brush",
+    "highlight"
+   ],
+   "mood": [
+    "energetic",
+    "bold",
+    "youthful"
+   ],
+   "fits": [
+    "interview",
+    "podcast-clip",
+    "education"
+   ],
+   "video_types": [
+    "訪問對談",
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-082",
+    "FX-083",
+    "FX-085"
+   ],
+   "conflicts_with": [
+    "FX-064",
+    "FX-070"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref19-forensic-podcast 0:45–0:51",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "名 + 身份 6–8 字，粗黑斜體 16:9 約 60px、9:16 最少 110px；中文唔好真斜體，用 skewX(-8deg)。",
+   "placement": "lower",
+   "aspect": "16:9",
+   "difficulty": "easy",
+   "path": "effects/FX-084-brush-band-name",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "介紹嘉賓時，胸口位先由左向右「掃」出一條黃色粗筆刷色帶（毛邊），跟住黑色粗體斜字（張晏維 法醫）彈出喺色帶上面；停幾秒後色帶由右收走。比普通名牌活潑、年輕。"
+  },
+  {
+   "id": "FX-085",
+   "name": "斜切色塊問題清單",
+   "name_en": "diagonal-question-panel",
+   "category": "list-chart",
+   "tags": [
+    "agenda",
+    "questions",
+    "diagonal",
+    "panel",
+    "list"
+   ],
+   "mood": [
+    "energetic",
+    "bold",
+    "educational"
+   ],
+   "fits": [
+    "interview",
+    "education",
+    "podcast-clip",
+    "medical"
+   ],
+   "video_types": [
+    "訪問對談",
+    "口播知識",
+    "醫療健康",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "中",
+    "快"
+   ],
+   "pairs_with": [
+    "FX-082",
+    "FX-084",
+    "FX-083"
+   ],
+   "conflicts_with": [
+    "FX-067",
+    "FX-010"
+   ],
+   "needs": [],
+   "brand_color_ready": true,
+   "source": "ref19-forensic-podcast 0:52–1:01",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "每條問題 8–14 字，粗黑 16:9 約 30px、9:16 最少 64px；9:16 色塊改由下方斜切入、佔下半 45%。",
+   "placement": "layout",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-085-diagonal-question-panel",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "開場預告今集問題時，一大塊斜切品牌色塊（黃色，印滿淡色大問號圖案）由右邊滑入蓋住畫面右半，講者留喺左邊；跟住一條條白色標籤（前面有黃色圓形問號）逐條彈出：法醫工作時在做什麼？要如何透過遺體判斷死因？……"
+  },
+  {
+   "id": "FX-086",
+   "name": "品牌色塊幾何轉場",
+   "name_en": "brand-block-wipe",
+   "category": "transition",
+   "tags": [
+    "brand",
+    "geometric",
+    "blocks",
+    "opening",
+    "wipe"
+   ],
+   "mood": [
+    "energetic",
+    "bold",
+    "modern"
+   ],
+   "fits": [
+    "opening",
+    "podcast-clip",
+    "brand",
+    "interview"
+   ],
+   "video_types": [
+    "訪問對談",
+    "品牌企業",
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "pace": [
+    "快"
+   ],
+   "pairs_with": [
+    "FX-061",
+    "FX-084",
+    "FX-085"
+   ],
+   "conflicts_with": [],
+   "needs": [
+    "brand-colors",
+    "guest-photos"
+   ],
+   "brand_color_ready": true,
+   "source": "ref19-forensic-podcast 0:12–0:27",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "cjk_fit": "good",
+   "cjk_notes": "色塊入面嘅字 2–4 字巨型粗黑，或者頻道名；9:16 色塊改直向排列。",
+   "placement": "free",
+   "aspect": "16:9",
+   "difficulty": "medium",
+   "path": "effects/FX-086-brand-block-wipe",
+   "has_snippet": true,
+   "has_preview": true,
+   "summary": "節目片頭或段落轉換：黑色底上，一堆品牌黃同白嘅長方色塊由唔同方向快速滑入、疊埋、再滑走，中間夾住黑白嘉賓相片同 >>> 箭嘴符號，好似一個有節奏嘅拼圖；最後色塊收埋、露出節目名或者下一個畫面。"
   }
  ],
  "sound_count": 18,
@@ -3257,7 +4347,9 @@
     "FX-040",
     "FX-006",
     "FX-046",
-    "FX-003"
+    "FX-003",
+    "FX-071",
+    "FX-068"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3296,7 +4388,8 @@
     "FX-046",
     "FX-026",
     "FX-054",
-    "FX-005"
+    "FX-005",
+    "FX-086"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3336,7 +4429,8 @@
     "FX-006",
     "FX-017",
     "FX-053",
-    "FX-063"
+    "FX-063",
+    "FX-073"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3377,7 +4471,8 @@
     "FX-057",
     "FX-037",
     "FX-055",
-    "FX-033"
+    "FX-033",
+    "FX-085"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3417,7 +4512,9 @@
     "FX-032",
     "FX-067",
     "FX-038",
-    "FX-064"
+    "FX-064",
+    "FX-070",
+    "FX-084"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3457,7 +4554,8 @@
    "pairs_with": [
     "FX-029",
     "FX-035",
-    "FX-031"
+    "FX-031",
+    "FX-080"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3536,7 +4634,8 @@
     "FX-065",
     "FX-027",
     "FX-022",
-    "FX-050"
+    "FX-050",
+    "FX-083"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3654,7 +4753,8 @@
     "FX-017",
     "FX-053",
     "FX-048",
-    "FX-062"
+    "FX-062",
+    "FX-076"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3732,7 +4832,8 @@
    "pairs_with": [
     "FX-058",
     "FX-061",
-    "FX-010"
+    "FX-010",
+    "FX-081"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3772,7 +4873,9 @@
     "FX-005",
     "FX-032",
     "FX-021",
-    "FX-041"
+    "FX-041",
+    "FX-078",
+    "FX-079"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3850,7 +4953,8 @@
     "FX-063",
     "FX-027",
     "FX-049",
-    "FX-042"
+    "FX-042",
+    "FX-077"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",
@@ -3886,7 +4990,8 @@
     "快"
    ],
    "pairs_with": [
-    "FX-054"
+    "FX-054",
+    "FX-075"
    ],
    "source": "synth: tools/sfx.py",
    "license": "自製合成，無版權限制，可商用",

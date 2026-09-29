@@ -1,0 +1,16 @@
+<!-- FX-068 章節導航條 | 1080×1920 | 依賴：SansTC | 全片 layer，唔使做 clip -->
+<style>
+#fx068{position:absolute;left:40px;right:40px;top:230px;height:56px;display:flex;gap:2px;z-index:9;font:700 40px/56px 'SansTC'}
+#fx068 span{flex:1;text-align:center;background:rgba(10,20,40,.55);color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden}
+#fx068 span.on{background:var(--brand,#2a6be0);color:#fff}
+</style>
+<div id="fx068"><span class="on">亞裔易中風？</span><span>中風先兆</span><span>黃金時間</span></div>
+<script>
+// CH = [{t:0},{t:32.5},{t:71}]：每章開始時間；換章時高亮下一格
+const fx068 = document.querySelectorAll('#fx068 span');
+CH.forEach((c,i)=>{ if(!i) return;
+  tl.to(fx068[i-1],{backgroundColor:'rgba(10,20,40,.55)',color:'rgba(255,255,255,.55)',duration:.25},c.t);
+  tl.fromTo(fx068[i],{backgroundImage:'linear-gradient(90deg,var(--brand,#2a6be0) 0%,rgba(10,20,40,.55) 0%)'},
+    {backgroundImage:'linear-gradient(90deg,var(--brand,#2a6be0) 100%,rgba(10,20,40,.55) 100%)',color:'#fff',duration:.35,ease:'power2.out'},c.t);
+});
+</script>

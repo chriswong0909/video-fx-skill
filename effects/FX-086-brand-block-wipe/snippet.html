@@ -1,0 +1,22 @@
+<!-- FX-086 品牌色塊幾何轉場 | 1080×1920 | 依賴：嘉賓相（黑白處理）、品牌色 | 要做成 clip -->
+<style>
+#fx086{position:absolute;inset:0;z-index:9;background:#1d1d1d;overflow:hidden}
+#fx086 .b{position:absolute;background:var(--accent,#ffcf2e)}
+#fx086 .b.w{background:#fff}
+#fx086 .b img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1)}
+#fx086 .ar{position:absolute;left:420px;top:880px;font:900 120px 'SansTC';color:#fff;letter-spacing:-.1em}
+</style>
+<div id="fx086" class="clip" data-start="12" data-duration="3" data-track-index="9">
+ <div class="b" style="left:0;top:0;width:540px;height:420px"></div>
+ <div class="b w" style="left:540px;top:420px;width:540px;height:640px"><img src="assets/guest1.jpg"></div>
+ <div class="b" style="left:0;top:1060px;width:720px;height:380px"></div>
+ <div class="b w" style="left:720px;top:1440px;width:360px;height:480px"><img src="assets/guest2.jpg"></div>
+ <div class="ar">&gt;&gt;&gt;</div>
+</div>
+<script>
+const fx086=gsap.utils.toArray('#fx086 .b');
+tl.from(fx086,{x:(i)=>i%2?1100:-1100,duration:.3,ease:'expo.out',stagger:.06},T.start);
+tl.from('#fx086 .ar',{x:-60,opacity:0,duration:.25},T.start+.3);
+tl.to(fx086,{y:(i)=>i%2?-2000:2000,duration:.35,ease:'expo.in',stagger:.04},T.end-.45);
+tl.to('#fx086',{opacity:0,duration:.1},T.end-.1);
+</script>

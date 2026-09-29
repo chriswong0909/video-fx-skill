@@ -19,6 +19,7 @@ status: active
 cjk_fit: good
 cjk_notes: 徽章字 2–3 行，大數字 + 細字說明。
 placement: free
+aspect: "16:9"
 difficulty: easy
 ---
 

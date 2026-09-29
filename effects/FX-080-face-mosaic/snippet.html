@@ -1,0 +1,14 @@
+<!-- FX-080 面部打格仔 | 依賴：face-box 關鍵點（lessons/layout-safety.md Haar 偵測） | 第二個 video 同原片同步 -->
+<style>
+#fx080{position:absolute;inset:0;z-index:6;pointer-events:none}
+#fx080 canvas{position:absolute;inset:0;width:1080px;height:1920px;image-rendering:pixelated}
+</style>
+<div id="fx080" class="clip" data-start="16" data-duration="2.6" data-track-index="6"><canvas width="45" height="80"></canvas></div>
+<script>
+// 做法：每幀將 #cam video 畫落 45×80 細 canvas（約 24px 一格），CSS 放大 + pixelated；再用 clip-path 只顯示面部
+const cv=document.querySelector('#fx080 canvas'), cx=cv.getContext('2d'), src=document.querySelector('#cam video');
+const FACE=[{t:16,x:380,y:520,w:320,h:400},{t:18.6,x:400,y:500,w:320,h:400}]; // 由偵測結果生成
+// HyperFrames 每幀 seek 時 onUpdate 會重畫：
+tl.to({},{duration:T.dur,onUpdate(){cx.drawImage(src,0,0,45,80);const p=this.progress(),a=FACE[0],b=FACE[1],L=(k)=>a[k]+(b[k]-a[k])*p;
+  cv.style.clipPath=`inset(${L('y')}px ${1080-L('x')-L('w')}px ${1920-L('y')-L('h')}px ${L('x')}px round 24px)`;}},T.start);
+</script>

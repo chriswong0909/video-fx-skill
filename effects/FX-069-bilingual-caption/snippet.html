@@ -1,0 +1,13 @@
+<!-- FX-069 中英雙語字幕 | 1080×1920 | 依賴：SansTC | 基本字幕類，全片只揀一款 -->
+<style>
+.fx069{position:absolute;left:60px;right:60px;bottom:400px;text-align:center;z-index:8;opacity:0;text-shadow:0 2px 8px rgba(0,0,0,.55)}
+.fx069 .zh{display:block;font:700 80px/1.15 'SansTC';color:#fff}
+.fx069 .en{display:block;font:500 52px/1.2 'Inter','SansTC';color:rgba(255,255,255,.85);margin-top:6px}
+</style>
+<!-- 每句一個，由字幕 JSON 生成：{t0,t1,zh,en} -->
+<div class="fx069" data-t0="11.0" data-t1="13.4"><span class="zh">為我們社區帶來這麼重要的話題</span><span class="en">for raising this key community topic</span></div>
+<script>
+document.querySelectorAll('.fx069').forEach(el=>{
+  tl.set(el,{opacity:1},+el.dataset.t0); tl.set(el,{opacity:0},+el.dataset.t1); // 硬切，唔加動畫
+});
+</script>

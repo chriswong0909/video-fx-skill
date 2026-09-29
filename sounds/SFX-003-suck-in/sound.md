@@ -8,7 +8,7 @@ volume: 0.35
 mood: [高級編輯感, 活潑年輕]
 video_types: [口播知識, 訪問對談, 醫療健康, 動畫解說, 產品廣告, 紀錄 Vlog, 新聞資訊, 品牌企業]
 pace: [快, 中]
-pairs_with: [FX-006, FX-017, FX-053, FX-063]
+pairs_with: [FX-006, FX-017, FX-053, FX-063, FX-073]
 source: "synth: tools/sfx.py"
 license: "自製合成，無版權限制，可商用"
 learned: 2026-09-29

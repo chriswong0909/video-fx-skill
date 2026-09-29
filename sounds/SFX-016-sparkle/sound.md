@@ -8,7 +8,7 @@ volume: 0.3
 mood: [溫暖生活, 活潑年輕]
 video_types: [口播知識, 訪問對談, 醫療健康, 動畫解說, 產品廣告, 紀錄 Vlog, 新聞資訊, 品牌企業]
 pace: [中, 慢]
-pairs_with: [FX-063, FX-027, FX-049, FX-042]
+pairs_with: [FX-063, FX-027, FX-049, FX-042, FX-077]
 source: "synth: tools/sfx.py"
 license: "自製合成，無版權限制，可商用"
 learned: 2026-09-29

@@ -1,0 +1,22 @@
+<!-- FX-071 解說畫板 + 講者畫中畫 | 1080×1920 | 依賴：3D 動畫片 assets/explain.mp4、原片 | 要做成 clip -->
+<style>
+#fx071{position:absolute;inset:0;z-index:5;background:#e8f3f8;overflow:hidden}
+#fx071 .deco{position:absolute;width:520px;height:520px;background:#bcd9f0;transform:rotate(-18deg)}
+#fx071 .board{position:absolute;left:44px;top:300px;width:992px;height:1240px;border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(20,60,100,.25)}
+#fx071 .board video{width:100%;height:100%;object-fit:cover}
+#fx071 .pip{position:absolute;right:44px;top:1330px;width:360px;height:640px;border:6px solid #fff;border-radius:10px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+#fx071 .pip video{width:100%;height:100%;object-fit:cover}
+#fx071 .tag{position:absolute;left:44px;top:1470px;background:#fff;border-left:10px solid var(--brand,#2a6be0);font:700 64px/1 'SansTC';color:#1c2a3a;padding:18px 26px;border-radius:6px}
+</style>
+<div id="fx071" class="clip" data-start="20" data-duration="12" data-track-index="3">
+ <div class="deco" style="left:-300px;top:-260px"></div><div class="deco" style="right:-320px;bottom:-280px"></div>
+ <div class="board"><video src="assets/explain.mp4" muted playsinline></video></div>
+ <div class="pip"><video src="source.mp4" muted playsinline></video></div>
+ <div class="tag">什麼是中風？</div>
+</div>
+<script>
+tl.from('#fx071 .board',{scale:.94,opacity:0,duration:.5,ease:'power2.out'},T.start);
+tl.from('#fx071 .pip',{x:80,y:80,opacity:0,duration:.4,ease:'power2.out'},T.start+.2);
+tl.from('#fx071 .tag',{scale:.6,opacity:0,duration:.3,ease:'back.out(2)'},T.start+.35);
+tl.fromTo('#fx071 .board video',{scale:1},{scale:1.06,duration:T.dur,ease:'none'},T.start);
+</script>

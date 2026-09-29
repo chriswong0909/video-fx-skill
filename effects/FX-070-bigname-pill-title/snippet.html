@@ -1,0 +1,12 @@
+<!-- FX-070 大字英文名 + 膠囊職銜 | 1080×1920 | 依賴：SansTC -->
+<style>
+#fx070{position:absolute;left:90px;top:1180px;z-index:8}
+#fx070 .nm{font:900 120px/1 'SansTC';color:#fff;letter-spacing:.02em;text-shadow:0 4px 14px rgba(0,0,0,.35)}
+#fx070 .pill{display:inline-block;margin-top:14px;background:var(--brand,#2a6be0);color:#fff;font:500 64px/1 'SansTC';padding:14px 26px;border-radius:8px}
+</style>
+<div id="fx070"><div class="nm">陳大文</div><div class="pill">東華醫院藥劑部主管</div></div>
+<script>
+tl.from('#fx070 .pill',{x:-40,opacity:0,duration:.3,ease:'power2.out'},T.start);
+tl.fromTo('#fx070 .nm',{clipPath:'inset(100% 0 0 0)',y:20},{clipPath:'inset(0% 0 0 0)',y:0,duration:.35,ease:'power3.out'},T.start+.15);
+tl.to('#fx070',{opacity:0,duration:.25},T.end-.25);
+</script>
