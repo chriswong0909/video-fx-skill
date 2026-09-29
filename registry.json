@@ -5040,5 +5040,165 @@
    "has_audio": true,
    "summary": "揭曉、轉入重要段落；可以同 riser 或 suck-in 接住用。"
   }
+ ],
+ "grade_count": 7,
+ "grades": [
+  {
+   "id": "GR-001",
+   "name": "專業專訪",
+   "name_en": "professional-interview",
+   "video_types": [
+    "醫療健康",
+    "口播知識",
+    "訪問對談",
+    "品牌企業"
+   ],
+   "default_for": [
+    "醫療健康",
+    "口播知識",
+    "訪問對談",
+    "品牌企業"
+   ],
+   "mood_zh": [
+    "專業醫療"
+   ],
+   "filters": "curves=master='0/0.01 0.25/0.235 0.75/0.77 1/0.99':r='0/0 0.75/0.765 1/1':b='0/0 0.75/0.74 1/1',eq=saturation=1.03",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-001-professional-interview",
+   "summary": "乾淨中性、膚色自然略暖、輕微 S 曲線加少少立體感；似電視台專訪同醫院官方片。醫生口播預設用呢個。"
+  },
+  {
+   "id": "GR-002",
+   "name": "醫療清新",
+   "name_en": "clinical-fresh",
+   "video_types": [
+    "醫療健康",
+    "口播知識",
+    "品牌企業"
+   ],
+   "default_for": [],
+   "mood_zh": [
+    "專業醫療"
+   ],
+   "filters": "curves=master='0/0.02 0.5/0.52 0.85/0.9 1/1':r='0/0 0.5/0.485 1/0.99':b='0/0.01 0.5/0.52 1/1',eq=saturation=0.95",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-002-clinical-fresh",
+   "summary": "偏白偏淨、光位微冷、整體明亮，似診所、藥廠廣告；膚色保留，背景白牆更白。"
+  },
+  {
+   "id": "GR-003",
+   "name": "暖色 Podcast",
+   "name_en": "warm-podcast",
+   "video_types": [
+    "訪問對談",
+    "口播知識",
+    "紀錄 Vlog"
+   ],
+   "default_for": [],
+   "mood_zh": [
+    "溫暖生活"
+   ],
+   "filters": "curves=master='0/0.06 0.5/0.5 1/0.95':r='0/0 0.5/0.53 1/1':b='0/0 0.5/0.46 1/0.96',eq=saturation=0.9,vignette=angle=PI/5",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-003-warm-podcast",
+   "summary": "桃杏暖色、黑位微提（啞光）、輕微降飽和、四角暗角；溫暖、似 podcast 同 lifestyle 訪問（同 FX-015 一致）。"
+  },
+  {
+   "id": "GR-004",
+   "name": "電影青橙",
+   "name_en": "cinematic-teal-orange",
+   "video_types": [
+    "產品廣告",
+    "品牌企業",
+    "紀錄 Vlog"
+   ],
+   "default_for": [
+    "產品廣告"
+   ],
+   "mood_zh": [
+    "高級編輯感"
+   ],
+   "filters": "curves=r='0/0 0.25/0.2 0.75/0.81 1/1':g='0/0 0.25/0.235 0.75/0.765 1/1':b='0/0.04 0.25/0.3 0.75/0.69 1/0.96',eq=saturation=1.06",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-004-cinematic-teal-orange",
+   "summary": "陰影偏青、光位（膚色）偏橙、對比較強，電影同廣告常見色調，畫面有質感。"
+  },
+  {
+   "id": "GR-005",
+   "name": "明亮生活",
+   "name_en": "bright-lifestyle",
+   "video_types": [
+    "紀錄 Vlog",
+    "產品廣告",
+    "口播知識"
+   ],
+   "default_for": [
+    "紀錄 Vlog"
+   ],
+   "mood_zh": [
+    "活潑年輕"
+   ],
+   "filters": "eq=brightness=0.03:gamma=1.06:saturation=1.12,curves=r='0/0 0.5/0.51 1/1':b='0/0 0.5/0.49 1/1'",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-005-bright-lifestyle",
+   "summary": "明亮、通透、色彩鮮但唔俗，略暖；似生活 vlog、年輕品牌。"
+  },
+  {
+   "id": "GR-006",
+   "name": "新聞中性",
+   "name_en": "news-neutral",
+   "video_types": [
+    "新聞資訊",
+    "動畫解說"
+   ],
+   "default_for": [
+    "新聞資訊",
+    "動畫解說"
+   ],
+   "mood_zh": [],
+   "filters": "curves=master='0/0.01 0.5/0.5 1/0.99'",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-006-news-neutral",
+   "summary": "只做校正（白平衡、黑白位）加極輕對比，盡量保持真實顏色；似新聞紀實。"
+  },
+  {
+   "id": "GR-007",
+   "name": "暗調編輯感",
+   "name_en": "moody-editorial",
+   "video_types": [
+    "品牌企業",
+    "訪問對談",
+    "產品廣告"
+   ],
+   "default_for": [],
+   "mood_zh": [
+    "高級編輯感"
+   ],
+   "filters": "eq=brightness=-0.04:saturation=0.8,curves=master='0/0.06 0.3/0.25 0.7/0.7 1/0.93':b='0/0.04 0.4/0.42 1/0.98'",
+   "source": "original",
+   "learned": "2026-09-29",
+   "used_in": [],
+   "status": "active",
+   "path": "grades/GR-007-moody-editorial",
+   "summary": "偏暗、低飽和、黑位啞光、陰影微冷；雜誌式高級感，似 Apple、時裝訪問。"
+  }
  ]
 }

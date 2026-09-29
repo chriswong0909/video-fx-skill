@@ -93,6 +93,19 @@ footer{color:var(--muted);font-size:12.5px}
 .snd p{margin:0;font-size:13px;color:var(--muted)}
 .snd details{font-size:13px}.snd details .body p,.snd details .body li{font-size:13px}
 .shint{font-size:13px;color:var(--muted);margin:0}
+.grrec{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.grrec span{font-size:13px;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:6px 10px}
+.grrec b{font-weight:700}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.gcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.ba{position:relative;aspect-ratio:9/16;background:var(--well);overflow:hidden;touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.ba .af{clip-path:inset(0 0 0 50%)}
+.ba .ln{position:absolute;top:0;bottom:0;left:50%;width:2px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.6);pointer-events:none}
+.ba .tg{position:absolute;bottom:8px;font:600 11px/1 var(--sans);color:#fff;background:rgba(0,0,0,.55);padding:4px 6px;border-radius:4px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.gcard .cb p{-webkit-line-clamp:4}
+.rec{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:2px}
 .frow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;width:100%}.flab{font-size:12px;color:var(--muted);letter-spacing:.08em;min-width:56px}
 </style>
 
@@ -101,7 +114,7 @@ footer{color:var(--muted);font-size:12.5px}
   <h1>video-fx 效果庫<small id="sub" class="tc"></small></h1>
   <div class="stats" id="stats"></div>
  </header>
- <div class="tabs" role="tablist"><button class="tab" role="tab" data-tab="fx" id="tabfx"></button><button class="tab" role="tab" data-tab="sfx" id="tabsfx"></button></div>
+ <div class="tabs" role="tablist"><button class="tab" role="tab" data-tab="fx" id="tabfx"></button><button class="tab" role="tab" data-tab="sfx" id="tabsfx"></button><button class="tab" role="tab" data-tab="grade" id="tabgr"></button></div>
  <section id="sfxView" hidden>
   <div class="bar" role="toolbar" aria-label="聲效篩選" style="margin-bottom:16px">
    <div id="scats" style="display:flex;flex-wrap:wrap;gap:8px"></div>
@@ -109,6 +122,11 @@ footer{color:var(--muted);font-size:12.5px}
   </div>
   <p class="shint" style="margin-bottom:14px">撳 ▶ 試聽；撳波形可以跳位。音量以手機喇叭為準，建議先戴耳機聽。「配搭效果」撳落去會跳去嗰個視覺效果。</p>
   <div class="sgrid" id="sgrid"></div>
+ </section>
+ <section id="grView" hidden>
+  <p class="shint" style="margin-bottom:10px">每條片都會按影片類型自動推薦基本調色（冇特別要求就用推薦）。拖動滑桿比較原片同調色後；樣本係你自己嘅醫生片段。</p>
+  <div id="grRec" class="grrec"></div>
+  <div class="ggrid" id="ggrid"></div>
  </section>
  <section id="fxView" style="display:flex;flex-direction:column;gap:22px">
  <div class="bar" role="toolbar" aria-label="篩選">
@@ -131,6 +149,7 @@ footer{color:var(--muted);font-size:12.5px}
 (function(){
 const D=JSON.parse(document.getElementById('fxdata').textContent)||{effects:[]};
 const FX=D.effects, byId=Object.fromEntries(FX.map(e=>[e.id,e]));
+const GX=D.grades||[];
 const SX=D.sounds||[], SBY={}; for(const s of SX) for(const p of s.pairs||[]) (SBY[p]??=[]).push(s);
 const CAT={caption:'字幕（基本）','text-fx':'特效字',hook:'開場',camera:'鏡頭',cutaway:'全屏過場','list-chart':'清單／卡片',layout:'版面',transition:'轉場','grade-light':'調色／補光',accent:'點綴',sound:'聲效'};
 const catName=c=>CAT[c]||c, cc=c=>`var(--c-${c},var(--muted))`;
@@ -217,11 +236,11 @@ function renderFilters(){
 // ---------- 聲效 ----------
 const SCAT={whoosh:'轉場風聲',pop:'彈出',ui:'介面',ding:'提示音',impact:'重擊',riser:'張力',foley:'擬音',accent:'點綴',music:'背景音樂',ambience:'環境聲'};
 const scats=[...new Set(SX.map(s=>s.cat))];
-$('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`;
+$('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`;
 function setTab(t){state.tab=t;save();
- $('#tabfx').setAttribute('aria-selected',t==='fx'); $('#tabsfx').setAttribute('aria-selected',t==='sfx');
- $('#fxView').hidden=t!=='fx'; $('#sfxView').hidden=t!=='sfx';
- if(t==='fx') renderGrid(); else $('#foot').textContent=`${SX.length} 個聲效 · 全部自製合成或已註明授權，可以直接用喺客戶片。`;
+ $('#tabfx').setAttribute('aria-selected',t==='fx'); $('#tabsfx').setAttribute('aria-selected',t==='sfx'); $('#tabgr').setAttribute('aria-selected',t==='grade');
+ $('#fxView').hidden=t!=='fx'; $('#sfxView').hidden=t!=='sfx'; $('#grView').hidden=t!=='grade';
+ if(t==='fx') renderGrid(); else if(t==='grade') $('#foot').textContent=`${GX.length} 款調色預設 · 由 tools/grade.py 套用（先自動校正白平衡同黑白位，再套風格）。`; else $('#foot').textContent=`${SX.length} 個聲效 · 全部自製合成或已註明授權，可以直接用喺客戶片。`;
  if(t!=='sfx') stopAll();}
 function waveSvg(pk,id){const n=pk.length||1,w=100/n;
  const bars=pk.map((p,i)=>{const hh=Math.max(4,p*100);return `<rect x="${(i*w+w*.18).toFixed(2)}" y="${((100-hh)/2).toFixed(2)}" width="${(w*.64).toFixed(2)}" height="${hh.toFixed(2)}" rx="0.6"/>`}).join('');
@@ -262,8 +281,17 @@ document.addEventListener('click',ev=>{
  if(ev.target.closest('#sfxView [data-go]')){ev.stopImmediatePropagation(); stopAll(); setTab('fx'); open(ev.target.closest('[data-go]').dataset.go);}
 },true);
 $('#sq').addEventListener('input',ev=>{state.sq=ev.target.value.trim();renderSounds();});
-renderCats(); renderFilters(); renderGrid(); renderSounds();
+function renderGrades(){
+ const VT=['醫療健康','口播知識','訪問對談','動畫解說','產品廣告','紀錄 Vlog','新聞資訊','品牌企業'];
+ $('#grRec').innerHTML='<span><b>推薦</b></span>'+VT.map(v=>{const g=GX.find(x=>(x.deflt||[]).includes(v));return g?`<span>${h(v)} → <b>${g.id} ${h(g.name)}</b></span>`:''}).join('');
+ $('#ggrid').innerHTML=GX.map(g=>`<article class="gcard"><div class="ba">${D.gradeBefore?`<img src="${D.gradeBefore}" alt="原片">`:''}${g.after?`<img class="af" src="${g.after}" alt="${h(g.name)}">`:''}<i class="ln"></i><span class="tg" style="left:8px">原片</span><span class="tg" style="right:8px">${h(g.name)}</span><input type="range" min="0" max="100" value="50" aria-label="比較 ${h(g.name)}" data-ba></div>
+  <div class="cb"><span class="cat"><span class="dot" style="--cc:var(--c-grade-light)"></span>調色 · <span class="tc">${g.id}</span></span><h3>${h(g.name)}${(g.deflt||[]).length?'<span class="rec">預設</span>':''}</h3><p>${h(g.summary)}</p>
+  <div class="tags">${(g.deflt||[]).map(t=>`<span class="tag">推薦：${h(t)}</span>`).join('')}${(g.mood||[]).map(t=>`<span class="tag">情緒：${h(t)}</span>`).join('')}</div>
+  <details><summary>用法同參數</summary><div class="body">${g.body}</div><pre><code>${h(g.filters)}</code></pre></details></div></article>`).join('');
+}
+document.addEventListener('input',ev=>{const r=ev.target.closest('[data-ba]');if(!r)return;const box=r.parentElement,v=r.value;box.querySelector('.af').style.clipPath=`inset(0 0 0 ${v}%)`;box.querySelector('.ln').style.left=v+'%';});
+renderCats(); renderFilters(); renderGrid(); renderSounds(); renderGrades();
 const hid=location.hash.slice(1);
-if(SX.some(s=>s.id===hid)) goSound(hid); else { setTab(byId[hid]?'fx':(state.tab||'fx')); if(byId[hid]) open(hid); }
+if(SX.some(s=>s.id===hid)) goSound(hid); else if(GX.some(g=>g.id===hid)) setTab('grade'); else { setTab(byId[hid]?'fx':(['fx','sfx','grade'].includes(state.tab)?state.tab:'fx')); if(byId[hid]) open(hid); }
 })();
 </script>

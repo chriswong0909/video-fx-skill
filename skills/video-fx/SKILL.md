@@ -1,12 +1,12 @@
 ---
 name: "video-fx"
-description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果時使用：必定先問三輪需求（品牌色、節奏、特別要求），出分鏡確認先生成素材同影片，按影片類型同節奏由效果庫揀效果，渲染前做字級、字幕、面部禁區檢查，剪完入庫並同步 GitHub。"
+description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果時使用：必定先問三輪需求（品牌色、節奏、特別要求），出分鏡確認先生成素材同影片，按影片類型同節奏由效果庫、聲效庫同調色庫揀效果（自動推薦基本調色），渲染前做字級、字幕、面部禁區檢查，剪完入庫並同步 GitHub。"
 ---
 
 # video-fx：會學習嘅剪片 skill（分鏡先行）
 
 本 skill 係說明書；效果庫（資料）放喺使用者電腦：`~/Documents/GitHub/video-fx-skill/`（下稱 LIBRARY，已同 GitHub 同步）。
-效果目錄網頁（視覺效果 + 聲效兩個分頁）：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ
+效果目錄網頁（視覺效果、聲效、調色三個分頁）：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ
 
 ## 核心原則
 1. **一定先問需求（硬性關卡）**：被召喚或收到素材後，第一件事係問三輪問題（第 1 節）。未問完、未確認需求摘要之前，唔好轉錄、唔好分析、唔好出分鏡。
@@ -28,10 +28,11 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 - **開場**：0.1 秒內出字、停最少 2.5 秒、最少 150px，內容係全片問題或結論。
 - **唔准靜止**：任何 ≥ 1 秒嘅靜止段都要加慢推或浮動；全屏效果第一個元素出現前唔好有超過 0.3 秒空白。
 - **多樣性**：同一效果每 60 秒最多 2 次、相隔 ≥ 15 秒；「頭頂大字」類畫面全片最多 3 次；優先用未用過而又適合嘅效果。
+- **基本調色（每條片都要）**：按影片類型／情緒推薦調色預設（`python3 tools/grade.py recommend <影片類型> [情緒]`，例如醫生口播 → GR-001 專業專訪）；使用者冇特別要求就用推薦，有要求（跟參考片、保持原色、指定風格）就跟佢。膚色優先，醫療顏色（皮膚、傷口）要準。詳見 `lessons/color-grading.md`。
 
 ## 0. 連接效果庫（同問卷同步做，唔好因為讀檔而跳過問卷）
 1. get_device_info 睇 connectedFolders；未有 `~/Documents` 或 LIBRARY，就用 device_request_folder_access 請求 `~/Documents/GitHub/video-fx-skill`。
-2. device_bash 讀 `registry.json`（效果摘要、類別、video_types、pace、配搭、status、cjk_fit；`sounds` 陣列係聲效庫）、`lessons/*.md`（技術坑同版面規則，必讀）、`brands/*.md`。
+2. device_bash 讀 `registry.json`（效果摘要、類別、video_types、pace、配搭、status、cjk_fit；`sounds` 陣列係聲效庫、`grades` 陣列係調色庫）、`lessons/*.md`（技術坑同版面規則，必讀）、`brands/*.md`。
 3. 需要時先讀 `workflow/*.md`、`effects/FX-###-*/effect.md`、`snippet.html`；只讀方案用到嗰幾個效果，唔好一次過讀晒。
 4. **LIBRARY 攞唔到（例如喺網頁版 Claude）**：用 Artifact 工具 `action: read` 讀效果目錄網頁，入面 `<script id="fxdata">` 有全部效果 JSON。唔好當冇效果庫、唔好由零設計效果。提醒使用者：入庫要喺有 LIBRARY 嘅環境做。
 
@@ -56,17 +57,18 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 3. 開頭同結尾：要 hook 標題／要結尾 CTA／兩樣都要／都唔要
 4. 特別要求或禁忌：自由填寫（例如唔要某顏色、要 logo、醫生名同職銜、需唔需要補光調色）
 
-**問完**：輸出「需求摘要」表（項目｜答案），問一次「確認需求？」先進入第 2 節。
+**問完**：輸出「需求摘要」表（項目｜答案），入面一定有「調色」一行：寫推薦預設（例如「GR-001 專業專訪（按醫療健康推薦）」）；使用者喺特別要求講過顏色就跟佢。問一次「確認需求？」先進入第 2 節。
 
 ## 2. 分析（輕量）
 - 有參考片：`bash scripts/analyze-ref.sh <ref.mp4> <out_dir>` → contact sheet、剪接點、靜音段。只將一張 sheet stage 去雲端用 Read 睇，逐段列：時間｜畫面｜手法｜類別｜FX-id 或 NEW。記錄色調（3–5 色碼）、字體、節奏、字幕位置，寫入 `refs/<slug>/analysis.md` + `sheet-small.jpg`（唔放原片）。只拆手法，唔抄受版權保護嘅素材本身。
 - **參考片係英文（或非中文）**：每個有文字嘅手法按 `lessons/cjk-adaptation.md` 清單檢查，analysis.md 每段加「中文適應：good／adjust／poor + 要改咩」。用中文實際內容試渲染一格，縮到 360px 闊睇得清先算數。
 - 揀效果：由 registry.json 按 `video_types`、`pace`（跟問卷答案）再按 `fits`、`mood` 篩選；排除 banned 同 REMOVED；`cjk_fit: poor` 預設唔推薦，優先 good。覆蓋規則：1 款基本字幕 + 1 個開場手法 + 1 × camera；15 秒以上加 1 × cutaway 或 list-chart；有列舉內容用 list-chart。檢查 `pairs_with`／`conflicts_with`。見 `workflow/recommend.md`。
+- 調色分析：`python3 tools/grade.py analyze source.mp4` → 曝光、白色位偏色、膚色；有問題（偏暗、偏黃、膚色唔自然）喺分鏡講一句。
 - 轉錄：`tools/asr.py`（faster-whisper large-v3-turbo，language=yue，word timestamps）；低把握度字多數係口語位，要標示俾使用者核對。亂碼或重複段用 `condition_on_previous_text=False` 分段重轉。
 
 ## 3. 關卡一：分鏡
 1. 按句切鏡頭（每鏡長度跟節奏答案），寫 `storyboards/<project>.json`（格式見 `storyboards/_example.json`）：每鏡時間、講緊咩、畫面描述、FX-id、**字幕模式（基本字幕／由特效字取代，並寫出特效字）**、素材（source：canva／footage／higgsfield／stock／code）、生成描述、額度；要聲效就加 `sfx`（`[{"sfx":"SFX-001","t":3.8}]`，按效果嘅配搭聲效揀），分鏡網頁可以試聽。
-2. `node scripts/build-storyboard.mjs storyboards/<project>.json` → html；stage 去雲端，用 Artifact 發佈（同一專案重用同一連結）。
+2. `node scripts/build-storyboard.mjs storyboards/<project>.json` → html；stage 去雲端，用 Artifact 發佈（同一專案重用同一連結）。JSON 頂層加 `"grade": "GR-001"`；另外出調色對比圖 `python3 tools/grade.py compare source.mp4 storyboards/<project>-grade.jpg <推薦> <備選1> <備選2>`，同分鏡一齊俾使用者確認。
 3. 確認問題逐項列出：效果庫以外嘅元素、`cjk_fit: adjust` 效果要改嘅參數、講者出現比例、每個效果用咗幾次、有冇類別缺可用效果。
 4. 問使用者確認；要改就只改 JSON 再 build，唔好重寫。
 
@@ -77,6 +79,7 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 - 代碼做得到嘅（UI、圖表、線條、字幕、圖示輪廓）唔好用 AI 生成；但效果 `needs` 要相片嘅，唔好用代碼插圖頂替而唔講。醫學插圖一律標明需醫生審核。
 
 ## 5. 關卡三、四：渲染
+- 渲染前先調色：`python3 tools/grade.py apply source.mp4 <GR-id> graded.mp4 [--strength 0.8]`，HyperFrames 講者片用 graded.mp4（音軌照用 source.mp4）；唔好喺 HyperFrames 再疊調色 filter（B-roll 嘅 FX-074 除外）。
 - 由 `snippet.html` 抄結構，改時間、文字、品牌色；**位置同字級唔好照抄**：位置按面部禁區重排，字級按最細字準則同 `cjk_notes` 調整。
 - 嚴守 lessons：
   - 全屏圖層（cutaway、畫廊、閃卡）一定要做 clip（data-start／data-duration／data-track-index），唔好只用 opacity，否則軟件渲染出黑塊
@@ -105,11 +108,11 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
    - 講「唔啱／唔好用」→ 改 `status: banned` + `banned_reason`（邊條片、點解），唔刪。
    - 明確講「移除／刪除」→ 將資料夾搬去 `../_to_delete/removed_effects/`，喺 `effects/REMOVED.md` 記錄 ID、日期、原因；編號永不重用。
    - 只係某條片唔啱用 → 唔好禁用。
-4. 新技術坑寫入 `lessons/`；新品牌寫入 `brands/`；用過嘅聲效喺 sound.md `used_in` 加專案。
+4. 新技術坑寫入 `lessons/`；新品牌寫入 `brands/`；用過嘅聲效喺 sound.md、用過嘅調色喺 grade.md 嘅 `used_in` 加專案；跟參考片調出嘅新色調寫成新 `grades/GR-###-slug/grade.md`。
 5. `node scripts/build-registry.mjs` + `node scripts/build-gallery.mjs`，將 `gallery/artifact.html` 重新發佈到效果目錄同一連結（被拒就讀返網上最新版合併再發佈）。
 6. 同步 GitHub（repo：`chriswong0909/video-fx-skill`，branch `main`）：
-   - 先喺本機 commit：device_bash `cd LIBRARY && git add -A && git commit -m "..."`（行完確認冇 `.git/index.lock` 殘留；有就刪）。
-   - **只改文字檔**（.md/.json/.html/.mjs/.py/.sh）：再用 GitHub MCP（`mcp__remote-devices__github__push_files`，用 ToolSearch 載入）將同一批檔案、同一句 commit message 推上 `main`；之後本機同步時 git 會自動略過重複 commit。
+   - 先喺本機 commit：device_bash `cd LIBRARY && git add -A && git commit -m "..."`（行完確認冇 `.git/*.lock`、`tmp_obj_*` 殘留；有就刪，唔夠權限就用 device_request_delete_permission）。
+   - **只改文字檔**（.md/.json/.html/.mjs/.py/.sh）：再用 GitHub MCP（`mcp__remote-devices__github__push_files`，用 ToolSearch 載入）將同一批檔案、同一句 commit message 推上 `main`。推完用 `get_file_contents` 對比遠端 blob sha 同本機 `git hash-object`，一致先算成功（內容一致，本機同步時 git 會自動略過重複 commit）。
    - **有二進制檔**（preview.mp4、preview.jpg、sound.mp3 等，GitHub MCP 推唔到）：唔好用 MCP 推，提醒使用者喺 Finder 雙擊 `Documents/GitHub/video-fx-skill/推上GitHub.command`，完成後用 `list_commits` 核對。
    - 永遠唔好問使用者攞 token／密碼。
 7. 最後同使用者講：新增／更新／禁用／移除咗邊啲效果（FX-id + 一句描述），同埋 GitHub 已推送定係要佢雙擊同步檔。

@@ -40,9 +40,14 @@ const sounds = (reg.sounds||[]).map(x => {
     pairs:x.pairs_with||[], source:x.source||'', license:x.license||'', learned:x.learned||'', used:[].concat(x.used_in||[]), status:x.status||'active', summary:x.summary||'',
     body: md(txt.replace(/##\s*聲效\s*\n+[^\n]+\n?/, '')), peaks: pk.peaks, audio: au ? 'data:audio/mpeg;base64,'+au : null };
 });
-const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds }).replace(/</g, '\\u003c');
+const gb = b64(path.join(root,'grades','_before.jpg'));
+const grades = (reg.grades||[]).map(g => { const dir = path.join(root, g.path); const txt = fs.readFileSync(path.join(dir,'grade.md'),'utf8').replace(/^---\n[\s\S]*?\n---\n?/, '');
+  const af = b64(path.join(dir,'after.jpg'));
+  return { id:g.id, name:g.name, en:g.name_en, vtypes:g.video_types||[], deflt:g.default_for||[], mood:g.mood_zh||[], filters:g.filters||'', summary:g.summary||'',
+    body: md(txt.replace(/##\s*調色\s*\n+[^\n]+\n?/, '')), after: af ? 'data:image/jpeg;base64,'+af : null }; });
+const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
 const tpl = fs.readFileSync(path.join(root, 'gallery', 'template.html'), 'utf8');
 const frag = tpl.replace('/*__DATA__*/null', data);
 fs.writeFileSync(path.join(root, 'gallery', 'artifact.html'), frag);
 fs.writeFileSync(path.join(root, 'gallery', 'index.html'), '<!doctype html><html lang="zh-Hant-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>\n'+frag+'\n</body></html>');
-console.log(`gallery: ${effects.length} effects, ${sounds.length} sounds, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);
+console.log(`gallery: ${effects.length} effects, ${sounds.length} sounds, ${grades.length} grades, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);
