@@ -45,9 +45,13 @@ const grades = (reg.grades||[]).map(g => { const dir = path.join(root, g.path); 
   const af = b64(path.join(dir,'after.jpg'));
   return { id:g.id, name:g.name, en:g.name_en, vtypes:g.video_types||[], deflt:g.default_for||[], mood:g.mood_zh||[], filters:g.filters||'', summary:g.summary||'',
     body: md(txt.replace(/##\s*調色\s*\n+[^\n]+\n?/, '')), after: af ? 'data:image/jpeg;base64,'+af : null }; });
-const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
+let kitref = null; const kf = path.join(root,'kitref','kitref.json');
+if (fs.existsSync(kf)) { kitref = JSON.parse(fs.readFileSync(kf,'utf8'));
+  const im = p => { const b = b64(path.join(root,'kitref',p)); return b ? 'data:image/jpeg;base64,'+b : null; };
+  for (const c of kitref.cards) c.img = c.img ? im(c.img) : null; for (const v of kitref.showcase) v.img = v.img ? im(v.img) : null; }
+const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, kitref, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
 const tpl = fs.readFileSync(path.join(root, 'gallery', 'template.html'), 'utf8');
 const frag = tpl.replace('/*__DATA__*/null', data);
 fs.writeFileSync(path.join(root, 'gallery', 'artifact.html'), frag);
 fs.writeFileSync(path.join(root, 'gallery', 'index.html'), '<!doctype html><html lang="zh-Hant-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>\n'+frag+'\n</body></html>');
-console.log(`gallery: ${effects.length} effects, ${sounds.length} sounds, ${grades.length} grades, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);
+console.log(`gallery: ${effects.length} effects, ${sounds.length} sounds, ${grades.length} grades, ${kitref?kitref.cards.length:0} kit cards, ${(Buffer.byteLength(frag)/1024/1024).toFixed(2)} MB`);

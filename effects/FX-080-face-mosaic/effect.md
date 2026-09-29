@@ -43,3 +43,7 @@ face-box 用 lessons/layout-safety.md 嘅 Haar 偵測輸出；兩個 video 要�
 
 ## 已知限制
 轉頭太快會露面；正式私隱用途要逐格核對。
+
+## 限制
+- HyperFrames 冇人臉追蹤：要先出 face-box 關鍵點（每 0.2s），第二條 `<video>` 用 `data-media-start` 同主片對齊。
+- 只係搞笑用途；真正私隱保護要逐格人手核對。

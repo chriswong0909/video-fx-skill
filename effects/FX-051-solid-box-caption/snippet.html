@@ -1,12 +1,13 @@
 <!-- FX-051 實色方框字幕 | 依賴：SansTC 900 | tl、PHRASES=[[文字,開始秒,結束秒],...] 由外部提供 -->
+<!-- 放喺 index.html body 層，data-track-index ≥ 20；底部唔好入平台 UI 區（下 380px） -->
 <style>
-#fx050{position:absolute;left:40px;right:40px;top:1530px;height:110px;z-index:7;text-align:center}
-#fx050 span{position:absolute;left:50%;top:0;transform:translateX(-50%);white-space:nowrap;opacity:0;
- background:var(--caption-box,#1063be);color:#fff;font:900 82px/1.2 'SansTC';letter-spacing:2px;padding:8px 26px 10px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+#fx051{position:absolute;left:40px;right:40px;top:1380px;height:120px;z-index:20;overflow:visible}
+#fx051 .row{position:absolute;left:0;right:0;top:0;text-align:center;opacity:0;visibility:hidden}
+#fx051 .row span{display:inline-block;white-space:nowrap;background:var(--caption-box,#1063be);color:#fff;font:900 82px/1.2 'SansTC';letter-spacing:2px;padding:8px 26px 10px}
 </style>
-<div id="fx050"></div>
+<div id="fx051"></div>
 <script>
-const box050=document.getElementById('fx050');
-PHRASES.forEach(([txt,t0,t1])=>{const s=document.createElement('span');s.textContent=txt;box050.appendChild(s);
- tl.set(s,{opacity:1},t0); tl.set(s,{opacity:0},t1);});
+const box051=document.getElementById('fx051');
+PHRASES.forEach(([txt,t0,t1])=>{const r=document.createElement('div');r.className='row';const s=document.createElement('span');s.textContent=txt;r.appendChild(s);box051.appendChild(r);
+ tl.set(r,{opacity:1,visibility:'visible'},t0); tl.set(r,{opacity:0,visibility:'hidden'},t1);});
 </script>

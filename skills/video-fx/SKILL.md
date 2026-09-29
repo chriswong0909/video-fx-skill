@@ -49,7 +49,7 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 1. 影片類型：口播知識／訪問對談／醫療健康／動畫解說／產品廣告／紀錄 Vlog／新聞資訊／品牌企業
 2. 節奏：快（1–2 秒一剪）／中（2–4 秒）／慢（4 秒以上，少剪）
 3. 情緒：專業醫療／溫暖生活／活潑年輕／高級編輯感
-4. 字幕款式同音樂：FX-039 光暈字幕或 FX-051 方框字幕；背景音樂 + 聲效／只要聲效（由 sounds/ 聲效庫揀）／都唔要
+4. 字幕款式同聲效：FX-039 光暈字幕或 FX-051 方框字幕；聲效密度少／中／多（由 sounds/ 聲效庫揀）。唔做背景音樂（用戶上 IG 先加）
 
 **第三輪：素材同限制**
 1. AI 生成素材：唔用／少量（例如 ≤ 20 credits）／可以放手用，出分鏡時報價
@@ -88,6 +88,7 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
   - 中文字體用 Google Fonts `&text=` 子集下載
   - 本機 VM（Linux ARM64）渲染要用 playwright chromium + libxdamage，見 lessons/hyperframes-rendering.md
   - device_bash 每次最多 180 秒，背景程序會被殺，長工作要拆段
+- **渲染前清單**：逐項剔 `lessons/preflight-checklist.md` 15 項（時間軸墊底、video 唔放入有時間嘅 div、字幕硬收、冇 Math.random 等），再行 `hyperframes lint --json` 同 `validate`。
 - **渲染前自動檢查**（`lessons/layout-safety.md` 第 6 節）：字級、字幕字數、面部禁區、機位差距、多樣性五項全過先出草稿。
 - **草稿後動態檢查**（`lessons/rhythm-variety.md` 第 6 節）：`motion.py` 冇任何 ≥ 1 秒靜止段先出正式版。
 - 草稿：`--quality draft` 渲染一次，睇一張細 contact sheet（每格 ≤ 300px）；只修出問題嘅段落。

@@ -1,15 +1,21 @@
-<!-- FX-039 基本字幕 | 依賴：SansTC 700 | tl、PHRASES 由外部提供；有特效字嘅句子唔好放入 PHRASES -->
-<!-- PHRASES=[[文字, 開始秒, 結束秒],...]；按意群斷句，每組 6–12 字，單行 -->
+<!-- FX-039 基本字幕 | 依賴：SansTC 700（&text= 子集要包全形標點、數字） | tl、PHRASES 由外部提供；有特效字嘅句子唔好放入 PHRASES -->
+<!-- PHRASES=[[文字, 開始秒, 結束秒],...]；按意群斷句，每組 6–12 字，單行；時間用剪接後時間軸 -->
+<!-- 放喺 index.html body 層（唔好放入 sub-composition），data-track-index ≥ 20 -->
 <style>
-#fx039{position:absolute;left:60px;right:60px;top:1300px;height:120px;z-index:7;text-align:center}
-#fx039 span{position:absolute;left:0;right:0;opacity:0;white-space:nowrap;
+#fx039{position:absolute;left:60px;right:60px;top:1300px;height:120px;z-index:20;text-align:center;overflow:visible}
+#fx039 span{position:absolute;left:0;right:0;opacity:0;visibility:hidden;white-space:nowrap;
   font-family:"SansTC";font-weight:700;font-size:80px;line-height:1.3;color:#fff;
   text-shadow:0 0 5px rgba(0,0,0,.45),0 2px 12px rgba(0,0,0,.5)}
 </style>
 <div id="fx039"></div>
 <script>
 const box39=document.getElementById('fx039');
+// 決定性闊度估算：中文／全形 1em，半形 0.55em；超過 960px 就縮字，最細 72px（最細字準則）
+const est39=(w,fs)=>[...w].reduce((n,c)=>n+(/[\u0000-ÿ]/.test(c)?0.55:1),0)*fs;
 PHRASES.forEach(([w,a,b])=>{const s=document.createElement('span');s.textContent=w;box39.appendChild(s);
-  if([...w].length>12) console.warn('FX-039 超過 12 字：',w);
-  tl.set(s,{opacity:1},a);tl.from(s,{opacity:0,y:10,duration:.12,immediateRender:false},a);tl.set(s,{opacity:0},b);});
+  const fit=(window.__hyperframes&&window.__hyperframes.fitTextFontSize)?window.__hyperframes.fitTextFontSize(w,{maxWidth:960,fontFamily:'SansTC',fontWeight:700,maxFontSize:80,minFontSize:72}):null;
+  const fs=fit&&fit.fontSize?fit.fontSize:Math.max(72,Math.min(80,80*960/Math.max(1,est39(w,80))));
+  s.style.fontSize=fs+'px'; if(est39(w,fs)>960) console.warn('FX-039 太長，要再斷句：',w);
+  tl.set(s,{opacity:1,visibility:'visible'},a);tl.from(s,{opacity:0,y:10,duration:.12,immediateRender:false},a);
+  tl.set(s,{opacity:0,visibility:'hidden'},b);});                       // 硬收：visibility hidden
 </script>

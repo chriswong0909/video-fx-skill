@@ -106,6 +106,19 @@ footer{color:var(--muted);font-size:12.5px}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
 .gcard .cb p{-webkit-line-clamp:4}
 .rec{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--accent);border-radius:4px;padding:2px 6px;margin-left:6px;vertical-align:2px}
+.kh{font-size:17px;font-weight:800;margin:6px 0 12px}
+.kshow{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-bottom:22px}
+.kshow article,.ktpl article{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.kshow img{width:100%;display:block;background:var(--well)}
+.kshow .cb p,.ktpl .cb p{-webkit-line-clamp:unset}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.kcard{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.kcard img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:var(--well);cursor:zoom-in}
+.kcard .cb h3{font-size:14px;font-family:var(--mono);font-weight:500;word-break:break-all}
+.kcard .cb p{font-size:12.5px;-webkit-line-clamp:3}
+.ktpl{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+#kzoom{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.8);display:grid;place-items:center;padding:20px}
+#kzoom img{max-width:min(1200px,96vw);max-height:90vh;border-radius:8px}
 .frow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;width:100%}.flab{font-size:12px;color:var(--muted);letter-spacing:.08em;min-width:56px}
 </style>
 
@@ -114,7 +127,7 @@ footer{color:var(--muted);font-size:12.5px}
   <h1>video-fx 效果庫<small id="sub" class="tc"></small></h1>
   <div class="stats" id="stats"></div>
  </header>
- <div class="tabs" role="tablist"><button class="tab" role="tab" data-tab="fx" id="tabfx"></button><button class="tab" role="tab" data-tab="sfx" id="tabsfx"></button><button class="tab" role="tab" data-tab="grade" id="tabgr"></button></div>
+ <div class="tabs" role="tablist"><button class="tab" role="tab" data-tab="fx" id="tabfx"></button><button class="tab" role="tab" data-tab="sfx" id="tabsfx"></button><button class="tab" role="tab" data-tab="grade" id="tabgr"></button><button class="tab" role="tab" data-tab="kit" id="tabkit"></button></div>
  <section id="sfxView" hidden>
   <div class="bar" role="toolbar" aria-label="聲效篩選" style="margin-bottom:16px">
    <div class="frow"><span class="flab">來源</span><div id="spacks" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
@@ -123,6 +136,19 @@ footer{color:var(--muted);font-size:12.5px}
   </div>
   <p class="shint" style="margin-bottom:14px">撳 ▶ 試聽；撳波形可以跳位。音量以手機喇叭為準，建議先戴耳機聽。「配搭效果」撳落去會跳去嗰個視覺效果。</p>
   <div class="sgrid" id="sgrid"></div>
+ </section>
+ <section id="kitView" hidden>
+  <p class="shint" id="kitNote" style="margin-bottom:12px"></p>
+  <h2 class="kh">示範成品（9:16，喺你部電腦播）</h2><div class="kshow" id="kshow"></div>
+  <h2 class="kh">卡片庫</h2>
+  <div class="bar" role="toolbar" aria-label="教學包篩選" style="margin-bottom:14px">
+   <div class="frow"><span class="flab">風格</span><div id="kstyles" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+   <div class="frow"><span class="flab">級別</span><div id="ktiers" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+   <div class="frow"><span class="flab">用途</span><div id="kpurps" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+   <div class="search"><input id="kq" type="search" placeholder="搜尋：stat、agenda、glass…" aria-label="搜尋卡片"></div>
+  </div>
+  <div class="kgrid" id="kgrid"></div>
+  <h2 class="kh" style="margin-top:26px">範本（要有素材先顯示到，冇截圖）</h2><div id="ktpl" class="ktpl"></div>
  </section>
  <section id="grView" hidden>
   <p class="shint" style="margin-bottom:10px">每條片都會按影片類型自動推薦基本調色（冇特別要求就用推薦）。拖動滑桿比較原片同調色後；樣本係你自己嘅醫生片段。</p>
@@ -151,6 +177,7 @@ footer{color:var(--muted);font-size:12.5px}
 const D=JSON.parse(document.getElementById('fxdata').textContent)||{effects:[]};
 const FX=D.effects, byId=Object.fromEntries(FX.map(e=>[e.id,e]));
 const GX=D.grades||[];
+const KR=D.kitref||{cards:[],styles:[],templates:[],showcase:[]};
 const SX=D.sounds||[], SBY={}; for(const s of SX) for(const p of s.pairs||[]) (SBY[p]??=[]).push(s);
 const CAT={caption:'字幕（基本）','text-fx':'特效字',hook:'開場',camera:'鏡頭',cutaway:'全屏過場','list-chart':'清單／卡片',layout:'版面',transition:'轉場','grade-light':'調色／補光',accent:'點綴',sound:'聲效'};
 const catName=c=>CAT[c]||c, cc=c=>`var(--c-${c},var(--muted))`;
@@ -237,11 +264,11 @@ function renderFilters(){
 // ---------- 聲效 ----------
 const SCAT={whoosh:'轉場風聲',pop:'彈出',ui:'介面',ding:'提示音',impact:'重擊',riser:'張力',foley:'擬音',accent:'點綴',music:'短音樂',ambience:'環境聲'};
 const scats=[...new Set(SX.map(s=>s.cat))];
-$('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`;
+$('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`; $('#tabkit').innerHTML=`教學包參考頁 <span class="n">${KR.cards.length}</span>`;
 function setTab(t){state.tab=t;save();
- $('#tabfx').setAttribute('aria-selected',t==='fx'); $('#tabsfx').setAttribute('aria-selected',t==='sfx'); $('#tabgr').setAttribute('aria-selected',t==='grade');
- $('#fxView').hidden=t!=='fx'; $('#sfxView').hidden=t!=='sfx'; $('#grView').hidden=t!=='grade';
- if(t==='fx') renderGrid(); else if(t==='grade') $('#foot').textContent=`${GX.length} 款調色預設 · 由 tools/grade.py 套用（先自動校正白平衡同黑白位，再套風格）。`; else $('#foot').textContent=`${SX.length} 個聲效 · 全部自製合成或已註明授權，可以直接用喺客戶片。`;
+ $('#tabfx').setAttribute('aria-selected',t==='fx'); $('#tabsfx').setAttribute('aria-selected',t==='sfx'); $('#tabgr').setAttribute('aria-selected',t==='grade'); $('#tabkit').setAttribute('aria-selected',t==='kit');
+ $('#fxView').hidden=t!=='fx'; $('#sfxView').hidden=t!=='sfx'; $('#grView').hidden=t!=='grade'; $('#kitView').hidden=t!=='kit';
+ if(t==='fx') renderGrid(); else if(t==='kit') $('#foot').textContent=`${KR.cards.length} 張卡片 · 來源：${KR.source||''}`; else if(t==='grade') $('#foot').textContent=`${GX.length} 款調色預設 · 由 tools/grade.py 套用（先自動校正白平衡同黑白位，再套風格）。`; else $('#foot').textContent=`${SX.length} 個聲效 · 全部自製合成或已註明授權，可以直接用喺客戶片。`;
  if(t!=='sfx') stopAll();}
 function waveSvg(pk,id){const n=pk.length||1,w=100/n;
  const bars=pk.map((p,i)=>{const hh=Math.max(4,p*100);return `<rect x="${(i*w+w*.18).toFixed(2)}" y="${((100-hh)/2).toFixed(2)}" width="${(w*.64).toFixed(2)}" height="${hh.toFixed(2)}" rx="0.6"/>`}).join('');
@@ -299,8 +326,32 @@ function renderGrades(){
   <details><summary>用法同參數</summary><div class="body">${g.body}</div><pre><code>${h(g.filters)}</code></pre></details></div></article>`).join('');
 }
 document.addEventListener('input',ev=>{const r=ev.target.closest('[data-ba]');if(!r)return;const box=r.parentElement,v=r.value;box.querySelector('.af').style.clipPath=`inset(0 0 0 ${v}%)`;box.querySelector('.ln').style.left=v+'%';});
-renderCats(); renderFilters(); renderGrid(); renderSounds(); renderGrades();
+const KST={'vox-explainer':'Vox 解說風','kallaway':'Kallaway 風'}, KTI={tier1:'全屏過場',tier2:'保留講者'};
+let kLimit=60; state.kst=state.kst||'all'; state.kti=state.kti||'all'; state.kpu=state.kpu||'all'; state.kq='';
+function kmatch(c){ if(state.kst!=='all'&&c.style!==state.kst) return false; if(state.kti!=='all'&&c.tier!==state.kti) return false; if(state.kpu!=='all'&&c.purpose!==state.kpu) return false;
+ if(!state.kq) return true; const hay=[c.id,c.purpose_zh,c.desc,...(c.slots||[])].join(' ').toLowerCase(); return state.kq.toLowerCase().split(/\s+/).every(t=>hay.includes(t)); }
+function chipRow(sel,key,vals,lab,cnt){ $(sel).innerHTML=`<button class="chip" data-k="${key}" data-v="all" aria-pressed="${state[key]==='all'}">全部</button>`+vals.map(v=>`<button class="chip" data-k="${key}" data-v="${h(v)}" aria-pressed="${state[key]===v}">${h(lab(v))} <span class="n">${cnt(v)}</span></button>`).join(''); }
+function renderKit(){
+ $('#kitNote').textContent=KR.note||'';
+ $('#kshow').innerHTML=(KR.showcase||[]).map(v=>`<article>${v.img?`<img src="${v.img}" alt="${h(v.name)}">`:''}<div class="cb"><h3>${h(v.name)}</h3><p>${(+v.dur).toFixed(0)} 秒 · 喺 Finder 打開：<code>hyperframes-student-kit/${h(v.file)}</code></p></div></article>`).join('');
+ const C=KR.cards, sts=[...new Set(C.map(c=>c.style))], tis=[...new Set(C.map(c=>c.tier))], pus=[...new Set(C.map(c=>c.purpose))];
+ chipRow('#kstyles','kst',sts,v=>KST[v]||v,v=>C.filter(c=>c.style===v).length);
+ chipRow('#ktiers','kti',tis,v=>KTI[v]||v,v=>C.filter(c=>c.tier===v).length);
+ chipRow('#kpurps','kpu',pus,v=>(C.find(c=>c.purpose===v)||{}).purpose_zh||v,v=>C.filter(c=>c.purpose===v).length);
+ const all=C.filter(kmatch), list=all.slice(0,kLimit);
+ $('#kgrid').innerHTML=list.length?list.map(c=>`<article class="kcard">${c.img?`<img src="${c.img}" alt="${h(c.id)}" loading="lazy" data-zoom>`:''}<div class="cb"><span class="cat">${h(KST[c.style]||c.style)} · ${h(KTI[c.tier]||c.tier)} · ${h(c.purpose_zh)}</span><h3>${h(c.id)}</h3><p>${h(c.desc)}</p>
+  <div class="tags">${(c.slots||[]).slice(0,5).map(t=>`<span class="tag">${h(t)}</span>`).join('')}${c.dur&&c.dur.min?`<span class="tag">${c.dur.min}–${c.dur.max}s</span>`:''}</div></div></article>`).join('')
+  +(all.length>list.length?`<button class="chip" id="kmore" style="grid-column:1/-1;justify-content:center">顯示多 ${Math.min(60,all.length-list.length)} 張（仲有 ${all.length-list.length} 張）</button>`:''):`<div class="empty">冇符合嘅卡片。</div>`;
+ $('#ktpl').innerHTML=(KR.templates||[]).map(t=>`<article><div class="cb"><h3>${h(t.name)}</h3><p>${h(t.desc)}</p><p><code>hyperframes-student-kit/${h(t.file)}</code></p></div></article>`).join('');
+}
+document.addEventListener('click',ev=>{
+ const k=ev.target.closest('[data-k]'); if(k){state[k.dataset.k]=k.dataset.v;kLimit=60;renderKit();return;}
+ if(ev.target.id==='kmore'){kLimit+=60;renderKit();return;}
+ const z=ev.target.closest('[data-zoom]'); if(z){const d=document.createElement('div');d.id='kzoom';d.innerHTML=`<img src="${z.src}" alt="">`;d.onclick=()=>d.remove();document.body.appendChild(d);return;}
+});
+$('#kq').addEventListener('input',ev=>{state.kq=ev.target.value.trim();kLimit=60;renderKit();});
+renderCats(); renderFilters(); renderGrid(); renderSounds(); renderGrades(); renderKit();
 const hid=location.hash.slice(1);
-if(SX.some(s=>s.id===hid)) goSound(hid); else if(GX.some(g=>g.id===hid)) setTab('grade'); else { setTab(byId[hid]?'fx':(['fx','sfx','grade'].includes(state.tab)?state.tab:'fx')); if(byId[hid]) open(hid); }
+if(SX.some(s=>s.id===hid)) goSound(hid); else if(GX.some(g=>g.id===hid)) setTab('grade'); else { setTab(byId[hid]?'fx':(['fx','sfx','grade','kit'].includes(state.tab)?state.tab:'fx')); if(byId[hid]) open(hid); }
 })();
 </script>

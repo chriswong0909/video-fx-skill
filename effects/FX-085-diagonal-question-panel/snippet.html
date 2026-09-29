@@ -1,4 +1,4 @@
-<!-- FX-085 斜切色塊問題清單 | 1080×1920 | 依賴：SansTC | 9:16 版由下方斜切入 | 要做成 clip -->
+<!-- FX-085 斜切色塊問題清單 | 1080×1920 | 依賴：SansTC 900（子集要載 900 字重） | 9:16 版由下方斜切入 | 要做成 clip -->
 <style>
 #fx085{position:absolute;inset:0;z-index:6;pointer-events:none}
 #fx085 .blk{position:absolute;left:0;right:0;bottom:0;height:900px;background:var(--accent,#ffcf2e);clip-path:polygon(0 18%,100% 0,100% 100%,0 100%);overflow:hidden}
@@ -8,11 +8,13 @@
 #fx085 li i{flex:none;width:80px;height:80px;border-radius:50%;background:var(--accent,#ffcf2e);border:6px solid #111;font:900 56px/68px 'SansTC';text-align:center;font-style:normal}
 #fx085 li span{background:#fff;font:900 64px/1.2 'SansTC';color:#111;padding:14px 24px;box-shadow:6px 6px 0 #111}
 </style>
-<div id="fx085" class="clip" data-start="52" data-duration="8" data-track-index="5"><div class="blk"></div>
+<div id="fx085" class="clip" data-start="${T0}" data-duration="${DUR}" data-track-index="5"><div class="blk"></div>
  <ul><li><i>?</i><span>中風有咩先兆？</span></li><li><i>?</i><span>黃金時間有幾耐？</span></li><li><i>?</i><span>點樣預防？</span></li></ul></div>
 <script>
 tl.from('#fx085 .blk',{yPercent:100,duration:.45,ease:'power3.out'},T.start);
-// Q = [t1,t2,t3]：講者講到每條問題嘅時間
-document.querySelectorAll('#fx085 li').forEach((li,i)=>tl.from(li,{x:40,opacity:0,duration:.25,ease:'back.out(2)'},Q[i]));
-tl.to('#fx085',{opacity:0,duration:.3},T.end-.3);
+// Q = [t1,t2,t3]：講者講到每條問題嘅時間（剪接後時間軸），數量一定要同 li 一樣
+const li085=[...document.querySelectorAll('#fx085 li')];
+if(!Array.isArray(Q)||Q.length!==li085.length) throw new Error('FX-085：Q 數量同問題數量唔一致');
+li085.forEach((li,i)=>tl.from(li,{x:40,opacity:0,duration:.25,ease:'back.out(2)'},Q[i]));
+tl.to('#fx085',{opacity:0,duration:.3},T.end-.3); tl.set('#fx085',{visibility:'hidden'},T.end);
 </script>

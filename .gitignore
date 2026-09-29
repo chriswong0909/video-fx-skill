@@ -10,3 +10,4 @@ work/
 # 自動生成嘅網頁（用 node scripts/build-gallery.mjs 重建）
 gallery/artifact.html
 gallery/index.html
+.work/

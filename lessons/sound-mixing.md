@@ -15,7 +15,7 @@
 ## 2b. 聲效包（Kenney CC0）
 - `sounds/PACKS.md` 列出每個包嘅來源同授權；sound.md 有 `pack`、`curated`、`source_file`、`license`。
 - 揀聲效優先次序：精選（curated，有 pairs_with）→ Kenney 擬音（kenney-casino 紙卡、kenney-rpg 翻書／開門、kenney-impact 撞擊）→ 其他。
-- Kenney 短音樂（kenney-jingles）只用喺片頭片尾 1–3 秒，唔好當背景音樂 loop。
+- Kenney 短音樂（kenney-jingles）只用喺片頭片尾 1–3 秒，唔好當背景音樂 loop（我哋唔做 BGM）。
 - 匯入新包：`python3 tools/import_pack.py <資料夾> <pack-slug> --license "..." --source "..."`（授權唔清楚唔匯入）。
 
 ## 3. 點樣落聲
@@ -33,5 +33,5 @@
    ffmpeg -i render.mp4 -i mix.m4a -map 0:v:0 -map 1:a:0 -c:v copy -c:a copy -shortest out.mp4
    ```
    `mix` 用 amix normalize=0（人聲保持 1.0）+ alimiter 防爆音。**有聲效就唔再係原音軌 md5**，要同使用者講明音軌已加聲效。
-4. 建議音量：sound.md 嘅 `volume`（0.3–0.5）；背景音樂 0.08–0.15，人聲講嘢時再壓低。
+4. 建議音量：sound.md 嘅 `volume`（0.3–0.5）；人聲講嘢時聲效再壓低。**唔做背景音樂**——用戶上 IG 時自己加，片入面有 BGM 會同 IG 音樂撞。
 5. 核對：用手機喇叭同耳機各聽一次；`ffmpeg -i out.mp4 -af volumedetect` 確認 max_volume < -0.5 dB。
