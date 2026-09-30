@@ -44,6 +44,7 @@ table{width:100%;border-collapse:collapse;font-size:13.5px}th,td{text-align:left
 @media (max-width:760px){.shot{grid-template-columns:1fr}.tc span{display:inline;margin-left:10px}}
 </style>
 <div class="w"><header><h1>${esc(sb.title)}</h1><div class="meta"><span>素材 <b>${esc(sb.source || '')}</b></span><span>長度 <b>${esc(sb.duration || '')}</b></span><span>比例 <b>${esc(sb.ratio || '')}</b></span><span>風格 <b>${esc(sb.style || '')}</b></span>${sb.preset ? `<span>風格預設 <b>${esc(sb.preset)}</b></span>` : ''}${sb.grade ? `<span>調色 <b>${esc(sb.grade)}</b></span>` : ''}<span>鏡頭 <b>${sb.shots.length}</b></span></div></header>
+${sb.intake ? `<h2 style="margin:6px 0 0;font-size:19px">需求摘要</h2><div class="tw"><table class="tr">${Object.entries(sb.intake).map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join('')}</table></div>` : ''}
 ${sb.treatment ? `<h2 style="margin:6px 0 0;font-size:19px">Treatment（已確認）</h2><div class="tw"><table class="tr">${Object.entries(sb.treatment).map(([k, v]) => `<tr><td>${esc(k)}</td><td>${esc(v)}</td></tr>`).join('')}</table></div>` : ''}
 ${sb.grade_image && fs.existsSync(path.resolve(path.dirname(inFile), sb.grade_image)) ? `<h2 style="margin:6px 0 0;font-size:19px">調色對比</h2><img class="gimg" alt="調色對比" src="data:image/jpeg;base64,${fs.readFileSync(path.resolve(path.dirname(inFile), sb.grade_image)).toString('base64')}">` : ''}
 <h2 style="margin:6px 0 0;font-size:19px">分鏡</h2>
