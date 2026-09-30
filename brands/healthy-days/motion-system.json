@@ -1,0 +1,12 @@
+{
+  "name": "healthy-days",
+  "version": 1,
+  "hero": "#hero",
+  "palette": {"#2f68a8": "主色", "#e8452c": "警示", "#1f9d6b": "正面", "#ffffff": "白", "#0b2a3a": "字", "#f4f7fa": "卡底", "#d6e3f2": "淺藍"},
+  "palette_fixed": ["#0b6f99", "#13b8d0", "#1a80d0"],
+  "easing": ["power3.out", "power2.in", "power2.inOut"],
+  "durations": [0.2, 0.35, 0.6],
+  "entries": ["slide-edge", "rise", "morph", "draw"],
+  "components": ["hero", "chip", "row", "nametag", "hook", "caption"],
+  "exempt": ["#camInner", "#hook", "#ecgHook", "#ecgH", "#flash", "#vig"]
+}

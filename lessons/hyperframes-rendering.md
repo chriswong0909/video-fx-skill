@@ -36,3 +36,7 @@
 - 入場動畫唔好用 `immediateRender:false`：開始前元素會見到，之後彈走再入（「可以慢跑」出咗又退再出）。用 fromTo 預設。
 - 瀏覽器預覽模擬 clip 要用 visibility（唔好用 display:none），否則會遮住呢類 bug。
 - 劃線動畫唔好用 SVG dasharray + non-scaling-stroke（會斷開、提早出現）；用 div bar + scaleX。
+
+## 同一個元素重用（主角元素）要清返狀態（2026-09-30）
+- 主角元素（#hero）入面每個字組用 `tl.set(opacity:1)` 開；**窗口完結要 `tl.set(opacity:0)` 收返**，否則下次 hero 再出現，舊字組仍然係 1，會疊埋一齊（doctor2 v5 靜圖發現）。
+- `qa-stills.cjs` 已加「畫面有唔應該出現嘅字」檢查：每張截圖列出所有見到嘅字（計埋母層 opacity），唔屬於嗰刻 manifest 嘅就 ✗。

@@ -3,7 +3,9 @@
   python3 tools/qa.py check index.html chars.json      # 字對聲 + 字幕逐字 + 數量／重疊 + 動畫起始 lint
 chars.json = 校正後逐字時間 [{"c":"心","s":5.14,"e":5.3},...]（由 asr.json + 改字表出）
 index.html 入面要有 <script type="application/json" id="fx-manifest">[{id,kind,text,start,end,spoken}]</script>
+  python3 tools/qa.py critique critique.json            # 自評分：最新一輪全部 ≥ 7 先交（見 workflow/critique.md）
 kind：hook｜keyword｜caption｜label｜imgtag｜cardtext｜cardtitle｜nametag
+一致性（緩動、時長、入場、顏色、零件）另行：node scripts/qa-motion.cjs index.html brands/<brand>/motion-system.json
 """
 import json, re, sys
 
@@ -50,6 +52,22 @@ def check(html_path, chars_path):
     print('✓ 通過' if not fails else f'✗ {len(fails)} 項唔過，改完先渲染')
     return 1 if fails else 0
 
+DIMS = ['風格統一', '多變', '對位', '可讀性', '品牌', '節奏', '聲畫']
+
+def critique(path, need=7):
+    R = json.load(open(path)); last = R[-1]; sc = last['scores']
+    miss = [d for d in DIMS if d not in sc]
+    low = {d: v for d, v in sc.items() if v < need}
+    print(f"自評分第 {last['round']} 輪：" + '  '.join(f"{d} {sc.get(d, '-')}" for d in DIMS))
+    for d in miss: print(f' ✗ 未評：{d}')
+    for d, v in low.items(): print(f' ✗ {d} {v} < {need}' + ('（≤5，要話俾用戶知）' if v <= 5 else ''))
+    if low and not last.get('fixes'): print(' ✗ 有低分但冇寫 fixes')
+    if low and last['round'] >= 3: print(' ! 已經 3 輪，將分數同原因交俾用戶決定')
+    ok = not miss and not low
+    print('✓ 自評分過關' if ok else '✗ 未過關，改完再評')
+    return 0 if ok else 1
+
 if __name__ == '__main__':
+    if len(sys.argv) >= 3 and sys.argv[1] == 'critique': sys.exit(critique(sys.argv[2]))
     if len(sys.argv) < 4 or sys.argv[1] != 'check': sys.exit(__doc__)
     sys.exit(check(sys.argv[2], sys.argv[3]))
