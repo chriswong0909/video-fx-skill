@@ -78,6 +78,32 @@ CAM = [(0, 1.35, 1.4, 3.4), (3.4, None, 1.0, 3.85), (3.85, 1.0, 1.0, at('有機�
 SFX = [("SFX-015", 0.0), ("SFX-011", T_HOOK2), ("SFX-001", 3.4), ("SFX-014", IMGS[0][2]), ("SFX-010", T_CROSS), ("SFX-014", C1[0]),
        ("SFX-008", at('盡早', 33)), ("SFX-014", IMGS[2][2]), ("SFX-014", C2[0]), ("SFX-008", at('心臟腎臟', 76))]
 
+
+# ---------- 聲效：視覺事件表（t = 動作落地嗰刻；sfx_plan 會按聲效最響位自動提前）----------
+EV = []
+def ev(t, sfx, vol, why): EV.append(dict(t=round(t, 3), sfx=sfx, vol=vol, why=why))
+ev(0.05, 'SFX-015', 0.5, '開場心跳（預備）')
+ev(T_HOOK1 + 0.22, 'SFX-011', 0.28, '「行一層」撞入落地')
+ev(T_HOOK2 + 0.22, 'SFX-011', 0.45, '「便氣喘？」撞入落地＋紅閃')
+ev(3.70, 'SFX-001', 0.30, '拉返闊鏡（移動）')
+ev(3.9 + 0.20, 'SFX-004', 0.35, '名牌彈出')
+for id, f, s, e, labs in IMGS:
+    if id in ('i1', 'i3', 'i5'): ev(labs[0][1] + 0.30, 'SFX-006', 0.30, f'{id} title bar 到位')
+kw = {k[0]: k for k in KW}
+ev(kw['k3'][2] + 0.25, 'SFX-005', 0.30, '「體能下降？」彈出')
+ev(T_CROSS + 0.22, 'SFX-087', 0.40, '交叉第一劃')
+ev(T_CROSS + 0.44, 'SFX-089', 0.40, '交叉第二劃')
+ev(C1[0] + 0.40, 'SFX-014', 0.35, '卡一 title bar 滑入到位')
+for t, ts in C1ROWS: ev(ts + 0.22, 'SFX-004', 0.30, f'插圖「{t}」彈出')
+ev(kw['k5'][2] + 0.25, 'SFX-008', 0.30, '「盡早檢查」（正面提示）')
+ev(kw['k6'][2] + 0.25, 'SFX-005', 0.30, '「不單看年紀」彈出')
+for items, end in SIDES: ev(items[0][1] + 0.25, 'SFX-006', 0.25, f'側邊標籤「{items[0][0]}」到位')
+ev(C2[0] + 0.40, 'SFX-014', 0.35, '卡二 title bar 滑入到位')
+for id, t, ts in C2ROWS:
+    if id.startswith('b'): ev(ts + 0.25, 'SFX-005', 0.30, f'「{t}」彈出')
+ev(kw['k10'][2] + 0.25, 'SFX-009', 0.30, '「心臟・腎臟」收尾')
+json.dump(EV, open('sfx-events.json', 'w'), ensure_ascii=False, indent=0)
+
 D = dict(END=END, CAPS=CAPS, KW=KW, IMGS=IMGS, SIDES=SIDES, CAM=CAM, C1=C1, C1ROWS=C1ROWS, C2=C2, C2ROWS=C2ROWS,
          T_HOOK1=T_HOOK1, T_HOOK2=T_HOOK2, T_CROSS=T_CROSS)
 CROSS = '<svg viewBox="0 0 54 54"><path d="M19 4h16v15h15v16H35v15H19V35H4V19h15z" fill="#fff"/></svg>'
