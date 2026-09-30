@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="zh-Hant-HK"><head><meta charset="utf-8"><title>doctor2 full v3 · Healthy Days</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"Round";src:url(assets/fonts/huninn.woff2) format("woff2");font-weight:400}
+@font-face{font-family:"SansTC";src:url(assets/fonts/sans900.woff2) format("woff2");font-weight:900}
+</style>
+<style>/* SP-001 + healthy-days */
+:root{
+  --c-surface:#f4f7fa; --c-text:#0b2a3a;
+  --c-accent:#1a80d0; --c-alert:#e8452c; --c-positive:#1f9d6b;
+  --c-caption-box:#0b6f99; --c-caption-text:#ffffff; --c-tag:#2f68a8; --c-teal:#13b8d0;
+  --f-round:'Round'; --f-body:'SansTC';
+}</style>
+<style>
+/* IG：左右 52px 裁切；頂 212、底 1556 以外唔放字；字幕同 graphic 一律以 540 置中 */
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#main{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:var(--f-body)}
+#cam{position:absolute;inset:0;z-index:2;overflow:hidden}
+#camInner{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:540px 420px}
+#vid{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+/* 開場（全屏圖層 = clip + z-index ≥5） */
+#vig{position:absolute;inset:0;z-index:5}#vig .in{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 38%,rgba(0,0,0,.2) 22%,rgba(0,0,0,.86) 100%)}
+#flash{position:absolute;inset:0;z-index:6}#flash .in{position:absolute;inset:0;background:#e8452c;opacity:0}
+#ecgHook{position:absolute;left:0;top:860px;width:1080px;height:200px;z-index:7;visibility:hidden}
+#hook{position:absolute;left:52px;right:52px;top:1040px;z-index:10;text-align:center;font:900 150px/1.08 var(--f-body);color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.6);visibility:hidden}
+#hook .l2{color:#ff5a3c}
+#hook .l1,#hook .l2{display:block}
+/* 右上 logo（常駐，最高層） */
+#logo{position:absolute;left:742px;top:228px;width:278px;z-index:40}
+/* 頂部關鍵詞：置中，logo 下面 */
+.top{position:absolute;left:52px;right:52px;top:392px;z-index:10;text-align:center;font:900 128px/1.1 var(--f-body);-webkit-text-stroke:14px #fff;paint-order:stroke fill;white-space:nowrap;visibility:hidden}
+.top .x{position:relative;display:inline-block;color:var(--c-text)}
+.top .x i{position:absolute;left:-4%;top:50%;width:108%;height:18px;margin-top:-9px;background:var(--c-alert);border-radius:9px;opacity:0}
+/* 名牌：healthy-days 樣板（比例跟參考圖量度） */
+#tag{position:absolute;left:200px;top:980px;width:680px;height:326px;z-index:9;visibility:hidden}
+#tag img{position:absolute;inset:0;width:100%;height:100%}
+#tag .sp{position:absolute;left:0;right:0;top:8px;text-align:center;font:400 62px/1 var(--f-round);color:var(--c-teal);-webkit-text-stroke:2.6px var(--c-teal);letter-spacing:3px;text-indent:3px}
+#tag .nm{position:absolute;left:0;right:0;top:80px;text-align:center;font:400 132px/1 var(--f-round);color:var(--c-accent);-webkit-text-stroke:5px var(--c-accent);letter-spacing:10px;text-indent:10px}
+/* Title tag */
+.ttag{position:absolute;left:0;top:228px;z-index:13;display:flex;align-items:center;gap:0;background:var(--c-tag);color:#fff;font:900 64px/1.2 var(--f-body);padding:14px 44px 16px 60px;border-radius:0 999px 999px 0;white-space:nowrap}
+.ttag svg{flex:0 0 52px;height:52px;margin-right:20px}
+.ttag span{display:none}
+/* 側邊標籤 */
+.side{position:absolute;right:60px;top:600px;z-index:9;display:flex;flex-direction:column;align-items:flex-end;gap:18px}
+.side span{display:inline-block;background:#fff;color:var(--c-caption-box);font:900 64px/1.2 var(--f-body);padding:8px 26px 10px;border-radius:14px;border-left:12px solid var(--c-accent);box-shadow:0 8px 28px rgba(0,0,0,.25);visibility:hidden}
+/* 全屏卡（內容置中） */
+.card{position:absolute;inset:0;z-index:12;background:var(--c-surface)}
+.card .row{position:absolute;left:140px;width:800px;height:320px;display:flex;align-items:center;gap:40px;opacity:0}
+.card .c{flex:0 0 300px;height:300px;border-radius:50%;overflow:hidden;background:#fff;border:10px solid var(--c-accent)}
+.card .c img{width:100%;height:100%;object-fit:cover;display:block}
+.card .lab{font:900 88px/1.15 var(--f-body);color:var(--c-text)}
+.card .lab i{display:block;font:900 64px var(--f-body);font-style:normal;color:var(--c-caption-box)}
+#card2 .med{position:absolute;left:130px;width:820px;height:220px;display:flex;align-items:center;justify-content:center;gap:34px;background:#fff;border-radius:40px;box-shadow:0 12px 40px rgba(11,42,58,.12);opacity:0}
+#card2 .med svg{flex:0 0 96px}
+#card2 .med div{font:900 70px/1.15 var(--f-body);color:var(--c-text);white-space:nowrap}
+#card2 .ben{position:absolute;left:0;right:0;top:1180px;display:flex;justify-content:center;gap:36px}
+#card2 .ben span{font:900 84px/1.2 var(--f-body);color:#fff;background:var(--c-positive);border-radius:999px;padding:10px 44px 14px;opacity:0}
+/* 全屏圖片 */
+.imgc{position:absolute;inset:0;z-index:11;overflow:hidden;background:var(--c-surface)}
+.imgc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* 字幕 FX-051：置中 540，≤10 字 */
+#fx051{position:absolute;left:52px;right:52px;top:1390px;height:130px;z-index:20}
+#fx051 .row{position:absolute;left:0;right:0;top:0;text-align:center;visibility:hidden}
+#fx051 .row span{display:inline-block;white-space:nowrap;background:var(--c-caption-box);color:var(--c-caption-text);font:900 76px/1.2 var(--f-body);letter-spacing:2px;padding:8px 24px 10px}
+</style></head><body>
+<div id="main" data-composition-id="main" data-start="0" data-duration="80.3" data-width="1080" data-height="1920">
+  <div id="cam"><div id="camInner">
+    <video id="vid" data-start="0" data-duration="80.3" data-track-index="0" src="assets/graded.mp4" muted playsinline></video>
+  </div></div>
+  <div id="vig" class="clip" data-start="0" data-duration="3.85" data-track-index="16"><div class="in"></div></div>
+  <div id="flash" class="clip" data-start="2.8" data-duration="0.45" data-track-index="17"><div class="in"></div></div>
+  <svg id="ecgHook" viewBox="0 0 1080 200"><path id="ecgH" d="M0 120 L380 120 L410 90 L440 120 L480 120 L515 10 L560 190 L595 120 L650 120 L680 100 L710 120 L1080 120" fill="none" stroke="#ff4b33" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div id="hook"><span class="l1">行一層</span><span class="l2">便氣喘？</span></div>
+  <div id="tag"><img src="assets/nametag_frame.png" alt=""><div class="sp">心臟科專科醫生</div><div class="nm">江振昌</div></div>
+  <!--KW-->
+  <!--SIDES-->
+  <!--IMGS-->
+  <div id="card1" class="card clip" data-start="__C1S__" data-duration="__C1D__" data-track-index="3">
+    <div class="ttag"><svg viewBox="0 0 54 54"><path d="M19 4h16v15h15v16H35v15H19V35H4V19h15z" fill="#fff"/></svg><span style="display:inline">3 個心臟問題</span></div>
+    <div class="row" id="g1" style="top:470px"><div class="c"><img src="assets/heart1.jpg" alt=""></div><div class="lab"><i>01</i>心臟衰竭</div></div>
+    <div class="row" id="g2" style="top:830px"><div class="c"><img src="assets/heart2.jpg" alt=""></div><div class="lab"><i>02</i>心律不正</div></div>
+    <div class="row" id="g3" style="top:1190px"><div class="c"><img src="assets/heart3.jpg" alt=""></div><div class="lab"><i>03</i>心血管收窄</div></div>
+  </div>
+  <div id="card2" class="card clip" data-start="__C2S__" data-duration="__C2D__" data-track-index="4">
+    <div class="ttag"><svg viewBox="0 0 54 54"><path d="M19 4h16v15h15v16H35v15H19V35H4V19h15z" fill="#fff"/></svg><span style="display:inline">兩類藥物</span></div>
+    <div class="med" id="m1" style="top:520px"><svg viewBox="0 0 130 130"><rect x="10" y="40" width="110" height="50" rx="25" fill="#1a80d0"/><rect x="65" y="40" width="55" height="50" rx="25" fill="#bfe6f5"/><rect x="60" y="40" width="10" height="50" fill="#bfe6f5"/></svg><div>GLP-1 受體促效劑</div></div>
+    <div class="med" id="m2" style="top:810px"><svg viewBox="0 0 130 130"><circle cx="65" cy="65" r="48" fill="#1a80d0"/><rect x="22" y="60" width="86" height="10" rx="5" fill="#bfe6f5"/></svg><div>SGLT-2 抑制劑</div></div>
+    <div class="ben"><span id="b1">控血糖</span><span id="b2">控體重</span></div>
+  </div>
+  <img id="logo" src="assets/logo_1min.png" alt="1分鐘醫聊室">
+  <div id="fx051" class="clip" data-start="0" data-duration="80.3" data-track-index="20"></div>
+</div>
+<!--MANIFEST-->
+<script>
+(function(){
+/*__DATA__*/
+const END=D.END;
+const tl=gsap.timeline({paused:true});
+tl.to({}, {duration:END}, 0);
+// show：頂層元素用 visibility 控制；clip 或者 show() 元素入面嘅子元素一律用 opacity（visibility 會繼承，子元素設 visible 會喺母層收起後照樣見到）；入場動畫一律 fromTo（immediateRender 預設），唔准關閉 immediateRender
+const show=(el,a,b)=>{tl.set(el,{visibility:'visible'},a); if(b<END) tl.set(el,{visibility:'hidden'},b);};
+const POP='back.out(1.6)', OUT='power3.out', MOVE='power2.inOut', IN='power2.in';
+
+D.CAM.forEach(([t,s0,s1,t1])=>{ if(s0!==null) tl.set('#camInner',{scale:s0},t);
+  tl.to('#camInner',{scale:s1,duration:t1-t,ease:s0===null?MOVE:'none'},t); });
+
+// ---------- 開場 ----------
+tl.fromTo('#vig .in',{opacity:1},{opacity:0,duration:.45,ease:MOVE},3.4);
+show('#ecgHook',0.05,3.4);
+tl.fromTo('#ecgH',{attr:{'stroke-dasharray':1300,'stroke-dashoffset':1300}},{attr:{'stroke-dashoffset':0},duration:.55,ease:OUT},0.05);
+show('#hook',D.T_HOOK1,3.4);
+tl.fromTo('#hook .l1',{scale:1.7,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:.22,ease:OUT},D.T_HOOK1);
+tl.fromTo('#hook .l2',{scale:1.7,opacity:0,transformOrigin:'50% 50%'},{scale:1,opacity:1,duration:.22,ease:OUT},D.T_HOOK2);
+tl.fromTo('#flash .in',{opacity:.5},{opacity:0,duration:.32,ease:OUT},D.T_HOOK2);
+[[.22,-12],[.28,10],[.34,-6],[.40,0]].forEach(([d,x])=>tl.to('#hook',{x,duration:.06,ease:'none'},D.T_HOOK2+d));
+
+// ---------- 名牌 ----------
+show('#tag',3.9,7.2);
+tl.fromTo('#tag',{scale:.6,opacity:0},{scale:1,opacity:1,duration:.35,ease:POP},3.9);
+tl.to('#tag',{opacity:0,duration:.2,ease:IN},7.0);
+
+// ---------- 頂部關鍵詞 ----------
+D.KW.forEach(([id,t,a,b])=>{ show('#'+id,a,b); tl.fromTo('#'+id,{y:-24,opacity:0},{y:0,opacity:1,duration:.35,ease:POP},a); });
+const k3x=document.querySelector('#k3 .x'); k3x.insertAdjacentHTML('beforeend','<i id="xa"></i><i id="xb"></i>');
+const ang=Math.atan2(k3x.offsetHeight*0.62,k3x.offsetWidth)*180/Math.PI;
+[['#xa',ang],['#xb',-ang]].forEach(([x,r],i)=>{ tl.set(x,{opacity:1},D.T_CROSS+i*.22); tl.fromTo(x,{rotation:r,scaleX:0,transformOrigin:(r>0?'0% 50%':'100% 50%')},{rotation:r,scaleX:1,duration:.22,ease:OUT},D.T_CROSS+i*.22); });
+
+// ---------- 側邊標籤 ----------
+D.SIDES.forEach(([items,end],g)=>items.forEach(([t,a],j)=>{ const el='#s'+g+'_'+j; show(el,a,end); tl.fromTo(el,{x:60,opacity:0},{x:0,opacity:1,duration:.3,ease:OUT},a); }));
+
+// ---------- 全屏圖片 + title tag（bar 喺第一個標籤講出嗰刻先入，之後唔會退出再入）----------
+D.IMGS.forEach(([id,f,s,e,labs])=>{
+  tl.fromTo('#'+id+' img',{scale:1.0},{scale:1.06,duration:e-s,ease:'none'},s);
+  const bar='#'+id+' .ttag';
+  tl.fromTo(bar,{xPercent:-110},{xPercent:0,duration:.35,ease:OUT},labs[0][1]);
+  labs.forEach(([t,a],j)=>{ const sp='#'+id+'_l'+j; tl.set(sp,{display:'inline'},a); if(j) tl.fromTo(sp,{opacity:0,y:14},{opacity:1,y:0,duration:.25,ease:OUT},a); });
+});
+
+// ---------- 全屏卡 ----------
+tl.fromTo('#card1 .ttag',{xPercent:-110},{xPercent:0,duration:.35,ease:OUT},D.C1[0]+.1);
+D.C1ROWS.forEach(([t,a],j)=>{ const g='#g'+(j+1); tl.set(g,{opacity:1},a);
+  tl.fromTo(g+' .c',{scale:0},{scale:1,duration:.35,ease:POP},a); tl.fromTo(g+' .lab',{opacity:0,x:40},{opacity:1,x:0,duration:.3,ease:OUT},a+.12); });
+tl.fromTo('#card2 .ttag',{xPercent:-110},{xPercent:0,duration:.35,ease:OUT},D.C2[0]+.1);
+D.C2ROWS.forEach(([id,t,a])=>{
+  tl.fromTo('#'+id,{opacity:0,y:30},{opacity:1,y:0,duration:.35,ease:OUT},a); });
+
+// ---------- 字幕 ----------
+const box=document.getElementById('fx051');
+D.CAPS.forEach(([t,a,b],i)=>{const r=document.createElement('div');r.className='row';r.id='cap'+i;const s=document.createElement('span');s.textContent=t;r.appendChild(s);box.appendChild(r);show(r,a,b);});
+
+window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+})();
+</script></body></html>

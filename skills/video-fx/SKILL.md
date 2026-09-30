@@ -85,7 +85,7 @@ description: "用 HyperFrames 剪片、加動態字幕或模仿參考片效果�
 - 按 `workflow/assets.md` 次序：**Canva → 原片截圖 → Higgsfield → 有授權圖庫 → 代碼插圖**。
 - Canva connector（`mcp__Canva__*`，用 ToolSearch 載入）：generate-image（9:16 用 PORTRAIT_9_16）、用戶已有素材。
 - Higgsfield connector（`mcp__Higgsfield__*`）：每個專案 `create_project` 一次；生成前一律 `get_cost:true`，列總數確認先生成；多個素材用 batch + jobs_wait。詳見 `workflow/assets-higgsfield.md`。
-- 代碼做得到嘅（UI、圖表、線條、字幕、圖示輪廓）唔好用 AI 生成；但效果 `needs` 要相片嘅，唔好用代碼插圖頂替而唔講。醫學插圖一律標明需醫生審核。
+- 代碼做得到嘅（UI、圖表、線條、字幕、圖示輪廓）唔好用 AI 生成；但效果 `needs` 要相片嘅，唔好用代碼插圖頂替而唔講。生成插圖唔使醫生審核。
 
 ## 5. 關卡三、四：渲染
 - 渲染前先調色：`python3 tools/grade.py apply source.mp4 <GR-id> graded.mp4 [--strength 0.8]`，HyperFrames 講者片用 graded.mp4（音軌照用 source.mp4）；唔好喺 HyperFrames 再疊調色 filter（B-roll 嘅 FX-074 除外）。

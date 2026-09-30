@@ -29,3 +29,10 @@
 - 暗角、紅閃呢類全屏圖層要做 clip（data-start／data-duration），而且 **z-index 要 ≥ 5**：z-index 3 喺 HyperFrames 渲染時會消失（瀏覽器預覽見到，出片唔見），改做 5 就正常。
 - `#cam` 上面用 CSS filter（saturate／brightness）渲染時冇效果：要變暗用半透明圖層代替。
 - 本機 VM 空間：80 秒片 draft 截圖要約 3GB 暫存；唔夠會 ENOSPC。可刪 `~/wl3`（冇用嘅 large-v3 模型）同 `~/tmp`。
+
+## visibility 會繼承（2026-09-30，doctor2 v3 出事）
+- HyperFrames 收 clip 係用 `visibility:hidden`。clip 入面嘅子元素如果自己 `tl.set(...,{visibility:'visible'})`，母層收咗佢都仲會見到（卡片內容、交叉線殘留喺之後成條片）。
+- 規則：**頂層元素**用 visibility 控制出現；**clip 入面或者受 show() 控制元素入面嘅子元素**，一律用 opacity（或 display）控制。
+- 入場動畫唔好用 `immediateRender:false`：開始前元素會見到，之後彈走再入（「可以慢跑」出咗又退再出）。用 fromTo 預設。
+- 瀏覽器預覽模擬 clip 要用 visibility（唔好用 display:none），否則會遮住呢類 bug。
+- 劃線動畫唔好用 SVG dasharray + non-scaling-stroke（會斷開、提早出現）；用 div bar + scaleX。
