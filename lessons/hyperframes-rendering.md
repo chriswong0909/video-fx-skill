@@ -24,3 +24,8 @@
 - **分段包含 mp4 檔頭（ftyp）嗰段會被改壞**（md5 唔同）：先 `gzip` 再傳，本機 `gunzip`；傳完一定核對 md5。
 - 用同一個 stagedPath 重傳可能攞到舊內容：每次用新檔名。
 - 雲端裝唔到 `hyperframes`（npm 403）同 `faster-whisper`（pip 冇）：ASR 同渲染都要喺本機做；本機 turbo 模型 80 秒音頻約 32 秒轉完。
+
+## 疊喺影片上面嘅全屏圖層（2026-09-30）
+- 暗角、紅閃呢類全屏圖層要做 clip（data-start／data-duration），而且 **z-index 要 ≥ 5**：z-index 3 喺 HyperFrames 渲染時會消失（瀏覽器預覽見到，出片唔見），改做 5 就正常。
+- `#cam` 上面用 CSS filter（saturate／brightness）渲染時冇效果：要變暗用半透明圖層代替。
+- 本機 VM 空間：80 秒片 draft 截圖要約 3GB 暫存；唔夠會 ENOSPC。可刪 `~/wl3`（冇用嘅 large-v3 模型）同 `~/tmp`。
