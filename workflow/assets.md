@@ -19,7 +19,7 @@
 - 素材關卡一定要列出：邊鏡用邊個來源、預計額度或 credits。
 
 ## Canva connector 限制（2026-09-29 實測）
-- `generate-image` 生成成功後，connector 只俾 200px 縮圖（`get-generate-image-job`、`get-assets` 都係），原圖（約 1264px）要登入 Canva 先下載到。
-- 改縮圖網址嘅尺寸參數會 403（網址有簽名）；`export-design` 只支援設計，唔支援單張圖片；瀏覽器工具會攔截傳出圖片數據，唔好嘗試繞過。
-- 做法：生成後即刻列出每張圖嘅「Open generated image」連結，請用戶下載原圖再上載；同時可以用 200px 縮圖做草稿佔位，正式版先換原圖。
+- `generate-image` 生成成功後，connector 只俾 200px 縮圖（`get-generate-image-job`、`get-assets` 都係）；改縮圖網址尺寸會 403。
+- **攞原圖（已驗證，唔使用戶登入）**：`separate-image-layers`（asset_id = 生成圖嘅 media id）→ 等 job 完成攞 design id → `export-design`（`{"type":"png","width":1200}`）→ 用返回嘅 export-download 網址 `curl` 落載（網址有時限，即刻下載）→ commit 去素材資料夾。1200×1200 夠全屏卡用。
+- 下載前要用戶同意（一次過同意整批即可）；分層設計會留喺用戶 Canva 帳戶，可以之後喺 Canva 刪。
 - 素材關卡問確認時就要講明呢一步，唔好生成完先發現。
