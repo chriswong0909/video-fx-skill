@@ -122,7 +122,8 @@ ev(T_HOOK2 + 0.22, 'SFX-011', 0.45, '「便氣喘？」撞入＋紅閃（品牌�
 ev(3.70, 'SFX-001', 0.30, '拉返闊鏡（鏡頭）')
 ev(3.9 + 0.3, 'SFX-005', 0.30, '名牌浮入')
 for g in GROUPS:
-    if g['first']: ev(g['t'] + 0.3, 'SFX-014', 0.32, f"藍膠囊伸出「{g['parts'][0][1]}」")
+    if g['fill'] != BLUE: pass   # 正面綠色版：由 SFX-009 代替滑入聲（一個動作一個聲）
+    elif g['first']: ev(g['t'] + 0.3, 'SFX-014', 0.32, f"藍膠囊伸出「{g['parts'][0][1]}」")
     elif g['state'] != GROUPS[gi[g['gid']] - 1]['state']: ev(g['t'] + 0.3, 'SFX-014', 0.3, f"藍膠囊變形 →「{g['parts'][0][1]}」")
     for pid, text, ts in g['parts'][1:]: ev(ts + 0.2, 'SFX-005', 0.25, f'膠囊伸長「{text}」')
 ev(T_CROSS + 0.2, 'SFX-010', 0.32, '紅交叉（錯誤觀念）')
