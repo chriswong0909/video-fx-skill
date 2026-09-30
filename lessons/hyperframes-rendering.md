@@ -18,3 +18,9 @@
 - device_bash 每次最多 180 秒，而且背景 process 會隨指令結束被殺：長工作要拆段（例如逐 290 幀處理）。
 - 渲染：`--workers 3 --no-low-memory-mode`，19 秒 1080×1920 draft 約 45 秒，high 約 65–100 秒。
 - 已連接資料夾入面 `git` 會因為 lock 檔唔可以刪而失敗；喺 scratch 做好再 rsync 入去。
+
+## 雲端 ↔ 本機傳大檔（2026-09-30）
+- `device_commit_files` 每個檔 ≤ 20MB、每次 ≤ 100MB：大片用 `split -b 19m` 分段傳，本機 `cat` 返。
+- **分段包含 mp4 檔頭（ftyp）嗰段會被改壞**（md5 唔同）：先 `gzip` 再傳，本機 `gunzip`；傳完一定核對 md5。
+- 用同一個 stagedPath 重傳可能攞到舊內容：每次用新檔名。
+- 雲端裝唔到 `hyperframes`（npm 403）同 `faster-whisper`（pip 冇）：ASR 同渲染都要喺本機做；本機 turbo 模型 80 秒音頻約 32 秒轉完。
