@@ -49,6 +49,8 @@ const presets = fs.existsSync(path.join(root,'presets')) ? fs.readdirSync(path.j
 let kitref = null; const kf = path.join(root,'kitref','kitref.json');
 if (fs.existsSync(kf)) { kitref = JSON.parse(fs.readFileSync(kf,'utf8'));
   const im = p => { const b = b64(path.join(root,'kitref',p)); return b ? 'data:image/jpeg;base64,'+b : null; };
+  const pmap = {}; for (const st of ['kallaway','vox-explainer']) { const pf = path.join(root,'styles',st,'portrait.json'); if (fs.existsSync(pf)) Object.assign(pmap, JSON.parse(fs.readFileSync(pf,'utf8'))); }
+  for (const c of kitref.cards) { const pv = pmap[c.id]; c.portrait = pv ? (pv.verified ? 'verified' : 'trial') : null; }
   for (const c of kitref.cards) c.img = c.img ? im(c.img) : null; for (const v of kitref.showcase) v.img = v.img ? im(v.img) : null; }
 const data = JSON.stringify({ generated: reg.generated, latest, effects, sounds, grades, kitref, presets, gradeBefore: gb ? 'data:image/jpeg;base64,'+gb : null }).replace(/</g, '\\u003c');
 const tpl = fs.readFileSync(path.join(root, 'gallery', 'template.html'), 'utf8');

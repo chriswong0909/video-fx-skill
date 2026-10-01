@@ -1,6 +1,6 @@
 {
  "source": "hyperframes-student-kit（MIT，Nate Herk）",
- "note": "原裝 16:9 英文卡片，只作參考；要用先改 9:16、中文、風格變數再入效果庫。",
+ "note": "Healthy Days 等片嘅主力視覺：一條片揀一個風格包（Kallaway／Vox）。截圖係原裝 16:9 英文版；標「9:16」嘅已經有直向中文版（tools/cards.py），其餘用到先改。",
  "styles": [
   {
    "id": "vox-explainer",

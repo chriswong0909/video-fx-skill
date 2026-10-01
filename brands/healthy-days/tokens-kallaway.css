@@ -1,0 +1,11 @@
+/* Healthy Days × Kallaway：品牌色覆蓋（放喺 kallaway tokens.css + tokens-9x16.css 之後）
+   Kallaway 原本係 AIS 藍 #37BDF8；換做 Healthy Days 藍（logo #1a80d0 同 teal #13b8d0 之間，暗底發光要夠光）。 */
+:root {
+  --canvas:      #06121F;   /* 深海軍藍，比原本近黑多少少品牌味 */
+  --canvas-deep: #040D17;
+  --accent:      #2F9BE0;  --accent-rgb:  47, 155, 224;
+  --accent-2:    #FFB547;  --accent2-rgb: 255, 181, 71;   /* logo 橙，罕用 */
+  --alert:       #E8452C;  --alert-rgb:   232, 69, 44;
+  --warm:        #FFB547;  --warm-rgb:    255, 181, 71;
+  --positive:    #1F9D6B;  --positive-rgb: 31, 157, 107;  /* 正面訊息（Kallaway 冇，品牌加） */
+}

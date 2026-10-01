@@ -1,0 +1,22 @@
+/* KALLAWAY · 9:16 直向 + 中文覆蓋（放喺 tokens.css 之後）
+   1080×1920 手機睇：字要大過 16:9 版；中文 fallback 用 Noto Sans TC（唔用襯線）。 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&display=swap");
+:root {
+  --font-display: "Plus Jakarta Sans", "Noto Sans TC", system-ui, sans-serif;
+  --font-body:    "Inter", "Noto Sans TC", system-ui, sans-serif;
+  --font-mono:    "Space Mono", "Noto Sans TC", ui-monospace, monospace;
+  --size-mega:     260px;
+  --size-display:  150px;
+  --size-title:    120px;
+  --size-headline: 96px;
+  --size-body:     64px;
+  --size-label:    44px;
+  --size-tiny:     34px;
+  --pad:           84px;
+  --track-tight:   0;        /* 中文唔收窄字距 */
+  --track-snug:    0;
+  /* IG 安全區（直向）：左右 52、頂 212、底 1556 以外唔放字 */
+  --safe-top:    212px;
+  --safe-bottom: 1556px;
+  --safe-side:   52px;
+}

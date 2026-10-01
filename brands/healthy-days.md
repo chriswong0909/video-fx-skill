@@ -25,8 +25,10 @@ Healthy Days 出品、「1分鐘醫聊室」系列醫生片（例如江振昌醫
 - 頂部關鍵詞**置中 540、y 392**（logo 下面），全片 ≤ 4 個。
 - Title tag 右邊唔好超過 x 720（logo 由 742 開始）。
 
-## 動態系統（必讀）
-- `brands/healthy-days/motion-system.md`（+ `.json` 俾 QA）：藍膠囊主角元素（標題條 ↔ 關鍵詞變形）、5 款零件、3 款緩動、3 級時長、入場／出場文法、聲效語言。所有 Healthy Days 片都跟呢張卡；要改就改卡，唔好喺單條片另起爐灶。
+## 風格包（2026-10-01 起）
+- **預設用 `styles/kallaway`**（用戶揀），品牌色覆蓋：`brands/healthy-days/tokens-kallaway.css`（深海軍藍底、HD 藍 #2F9BE0 發光、橙 #FFB547 罕用、警示紅、正面綠）。
+- 品牌固定元素照舊疊喺上面：右上 logo、名牌樣板、FX-051 方框字幕、title tag（全屏圖片標題）。
+- 舊「藍膠囊」動態系統卡（`brands/healthy-days/motion-system.md`）已停用，只作歷史參考（doctor2 v5 用過）。
 
 ## 開場要戲劇化、緊張（只限 Healthy Days，用戶 2026-09-30）
 - 0 秒特寫（#camInner 1.35–1.4，transform-origin 540px 420px）+ 暗角（clip，z-index ≥ 5）。

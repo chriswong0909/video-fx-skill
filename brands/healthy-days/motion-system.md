@@ -1,3 +1,5 @@
+> **已停用（2026-10-01）**：Healthy Days 改用 `styles/kallaway` 風格包。保留做歷史參考。
+
 # Healthy Days 動態系統卡（v1，2026-09-30）
 機讀版：`motion-system.json`（QA 用）。規則出處：`workflow/motion-system.md`。
 

@@ -288,7 +288,7 @@ function renderFilters(){
 // ---------- 聲效 ----------
 const SCAT={whoosh:'轉場風聲',pop:'彈出',ui:'介面',ding:'提示音',impact:'重擊',riser:'張力',foley:'擬音',accent:'點綴',music:'短音樂',ambience:'環境聲'};
 const scats=[...new Set(SX.map(s=>s.cat))];
-$('#tabfx').innerHTML=`視覺效果 <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`; $('#tabkit').innerHTML=`教學包參考頁 <span class="n">${KR.cards.length}</span>`;
+$('#tabfx').innerHTML=`技巧參考（舊效果） <span class="n">${FX.length}</span>`; $('#tabsfx').innerHTML=`聲效 <span class="n">${SX.length}</span>`; $('#tabgr').innerHTML=`調色 <span class="n">${GX.length}</span>`; $('#tabkit').innerHTML=`風格包卡（主力） <span class="n">${KR.cards.length}</span>`;
 function setTab(t){state.tab=t;save();
  $('#tabfx').setAttribute('aria-selected',t==='fx'); $('#tabsfx').setAttribute('aria-selected',t==='sfx'); $('#tabgr').setAttribute('aria-selected',t==='grade'); $('#tabkit').setAttribute('aria-selected',t==='kit');
  $('#fxView').hidden=t!=='fx'; $('#sfxView').hidden=t!=='sfx'; $('#grView').hidden=t!=='grade'; $('#kitView').hidden=t!=='kit';
@@ -363,7 +363,7 @@ function renderKit(){
  chipRow('#ktiers','kti',tis,v=>KTI[v]||v,v=>C.filter(c=>c.tier===v).length);
  chipRow('#kpurps','kpu',pus,v=>(C.find(c=>c.purpose===v)||{}).purpose_zh||v,v=>C.filter(c=>c.purpose===v).length);
  const all=C.filter(kmatch), list=all.slice(0,kLimit);
- $('#kgrid').innerHTML=list.length?list.map(c=>`<article class="kcard">${c.img?`<img src="${c.img}" alt="${h(c.id)}" loading="lazy" data-zoom>`:''}<div class="cb"><span class="cat">${h(KST[c.style]||c.style)} · ${h(KTI[c.tier]||c.tier)} · ${h(c.purpose_zh)}</span><h3>${h(c.id)}</h3><p>${h(c.desc)}</p>
+ $('#kgrid').innerHTML=list.length?list.map(c=>`<article class="kcard">${c.img?`<img src="${c.img}" alt="${h(c.id)}" loading="lazy" data-zoom>`:''}<div class="cb"><span class="cat">${h(KST[c.style]||c.style)} · ${h(KTI[c.tier]||c.tier)} · ${h(c.purpose_zh)}${c.portrait?` · <b style="color:var(--accent)">9:16 ${c.portrait==='verified'?'✓ 已驗證':'試做'}</b>`:''}</span><h3>${h(c.id)}</h3><p>${h(c.desc)}</p>
   <div class="tags">${(c.slots||[]).slice(0,5).map(t=>`<span class="tag">${h(t)}</span>`).join('')}${c.dur&&c.dur.min?`<span class="tag">${c.dur.min}–${c.dur.max}s</span>`:''}</div></div></article>`).join('')
   +(all.length>list.length?`<button class="chip" id="kmore" style="grid-column:1/-1;justify-content:center">顯示多 ${Math.min(60,all.length-list.length)} 張（仲有 ${all.length-list.length} 張）</button>`:''):`<div class="empty">冇符合嘅卡片。</div>`;
  $('#ktpl').innerHTML=(KR.templates||[]).map(t=>`<article><div class="cb"><h3>${h(t.name)}</h3><p>${h(t.desc)}</p><p><code>hyperframes-student-kit/${h(t.file)}</code></p></div></article>`).join('');

@@ -1,0 +1,100 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier1 · section · ASCEND — 9:16 直向中文版
+  由 cards/tier1/t1-section-ascend.html 改：章節全屏卡，標題逐個詞組由下浮升、模糊對焦。
+  headline 用「｜」分詞組，用 *星號* 標重點詞（變品牌藍），例如：點樣｜*減慢*｜心臟退化
+  直向：詞組自動換行置中，字 120px。data-cues：第一個數＝第一個詞組出現秒數，之後每個詞組一個（可選）。
+  Slots: kicker（≤ 10 字）, headline（≤ 12 字）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; }
+      #t1-sec-ascend {
+        position: absolute; inset: 0; width: 1080px; height: 1920px;
+        background: var(--canvas); color: var(--text); font-family: var(--font-display); overflow: hidden;
+      }
+      #t1-sec-ascend .bloom { position: absolute; inset: 0; background: var(--bloom-bottom); z-index: 1; }
+      #t1-sec-ascend .grid {
+        position: absolute; inset: 0; z-index: 1; background-image: var(--dot); background-size: var(--dot-size); opacity: 0.40;
+        -webkit-mask-image: radial-gradient(120% 80% at 50% 55%, #000 35%, transparent 80%);
+                mask-image: radial-gradient(120% 80% at 50% 55%, #000 35%, transparent 80%);
+      }
+      #t1-sec-ascend .content {
+        position: absolute; left: var(--pad); right: var(--pad); top: 380px; bottom: 364px;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 4;
+      }
+      #t1-sec-ascend .kicker {
+        font-family: var(--font-mono); font-weight: 700; font-size: var(--size-label); letter-spacing: 0.12em;
+        color: var(--accent); text-shadow: var(--textglow-accent); margin-bottom: 60px; text-align: center;
+      }
+      #t1-sec-ascend .headline-wrap {
+        display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline;
+        gap: 10px 22px; text-align: center; line-height: 1.15;
+      }
+      #t1-sec-ascend .word {
+        font-family: var(--font-display); font-weight: 900; font-size: var(--size-title); line-height: 1.12;
+        color: var(--white); text-shadow: var(--textglow); display: inline-block; opacity: 0; white-space: nowrap;
+      }
+      #t1-sec-ascend .word.accent { color: var(--accent); text-shadow: var(--textglow-accent); }
+      #t1-sec-ascend .plate {
+        position: absolute; left: 50%; top: 52%; transform: translate(-50%, -50%);
+        width: 1000px; height: 420px; border-radius: 50%;
+        background: radial-gradient(60% 100% at 50% 50%, rgba(var(--accent-rgb), 0.14), transparent 70%);
+        filter: blur(18px); z-index: 3; opacity: 0;
+      }
+      #t1-sec-ascend .vignette { position: absolute; inset: 0; pointer-events: none; z-index: 6; background: var(--vignette); }
+      #t1-sec-ascend .grain {
+        position: absolute; inset: -40px; background: var(--tex-grain); background-size: 200px 200px;
+        mix-blend-mode: overlay; opacity: 0.10; pointer-events: none; z-index: 7;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="t1-sec-ascend" data-composition-id="t1-sec-ascend" data-start="0" data-width="1080" data-height="1920">
+      <div class="bloom"></div>
+      <div class="grid"></div>
+      <div class="plate" id="t1-sec-ascend-plate"></div>
+      <div class="content">
+        <div class="kicker" data-slot="kicker">第二部分</div>
+        <div class="headline-wrap" data-slot="headline">點樣｜*減慢*｜心臟退化</div>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="t1-sec-ascend"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      /* 由 slot 文字砌詞組 span（「｜」分隔，*重點*） */
+      const wrap = ROOT.querySelector('.headline-wrap');
+      const parts = wrap.textContent.split('｜').map(s => s.trim()).filter(Boolean);
+      wrap.textContent = '';
+      parts.forEach((p, i) => { const s = document.createElement('span'); const acc = /^\*.*\*$/.test(p);
+        s.className = 'word' + (acc ? ' accent' : ''); s.id = 't1-sec-ascend-w' + i; s.textContent = acc ? p.slice(1, -1) : p; wrap.appendChild(s); });
+
+      tl.fromTo("#t1-sec-ascend .grain", { backgroundPosition: "0px 0px" },
+        { backgroundPosition: "115px 85px", duration: 0.6, ease: "none", repeat: 11, yoyo: true }, 0);
+      tl.from("#t1-sec-ascend .bloom", { autoAlpha: 0, scale: 0.88, transformOrigin: "50% 120%", duration: 1.3, ease: "expo.out" }, 0)
+        .from("#t1-sec-ascend .grid", { autoAlpha: 0, duration: 1.1, ease: "power2.out" }, 0.2)
+        .from("#t1-sec-ascend .kicker", { autoAlpha: 0, y: 20, filter: "blur(8px)", duration: 0.7, ease: "power3.out" }, 0.4);
+      const w0 = CUES.length ? CUES[0] : 0.9;
+      parts.forEach((p, i) => {
+        const t = CUES.length > i ? CUES[i] : w0 + i * 0.16;
+        tl.fromTo("#t1-sec-ascend-w" + i, { autoAlpha: 0, y: 70, filter: "blur(18px)" },
+          { autoAlpha: 1, y: 0, filter: "blur(0px)", duration: 0.65, ease: "power4.out" }, t);
+      });
+      const tEnd = (CUES.length ? CUES[CUES.length - 1] : w0 + parts.length * 0.16) + 0.6;
+      tl.to("#t1-sec-ascend-plate", { autoAlpha: 1, duration: 0.9, ease: "power2.out" }, tEnd)
+        .to("#t1-sec-ascend-plate", { opacity: 0.45, scale: 1.08, transformOrigin: "50% 50%", duration: 1.5, ease: "sine.inOut", repeat: 2, yoyo: true }, tEnd + 0.8);
+      const DUR = +ROOT.dataset.dur || 7;
+      tl.to("#t1-sec-ascend .content", { autoAlpha: 0, scale: 0.97, filter: "blur(10px)", duration: 0.45, ease: "power2.in" }, DUR - 0.5)
+        .set({}, {}, 7);
+      window.__timelines["t1-sec-ascend"] = tl;
+    </script>
+  </body>
+</html>
