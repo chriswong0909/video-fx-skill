@@ -35,7 +35,7 @@ description: "用 HyperFrames 剪片、加動態字幕、插 B-roll 動態圖像
    詳見 LIBRARY `workflow/storyboard.md`。
 
 **硬性規則（每條片都要遵守，詳見 `lessons/layout-safety.md`）**
-- **一條片一套動態系統（最重要）**：所有畫面元素都由系統卡嘅零件生出嚟；效果庫效果要先「換皮」成零件（系統卡嘅色、緩動、時長、入場）先用得。變化嚟自內容、狀態、構圖、節奏，唔係嚟自新效果。主角元素相隔 < 1 秒就變形過去，≥ 1 秒就退場再入。`node scripts/qa-motion.cjs index.html <motion-system.json>` 唔過唔准渲染。
+- **一條片一套動態系統（最重要）**：所有畫面元素都由系統卡嘅零件生出嚟；效果庫效果已經 token 化（色、時長、緩動讀 CSS 變數），composition `<head>` 貼預設 `tokens.css` 再貼品牌 `brands/<brand>/tokens.css` 就自動換皮；揀效果按 registry 嘅 `component`（零件類別）同 `entry`（入場文法）對系統卡，`style_bound` 效果只限對應風格。新效果入庫跟 `workflow/add-effect.md`「零件同 tokens」一節。變化嚟自內容、狀態、構圖、節奏，唔係嚟自新效果。主角元素相隔 < 1 秒就變形過去，≥ 1 秒就退場再入。`node scripts/qa-motion.cjs index.html <motion-system.json>` 唔過唔准渲染。
 - **一條片一個風格預設**：treatment 揀 `presets/SP-###`（字體、色彩意思、緩動、轉場、字幕、調色、聲效家族、效果白名單一套過）；composition `<head>` 貼該預設 `tokens.css`（品牌檔顏色之後覆蓋）。效果只喺白名單揀，白名單以外要寫理由。出草稿前 `node scripts/check-style.mjs index.html presets/SP-xxx` 要過：字體 ≤ 2、色相 ≤ 4、緩動 ≤ 4、轉場 ≤ 2、字幕一款。
 - **先剪停頓同口頭禪**：轉錄後用 `tools/cut.py`（見 `lessons/cutting-cantonese.md`）出 clean.mp4；之後所有步驟用 clean.mp4 同 clean-transcript.json。醫療限定詞（唔、可能、建議、除非…）永遠唔自動剪。
 - **冇背景音樂**：用戶上 IG 先加；只做聲效 + 輕度人聲清理。
