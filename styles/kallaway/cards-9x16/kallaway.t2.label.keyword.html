@@ -21,13 +21,13 @@
         background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.30) 0%, rgba(var(--accent-rgb), 0.08) 50%, transparent 75%);
         filter: blur(44px); pointer-events: none;
       }
-      #t2-lb-key .wrap { position: absolute; left: 90px; right: 90px; top: 380px; display: flex; justify-content: center; }
+      #t2-lb-key .wrap { position: absolute; left: 90px; right: 90px; top: 372px; display: flex; justify-content: center; }
       #t2-lb-key .underlay {
         background: var(--glass-bg-dark);
         backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
-        border: 1.5px solid var(--glass-border); border-top: 1.5px solid rgba(255,255,255,0.16);
+        border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi);
         box-shadow: var(--glass-shadow); border-radius: var(--radius);
-        padding: 22px 56px 24px; position: relative; overflow: hidden; text-align: center;
+        padding: 16px 52px 18px; position: relative; overflow: hidden; text-align: center;
       }
       #t2-lb-key .underlay::before {
         content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
@@ -35,10 +35,10 @@
         box-shadow: 0 2px 14px rgba(var(--accent-rgb), 0.55);
       }
       #t2-lb-key .keyword {
-        font-family: var(--font-display); font-weight: 900; font-size: 112px; line-height: 1.08;
-        background: linear-gradient(100deg, #FFFFFF 0%, #FFFFFF 45%, var(--accent) 80%, rgba(var(--accent-rgb), 0.8) 100%);
+        font-family: var(--font-display); font-weight: 900; font-size: 104px; line-height: 1.08;
+        background: linear-gradient(100deg, var(--grad-start) 0%, var(--grad-start) 45%, var(--accent) 80%, rgba(var(--accent-rgb), 0.8) 100%);
         -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
-        filter: drop-shadow(0 0 18px rgba(var(--accent-rgb), 0.50)) drop-shadow(0 0 6px rgba(255,255,255,0.30));
+        filter: var(--kw-glow);
         display: block; white-space: nowrap;
       }
       #t2-lb-key .note {
@@ -68,7 +68,7 @@
         .from((COMP) + ' .underlay', { autoAlpha: 0, y: -36, filter: "blur(14px)", duration: 0.82, ease: "back.out(1.4)" }, t0)
         .from((COMP) + ' .keyword', { autoAlpha: 0, y: 20, filter: "blur(18px) brightness(1.5)", duration: 0.78, ease: "power4.out" }, t0 + 0.32)
         .from((COMP) + ' .note', { autoAlpha: 0, y: 8, filter: "blur(6px)", duration: 0.50, ease: "power3.out" }, t0 + 0.7)
-        .to((COMP) + ' .keyword', { filter: 'drop-shadow(0 0 30px rgba(' + (A) + ',0.75)) drop-shadow(0 0 10px rgba(255,255,255,0.45))',
+        .to((COMP) + ' .keyword', { filter: getComputedStyle(ROOT).getPropertyValue('--kw-glow-peak').trim() || 'drop-shadow(0 0 30px rgba(' + (A) + ',0.75))',
             duration: 1.2, ease: "sine.inOut", repeat: 2, yoyo: true }, t0 + 1.6)
         ;
       /* 出場：平滑縮細 + 模糊（Kallaway：唔好硬切）。DUR 由 cards.py use 寫入 data-dur */

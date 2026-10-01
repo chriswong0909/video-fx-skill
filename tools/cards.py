@@ -80,7 +80,8 @@ def inline_tokens(style, brand):
     t916 = os.path.join(SD, style, 'tokens-9x16.css')
     if os.path.exists(t916): parts.append(open(t916, encoding='utf-8').read())
     if brand:
-        bt = os.path.join(ROOT, 'brands', brand, f'tokens-{style}.css')
+        b, _, variant = brand.partition(':')          # 例如 healthy-days:dark → tokens-kallaway-dark.css
+        bt = os.path.join(ROOT, 'brands', b, f'tokens-{style}' + (f'-{variant}' if variant else '') + '.css')
         if os.path.exists(bt): parts.append(open(bt, encoding='utf-8').read())
         else: print(f'! 品牌 {brand} 冇 tokens-{style}.css，用風格原色')
     css = '\n'.join(parts)

@@ -25,6 +25,10 @@ python3 tools/cards.py show kallaway.t1.overview.checklist                    # 
 3. 預覽：砌一個 15 秒測試專案（講者片段 + logo + 卡），`npx hyperframes snapshot --at …` 自己先睇，再 render draft 俾用戶。
 4. 用戶批咗：`python3 tools/cards.py verify <id> --note "doctor2 用過；title ≤ 8 字"`。
 
+## 主題（淺／深）
+- 品牌檔可以有兩個版本：`brands/<brand>/tokens-<style>.css`（預設）同 `tokens-<style>-dark.css`。Healthy Days 預設**淺色**（用戶 2026-10-01：深色太暗黑），`--brand healthy-days:dark` 用深色。
+- 卡入面唔好寫死白色字：標題用 `var(--head)`、漸變大字起點 `var(--grad-start)`、大字光暈 `var(--kw-glow)`／`var(--kw-glow-peak)`、玻璃高光 `var(--glass-hi)`，淺深主題自動切換。
+
 ## 放入片
 ```
 python3 tools/cards.py use kallaway.t2.label.keyword --project ~/hf/<proj> --name beat03 --dur 4 \

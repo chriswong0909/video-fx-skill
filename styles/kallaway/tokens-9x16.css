@@ -20,3 +20,11 @@
   --safe-bottom: 1556px;
   --safe-side:   52px;
 }
+
+/* 語義色（9:16 卡用呢啲，唔直接寫白色）：深底預設 = Kallaway 原樣；淺色主題喺品牌檔覆蓋 */
+:root {
+  --head:        var(--white);                         /* 標題／主要字 */
+  --grad-start:  #FFFFFF;                              /* 漸變大字起點 */
+  --kw-glow:      drop-shadow(0 0 18px rgba(var(--accent-rgb), 0.50)) drop-shadow(0 0 6px rgba(255,255,255,0.30));
+  --kw-glow-peak: drop-shadow(0 0 30px rgba(var(--accent-rgb), 0.75)) drop-shadow(0 0 10px rgba(255,255,255,0.45));
+}

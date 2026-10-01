@@ -1,11 +1,38 @@
-/* Healthy Days × Kallaway：品牌色覆蓋（放喺 kallaway tokens.css + tokens-9x16.css 之後）
-   Kallaway 原本係 AIS 藍 #37BDF8；換做 Healthy Days 藍（logo #1a80d0 同 teal #13b8d0 之間，暗底發光要夠光）。 */
+/* Healthy Days × Kallaway【淺色版，預設】（2026-10-01 用戶：原版太暗黑）
+   保留 Kallaway 嘅文法：毛玻璃卡、由下升起嘅品牌色光暈、點陣底紋、順滑 glide＋blur 對焦、重點詞發光；
+   改淺色醫療感：淡藍白底、深海軍藍字、Healthy Days logo 藍做重點（靈感：v5 嘅白膠囊、卡底 #f4f7fa、藍框圓相）。
+   放喺 kallaway tokens.css + tokens-9x16.css 之後。 */
 :root {
-  --canvas:      #06121F;   /* 深海軍藍，比原本近黑多少少品牌味 */
-  --canvas-deep: #040D17;
-  --accent:      #2F9BE0;  --accent-rgb:  47, 155, 224;
-  --accent-2:    #FFB547;  --accent2-rgb: 255, 181, 71;   /* logo 橙，罕用 */
+  --canvas:      #F2F7FC;  --canvas-deep: #E3EEF8;
+  --text:        #0B2A3A;  --head: #0B2A3A;  --grad-start: #0B2A3A;
+  --text-dim:    rgba(11, 42, 58, 0.62);
+  --text-faint:  rgba(11, 42, 58, 0.38);
+  --ink:         #0B2A3A;  --paper: #FFFFFF;
+
+  --accent:      #1A80D0;  --accent-rgb:  26, 128, 208;    /* logo 藍：淺底上夠對比 */
+  --accent-2:    #13B8D0;  --accent2-rgb: 19, 184, 208;    /* teal，罕用 */
   --alert:       #E8452C;  --alert-rgb:   232, 69, 44;
   --warm:        #FFB547;  --warm-rgb:    255, 181, 71;
-  --positive:    #1F9D6B;  --positive-rgb: 31, 157, 107;  /* 正面訊息（Kallaway 冇，品牌加） */
+  --positive:    #1F9D6B;  --positive-rgb: 31, 157, 107;
+
+  /* 淺底唔用白色光暈：改做好淡嘅藍影，令字浮起但唔朦 */
+  --textglow:        0 2px 18px rgba(26, 128, 208, 0.12);
+  --textglow-accent: 0 0 22px rgba(26, 128, 208, 0.22);
+  --kw-glow:      drop-shadow(0 2px 10px rgba(26, 128, 208, 0.22));
+  --kw-glow-peak: drop-shadow(0 0 18px rgba(26, 128, 208, 0.42));
+  --glow-accent:  0 0 18px rgba(26, 128, 208, 0.30), 0 0 44px rgba(26, 128, 208, 0.14);
+
+  /* 白色毛玻璃（疊喺講者上面都睇得清） */
+  --glass-bg:      rgba(255, 255, 255, 0.62);
+  --glass-bg-dark: rgba(255, 255, 255, 0.84);
+  --glass-border:  rgba(26, 128, 208, 0.16);
+  --glass-hi:      rgba(255, 255, 255, 0.95);
+  --glass-shadow:  0 18px 48px rgba(11, 42, 58, 0.12);
+
+  /* 背景：淡藍光由下升起 + 淡點陣，保留 Kallaway 嘅「aurora」但係日光版 */
+  --bloom-bottom: radial-gradient(120% 70% at 50% 112%,
+                    rgba(26, 128, 208, 0.36) 0%, rgba(19, 184, 208, 0.14) 36%, transparent 66%);
+  --bloom-corner: radial-gradient(90% 90% at 88% 12%, rgba(19, 184, 208, 0.16) 0%, transparent 55%);
+  --vignette:     radial-gradient(125% 125% at 50% 45%, transparent 60%, rgba(11, 42, 58, 0.08) 100%);
+  --dot:          radial-gradient(circle at center, rgba(11, 42, 58, 0.07) 1px, transparent 1.4px);
 }
