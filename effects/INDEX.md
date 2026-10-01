@@ -1,6 +1,6 @@
 # 效果目錄（自動生成，勿手改）
 
-共 79 個效果
+共 77 個效果
 
 | ID | 名稱 | 類別 | 情緒 | 適合 | 出處 |
 |---|---|---|---|---|---|
@@ -10,9 +10,7 @@
 | [FX-006](FX-006-blur-emboss-title/effect.md) | 模糊畫面浮雕大字 | transition | warm, dramatic, premium | talking-head, podcast-clip, medical | ref1-glucose-podcast 16:3–17:0（STARCHES） |
 | [FX-010](FX-010-pip-editorial-list/effect.md) | 相框加清單版面 | layout | clinical, editorial, clean | medical, education, talking-head | original（doctor2-editorial） |
 | [FX-013](FX-013-question-float-label/effect.md) | 問題浮動符號 + 紅標籤 | text-fx | warm, playful, editorial | podcast-clip, education, medical | ref1-glucose-podcast 10:0–11:5（GIVE YOUR BODY） |
-| [FX-014](FX-014-ecg-line-draw/effect.md) | 心電圖線描繪 | accent | clinical, medical | medical | original（doctor2-editorial） |
 | [FX-015](FX-015-warm-podcast-grade/effect.md) | 暖色 podcast 調色 | grade-light | warm, cozy, editorial | podcast-clip, talking-head, lifestyle | ref1-glucose-podcast（整體色調） |
-| [FX-016](FX-016-text-behind-subject/effect.md) | 文字喺人物後面 | text-fx | premium, editorial, dramatic | talking-head, medical, fitness, product | ref7-spine-surgeon 0:00.5–0:01.5 |
 | [FX-017](FX-017-top-headline-sans/effect.md) | 頭頂大字（無襯線） | text-fx | energetic, clean, modern | talking-head, fitness, podcast-clip, education | ref2-fitness-bloodsugar 0:00–0:02.5, 0:06–0:07.5 |
 | [FX-018](FX-018-single-word-pop/effect.md) | 單字跳字幕 | text-fx | clean, energetic, modern | talking-head, podcast-clip, interview, education, medical | ref2 0:12–0:14、ref4 0:13、ref5 0:11–0:14、ref3 0:10.5 |
 | [FX-019](FX-019-tilted-broll-label/effect.md) | 斜放 B-roll 標籤字 | text-fx | energetic, playful, modern | fitness, lifestyle, education | ref2-fitness-bloodsugar 0:03–0:06 |

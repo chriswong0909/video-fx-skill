@@ -18,7 +18,7 @@
 | [SFX-012](SFX-012-riser/sound.md) | 上升張力 | riser | 2.00 | 0.3 | FX-006, FX-053, FX-063 | 自製合成，無版權限制，可商用 |
 | [SFX-013](SFX-013-shutter/sound.md) | 相機快門 | foley | 0.30 | 0.45 | FX-058, FX-061, FX-010, FX-081 | 自製合成，無版權限制，可商用 |
 | [SFX-014](SFX-014-card-slide/sound.md) | 卡片滑入 | foley | 0.45 | 0.4 | FX-005, FX-032, FX-021, FX-041, FX-078, FX-079 | 自製合成，無版權限制，可商用 |
-| [SFX-015](SFX-015-heartbeat/sound.md) | 心跳 | foley | 1.80 | 0.5 | FX-014, FX-050, FX-028 | 自製合成，無版權限制，可商用 |
+| [SFX-015](SFX-015-heartbeat/sound.md) | 心跳 | foley | 1.80 | 0.5 | FX-050, FX-028 | 自製合成，無版權限制，可商用 |
 | [SFX-016](SFX-016-sparkle/sound.md) | 閃光 | accent | 1.20 | 0.3 | FX-063, FX-027, FX-049, FX-042, FX-077 | 自製合成，無版權限制，可商用 |
 | [SFX-017](SFX-017-glitch/sound.md) | 故障雜訊 | accent | 0.40 | 0.3 | FX-054, FX-075 | 自製合成，無版權限制，可商用 |
 | [SFX-018](SFX-018-sub-drop/sound.md) | 低頻下沉 | impact | 1.20 | 0.45 | FX-006, FX-053, FX-017 | 自製合成，無版權限制，可商用 |

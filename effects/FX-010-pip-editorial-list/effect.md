@@ -9,7 +9,7 @@ mood: [clinical, editorial, clean]
 fits: [medical, education, talking-head]
 video_types: [醫療健康, 口播知識]
 pace: [中, 慢]
-pairs_with: [FX-014]
+pairs_with: []
 conflicts_with: [FX-005, FX-038, FX-024]
 needs: [list-content]
 brand_color_ready: true

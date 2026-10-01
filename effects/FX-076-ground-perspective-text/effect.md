@@ -10,7 +10,7 @@ fits: [storytelling, finance, commentary, b-roll]
 video_types: [口播知識, 紀錄 Vlog, 產品廣告]
 pace: [中, 快]
 pairs_with: [FX-077, FX-074, FX-062]
-conflicts_with: [FX-016]
+conflicts_with: []
 needs: [top-down-footage]
 brand_color_ready: true
 source: ref17-hk-retire-north 0:52–0:54

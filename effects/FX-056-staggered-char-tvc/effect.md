@@ -9,7 +9,7 @@ mood: [elegant, premium, soft]
 fits: [product, beauty, health, brand]
 video_types: [產品廣告]
 pace: [中]
-pairs_with: [FX-057, FX-016]
+pairs_with: [FX-057]
 conflicts_with: []
 needs: []
 brand_color_ready: true

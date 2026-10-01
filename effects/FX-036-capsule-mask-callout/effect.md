@@ -9,7 +9,7 @@ mood: [clinical, clean, educational]
 fits: [medical, education, product]
 video_types: [醫療健康]
 pace: [中]
-pairs_with: [FX-021, FX-037, FX-016, FX-050]
+pairs_with: [FX-021, FX-037, FX-050]
 conflicts_with: []
 needs: [cutout-or-photo]
 brand_color_ready: true
