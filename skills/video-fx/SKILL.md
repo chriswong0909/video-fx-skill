@@ -33,7 +33,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 - **IG 安全區**（1080×1920）：左右 52px、頂 212、底 1556 以外唔放字；圖像置中 540；唔遮面（講者頭位要預留）。
 - **最細字**：卡標題 ≥ 96px、卡內文 ≥ 64px、字幕 76–80px、註腳 ≥ 44px。
 - **唔加未要求嘅元素**；素材唔好靜靜雞降級（`workflow/assets.md`，Canva 第一，生成圖唔使醫生審核）。
-- **基本調色**每條片都做（`tools/grade.py recommend`）。
+- **基本調色**每條片都做：`tools/grade.py recommend` → `grade.py apply clean.mp4 <GR-id> graded.mp4`，HyperFrames 用 graded.mp4（音軌用 clean.mp4），唔好再疊調色 filter。
 - **HyperFrames 坑**（`lessons/hyperframes-rendering.md`）：掛載卡嘅 host 一定要有 `data-composition-id`；卡入面資產路徑用根目錄相對（`assets/…`，唔好 `../`）；querySelector 唔好用 template literal；visibility 會繼承（子元素用 opacity）；全屏層 z ≥ 5；`tl.to({}, {duration:END}, 0)` 墊底；唔好 `immediateRender:false`。
 
 ## 0. 連接 LIBRARY（同問卷同步做）
@@ -72,13 +72,15 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 3. index.html：講者 video（非計時 wrapper 做推鏡）、卡（data-composition-src）、品牌固定元素（logo、名牌、字幕）、manifest（`fx-manifest`：每個畫面字 = 卡 slot 文字 + 出現時間，俾 qa.py 對聲）。
 4. QA：`npx hyperframes lint`（0 error）→ `python3 tools/qa.py check index.html chars.json`（字對聲、字數、重疊）→ `npx hyperframes snapshot --at …` 逐張卡關鍵格睇（安全區、遮面、字清唔清）→ `workflow/critique.md` 自評分（`qa.py critique`，全部 ≥ 7）。
 5. 聲效：`sfx-events.json`（卡元素落地格）→ `tools/sfx_plan.py` → `tools/sfx.py mix`（`lessons/sound-mixing.md`）。
-6. 草稿 `npx hyperframes render --quality draft`（本機 VM：`source ~/hf/env.sh`，`--workers 4 --no-low-memory-mode`；device_bash 每次 ≤ 180 秒）→ 抽格 contact sheet 自己先睇 → 俾用戶。正式版 `--quality high` + 換原音軌 + 核對長度幀數。成品放素材旁 `output/`。
+6. 草稿 `npx hyperframes render --quality draft`（本機 VM：`source ~/hf/env.sh`，`--workers 4 --no-low-memory-mode`；device_bash 每次 ≤ 180 秒）→ 抽格 contact sheet 自己先睇 → 俾用戶。正式版 `--quality high`；冇聲效：`ffmpeg -i render.mp4 -i clean.mp4 -map 0:v:0 -map 1:a:0 -c copy out.mp4`（md5 核對音軌）；有聲效：`tools/sfx.py mix clean.mp4 cues.json mix.m4a` 再 mux（原聲音量不變 + limiter）。核對長度、幀數、比例。成品放素材旁 `output/`。
 
 ## 7. 入庫（每次剪完）
 1. 新改好嘅 9:16 卡：`cards.py verify`；`styles/<style>/portrait.json` 記低用過邊條片、slot 上限。
 2. 新技術坑寫 `lessons/`；品牌改動寫 `brands/`；聲效／調色 `used_in` 更新。
-3. `node scripts/build-registry.mjs && node scripts/build-gallery.mjs`，重新發佈效果目錄（同一連結）。
-4. Git：本機 `git add -A && git commit`；只改文字檔可以用 GitHub MCP push_files 推上 `chriswong0909/video-fx-skill`（推完對 sha）；有二進制檔就提醒用戶雙擊 `推上GitHub.command`。永遠唔好問 token／密碼。
+3. 用戶否定某張卡：講「唔啱用」→ `portrait.json` 該卡加 `"banned": "原因"`，之後唔再揀；只係某條片唔啱 → 唔好禁。舊效果庫刪除規則照 `effects/REMOVED.md`（編號永不重用）。
+4. `node scripts/build-registry.mjs && node scripts/build-gallery.mjs`，重新發佈效果目錄（同一連結）。
+5. Git：本機 `git add -A && git commit`（確認冇 `.git/*.lock` 殘留）；只改文字檔可以用 GitHub MCP push_files 推上 `chriswong0909/video-fx-skill` main（推完用 get_file_contents 對 sha）；有二進制檔就提醒用戶雙擊 `推上GitHub.command`，之後 list_commits 核對。永遠唔好問 token／密碼。
+6. 最後同用戶講：新改／驗證咗邊幾張卡（卡 id）、lessons 加咗乜、GitHub 推咗未。
 
 ## 模式
 | 模式 | 用喺 | 檔 |
