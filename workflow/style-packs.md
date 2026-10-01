@@ -38,5 +38,5 @@ python3 tools/cards.py use kallaway.t2.label.keyword --project ~/hf/<proj> --nam
 - cues 由 chars.json：`講嗰個字開始秒數 − 卡開始秒數`。
 - 同一張卡可以用幾次（每次唔同 `--name`）。
 
-## 已有 9:16 版（試做，待用戶批）
+## 已驗證 9:16 版（用戶批咗，2026-10-01 淺色版）
 `kallaway.t2.label.keyword`、`kallaway.t1.overview.checklist`、`kallaway.t1.section.ascend`（doctor2 試做，2026-10-01；預覽 `Video editing/doctor2/output/kallaway_pilot.mp4`）。
