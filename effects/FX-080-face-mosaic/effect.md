@@ -22,6 +22,8 @@ cjk_notes: "冇文字。"
 placement: free
 aspect: "16:9"
 difficulty: medium
+component: accent
+entry: []
 ---
 
 ## 效果

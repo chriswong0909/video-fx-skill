@@ -22,6 +22,10 @@ cjk_notes: "唔影響文字；疊喺字幕之下。"
 placement: free
 aspect: "16:9"
 difficulty: easy
+style_bound: true
+bound_reason: "菲林調色（ffmpeg），唔係畫面元素"
+component: camera
+entry: [cut]
 ---
 
 ## 效果

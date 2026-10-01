@@ -1,8 +1,8 @@
 <script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-028 柔和 3D 圖示解說 | 要做成 clip -->
-<style>#fx028{position:absolute;inset:0;background:linear-gradient(#eaf5fb,#bcd7e8);z-index:5}
+<style>#fx028{position:absolute;inset:0;background:linear-gradient(var(--c-surface, #eaf5fb),var(--c-accent, #bcd7e8));z-index:5}
 #fx028 .it{position:absolute;left:0;right:0;top:720px;display:flex;flex-direction:column;align-items:center;gap:26px;opacity:0}
-#fx028 .it img{width:260px;filter:drop-shadow(0 20px 30px rgba(40,90,130,.25))}#fx028 .it b{font:700 72px var(--f-body,'SansTC');color:#34495e}</style>
+#fx028 .it img{width:260px;filter:drop-shadow(0 20px 30px rgba(40,90,130,.25))}#fx028 .it b{font:700 72px var(--f-body,'SansTC');color:color-mix(in srgb, var(--c-accent, #bcd7e8) 35%, black)}</style>
 <div id="fx028" class="clip" data-start="1" data-duration="4.2" data-track-index="3">
  <div class="it"><img src="assets/brain3d.png"><b>大腦</b></div><div class="it"><img src="assets/eye3d.png"><b>視覺處理</b></div></div>
-<script>document.querySelectorAll('#fx028 .it').forEach((el,i)=>{const t=T.items[i],n=T.items[i+1]??T.end;tl.set(el,{opacity:1},t);tl.from(el.querySelector('img'),{scale:.6,duration:.35,ease:EASE.pop},t);tl.from(el.querySelector('b'),{opacity:0,y:12,duration:.25},t+.15);tl.set(el,{opacity:0},n);});</script>
+<script>document.querySelectorAll('#fx028 .it').forEach((el,i)=>{const t=T.items[i],n=T.items[i+1]??T.end;tl.set(el,{opacity:1},t);tl.from(el.querySelector('img'),{scale:.6,duration:DUR.in,ease:EASE.pop},t);tl.from(el.querySelector('b'),{opacity:0,y:12,duration:DUR.out},t+.15);tl.set(el,{opacity:0},n);});</script>

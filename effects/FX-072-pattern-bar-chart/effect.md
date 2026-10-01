@@ -22,6 +22,8 @@ cjk_notes: "標題 serif 中文 16:9 約 44px、9:16 最少 72px；數值標籤�
 placement: center
 aspect: "16:9"
 difficulty: medium
+component: chart
+entry: [draw, slide-edge]
 ---
 
 ## 效果

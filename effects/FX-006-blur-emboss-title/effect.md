@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 cjk_notes: "220px 每行最多 4 個字。"
 difficulty: easy
+component: headline
+entry: [blur]
 ---
 
 ## 效果

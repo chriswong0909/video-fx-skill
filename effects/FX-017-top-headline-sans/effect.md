@@ -21,6 +21,8 @@ cjk_fit: adjust
 cjk_notes: "英文一個大詞約等於中文 2–4 字；細字最少 76px；大字 6 個字以上減到 140px。"
 placement: headroom
 difficulty: easy
+component: headline
+entry: [rise, scale]
 ---
 
 ## 效果

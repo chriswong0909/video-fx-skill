@@ -20,6 +20,10 @@ status: active
 cjk_fit: poor
 cjk_notes: "英文草書冇中文對應；要用有授權嘅中文手寫字型，或者改用 FX-022 手繪圈註。"
 difficulty: easy
+style_bound: true
+bound_reason: "霓虹手寫字嘅發光色係效果本身"
+component: accent
+entry: []
 ---
 
 ## 效果

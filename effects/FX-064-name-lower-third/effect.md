@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 名 36–40px 粗、職銜 22–26px；職銜長就縮字唔好斷行。
 placement: lower
 difficulty: easy
+component: capsule
+entry: [draw]
 ---
 
 ## 效果

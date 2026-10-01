@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: "漸變同發光要配 Black 字重先顯；筆畫密要加強 glow 對比。"
 placement: inline
 difficulty: easy
+component: headline
+entry: [blur]
 ---
 
 ## 效果

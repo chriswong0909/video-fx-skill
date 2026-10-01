@@ -22,6 +22,8 @@ cjk_notes: "字幕放喺下黑邊正中，白字粗黑 16:9 約 34px、9:16 最�
 placement: layout
 aspect: "16:9"
 difficulty: easy
+component: frame
+entry: [draw]
 ---
 
 ## 效果

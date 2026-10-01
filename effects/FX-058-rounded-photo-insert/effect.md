@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 同文字無關；字幕照常喺相片上方或者下方。
 placement: layout
 difficulty: easy
+component: cutaway
+entry: [scale]
 ---
 
 ## 效果

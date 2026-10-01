@@ -20,6 +20,10 @@ status: active
 cjk_fit: good
 difficulty: easy
 cjk_notes: ""
+style_bound: true
+bound_reason: "窗光斜影嘅暖光係效果本身"
+component: cutaway
+entry: [slide-edge]
 ---
 
 ## 效果

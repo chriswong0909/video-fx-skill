@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "行字最少 64px，行高加到約 130px。"
 difficulty: easy
+component: card
+entry: [rise]
 ---
 
 ## 效果

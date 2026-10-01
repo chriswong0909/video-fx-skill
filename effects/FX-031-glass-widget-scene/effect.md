@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 difficulty: medium
 cjk_notes: ""
+component: cutaway
+entry: [rise, scale]
 ---
 
 ## 效果

@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 difficulty: easy
 cjk_notes: ""
+component: accent
+entry: [draw]
 ---
 
 ## 效果

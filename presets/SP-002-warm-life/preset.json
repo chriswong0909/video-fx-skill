@@ -1,85 +1,86 @@
 {
- "id": "SP-002",
- "name": "溫暖生活",
- "en": "Warm Life",
- "mood_zh": "溫暖生活",
- "for_types": [
-  "紀錄 Vlog",
-  "口播知識",
-  "訪問對談"
- ],
- "tokens": {
-  "bg": "#f6f1e9",
-  "surface": "#efe4d6",
-  "text": "#3a2a1e",
-  "accent": "#e07a3f",
-  "alert": "#c0392b",
-  "positive": "#6a9a5b",
-  "caption_box": "#3a2a1e",
-  "caption_text": "#fbfaf7",
-  "f_display": "'SerifTC'",
-  "f_body": "'SansTC'",
-  "f_num": "'SerifTC'",
-  "ease_out": "power2.out",
-  "ease_pop": "back.out(1.4)",
-  "ease_move": "sine.inOut",
-  "ease_in": "power2.in",
-  "dur_in": ".45s",
-  "dur_out": ".3s",
-  "dur_move": ".8s",
-  "stagger": ".1s"
- },
- "colour_meaning": {
-  "accent": "重點、溫暖提醒",
-  "alert": "要小心嘅位",
-  "positive": "生活建議"
- },
- "grade": "GR-003",
- "grade_alt": [
-  "GR-005"
- ],
- "captions": [
-  "FX-039"
- ],
- "transitions": [
-  "FX-040",
-  "FX-042"
- ],
- "sfx": {
-  "pack": "curated",
-  "categories": [
-   "pop",
-   "foley",
-   "ding"
+  "id": "SP-002",
+  "name": "溫暖生活",
+  "en": "Warm Life",
+  "mood_zh": "溫暖生活",
+  "for_types": [
+    "紀錄 Vlog",
+    "口播知識",
+    "訪問對談"
   ],
-  "density": "少"
- },
- "effects": [
-  "FX-003",
-  "FX-004",
-  "FX-005",
-  "FX-006",
-  "FX-013",
-  "FX-015",
-  "FX-020",
-  "FX-022",
-  "FX-023",
-  "FX-030",
-  "FX-039",
-  "FX-040",
-  "FX-041",
-  "FX-042",
-  "FX-043",
-  "FX-044",
-  "FX-048",
-  "FX-049",
-  "FX-058",
-  "FX-065",
-  "FX-067"
- ],
- "dont": [
-  "唔用霓虹、故障、RGB 分離",
-  "唔用實色方框字幕（太硬）",
-  "動畫慢少少，唔好急彈"
- ]
+  "tokens": {
+    "bg": "#f6f1e9",
+    "surface": "#efe4d6",
+    "text": "#3a2a1e",
+    "accent": "#e07a3f",
+    "alert": "#c0392b",
+    "positive": "#6a9a5b",
+    "caption_box": "#3a2a1e",
+    "caption_text": "#fbfaf7",
+    "f_display": "'SerifTC'",
+    "f_body": "'SansTC'",
+    "f_num": "'SerifTC'",
+    "ease_out": "power2.out",
+    "ease_pop": "back.out(1.4)",
+    "ease_move": "sine.inOut",
+    "ease_in": "power2.in",
+    "dur_in": ".45s",
+    "dur_out": ".3s",
+    "dur_move": ".8s",
+    "stagger": ".1s",
+    "accent2": "#d9a441"
+  },
+  "colour_meaning": {
+    "accent": "重點、溫暖提醒",
+    "alert": "要小心嘅位",
+    "positive": "生活建議"
+  },
+  "grade": "GR-003",
+  "grade_alt": [
+    "GR-005"
+  ],
+  "captions": [
+    "FX-039"
+  ],
+  "transitions": [
+    "FX-040",
+    "FX-042"
+  ],
+  "sfx": {
+    "pack": "curated",
+    "categories": [
+      "pop",
+      "foley",
+      "ding"
+    ],
+    "density": "少"
+  },
+  "effects": [
+    "FX-003",
+    "FX-004",
+    "FX-005",
+    "FX-006",
+    "FX-013",
+    "FX-015",
+    "FX-020",
+    "FX-022",
+    "FX-023",
+    "FX-030",
+    "FX-039",
+    "FX-040",
+    "FX-041",
+    "FX-042",
+    "FX-043",
+    "FX-044",
+    "FX-048",
+    "FX-049",
+    "FX-058",
+    "FX-065",
+    "FX-067"
+  ],
+  "dont": [
+    "唔用霓虹、故障、RGB 分離",
+    "唔用實色方框字幕（太硬）",
+    "動畫慢少少，唔好急彈"
+  ]
 }

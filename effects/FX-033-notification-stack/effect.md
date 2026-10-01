@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "通知字最少 64px，每條最多 10 個字。"
 difficulty: easy
+component: capsule
+entry: [rise]
 ---
 
 ## 效果

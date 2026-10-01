@@ -3,11 +3,11 @@
 <style>
 #fx084{position:absolute;left:120px;top:1240px;z-index:8;transform:rotate(-3deg)}
 #fx084 .band{position:absolute;inset:-18px -40px;background:var(--c-alert,#ffcf2e);-webkit-mask:url(assets/brush.svg) center/100% 100%}
-#fx084 .t{position:relative;font:900 110px/1 var(--f-body,'SansTC');color:#111;transform:skewX(-8deg);white-space:nowrap}
+#fx084 .t{position:relative;font:900 110px/1 var(--f-body,'SansTC');color:var(--c-text, #111111);transform:skewX(-8deg);white-space:nowrap}
 </style>
 <div id="fx084"><div class="band"></div><div class="t">陳大文 醫生</div></div>
 <script>
-tl.fromTo('#fx084 .band',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.3,ease:EASE.out},T.start);
-tl.from('#fx084 .t',{scale:.8,opacity:0,duration:.2,ease:EASE.pop},T.start+.2);
-tl.to('#fx084 .band',{clipPath:'inset(0 0 0 100%)',duration:.25},T.end-.25);tl.to('#fx084 .t',{opacity:0,duration:.2},T.end-.25);
+tl.fromTo('#fx084 .band',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:DUR.in,ease:EASE.out},T.start);
+tl.from('#fx084 .t',{scale:.8,opacity:0,duration:DUR.out,ease:EASE.pop},T.start+.2);
+tl.to('#fx084 .band',{clipPath:'inset(0 0 0 100%)',duration:DUR.out},T.end-.25);tl.to('#fx084 .t',{opacity:0,duration:DUR.out},T.end-.25);
 </script>

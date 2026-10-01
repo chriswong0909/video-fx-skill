@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 字幕黑字 44–50px，每組最多 12 字（受道具闊度限制）。
 placement: lower
 difficulty: easy
+component: caption
+entry: [type]
 ---
 
 ## 效果

@@ -1,4 +1,5 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-058 黑底圓角相片 | 要做成 clip -->
 <div class="clip" data-start="12.4" data-duration="2.5" data-track-index="3" style="position:absolute;inset:0;background:#000;z-index:5">
  <img id="ph1" src="assets/photo1.jpg" style="position:absolute;left:80px;top:300px;width:920px;height:1280px;object-fit:cover;border-radius:32px"></div>
-<script>tl.fromTo('#ph1',{opacity:0,scale:1.04},{opacity:1,scale:1,duration:.3},T.start);tl.to('#ph1',{scale:1.04,duration:2.2,ease:'none'},T.start+.3);</script>
+<script>tl.fromTo('#ph1',{opacity:0,scale:1.04},{opacity:1,scale:1,duration:DUR.in},T.start);tl.to('#ph1',{scale:1.04,duration:2.2,ease:'none'},T.start+.3);</script>

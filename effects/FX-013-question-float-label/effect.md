@@ -21,6 +21,8 @@ cjk_fit: adjust
 cjk_notes: "超大字改黑體 Black 比襯線清楚。"
 placement: headroom
 difficulty: easy
+component: capsule
+entry: [rise]
 ---
 
 ## 效果

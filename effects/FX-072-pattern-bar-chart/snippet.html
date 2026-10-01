@@ -1,12 +1,12 @@
 <script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-072 圖案柱狀圖生長 | 1080×1920 | 依賴：SerifTC、各組圖案（SVG／PNG） | 要做成 clip -->
 <style>
-#fx072{position:absolute;inset:0;z-index:5;background:#1a2130}
+#fx072{position:absolute;inset:0;z-index:5;background:var(--c-text, #1a2130)}
 #fx072 h2{position:absolute;top:360px;width:100%;text-align:center;font:900 72px var(--f-display,'SerifTC');color:rgba(220,220,220,.7);margin:0}
-#fx072 .base{position:absolute;left:90px;right:90px;top:1400px;height:3px;background:#c9b98a}
+#fx072 .base{position:absolute;left:90px;right:90px;top:1400px;height:3px;background:var(--c-accent2, #c9b98a)}
 #fx072 .bars{position:absolute;left:90px;right:90px;bottom:520px;height:760px;display:flex;align-items:flex-end;gap:18px}
 #fx072 .bar{flex:1;transform-origin:bottom;background-size:cover;background-position:center;box-shadow:0 0 18px rgba(255,255,255,.08)}
-#fx072 .val{position:absolute;font:900 64px var(--f-display,'SerifTC');color:#e3342f;white-space:nowrap}
+#fx072 .val{position:absolute;font:900 64px var(--f-display,'SerifTC');color:var(--c-alert, #e3342f);white-space:nowrap}
 </style>
 <div id="fx072" class="clip" data-start="3" data-duration="6.5" data-track-index="3">
  <h2>各地平均退休儲蓄</h2><div class="base"></div><div class="bars"></div><div class="val">HK$8,600,000</div>
@@ -16,6 +16,6 @@
 const DATA=[{v:9.1,img:'assets/us.svg'},{v:8.6,img:'assets/hk.svg',hi:1},{v:7.2,img:'assets/sg.svg'},{v:6.0,img:'assets/cn.svg'},{v:4.1,img:'assets/uk.svg'}];
 const max=Math.max(...DATA.map(d=>d.v)), box=document.querySelector('#fx072 .bars');
 DATA.forEach((d,i)=>{const b=document.createElement('div');b.className='bar';b.style.height=(d.v/max*100)+'%';b.style.backgroundImage=`url(${d.img})`;box.appendChild(b);
-  tl.from(b,{scaleY:0,duration:.6,ease:EASE.out},T.start+.3+(DATA.length-1-i)*.12);});
-tl.from('#fx072 .val',{opacity:0,x:-20,duration:.3},T.start+.3+DATA.length*.12+.4); // 位置按 hi 嗰條計
+  tl.from(b,{scaleY:0,duration:DUR.move,ease:EASE.out},T.start+.3+(DATA.length-1-i)*.12);});
+tl.from('#fx072 .val',{opacity:0,x:-20,duration:DUR.in},T.start+.3+DATA.length*.12+.4); // 位置按 hi 嗰條計
 </script>

@@ -22,6 +22,8 @@ cjk_notes: 為中文設計：每個字大細、高低錯落，適合 4–6 字�
 placement: free
 aspect: "16:9"
 difficulty: easy
+component: headline
+entry: [rise]
 ---
 
 ## 效果

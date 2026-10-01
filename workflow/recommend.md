@@ -11,3 +11,9 @@
    - 有品牌色：用 caption 類中 `brand_color_ready: true` 嘅效果
 5. 檢查 `pairs_with`（優先）同 `conflicts_with`（避免）。
 6. 出 2 套方案（例如「暖色 podcast 風」vs「清爽醫療風」），列 FX-id 同預覽圖路徑，俾使用者揀。
+
+## 按動態系統卡揀（2026-10-01）
+1. 先睇系統卡准用邊幾款零件 → 只喺 registry 對應 `component` 揀。
+2. `entry` 要喺系統卡入場文法入面；唔喺就要換皮（改入場方式）先用，或者唔用。
+3. `style_bound: true` 嘅效果只喺佢 `family` 嘅預設用；Healthy Days 等品牌片預設唔揀。
+4. composition `<head>` 依次貼：預設 `tokens.css` → 品牌 `brands/<brand>/tokens.css`（例如 Healthy Days）。效果會自動跟品牌色同節奏。

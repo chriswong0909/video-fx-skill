@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "英文大數字標語（10 YEARS）轉中文（10 年）字數少咗，版面要重排。"
 difficulty: medium
+component: chart
+entry: [rise, scale]
 ---
 
 ## 效果

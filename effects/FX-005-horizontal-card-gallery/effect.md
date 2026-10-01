@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "卡闊 600px，標題 100px 最多 5 個字；skew 對中文效果一般，可唔斜。"
 difficulty: medium
+component: card
+entry: [blur, rise, slide-edge]
 ---
 
 ## 效果

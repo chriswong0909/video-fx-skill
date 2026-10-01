@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "UI 字最少 64px；中文打字機每字約 0.06 秒。"
 difficulty: medium
+component: card
+entry: [rise, scale, type]
 ---
 
 ## 效果

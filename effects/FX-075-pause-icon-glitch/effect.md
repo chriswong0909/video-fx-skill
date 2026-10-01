@@ -22,6 +22,10 @@ cjk_notes: "冇文字；字幕照常。"
 placement: center
 aspect: "16:9"
 difficulty: easy
+style_bound: true
+bound_reason: "故障暫停符號嘅色係效果本身"
+component: accent
+entry: [scale]
 ---
 
 ## 效果

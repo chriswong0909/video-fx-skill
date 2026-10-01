@@ -1,81 +1,82 @@
 {
- "id": "SP-004",
- "name": "高級編輯感",
- "en": "Editorial Premium",
- "mood_zh": "高級編輯感",
- "for_types": [
-  "品牌企業",
-  "產品廣告",
-  "訪問對談"
- ],
- "tokens": {
-  "bg": "#0e0e0e",
-  "surface": "#1a1a1a",
-  "text": "#f4f2ee",
-  "accent": "#d8b26e",
-  "alert": "#c0392b",
-  "positive": "#f4f2ee",
-  "caption_box": "transparent",
-  "caption_text": "#f4f2ee",
-  "f_display": "'SerifTC'",
-  "f_body": "'SansTC'",
-  "f_num": "'SerifTC'",
-  "ease_out": "power2.out",
-  "ease_pop": "power3.out",
-  "ease_move": "power1.inOut",
-  "ease_in": "power2.in",
-  "dur_in": ".6s",
-  "dur_out": ".4s",
-  "dur_move": "1s",
-  "stagger": ".12s"
- },
- "colour_meaning": {
-  "accent": "金句、品牌",
-  "alert": "極少用，只限轉折",
-  "positive": "同正文色"
- },
- "grade": "GR-007",
- "grade_alt": [
-  "GR-004"
- ],
- "captions": [
-  "FX-039",
-  "FX-082"
- ],
- "transitions": [
-  "FX-040",
-  "FX-077"
- ],
- "sfx": {
-  "pack": "curated",
-  "categories": [
-   "whoosh",
-   "riser",
-   "ambience"
+  "id": "SP-004",
+  "name": "高級編輯感",
+  "en": "Editorial Premium",
+  "mood_zh": "高級編輯感",
+  "for_types": [
+    "品牌企業",
+    "產品廣告",
+    "訪問對談"
   ],
-  "density": "少"
- },
- "effects": [
-  "FX-004",
-  "FX-006",
-  "FX-016",
-  "FX-020",
-  "FX-026",
-  "FX-039",
-  "FX-040",
-  "FX-056",
-  "FX-057",
-  "FX-058",
-  "FX-061",
-  "FX-072",
-  "FX-073",
-  "FX-074",
-  "FX-076",
-  "FX-077",
-  "FX-082"
- ],
- "dont": [
-  "唔用 back.out 彈跳、貼紙、emoji 圖示",
-  "留白多，每格最多一行大字"
- ]
+  "tokens": {
+    "bg": "#0e0e0e",
+    "surface": "#1a1a1a",
+    "text": "#f4f2ee",
+    "accent": "#d8b26e",
+    "alert": "#c0392b",
+    "positive": "#f4f2ee",
+    "caption_box": "transparent",
+    "caption_text": "#f4f2ee",
+    "f_display": "'SerifTC'",
+    "f_body": "'SansTC'",
+    "f_num": "'SerifTC'",
+    "ease_out": "power2.out",
+    "ease_pop": "power3.out",
+    "ease_move": "power1.inOut",
+    "ease_in": "power2.in",
+    "dur_in": ".6s",
+    "dur_out": ".4s",
+    "dur_move": "1s",
+    "stagger": ".12s",
+    "accent2": "#a8875a"
+  },
+  "colour_meaning": {
+    "accent": "金句、品牌",
+    "alert": "極少用，只限轉折",
+    "positive": "同正文色"
+  },
+  "grade": "GR-007",
+  "grade_alt": [
+    "GR-004"
+  ],
+  "captions": [
+    "FX-039",
+    "FX-082"
+  ],
+  "transitions": [
+    "FX-040",
+    "FX-077"
+  ],
+  "sfx": {
+    "pack": "curated",
+    "categories": [
+      "whoosh",
+      "riser",
+      "ambience"
+    ],
+    "density": "少"
+  },
+  "effects": [
+    "FX-004",
+    "FX-006",
+    "FX-016",
+    "FX-020",
+    "FX-026",
+    "FX-039",
+    "FX-040",
+    "FX-056",
+    "FX-057",
+    "FX-058",
+    "FX-061",
+    "FX-072",
+    "FX-073",
+    "FX-074",
+    "FX-076",
+    "FX-077",
+    "FX-082"
+  ],
+  "dont": [
+    "唔用 back.out 彈跳、貼紙、emoji 圖示",
+    "留白多，每格最多一行大字"
+  ]
 }

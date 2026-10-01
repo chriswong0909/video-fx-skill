@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "英文細階單字 → 中文每張 2–3 個字，字級最少 200px。"
 difficulty: easy
+component: headline
+entry: []
 ---
 
 ## 效果

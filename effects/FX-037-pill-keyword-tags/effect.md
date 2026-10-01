@@ -21,6 +21,8 @@ cjk_fit: adjust
 cjk_notes: "英文大楷 → 中文用 Black；膠囊同浮動標籤最少 64px。"
 placement: headroom
 difficulty: easy
+component: capsule
+entry: [draw, rise]
 ---
 
 ## 效果

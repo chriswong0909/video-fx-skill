@@ -22,6 +22,8 @@ cjk_notes: "中文 80px 白字粗黑 + 英文 52px（註腳最細準則）細一
 placement: lower
 aspect: "16:9"
 difficulty: easy
+component: caption
+entry: [cut]
 ---
 
 ## 效果

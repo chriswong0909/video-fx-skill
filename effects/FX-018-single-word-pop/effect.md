@@ -21,6 +21,8 @@ cjk_fit: poor
 cjk_notes: "英文逐詞跳；中文 2–4 字一組會好碎。唔好做基本字幕（用 FX-039）；做特效字時每組最少 4 字、按意群斷。"
 placement: lower
 difficulty: easy
+component: headline
+entry: [scale, type]
 ---
 
 ## 效果

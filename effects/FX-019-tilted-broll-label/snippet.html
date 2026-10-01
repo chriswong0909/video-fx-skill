@@ -1,5 +1,6 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-019 斜放標籤 -->
 <style>.fx019{position:absolute;left:0;right:0;top:620px;text-align:center;z-index:7;transform:rotate(-12deg);font-family:var(--f-body,"SansTC");font-weight:800;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.45)}
 .fx019 b{display:block;font-size:130px;line-height:1}.fx019 i{font-style:normal;font-size:70px;margin-left:220px}</style>
 <div class="fx019" id="tb1"><b>食得清</b><i>淡</i></div>
-<script>tl.set('#tb1',{opacity:1},T.start);tl.set('#tb1',{opacity:0},T.end);tl.from('#tb1 b',{scale:1.1,opacity:0,duration:.2},T.start);tl.from('#tb1 i',{opacity:0,x:-20,duration:.2},T.start+.25);</script>
+<script>tl.set('#tb1',{opacity:1},T.start);tl.set('#tb1',{opacity:0},T.end);tl.from('#tb1 b',{scale:1.1,opacity:0,duration:DUR.out},T.start);tl.from('#tb1 i',{opacity:0,x:-20,duration:DUR.out},T.start+.25);</script>

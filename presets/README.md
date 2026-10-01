@@ -21,6 +21,7 @@ treatment（`workflow/director.md`）揀一個預設，全片所有效果都跟�
 |---|---|
 | `--c-bg` `--c-surface` `--c-text` | 背景、卡面、正文字 |
 | `--c-accent` | 主強調色（每格最多一個強調色） |
+| `--c-accent2` | 第二強調色（暖色、螢光筆、啡色背景等；品牌冇第二色就等於 accent） |
 | `--c-alert` | 警示／錯誤觀念 |
 | `--c-positive` | 做法／正面 |
 | `--c-caption-box` `--c-caption-text` | 字幕底同字 |
@@ -39,7 +40,7 @@ treatment（`workflow/director.md`）揀一個預設，全片所有效果都跟�
   <style>/* 再貼品牌覆蓋（如有），例如 brands/medical-blue.md 嘅顏色 */ :root{--c-accent:#0099ce}</style>
 </head>
 ```
-優先次序：品牌檔 > 預設 > snippet 內嘅後備值。
+優先次序：品牌 tokens（例如 `brands/healthy-days/tokens.css`）> 預設 > snippet 內嘅後備值。效果嘅顏色同時長全部讀 tokens（`scripts/tokenize-effects.py` 已處理 64 個效果；15 個 `style_bound` 保留原色）。
 
 ## 檢查
 ```bash

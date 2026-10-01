@@ -22,6 +22,10 @@ cjk_notes: "新聞截圖本身係中文；螢光筆只劃 1–2 句重點，字�
 placement: layout
 aspect: "16:9"
 difficulty: medium
+style_bound: true
+bound_reason: "剪報紙色同螢光筆黃係效果本身"
+component: cutaway
+entry: [rise, scale]
 ---
 
 ## 效果

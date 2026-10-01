@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: "每個標籤最多 6 個字。"
 placement: center
 difficulty: easy
+component: capsule
+entry: [scale, slide-edge]
 ---
 
 ## 效果

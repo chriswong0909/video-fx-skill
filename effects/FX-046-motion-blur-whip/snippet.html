@@ -2,9 +2,9 @@
 <!-- FX-046 動態模糊橫掃 -->
 <script>
 function whip(outSel,inSel,t){
- tl.to(outSel,{x:-900,duration:.35,ease:EASE.in},t);
- tl.to(outSel,{filter:'blur(18px)',duration:.2},t);
- tl.fromTo(inSel,{x:900,filter:'blur(18px)'},{x:0,filter:'blur(0px)',duration:.35,ease:EASE.out,immediateRender:false},t+.2);
+ tl.to(outSel,{x:-900,duration:DUR.in,ease:EASE.in},t);
+ tl.to(outSel,{filter:'blur(18px)',duration:DUR.out},t);
+ tl.fromTo(inSel,{x:900,filter:'blur(18px)'},{x:0,filter:'blur(0px)',duration:DUR.in,ease:EASE.out,immediateRender:false},t+.2);
 }
 whip('#item1','#item2',T.swap1);
 </script>

@@ -22,6 +22,8 @@ cjk_notes: "主題標籤 4–8 字，16:9 約 22px 粗體、9:16 最少 64px；�
 placement: layout
 aspect: "16:9"
 difficulty: medium
+component: frame
+entry: [scale, slide-edge]
 ---
 
 ## 效果

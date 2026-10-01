@@ -1,6 +1,7 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-020 散落詞 -->
 <style>.fx020{position:absolute;z-index:7;color:#fff;opacity:0;text-shadow:0 2px 12px rgba(0,0,0,.5)}
 .fx020.s{font-family:var(--f-body,"SansTC");font-weight:500;font-size:72px}.fx020.k{font-family:var(--f-display,"SerifTC");font-weight:900;font-size:150px;transform:skewX(-10deg)}</style>
 <span class="fx020 s" style="left:70px;top:700px">身體</span><span class="fx020 s" style="left:330px;top:700px">其實</span>
 <span class="fx020 k" style="left:120px;top:760px">默默對抗</span><span class="fx020 s" style="left:560px;top:880px">緊你</span>
-<script>document.querySelectorAll('.fx020').forEach((el,i)=>{tl.set(el,{opacity:1},T.words[i]);tl.from(el,{opacity:0,y:10,duration:.2},T.words[i]);tl.set(el,{opacity:0},T.end);});</script>
+<script>document.querySelectorAll('.fx020').forEach((el,i)=>{tl.set(el,{opacity:1},T.words[i]);tl.from(el,{opacity:0,y:10,duration:DUR.out},T.words[i]);tl.set(el,{opacity:0},T.end);});</script>

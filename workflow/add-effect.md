@@ -44,3 +44,11 @@ node scripts/new-effect.mjs "兩層金色斜體字幕" two-tier-gold-caption cap
 1. 每個效果要有 `preview.mp4`（2–3 秒，闊 240px，無聲，`-crf 30`）同 `preview.jpg`。
 2. `node scripts/build-gallery.mjs` → `gallery/artifact.html`（Artifact 用）同 `gallery/index.html`（本機開）。
 3. 用 Artifact 工具重新發佈到**同一條連結**：`url: https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ`（檔案要先 stage 去雲端 workspace）。
+
+## 零件同 tokens（2026-10-01 起，必做）
+效果唔再係「成品」，係會跟動態系統卡變色、變節奏嘅零件：
+1. **顏色**唔好寫死：用 `var(--c-accent, #後備)`、`--c-accent2`、`--c-alert`、`--c-positive`、`--c-surface`、`--c-text`；深淺層次用 `color-mix(in srgb, var(--c-alert, #後備) 60%, white)`。SVG 嘅 fill／stroke／stop-color 寫喺 `style=""`（屬性入面 var() 唔生效）。`#fff`／`#000` 可以照寫。
+2. **時長**用 `DUR.out`（快）／`DUR.in`（標準）／`DUR.move`（變形）；> 0.8 秒嘅慢推可以寫數字。緩動用 `EASE.out/pop/move/in`。snippet 第一行要有 tokens 讀取器（抄任何一個效果）。
+3. 寫完行 `python3 scripts/tokenize-effects.py apply FX-###`（漏咗嘅自動補）同 `python3 scripts/tag-effects.py`（自動補 `component`、`entry`，可以人手改）。
+4. front matter 新欄：`component`（caption／capsule／headline／card／chart／cutaway／accent／frame／camera）、`entry`（入場文法）；顏色本身就係效果特色（紙紋、霓虹、故障…）就加 `style_bound: true` + `bound_reason`，tokenize 會跳過，只准喺對應風格用。
+5. 驗證：`node scripts/fx-shot.cjs effects <out> [tokens.css]` 截圖，同 `presets/SP-xxx/tokens.css`、`brands/healthy-days/tokens.css` 各出一張，睇換皮後仲成唔成立。

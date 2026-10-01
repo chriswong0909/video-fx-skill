@@ -1,5 +1,5 @@
 {
- "generated": "2026-09-29",
+ "generated": "2026-10-01",
  "count": 79,
  "by_category": {
   "cutaway": [
@@ -153,6 +153,11 @@
    "cjk_fit": "good",
    "cjk_notes": "大字每行最多 5 個字。",
    "difficulty": "medium",
+   "component": "cutaway",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-003-fullscreen-object-cutaway",
    "has_snippet": true,
    "has_preview": true,
@@ -208,6 +213,12 @@
    "cjk_fit": "good",
    "difficulty": "easy",
    "cjk_notes": "",
+   "style_bound": true,
+   "bound_reason": "窗光斜影嘅暖光係效果本身",
+   "component": "cutaway",
+   "entry": [
+    "slide-edge"
+   ],
    "path": "effects/FX-004-window-light-backdrop",
    "has_snippet": true,
    "has_preview": true,
@@ -266,6 +277,12 @@
    "cjk_fit": "adjust",
    "cjk_notes": "卡闊 600px，標題 100px 最多 5 個字；skew 對中文效果一般，可唔斜。",
    "difficulty": "medium",
+   "component": "card",
+   "entry": [
+    "blur",
+    "rise",
+    "slide-edge"
+   ],
    "path": "effects/FX-005-horizontal-card-gallery",
    "has_snippet": true,
    "has_preview": true,
@@ -320,6 +337,10 @@
    "cjk_fit": "good",
    "cjk_notes": "220px 每行最多 4 個字。",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "blur"
+   ],
    "path": "effects/FX-006-blur-emboss-title",
    "has_snippet": true,
    "has_preview": true,
@@ -379,6 +400,11 @@
    "cjk_notes": "清單字最少 72px；編號可保留拉丁斜體數字。",
    "placement": "layout",
    "difficulty": "medium",
+   "component": "frame",
+   "entry": [
+    "scale",
+    "slide-edge"
+   ],
    "path": "effects/FX-010-pip-editorial-list",
    "has_snippet": true,
    "has_preview": true,
@@ -431,6 +457,10 @@
    "cjk_notes": "超大字改黑體 Black 比襯線清楚。",
    "placement": "headroom",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-013-question-float-label",
    "has_snippet": true,
    "has_preview": true,
@@ -481,6 +511,10 @@
    "cjk_fit": "good",
    "difficulty": "easy",
    "cjk_notes": "",
+   "component": "accent",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-014-ecg-line-draw",
    "has_snippet": true,
    "has_preview": true,
@@ -534,6 +568,10 @@
    "cjk_fit": "good",
    "difficulty": "easy",
    "cjk_notes": "",
+   "style_bound": true,
+   "bound_reason": "調色預設（ffmpeg），唔係畫面元素",
+   "component": "camera",
+   "entry": [],
    "path": "effects/FX-015-warm-podcast-grade",
    "has_snippet": true,
    "has_preview": true,
@@ -590,6 +628,10 @@
    "cjk_notes": "方塊字被頭遮住會難認：揀筆畫少嘅字，遮蓋唔好超過字高 25%。",
    "placement": "behind-subject",
    "difficulty": "hard",
+   "component": "headline",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-016-text-behind-subject",
    "has_snippet": true,
    "has_preview": true,
@@ -646,6 +688,11 @@
    "cjk_notes": "英文一個大詞約等於中文 2–4 字；細字最少 76px；大字 6 個字以上減到 140px。",
    "placement": "headroom",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-017-top-headline-sans",
    "has_snippet": true,
    "has_preview": true,
@@ -702,6 +749,11 @@
    "cjk_notes": "英文逐詞跳；中文 2–4 字一組會好碎。唔好做基本字幕（用 FX-039）；做特效字時每組最少 4 字、按意群斷。",
    "placement": "lower",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "scale",
+    "type"
+   ],
    "path": "effects/FX-018-single-word-pop",
    "has_snippet": true,
    "has_preview": true,
@@ -755,6 +807,11 @@
    "cjk_notes": "每個標籤最多 6 個字。",
    "placement": "center",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "scale",
+    "slide-edge"
+   ],
    "path": "effects/FX-019-tilted-broll-label",
    "has_snippet": true,
    "has_preview": true,
@@ -811,6 +868,10 @@
    "cjk_notes": "中文冇空格，要先按意群分詞；散落後閱讀次序易亂，只用喺 8 個字以內嘅短句。",
    "placement": "free",
    "difficulty": "medium",
+   "component": "headline",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-020-scattered-word-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -864,6 +925,11 @@
    "cjk_fit": "adjust",
    "cjk_notes": "原標籤 24px 太細，最少 64px；每個標籤最多 6 個字。",
    "difficulty": "medium",
+   "component": "cutaway",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-021-labelled-diagram-cutaway",
    "has_snippet": true,
    "has_preview": true,
@@ -918,6 +984,10 @@
    "placement": "on-text",
    "difficulty": "easy",
    "cjk_notes": "",
+   "component": "accent",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-022-hand-drawn-annotation",
    "has_snippet": true,
    "has_preview": true,
@@ -971,6 +1041,10 @@
    "cjk_fit": "good",
    "difficulty": "medium",
    "cjk_notes": "",
+   "component": "accent",
+   "entry": [
+    "cut"
+   ],
    "path": "effects/FX-023-flying-element-swarm",
    "has_snippet": true,
    "has_preview": true,
@@ -1028,6 +1102,12 @@
    "placement": "layout",
    "difficulty": "medium",
    "cjk_notes": "",
+   "style_bound": true,
+   "bound_reason": "復古電視框嘅色同質感係效果本身",
+   "component": "frame",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-024-retro-tv-frame",
    "has_snippet": true,
    "has_preview": true,
@@ -1081,6 +1161,10 @@
    "cjk_fit": "good",
    "difficulty": "easy",
    "cjk_notes": "",
+   "component": "accent",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-025-dashed-path-connector",
    "has_snippet": true,
    "has_preview": true,
@@ -1133,6 +1217,8 @@
    "cjk_fit": "adjust",
    "cjk_notes": "英文細階單字 → 中文每張 2–3 個字，字級最少 200px。",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [],
    "path": "effects/FX-026-one-word-flash-card",
    "has_snippet": true,
    "has_preview": true,
@@ -1189,6 +1275,10 @@
    "cjk_notes": "漸變同發光要配 Black 字重先顯；筆畫密要加強 glow 對比。",
    "placement": "inline",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "blur"
+   ],
    "path": "effects/FX-027-glow-gradient-keyword",
    "has_snippet": true,
    "has_preview": true,
@@ -1249,6 +1339,11 @@
    "cjk_fit": "adjust",
    "cjk_notes": "標題最少 72px。",
    "difficulty": "medium",
+   "component": "cutaway",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-028-soft-3d-icon-explainer",
    "has_snippet": true,
    "has_preview": true,
@@ -1304,6 +1399,12 @@
    "cjk_fit": "adjust",
    "cjk_notes": "UI 字最少 64px；中文打字機每字約 0.06 秒。",
    "difficulty": "medium",
+   "component": "card",
+   "entry": [
+    "rise",
+    "scale",
+    "type"
+   ],
    "path": "effects/FX-029-ui-widget-explainer",
    "has_snippet": true,
    "has_preview": true,
@@ -1357,6 +1458,10 @@
    "cjk_fit": "poor",
    "cjk_notes": "英文草書冇中文對應；要用有授權嘅中文手寫字型，或者改用 FX-022 手繪圈註。",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "霓虹手寫字嘅發光色係效果本身",
+   "component": "accent",
+   "entry": [],
    "path": "effects/FX-030-script-handwriting-accent",
    "has_snippet": true,
    "has_preview": true,
@@ -1414,6 +1519,11 @@
    "cjk_fit": "good",
    "difficulty": "medium",
    "cjk_notes": "",
+   "component": "cutaway",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-031-glass-widget-scene",
    "has_snippet": true,
    "has_preview": true,
@@ -1471,6 +1581,10 @@
    "cjk_fit": "adjust",
    "cjk_notes": "行字最少 64px，行高加到約 130px。",
    "difficulty": "easy",
+   "component": "card",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-032-app-row-stack",
    "has_snippet": true,
    "has_preview": true,
@@ -1522,6 +1636,10 @@
    "cjk_fit": "adjust",
    "cjk_notes": "通知字最少 64px，每條最多 10 個字。",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-033-notification-stack",
    "has_snippet": true,
    "has_preview": true,
@@ -1576,6 +1694,11 @@
    "cjk_fit": "good",
    "difficulty": "easy",
    "cjk_notes": "",
+   "component": "chart",
+   "entry": [
+    "draw",
+    "scale"
+   ],
    "path": "effects/FX-034-growth-chart-card",
    "has_snippet": true,
    "has_preview": true,
@@ -1629,6 +1752,11 @@
    "cjk_fit": "adjust",
    "cjk_notes": "英文大數字標語（10 YEARS）轉中文（10 年）字數少咗，版面要重排。",
    "difficulty": "medium",
+   "component": "chart",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-035-device-mockup-stat",
    "has_snippet": true,
    "has_preview": true,
@@ -1685,6 +1813,11 @@
    "cjk_notes": "標籤最少 64px。",
    "placement": "layout",
    "difficulty": "easy",
+   "component": "frame",
+   "entry": [
+    "draw",
+    "scale"
+   ],
    "path": "effects/FX-036-capsule-mask-callout",
    "has_snippet": true,
    "has_preview": true,
@@ -1744,6 +1877,11 @@
    "cjk_notes": "英文大楷 → 中文用 Black；膠囊同浮動標籤最少 64px。",
    "placement": "headroom",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "draw",
+    "rise"
+   ],
    "path": "effects/FX-037-pill-keyword-tags",
    "has_snippet": true,
    "has_preview": true,
@@ -1801,6 +1939,11 @@
    "cjk_notes": "卡闊有限：卡內字最少 72px、每行最多 7 個字；膠囊最少 64px。",
    "placement": "layout",
    "difficulty": "medium",
+   "component": "frame",
+   "entry": [
+    "scale",
+    "slide-edge"
+   ],
    "path": "effects/FX-038-rounded-speaker-card-pills",
    "has_snippet": true,
    "has_preview": true,
@@ -1869,6 +2012,11 @@
    "cjk_notes": "為中文而設：按意群 6–12 字一組、80px。",
    "placement": "lower",
    "difficulty": "easy",
+   "component": "caption",
+   "entry": [
+    "rise",
+    "type"
+   ],
    "path": "effects/FX-039-basic-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -1932,6 +2080,10 @@
    "cjk_notes": "同文字無關。",
    "placement": "layout",
    "difficulty": "easy",
+   "component": "camera",
+   "entry": [
+    "cut"
+   ],
    "path": "effects/FX-040-smooth-punch",
    "has_snippet": true,
    "has_preview": true,
@@ -1987,6 +2139,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "皺紙紋背景嘅紙色同粒子係效果本身",
+   "component": "cutaway",
+   "entry": [],
    "path": "effects/FX-041-paper-texture-backdrop",
    "has_snippet": true,
    "has_preview": true,
@@ -2040,6 +2196,12 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "medium",
+   "style_bound": true,
+   "bound_reason": "蠟筆線稿變彩色係插畫本身",
+   "component": "camera",
+   "entry": [
+    "fade"
+   ],
    "path": "effects/FX-042-line-to-color-reveal",
    "has_snippet": true,
    "has_preview": true,
@@ -2092,6 +2254,11 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "accent",
+   "entry": [
+    "scale",
+    "slide-edge"
+   ],
    "path": "effects/FX-043-prop-attach-entrance",
    "has_snippet": true,
    "has_preview": true,
@@ -2149,6 +2316,11 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "card",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-044-circle-icon-grid",
    "has_snippet": true,
    "has_preview": true,
@@ -2200,6 +2372,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-045-slanted-sticker-banner",
    "has_snippet": true,
    "has_preview": true,
@@ -2252,6 +2428,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "camera",
+   "entry": [
+    "blur"
+   ],
    "path": "effects/FX-046-motion-blur-whip",
    "has_snippet": true,
    "has_preview": true,
@@ -2304,6 +2484,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "accent",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-047-cross-out-mark",
    "has_snippet": true,
    "has_preview": true,
@@ -2358,6 +2542,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-048-two-tone-section-title",
    "has_snippet": true,
    "has_preview": true,
@@ -2411,6 +2599,12 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "紙紋結尾卡嘅紙色係效果本身",
+   "component": "camera",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-049-paper-logo-endcard",
    "has_snippet": true,
    "has_preview": true,
@@ -2461,6 +2655,10 @@
    "cjk_fit": "good",
    "cjk_notes": "原片係中文（廣東話旁白），字體同排版可直接沿用。",
    "difficulty": "easy",
+   "component": "accent",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-050-pulse-ring-indicator",
    "has_snippet": true,
    "has_preview": true,
@@ -2523,6 +2721,10 @@
    "cjk_notes": "為中文設計：粗黑體白字，按意群 6–10 字一組、單行。",
    "placement": "lower",
    "difficulty": "easy",
+   "component": "caption",
+   "entry": [
+    "type"
+   ],
    "path": "effects/FX-051-solid-box-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -2580,6 +2782,10 @@
    "cjk_notes": "為中文設計：2–4 個字一行，疊 2–3 行，每行大細唔同。",
    "placement": "center",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-052-keyup-stack-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -2633,6 +2839,10 @@
    "cjk_notes": "直排中文大字每行 1 個字，一次 2–4 個字最易讀。",
    "placement": "center",
    "difficulty": "easy",
+   "component": "cutaway",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-053-fullframe-stock-bigtext",
    "has_snippet": true,
    "has_preview": true,
@@ -2685,6 +2895,12 @@
    "cjk_notes": "粗黑體 2 個字最有力；筆畫密嘅字 glitch 後都仲認得。",
    "placement": "center",
    "difficulty": "medium",
+   "style_bound": true,
+   "bound_reason": "故障 RGB 分離色係效果本身",
+   "component": "headline",
+   "entry": [
+    "cut"
+   ],
    "path": "effects/FX-054-glitch-rgb-text",
    "has_snippet": true,
    "has_preview": true,
@@ -2740,6 +2956,10 @@
    "cjk_notes": "同文字無關；圖示放喺字幕最後一個字右上角。",
    "placement": "on-text",
    "difficulty": "easy",
+   "component": "accent",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-055-caption-emoji-3d-pop",
    "has_snippet": true,
    "has_preview": true,
@@ -2792,6 +3012,10 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-056-staggered-char-tvc",
    "has_snippet": true,
    "has_preview": true,
@@ -2847,6 +3071,10 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-057-badge-stamp-pop",
    "has_snippet": true,
    "has_preview": true,
@@ -2903,6 +3131,10 @@
    "cjk_notes": "同文字無關；字幕照常喺相片上方或者下方。",
    "placement": "layout",
    "difficulty": "easy",
+   "component": "cutaway",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-058-rounded-photo-insert",
    "has_snippet": true,
    "has_preview": true,
@@ -2955,6 +3187,10 @@
    "cjk_notes": "為中文設計：標題 8–10 字，方框粗黑邊。",
    "placement": "top",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-059-boxed-series-title",
    "has_snippet": true,
    "has_preview": true,
@@ -3012,6 +3248,10 @@
    "cjk_notes": "字幕黑字 44–50px，每組最多 12 字（受道具闊度限制）。",
    "placement": "lower",
    "difficulty": "easy",
+   "component": "caption",
+   "entry": [
+    "type"
+   ],
    "path": "effects/FX-060-themed-prop-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -3072,6 +3312,12 @@
    "cjk_notes": "同文字無關。",
    "placement": "layout",
    "difficulty": "hard",
+   "style_bound": true,
+   "bound_reason": "黑白拼貼 + 單一亮色係效果本身",
+   "component": "cutaway",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-061-mono-collage-accent",
    "has_snippet": true,
    "has_preview": true,
@@ -3126,6 +3372,10 @@
    "cjk_notes": "同文字無關。",
    "placement": "layout",
    "difficulty": "medium",
+   "component": "accent",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-062-object-drop-physics",
    "has_snippet": true,
    "has_preview": true,
@@ -3179,6 +3429,10 @@
    "cjk_notes": "同文字無關。",
    "placement": "layout",
    "difficulty": "easy",
+   "component": "accent",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-063-radial-light-burst",
    "has_snippet": true,
    "has_preview": true,
@@ -3236,6 +3490,10 @@
    "cjk_notes": "名 36–40px 粗、職銜 22–26px；職銜長就縮字唔好斷行。",
    "placement": "lower",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-064-name-lower-third",
    "has_snippet": true,
    "has_preview": true,
@@ -3295,6 +3553,10 @@
    "cjk_notes": "為中文設計：每行 4–8 字，最多 3 行。",
    "placement": "center",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-065-key-quote-twotone",
    "has_snippet": true,
    "has_preview": true,
@@ -3350,6 +3612,11 @@
    "cjk_notes": "數字後面跟一行 24–40px 中文說明（最多 8 字）。",
    "placement": "headroom",
    "difficulty": "easy",
+   "component": "chart",
+   "entry": [
+    "fade",
+    "type"
+   ],
    "path": "effects/FX-066-number-type-reveal",
    "has_snippet": true,
    "has_preview": true,
@@ -3411,6 +3678,10 @@
    "cjk_notes": "每項 4–8 字，字 32–40px（畫面細可以加大）。",
    "placement": "layout",
    "difficulty": "easy",
+   "component": "card",
+   "entry": [
+    "rise"
+   ],
    "path": "effects/FX-067-side-list-build",
    "has_snippet": true,
    "has_preview": true,
@@ -3470,6 +3741,8 @@
    "placement": "headroom",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [],
    "path": "effects/FX-068-chapter-nav-bar",
    "has_snippet": true,
    "has_preview": true,
@@ -3535,6 +3808,10 @@
    "placement": "lower",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "caption",
+   "entry": [
+    "cut"
+   ],
    "path": "effects/FX-069-bilingual-caption",
    "has_snippet": true,
    "has_preview": true,
@@ -3594,6 +3871,11 @@
    "placement": "lower",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "draw",
+    "slide-edge"
+   ],
    "path": "effects/FX-070-bigname-pill-title",
    "has_snippet": true,
    "has_preview": true,
@@ -3659,6 +3941,11 @@
    "placement": "layout",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "frame",
+   "entry": [
+    "scale",
+    "slide-edge"
+   ],
    "path": "effects/FX-071-explainer-board-pip",
    "has_snippet": true,
    "has_preview": true,
@@ -3719,6 +4006,11 @@
    "placement": "center",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "chart",
+   "entry": [
+    "draw",
+    "slide-edge"
+   ],
    "path": "effects/FX-072-pattern-bar-chart",
    "has_snippet": true,
    "has_preview": true,
@@ -3776,6 +4068,12 @@
    "placement": "center",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "chart",
+   "entry": [
+    "draw",
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-073-map-glow-reveal",
    "has_snippet": true,
    "has_preview": true,
@@ -3837,6 +4135,12 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "菲林調色（ffmpeg），唔係畫面元素",
+   "component": "camera",
+   "entry": [
+    "cut"
+   ],
    "path": "effects/FX-074-vintage-film-grade",
    "has_snippet": true,
    "has_preview": true,
@@ -3892,6 +4196,12 @@
    "placement": "center",
    "aspect": "16:9",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "故障暫停符號嘅色係效果本身",
+   "component": "accent",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-075-pause-icon-glitch",
    "has_snippet": true,
    "has_preview": true,
@@ -3951,6 +4261,10 @@
    "placement": "center",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "headline",
+   "entry": [
+    "scale"
+   ],
    "path": "effects/FX-076-ground-perspective-text",
    "has_snippet": true,
    "has_preview": true,
@@ -4010,6 +4324,12 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "easy",
+   "style_bound": true,
+   "bound_reason": "光漏嘅暖色係效果本身",
+   "component": "camera",
+   "entry": [
+    "slide-edge"
+   ],
    "path": "effects/FX-077-light-leak-flash",
    "has_snippet": true,
    "has_preview": true,
@@ -4071,6 +4391,13 @@
    "placement": "layout",
    "aspect": "16:9",
    "difficulty": "medium",
+   "style_bound": true,
+   "bound_reason": "剪報紙色同螢光筆黃係效果本身",
+   "component": "cutaway",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-078-torn-paper-clipping",
    "has_snippet": true,
    "has_preview": true,
@@ -4128,6 +4455,10 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "medium",
+   "style_bound": true,
+   "bound_reason": "撕紙紙色係效果本身",
+   "component": "camera",
+   "entry": [],
    "path": "effects/FX-079-paper-tear-transition",
    "has_snippet": true,
    "has_preview": true,
@@ -4182,6 +4513,8 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "accent",
+   "entry": [],
    "path": "effects/FX-080-face-mosaic",
    "has_snippet": true,
    "has_preview": true,
@@ -4241,6 +4574,13 @@
    "placement": "layout",
    "aspect": "16:9",
    "difficulty": "medium",
+   "style_bound": true,
+   "bound_reason": "水松板木色係效果本身",
+   "component": "chart",
+   "entry": [
+    "rise",
+    "scale"
+   ],
    "path": "effects/FX-081-corkboard-ranking",
    "has_snippet": true,
    "has_preview": true,
@@ -4299,6 +4639,10 @@
    "placement": "layout",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "frame",
+   "entry": [
+    "draw"
+   ],
    "path": "effects/FX-082-letterbox-caption-bar",
    "has_snippet": true,
    "has_preview": true,
@@ -4360,6 +4704,10 @@
    "placement": "lower",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "headline",
+   "entry": [
+    "slide-edge"
+   ],
    "path": "effects/FX-083-arrow-cause-chain",
    "has_snippet": true,
    "has_preview": true,
@@ -4418,6 +4766,11 @@
    "placement": "lower",
    "aspect": "16:9",
    "difficulty": "easy",
+   "component": "capsule",
+   "entry": [
+    "draw",
+    "scale"
+   ],
    "path": "effects/FX-084-brush-band-name",
    "has_snippet": true,
    "has_preview": true,
@@ -4479,6 +4832,11 @@
    "placement": "layout",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "card",
+   "entry": [
+    "rise",
+    "slide-edge"
+   ],
    "path": "effects/FX-085-diagonal-question-panel",
    "has_snippet": true,
    "has_preview": true,
@@ -4539,6 +4897,10 @@
    "placement": "free",
    "aspect": "16:9",
    "difficulty": "medium",
+   "component": "camera",
+   "entry": [
+    "slide-edge"
+   ],
    "path": "effects/FX-086-brand-block-wipe",
    "has_snippet": true,
    "has_preview": true,

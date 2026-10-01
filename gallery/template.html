@@ -160,6 +160,7 @@ footer{color:var(--muted);font-size:12.5px}
   <div id="cats" style="display:flex;flex-wrap:wrap;gap:8px"></div>
   <div class="frow"><span class="flab">影片類型</span><div id="vts" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
   <div class="frow"><span class="flab">節奏</span><div id="paces" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
+  <div class="frow"><span class="flab">零件</span><div id="comps" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
   <div class="frow"><span class="flab">風格預設</span><div id="sps" style="display:flex;flex-wrap:wrap;gap:8px"></div></div>
   <div id="spcard"></div>
   <div class="search">
@@ -186,7 +187,7 @@ const catName=c=>CAT[c]||c, cc=c=>`var(--c-${c},var(--muted))`;
 const hasOld=new Set(FX.map(e=>e.learned)).size>1; const isNew=e=>hasOld&&e.learned===D.latest;
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $=s=>document.querySelector(s), h=(s)=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let state={sp:'all',cat:'all',vt:'all',pace:'all',q:'',sort:'id',tab:'fx',scat:'all',spack:'curated',sq:''};
+let state={comp:'all',sp:'all',cat:'all',vt:'all',pace:'all',q:'',sort:'id',tab:'fx',scat:'all',spack:'curated',sq:''};
 try{const s=JSON.parse(localStorage.getItem('vfx-state')||'null'); if(s) state={...state,...s,q:'',sq:''};}catch(e){}
 const save=()=>{try{localStorage.setItem('vfx-state',JSON.stringify({sp:state.sp,cat:state.cat,vt:state.vt,pace:state.pace,sort:state.sort,tab:state.tab,scat:state.scat,spack:state.spack}));}catch(e){}};
 const cats=[...new Set(FX.map(e=>e.cat))];
@@ -207,6 +208,7 @@ function match(e){
  if(state.cat!=='all'&&e.cat!==state.cat) return false;
  if(state.vt!=='all'&&!(e.vtypes||[]).includes(state.vt)) return false;
  if(state.pace!=='all'&&!(e.pace||[]).includes(state.pace)) return false;
+ if(state.comp!=='all'&&(state.comp==='bound'?!e.bound:e.comp!==state.comp)) return false;
  if(state.sp!=='all'&&!(e.family||[]).includes(state.sp)) return false;
  if(!state.q) return true;
  const hay=[e.id,e.name,e.en,catName(e.cat),e.summary,e.source,...e.tags,...e.mood,...e.fits].join(' ').toLowerCase();
@@ -232,6 +234,7 @@ function open(id){
   <p class="lead">${h(e.summary)}</p>
   <dl class="meta"><dt>情緒</dt><dd>${h(e.mood.join('、'))||'—'}</dd><dt>適合</dt><dd>${h(e.fits.join('、'))||'—'}</dd>
   <dt>需要</dt><dd>${h(e.needs.join('、'))||'—'}</dd><dt>難度</dt><dd>${h(e.diff)}</dd><dt>影片類型</dt><dd>${h((e.vtypes||[]).join('、'))||'—'}</dd><dt>節奏</dt><dd>${h((e.pace||[]).join('、'))||'—'}</dd>
+  <dt>零件</dt><dd>${h((COMPS.find(c=>c[0]===e.comp)||[0,e.comp||'—'])[1])}${e.bound?'（風格綁死：'+h(e.bound_reason)+'）':''}｜入場 ${h((e.entry||[]).map(x=>ENTN[x]||x).join('、')||'—')}</dd>
   <dt>風格預設</dt><dd>${h((e.family||[]).map(id=>{const p=(D.presets||[]).find(x=>x.id===id);return p?id+' '+p.name:id}).join('、'))||'—'}</dd>
   <dt>出處</dt><dd class="tc">${h(e.source)}</dd><dt>用過</dt><dd>${h(e.used.join('、'))||'—'}</dd><dt>學習日期</dt><dd class="tc">${h(e.learned)}</dd><dt>中文適應</dt><dd>${h({good:'適合',adjust:'要調整',poor:'唔適合'}[e.cjk_fit]||'—')}${e.cjk_notes?'：'+h(e.cjk_notes):''}</dd>${e.placement?`<dt>擺位</dt><dd>${h(e.placement)}</dd>`:''}${e.status==='banned'?`<dt>狀態</dt><dd style="color:#c0392b">禁用：${h(e.banned_reason||'')}</dd>`:''}</dl>
   <div><div class="cat" style="margin-bottom:6px">最夾嘅效果</div><div class="links">${chips(e.pairs)}</div></div>
@@ -246,6 +249,7 @@ function open(id){
 }
 document.addEventListener('click',ev=>{
  const c=ev.target.closest('[data-c]'); if(c){state.cat=c.dataset.c;save();renderCats();renderGrid();return;}
+ const cp=ev.target.closest('[data-comp]'); if(cp){state.comp=cp.dataset.comp;save();renderFilters();renderGrid();return;}
  const v=ev.target.closest('[data-vt]'); if(v){state.vt=v.dataset.vt;save();renderFilters();renderGrid();return;}
  const sp=ev.target.closest('[data-sp]'); if(sp){state.sp=sp.dataset.sp;save();renderSP();renderGrid();return;}
  const pc=ev.target.closest('[data-pace]'); if(pc){state.pace=pc.dataset.pace;save();renderFilters();renderGrid();return;}
@@ -260,6 +264,8 @@ $('#dlg').addEventListener('close',()=>{try{history.replaceState(null,'',locatio
 $('#q').addEventListener('input',ev=>{state.q=ev.target.value.trim();renderGrid();});
 $('#sort').value=state.sort; $('#sort').addEventListener('change',ev=>{state.sort=ev.target.value;save();renderGrid();});
 const VTS=['口播知識','訪問對談','醫療健康','動畫解說','產品廣告','紀錄 Vlog','新聞資訊','品牌企業'].filter(t=>FX.some(e=>(e.vtypes||[]).includes(t)));
+const COMPS=[['caption','字幕'],['capsule','膠囊／標籤'],['headline','大字'],['card','卡片／清單'],['chart','圖表／數字'],['cutaway','全屏過場'],['accent','點綴'],['frame','版面'],['camera','鏡頭／轉場']];
+const ENTN={'slide-edge':'邊位伸出',rise:'浮入',scale:'縮放',draw:'劃線',blur:'模糊入',fade:'淡入',rotate:'轉入',type:'打字',cut:'硬切'};
 const PACES=[['快','快（1–2 秒一剪）'],['中','中（2–4 秒）'],['慢','慢（4 秒以上）']];
 function renderSP(){
  const P=D.presets||[]; if(!P.length){$('#sps').closest('.frow').style.display='none';return;}
@@ -276,6 +282,7 @@ function renderSP(){
 function renderFilters(){
  const cnt=(k,v)=>FX.filter(e=>(e[k]||[]).includes(v)).length;
  $('#vts').innerHTML=`<button class="chip" data-vt="all" aria-pressed="${state.vt==='all'}">全部</button>`+VTS.map(t=>`<button class="chip" data-vt="${h(t)}" aria-pressed="${state.vt===t}">${h(t)} <span class="n">${cnt('vtypes',t)}</span></button>`).join('');
+ $('#comps').innerHTML=`<button class="chip" data-comp="all" aria-pressed="${state.comp==='all'}">全部</button>`+COMPS.filter(([v])=>FX.some(e=>e.comp===v)).map(([v,l])=>`<button class="chip" data-comp="${v}" aria-pressed="${state.comp===v}">${h(l)} <span class="n">${FX.filter(e=>e.comp===v).length}</span></button>`).join('')+`<button class="chip" data-comp="bound" aria-pressed="${state.comp==='bound'}">風格綁死 <span class="n">${FX.filter(e=>e.bound).length}</span></button>`;
  $('#paces').innerHTML=`<button class="chip" data-pace="all" aria-pressed="${state.pace==='all'}">全部</button>`+PACES.map(([v,l])=>`<button class="chip" data-pace="${v}" aria-pressed="${state.pace===v}">${h(l)} <span class="n">${cnt('pace',v)}</span></button>`).join('');
 }
 // ---------- 聲效 ----------

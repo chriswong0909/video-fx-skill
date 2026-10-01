@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 每項 4–8 字，字 32–40px（畫面細可以加大）。
 placement: layout
 difficulty: easy
+component: card
+entry: [rise]
 ---
 
 ## 效果

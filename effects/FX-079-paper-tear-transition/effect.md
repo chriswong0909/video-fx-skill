@@ -22,6 +22,10 @@ cjk_notes: "冇文字。"
 placement: free
 aspect: "16:9"
 difficulty: medium
+style_bound: true
+bound_reason: "撕紙紙色係效果本身"
+component: camera
+entry: []
 ---
 
 ## 效果

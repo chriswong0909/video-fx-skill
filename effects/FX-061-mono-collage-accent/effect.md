@@ -21,6 +21,10 @@ cjk_fit: good
 cjk_notes: 同文字無關。
 placement: layout
 difficulty: hard
+style_bound: true
+bound_reason: "黑白拼貼 + 單一亮色係效果本身"
+component: cutaway
+entry: [rise]
 ---
 
 ## 效果

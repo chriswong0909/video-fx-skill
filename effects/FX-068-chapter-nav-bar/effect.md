@@ -22,6 +22,8 @@ cjk_notes: "每格 4–7 字；9:16 要縮做 3 格（上一章／本章／下�
 placement: headroom
 aspect: "16:9"
 difficulty: easy
+component: capsule
+entry: []
 ---
 
 ## 效果

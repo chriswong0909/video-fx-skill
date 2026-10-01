@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "原標籤 24px 太細，最少 64px；每個標籤最多 6 個字。"
 difficulty: medium
+component: cutaway
+entry: [rise, scale]
 ---
 
 ## 效果

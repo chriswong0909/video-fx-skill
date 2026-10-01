@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 為中文而設：按意群 6–12 字一組、80px。
 placement: lower
 difficulty: easy
+component: caption
+entry: [rise, type]
 ---
 
 ## 效果

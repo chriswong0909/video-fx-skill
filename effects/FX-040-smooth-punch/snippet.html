@@ -8,7 +8,7 @@ tl.set('#camInner',{transformOrigin:EYE},0);
 SHOTS.forEach(([a,b,f,how],i)=>{const S=FR[f]; const nx=SHOTS[i+1];
   const pushEnd=(nx&&nx[3]==='smooth')?nx[0]-.12:b;                    // 下一鏡係 smooth：鏡內慢推提早收，避免同一屬性重疊
   if(how==='smooth'){
-    tl.to('#camInner',{scale:S,duration:.24,ease:EASE.move},a-.12);
+    tl.to('#camInner',{scale:S,duration:DUR.out,ease:EASE.move},a-.12);
     if(pushEnd-(a+.12)>.05) tl.to('#camInner',{scale:S*1.03,duration:pushEnd-(a+.12),ease:'none'},a+.12);
   }else{
     tl.set('#camInner',{scale:S},a); if(pushEnd-a>.05) tl.to('#camInner',{scale:S*1.03,duration:pushEnd-a,ease:'none'},a);

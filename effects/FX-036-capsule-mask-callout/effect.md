@@ -21,6 +21,8 @@ cjk_fit: adjust
 cjk_notes: "標籤最少 64px。"
 placement: layout
 difficulty: easy
+component: frame
+entry: [draw, scale]
 ---
 
 ## 效果

@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 cjk_notes: "大字每行最多 5 個字。"
 difficulty: medium
+component: cutaway
+entry: [rise, scale]
 ---
 
 ## 效果

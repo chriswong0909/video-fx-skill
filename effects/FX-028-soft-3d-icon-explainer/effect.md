@@ -20,6 +20,8 @@ status: active
 cjk_fit: adjust
 cjk_notes: "標題最少 72px。"
 difficulty: medium
+component: cutaway
+entry: [rise, scale]
 ---
 
 ## 效果

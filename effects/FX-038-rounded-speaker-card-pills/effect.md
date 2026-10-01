@@ -21,6 +21,8 @@ cjk_fit: adjust
 cjk_notes: "卡闊有限：卡內字最少 72px、每行最多 7 個字；膠囊最少 64px。"
 placement: layout
 difficulty: medium
+component: frame
+entry: [scale, slide-edge]
 ---
 
 ## 效果

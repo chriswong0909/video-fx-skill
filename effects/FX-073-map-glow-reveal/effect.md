@@ -22,6 +22,8 @@ cjk_notes: "地圖上嘅標註字 2–5 字，serif 粗體，9:16 最少 72px。
 placement: center
 aspect: "16:9"
 difficulty: medium
+component: chart
+entry: [draw, rise, scale]
 ---
 
 ## 效果

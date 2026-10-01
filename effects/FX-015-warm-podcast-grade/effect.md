@@ -20,6 +20,10 @@ status: active
 cjk_fit: good
 difficulty: easy
 cjk_notes: ""
+style_bound: true
+bound_reason: "調色預設（ffmpeg），唔係畫面元素"
+component: camera
+entry: []
 ---
 
 ## 效果

@@ -1,6 +1,6 @@
 <script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-027 發光漸變關鍵字 -->
 <style>.fx027{font-family:var(--f-body,"SansTC");font-weight:900;font-size:140px;line-height:1}
-.fx027 .c{display:inline-block;background:linear-gradient(180deg,#7fe3ff,#2b8cff 55%,#1a4fd6);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 16px rgba(60,160,255,.55))}</style>
+.fx027 .c{display:inline-block;background:linear-gradient(180deg,color-mix(in srgb, var(--c-accent, #2b8cff) 60%, white),var(--c-accent, #2b8cff) 55%,color-mix(in srgb, var(--c-accent, #2b8cff) 81%, black));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 16px rgba(60,160,255,.55))}</style>
 <span class="fx027" id="gk"><span class="c">第</span><span class="c">三</span></span>
-<script>tl.from(document.querySelectorAll('#gk .c'),{opacity:0,scale:1.3,filter:'blur(8px)',duration:.3,stagger:.05,ease:EASE.out},T.w);</script>
+<script>tl.from(document.querySelectorAll('#gk .c'),{opacity:0,scale:1.3,filter:'blur(8px)',duration:DUR.in,stagger:.05,ease:EASE.out},T.w);</script>

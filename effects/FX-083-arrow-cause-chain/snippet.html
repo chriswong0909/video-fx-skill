@@ -1,15 +1,16 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-083 箭嘴因果鏈 | 1080×1920 | 依賴：SansTC | 9:16 直排 -->
 <style>
 #fx083{position:absolute;left:80px;top:1080px;display:flex;flex-direction:column;align-items:flex-start;gap:6px;z-index:8;font:900 96px/1.1 var(--f-body,'SansTC')}
-#fx083 b{color:#fff;-webkit-text-stroke:12px #111;paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.4)}
+#fx083 b{color:#fff;-webkit-text-stroke:12px var(--c-text, #111111);paint-order:stroke fill;text-shadow:0 6px 0 rgba(0,0,0,.4)}
 #fx083 b.y{color:var(--c-alert,#ffcf2e)}
 #fx083 svg{width:90px;height:90px;margin-left:40px}
 </style>
-<div id="fx083"><b>血壓長期偏高</b><svg viewBox="0 0 90 90"><path d="M45 5 V75 M20 52 L45 80 L70 52" fill="none" stroke="#fff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg><b class="y">血管硬化中風</b></div>
+<div id="fx083"><b>血壓長期偏高</b><svg viewBox="0 0 90 90"><path d="M45 5 V75 M20 52 L45 80 L70 52" fill="none" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" style="stroke:#ffffff"/></svg><b class="y">血管硬化中風</b></div>
 <script>
 // 時間對準關鍵詞 word timestamps：W1=第一節、W2=第二節
-tl.from('#fx083 b:nth-of-type(1)',{x:-20,opacity:0,duration:.25},W1);
-tl.to('#fx083 path',{strokeDashoffset:0,duration:.25},W2-.3);
-tl.from('#fx083 b.y',{x:-20,opacity:0,duration:.25},W2);
-tl.to('#fx083',{opacity:0,duration:.2},T.end-.2);
+tl.from('#fx083 b:nth-of-type(1)',{x:-20,opacity:0,duration:DUR.out},W1);
+tl.to('#fx083 path',{strokeDashoffset:0,duration:DUR.out},W2-.3);
+tl.from('#fx083 b.y',{x:-20,opacity:0,duration:DUR.out},W2);
+tl.to('#fx083',{opacity:0,duration:DUR.out},T.end-.2);
 </script>

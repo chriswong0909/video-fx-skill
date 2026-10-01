@@ -21,7 +21,7 @@ const SYS = JSON.parse(fs.readFileSync(sysPath, 'utf8'));
       const from = v.startAt || null; const keys = Object.keys(from || v).filter(k => !['ease', 'duration', 'immediateRender', 'overwrite', 'transformOrigin', 'startAt'].includes(k));
       const inHero = hero && tg.some(t => hero === t || hero.contains(t));
       let kind = 'other';
-      if (ease === 'none' && d >= 1) kind = 'hold';
+      if (d >= 1) kind = 'hold';                                             // ≥ 1 秒：慢推／氣氛動作，唔計入場
       else if (!from) {                                                         // .to()
         const k = Object.keys(v);
         if (inHero && k.some(x => ['left', 'top', 'width', 'fontSize', 'borderRadius', 'xPercent', 'backgroundColor'].includes(x))) kind = (v.opacity === 0 || (v.xPercent !== undefined && v.xPercent <= -100)) ? 'exit' : 'morph';

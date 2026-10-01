@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: "清單字最少 72px；編號可保留拉丁斜體數字。"
 placement: layout
 difficulty: medium
+component: frame
+entry: [scale, slide-edge]
 ---
 
 ## 效果

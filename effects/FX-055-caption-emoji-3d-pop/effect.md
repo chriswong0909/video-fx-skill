@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 同文字無關；圖示放喺字幕最後一個字右上角。
 placement: on-text
 difficulty: easy
+component: accent
+entry: [scale]
 ---
 
 ## 效果

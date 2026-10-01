@@ -22,6 +22,8 @@ cjk_notes: "每節 3–6 字，最多 3 節；16:9 約 56px、9:16 最少 96px�
 placement: lower
 aspect: "16:9"
 difficulty: easy
+component: headline
+entry: [slide-edge]
 ---
 
 ## 效果

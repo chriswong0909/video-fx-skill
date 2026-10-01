@@ -1,9 +1,10 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-021 標註圖解 | 要做成 clip -->
-<style>#fx021{position:absolute;inset:0;background:#ece8e3;z-index:5}
-#fx021 .lbl{position:absolute;font-family:var(--f-body,"SansTC");font-weight:500;font-size:64px;color:#333}
-#fx021 svg line{stroke:#555;stroke-width:2}</style>
+<style>#fx021{position:absolute;inset:0;background:var(--c-surface, #ece8e3);z-index:5}
+#fx021 .lbl{position:absolute;font-family:var(--f-body,"SansTC");font-weight:500;font-size:64px;color:var(--c-text, #333333)}
+#fx021 svg line{stroke:color-mix(in srgb, var(--c-text, #333333) 83%, white);stroke-width:2}</style>
 <div id="fx021" class="clip" data-start="8" data-duration="2" data-track-index="3">
  <img src="assets/diagram.png" style="position:absolute;left:190px;top:760px;width:700px">
  <span class="lbl" style="left:180px;top:720px">正常血糖</span><span class="lbl" style="left:640px;top:720px">高血糖</span>
 </div>
-<script>tl.from('#fx021 img',{opacity:0,scale:.94,duration:.4},T.start);tl.from('#fx021 .lbl',{opacity:0,y:8,stagger:.1,duration:.25},T.start+.3);</script>
+<script>tl.from('#fx021 img',{opacity:0,scale:.94,duration:DUR.in},T.start);tl.from('#fx021 .lbl',{opacity:0,y:8,stagger:.1,duration:DUR.out},T.start+.3);</script>

@@ -21,6 +21,8 @@ cjk_fit: good
 placement: on-text
 difficulty: easy
 cjk_notes: ""
+component: accent
+entry: [draw]
 ---
 
 ## 效果

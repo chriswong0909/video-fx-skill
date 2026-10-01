@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 為中文設計：2–4 個字一行，疊 2–3 行，每行大細唔同。
 placement: center
 difficulty: easy
+component: headline
+entry: [scale]
 ---
 
 ## 效果

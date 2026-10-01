@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 為中文設計：標題 8–10 字，方框粗黑邊。
 placement: top
 difficulty: easy
+component: capsule
+entry: [rise]
 ---
 
 ## 效果

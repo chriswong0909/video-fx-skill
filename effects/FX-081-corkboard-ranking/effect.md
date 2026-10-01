@@ -22,6 +22,10 @@ cjk_notes: "標題用手寫感粗圓體 2 行、每行 4–6 字；表格中文�
 placement: layout
 aspect: "16:9"
 difficulty: medium
+style_bound: true
+bound_reason: "水松板木色係效果本身"
+component: chart
+entry: [rise, scale]
 ---
 
 ## 效果

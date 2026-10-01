@@ -22,6 +22,8 @@ cjk_notes: "名 + 身份 6–8 字，粗黑斜體 16:9 約 60px、9:16 最少 11
 placement: lower
 aspect: "16:9"
 difficulty: easy
+component: capsule
+entry: [draw, scale]
 ---
 
 ## 效果

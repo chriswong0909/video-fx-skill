@@ -10,8 +10,8 @@
 // CH = [{t:0},{t:32.5},{t:71}]：每章開始時間；換章時高亮下一格
 const fx068 = document.querySelectorAll('#fx068 span');
 CH.forEach((c,i)=>{ if(!i) return;
-  tl.to(fx068[i-1],{backgroundColor:'rgba(10,20,40,.55)',color:'rgba(255,255,255,.55)',duration:.25},c.t);
+  tl.to(fx068[i-1],{backgroundColor:'rgba(10,20,40,.55)',color:'rgba(255,255,255,.55)',duration:DUR.out},c.t);
   tl.fromTo(fx068[i],{backgroundImage:'linear-gradient(90deg,var(--c-accent,#2a6be0) 0%,rgba(10,20,40,.55) 0%)'},
-    {backgroundImage:'linear-gradient(90deg,var(--c-accent,#2a6be0) 100%,rgba(10,20,40,.55) 100%)',color:'#fff',duration:.35,ease:EASE.out},c.t);
+    {backgroundImage:'linear-gradient(90deg,var(--c-accent,#2a6be0) 100%,rgba(10,20,40,.55) 100%)',color:'#fff',duration:DUR.in,ease:EASE.out},c.t);
 });
 </script>

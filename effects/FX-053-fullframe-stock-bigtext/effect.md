@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 直排中文大字每行 1 個字，一次 2–4 個字最易讀。
 placement: center
 difficulty: easy
+component: cutaway
+entry: [rise]
 ---
 
 ## 效果

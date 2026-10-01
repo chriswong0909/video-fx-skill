@@ -21,6 +21,10 @@ cjk_fit: good
 placement: layout
 difficulty: medium
 cjk_notes: ""
+style_bound: true
+bound_reason: "復古電視框嘅色同質感係效果本身"
+component: frame
+entry: [scale]
 ---
 
 ## 效果

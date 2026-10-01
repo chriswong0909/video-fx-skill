@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 為中文設計：每行 4–8 字，最多 3 行。
 placement: center
 difficulty: easy
+component: headline
+entry: [rise]
 ---
 
 ## 效果

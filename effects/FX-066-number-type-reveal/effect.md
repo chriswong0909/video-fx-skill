@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 數字後面跟一行 24–40px 中文說明（最多 8 字）。
 placement: headroom
 difficulty: easy
+component: chart
+entry: [fade, type]
 ---
 
 ## 效果

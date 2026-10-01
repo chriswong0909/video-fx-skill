@@ -22,6 +22,10 @@ cjk_notes: "冇文字。"
 placement: free
 aspect: "16:9"
 difficulty: easy
+style_bound: true
+bound_reason: "光漏嘅暖色係效果本身"
+component: camera
+entry: [slide-edge]
 ---
 
 ## 效果

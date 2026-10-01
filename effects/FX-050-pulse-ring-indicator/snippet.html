@@ -1,7 +1,7 @@
 <script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-050 同心圓脈衝 -->
 <div id="fx048" style="position:absolute;left:260px;top:560px;width:120px;height:120px;z-index:6">
- <span class="r" style="position:absolute;inset:0;border:8px solid #e8452c;border-radius:50%"></span><span class="r" style="position:absolute;inset:0;border:8px solid #f07a28;border-radius:50%"></span>
- <span style="position:absolute;left:53px;top:53px;width:14px;height:14px;border-radius:50%;background:#e8452c"></span></div>
+ <span class="r" style="position:absolute;inset:0;border:8px solid var(--c-alert, #e8452c);border-radius:50%"></span><span class="r" style="position:absolute;inset:0;border:8px solid var(--c-accent2, #f07a28);border-radius:50%"></span>
+ <span style="position:absolute;left:53px;top:53px;width:14px;height:14px;border-radius:50%;background:var(--c-alert, #e8452c)"></span></div>
 <script>const rings=document.querySelectorAll('#fx048 .r');const reps=Math.ceil((T.end-T.start)/0.9)-1;
 rings.forEach((r,i)=>tl.fromTo(r,{scale:.3,opacity:1},{scale:1.4,opacity:0,duration:.9,repeat:reps,ease:EASE.out},T.start+i*.3));</script>

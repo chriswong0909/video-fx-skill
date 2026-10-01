@@ -4,16 +4,16 @@
 #fx073{position:absolute;inset:0;z-index:5}
 #fx073 .bg{position:absolute;inset:0;backdrop-filter:blur(8px) brightness(.55)}
 #fx073 .map{position:absolute;left:90px;top:520px;width:900px;filter:drop-shadow(0 0 18px rgba(255,60,20,.6))}
-#fx073 .scan{position:absolute;top:500px;width:8px;height:880px;background:linear-gradient(#ffd54a,#ff5a1f);box-shadow:0 0 30px 10px rgba(255,120,30,.7)}
-#fx073 .dot{position:absolute;left:720px;top:1180px;width:34px;height:34px;border-radius:50%;background:#ffe14d;box-shadow:0 0 24px #ffe14d}
+#fx073 .scan{position:absolute;top:500px;width:8px;height:880px;background:linear-gradient(var(--c-accent2, #ffd54a),var(--c-alert, #ff5a1f));box-shadow:0 0 30px 10px rgba(255,120,30,.7)}
+#fx073 .dot{position:absolute;left:720px;top:1180px;width:34px;height:34px;border-radius:50%;background:var(--c-accent2, #ffd54a);box-shadow:0 0 24px var(--c-accent2, #ffd54a)}
 #fx073 .lb{position:absolute;left:640px;top:1000px;font:900 84px/1.1 var(--f-display,'SerifTC');color:#fff;text-shadow:0 4px 12px rgba(0,0,0,.5)}
 </style>
 <div id="fx073" class="clip" data-start="23" data-duration="4.5" data-track-index="3">
  <div class="bg"></div><img class="map" src="assets/map.svg"><div class="scan"></div><div class="dot"></div><div class="lb">⅓<br>生活費</div>
 </div>
 <script>
-tl.fromTo('#fx073 .map',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:.8,ease:EASE.move},T.start);
-tl.fromTo('#fx073 .scan',{left:90,opacity:1},{left:990,duration:.8,ease:EASE.move},T.start);tl.to('#fx073 .scan',{opacity:0,duration:.15},T.start+.8);
-tl.from('#fx073 .dot',{scale:0,duration:.25,ease:EASE.pop},T.start+1);tl.to('#fx073 .dot',{scale:1.6,opacity:.4,yoyo:true,repeat:1,duration:.3},T.start+1.25);
-tl.from('#fx073 .lb',{opacity:0,y:20,duration:.3},T.start+1.2);
+tl.fromTo('#fx073 .map',{clipPath:'inset(0 100% 0 0)'},{clipPath:'inset(0 0% 0 0)',duration:DUR.move,ease:EASE.move},T.start);
+tl.fromTo('#fx073 .scan',{left:90,opacity:1},{left:990,duration:DUR.move,ease:EASE.move},T.start);tl.to('#fx073 .scan',{opacity:0,duration:DUR.out},T.start+.8);
+tl.from('#fx073 .dot',{scale:0,duration:DUR.out,ease:EASE.pop},T.start+1);tl.to('#fx073 .dot',{scale:1.6,opacity:.4,yoyo:true,repeat:1,duration:DUR.in},T.start+1.25);
+tl.from('#fx073 .lb',{opacity:0,y:20,duration:DUR.in},T.start+1.2);
 </script>

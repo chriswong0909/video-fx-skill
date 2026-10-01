@@ -1,4 +1,5 @@
+<script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-053 全屏素材 + 直排大字 | 要做成 clip -->
 <div class="clip" data-start="4" data-duration="1.8" data-track-index="3" style="position:absolute;inset:0;z-index:5;background:url(assets/jar.jpg) center/cover">
  <div id="vt" style="position:absolute;right:200px;top:360px;writing-mode:vertical-rl;font:900 180px/1 var(--f-body,'SansTC');color:rgba(255,255,255,.88);letter-spacing:10px"><span>儲</span><span>錢</span></div></div>
-<script>tl.from(document.querySelectorAll('#vt span'),{opacity:0,y:20,stagger:.1,duration:.2},T.start);</script>
+<script>tl.from(document.querySelectorAll('#vt span'),{opacity:0,y:20,stagger:.1,duration:DUR.out},T.start);</script>

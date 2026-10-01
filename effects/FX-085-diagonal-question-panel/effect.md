@@ -22,6 +22,8 @@ cjk_notes: "每條問題 8–14 字，粗黑 16:9 約 30px、9:16 最少 64px；
 placement: layout
 aspect: "16:9"
 difficulty: medium
+component: card
+entry: [rise, slide-edge]
 ---
 
 ## 效果

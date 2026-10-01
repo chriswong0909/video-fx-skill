@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 同文字無關。
 placement: layout
 difficulty: easy
+component: accent
+entry: [scale]
 ---
 
 ## 效果

@@ -20,6 +20,10 @@ status: active
 cjk_fit: good
 cjk_notes: 原片係中文（廣東話旁白），字體同排版可直接沿用。
 difficulty: easy
+style_bound: true
+bound_reason: "皺紙紋背景嘅紙色同粒子係效果本身"
+component: cutaway
+entry: []
 ---
 
 ## 效果

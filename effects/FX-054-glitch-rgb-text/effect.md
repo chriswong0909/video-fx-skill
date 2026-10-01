@@ -21,6 +21,10 @@ cjk_fit: good
 cjk_notes: 粗黑體 2 個字最有力；筆畫密嘅字 glitch 後都仲認得。
 placement: center
 difficulty: medium
+style_bound: true
+bound_reason: "故障 RGB 分離色係效果本身"
+component: headline
+entry: [cut]
 ---
 
 ## 效果

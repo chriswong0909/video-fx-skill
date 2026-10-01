@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 cjk_notes: 原片係中文（廣東話旁白），字體同排版可直接沿用。
 difficulty: easy
+component: camera
+entry: [blur]
 ---
 
 ## 效果

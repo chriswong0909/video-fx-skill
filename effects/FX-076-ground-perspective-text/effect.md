@@ -22,6 +22,8 @@ cjk_notes: "3 字以內最有力；serif 900 中文，平躺之後視覺上會�
 placement: center
 aspect: "16:9"
 difficulty: medium
+component: headline
+entry: [scale]
 ---
 
 ## 效果

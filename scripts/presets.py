@@ -25,7 +25,7 @@ def build():
             f"""/* {p['id']} {p['name']} — 由 preset.json 生成（python3 scripts/presets.py build）；品牌檔可以喺之後覆蓋顏色 */
 :root{{
   --c-bg:{t['bg']}; --c-surface:{t['surface']}; --c-text:{t['text']};
-  --c-accent:{t['accent']}; --c-alert:{t['alert']}; --c-positive:{t['positive']};
+  --c-accent:{t['accent']}; --c-accent2:{t.get('accent2', t['accent'])}; --c-alert:{t['alert']}; --c-positive:{t['positive']};
   --c-caption-box:{t['caption_box']}; --c-caption-text:{t['caption_text']};
   --f-display:{t['f_display']}; --f-body:{t['f_body']}; --f-num:{t['f_num']};
   --fs-hero:150px; --fs-sub:72px; --fs-label:64px; --fs-caption:80px; --fs-foot:52px;

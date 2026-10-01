@@ -40,3 +40,8 @@
 ## 同一個元素重用（主角元素）要清返狀態（2026-09-30）
 - 主角元素（#hero）入面每個字組用 `tl.set(opacity:1)` 開；**窗口完結要 `tl.set(opacity:0)` 收返**，否則下次 hero 再出現，舊字組仍然係 1，會疊埋一齊（doctor2 v5 靜圖發現）。
 - `qa-stills.cjs` 已加「畫面有唔應該出現嘅字」檢查：每張截圖列出所有見到嘅字（計埋母層 opacity），唔屬於嗰刻 manifest 嘅就 ✗。
+
+## 效果 token 化（2026-10-01）
+- 效果顏色用 `var(--c-x, #後備)`／`color-mix()`；SVG 屬性入面 var() 唔生效，要寫喺 style。
+- snippet 要有 tokens 讀取器（`window.EASE`／`window.DUR`）先用得 `DUR.*`；冇讀取器會 `DUR is not defined`，成段動畫唔出。
+- `scripts/fx-shot.cjs` 可以一次過截晒 79 個效果，token 化前後逐張比對（平均像素差 > 3 就要人手睇）。

@@ -3,14 +3,14 @@
 <!-- 規則：video 唔可以放入有 data-start 嘅 div；所以背景 layer 做 clip，兩段 video 各自有 data-* 時間，放喺冇時間嘅 wrapper -->
 <!-- T0／DUR 由分鏡生成，同時寫入 data-start 同 T，唔好兩邊各自寫死 -->
 <style>
-#fx071{position:absolute;inset:0;z-index:5;background:#e8f3f8;overflow:hidden}
-#fx071 .deco{position:absolute;width:520px;height:520px;background:#bcd9f0;transform:rotate(-18deg)}
+#fx071{position:absolute;inset:0;z-index:5;background:var(--c-surface, #e8f3f8);overflow:hidden}
+#fx071 .deco{position:absolute;width:520px;height:520px;background:color-mix(in srgb, var(--c-accent, #2a6be0) 34%, white);transform:rotate(-18deg)}
 #fx071b,#fx071p{position:absolute;z-index:6;overflow:hidden}
 #fx071b{left:44px;top:300px;width:992px;height:1240px;border-radius:14px;box-shadow:0 12px 30px rgba(20,60,100,.25)}
 #fx071p{right:44px;top:1330px;width:360px;height:640px;border:6px solid #fff;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:7}
 #fx071b .in,#fx071p .in{position:absolute;inset:0}
 #fx071b video,#fx071p video{width:100%;height:100%;object-fit:cover}
-#fx071t{position:absolute;left:44px;top:1470px;z-index:8;background:#fff;border-left:10px solid var(--c-accent,#2a6be0);font:700 64px/1 var(--f-body,'SansTC');color:#1c2a3a;padding:18px 26px;border-radius:6px;opacity:0;visibility:hidden}
+#fx071t{position:absolute;left:44px;top:1470px;z-index:8;background:#fff;border-left:10px solid var(--c-accent,#2a6be0);font:700 64px/1 var(--f-body,'SansTC');color:var(--c-text, #1c2a3a);padding:18px 26px;border-radius:6px;opacity:0;visibility:hidden}
 </style>
 <div id="fx071" class="clip" data-start="${T0}" data-duration="${DUR}" data-track-index="3">
  <div class="deco" style="left:-300px;top:-260px"></div><div class="deco" style="right:-320px;bottom:-280px"></div>
@@ -21,9 +21,9 @@
 <script>
 // wrapper 喺畫板時段以外要隱藏
 tl.set(['#fx071b','#fx071p'],{visibility:'hidden'},0); tl.set(['#fx071b','#fx071p'],{visibility:'visible'},T.start);
-tl.from('#fx071b',{scale:.94,opacity:0,duration:.5,ease:EASE.out},T.start);
-tl.from('#fx071p',{x:80,y:80,opacity:0,duration:.4,ease:EASE.out},T.start+.2);
-tl.set('#fx071t',{visibility:'visible'},T.start+.35); tl.fromTo('#fx071t',{scale:.6,opacity:0},{scale:1,opacity:1,duration:.3,ease:EASE.pop},T.start+.35);
+tl.from('#fx071b',{scale:.94,opacity:0,duration:DUR.move,ease:EASE.out},T.start);
+tl.from('#fx071p',{x:80,y:80,opacity:0,duration:DUR.in,ease:EASE.out},T.start+.2);
+tl.set('#fx071t',{visibility:'visible'},T.start+.35); tl.fromTo('#fx071t',{scale:.6,opacity:0},{scale:1,opacity:1,duration:DUR.in,ease:EASE.pop},T.start+.35);
 tl.fromTo('#fx071b .in',{scale:1},{scale:1.06,duration:T.dur,ease:'none'},T.start);     // 推 wrapper，唔推 video
 tl.set(['#fx071b','#fx071p','#fx071t'],{visibility:'hidden'},T.end);
 // explain.mp4 短過 DUR 時：用 lastframe.jpg 放喺 #fx071b 底層（ffmpeg -sseof -0.04 -i explain.mp4 -frames:v 1 lastframe.jpg）

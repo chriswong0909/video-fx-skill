@@ -22,6 +22,8 @@ cjk_notes: "原片英文名全大寫粗體；中文名用 Noto Sans TC 900、字
 placement: lower
 aspect: "16:9"
 difficulty: easy
+component: capsule
+entry: [draw, slide-edge]
 ---
 
 ## 效果

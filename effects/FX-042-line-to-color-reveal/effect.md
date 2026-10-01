@@ -20,6 +20,10 @@ status: active
 cjk_fit: good
 cjk_notes: 原片係中文（廣東話旁白），字體同排版可直接沿用。
 difficulty: medium
+style_bound: true
+bound_reason: "蠟筆線稿變彩色係插畫本身"
+component: camera
+entry: [fade]
 ---
 
 ## 效果

@@ -22,6 +22,8 @@ cjk_notes: 徽章字 2–3 行，大數字 + 細字說明。
 placement: free
 aspect: "16:9"
 difficulty: easy
+component: capsule
+entry: [scale]
 ---
 
 ## 效果

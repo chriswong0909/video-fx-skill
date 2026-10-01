@@ -1,91 +1,92 @@
 {
- "id": "SP-001",
- "name": "醫療專業",
- "en": "Medical Pro",
- "mood_zh": "專業醫療",
- "for_types": [
-  "醫療健康",
-  "口播知識",
-  "訪問對談"
- ],
- "tokens": {
-  "bg": "#ffffff",
-  "surface": "#f4f7fa",
-  "text": "#0b2a3a",
-  "accent": "#0099ce",
-  "alert": "#e8452c",
-  "positive": "#1f9d6b",
-  "caption_box": "#1063be",
-  "caption_text": "#ffffff",
-  "f_display": "'SansTC'",
-  "f_body": "'SansTC'",
-  "f_num": "'SansTC'",
-  "ease_out": "power3.out",
-  "ease_pop": "back.out(1.6)",
-  "ease_move": "power2.inOut",
-  "ease_in": "power2.in",
-  "dur_in": ".35s",
-  "dur_out": ".25s",
-  "dur_move": ".6s",
-  "stagger": ".08s"
- },
- "colour_meaning": {
-  "accent": "醫生嘅重點／正確講法",
-  "alert": "錯誤觀念、警告",
-  "positive": "做法、改善"
- },
- "grade": "GR-001",
- "grade_alt": [
-  "GR-002"
- ],
- "captions": [
-  "FX-051",
-  "FX-039"
- ],
- "transitions": [
-  "FX-040"
- ],
- "sfx": {
-  "pack": "curated",
-  "categories": [
-   "ui",
-   "pop",
-   "ding",
-   "whoosh"
+  "id": "SP-001",
+  "name": "醫療專業",
+  "en": "Medical Pro",
+  "mood_zh": "專業醫療",
+  "for_types": [
+    "醫療健康",
+    "口播知識",
+    "訪問對談"
   ],
-  "density": "少"
- },
- "effects": [
-  "FX-010",
-  "FX-014",
-  "FX-021",
-  "FX-028",
-  "FX-029",
-  "FX-032",
-  "FX-034",
-  "FX-036",
-  "FX-037",
-  "FX-038",
-  "FX-039",
-  "FX-040",
-  "FX-044",
-  "FX-047",
-  "FX-048",
-  "FX-050",
-  "FX-051",
-  "FX-057",
-  "FX-064",
-  "FX-066",
-  "FX-067",
-  "FX-068",
-  "FX-069",
-  "FX-070",
-  "FX-071",
-  "FX-083"
- ],
- "dont": [
-  "唔用故障、閃光、撕紙呢類搞笑／戲劇效果",
-  "警示紅只用喺錯誤觀念，唔好用喺醫生正面建議",
-  "唔用 bounce 彈跳"
- ]
+  "tokens": {
+    "bg": "#ffffff",
+    "surface": "#f4f7fa",
+    "text": "#0b2a3a",
+    "accent": "#0099ce",
+    "alert": "#e8452c",
+    "positive": "#1f9d6b",
+    "caption_box": "#1063be",
+    "caption_text": "#ffffff",
+    "f_display": "'SansTC'",
+    "f_body": "'SansTC'",
+    "f_num": "'SansTC'",
+    "ease_out": "power3.out",
+    "ease_pop": "back.out(1.6)",
+    "ease_move": "power2.inOut",
+    "ease_in": "power2.in",
+    "dur_in": ".35s",
+    "dur_out": ".25s",
+    "dur_move": ".6s",
+    "stagger": ".08s",
+    "accent2": "#f5a623"
+  },
+  "colour_meaning": {
+    "accent": "醫生嘅重點／正確講法",
+    "alert": "錯誤觀念、警告",
+    "positive": "做法、改善"
+  },
+  "grade": "GR-001",
+  "grade_alt": [
+    "GR-002"
+  ],
+  "captions": [
+    "FX-051",
+    "FX-039"
+  ],
+  "transitions": [
+    "FX-040"
+  ],
+  "sfx": {
+    "pack": "curated",
+    "categories": [
+      "ui",
+      "pop",
+      "ding",
+      "whoosh"
+    ],
+    "density": "少"
+  },
+  "effects": [
+    "FX-010",
+    "FX-014",
+    "FX-021",
+    "FX-028",
+    "FX-029",
+    "FX-032",
+    "FX-034",
+    "FX-036",
+    "FX-037",
+    "FX-038",
+    "FX-039",
+    "FX-040",
+    "FX-044",
+    "FX-047",
+    "FX-048",
+    "FX-050",
+    "FX-051",
+    "FX-057",
+    "FX-064",
+    "FX-066",
+    "FX-067",
+    "FX-068",
+    "FX-069",
+    "FX-070",
+    "FX-071",
+    "FX-083"
+  ],
+  "dont": [
+    "唔用故障、閃光、撕紙呢類搞笑／戲劇效果",
+    "警示紅只用喺錯誤觀念，唔好用喺醫生正面建議",
+    "唔用 bounce 彈跳"
+  ]
 }

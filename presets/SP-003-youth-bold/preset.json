@@ -1,93 +1,94 @@
 {
- "id": "SP-003",
- "name": "活潑年輕",
- "en": "Youth Bold",
- "mood_zh": "活潑年輕",
- "for_types": [
-  "口播知識",
-  "產品廣告",
-  "紀錄 Vlog"
- ],
- "tokens": {
-  "bg": "#111111",
-  "surface": "#ffffff",
-  "text": "#111111",
-  "accent": "#ffcf2e",
-  "alert": "#ff2d55",
-  "positive": "#2a6be0",
-  "caption_box": "#111111",
-  "caption_text": "#ffffff",
-  "f_display": "'SansTC'",
-  "f_body": "'SansTC'",
-  "f_num": "'SansTC'",
-  "ease_out": "power3.out",
-  "ease_pop": "back.out(2)",
-  "ease_move": "power3.inOut",
-  "ease_in": "power2.in",
-  "dur_in": ".25s",
-  "dur_out": ".18s",
-  "dur_move": ".45s",
-  "stagger": ".05s"
- },
- "colour_meaning": {
-  "accent": "重點字、數字",
-  "alert": "衝擊、反轉",
-  "positive": "答案、做法"
- },
- "grade": "GR-005",
- "grade_alt": [
-  "GR-004"
- ],
- "captions": [
-  "FX-018",
-  "FX-052",
-  "FX-039"
- ],
- "transitions": [
-  "FX-046",
-  "FX-086"
- ],
- "sfx": {
-  "pack": "curated+kenney-interface",
-  "categories": [
-   "pop",
-   "whoosh",
-   "impact",
-   "ui"
+  "id": "SP-003",
+  "name": "活潑年輕",
+  "en": "Youth Bold",
+  "mood_zh": "活潑年輕",
+  "for_types": [
+    "口播知識",
+    "產品廣告",
+    "紀錄 Vlog"
   ],
-  "density": "中"
- },
- "effects": [
-  "FX-017",
-  "FX-018",
-  "FX-019",
-  "FX-027",
-  "FX-031",
-  "FX-032",
-  "FX-033",
-  "FX-034",
-  "FX-035",
-  "FX-039",
-  "FX-040",
-  "FX-045",
-  "FX-046",
-  "FX-047",
-  "FX-052",
-  "FX-053",
-  "FX-054",
-  "FX-055",
-  "FX-059",
-  "FX-060",
-  "FX-062",
-  "FX-063",
-  "FX-075",
-  "FX-083",
-  "FX-084",
-  "FX-085",
-  "FX-086"
- ],
- "dont": [
-  "唔用襯線字、菲林暗角",
-  "每 3 秒最多一個大效果，唔好成條片都彈"
- ]
+  "tokens": {
+    "bg": "#111111",
+    "surface": "#ffffff",
+    "text": "#111111",
+    "accent": "#ffcf2e",
+    "alert": "#ff2d55",
+    "positive": "#2a6be0",
+    "caption_box": "#111111",
+    "caption_text": "#ffffff",
+    "f_display": "'SansTC'",
+    "f_body": "'SansTC'",
+    "f_num": "'SansTC'",
+    "ease_out": "power3.out",
+    "ease_pop": "back.out(2)",
+    "ease_move": "power3.inOut",
+    "ease_in": "power2.in",
+    "dur_in": ".25s",
+    "dur_out": ".18s",
+    "dur_move": ".45s",
+    "stagger": ".05s",
+    "accent2": "#ff7a1a"
+  },
+  "colour_meaning": {
+    "accent": "重點字、數字",
+    "alert": "衝擊、反轉",
+    "positive": "答案、做法"
+  },
+  "grade": "GR-005",
+  "grade_alt": [
+    "GR-004"
+  ],
+  "captions": [
+    "FX-018",
+    "FX-052",
+    "FX-039"
+  ],
+  "transitions": [
+    "FX-046",
+    "FX-086"
+  ],
+  "sfx": {
+    "pack": "curated+kenney-interface",
+    "categories": [
+      "pop",
+      "whoosh",
+      "impact",
+      "ui"
+    ],
+    "density": "中"
+  },
+  "effects": [
+    "FX-017",
+    "FX-018",
+    "FX-019",
+    "FX-027",
+    "FX-031",
+    "FX-032",
+    "FX-033",
+    "FX-034",
+    "FX-035",
+    "FX-039",
+    "FX-040",
+    "FX-045",
+    "FX-046",
+    "FX-047",
+    "FX-052",
+    "FX-053",
+    "FX-054",
+    "FX-055",
+    "FX-059",
+    "FX-060",
+    "FX-062",
+    "FX-063",
+    "FX-075",
+    "FX-083",
+    "FX-084",
+    "FX-085",
+    "FX-086"
+  ],
+  "dont": [
+    "唔用襯線字、菲林暗角",
+    "每 3 秒最多一個大效果，唔好成條片都彈"
+  ]
 }

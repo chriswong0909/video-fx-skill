@@ -1,0 +1,9 @@
+/* Healthy Days 動態系統卡（brands/healthy-days/motion-system.md）→ tokens：放喺預設 tokens.css 之後 */
+:root{
+  --c-bg:#ffffff; --c-surface:#f4f7fa; --c-text:#0b2a3a;
+  --c-accent:#2f68a8; --c-accent2:#2f68a8; --c-alert:#e8452c; --c-positive:#1f9d6b;
+  --c-caption-box:#0b6f99; --c-caption-text:#ffffff;
+  --f-display:'SansTC'; --f-body:'SansTC'; --f-num:'SansTC';
+  --ease-out:power3.out; --ease-pop:power3.out; --ease-move:power2.inOut; --ease-in:power2.in;
+  --dur-in:.35s; --dur-out:.2s; --dur-move:.6s; --stagger:.08s;
+}

@@ -1,10 +1,10 @@
 <script>/* tokens 讀取器（presets/README.md）*/window.EASE=window.EASE||(()=>{const g=(n,d)=>(getComputedStyle(document.documentElement).getPropertyValue('--ease-'+n).trim()||d);return{out:g('out','power3.out'),pop:g('pop','back.out(1.8)'),move:g('move','power2.inOut'),in:g('in','power2.in')}})();window.DUR=window.DUR||(()=>{const g=(n,d)=>{const v=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--'+n));return isNaN(v)?d:v};return{in:g('dur-in',.35),out:g('dur-out',.25),move:g('dur-move',.6),stagger:g('stagger',.08)}})();</script>
 <!-- FX-013 問題浮動 -->
-<style>.fx013q{position:absolute;z-index:7;font-family:var(--f-display,"SerifTC");font-weight:900;font-size:120px;color:#e98a2e;opacity:0}</style>
+<style>.fx013q{position:absolute;z-index:7;font-family:var(--f-display,"SerifTC");font-weight:900;font-size:120px;color:var(--c-accent2, #e98a2e);opacity:0}</style>
 <span class="fx013q" id="q1" style="left:150px;top:190px">？</span><span class="fx013q" id="q2" style="left:830px;top:150px;font-size:150px">？</span>
 <script>
 tl.set(['#q1','#q2'],{opacity:.85},T.start);
-tl.from('#q1',{y:40,rotation:-20,duration:.5,ease:EASE.pop},T.start); tl.from('#q2',{y:40,rotation:20,duration:.5,ease:EASE.pop},T.start+.25);
+tl.from('#q1',{y:40,rotation:-20,duration:DUR.move,ease:EASE.pop},T.start); tl.from('#q2',{y:40,rotation:20,duration:DUR.move,ease:EASE.pop},T.start+.25);
 tl.to('#q1',{y:-20,duration:1.4,ease:EASE.move},T.start+.5); tl.to('#q2',{y:-26,duration:1.2,ease:EASE.move},T.start+.75);
 tl.set(['#q1','#q2'],{opacity:0},T.end);
 </script>

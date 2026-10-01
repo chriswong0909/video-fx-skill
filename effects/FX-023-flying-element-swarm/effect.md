@@ -20,6 +20,8 @@ status: active
 cjk_fit: good
 difficulty: medium
 cjk_notes: ""
+component: accent
+entry: [cut]
 ---
 
 ## 效果

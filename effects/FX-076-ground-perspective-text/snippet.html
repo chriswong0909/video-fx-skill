@@ -2,10 +2,10 @@
 <!-- FX-076 地面透視大字 | 1080×1920 | 依賴：SerifTC；B-roll 要係俯拍地面／枱面 -->
 <style>
 #fx076{position:absolute;inset:0;z-index:6;perspective:900px;pointer-events:none}
-#fx076 .w{position:absolute;left:0;right:0;top:900px;text-align:center;transform:rotateX(55deg) rotateZ(-4deg);transform-origin:center;font:900 240px/1 var(--f-display,'SerifTC');color:#e8494d;letter-spacing:.05em;text-shadow:0 3px 0 rgba(0,0,0,.35)}
+#fx076 .w{position:absolute;left:0;right:0;top:900px;text-align:center;transform:rotateX(55deg) rotateZ(-4deg);transform-origin:center;font:900 240px/1 var(--f-display,'SerifTC');color:var(--c-alert, #e8494d);letter-spacing:.05em;text-shadow:0 3px 0 rgba(0,0,0,.35)}
 </style>
 <div id="fx076" class="clip" data-start="51.5" data-duration="2.5" data-track-index="5"><div class="w">無退路</div></div>
 <script>
-tl.from('#fx076 .w',{scale:1.25,opacity:0,duration:.25,ease:EASE.pop},T.start); // 對準物件落地嗰格
+tl.from('#fx076 .w',{scale:1.25,opacity:0,duration:DUR.out,ease:EASE.pop},T.start); // 對準物件落地嗰格
 tl.fromTo('#fx076',{scale:1},{scale:1.05,duration:T.dur,ease:'none'},T.start);
 </script>

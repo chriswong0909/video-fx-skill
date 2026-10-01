@@ -21,6 +21,8 @@ cjk_fit: good
 cjk_notes: 為中文設計：粗黑體白字，按意群 6–10 字一組、單行。
 placement: lower
 difficulty: easy
+component: caption
+entry: [type]
 ---
 
 ## 效果

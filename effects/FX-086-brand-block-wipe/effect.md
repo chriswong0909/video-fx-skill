@@ -22,6 +22,8 @@ cjk_notes: "色塊入面嘅字 2–4 字巨型粗黑，或者頻道名；9:16 �
 placement: free
 aspect: "16:9"
 difficulty: medium
+component: camera
+entry: [slide-edge]
 ---
 
 ## 效果

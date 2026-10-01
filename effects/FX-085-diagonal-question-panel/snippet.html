@@ -6,16 +6,16 @@
 #fx085 .blk::after{content:'? ? ? ? ? ? ? ? ?';position:absolute;inset:0;font:900 260px/1 var(--f-body,'SansTC');color:rgba(0,0,0,.08);word-break:break-all}
 #fx085 ul{position:absolute;left:60px;right:60px;bottom:420px;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:28px}
 #fx085 li{display:flex;align-items:center;gap:18px}
-#fx085 li i{flex:none;width:80px;height:80px;border-radius:50%;background:var(--c-alert,#ffcf2e);border:6px solid #111;font:900 56px/68px var(--f-body,'SansTC');text-align:center;font-style:normal}
-#fx085 li span{background:#fff;font:900 64px/1.2 var(--f-body,'SansTC');color:#111;padding:14px 24px;box-shadow:6px 6px 0 #111}
+#fx085 li i{flex:none;width:80px;height:80px;border-radius:50%;background:var(--c-alert,#ffcf2e);border:6px solid var(--c-text, #111111);font:900 56px/68px var(--f-body,'SansTC');text-align:center;font-style:normal}
+#fx085 li span{background:#fff;font:900 64px/1.2 var(--f-body,'SansTC');color:var(--c-text, #111111);padding:14px 24px;box-shadow:6px 6px 0 var(--c-text, #111111)}
 </style>
 <div id="fx085" class="clip" data-start="${T0}" data-duration="${DUR}" data-track-index="5"><div class="blk"></div>
  <ul><li><i>?</i><span>中風有咩先兆？</span></li><li><i>?</i><span>黃金時間有幾耐？</span></li><li><i>?</i><span>點樣預防？</span></li></ul></div>
 <script>
-tl.from('#fx085 .blk',{yPercent:100,duration:.45,ease:EASE.out},T.start);
+tl.from('#fx085 .blk',{yPercent:100,duration:DUR.in,ease:EASE.out},T.start);
 // Q = [t1,t2,t3]：講者講到每條問題嘅時間（剪接後時間軸），數量一定要同 li 一樣
 const li085=[...document.querySelectorAll('#fx085 li')];
 if(!Array.isArray(Q)||Q.length!==li085.length) throw new Error('FX-085：Q 數量同問題數量唔一致');
-li085.forEach((li,i)=>tl.from(li,{x:40,opacity:0,duration:.25,ease:EASE.pop},Q[i]));
-tl.to('#fx085',{opacity:0,duration:.3},T.end-.3); tl.set('#fx085',{visibility:'hidden'},T.end);
+li085.forEach((li,i)=>tl.from(li,{x:40,opacity:0,duration:DUR.out,ease:EASE.pop},Q[i]));
+tl.to('#fx085',{opacity:0,duration:DUR.in},T.end-.3); tl.set('#fx085',{visibility:'hidden'},T.end);
 </script>
