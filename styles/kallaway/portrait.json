@@ -48,5 +48,10 @@
   "file": "cards-9x16/kallaway.x.image.pip.html",
   "verified": true,
   "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
+ },
+ "kallaway.x.question": {
+  "file": "cards-9x16/kallaway.x.question.html",
+  "verified": false,
+  "note": "黎青龍護肝篇新做，等用戶喺節拍表批；每行 ≤ 10 字"
  }
 }

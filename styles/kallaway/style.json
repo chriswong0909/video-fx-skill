@@ -9589,6 +9589,29 @@
     "max": 10
    },
    "custom": "Healthy Days 自家圖片卡（新手包冇圖片卡）"
+  },
+  {
+   "id": "kallaway.x.question",
+   "tier": "tier2",
+   "purpose": "question",
+   "treatment": "chest-card",
+   "file": "cards-9x16/kallaway.x.question.html",
+   "slots": [
+    {
+     "name": "num"
+    },
+    {
+     "name": "l1"
+    },
+    {
+     "name": "l2"
+    }
+   ],
+   "duration": {
+    "min": 1.5,
+    "max": 6
+   },
+   "custom": "Healthy Days 自家問題字卡（訪問片：旁白問、講者聽）"
   }
  ]
 }

@@ -1,0 +1,66 @@
+<!doctype html>
+<!--
+  KALLAWAY × Healthy Days · 自家卡 · QUESTION — 問題字卡（9:16）
+  訪問片用：旁白／主持問問題時，講者聆聽鏡頭嘅胸口位（top 1010，離面遠）浮一張白色毛玻璃卡，
+  左上角品牌藍圓形編號（Q1、Q2…），卡入面係問題原句（口語照寫），最多兩行。講者一開口就收。
+  呢張卡佔咗字幕位，問題嗰句字幕唔出（skipcaps）。
+  Slots: num（例如 Q2，≤ 3 字）, l1（第一行，≤ 10 字）, l2（第二行，≤ 10 字，可留空）。
+  data-cues：第一個＝卡同第一行出現，第二個＝第二行出現（講到嗰度）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-question { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #x-question .glow { position: absolute; left: 140px; top: 960px; width: 800px; height: 520px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.26) 0%, rgba(var(--accent-rgb), 0.08) 52%, transparent 76%); filter: blur(46px); }
+      #x-question .wrap { position: absolute; left: 52px; right: 52px; top: 1010px; display: flex; justify-content: center; }
+      #x-question .card { position: relative; min-width: 560px; box-sizing: border-box; padding: 54px 44px 34px; text-align: center;
+        background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi); box-shadow: var(--glass-shadow); border-radius: 40px; }
+      #x-question .bar { position: absolute; left: 40px; right: 40px; top: 0; height: 6px; border-radius: 0 0 6px 6px;
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.10), var(--accent) 50%, rgba(var(--accent-rgb), 0.10)); }
+      #x-question .num { position: absolute; left: 50%; top: -58px; margin-left: -62px; width: 124px; height: 104px; border-radius: 52px;
+        background: var(--accent); color: #fff; font: 900 60px/104px var(--font-display); text-align: center;
+        border: 5px solid #fff; box-shadow: 0 10px 24px rgba(11, 42, 58, 0.24); box-sizing: border-box; line-height: 92px; }
+      #x-question .line { display: block; font: 900 82px/1.22 var(--font-display); color: var(--head); white-space: nowrap; }
+      #x-question .line.l2 { color: var(--accent); }
+      #x-question .line:empty { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-question" data-composition-id="x-question" data-start="0" data-width="1080" data-height="1920">
+      <div class="glow"></div>
+      <div class="wrap"><div class="card">
+        <div class="bar"></div>
+        <div class="num" data-slot="num">Q2</div>
+        <span class="line l1" data-slot="l1">捱夜之後食補品，</span>
+        <span class="line l2" data-slot="l2">補唔補得返個肝呢？</span>
+      </div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const C = "#x-question";
+      const ROOT = document.querySelector('[data-composition-id="x-question"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 3;
+      /* 一行長過 10 個字自動縮細（唔細過字幕 76px） */
+      ROOT.querySelectorAll('.line').forEach(function (el) { const n = el.textContent.trim().length; if (n > 10) el.style.fontSize = Math.max(76, Math.floor(840 / n)) + 'px'; });
+      const hasL2 = !!ROOT.querySelector('.l2').textContent.trim();
+      const t0 = CUES.length ? Math.max(0, CUES[0] - 0.25) : 0.05;
+      const t2 = CUES.length > 1 ? CUES[1] : t0 + 1.0;
+      tl.from(C + ' .glow', { autoAlpha: 0, scale: 0.6, transformOrigin: "50% 50%", duration: 1.0, ease: "expo.out" }, t0)
+        .from(C + ' .card', { autoAlpha: 0, y: 60, scale: 0.94, filter: "blur(14px)", duration: 0.55, ease: "back.out(1.4)" }, t0)
+        .from(C + ' .num', { scale: 0, transformOrigin: "50% 50%", duration: 0.4, ease: "back.out(2.2)" }, t0 + 0.2)
+        .from(C + ' .l1', { opacity: 0, y: 16, filter: "blur(10px)", duration: 0.4, ease: "power3.out" }, t0 + 0.18);
+      if (hasL2) tl.from(C + ' .l2', { opacity: 0, y: 16, filter: "blur(10px)", duration: 0.4, ease: "power3.out" }, Math.max(t0 + 0.4, t2 - 0.1));
+      tl.to(C + ' .wrap, ' + C + ' .glow', { autoAlpha: 0, y: 20, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, DUR - 0.32)
+        .set({}, {}, 7);
+      window.__timelines["x-question"] = tl;
+    </script>
+  </body>
+</html>
