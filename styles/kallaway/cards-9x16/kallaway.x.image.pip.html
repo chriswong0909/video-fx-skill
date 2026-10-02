@@ -55,8 +55,7 @@
         d.appendChild(dot); d.appendChild(tx); row.appendChild(d); });
       const t0 = CUES.length ? Math.max(0, CUES[0] - 0.3) : 0.1;
       tl.from(C + ' .glow', { autoAlpha: 0, scale: 0.6, transformOrigin: "50% 50%", duration: 1.1, ease: "expo.out" }, t0)
-        .from(C + ' .frame', { autoAlpha: 0, y: 50, scale: 0.9, filter: "blur(14px)", duration: 0.7, ease: "back.out(1.4)" }, t0)
-        .fromTo(IMG, { scale: 1.0 }, { scale: 1.08, duration: DUR, ease: "none" }, 0);
+        .from(C + ' .frame', { autoAlpha: 0, y: 50, scale: 0.9, filter: "blur(14px)", duration: 0.7, ease: "back.out(1.4)" }, t0);   /* 框入面張圖固定唔郁（用戶 2026-10-02：細圖郁動唔自然） */
       tags.forEach((s, i) => { const t = CUES.length > i + 1 ? CUES[i + 1] : t0 + 0.7 + i * 0.35;
         tl.from('#x-img-pip-t' + i, { autoAlpha: 0, y: 26, scale: 0.7, transformOrigin: "50% 100%", duration: 0.5, ease: "back.out(1.7)" }, t); });
       tl.to(C + ' .stack, ' + C + ' .glow', { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, DUR - 0.45)

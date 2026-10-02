@@ -16,13 +16,13 @@
  },
  "kallaway.t2.label.warning": {
   "file": "cards-9x16/kallaway.t2.label.warning.html",
-  "verified": false,
-  "note": "doctor2 風格包版改好，等用戶喺節拍表批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  },
  "kallaway.t2.label.callout": {
   "file": "cards-9x16/kallaway.t2.label.callout.html",
-  "verified": false,
-  "note": "doctor2 風格包版改好，等用戶喺節拍表批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  },
  "kallaway.t2.lower-third.tagrow": {
   "file": "cards-9x16/kallaway.t2.lower-third.tagrow.html",
@@ -31,22 +31,22 @@
  },
  "kallaway.t1.overview.deck2": {
   "file": "cards-9x16/kallaway.t1.overview.deck2.html",
-  "verified": false,
-  "note": "doctor2 風格包版改好，等用戶喺節拍表批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  },
  "kallaway.x.image.full": {
   "file": "cards-9x16/kallaway.x.image.full.html",
-  "verified": false,
-  "note": "自家圖片卡，doctor2 風格包版，等用戶批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  },
  "kallaway.x.image.split": {
   "file": "cards-9x16/kallaway.x.image.split.html",
-  "verified": false,
-  "note": "自家圖片卡，doctor2 風格包版，等用戶批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  },
  "kallaway.x.image.pip": {
   "file": "cards-9x16/kallaway.x.image.pip.html",
-  "verified": false,
-  "note": "自家圖片卡，doctor2 風格包版，等用戶批"
+  "verified": true,
+  "note": "doctor2 風格包版草稿 2 用戶批（2026-10-02）"
  }
 }

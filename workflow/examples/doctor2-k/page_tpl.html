@@ -1,0 +1,62 @@
+<title>doctor2 風格包節拍表</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* 版面：直向分鏡格，左圖右說明；淺藍醫療感，跟 Healthy Days 淺色 Kallaway */
+:root{
+  --bg:#F2F7FC; --panel:#FFFFFF; --ink:#0B2A3A; --dim:#4F6B7A; --line:#D6E3EF;
+  --accent:#1A80D0; --teal:#0E8FA3; --alert:#C9381F; --ok:#1F8A5E; --warm:#B7791F;
+  --f-body:"Noto Sans TC",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1822;--panel:#132331;--ink:#E4EEF5;--dim:#9DB3C2;--line:#24394A;--accent:#5AAEF0;--teal:#45C2D4;--alert:#F07A62;--ok:#5CC596;--warm:#E8B464;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1822;--panel:#132331;--ink:#E4EEF5;--dim:#9DB3C2;--line:#24394A;--accent:#5AAEF0;--teal:#45C2D4;--alert:#F07A62;--ok:#5CC596;--warm:#E8B464;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.6 var(--f-body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 60px}
+h1{font-size:28px;font-weight:900;margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--dim);margin:0 0 20px}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-bottom:18px}
+.summary div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.summary b{display:block;font-size:12px;color:var(--dim);font-weight:700;letter-spacing:.04em}
+.ask{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--warm);border-radius:10px;padding:14px 18px;margin-bottom:28px}
+.ask h2{font-size:16px;margin:0 0 6px}
+.ask ol{margin:0;padding-left:20px}
+.beats{display:flex;flex-direction:column;gap:14px}
+.beat{display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.beat.tier1{border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+.shots{display:flex;gap:8px}
+figure{margin:0;width:150px}
+figure img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+figcaption{font:500 11px var(--f-mono);color:var(--dim);text-align:center;margin-top:3px}
+.info{min-width:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:8px}
+.id{font:500 13px var(--f-mono);color:var(--dim)}
+.time{font:500 14px var(--f-mono);font-variant-numeric:tabular-nums}
+.pill{font-size:12px;font-weight:700;border-radius:999px;padding:2px 10px;border:1px solid currentColor}
+.t-tier1{color:var(--accent)} .t-tier2{color:var(--teal)} .t-mix{color:var(--warm)} .t-brand{color:var(--dim)}
+.s-ok{color:var(--ok)} .s-new{color:var(--warm)} .s-brand{color:var(--dim)}
+.spoken{font-size:17px;font-weight:700;margin:0 0 10px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}
+dt{color:var(--dim);font-size:13px} dd{margin:0;min-width:0;overflow-wrap:anywhere}
+code{font:500 13px var(--f-mono);color:var(--accent)}
+@media (max-width:600px){.beat{grid-template-columns:1fr}.shots{overflow-x:auto}figure{width:120px;flex:0 0 auto}}
+</style>
+<div class="wrap">
+<h1>doctor2 風格包版節拍表</h1>
+<p class="sub">江振昌醫生｜氣喘同心臟退化｜80.3 秒 9:16｜Kallaway 淺色 × Healthy Days，第 3 版。每格都係真卡、真圖、真字截圖。</p>
+<div class="summary">
+<div><b>畫面比例（目標 40／40／20）</b>%%RATIO%%</div>
+<div><b>圖片</b>13 張，全部新生成（可愛器官角色，啞面 3D）</div>
+<div><b>跳鏡</b>全部喺句與句之間，或者逗號位</div>
+<div><b>品牌固定</b>開場、名牌、右上 logo、藍底字幕、藍色標題條</div>
+</div>
+<div class="ask"><h2>第 3 版改咗（照你 4 點意見）：</h2><ol>
+<li><b>唔貼面</b>：關鍵詞、警號卡、劃線卡、圖片框全部向下移去胸口／字幕位；名牌放右下角；開場大字同心電圖線向下移。頭頂位置只留 logo。</li>
+<li><b>效果字唔細過字幕</b>：全部效果字最細 76px（字幕都係 76px），大字 110–120px。效果字交代咗嗰句，字幕就唔出（41 句字幕減到 18 句）。</li>
+<li><b>左上藍色標題條只做分題</b>（伴隨症狀、有些長者、退化因素、藥物幫助），放大到 84px；內容字改用圖片頂部嘅白底大字或者藍色膠囊。</li>
+<li><b>聲效</b>：每格加咗「聲效」一行，全片 33 個（冇背景音樂）。草稿片會聽到。</li>
+</ol></div>
+<section class="beats">
+%%BEATS%%
+</section>
+</div>
