@@ -1,0 +1,67 @@
+<!doctype html>
+<!--
+  KALLAWAY × Healthy Days · 自家卡 · IMAGE PIP — 圖片框浮喺胸口位（9:16）
+  講者全屏唔郁，胸口位（top 900，離面遠啲）浮一個白色毛玻璃邊圓角圖片框，下面一行品牌藍膠囊。
+  借舊效果庫 FX-058（圓角相片插入）+ Kallaway 玻璃卡入場（向上浮入 + 模糊對焦）。短例子用（2–5 秒）。
+  Slots: img, pos（圖片焦點，預設 50% 62%）, tags（可選，膠囊，用「、」分，≤ 3 個，每個 ≤ 4 字）。
+  膠囊字 76px（唔細過字幕），佔咗字幕位，所以用呢張卡嗰句字幕唔出（skipcaps）。
+  data-cues：第一個＝圖片框出現，之後每個膠囊一個。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-img-pip { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #x-img-pip .glow { position: absolute; left: 190px; top: 860px; width: 700px; height: 620px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.28) 0%, rgba(var(--accent-rgb), 0.08) 52%, transparent 76%); filter: blur(46px); }
+      #x-img-pip .stack { position: absolute; left: 52px; right: 52px; top: 900px; display: flex; flex-direction: column; align-items: center; gap: 22px; }
+      #x-img-pip .frame { width: 500px; height: 460px; border-radius: 44px; overflow: hidden; position: relative;
+        border: 12px solid rgba(255, 255, 255, 0.96); box-shadow: var(--glass-shadow), 0 0 0 2px rgba(var(--accent-rgb), 0.25), 0 0 40px rgba(var(--accent-rgb), 0.22); background: var(--canvas); }
+      #x-img-pip .frame img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; }
+      #x-img-pip .pos { display: none; }
+      #x-img-pip .tag-row { display: flex; justify-content: center; gap: 14px; flex-wrap: nowrap; }
+      #x-img-pip .tag { display: inline-flex; align-items: center; gap: 12px; padding: 14px 30px 18px; border-radius: 999px; white-space: nowrap;
+        background: rgba(var(--accent-rgb), 0.94); border: 2px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 22px rgba(11, 42, 58, 0.22); }
+      #x-img-pip .tag-dot { width: 12px; height: 12px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+      #x-img-pip .tag-text { font: 900 76px/1 var(--font-display); color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="x-img-pip" data-composition-id="x-img-pip" data-start="0" data-width="1080" data-height="1920">
+      <div class="glow"></div>
+      <div class="stack">
+        <div class="frame"><img data-slot="img" src="assets/img/k10_diet.jpg" alt="" /></div>
+        <div class="tag-row" data-slot="tags">生活習慣、飲食、藥物</div>
+      </div>
+      <i class="pos" data-slot="pos">50% 62%</i>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const C = "#x-img-pip";
+      const ROOT = document.querySelector('[data-composition-id="x-img-pip"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 5;
+      const IMG = ROOT.querySelector('.frame img');
+      IMG.style.objectPosition = (ROOT.querySelector('.pos').textContent.trim() || '50% 62%');
+      const row = ROOT.querySelector('.tag-row');
+      const tags = row.textContent.split(/[、,，]/).map(s => s.trim()).filter(Boolean);
+      row.textContent = '';
+      tags.forEach((s, i) => { const d = document.createElement('div'); d.className = 'tag'; d.id = 'x-img-pip-t' + i;
+        const dot = document.createElement('div'); dot.className = 'tag-dot'; const tx = document.createElement('div'); tx.className = 'tag-text'; tx.textContent = s;
+        d.appendChild(dot); d.appendChild(tx); row.appendChild(d); });
+      const t0 = CUES.length ? Math.max(0, CUES[0] - 0.3) : 0.1;
+      tl.from(C + ' .glow', { autoAlpha: 0, scale: 0.6, transformOrigin: "50% 50%", duration: 1.1, ease: "expo.out" }, t0)
+        .from(C + ' .frame', { autoAlpha: 0, y: 50, scale: 0.9, filter: "blur(14px)", duration: 0.7, ease: "back.out(1.4)" }, t0)
+        .fromTo(IMG, { scale: 1.0 }, { scale: 1.08, duration: DUR, ease: "none" }, 0);
+      tags.forEach((s, i) => { const t = CUES.length > i + 1 ? CUES[i + 1] : t0 + 0.7 + i * 0.35;
+        tl.from('#x-img-pip-t' + i, { autoAlpha: 0, y: 26, scale: 0.7, transformOrigin: "50% 100%", duration: 0.5, ease: "back.out(1.7)" }, t); });
+      tl.to(C + ' .stack, ' + C + ' .glow', { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, DUR - 0.45)
+        .set({}, {}, 7);
+      window.__timelines["x-img-pip"] = tl;
+    </script>
+  </body>
+</html>

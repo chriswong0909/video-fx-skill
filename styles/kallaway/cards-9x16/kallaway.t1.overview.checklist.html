@@ -3,7 +3,7 @@
   KALLAWAY · tier1 · overview · CHECKLIST — 9:16 直向中文版
   由 cards/tier1/t1-overview-checklist.html 改：直向單欄、字放大、2–4 行（空嘅行自動隱藏）、
   逐行出現時間讀 data-cues（第一個數＝標題，之後每行一個，秒數由卡開始計）。
-  Slots: title（≤ 8 字，可用 <em> 標一個重點詞）, i1–i4（每行 ≤ 7 字）。
+  Slots: title（≤ 8 字，可用 <em> 標一個重點詞）, i1–i4（每行 ≤ 7 字）, p1–p4（可選：每行圓形縮圖路徑，有圖就取代剔號）。
 -->
 <html>
   <head>
@@ -52,6 +52,10 @@
         fill: none; stroke: var(--accent); stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round;
         stroke-dasharray: 48; stroke-dashoffset: 48; filter: drop-shadow(0 0 6px rgba(var(--accent-rgb), 0.80));
       }
+      #t1-ov-check .thumb { width: 190px; height: 190px; flex-shrink: 0; border-radius: 50%; object-fit: cover; border: 8px solid #fff; box-shadow: 0 0 0 3px rgba(var(--accent-rgb), 0.45), 0 10px 26px rgba(11, 42, 58, 0.16); display: none; }
+      #t1-ov-check .row.has-thumb .thumb { display: block; }
+      #t1-ov-check .row.has-thumb .check-wrap { display: none; }
+      #t1-ov-check .row.has-thumb { padding: 26px 48px; gap: 40px; }
       #t1-ov-check .row-text {
         font-family: var(--font-display); font-weight: 900; font-size: 76px;
         color: var(--head); line-height: 1.15;
@@ -70,10 +74,10 @@
       <div class="layout">
         <div class="card-title" data-slot="title">開工前<em>檢查</em>清單</div>
         <div class="rows">
-          <div class="row" id="chk-row-1"><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-1" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i1">第一項</div></div>
-          <div class="row" id="chk-row-2"><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-2" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i2">第二項</div></div>
-          <div class="row" id="chk-row-3"><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-3" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i3">第三項</div></div>
-          <div class="row" id="chk-row-4"><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-4" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i4"></div></div>
+          <div class="row" id="chk-row-1"><img class="thumb" data-slot="p1" src="" alt="" /><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-1" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i1">第一項</div></div>
+          <div class="row" id="chk-row-2"><img class="thumb" data-slot="p2" src="" alt="" /><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-2" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i2">第二項</div></div>
+          <div class="row" id="chk-row-3"><img class="thumb" data-slot="p3" src="" alt="" /><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-3" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i3">第三項</div></div>
+          <div class="row" id="chk-row-4"><img class="thumb" data-slot="p4" src="" alt="" /><div class="check-wrap"><svg viewBox="0 0 36 36"><path id="chk-path-4" d="M6 18 L15 27 L30 10" /></svg></div><div class="row-text" data-slot="i4"></div></div>
         </div>
       </div>
       <div class="vignette"></div>
@@ -88,6 +92,7 @@
       const tTitle = CUES.length ? CUES[0] : 0.5;
       const A = getComputedStyle(ROOT).getPropertyValue('--accent-rgb').trim() || '55,189,248';
       const rows = [1, 2, 3, 4].filter(n => document.querySelector('#chk-row-' + n + ' .row-text').textContent.trim());
+      [1, 2, 3, 4].forEach(n => { const r = document.getElementById('chk-row-' + n); const im = r.querySelector('.thumb'); if (im && im.getAttribute('src')) r.classList.add('has-thumb'); });
       [1, 2, 3, 4].forEach(n => { if (!rows.includes(n)) document.getElementById('chk-row-' + n).style.display = 'none'; });
 
       tl.fromTo("#t1-ov-check .grain", { backgroundPosition: "0px 0px" },

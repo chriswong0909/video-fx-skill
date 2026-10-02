@@ -34,3 +34,17 @@ Healthy Days 出品、「1分鐘醫聊室」系列醫生片（例如江振昌醫
 - 0 秒特寫（#camInner 1.35–1.4，transform-origin 540px 420px）+ 暗角（clip，z-index ≥ 5）。
 - 0.05 秒紅色心電圖線掃過；大字跟醫生講嗰個字撞入（scale 1.7→1，0.22 秒）+ 紅閃 + 確定性小震動。
 - 聲效：心跳（0 秒）+ 低頻重擊（撞入落地）；拉返闊鏡時 whoosh，暗角淡走；之後名牌即出。
+
+## 圖片風格（2026-10-02 用戶批：「可愛器官角色，啞面搪膠 3D」）
+- 用戶參考：寫實口腔入面有眼有手嘅牙仔角色。試過寫實濕潤版 → 用戶話「太質感太真實有點噁心」→ 改啞面乾淨版，用戶批。
+- **固定提示詞開頭（每張都用）**：`Cute stylized 3D character illustration, Pixar-style, soft matte smooth surfaces like a vinyl toy, clean and friendly, not realistic, no wet or glossy tissue, no veins, no gore.`
+- **主角**：`A cute anthropomorphic heart character: round coral-pink heart-shaped body, big round brown eyes, tiny arms and legs.`（其他器官同樣寫法：形狀＋顏色＋big round eyes, tiny arms and legs）
+- **固定結尾**：`Background: clean pale pink and soft light blue, gentle soft studio lighting, soft shadows, clean empty space at the top. Vertical composition, subject in the middle third. No text, no letters, no logos.`
+- Canva `generate-image`，`PORTRAIT_9_16`。儀器畫面留白（no numbers）；藥物用通用形狀（no brand, no packaging）。
+- 唔好用：寫實人體組織、濕潤反光、血管紋理；舊嘅黏土長者公仔同深藍光面心臟（doctor2 v5）已停用。
+
+## 畫面比例同圖片版面（2026-10-02 用戶指示）
+- 全片大約 **40% 見人物、40% 全屏（圖片為主，資訊卡最多 2 張）、20% 人物加圖片**。
+- **跳鏡（轉機位、全屏入場退場）盡量喺句與句之間**，長句可以喺逗號位。
+- 三款自家圖片卡（Kallaway 冇圖片卡）：`kallaway.x.image.full`（全屏圖 + 品牌標題條，膠囊放頂部留白位）、`kallaway.x.image.split`（上圖下人；主檔 #camInner scale 1.1、y 430）、`kallaway.x.image.pip`（胸口位浮框 + 膠囊，要用闊鏡 1.0）。
+- 清單卡 `kallaway.t1.overview.checklist` 可以每行配圓形縮圖（slot p1–p4）。

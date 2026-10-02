@@ -1,0 +1,90 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier2 · label · CALLOUT — 9:16 直向中文版（誤解 → 其實）
+  由 cards/tier2/t2-lb-callout.html 改：放胸口位（top 1040，離面遠啲，喺字幕 1390 之上），置中白色毛玻璃卡。
+  term＝講者提出嘅講法／誤解（大字），detail＝「其實…」嘅答案（細一級，重點可用 *星號* 標警示紅）。
+  Slots: term（≤ 7 字）, detail（≤ 12 字）。
+  data-cues：2 個數＝term、detail；3 個數＝term、劃線（否定 term）、detail。detail 留空＝只出 term + 劃線（cues：term、劃線）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #t2-lb-call { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #t2-lb-call .local-glow {
+        position: absolute; left: 110px; top: 1000px; width: 860px; height: 420px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.24) 0%, rgba(var(--accent-rgb), 0.07) 50%, transparent 76%);
+        filter: blur(48px); pointer-events: none;
+      }
+      #t2-lb-call .wrap { position: absolute; left: 90px; right: 90px; top: 1040px; display: flex; justify-content: center; }
+      #t2-lb-call .card {
+        background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi);
+        box-shadow: var(--glass-shadow); border-radius: var(--radius); padding: 34px 60px 40px;
+        position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; min-width: 560px;
+      }
+      #t2-lb-call .card::before {
+        content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.10), var(--accent) 50%, rgba(var(--accent-rgb), 0.10));
+        box-shadow: 0 2px 14px rgba(var(--accent-rgb), 0.55);
+      }
+      #t2-lb-call .term-row { position: relative; display: inline-block; }
+      #t2-lb-call .term { font: 900 96px/1.1 var(--font-display); color: var(--head); text-shadow: var(--textglow); white-space: nowrap; }
+      #t2-lb-call .strike { position: absolute; left: -12px; right: -12px; top: 52%; height: 10px; border-radius: 6px;
+        background: var(--alert); box-shadow: 0 0 12px rgba(var(--alert-rgb), 0.5); transform-origin: 0% 50%; transform: scaleX(0); }
+      #t2-lb-call .lower { overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+      #t2-lb-call .rule { width: 420px; height: 2px; margin: 26px 0 20px; background: linear-gradient(90deg, transparent, rgba(var(--accent-rgb), 0.6), transparent); }
+      #t2-lb-call .eyebrow { font: 900 64px/1 var(--font-body); letter-spacing: 0.12em; color: var(--accent); margin-bottom: 14px; }
+      #t2-lb-call .detail { font: 900 76px/1.2 var(--font-display); color: var(--head); white-space: nowrap; }
+      #t2-lb-call .detail b { font-weight: 900; color: var(--alert); }
+    </style>
+  </head>
+  <body>
+    <div id="t2-lb-call" data-composition-id="t2-lb-call" data-start="0" data-width="1080" data-height="1920">
+      <div class="local-glow"></div>
+      <div class="wrap"><div class="card">
+        <div class="term-row"><span class="term" data-slot="term">體能下降？</span><i class="strike"></i></div>
+        <div class="lower"><div class="rule"></div>
+        <div class="eyebrow">其實</div>
+        <div class="detail" data-slot="detail">再做運動可能令情況*惡化*</div></div>
+      </div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const COMP = "#t2-lb-call";
+      const ROOT = document.querySelector('[data-composition-id="t2-lb-call"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const det = ROOT.querySelector('.detail');
+      const raw = det.textContent; det.textContent = '';
+      raw.split(/(\*[^*]+\*)/).forEach(p => { if (!p) return; if (/^\*.*\*$/.test(p)) { const b = document.createElement('b'); b.textContent = p.slice(1, -1); det.appendChild(b); } else det.appendChild(document.createTextNode(p)); });
+      const noDet = !raw.trim();
+      const tTerm = CUES.length ? CUES[0] : 0.5;
+      const tStrike = CUES.length >= 3 ? CUES[1] : (noDet && CUES.length === 2 ? CUES[1] : null);
+      const tDet = CUES.length >= 3 ? CUES[2] : (CUES.length === 2 ? CUES[1] : tTerm + 1.6);
+      const t0 = Math.max(0, tTerm - 0.35);
+      tl.from(COMP + ' .local-glow', { autoAlpha: 0, scale: 0.55, transformOrigin: "50% 50%", duration: 1.3, ease: "expo.out" }, t0)
+        .from(COMP + ' .card', { autoAlpha: 0, y: 40, filter: "blur(14px)", duration: 0.8, ease: "back.out(1.4)" }, t0)
+        .from(COMP + ' .term', { autoAlpha: 0, y: 18, filter: "blur(14px)", duration: 0.65, ease: "power4.out" }, tTerm);
+      const LOW = ROOT.querySelector('.lower'); const LH = LOW.offsetHeight;
+      tl.set(LOW, { height: 0 }, 0);
+      if (tStrike !== null) tl.to(COMP + ' .strike', { scaleX: 1, duration: 0.3, ease: "power3.out" }, tStrike)
+        .to(COMP + ' .term', { opacity: 0.45, duration: 0.3 }, tStrike + 0.1);
+      /* 答案：卡向下伸長，再逐行出 */
+      if (noDet) LOW.style.display = 'none';
+      if (!noDet) {
+      tl.to(LOW, { height: LH, duration: 0.45, ease: "power3.inOut" }, tDet - 0.45)
+        .from(COMP + ' .rule', { autoAlpha: 0, scaleX: 0, duration: 0.4, ease: "power3.out" }, tDet - 0.3)
+        .from(COMP + ' .eyebrow', { autoAlpha: 0, y: 10, duration: 0.35, ease: "power3.out" }, tDet - 0.2)
+        .from(COMP + ' .detail', { autoAlpha: 0, y: 20, filter: "blur(12px)", duration: 0.6, ease: "power4.out" }, tDet);
+      }
+      const DUR = +ROOT.dataset.dur || 7;
+      tl.to(COMP + ' .wrap, ' + COMP + ' .local-glow', { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, DUR - 0.45)
+        .set({}, {}, 7);
+      window.__timelines["t2-lb-call"] = tl;
+    </script>
+  </body>
+</html>

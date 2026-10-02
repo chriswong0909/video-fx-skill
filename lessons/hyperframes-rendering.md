@@ -45,3 +45,13 @@
 - 效果顏色用 `var(--c-x, #後備)`／`color-mix()`；SVG 屬性入面 var() 唔生效，要寫喺 style。
 - snippet 要有 tokens 讀取器（`window.EASE`／`window.DUR`）先用得 `DUR.*`；冇讀取器會 `DUR is not defined`，成段動畫唔出。
 - `scripts/fx-shot.cjs` 可以一次過截晒 79 個效果，token 化前後逐張比對（平均像素差 > 3 就要人手睇）。
+
+## 風格包卡掛入主檔（2026-10-01，doctor2 風格包版）
+- **host 要有 z-index**：主檔講者包喺 `#cam{z-index:2}`，卡 host 冇 z-index 就會畫喺講者後面（全屏卡變透明、細卡完全唔見）。host 加 `class="cardhost"`：`.cardhost{position:absolute;inset:0;z-index:12}`，全屏卡 `.cardhost.t1{z-index:14}`。
+- **host 都要帶 `data-dur` / `data-cues`**：卡用 `document.querySelector('[data-composition-id=X]')` 搵 ROOT，主檔入面會先搵到 host，冇呢兩個屬性就會用預設時間（逐項出現同唔到聲）。`cards.py use` 印出嘅 snippet 已經自動加。
+- **舊主檔 CSS 會污染卡**：沿用舊 index.html 時，要刪走 `.card`、`.row`、`.side` 之類通用 class 規則，否則會套落卡入面同名 class。
+
+## 長片要分段 render（2026-10-02，doctor2 風格包版）
+- 本機 shell 每次最多 180 秒，而且背景程序會跟住收（nohup 都冇用）；80 秒片一次過 render 要 4 分鐘以上，會中途斷。雲端容器裝唔到 hyperframes（npm 403）。workers 8 會爆記憶體（4 核 4GB，用 4）。
+- 做法：`python3 chunk.py T0 T1 名`（範本喺 `~/hf/d2k/chunk.py`）切一段獨立專案：所有 `data-start` 減 T0、講者 video 加 `data-media-start`、主時間軸用 `W.add(tl.tweenFromTo(T0,T1,{ease:'none'}),0)` 包住。**切位要揀冇卡嘅時間**（卡跨過切位會報錯）。
+- 速度約 3.5–4 秒 render 1 秒片（draft）；每段 ≤ 28 秒先穩陣。之後 `ffmpeg -f concat -c copy` 駁返，再 mux 聲效混音。接駁位抽格對比過冇跳。

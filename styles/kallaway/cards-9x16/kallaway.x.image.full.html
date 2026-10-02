@@ -1,0 +1,86 @@
+<!doctype html>
+<!--
+  KALLAWAY × Healthy Days · 自家卡 · IMAGE FULL — 全屏圖片（9:16）
+  新手包 Kallaway 冇圖片卡；呢張借舊效果庫 FX-058 嘅慢推 + 品牌標題條 + Kallaway 玻璃大字。
+  句與句之間硬切入、硬切走，圖片全程慢慢推近。
+  三層字（全部 ≥ 字幕 76px）：
+    title = 左上藍色標題條，**只放段落標題／分題**（例如「伴隨症狀」「有些長者」），84px；唔好放內容字。
+    big   = 內容大字（白玻璃底 + 漸變字 110px），放圖片頂部留白位（top 400），講到嗰個字先出。
+    tags  = 一行／兩行品牌藍膠囊（76px，用「、」分），同 big 二揀一，位置一樣。
+  有 big／tags 交代咗意思，嗰句字幕就唔出（節拍表 skipcaps）。
+  Slots: img, pos（圖片焦點，預設 50% 50%）, zoom（預設 1；例如 1.2＝由頂部放大，圖入面嘅嘢向下移，避開頂部嘅字）, title, big, tags。
+  data-cues 次序：title（寫 0＝一開始已經喺度，唔做滑入，用喺連續兩張圖同一個標題）→ big → 每個 tag。冇嗰層就唔使寫。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; }
+      #x-img-full { position: absolute; inset: 0; width: 1080px; height: 1920px; background: var(--canvas); overflow: hidden; font-family: var(--font-display); }
+      #x-img-full .pic { position: absolute; inset: 0; overflow: hidden; }
+      #x-img-full .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 55%; }
+      #x-img-full .pos { display: none; }
+      #x-img-full .ttag { position: absolute; left: 0; top: 228px; height: 128px; display: flex; align-items: center; gap: 24px; box-sizing: border-box;
+        padding: 0 52px 0 40px; background: var(--tag, #2f68a8); border-radius: 0 999px 999px 0; box-shadow: 0 10px 28px rgba(11, 42, 58, 0.22); max-width: 690px; overflow: hidden; }
+      #x-img-full .ttag svg { width: 60px; height: 60px; flex: 0 0 auto; }
+      #x-img-full .tx { font: 900 84px/1 var(--font-display); color: #fff; white-space: nowrap; }
+      #x-img-full .mid { position: absolute; left: 52px; right: 52px; top: 400px; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+      #x-img-full .underlay { background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi); box-shadow: var(--glass-shadow); border-radius: var(--radius);
+        padding: 16px 52px 20px; position: relative; overflow: hidden; }
+      #x-img-full .underlay::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 5px;
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.10), var(--accent) 50%, rgba(var(--accent-rgb), 0.10)); }
+      #x-img-full .big { font: 900 110px/1.1 var(--font-display); white-space: nowrap; display: block;
+        background: linear-gradient(100deg, var(--grad-start) 0%, var(--grad-start) 45%, var(--accent) 85%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+      #x-img-full .tag-row { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+      #x-img-full .tag { display: inline-flex; align-items: center; gap: 12px; padding: 14px 30px 18px; border-radius: 999px; white-space: nowrap;
+        background: rgba(var(--accent-rgb), 0.95); border: 3px solid rgba(255, 255, 255, 0.7); box-shadow: 0 8px 22px rgba(11, 42, 58, 0.22); }
+      #x-img-full .tag-dot { width: 14px; height: 14px; border-radius: 50%; background: #fff; flex-shrink: 0; }
+      #x-img-full .tag-text { font: 900 76px/1 var(--font-display); color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="x-img-full" data-composition-id="x-img-full" data-start="0" data-width="1080" data-height="1920">
+      <div class="pic"><img data-slot="img" src="assets/img/k01_pump.jpg" alt="" /></div>
+      <i class="pos" data-slot="pos">50% 50%</i>
+      <i class="pos zoom" data-slot="zoom">1</i>
+      <div class="ttag"><svg viewBox="0 0 54 54"><path d="M19 4h16v15h15v16H35v15H19V35H4V19h15z" fill="#ffffff" /></svg><div class="tx" data-slot="title"></div></div>
+      <div class="mid">
+        <div class="underlay"><span class="big" data-slot="big"></span></div>
+        <div class="tag-row" data-slot="tags"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="x-img-full"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 5;
+      const IMG = ROOT.querySelector('.pic img');
+      IMG.style.objectPosition = (ROOT.querySelector('.pos:not(.zoom)').textContent.trim() || '50% 50%');
+      const Z = parseFloat(ROOT.querySelector('.zoom').textContent) || 1;   /* zoom > 1：由頂部放大，圖入面嘅嘢向下移，讓位俾頂部嘅字 */
+      if (Z > 1) IMG.style.transformOrigin = '50% 0%';
+      tl.fromTo(IMG, { scale: Z }, { scale: Z * 1.07, duration: DUR, ease: "none" }, 0);
+      let ci = 0; const next = d => (CUES.length > ci ? CUES[ci++] : (ci++, d));
+      const TAG = ROOT.querySelector('.ttag'); const hasTitle = !!ROOT.querySelector('.tx').textContent.trim();
+      if (!hasTitle) TAG.style.display = 'none';
+      else { const t = next(0.2); if (t > 0.01) tl.fromTo(TAG, { xPercent: -110 }, { xPercent: 0, duration: 0.4, ease: "power3.out" }, Math.max(0, t - 0.15)); }
+      const UL = ROOT.querySelector('.underlay'); const hasBig = !!ROOT.querySelector('.big').textContent.trim();
+      if (!hasBig) UL.style.display = 'none';
+      else { const t = next(0.5);
+        tl.from(UL, { autoAlpha: 0, y: -30, filter: "blur(14px)", duration: 0.6, ease: "back.out(1.4)" }, Math.max(0, t - 0.3))
+          .from(ROOT.querySelector('.big'), { autoAlpha: 0, y: 18, filter: "blur(16px)", duration: 0.55, ease: "power4.out" }, Math.max(0, t - 0.05)); }
+      const row = ROOT.querySelector('.tag-row');
+      const tags = row.textContent.split(/[、,，]/).map(s => s.trim()).filter(Boolean);
+      row.textContent = '';
+      tags.forEach((s, i) => { const d = document.createElement('div'); d.className = 'tag'; d.id = 'x-img-full-t' + i;
+        const dot = document.createElement('div'); dot.className = 'tag-dot'; const tx = document.createElement('div'); tx.className = 'tag-text'; tx.textContent = s;
+        d.appendChild(dot); d.appendChild(tx); row.appendChild(d);
+        tl.from(d, { autoAlpha: 0, y: 26, scale: 0.7, transformOrigin: "50% 100%", duration: 0.5, ease: "back.out(1.7)" }, next(0.6 + i * 0.4)); });
+      tl.set({}, {}, 7);
+      window.__timelines["x-img-full"] = tl;
+    </script>
+  </body>
+</html>

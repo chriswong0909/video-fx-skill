@@ -90,6 +90,9 @@ def inline_tokens(style, brand):
     return '\n'.join(imports), css
 
 def fill_slot(t, name, value):
+    ipat = re.compile(r'(<img\b[^>]*\bdata-slot="' + re.escape(name) + r'"[^>]*?)\ssrc="[^"]*"')
+    if ipat.search(t):                                   # 圖片 slot：改 src（路徑用專案根目錄相對，例如 assets/img/x.jpg）
+        return ipat.sub(lambda m: m.group(1) + ' src="' + html.escape(value, quote=True) + '"', t, count=1)
     pat = re.compile(r'(<(\w+)[^>]*\bdata-slot="' + re.escape(name) + r'"[^>]*>)(.*?)(</\2>)', re.S)
     if not pat.search(t): print(f'! 卡入面冇 slot「{name}」'); return t
     v = value if re.search(r'<\w', value) else html.escape(value)
@@ -123,7 +126,8 @@ def cmd_use(a):
     rest = [x['name'] for x in c.get('slots', []) if x['name'] not in slots]
     if rest: print(f'! 未填 slot：{", ".join(rest)}（用卡入面預設內容；空白嘅會自動隱藏）')
     print(f'✓ {out}')
-    print(f'<div data-composition-id="{a.name}" data-composition-src="compositions/{a.name}.html" data-start="START" data-duration="{a.dur}" '
+    # host 都要帶 data-dur / data-cues：卡用 document.querySelector('[data-composition-id=…]') 搵 ROOT，喺主檔會先搵到 host
+    print(f'<div data-composition-id="{a.name}" data-composition-src="compositions/{a.name}.html"{extra} data-start="START" data-duration="{a.dur}" '
           f'data-width="1080" data-height="1920" data-track-index="TRACK"></div>')
 
 def cmd_verify(a):

@@ -1,0 +1,90 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier1 · overview · DECK2 — 9:16 直向中文版（兩個情況／兩類嘢）
+  由 cards/tier1/t1-overview-deck2.html 改：直向上下兩張大玻璃卡，標題喺 logo 下面（top 392）。
+  Slots: title（≤ 8 字，可用 <em>）, c1_k / c2_k（膠囊小標，≤ 5 字，預設 01／02）, c1_h / c2_h（主句 ≤ 9 字）, c1_b / c2_b（補充 ≤ 12 字，可留空）。
+  data-cues：標題、卡1、卡2（之後可選：補充1、補充2）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; }
+      #t1-ov-deck2 { position: absolute; inset: 0; width: 1080px; height: 1920px; background: var(--canvas); color: var(--text); font-family: var(--font-display); overflow: hidden; }
+      #t1-ov-deck2 .bloom { position: absolute; inset: 0; background: var(--bloom-bottom); z-index: 1; }
+      #t1-ov-deck2 .bloom-corner { position: absolute; inset: 0; background: var(--bloom-corner); z-index: 1; opacity: 0.6; }
+      #t1-ov-deck2 .grid { position: absolute; inset: 0; z-index: 1; background-image: var(--dot); background-size: var(--dot-size); opacity: 0.42;
+        -webkit-mask-image: radial-gradient(130% 90% at 50% 55%, #000 28%, transparent 78%); mask-image: radial-gradient(130% 90% at 50% 55%, #000 28%, transparent 78%); }
+      #t1-ov-deck2 .title { position: absolute; left: var(--pad); right: var(--pad); top: 392px; text-align: center; z-index: 4;
+        font: 900 var(--size-headline)/1.12 var(--font-display); color: var(--head); text-shadow: var(--textglow); }
+      #t1-ov-deck2 .title em { font-style: normal; color: var(--accent); text-shadow: var(--textglow-accent); }
+      #t1-ov-deck2 .cards { position: absolute; left: var(--pad); right: var(--pad); top: 590px; bottom: 400px; display: flex; flex-direction: column; gap: 44px; z-index: 4; }
+      #t1-ov-deck2 .card { flex: 1; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center;
+        background: var(--glass-bg-dark); border: var(--stroke) solid var(--glass-border); border-radius: var(--radius-lg);
+        box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-hi); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        padding: 44px 64px 48px 76px; }
+      #t1-ov-deck2 .card::after { content: ""; position: absolute; left: 0; top: 40px; bottom: 40px; width: 8px; border-radius: 0 6px 6px 0;
+        background: var(--accent); box-shadow: 0 0 14px rgba(var(--accent-rgb), 0.45); }
+      #t1-ov-deck2 #deck-c2::after { background: var(--accent-2); box-shadow: 0 0 14px rgba(var(--accent2-rgb), 0.45); }
+      #t1-ov-deck2 .chip { display: inline-flex; align-items: center; gap: 12px; align-self: flex-start; margin-bottom: 26px;
+        border: 2px solid rgba(var(--accent-rgb), 0.48); border-radius: 999px; padding: 8px 26px 10px;
+        font: 900 56px/1 var(--font-body); letter-spacing: 0.08em; color: var(--accent); background: rgba(var(--accent-rgb), 0.07); }
+      #t1-ov-deck2 #deck-c2 .chip { border-color: rgba(var(--accent2-rgb), 0.55); color: #0E8FA3; background: rgba(var(--accent2-rgb), 0.08); }
+      #t1-ov-deck2 .chip-dot { width: 12px; height: 12px; border-radius: 50%; background: currentColor; }
+      #t1-ov-deck2 .card-heading { font: 900 92px/1.12 var(--font-display); color: var(--head); text-shadow: var(--textglow); }
+      #t1-ov-deck2 .card-quote { font: 700 var(--size-body)/1.3 var(--font-body); color: var(--text-dim); margin-top: 22px;
+        border-left: 4px solid rgba(var(--accent-rgb), 0.35); padding-left: 26px; }
+      #t1-ov-deck2 #deck-c2 .card-quote { border-left-color: rgba(var(--accent2-rgb), 0.45); }
+      #t1-ov-deck2 .card-quote:empty { display: none; }
+      #t1-ov-deck2 .vignette { position: absolute; inset: 0; pointer-events: none; z-index: 6; background: var(--vignette); }
+      #t1-ov-deck2 .grain { position: absolute; inset: -40px; background: var(--tex-grain); background-size: 200px 200px; mix-blend-mode: overlay; opacity: 0.10; pointer-events: none; z-index: 7; }
+    </style>
+  </head>
+  <body>
+    <div id="t1-ov-deck2" data-composition-id="t1-ov-deck2" data-start="0" data-width="1080" data-height="1920">
+      <div class="bloom"></div>
+      <div class="bloom-corner"></div>
+      <div class="grid"></div>
+      <div class="title" data-slot="title">兩類<em>藥物</em></div>
+      <div class="cards">
+        <div class="card" id="deck-c1">
+          <div class="chip"><div class="chip-dot"></div><span data-slot="c1_k">01</span></div>
+          <div class="card-heading" data-slot="c1_h">第一項</div>
+          <div class="card-quote" data-slot="c1_b"></div>
+        </div>
+        <div class="card" id="deck-c2">
+          <div class="chip"><div class="chip-dot"></div><span data-slot="c2_k">02</span></div>
+          <div class="card-heading" data-slot="c2_h">第二項</div>
+          <div class="card-quote" data-slot="c2_b"></div>
+        </div>
+      </div>
+      <div class="vignette"></div>
+      <div class="grain"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="t1-ov-deck2"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const c = (i, d) => CUES.length > i ? CUES[i] : d;
+      const tT = c(0, 0.55), t1 = c(1, tT + 0.55), t2 = c(2, t1 + 0.2);
+      tl.fromTo("#t1-ov-deck2 .grain", { backgroundPosition: "0px 0px" }, { backgroundPosition: "110px 85px", duration: 0.6, ease: "none", repeat: 13, yoyo: true }, 0);
+      tl.from("#t1-ov-deck2 .bloom", { autoAlpha: 0, scale: 0.92, transformOrigin: "50% 120%", duration: 1.4, ease: "expo.out" }, 0)
+        .from("#t1-ov-deck2 .bloom-corner", { autoAlpha: 0, duration: 1.2, ease: "power2.out" }, 0.3)
+        .from("#t1-ov-deck2 .grid", { autoAlpha: 0, duration: 1.1, ease: "power2.out" }, 0.2)
+        .from("#t1-ov-deck2 .title", { autoAlpha: 0, y: 26, filter: "blur(14px)", duration: 0.9, ease: "power4.out" }, tT)
+        .from("#deck-c1", { autoAlpha: 0, x: -70, scale: 0.95, transformOrigin: "0% 50%", filter: "blur(12px)", duration: 0.85, ease: "back.out(1.4)" }, t1)
+        .from("#deck-c2", { autoAlpha: 0, x: 70, scale: 0.95, transformOrigin: "100% 50%", filter: "blur(12px)", duration: 0.85, ease: "back.out(1.4)" }, t2);
+      if (CUES.length > 3) tl.from("#deck-c1 .card-quote", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power3.out" }, CUES[3]);
+      if (CUES.length > 4) tl.from("#deck-c2 .card-quote", { autoAlpha: 0, y: 12, duration: 0.5, ease: "power3.out" }, CUES[4]);
+      tl.to("#deck-c1", { boxShadow: "0 18px 48px rgba(11,42,58,0.12), 0 0 0 2px rgba(" + (getComputedStyle(ROOT).getPropertyValue('--accent-rgb').trim() || '55,189,248') + ",0.35)", duration: 0.5, ease: "power2.out" }, t1 + 0.6)
+        .to("#t1-ov-deck2 .bloom", { opacity: 0.75, duration: 1.3, ease: "sine.inOut", repeat: 2, yoyo: true }, t2 + 0.8);
+      const DUR = +ROOT.dataset.dur || 7;
+      tl.to("#t1-ov-deck2 .title, #t1-ov-deck2 .cards", { autoAlpha: 0, scale: 0.97, filter: "blur(10px)", duration: 0.45, ease: "power2.in" }, DUR - 0.5)
+        .set({}, {}, 7);
+      window.__timelines["t1-ov-deck2"] = tl;
+    </script>
+  </body>
+</html>

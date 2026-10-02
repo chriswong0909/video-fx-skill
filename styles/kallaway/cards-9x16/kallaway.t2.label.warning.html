@@ -1,0 +1,91 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier2 · label · WARNING — 9:16 直向中文版
+  由 cards/tier2/t2-lb-warning.html 改：放胸口位（top 980，離面遠啲；全部字 ≥ 字幕 76px，用呢張卡嗰句字幕唔出），置中。
+  由上而下：⚠ 警號 → 症狀膠囊（detail 用「｜」分）→ 紅線 → 結論大字（term，警示紅）。
+  Slots: detail（症狀，每個 ≤ 6 字，最多 3 個，用「｜」分）, term（結論 ≤ 7 字）。
+  data-cues：每個症狀一個 + 最後一個＝term 出現（秒數由卡開始計）。例如 3 個數＝2 症狀 + term。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #t2-lb-warn { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #t2-lb-warn .local-glow {
+        position: absolute; left: 90px; top: 940px; width: 900px; height: 560px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(var(--alert-rgb), 0.20) 0%, rgba(var(--alert-rgb), 0.06) 50%, transparent 76%);
+        filter: blur(50px); pointer-events: none;
+      }
+      #t2-lb-warn .wrap { position: absolute; left: 60px; right: 60px; top: 980px; display: flex; justify-content: center; }
+      #t2-lb-warn .card {
+        background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border: 1.5px solid rgba(var(--alert-rgb), 0.30); border-top: 1.5px solid rgba(var(--alert-rgb), 0.55);
+        box-shadow: var(--glass-shadow), 0 0 0 1px rgba(var(--alert-rgb), 0.08), 0 0 44px rgba(var(--alert-rgb), 0.14);
+        border-radius: var(--radius); padding: 30px 40px 36px; position: relative; overflow: hidden;
+        display: flex; flex-direction: column; align-items: center; min-width: 560px;
+      }
+      #t2-lb-warn .card::before {
+        content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
+        background: linear-gradient(90deg, transparent 0%, rgba(var(--alert-rgb), 0.85) 35%, rgba(var(--alert-rgb), 0.85) 65%, transparent 100%);
+        box-shadow: 0 0 14px rgba(var(--alert-rgb), 0.55);
+      }
+      #t2-lb-warn .badge-row { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+      #t2-lb-warn .warn-tri { width: 0; height: 0; border-left: 25px solid transparent; border-right: 25px solid transparent; border-bottom: 44px solid var(--alert);
+        filter: drop-shadow(0 0 8px rgba(var(--alert-rgb), 0.60)); position: relative; }
+      #t2-lb-warn .warn-tri::after { content: "!"; position: absolute; left: -6px; top: 12px; font: 900 26px/1 var(--font-display); color: #fff; }
+      #t2-lb-warn .warn-label { font: 900 64px/1 var(--font-body); letter-spacing: 0.12em; color: var(--alert); }
+      #t2-lb-warn .chips { display: flex; gap: 22px; justify-content: center; flex-wrap: wrap; }
+      #t2-lb-warn .chip {
+        font: 900 80px/1.1 var(--font-display); color: var(--head); white-space: nowrap;
+        padding: 10px 34px 14px; border-radius: 999px;
+        background: rgba(var(--alert-rgb), 0.08); border: 2px solid rgba(var(--alert-rgb), 0.40);
+      }
+      #t2-lb-warn .rule { width: 100%; height: 3px; margin: 30px 0 22px; transform-origin: 50% 50%;
+        background: linear-gradient(90deg, transparent, var(--alert) 30%, var(--alert) 70%, transparent); box-shadow: 0 0 8px rgba(var(--alert-rgb), 0.40); }
+      #t2-lb-warn .term { font: 900 88px/1.1 var(--font-display); color: var(--alert); white-space: nowrap;
+        text-shadow: 0 0 24px rgba(var(--alert-rgb), 0.25); }
+      #t2-lb-warn .term:empty { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="t2-lb-warn" data-composition-id="t2-lb-warn" data-start="0" data-width="1080" data-height="1920">
+      <div class="local-glow"></div>
+      <div class="wrap"><div class="card">
+        <div class="badge-row"><div class="warn-tri"></div><div class="warn-label">警號</div></div>
+        <div class="chips" data-slot="detail">腳腫｜睡平時氣喘</div>
+        <div class="rule"></div>
+        <div class="term" data-slot="term">心衰竭初期？</div>
+      </div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const COMP = "#t2-lb-warn";
+      const ROOT = document.querySelector('[data-composition-id="t2-lb-warn"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const box = ROOT.querySelector('.chips');
+      const items = box.textContent.split('｜').map(s => s.trim()).filter(Boolean);
+      box.textContent = '';
+      items.forEach((s, i) => { const d = document.createElement('div'); d.className = 'chip'; d.id = 't2-lb-warn-c' + i; d.textContent = s; box.appendChild(d); });
+      const tc = i => CUES.length > i ? CUES[i] : 0.6 + i * 0.5;
+      const t0 = Math.max(0, tc(0) - 0.45);
+      tl.from(COMP + ' .local-glow', { autoAlpha: 0, scale: 0.55, transformOrigin: "50% 50%", duration: 1.3, ease: "expo.out" }, t0)
+        .from(COMP + ' .card', { autoAlpha: 0, y: 40, filter: "blur(14px)", duration: 0.8, ease: "back.out(1.4)" }, t0)
+        .from(COMP + ' .badge-row', { autoAlpha: 0, scale: 0.7, transformOrigin: "50% 50%", duration: 0.5, ease: "back.out(1.7)" }, t0 + 0.2);
+      items.forEach((s, i) => {
+        tl.from('#t2-lb-warn-c' + i, { autoAlpha: 0, y: 18, scale: 0.85, filter: "blur(8px)", duration: 0.5, ease: "back.out(1.6)" }, tc(i));
+      });
+      const tt = tc(items.length);
+      tl.from(COMP + ' .rule', { scaleX: 0, duration: 0.45, ease: "power3.out" }, tt - 0.2)
+        .from(COMP + ' .term', { autoAlpha: 0, y: 22, scale: 1.12, filter: "blur(16px)", duration: 0.6, ease: "power4.out" }, tt)
+        .to(COMP + ' .warn-tri', { filter: "drop-shadow(0 0 18px rgba(232,69,44,0.95))", duration: 0.8, ease: "sine.inOut", repeat: 3, yoyo: true }, tt + 0.4);
+      const DUR = +ROOT.dataset.dur || 7;
+      tl.to(COMP + ' .wrap, ' + COMP + ' .local-glow', { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, DUR - 0.45)
+        .set({}, {}, 7);
+      window.__timelines["t2-lb-warn"] = tl;
+    </script>
+  </body>
+</html>

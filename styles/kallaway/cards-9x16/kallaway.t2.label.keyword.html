@@ -1,7 +1,7 @@
 <!doctype html>
 <!--
   KALLAWAY · tier2 · label · KEYWORD — 9:16 直向中文版
-  由 cards/tier2/t2-lb-keyword.html 改：置中放喺 logo 下面（y 380 起，冇 note 時底部約 y 555），唔遮面；
+  由 cards/tier2/t2-lb-keyword.html 改：2026-10-02 用戶話放頭頂太貼面 → 搬去胸口位（top 1120，字幕位之上／取代字幕），大字 120px、註 76px（唔細過字幕）；用呢張卡嗰句字幕唔出（skipcaps）。舊位置 y 380 已停用；
   講者頭頂好近（推近鏡）就唔好用 note，或者改用 lower-third 類卡。
   漸變發光大字（白→品牌藍）+ 深色玻璃底 + 細註。透明背景，疊喺講者上面。
   Slots: term（≤ 6 字）, note（≤ 14 字，可留空）。data-cues：第一個數＝大字出現秒數。
@@ -17,11 +17,11 @@
         background: transparent; overflow: hidden; font-family: var(--font-display);
       }
       #t2-lb-key .local-glow {
-        position: absolute; left: 140px; top: 330px; width: 800px; height: 300px; border-radius: 50%;
+        position: absolute; left: 140px; top: 1080px; width: 800px; height: 320px; border-radius: 50%;
         background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.30) 0%, rgba(var(--accent-rgb), 0.08) 50%, transparent 75%);
         filter: blur(44px); pointer-events: none;
       }
-      #t2-lb-key .wrap { position: absolute; left: 90px; right: 90px; top: 372px; display: flex; justify-content: center; }
+      #t2-lb-key .wrap { position: absolute; left: 60px; right: 60px; top: 1120px; display: flex; justify-content: center; }
       #t2-lb-key .underlay {
         background: var(--glass-bg-dark);
         backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
@@ -35,14 +35,14 @@
         box-shadow: 0 2px 14px rgba(var(--accent-rgb), 0.55);
       }
       #t2-lb-key .keyword {
-        font-family: var(--font-display); font-weight: 900; font-size: 104px; line-height: 1.08;
+        font-family: var(--font-display); font-weight: 900; font-size: 120px; line-height: 1.08;
         background: linear-gradient(100deg, var(--grad-start) 0%, var(--grad-start) 45%, var(--accent) 80%, rgba(var(--accent-rgb), 0.8) 100%);
         -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
         filter: var(--kw-glow);
         display: block; white-space: nowrap;
       }
       #t2-lb-key .note {
-        font-family: var(--font-body); font-weight: 700; font-size: 44px; color: var(--text-dim); margin-top: 10px; white-space: nowrap;
+        font-family: var(--font-body); font-weight: 900; font-size: 76px; color: var(--head); margin-top: 12px; white-space: nowrap;
       }
       #t2-lb-key .note:empty { display: none; }
     </style>
@@ -63,6 +63,8 @@
       const ROOT = document.querySelector('[data-composition-id="t2-lb-key"]');
       const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
       const A = getComputedStyle(ROOT).getPropertyValue('--accent-rgb').trim() || '55,189,248';
+      /* 長過 7 個字自動縮細，唔好爆出安全區（最細都大過字幕 76px） */
+      const KW = ROOT.querySelector('.keyword'); const n = KW.textContent.trim().length; if (n > 7) KW.style.fontSize = Math.max(84, Math.floor(840 / n)) + 'px';
       const t0 = CUES.length ? Math.max(0, CUES[0] - 0.32) : 0.2;   /* 大字喺講嗰刻清晰：玻璃底早少少入 */
       tl.from((COMP) + ' .local-glow', { autoAlpha: 0, scale: 0.5, transformOrigin: "50% 50%", duration: 1.3, ease: "expo.out" }, Math.max(0, t0 - 0.2))
         .from((COMP) + ' .underlay', { autoAlpha: 0, y: -36, filter: "blur(14px)", duration: 0.82, ease: "back.out(1.4)" }, t0)

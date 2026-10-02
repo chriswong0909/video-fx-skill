@@ -1,0 +1,549 @@
+[
+ {
+  "name": "b01",
+  "t0": 7.18,
+  "dur": 2.74,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "影響心臟供血令到氣喘",
+  "slots": {
+   "img": "assets/img/k01_pump.jpg",
+   "big": "影響心臟供血"
+  },
+  "cues": "0.3",
+  "why": "全屏圖：心臟泵唔郁。喺逗號位切入",
+  "skipcaps": [
+   7.18
+  ],
+  "sfx": [
+   {
+    "t": 7.18,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入全屏圖"
+   }
+  ]
+ },
+ {
+  "name": "b02",
+  "t0": 11.54,
+  "dur": 1.86,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "例如腳腫",
+  "slots": {
+   "img": "assets/img/k02_ankle.jpg",
+   "title": "伴隨症狀",
+   "big": "腳腫"
+  },
+  "cues": "0.15,0.4",
+  "why": "全屏圖：腳踝積水",
+  "skipcaps": [
+   11.54
+  ],
+  "sfx": [
+   {
+    "t": 11.7,
+    "sfx": "SFX-014",
+    "vol": 0.32,
+    "why": "標題條伸出"
+   }
+  ]
+ },
+ {
+  "name": "b03",
+  "t0": 13.4,
+  "dur": 1.32,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "睡平時氣喘",
+  "slots": {
+   "img": "assets/img/k03_lungs.jpg",
+   "title": "伴隨症狀",
+   "big": "睡平時氣喘"
+  },
+  "cues": "0,0.2",
+  "why": "全屏圖：瞓平肺積水",
+  "skipcaps": [
+   13.4
+  ],
+  "sfx": []
+ },
+ {
+  "name": "b04",
+  "t0": 14.72,
+  "dur": 2.76,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.warning",
+  "anchor": "有機會是心衰竭的初期",
+  "slots": {
+   "detail": "腳腫｜睡平時氣喘",
+   "term": "有機會是心衰竭初期"
+  },
+  "cues": "0.3,0.42,0.75",
+  "why": "警號卡：兩個症狀 → 結論",
+  "skipcaps": [
+   14.72
+  ],
+  "sfx": [
+   {
+    "t": 15.5,
+    "sfx": "SFX-018",
+    "vol": 0.3,
+    "why": "警號結論落地"
+   }
+  ]
+ },
+ {
+  "name": "b05",
+  "t0": 19.1,
+  "dur": 4.3,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.callout",
+  "anchor": "以為自己氣喘是因為體能下降。其實…",
+  "slots": {
+   "term": "體能下降？",
+   "detail": ""
+  },
+  "cues": "0.46,1.42",
+  "why": "拆誤解：講到「其實」就劃走",
+  "skipcaps": [
+   19.18
+  ],
+  "sfx": [
+   {
+    "t": 19.56,
+    "sfx": "SFX-014",
+    "vol": 0.3,
+    "why": "卡浮入"
+   },
+   {
+    "t": 20.7,
+    "sfx": "SFX-010",
+    "vol": 0.3,
+    "why": "紅線劃走誤解"
+   }
+  ]
+ },
+ {
+  "name": "b06",
+  "t0": 23.4,
+  "dur": 3.38,
+  "mode": "pip",
+  "tier": "tier2",
+  "card": "kallaway.x.image.pip",
+  "anchor": "再做運動可能會令到情況惡化",
+  "slots": {
+   "img": "assets/img/k04_failure.jpg",
+   "pos": "50% 58%",
+   "tags": "再做運動、可能惡化"
+  },
+  "cues": "0.4,0.5,1.6",
+  "why": "人物加圖片（浮框）：心臟冇力",
+  "skipcaps": [
+   23.58,
+   25.0
+  ],
+  "sfx": [
+   {
+    "t": 23.8,
+    "sfx": "SFX-005",
+    "vol": 0.28,
+    "why": "圖片框彈入"
+   }
+  ]
+ },
+ {
+  "name": "b07",
+  "t0": 26.78,
+  "dur": 6.98,
+  "mode": "card",
+  "tier": "tier1",
+  "card": "kallaway.t1.overview.checklist",
+  "anchor": "因為氣喘有機會可能是心臟衰竭、心律不正，又或者心血管收窄",
+  "slots": {
+   "title": "3 個<em>心臟</em>問題",
+   "i1": "心臟衰竭",
+   "i2": "心律不正",
+   "i3": "心血管收窄",
+   "i4": "",
+   "p1": "assets/img/k04_failure.jpg",
+   "p2": "assets/img/k05_rhythm.jpg",
+   "p3": "assets/img/k06_artery.jpg"
+  },
+  "cues": "0.3,1.8,2.64,4.58",
+  "why": "資訊卡 1：每行配圓形圖。留到下一句逗號位先切走",
+  "sfx": [
+   {
+    "t": 26.9,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入資訊卡"
+   },
+   {
+    "t": 28.75,
+    "sfx": "SFX-006",
+    "vol": 0.3,
+    "why": "第 1 行"
+   },
+   {
+    "t": 29.6,
+    "sfx": "SFX-006",
+    "vol": 0.3,
+    "why": "第 2 行"
+   },
+   {
+    "t": 31.55,
+    "sfx": "SFX-006",
+    "vol": 0.3,
+    "why": "第 3 行"
+   }
+  ],
+  "skipcaps": []
+ },
+ {
+  "name": "b08",
+  "t0": 33.76,
+  "dur": 2.7,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.keyword",
+  "anchor": "應該盡早找醫生做詳細檢查",
+  "slots": {
+   "term": "盡早檢查",
+   "note": "找醫生做詳細檢查"
+  },
+  "cues": "0.32",
+  "why": "行動呼籲",
+  "skipcaps": [
+   33.76,
+   34.94
+  ],
+  "sfx": [
+   {
+    "t": 34.2,
+    "sfx": "SFX-009",
+    "vol": 0.3,
+    "why": "正面行動提示"
+   }
+  ]
+ },
+ {
+  "name": "b09",
+  "t0": 39.3,
+  "dur": 2.04,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.keyword",
+  "anchor": "但這些不是單純看年紀",
+  "slots": {
+   "term": "不是單純看年紀"
+  },
+  "cues": "0.48",
+  "why": "轉折重點",
+  "skipcaps": [
+   39.26
+  ],
+  "sfx": [
+   {
+    "t": 39.9,
+    "sfx": "SFX-014",
+    "vol": 0.3,
+    "why": "大字浮入"
+   }
+  ]
+ },
+ {
+  "name": "b10",
+  "t0": 41.34,
+  "dur": 5.58,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "你的生活習慣、血管健康和新陳代謝情況都會影響退化的速度",
+  "slots": {
+   "img": "assets/img/k13_factors.jpg",
+   "title": "退化因素",
+   "tags": "生活習慣、血管健康、新陳代謝",
+   "zoom": "1.2"
+  },
+  "cues": "0.15,0.38,1.4,2.5",
+  "why": "全屏圖：3 個因素逐個出膠囊",
+  "skipcaps": [
+   41.34,
+   42.74,
+   43.84
+  ],
+  "sfx": [
+   {
+    "t": 41.4,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入全屏圖"
+   },
+   {
+    "t": 41.9,
+    "sfx": "SFX-019",
+    "vol": 0.3,
+    "why": "膠囊 1"
+   },
+   {
+    "t": 42.9,
+    "sfx": "SFX-019",
+    "vol": 0.3,
+    "why": "膠囊 2"
+   },
+   {
+    "t": 44.0,
+    "sfx": "SFX-019",
+    "vol": 0.3,
+    "why": "膠囊 3"
+   }
+  ]
+ },
+ {
+  "name": "b11",
+  "t0": 46.92,
+  "dur": 3.36,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "有些長者可能走一兩層樓梯便氣喘",
+  "slots": {
+   "img": "assets/img/k07_stairs.jpg",
+   "title": "有些長者",
+   "big": "一兩層便氣喘"
+  },
+  "cues": "0.2,1.62",
+  "why": "全屏圖：行樓梯喘",
+  "skipcaps": [
+   47.98,
+   49.4
+  ],
+  "sfx": [
+   {
+    "t": 47.1,
+    "sfx": "SFX-014",
+    "vol": 0.32,
+    "why": "標題條伸出"
+   }
+  ]
+ },
+ {
+  "name": "b12",
+  "t0": 50.28,
+  "dur": 2.08,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "亦有些長者可以慢跑",
+  "slots": {
+   "img": "assets/img/k08_jog.jpg",
+   "title": "有些長者",
+   "big": "可以慢跑"
+  },
+  "cues": "0,0.88",
+  "why": "全屏圖：對比。喺逗號位切",
+  "skipcaps": [
+   50.28
+  ],
+  "sfx": [
+   {
+    "t": 51.2,
+    "sfx": "SFX-009",
+    "vol": 0.26,
+    "why": "正面對比"
+   }
+  ]
+ },
+ {
+  "name": "b13",
+  "t0": 52.36,
+  "dur": 5.4,
+  "mode": "split",
+  "tier": "tier2",
+  "card": "kallaway.x.image.split",
+  "anchor": "他們的分別…有沒有控制體重…血壓、血糖",
+  "slots": {
+   "img": "assets/img/k09_control.jpg",
+   "pos": "50% 46%",
+   "tags": "體重、血壓、血糖"
+  },
+  "cues": "0.3,2.54,4.22,4.58",
+  "why": "人物加圖片（上圖下人）",
+  "skipcaps": [
+   54.04,
+   55.68
+  ],
+  "sfx": [
+   {
+    "t": 52.4,
+    "sfx": "SFX-001",
+    "vol": 0.28,
+    "why": "切入上圖下人"
+   },
+   {
+    "t": 55.0,
+    "sfx": "SFX-020",
+    "vol": 0.3,
+    "why": "膠囊「體重」"
+   }
+  ]
+ },
+ {
+  "name": "b14",
+  "t0": 57.76,
+  "dur": 4.4,
+  "mode": "pip",
+  "tier": "tier2",
+  "card": "kallaway.x.image.pip",
+  "anchor": "配合生活習慣改善、飲食改善和藥物",
+  "slots": {
+   "img": "assets/img/k10_diet.jpg",
+   "pos": "50% 72%",
+   "tags": "生活習慣、飲食、藥物"
+  },
+  "cues": "0.35,1.02,2.54,3.7",
+  "why": "人物加圖片（浮框）",
+  "skipcaps": [
+   58.78,
+   60.3
+  ],
+  "sfx": [
+   {
+    "t": 58.2,
+    "sfx": "SFX-005",
+    "vol": 0.28,
+    "why": "圖片框彈入"
+   }
+  ]
+ },
+ {
+  "name": "b15",
+  "t0": 62.3,
+  "dur": 2.44,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.keyword",
+  "anchor": "當然可以減慢心臟退化",
+  "slots": {
+   "term": "可以減慢心臟退化"
+  },
+  "cues": "0.44",
+  "why": "小結",
+  "skipcaps": [
+   62.16
+  ],
+  "sfx": [
+   {
+    "t": 62.9,
+    "sfx": "SFX-008",
+    "vol": 0.28,
+    "why": "重點 ding"
+   }
+  ]
+ },
+ {
+  "name": "b16",
+  "t0": 68.3,
+  "dur": 5.2,
+  "mode": "card",
+  "tier": "tier1",
+  "card": "kallaway.t1.overview.deck2",
+  "anchor": "例如 GLP-1 受體促效劑和 SGLT-2 抑制劑",
+  "slots": {
+   "title": "現在有些<em>藥物</em>",
+   "c1_k": "01",
+   "c1_h": "GLP-1 受體促效劑",
+   "c2_k": "02",
+   "c2_h": "SGLT-2 抑制劑"
+  },
+  "cues": "0.3,0.44,2.96",
+  "why": "資訊卡 2：兩類藥（已確認藥名）",
+  "sfx": [
+   {
+    "t": 68.4,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入資訊卡"
+   },
+   {
+    "t": 68.95,
+    "sfx": "SFX-006",
+    "vol": 0.3,
+    "why": "第 1 類藥"
+   },
+   {
+    "t": 71.45,
+    "sfx": "SFX-006",
+    "vol": 0.3,
+    "why": "第 2 類藥"
+   }
+  ],
+  "skipcaps": []
+ },
+ {
+  "name": "b17",
+  "t0": 73.5,
+  "dur": 2.74,
+  "mode": "pip",
+  "tier": "tier2",
+  "card": "kallaway.x.image.pip",
+  "anchor": "他們除了控制血糖、控制體重之外",
+  "slots": {
+   "img": "assets/img/k11_meds.jpg",
+   "pos": "50% 76%",
+   "tags": "控制血糖、控制體重"
+  },
+  "cues": "0.35,0.62,1.54",
+  "why": "人物加圖片（浮框）",
+  "sfx": [
+   {
+    "t": 73.9,
+    "sfx": "SFX-005",
+    "vol": 0.28,
+    "why": "圖片框彈入"
+   }
+  ],
+  "skipcaps": []
+ },
+ {
+  "name": "b18",
+  "t0": 76.24,
+  "dur": 4.06,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.image.full",
+  "anchor": "對心臟、腎臟和心臟代謝的控制都有幫助",
+  "slots": {
+   "img": "assets/img/k12_kidney.jpg",
+   "title": "藥物幫助",
+   "tags": "心臟、腎臟、代謝"
+  },
+  "cues": "0.15,0.2,0.82,2.08",
+  "why": "收尾全屏圖：心腎擊掌",
+  "skipcaps": [
+   76.24,
+   77.62
+  ],
+  "sfx": [
+   {
+    "t": 76.3,
+    "sfx": "SFX-014",
+    "vol": 0.3,
+    "why": "切入＋標題條"
+   },
+   {
+    "t": 78.4,
+    "sfx": "SFX-008",
+    "vol": 0.26,
+    "why": "收尾 ding"
+   }
+  ]
+ }
+]

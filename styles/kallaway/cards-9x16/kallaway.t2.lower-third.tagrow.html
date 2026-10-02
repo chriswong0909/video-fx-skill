@@ -1,0 +1,76 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier2 · lower-third · TAGROW — 9:16 直向中文版（話題 + 因素膠囊）
+  由 cards/tier2/t2-lt-tagrow.html 改：放胸口位（top 930，唔遮面，喺字幕 1390 之上），置中。
+  上面一條白色毛玻璃標題條（name），下面一行藍框膠囊（tags，用「、」或「,」分，最多 3 個，每個 ≤ 4 字）。
+  Slots: name（≤ 7 字）, tags（≤ 3 個）。
+  data-cues：第一個＝標題，之後每個膠囊一個（講到嗰個字先出）。同一條片「列出因素」都用呢張，觀眾會認得。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #t2-lt-tagr { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #t2-lt-tagr .local-bloom {
+        position: absolute; left: 90px; top: 880px; width: 900px; height: 420px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 60%, rgba(var(--accent-rgb), 0.26) 0%, rgba(var(--accent-rgb), 0.08) 55%, transparent 78%);
+        filter: blur(44px); pointer-events: none;
+      }
+      #t2-lt-tagr .stack { position: absolute; left: 52px; right: 52px; top: 930px; display: flex; flex-direction: column; align-items: center; gap: 26px; }
+      #t2-lt-tagr .name-wrap {
+        padding: 16px 48px 20px; background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border-radius: var(--radius); border: 1.5px solid var(--glass-border); box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-hi);
+        position: relative; overflow: hidden;
+      }
+      #t2-lt-tagr .name-wrap::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 4px;
+        background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.10), var(--accent) 50%, rgba(var(--accent-rgb), 0.10)); }
+      #t2-lt-tagr .name { font: 900 80px/1.1 var(--font-display); color: var(--head); text-shadow: var(--textglow); white-space: nowrap; }
+      #t2-lt-tagr .tag-row { display: flex; justify-content: center; gap: 14px; flex-wrap: nowrap; }
+      #t2-lt-tagr .tag {
+        display: inline-flex; align-items: center; gap: 10px; padding: 12px 26px 14px; border-radius: 999px; white-space: nowrap;
+        background: rgba(var(--accent-rgb), 0.92); border: 2px solid rgba(255, 255, 255, 0.55);
+        box-shadow: 0 0 22px rgba(var(--accent-rgb), 0.35), 0 8px 22px rgba(11, 42, 58, 0.18);
+      }
+      #t2-lt-tagr .tag-dot { width: 12px; height: 12px; border-radius: 50%; background: #fff; box-shadow: 0 0 8px rgba(255,255,255,0.8); flex-shrink: 0; }
+      #t2-lt-tagr .tag-text { font: 900 60px/1 var(--font-display); color: #fff; }
+    </style>
+  </head>
+  <body>
+    <div id="t2-lt-tagr" data-composition-id="t2-lt-tagr" data-start="0" data-width="1080" data-height="1920">
+      <div class="local-bloom"></div>
+      <div class="stack">
+        <div class="name-wrap"><div class="name" data-slot="name">影響退化速度</div></div>
+        <div class="tag-row" data-slot="tags">生活習慣、血管健康、新陳代謝</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const C = "#t2-lt-tagr";
+      const ROOT = document.querySelector('[data-composition-id="t2-lt-tagr"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const row = ROOT.querySelector('.tag-row');
+      const tags = row.textContent.split(/[、,，]/).map(s => s.trim()).filter(Boolean);
+      row.textContent = '';
+      tags.forEach((s, i) => { const d = document.createElement('div'); d.className = 'tag'; d.id = 't2-lt-tagr-t' + i;
+        const dot = document.createElement('div'); dot.className = 'tag-dot'; const tx = document.createElement('div'); tx.className = 'tag-text'; tx.textContent = s;
+        d.appendChild(dot); d.appendChild(tx); row.appendChild(d); });
+      const tName = CUES.length ? CUES[0] : 0.3;
+      const t0 = Math.max(0, tName - 0.3);
+      tl.from(C + ' .local-bloom', { autoAlpha: 0, scale: 0.62, duration: 1.1, ease: "power2.out" }, t0)
+        .from(C + ' .name-wrap', { autoAlpha: 0, y: 30, filter: "blur(12px)", duration: 0.7, ease: "power4.out" }, t0)
+        .from(C + ' .name', { autoAlpha: 0, y: 12, filter: "blur(8px)", duration: 0.55, ease: "power3.out" }, tName);
+      tags.forEach((s, i) => {
+        const t = CUES.length > i + 1 ? CUES[i + 1] : tName + 0.6 + i * 0.3;
+        tl.from('#t2-lt-tagr-t' + i, { autoAlpha: 0, y: 26, scale: 0.7, transformOrigin: "50% 100%", duration: 0.5, ease: "back.out(1.7)" }, t);
+      });
+      const DUR = +ROOT.dataset.dur || 7;
+      tl.to(C + ' .stack, ' + C + ' .local-bloom', { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.4, ease: "power2.in" }, DUR - 0.45)
+        .set({}, {}, 7);
+      window.__timelines["t2-lt-tagr"] = tl;
+    </script>
+  </body>
+</html>
