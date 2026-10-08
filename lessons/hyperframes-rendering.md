@@ -55,3 +55,8 @@
 - 本機 shell 每次最多 180 秒，而且背景程序會跟住收（nohup 都冇用）；80 秒片一次過 render 要 4 分鐘以上，會中途斷。雲端容器裝唔到 hyperframes（npm 403）。workers 8 會爆記憶體（4 核 4GB，用 4）。
 - 做法：`python3 chunk.py T0 T1 名`（範本喺 `~/hf/d2k/chunk.py`）切一段獨立專案：所有 `data-start` 減 T0、講者 video 加 `data-media-start`、主時間軸用 `W.add(tl.tweenFromTo(T0,T1,{ease:'none'}),0)` 包住。**切位要揀冇卡嘅時間**（卡跨過切位會報錯）。
 - 速度約 3.5–4 秒 render 1 秒片（draft）；每段 ≤ 28 秒先穩陣。之後 `ffmpeg -f concat -c copy` 駁返，再 mux 聲效混音。接駁位抽格對比過冇跳。
+
+## 圖片要寫死闊同高（2026-10-02，黎青龍護肝篇草稿）
+- 分段 render 最尾一段（5 秒短段），右上 logo 喺 4 個 worker 入面 3 個畫成又高又窄（`<img>` 只寫 width，高度靠圖片載入後自動計；worker 截圖時圖未解碼完）。
+- 規則：主檔所有 `<img>`（logo、名牌框）CSS 一定寫 width **同** height。
+- 檢查：render 完用 ffmpeg 逐格 crop logo 位，數品牌藍像素（`crop=278:132:742:228`），同中位數差 > 15% 嘅格就係出事；抽格 contact sheet 要包括每段頭尾。
