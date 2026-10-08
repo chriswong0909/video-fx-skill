@@ -1,0 +1,67 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mgc{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif}
+#mgc .panel{position:absolute;left:0;top:0;width:1080px;height:860px;overflow:hidden;background:linear-gradient(180deg,#E6F1FB 0%,#F7FBFF 100%)}
+#mgc .night{position:absolute;inset:0;background:linear-gradient(180deg,#0B2A3A 0%,#1B4866 100%);opacity:0}
+#mgc .edge{position:absolute;left:0;right:0;top:852px;height:8px;background:linear-gradient(90deg,rgba(26,128,208,.15),#1A80D0 50%,rgba(26,128,208,.15));box-shadow:0 0 22px rgba(26,128,208,.55)}
+#mgc .orbit{position:absolute;left:200px;top:190px;width:680px;height:680px}
+#mgc .sun{position:absolute;left:305px;top:-35px;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#FFE08A,#FFB547);box-shadow:0 0 40px 10px rgba(255,181,71,.55)}
+#mgc .moon{position:absolute;left:307px;top:645px;width:66px;height:66px;border-radius:50%;box-shadow:inset -20px 8px 0 0 #F6E7A6;filter:drop-shadow(0 0 16px rgba(246,231,166,.7))}
+#mgc .dial{position:absolute;left:310px;top:300px;width:460px;height:460px;border-radius:50%;background:rgba(255,255,255,.92);border:12px solid #fff;box-sizing:border-box;box-shadow:0 22px 50px rgba(11,42,58,.22),0 0 0 4px rgba(26,128,208,.45)}
+#mgc .tick{position:absolute;left:214px;top:10px;width:8px;height:30px;border-radius:4px;background:#9FB7C9;transform-origin:4px 208px}
+#mgc .tick.big{background:#1A80D0;height:40px}
+#mgc .hand{position:absolute;border-radius:8px;transform-origin:50% 100%}
+#mgc .hh{left:211px;top:118px;width:14px;height:100px;background:#0B2A3A}
+#mgc .mh{left:213px;top:58px;width:10px;height:160px;background:#1A80D0}
+#mgc .hub{position:absolute;left:203px;top:203px;width:30px;height:30px;border-radius:50%;background:#0B2A3A}
+#mgc .liver{position:absolute;left:420px;top:440px;width:240px;height:180px}
+#mgc .gear{position:absolute;left:650px;top:380px;width:96px;height:96px}
+#mgc .pill{position:absolute;left:0;right:0;top:740px;text-align:center;z-index:20}
+#mgc .pill span{display:inline-block;padding:12px 38px 18px;border-radius:999px;background:#1A80D0;color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.8);box-shadow:0 10px 26px rgba(11,42,58,.25)}
+</style></head>
+<body>
+<div id="mgc" data-composition-id="mgc" data-start="0" data-width="1080" data-height="1920">
+  <div class="panel">
+    <div class="night"></div>
+    <div class="orbit"><div class="sun"></div><div class="moon"></div></div>
+    <div class="dial"></div>
+    <svg class="gear" viewBox="0 0 100 100"><g fill="#13B8D0"><circle cx="50" cy="50" r="30"/><rect x="44" y="4" width="12" height="20" rx="3"/><rect x="44" y="76" width="12" height="20" rx="3"/><rect x="4" y="44" width="20" height="12" rx="3"/><rect x="76" y="44" width="20" height="12" rx="3"/><rect x="44" y="4" width="12" height="20" rx="3" transform="rotate(45 50 50)"/><rect x="44" y="4" width="12" height="20" rx="3" transform="rotate(135 50 50)"/><rect x="44" y="4" width="12" height="20" rx="3" transform="rotate(225 50 50)"/><rect x="44" y="4" width="12" height="20" rx="3" transform="rotate(315 50 50)"/></g><circle cx="50" cy="50" r="12" fill="#fff"/></svg>
+    <svg class="liver" viewBox="0 0 240 180"><path d="M18 92 C14 46 62 16 128 18 C180 20 222 36 226 60 C230 86 196 104 150 116 C112 126 84 150 56 150 C32 150 20 124 18 92 Z" style="fill:#B9483D"/><path d="M60 60 C80 44 120 40 150 46" style="fill:none;stroke:rgba(255,255,255,.45);stroke-width:10;stroke-linecap:round"/><circle cx="96" cy="92" r="11" style="fill:#2A1410"/><circle cx="138" cy="88" r="11" style="fill:#2A1410"/><path d="M104 114 Q118 126 132 112" style="fill:none;stroke:#2A1410;stroke-width:6;stroke-linecap:round"/></svg>
+    <div class="pill"><span>經常都在工作</span></div>
+  </div>
+  <div class="edge"></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="mgc"]');
+const DUR=+ROOT.dataset.dur||2.64; const CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+const dial=ROOT.querySelector('.dial');
+for(let i=0;i<12;i++){const t=document.createElement('div');t.className='tick'+(i%3===0?' big':'');t.style.transform='rotate('+(i*30)+'deg)';dial.appendChild(t);}
+['hh','mh'].forEach(function(c){const h=document.createElement('div');h.className='hand '+c;dial.appendChild(h);});
+const hub=document.createElement('div');hub.className='hub';dial.appendChild(hub);
+const tl=gsap.timeline({paused:true});
+const T=DUR-0.35;
+tl.fromTo(ROOT.querySelector('.panel'),{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:0.35,ease:'power3.out'},0)
+  .fromTo(ROOT.querySelector('.edge'),{scaleX:0},{scaleX:1,duration:0.4,ease:'power3.out'},0.05)
+  .fromTo(dial,{scale:0.4,opacity:0},{scale:1,opacity:1,duration:0.45,ease:'back.out(1.7)'},0.12)
+  .fromTo(ROOT.querySelector('.liver'),{scale:0,opacity:0},{scale:1,opacity:1,duration:0.4,ease:'back.out(2)'},0.3)
+  .fromTo(ROOT.querySelector('.gear'),{scale:0,opacity:0},{scale:1,opacity:1,duration:0.3,ease:'back.out(2)'},0.38)
+  .fromTo(ROOT.querySelector('.mh'),{rotation:0},{rotation:1440,duration:T-0.3,ease:'none'},0.3)
+  .fromTo(ROOT.querySelector('.hh'),{rotation:0},{rotation:120,duration:T-0.3,ease:'none'},0.3)
+  .fromTo(ROOT.querySelector('.orbit'),{rotation:0},{rotation:360,duration:T-0.3,ease:'none'},0.3)
+  .fromTo(ROOT.querySelector('.gear'),{rotation:0},{rotation:540,duration:T-0.3,ease:'none'},0.3)
+  .to(ROOT.querySelector('.night'),{opacity:0.88,duration:(T-0.3)/2,ease:'sine.inOut'},0.3)
+  .to(ROOT.querySelector('.night'),{opacity:0,duration:(T-0.3)/2,ease:'sine.inOut'},0.3+(T-0.3)/2)
+  .to(ROOT.querySelector('.liver'),{scale:1.08,duration:0.25,ease:'sine.inOut',repeat:Math.max(1,Math.floor((T-0.8)/0.25)),yoyo:true},0.75)
+  .fromTo(ROOT.querySelector('.pill span'),{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.4,ease:'back.out(1.8)'},CUES.length?CUES[0]:0.62)
+  .to([ROOT.querySelector('.panel'),ROOT.querySelector('.edge')],{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27)
+  .set({}, {}, DUR);
+window.__timelines["mgc"]=tl;
+})();
+</script>
+</body></html>

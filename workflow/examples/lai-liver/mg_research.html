@@ -1,0 +1,59 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mgr{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif}
+#mgr .panel{position:absolute;left:0;top:0;width:1080px;height:860px;overflow:hidden;background:radial-gradient(90% 70% at 30% 70%,rgba(26,128,208,.14),transparent 70%),linear-gradient(180deg,#E6F1FB 0%,#F7FBFF 100%)}
+#mgr .edge{position:absolute;left:0;right:0;top:852px;height:8px;background:linear-gradient(90deg,rgba(26,128,208,.15),#1A80D0 50%,rgba(26,128,208,.15));box-shadow:0 0 22px rgba(26,128,208,.55)}
+#mgr .cup{position:absolute;left:96px;top:360px;width:330px;height:330px}
+#mgr .steam path{fill:none;stroke:rgba(11,42,58,.28);stroke-width:9;stroke-linecap:round}
+#mgr .sheet{position:absolute;left:500px;top:390px;width:300px;height:340px;border-radius:20px;background:#fff;box-shadow:0 16px 36px rgba(11,42,58,.18);border:2px solid rgba(26,128,208,.18);box-sizing:border-box;padding:34px 30px}
+#mgr .sheet .hd{width:150px;height:18px;border-radius:9px;background:#1A80D0;margin-bottom:26px}
+#mgr .sheet .ln{height:12px;border-radius:6px;background:#D6E3EF;margin-bottom:20px}
+#mgr .ok{position:absolute;right:-20px;top:-24px;width:96px;height:96px;border-radius:50%;background:#1F9D6B;border:6px solid #fff;box-sizing:border-box;box-shadow:0 8px 20px rgba(11,42,58,.25);opacity:0}
+#mgr .pill{position:absolute;left:0;right:0;top:740px;text-align:center;z-index:20}
+#mgr .pill span{display:inline-block;padding:12px 38px 18px;border-radius:999px;background:#1F9D6B;color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.85);box-shadow:0 10px 26px rgba(11,42,58,.25)}
+</style></head>
+<body>
+<div id="mgr" data-composition-id="mgr" data-start="0" data-width="1080" data-height="1920">
+  <div class="panel">
+    <svg class="cup" viewBox="0 0 330 330">
+      <g class="steam"><path id="mgr-s1" d="M120 120 C100 95 140 80 120 50"/><path id="mgr-s2" d="M165 115 C145 88 185 72 165 40"/><path id="mgr-s3" d="M210 120 C190 95 230 80 210 50"/></g>
+      <ellipse cx="165" cy="300" rx="150" ry="22" style="fill:#E3EEF8"/>
+      <path d="M60 150 L270 150 L250 270 Q245 292 222 292 L108 292 Q85 292 80 270 Z" style="fill:#fff;stroke:#CFE0EE;stroke-width:6"/>
+      <path d="M268 175 C318 175 318 245 258 248" style="fill:none;stroke:#fff;stroke-width:22;stroke-linecap:round"/>
+      <path d="M268 175 C318 175 318 245 258 248" style="fill:none;stroke:#CFE0EE;stroke-width:6;stroke-linecap:round"/>
+      <ellipse cx="165" cy="152" rx="104" ry="16" style="fill:#7A4A2E"/>
+    </svg>
+    <div class="sheets"></div>
+    <div class="pill"><span>都說是有益的</span></div>
+  </div>
+  <div class="edge"></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="mgr"]');
+const DUR=+ROOT.dataset.dur||3.25; const CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+const tCheck=CUES.length>1?CUES[1]:2.15;
+const box=ROOT.querySelector('.sheets'); const R=[-11,-4,5,12], DX=[-40,0,40,80], DY=[30,0,20,-10]; const sheets=[];
+for(let i=0;i<4;i++){const s=document.createElement('div');s.className='sheet';s.style.zIndex=i+1;
+  s.innerHTML='<div class="hd"></div><div class="ln" style="width:100%"></div><div class="ln" style="width:88%"></div><div class="ln" style="width:94%"></div><div class="ln" style="width:70%"></div><div class="ln" style="width:90%"></div><div class="ok"><svg viewBox="0 0 96 96" width="84" height="84" style="margin:0"><path d="M24 48 L41 64 L70 32" style="fill:none;stroke:#fff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round"/></svg></div>';
+  box.appendChild(s); sheets.push(s);}
+const tl=gsap.timeline({paused:true});
+tl.fromTo(ROOT.querySelector('.panel'),{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:0.35,ease:'power3.out'},0)
+  .fromTo(ROOT.querySelector('.edge'),{scaleX:0},{scaleX:1,duration:0.4,ease:'power3.out'},0.05)
+  .fromTo(ROOT.querySelector('.cup'),{y:80,opacity:0,scale:0.8},{y:0,opacity:1,scale:1,duration:0.45,ease:'back.out(1.6)'},0.12);
+['#mgr-s1','#mgr-s2','#mgr-s3'].forEach(function(id,i){const n=Math.max(1,Math.floor((DUR-0.8)/0.9));
+  tl.fromTo(ROOT.querySelector(id),{y:20,opacity:0},{y:-30,opacity:1,duration:0.9,ease:'sine.inOut',repeat:n,yoyo:false},0.45+i*0.25);});
+sheets.forEach(function(s,i){tl.fromTo(s,{x:520,y:DY[i]-60,rotation:R[i]+22,opacity:0},{x:DX[i],y:DY[i],rotation:R[i],opacity:1,duration:0.45,ease:'power3.out'},0.35+i*0.22);});
+sheets.forEach(function(s,i){tl.fromTo(s.querySelector('.ok'),{scale:0,opacity:0},{scale:1,opacity:1,duration:0.3,ease:'back.out(2.4)'},tCheck-0.1+i*0.12);});
+tl.fromTo(ROOT.querySelector('.pill span'),{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.4,ease:'back.out(1.8)'},tCheck)
+  .to([ROOT.querySelector('.panel'),ROOT.querySelector('.edge')],{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27)
+  .set({}, {}, DUR);
+window.__timelines["mgr"]=tl;
+})();
+</script>
+</body></html>
