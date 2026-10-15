@@ -5,7 +5,7 @@ description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像�
 
 # video-fx：風格包剪片 skill
 
-**核心改變（2026-10-01，2026-10-02 用 doctor2 實戰後補充，2026-10-14 加降噪前置步驟）：** 一條片嘅視覺由**一個風格包**負責（新手包 `kallaway` 或 `vox-explainer`），
+**核心改變（2026-10-01，2026-10-02 用 doctor2 實戰後補充，2026-10-14 加降噪前置步驟，2026-10-15 骨質疏鬆篇規則）：** 一條片嘅視覺由**一個風格包**負責（新手包 `kallaway` 或 `vox-explainer`），
 唔再由效果庫逐個效果揀。風格包 = 一套完整設計（DESIGN.md + tokens.css + 數百張卡），每張卡係獨立 composition，
 文字放 `data-slot`，顏色字體緩動讀 tokens。品牌（例如 Healthy Days）只覆蓋顏色同加品牌固定元素（logo、名牌、字幕）。
 舊效果庫（`effects/`）降級做**技巧參考**：查「某種效果點做」先睇，唔直接放入片。
@@ -13,7 +13,7 @@ description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像�
 LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果目錄網頁：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ（「風格包卡（主力）」分頁＝兩套風格包全部卡，標住邊張已有 9:16 版）。
 
 ```
-問卷 → 降噪檢查（自動）→ 轉錄 + 剪停頓 → Treatment（揀風格包、hook、結構、畫面比例）→ 素材（生成圖：先試 2 張定風格）
+問卷 → **降噪檢查（自動）** → 轉錄 + 剪停頓 → Treatment（揀風格包、hook、結構、畫面比例）→ 素材（生成圖：先試 2 張定風格）
      → 砌專案 → 節拍表（每拍真截圖＋聲效＋字幕出唔出）→ 用戶批／改（通常 2–3 輪）→ QA → 草稿 → 正式版 → 入庫
 （Treatment、圖片風格、節拍表、草稿、正式版＝用戶確認關卡）
 ```
@@ -24,19 +24,20 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 3. **卡片用到先改 9:16**：`python3 tools/cards.py list --style kallaway --portrait` 睇已有直向版嘅卡。要用嘅卡未有直向版 → `cards.py adapt <id>` 複製做起點，再按 `workflow/style-packs.md` 改版面，出預覽俾用戶批，批咗 `cards.py verify <id>`。改好嘅卡永久入庫，下次直接用。
 4. **少而長嘅卡（新手包 video-beats 原則）**：一個話題一張卡，卡跟住話題存在（唔係每句閃一張）；tier1 全屏卡係重點標點（全片 2–4 張），tier2 支援卡（關鍵詞、清單、名牌）保留講者。每張卡答到一條問題：觀眾要記住乜？邊個概念要結構？邊個數字值得強調？見 `workflow/beats.md`。
 5. **字對聲**：卡入面逐項出現時間用 `data-cues`，由 chars.json 逐字時間計（相對卡開始秒數）；字幕同卡文字要係講過嘅字（醫療限定詞唔准刪）。
-6. **畫面比例同圖片**（用戶 2026-10-02）：口播片預設大約 **40% 見人物、40% 全屏（圖片為主，資訊卡最多 2 張）、20% 人物加圖片**；問卷要確認。Kallaway 冇圖片卡，用三張自家卡：`kallaway.x.image.full`（全屏圖）、`kallaway.x.image.split`（上圖下人）、`kallaway.x.image.pip`（胸口位圖片框，框入面張圖固定唔郁）。清單卡可以每行配圓形縮圖（slot p1–p4）。圖片用 Canva `generate-image` 生成，提示詞跟品牌檔「圖片風格」；**先試 2 張俾用戶定風格，批咗先全批生成**；落圖要用戶同意（`workflow/assets.md` 嘅分層 → 匯出 → curl）。Canva 連接冇「圖變片」，唔好話做到。
+6. **畫面比例同圖片**（用戶 2026-10-15 更新）：口播片預設大約 **30–40% 見人物，其餘全屏（圖片／motion graphic，資訊卡最多 2 張）；上圖下人最多一段；尾 shot 一定係主角**；抽象概念用 motion graphic（比喻要畫比喻本身）；問卷要確認。Kallaway 冇圖片卡，用三張自家卡：`kallaway.x.image.full`（全屏圖）、`kallaway.x.image.split`（上圖下人）、`kallaway.x.image.pip`（胸口位圖片框，框入面張圖固定唔郁）。清單卡可以每行配圓形縮圖（slot p1–p4）。圖片用 Canva `generate-image` 生成，提示詞跟品牌檔「圖片風格」；**先試 2 張俾用戶定風格，批咗先全批生成**；落圖要用戶同意（`workflow/assets.md` 嘅分層 → 匯出 → curl）。Canva 連接冇「圖變片」，唔好話做到。
 7. **節拍表＝真截圖**：先砌好專案，再用 `npx hyperframes snapshot --at …` 逐拍截圖，出一頁（Artifact）：每拍有截圖、時間、原句、卡 id、卡上字、**聲效（幾秒、邊個聲、對住咩動作）**、**字幕出唔出**。唔好用文字描述代替，唔好等到草稿先出現聲效。範例腳本喺 `workflow/examples/doctor2-k/`（build.py、page.py、page_tpl.html、sheet.sh）。
 8. **品牌固定元素**：`brands/<brand>.md`（Healthy Days：右上 logo 常駐、名牌樣板、字幕方框、title tag）照舊，疊喺風格包上面；品牌色經 `brands/<brand>/tokens-<style>.css` 覆蓋風格包 tokens。
 
 **硬性規則**
+- **跳鏡同剪口窒先跟 `lessons/jump-cuts.md`**（剪位分類、轉鏡規則、溶接、同步）。
 - **先剪停頓同口頭禪**：`tools/cut.py`（`lessons/cutting-cantonese.md`），之後全部用 clean.mp4 + clean 轉錄。
-- **冇背景音樂**：只做聲效 + 輕度人聲清理。**每條素材轉錄前先自動降噪檢查**（第 2 節，`tools/denoise.py`）。
-- **字幕只得一款**（FX-051 方框或 FX-039 光暈，品牌指定優先）；**效果字已經交代嗰句，字幕就唔出**（節拍表每拍寫 `skipcaps`）；資訊卡時段唔出字幕；字幕唔准似卡字。醫療限定詞（有機會、可能、可以）要留喺效果字入面。
+- **背景音樂**：預設冇；用戶提供 BGM 就揀一條由頭用到尾（音量約 10%，尾 2 秒淡出，唔好中途換歌）。**每條素材轉錄前先自動降噪檢查**（第 2 節，`tools/denoise.py`）。
+- **字幕只得一款**（FX-051 方框或 FX-039 光暈，品牌指定優先）；**效果字已經交代嗰句，字幕就唔出**（節拍表每拍寫 `skipcaps`）；全屏卡／MG 期間照出字幕（用戶 2026-10-15）；字幕唔准似卡字。醫療限定詞（有機會、可能、可以）要留喺效果字入面。
 - **IG 安全區**（1080×1920）：左右 52px、頂 212、底 1556 以外唔放字；圖像置中 540。
 - **效果唔好貼人面**（用戶 2026-10-02）：頭頂位唔放關鍵詞／卡，只留 logo；疊喺講者嘅卡（關鍵詞、警號、劃線、圖片框）放胸口／字幕位（top ≥ 980；圖片框 top 900 配闊鏡 1.0）；名牌放右下角；開場線條唔好橫過頸。上圖下人：講者塊面要喺圖片同字幕之間。
 - **效果字唔細過字幕**：所有效果字 ≥ 76px（字幕 76px），大字 110–120px；畫面空就用大字，唔好角落一條細字。
 - **左上標題條只做段落標題／分題**（84px），內容字用圖片頂部白底大字（big）或者膠囊（tags）。
-- **跳鏡喺句與句之間**（長句可以喺逗號位）：轉機位、全屏入場退場都對返句邊。**人物接人物唔好硬切放大**（似跳鏡），用約 0.7 秒平滑推／拉；由全屏畫面返嚟講者先可以直接切。
+- **跳鏡喺句與句之間**（長句可以喺逗號位）：轉機位、全屏入場退場都對返句邊。轉鏡細節跟 `lessons/jump-cuts.md`（闊／近兩款差距 ≥30%，只喺句與句之間轉；句中剪位用溶接）。
 - **唔加未要求嘅元素**；素材唔好靜靜雞降級（`workflow/assets.md`，Canva 第一，生成圖唔使醫生審核）。
 - **基本調色**每條片都做：`tools/grade.py recommend` → `grade.py apply clean.mp4 <GR-id> graded.mp4`，HyperFrames 用 graded.mp4（音軌用 clean.mp4），唔好再疊調色 filter。
 - **HyperFrames 坑**（`lessons/hyperframes-rendering.md`）：掛載卡嘅 host 一定要有 `data-composition-id`、`data-dur`、`data-cues`（`cards.py use` 印出嘅 snippet 已有）同 z-index（`.cardhost{position:absolute;inset:0;z-index:12}`，全屏 `.t1` 14），否則卡會喺講者後面、逐項時間唔啱；沿用舊主檔要刪走 `.card`、`.row` 呢類通用 class 規則；卡入面資產路徑用根目錄相對（`assets/…`，唔好 `../`）；querySelector 唔好用 template literal；visibility 會繼承（子元素用 opacity）；全屏層 z ≥ 5；`tl.to({}, {duration:END}, 0)` 墊底；唔好 `immediateRender:false`。
@@ -50,7 +51,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 已講過嘅預選並寫明「你講咗 X，確認？」；只有用戶明確講「唔使問」先可以跳過。完整選項見 `workflow/intake.md`。
 **第一輪：基本** — 參考片（有／冇）｜平台同長度（9:16 保持原長／可剪短／16:9）｜品牌（brands/ 現有品牌檔／我提供）｜字幕寫法（口語／書面／中英）
 **第二輪：風格同節奏** — 影片類型｜**風格包**（Kallaway 現代發光／Vox 紙感解說；品牌有預設就預選）｜節奏（快／中／慢）｜字幕款式同聲效密度（冇 BGM）
-**第三輪：素材同限制** — AI 生成素材（唔用／少量／放手用，報價）｜圖片風格（品牌檔已有就預選；冇就先試 2 張）｜畫面比例（預設 40% 人物／40% 全屏／20% 人物加圖片）｜剪停頓（按節奏／只剪呃嗯／唔剪）｜觀眾要記住乜 + 禁忌（醫生名同職銜等）
+**第三輪：素材同限制** — AI 生成素材（唔用／少量／放手用，報價）｜圖片風格（品牌檔已有就預選；冇就先試 2 張）｜畫面比例（預設 30–40% 人物，其餘全屏）｜剪停頓（按節奏／只剪呃嗯／唔剪）｜觀眾要記住乜 + 禁忌（醫生名同職銜等）
 問完出需求摘要表（含風格包、品牌、調色），問「確認需求？」。
 
 ## 2. 降噪檢查（自動，轉錄之前；用戶 2026-10-14）

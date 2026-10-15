@@ -60,3 +60,14 @@
 - 分段 render 最尾一段（5 秒短段），右上 logo 喺 4 個 worker 入面 3 個畫成又高又窄（`<img>` 只寫 width，高度靠圖片載入後自動計；worker 截圖時圖未解碼完）。
 - 規則：主檔所有 `<img>`（logo、名牌框）CSS 一定寫 width **同** height。
 - 檢查：render 完用 ffmpeg 逐格 crop logo 位，數品牌藍像素（`crop=278:132:742:228`），同中位數差 > 15% 嘅格就係出事；抽格 contact sheet 要包括每段頭尾。
+
+## 雲端而家砌到專案同截圖（2026-10-03，40S）
+- 雲端容器 `npx hyperframes`（0.8.114）裝到，預裝 Chromium 可以直接 `lint`／`snapshot`；`pip install faster-whisper` 都得（turbo 模型，39 秒音頻約 1 分鐘；用 `wave` 讀 16k wav 傳 numpy，唔好傳檔名，PyAV 版本唔夾）。上面「雲端裝唔到」嘅記錄已過時。
+- 技能庫私有 repo 雲端 clone 唔到：用 `device_stage_files` 分批搬 tools、styles、brands、lessons（每批 ≤ 50 個檔）。
+- 字型：lint 唔接受冇 @font-face 嘅系統字名（例如 Noto Sans CJK TC）；用 Google Fonts `&text=` 子集落 `assets/fonts/`，品牌 tokens 入面寫 @font-face（路徑 `assets/fonts/…`）。
+- 卡入面嘅根元素 id 唔好用嚟加 class（掛入主檔後搵唔到）：用 `ROOT.querySelector('.rows')` 呢類內部元素。
+- 主檔 manifest：每個 slot 要對返自己嘅 cue 時間，唔好全部用第一個 cue（qa.py 會報「早過講出嚟」）。
+
+## 雲端工作區會被重置（2026-10-15，骨質疏鬆篇）
+- 剪到一半雲端容器被回收，專案檔（index 模板、beats、caps、MG 腳本、剪接 plan）全部冇咗，要靠對話記錄逐步重建，嘢咗一個鐘。
+- 規則：每出一版草稿，就將專案腳本（唔包大片）tar 一份 commit 返用戶電腦 `work/`；重建步驟寫喺 `workflow/examples/osteo/README.md`。
