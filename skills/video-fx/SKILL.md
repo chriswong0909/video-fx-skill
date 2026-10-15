@@ -1,6 +1,6 @@
 ---
 name: "video-fx"
-description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像卡（醫生口播、知識短片、Healthy Days 等）時使用：先問三輪需求，自動降噪檢查，剪停頓，用風格包（Kallaway／Vox）加生成圖片，節拍表逐拍真截圖連聲效批核先 render，QA 後入庫同步 GitHub。"
+description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像卡（醫生口播、知識短片、Healthy Days 等）時使用：先問三輪需求，自動降噪檢查，剪停頓，用風格包（Kallaway／Vox）加生成圖片，重點位做外部效果配對（text-motion-40）批後先入節拍表，節拍表逐拍真截圖連聲效批核先 render，QA 後入庫同步 GitHub。"
 ---
 
 # video-fx：風格包剪片 skill
@@ -9,18 +9,19 @@ description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像�
 唔再由效果庫逐個效果揀。風格包 = 一套完整設計（DESIGN.md + tokens.css + 數百張卡），每張卡係獨立 composition，
 文字放 `data-slot`，顏色字體緩動讀 tokens。品牌（例如 Healthy Days）只覆蓋顏色同加品牌固定元素（logo、名牌、字幕）。
 舊效果庫（`effects/`）降級做**技巧參考**：查「某種效果點做」先睇，唔直接放入片。
+風格包負責全片基礎，重點位（hook、標題、關鍵詞、數字、轉場）另外**必須做「外部效果配對」**（2026-10-15 起，第 5 節、`workflow/external-effects.md`）。
 
 LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果目錄網頁：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ（「風格包卡（主力）」分頁＝兩套風格包全部卡，標住邊張已有 9:16 版）。
 
 ```
-問卷 → **降噪檢查（自動）** → 轉錄 + 剪停頓 → Treatment（揀風格包、hook、結構、畫面比例）→ 素材（生成圖：先試 2 張定風格）
+問卷 → **降噪檢查（自動）** → 轉錄 + 剪停頓 → Treatment（揀風格包、hook、結構、畫面比例）→ **外部效果配對（配對表，用戶批）** → 素材（生成圖：先試 2 張定風格）
      → 砌專案 → 節拍表（每拍真截圖＋聲效＋字幕出唔出）→ 用戶批／改（通常 2–3 輪）→ QA → 草稿 → 正式版 → 入庫
 （Treatment、圖片風格、節拍表、草稿、正式版＝用戶確認關卡）
 ```
 
 ## 核心原則
 1. **一定先問需求（硬性）**：收到素材第一件事係問三輪問題（第 1 節）。未確認需求摘要唔好轉錄、分析、出方案。測試片都要問。
-2. **一條片一個風格包**：`styles/kallaway`（現代發光玻璃；Healthy Days 預設用**淺色版** `--brand healthy-days`）或 `styles/vox-explainer`（紙感雜誌、手繪圈註）。全片所有圖像卡都喺同一個風格包揀，唔混用、唔加效果庫效果。風格包規則讀 `styles/<style>/DESIGN.md`（唔好做嘅嘢要跟）。
+2. **風格包做基礎，外部效果補重點位**（用戶 2026-10-15 改）：一條片一個風格包（`styles/kallaway`——Healthy Days 預設用**淺色版** `--brand healthy-days`；或 `styles/vox-explainer`），負責全片基礎設計（卡、字體、tokens），呢點不變，風格包規則讀 `styles/<style>/DESIGN.md`。**揀定風格包之後，必須再睇外部效果來源**（清單見 `workflow/external-effects.md`，現有：text-motion-40），為重點位（hook、標題、關鍵詞、數字、轉場）揀 match 嘅效果，做成風格包嘅卡。睇完覺得全部唔適合，可以一款都唔用，但**要喺 Treatment 寫明睇過邊啲、點解唔用**。舊效果庫效果照舊唔直接放入片。
 3. **卡片用到先改 9:16**：`python3 tools/cards.py list --style kallaway --portrait` 睇已有直向版嘅卡。要用嘅卡未有直向版 → `cards.py adapt <id>` 複製做起點，再按 `workflow/style-packs.md` 改版面，出預覽俾用戶批，批咗 `cards.py verify <id>`。改好嘅卡永久入庫，下次直接用。
 4. **少而長嘅卡（新手包 video-beats 原則）**：一個話題一張卡，卡跟住話題存在（唔係每句閃一張）；tier1 全屏卡係重點標點（全片 2–4 張），tier2 支援卡（關鍵詞、清單、名牌）保留講者。每張卡答到一條問題：觀眾要記住乜？邊個概念要結構？邊個數字值得強調？見 `workflow/beats.md`。
 5. **字對聲**：卡入面逐項出現時間用 `data-cues`，由 chars.json 逐字時間計（相對卡開始秒數）；字幕同卡文字要係講過嘅字（醫療限定詞唔准刪）。
@@ -50,7 +51,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 ## 1. 開工問卷（強制）
 已講過嘅預選並寫明「你講咗 X，確認？」；只有用戶明確講「唔使問」先可以跳過。完整選項見 `workflow/intake.md`。
 **第一輪：基本** — 參考片（有／冇）｜平台同長度（9:16 保持原長／可剪短／16:9）｜品牌（brands/ 現有品牌檔／我提供）｜字幕寫法（口語／書面／中英）
-**第二輪：風格同節奏** — 影片類型｜**風格包**（Kallaway 現代發光／Vox 紙感解說；品牌有預設就預選）｜節奏（快／中／慢）｜字幕款式同聲效密度（冇 BGM）
+**第二輪：風格同節奏** — 影片類型｜**風格包**（Kallaway 現代發光／Vox 紙感解說；品牌有預設就預選）｜節奏（快／中／慢）｜字幕款式同聲效密度（冇 BGM）｜**外部效果**（照常配對／今次唔使；預設「照常配對」）
 **第三輪：素材同限制** — AI 生成素材（唔用／少量／放手用，報價）｜圖片風格（品牌檔已有就預選；冇就先試 2 張）｜畫面比例（預設 30–40% 人物，其餘全屏）｜剪停頓（按節奏／只剪呃嗯／唔剪）｜觀眾要記住乜 + 禁忌（醫生名同職銜等）
 問完出需求摘要表（含風格包、品牌、調色），問「確認需求？」。
 
@@ -71,19 +72,27 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 - 有參考片：`workflow/reference-to-style.md`（只拎文法）；參考片風格同兩個風格包都唔夾 → 同用戶講，考慮按新手包 GUIDE 開新風格包（`styles/GUIDE-kit.md` build loop）。
 
 ## 4. 關卡：Treatment
-一頁表（`workflow/director.md`）：核心一句、觀眾問題、三個 hook 選項、結構（hook → 2–4 段 → payoff，寫 clean.mp4 時間）、**風格包**、品牌、字幕、調色、聲效密度、剪輯節奏、**畫面比例**、圖片清單（每張對應邊句）。停低等確認。
+一頁表（`workflow/director.md`）：核心一句、觀眾問題、三個 hook 選項、結構（hook → 2–4 段 → payoff，寫 clean.mp4 時間）、**風格包**、品牌、字幕、調色、聲效密度、剪輯節奏、**畫面比例**、圖片清單（每張對應邊句）、**外部效果**（有配對就寫「見配對表」；一款都唔用就寫明睇過邊啲、點解唔用）。停低等確認。
 
-## 5. 關卡：節拍表
-按 `workflow/beats.md` 寫 `storyboards/<project>-beats.json`：每拍＝錨點原句、開始 t0／長度 dur、mode（person／full／card／split／pip）、卡 id、slots、cues、`skipcaps`（要收起嘅字幕開始秒數）、`sfx`（落地秒數、聲效、原因）。
+## 5. 關卡：外部效果配對（必做；Treatment 之後、節拍表之前；用戶 2026-10-15）
+風格包揀定之後，替重點位（hook、標題、關鍵詞、數字、轉場）去外部效果來源搵 match 嘅效果。細節、規則、配對表格式全部喺 **`workflow/external-effects.md`**（開工前必讀）。
+- 來源清單：**text-motion-40**（本機 `~/Documents/GitHub/text-motion-40/`，GitHub `chriswong0909/text-motion-40`；先讀 `README.md` 使用規則，再用 `EFFECTS.md`／`effects.json` 揀款；本機搵唔到就用 GitHub MCP 讀）。清單之後會再加，加咗寫入 `workflow/external-effects.md`。
+- 逐個重點位最多提 2 個候選；**揀之前一定開 `strips/` 分格圖**（需要時睇 `clips/`），EFFECTS.md 標 ⚠ 嘅款（01、02、17、18、20、33）冇睇圖唔准用；一條片外部效果以 2–3 款為主。
+- 出**配對表**俾用戶批：重點位｜原句｜候選效果（編號＋名）｜點解 match｜分格圖。批咗先入節拍表。用 `python3 tools/ext_effects.py table matches.json out.html` 出（分格圖內嵌），再用 Artifact 發佈。
+- 全部唔適合 → 可以一款都唔用，配對表照出（列出睇過嘅同原因），Treatment 同步寫明。用戶問卷選「今次唔使」就跳過本節。
+
+## 6. 關卡：節拍表
+按 `workflow/beats.md` 寫 `storyboards/<project>-beats.json`：每拍＝錨點原句、開始 t0／長度 dur、mode（person／full／card／split／pip）、卡 id、slots、cues、`skipcaps`（要收起嘅字幕開始秒數）、`sfx`（落地秒數、聲效、原因）、`ext`（外部效果：例如 `text-motion-40 #29 Odometer`，冇就 `"冇"`）。
+節拍表頁每拍加一欄「外部效果」。
 - 先按句子邊界分段，逐段決定 mode，計出人物／全屏／人物加圖片各佔幾多秒，對返目標比例。
 - 揀卡：`python3 tools/cards.py list --style <style> --portrait`（已驗證嘅 9:16 卡優先）；未有直向版先 `adapt`。
-- 砌專案（第 7 節 1–3）→ lint → 逐拍截圖 → 出節拍表頁（Artifact 發佈，之後每輪改完用同一連結更新）→ 問確認。用戶意見改完要再截圖自己睇過先交。
+- 砌專案（第 8 節 1–3）→ lint → 逐拍截圖 → 出節拍表頁（Artifact 發佈，之後每輪改完用同一連結更新）→ 問確認。用戶意見改完要再截圖自己睇過先交。
 
-## 6. 新卡預覽（併入節拍表）
-- 節拍表用到但未有 9:16 版嘅卡：`cards.py adapt <id>`，按 `workflow/style-packs.md` 改（安全區、字級、data-cues、品牌色、出場動畫），用 `npx hyperframes snapshot` 出關鍵格／短 render 俾用戶睇。批咗 `cards.py verify <id> --note "…"`。
+## 7. 新卡預覽（併入節拍表）
+- 節拍表用到但未有 9:16 版嘅卡：`cards.py adapt <id>`，按 `workflow/style-packs.md` 改（安全區、字級、data-cues、品牌色、出場動畫），用 `npx hyperframes snapshot` 出關鍵格／短 render 俾用戶睇。批咗 `cards.py verify <id> --note "…" [--source "text-motion-40#29"]`（外部效果卡一定要記 source；做法見 `workflow/external-effects.md`）。
 - 已驗證嘅卡唔使再批，除非 slot 內容長過上限。
 
-## 7. Build + QA + 渲染
+## 8. Build + QA + 渲染
 1. 專案放 `~/hf/<project>/`（assets：clean/graded mp4、gsap、logo、字型）。
 2. 每張卡：`python3 tools/cards.py use <id> --project DIR --name beatNN --dur 秒 --slots '{…}' --cues 0.4,1.3 --brand healthy-days` → 將印出嘅 snippet 貼入 index.html（填 START、TRACK）。
 3. index.html：講者 video（非計時 wrapper 做推鏡）、卡（data-composition-src）、品牌固定元素（logo、名牌、字幕）、manifest（`fx-manifest`：每個畫面字 = 卡 slot 文字 + 出現時間，俾 qa.py 對聲）。
@@ -91,7 +100,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 5. 聲效：`sfx-events.json`（卡元素落地格）→ `tools/sfx_plan.py` → `tools/sfx.py mix`（`lessons/sound-mixing.md`）。
 6. 草稿 `npx hyperframes render --quality draft`（本機 VM：`source ~/hf/env.sh`，`--workers 4 --no-low-memory-mode`）。**本機每次最多 180 秒、背景程序唔會留低、雲端裝唔到 hyperframes**：長過約 25 秒嘅片用 `python3 tools/hf_chunk.py T0 T1 名 專案資料夾` 切段（切位揀冇卡嘅時間），逐段 render（每段一個 call），`ffmpeg -f concat -c copy` 駁返。抽格 contact sheet（包括接駁位前後）自己先睇 → 俾用戶。聲效我聽唔到，要同用戶講明。正式版 `--quality high`；冇聲效：`ffmpeg -i render.mp4 -i clean.mp4 -map 0:v:0 -map 1:a:0 -c copy out.mp4`（md5 核對音軌）；有聲效：`tools/sfx.py mix clean.mp4 cues.json mix.m4a` 再 mux（原聲音量不變 + limiter）。核對長度、幀數、比例。成品放素材旁 `output/`。
 
-## 8. 入庫（每次剪完）
+## 9. 入庫（每次剪完）
 1. 用戶批咗草稿先 `cards.py verify` 新卡；`styles/<style>/portrait.json` 記低用過邊條片、slot 上限。
 2. 新技術坑寫 `lessons/`；品牌改動寫 `brands/`；聲效／調色 `used_in` 更新。
 3. 用戶否定某張卡：講「唔啱用」→ `portrait.json` 該卡加 `"banned": "原因"`，之後唔再揀；只係某條片唔啱 → 唔好禁。舊效果庫刪除規則照 `effects/REMOVED.md`（編號永不重用）。

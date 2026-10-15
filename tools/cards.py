@@ -7,7 +7,7 @@
   python3 tools/cards.py use   <card-id> --project DIR --name beat03 --dur 8
                                [--slots '{"title":"…"}'] [--cues 0.9,1.4] [--brand healthy-days]
         → DIR/compositions/beat03.html（tokens 內嵌、slot 已填、時長已設、gsap 本地）＋ 印出掛載用 snippet
-  python3 tools/cards.py verify <card-id> [--note "…"]         # 你批咗嘅 9:16 卡標記為已驗證
+  python3 tools/cards.py verify <card-id> [--note "…"] [--source "text-motion-40#29"]  # 你批咗嘅 9:16 卡標記為已驗證（外部效果卡記來源）
 
 卡片合約（新手包 style-library/GUIDE.md）：每張卡係獨立 composition；文字放 data-slot；
 顏色字體緩動全部讀 tokens.css。9:16 版另外：根元素 1080×1920、可選 data-cues（逐項出現秒數，對講嘢時間）。
@@ -135,6 +135,7 @@ def cmd_verify(a):
     if c['id'] not in p: sys.exit('✗ 未有 9:16 版')
     p[c['id']]['verified'] = True
     if a.note: p[c['id']]['note'] = a.note
+    if getattr(a, 'source', None): p[c['id']]['source'] = a.source   # 外部效果來源，例如 text-motion-40#29
     save_portrait(style, p); print(f'✓ {c["id"]} 已驗證')
 
 if __name__ == '__main__':
@@ -145,6 +146,6 @@ if __name__ == '__main__':
     x = sp.add_parser('adapt'); x.add_argument('card'); x.add_argument('--force', action='store_true')
     x = sp.add_parser('use'); x.add_argument('card'); x.add_argument('--project', required=True); x.add_argument('--name', required=True)
     x.add_argument('--dur', type=float, required=True); x.add_argument('--slots'); x.add_argument('--cues'); x.add_argument('--brand')
-    x = sp.add_parser('verify'); x.add_argument('card'); x.add_argument('--note')
+    x = sp.add_parser('verify'); x.add_argument('card'); x.add_argument('--note'); x.add_argument('--source')
     a = ap.parse_args()
     {'list': cmd_list, 'show': cmd_show, 'adapt': cmd_adapt, 'use': cmd_use, 'verify': cmd_verify}[a.cmd](a)

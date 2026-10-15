@@ -1,5 +1,7 @@
 # 用風格包卡（9:16 用到先改）
 
+> 風格包負責全片基礎；重點位另外要做**外部效果配對**（`workflow/external-effects.md`）。外部效果做成卡時，照本檔改 9:16 規則 + 該檔「用效果時嘅規則」，入庫時 `portrait.json` 記 `source`（例如 `text-motion-40#29`）。
+
 ## 卡嘅種類（新手包分類）
 - **tier1 全屏**（蓋住講者）：`section` 章節／標題、`stat` 大數字、`overview` 清單／步驟／對比、`quote`、`thesis`。
 - **tier2 支援**（講者保留）：`label` 關鍵詞／註解、`lower-third` 名牌／話題條、`list`、`equation`、`definition`。

@@ -28,5 +28,7 @@
 [{"t0": 26.8, "t1": 32.4, "anchor": "因為氣喘有機會可能是", "tier": "tier1",
   "card": "kallaway.t1.overview.checklist", "name": "beat03",
   "slots": {"title": "3 個<em>心臟</em>問題", "i1": "心臟衰竭", "i2": "心律不正", "i3": "心血管收窄"},
-  "cues": "0.4,1.3,2.3,3.3", "sfx": [{"t": 28.1, "sfx": "SFX-005", "why": "第一行出現"}], "why": "結構：3 個可能原因"}]
+  "cues": "0.4,1.3,2.3,3.3", "ext": "text-motion-40 #29 Odometer", "sfx": [{"t": 28.1, "sfx": "SFX-005", "why": "第一行出現"}], "why": "結構：3 個可能原因"}]
 ```
+
+`ext`＝外部效果（`workflow/external-effects.md`）：用咗邊款就寫「來源 #編號 名」，冇就 `"冇"`。節拍表頁每拍有一欄「外部效果」。外部效果配對表要用戶批咗先入節拍表。
