@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mg_tscore{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif;color:#0B2A3A}
+#mg_tscore .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 38%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#mg_tscore .title{position:absolute;left:0;right:0;top:385px;text-align:center;font:900 96px/1.1 "Noto Sans TC",sans-serif;color:#0B2A3A;opacity:0;z-index:20;white-space:nowrap}
+#mg_tscore .title em{font-style:normal;color:#1A80D0}
+#mg_tscore .pills{position:absolute;left:52px;right:52px;top:1265px;display:flex;justify-content:center;gap:22px;z-index:20}
+#mg_tscore .pill{padding:12px 36px 18px;border-radius:999px;background:linear-gradient(180deg,#3B97E0,#1A80D0);color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(11,42,58,.22);opacity:0;white-space:nowrap}
+#mg_tscore .pill.dark{background:linear-gradient(180deg,#6A6A6A,#545454)}
+#mg_tscore .pill.red{background:linear-gradient(180deg,#E8474E,#C81F28)}
+#mg_tscore .mark{position:absolute;height:0;border-top:7px dashed #1A80D0;opacity:0;z-index:6}
+/* 椎骨／樓層 */
+#mg_tscore .fl{position:absolute;left:-230px;width:460px;height:118px;transform-origin:50% 100%}
+#mg_tscore .fl .body{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFFDF8 0%,#F6EBDA 45%,#E6D3B6 100%);
+  box-shadow:inset 0 10px 14px rgba(255,255,255,.9),inset 0 -14px 18px rgba(160,120,70,.22),0 14px 24px rgba(11,42,58,.16)}
+#mg_tscore .fl .wing{position:absolute;top:34px;width:120px;height:52px;border-radius:26px;background:linear-gradient(180deg,#FBF4E8,#E2CDAE);box-shadow:inset 0 -6px 8px rgba(160,120,70,.2),0 6px 12px rgba(11,42,58,.12)}
+#mg_tscore .fl .wing.l{left:-92px} #mg_tscore .fl .wing.r{right:-92px}
+#mg_tscore .fl .win{position:absolute;top:34px;width:74px;height:50px;border-radius:14px;background:linear-gradient(160deg,#BFE4FA 0%,#7DBDE8 55%,#4F98CF 100%);box-shadow:inset 0 3px 0 rgba(255,255,255,.7),inset 0 -4px 6px rgba(20,60,110,.25)}
+#mg_tscore .fl .glow{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFF3B0,#FFDE59 55%,#F2C230);opacity:0}
+#mg_tscore .disc{position:absolute;left:-150px;width:300px;height:22px;border-radius:11px;background:linear-gradient(180deg,#CFEAFB,#8CC6EC);box-shadow:inset 0 3px 0 rgba(255,255,255,.7)}
+#mg_tscore .roof{position:absolute;left:-250px;width:500px;height:34px;border-radius:17px;background:linear-gradient(180deg,#4DA3E6,#1A80D0 60%,#1468AE);box-shadow:0 10px 18px rgba(26,128,208,.35)}
+#mg_tscore .shadow{position:absolute;left:-330px;top:-20px;width:660px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.28),rgba(11,42,58,0))}
+#mg_tscore .dust{position:absolute;width:16px;height:16px;border-radius:50%;background:#FFDE59;opacity:0}
+
+#mg_tscore .tube{position:absolute;left:330px;width:110px;border-radius:55px;padding:10px;background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(225,236,246,.85));box-shadow:0 18px 36px rgba(11,42,58,.18),inset 0 0 0 3px rgba(255,255,255,.9)}
+#mg_tscore .fill{position:relative;width:90px;height:100%;border-radius:45px;overflow:hidden}
+#mg_tscore .fill i{position:absolute;left:0;right:0}
+#mg_tscore .shine{position:absolute;left:22px;top:24px;width:16px;bottom:24px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,.75),rgba(255,255,255,.15))}
+#mg_tscore .lab{position:absolute;left:80px;width:210px;text-align:right;font:900 66px/1 "Noto Sans TC";color:#0B2A3A;transform:translateY(-50%)}
+#mg_tscore .tk{position:absolute;left:316px;width:138px;height:6px;border-radius:3px;background:rgba(11,42,58,.28);transform:translateY(-50%)}
+#mg_tscore .ptr{position:absolute;left:300px;width:170px;height:0}
+#mg_tscore .ptr .ring{position:absolute;left:0;top:-34px;width:170px;height:68px;border-radius:34px;border:8px solid #0B2A3A;box-sizing:border-box;background:rgba(255,255,255,.25);box-shadow:0 6px 14px rgba(11,42,58,.25)}
+#mg_tscore .ptr .val{position:absolute;left:10px;top:-120px;padding:8px 22px 12px;border-radius:20px;background:#0B2A3A;color:#fff;font:900 60px/1 "Noto Sans TC";white-space:nowrap}
+#mg_tscore .zone{position:absolute;left:540px;padding:14px 28px 18px;border-radius:24px;font:900 62px/1 "Noto Sans TC";opacity:0;transform:translateY(-50%);white-space:nowrap;box-shadow:0 10px 22px rgba(11,42,58,.18)}
+#mg_tscore .zone.n{background:linear-gradient(180deg,#41C172,#2EAD5B);color:#fff} #mg_tscore .zone.z1{background:linear-gradient(180deg,#FBD24E,#F2BD1E);color:#3A2E00} #mg_tscore .zone.z2{background:linear-gradient(180deg,#E8474E,#C81F28);color:#fff}
+
+</style></head>
+<body>
+<div id="mg_tscore" data-composition-id="mg_tscore" data-start="0" data-width="1080" data-height="1920">
+  <div class="bg"></div>
+<div class="title"><em>T-Score</em> 怎樣看？</div><div class="tube" style="top:550.0px;height:760.0px"><div class="fill"><i style="top:0;height:380.0px;background:linear-gradient(180deg,#58D08A,#2EAD5B)"></i><i style="top:380.0px;height:285.0px;background:linear-gradient(180deg,#FCDA63,#F2BD1E)"></i><i style="top:665.0px;bottom:0;background:linear-gradient(180deg,#EF5A60,#C81F28)"></i><div class="shine"></div></div></div><div class="lab" style="top:560.0px">+1</div><div class="tk" style="top:560.0px"></div><div class="lab" style="top:750.0px">0</div><div class="tk" style="top:750.0px"></div><div class="lab" style="top:940.0px">-1</div><div class="tk" style="top:940.0px"></div><div class="lab" style="top:1225.0px">-2.5</div><div class="tk" style="top:1225.0px"></div><div class="lab" style="top:1320.0px">-3</div><div class="tk" style="top:1320.0px"></div><div class="ptr" style="top:655.0px"><div class="ring"></div><div class="val">0.5</div></div><div class="zone n" style="top:750.0px">正常</div><div class="zone z1" style="top:1082.5px">骨質密度偏低</div><div class="zone z2" style="top:1284.5px">骨質疏鬆</div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+var ROOT=document.querySelector('[data-composition-id="mg_tscore"]');
+var DUR=+ROOT.dataset.dur||7.9; var CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+function c(i,d){return CUES.length>i?CUES[i]:d;}
+function q(s){return ROOT.querySelector(s);} function qa(s){return ROOT.querySelectorAll(s);}
+var tl=gsap.timeline({paused:true});
+if(!ROOT.dataset.noin) tl.fromTo(q('.bg'),{opacity:0},{opacity:1,duration:0.3},0);
+function pill(el,t){ tl.fromTo(el,{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.8)'},t); }
+// 疊樓工具：喺 B（容器）入面由下而上砌 N 層，回傳每層資料
+function stack(B,N,wins){ var y=0,F=[];
+  for(var i=0;i<N;i++){ var d=document.createElement('div'); d.className='disc'; B.appendChild(d);
+    var f=document.createElement('div'); f.className='fl';
+    f.innerHTML='<div class="wing l"></div><div class="wing r"></div><div class="body"></div><div class="glow"></div>'+(wins?[0,1,2,3].map(function(k){return '<div class="win" style="left:'+(52+k*94)+'px"></div>'}).join(''):'');
+    B.appendChild(f); y+=22; d.style.top=(-y)+'px'; y+=118; f.style.top=(-y)+'px'; F.push({f:f,d:d,top:y}); }
+  return {F:F,h:y}; }
+function squash(F,ks,t){ ks.forEach(function(k){ tl.to(F[k].f,{scaleY:0.48,scaleX:1.1,duration:0.7,ease:'power2.inOut'},t); tl.to(F[k].f.querySelector('.glow'),{opacity:0.85,duration:0.5},t+0.15); });
+  var loss=0; F.forEach(function(o,i){ var d=0; ks.forEach(function(k){ if(i>k) d+=118*0.52; }); if(d){ tl.to([o.f,o.d],{y:d,duration:0.7,ease:'power2.inOut'},t); } });
+  ks.forEach(function(){loss+=118*0.52}); return loss; }
+function dust(B,F,k,t){ for(var p=0;p<10;p++){ var s=document.createElement('div'); s.className='dust'; s.style.left=(p%2?250:-266)+'px'; s.style.top=(-(F[k].top-60))+'px'; B.appendChild(s);
+  tl.fromTo(s,{opacity:0.9,x:0,y:0,scale:1},{opacity:0,x:(p%2?1:-1)*(60+p*14),y:-30+p*9,scale:0.3,duration:0.7,ease:'power2.out'},t+p*0.02); } }
+
+tl.fromTo(q('.title'),{opacity:0,y:-24},{opacity:1,y:0,duration:0.4,ease:'power3.out'},c(0,0.2));
+tl.fromTo(q('.tube'),{scaleY:0,transformOrigin:'50% 0'},{scaleY:1,duration:0.6,ease:'power3.out'},0.25);
+tl.fromTo(qa('.lab'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.3,stagger:0.06},0.55);
+tl.fromTo(qa('.tk'),{opacity:0},{opacity:1,duration:0.3,stagger:0.06},0.55);
+tl.fromTo(q('.ptr'),{opacity:0,x:40},{opacity:1,x:0,duration:0.35,ease:'back.out(1.6)'},0.8);
+tl.fromTo(q('.zone.n'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.35},0.95);
+var V=q('.val'), o={v:0.5}; function upd(){ V.textContent=(o.v>0?'+':'')+o.v.toFixed(1); }
+tl.to(o,{v:-1,duration:0.8,ease:'back.out(1.2)',onUpdate:upd},c(1,1.55)-0.4);
+tl.to(q('.ptr'),{y:285.0,duration:0.8,ease:'back.out(1.2)'},c(1,1.55)-0.4);
+tl.to(q('.zone.n'),{opacity:0.3,duration:0.3},c(2,2.6)-0.2);
+tl.fromTo(q('.z1'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:'back.out(1.8)'},c(2,2.6));
+tl.to(o,{v:-2.5,duration:0.9,ease:'back.out(1.2)',onUpdate:upd},c(3,4.9)-0.4);
+tl.to(q('.ptr'),{y:570.0,duration:0.9,ease:'back.out(1.2)'},c(3,4.9)-0.4);
+tl.to(q('.z1'),{opacity:0.3,duration:0.3},c(4,6.9)-0.2);
+tl.fromTo(q('.z2'),{opacity:0,x:-20},{opacity:1,x:0,duration:0.4,ease:'back.out(1.8)'},c(4,6.9));
+
+if(!ROOT.dataset.nofade) tl.to(ROOT.children,{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27);
+tl.set({}, {}, DUR);
+window.__timelines["mg_tscore"]=tl;
+})();
+</script>
+</body></html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mg_quarter{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif;color:#0B2A3A}
+#mg_quarter .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 38%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#mg_quarter .title{position:absolute;left:0;right:0;top:385px;text-align:center;font:900 96px/1.1 "Noto Sans TC",sans-serif;color:#0B2A3A;opacity:0;z-index:20;white-space:nowrap}
+#mg_quarter .title em{font-style:normal;color:#1A80D0}
+#mg_quarter .pills{position:absolute;left:52px;right:52px;top:1265px;display:flex;justify-content:center;gap:22px;z-index:20}
+#mg_quarter .pill{padding:12px 36px 18px;border-radius:999px;background:linear-gradient(180deg,#3B97E0,#1A80D0);color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(11,42,58,.22);opacity:0;white-space:nowrap}
+#mg_quarter .pill.dark{background:linear-gradient(180deg,#6A6A6A,#545454)}
+#mg_quarter .pill.red{background:linear-gradient(180deg,#E8474E,#C81F28)}
+#mg_quarter .mark{position:absolute;height:0;border-top:7px dashed #1A80D0;opacity:0;z-index:6}
+/* 椎骨／樓層 */
+#mg_quarter .fl{position:absolute;left:-230px;width:460px;height:118px;transform-origin:50% 100%}
+#mg_quarter .fl .body{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFFDF8 0%,#F6EBDA 45%,#E6D3B6 100%);
+  box-shadow:inset 0 10px 14px rgba(255,255,255,.9),inset 0 -14px 18px rgba(160,120,70,.22),0 14px 24px rgba(11,42,58,.16)}
+#mg_quarter .fl .wing{position:absolute;top:34px;width:120px;height:52px;border-radius:26px;background:linear-gradient(180deg,#FBF4E8,#E2CDAE);box-shadow:inset 0 -6px 8px rgba(160,120,70,.2),0 6px 12px rgba(11,42,58,.12)}
+#mg_quarter .fl .wing.l{left:-92px} #mg_quarter .fl .wing.r{right:-92px}
+#mg_quarter .fl .win{position:absolute;top:34px;width:74px;height:50px;border-radius:14px;background:linear-gradient(160deg,#BFE4FA 0%,#7DBDE8 55%,#4F98CF 100%);box-shadow:inset 0 3px 0 rgba(255,255,255,.7),inset 0 -4px 6px rgba(20,60,110,.25)}
+#mg_quarter .fl .glow{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFF3B0,#FFDE59 55%,#F2C230);opacity:0}
+#mg_quarter .disc{position:absolute;left:-150px;width:300px;height:22px;border-radius:11px;background:linear-gradient(180deg,#CFEAFB,#8CC6EC);box-shadow:inset 0 3px 0 rgba(255,255,255,.7)}
+#mg_quarter .roof{position:absolute;left:-250px;width:500px;height:34px;border-radius:17px;background:linear-gradient(180deg,#4DA3E6,#1A80D0 60%,#1468AE);box-shadow:0 10px 18px rgba(26,128,208,.35)}
+#mg_quarter .shadow{position:absolute;left:-330px;top:-20px;width:660px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.28),rgba(11,42,58,0))}
+#mg_quarter .dust{position:absolute;width:16px;height:16px;border-radius:50%;background:#FFDE59;opacity:0}
+
+#mg_quarter .odo{position:absolute;left:0;right:0;top:470px;display:flex;justify-content:center;gap:16px;align-items:center;opacity:0}
+#mg_quarter .tile{position:relative;width:150px;height:200px;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#FFFFFF,#E7EFF7);box-shadow:inset 0 3px 0 #fff,0 14px 28px rgba(11,42,58,.18)}
+#mg_quarter .tile::after{content:"";position:absolute;left:0;right:0;top:99px;height:3px;background:rgba(11,42,58,.12)}
+#mg_quarter .col{position:absolute;left:0;top:0;width:150px}
+#mg_quarter .col b{display:block;height:200px;font:900 170px/200px "Noto Sans TC";text-align:center;color:#1A80D0}
+#mg_quarter .pct{font:900 150px/1 "Noto Sans TC";color:#1A80D0;margin-left:6px}
+#mg_quarter .ppl{position:absolute;left:0;right:0;top:760px;display:flex;justify-content:center;gap:50px}
+#mg_quarter .pp{position:relative;width:170px;height:330px;opacity:0}
+#mg_quarter .pp .h{position:absolute;left:48px;top:0;width:74px;height:74px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#FBE2CB,#F0C9A6 60%,#E2B48E)}
+#mg_quarter .pp .hair{position:absolute;left:44px;top:-10px;width:82px;height:44px;border-radius:40px 40px 14px 14px;background:linear-gradient(180deg,#F2F4F6,#C7CED6)}
+#mg_quarter .pp .bun{position:absolute;left:66px;top:-34px;width:38px;height:34px;border-radius:50%;background:linear-gradient(180deg,#F6F7F9,#C9D0D8)}
+#mg_quarter .pp .bd{position:absolute;left:20px;top:86px;width:130px;height:236px;border-radius:70px 70px 26px 26px;clip-path:polygon(26% 0,74% 0,100% 100%,0 100%);background:linear-gradient(90deg,#9FB7C9,#C5D5E2 45%,#9FB7C9)}
+#mg_quarter .pp.hl .bd{background:linear-gradient(90deg,#1468AE,#3B97E0 45%,#1468AE)}
+#mg_quarter .pp .glow{position:absolute;left:-20px;top:-40px;width:210px;height:400px;border-radius:50%;background:radial-gradient(closest-side,rgba(26,128,208,.28),rgba(26,128,208,0));opacity:0}
+
+</style></head>
+<body>
+<div id="mg_quarter" data-composition-id="mg_quarter" data-start="0" data-width="1080" data-height="1920">
+  <div class="bg"></div>
+<div class="odo"><div class="tile"><div class="col c0"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></div></div><div class="tile"><div class="col c1"><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b>0</b><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b></div></div><span class="pct">%</span></div><div class="ppl"><div class="pp pp0"><i class="glow"></i><i class="bd"></i><i class="h"></i><i class="hair"></i><i class="bun"></i></div><div class="pp pp1"><i class="glow"></i><i class="bd"></i><i class="h"></i><i class="hair"></i><i class="bun"></i></div><div class="pp pp2"><i class="glow"></i><i class="bd"></i><i class="h"></i><i class="hair"></i><i class="bun"></i></div><div class="pp pp3 hl"><i class="glow"></i><i class="bd"></i><i class="h"></i><i class="hair"></i><i class="bun"></i></div></div><div class="pills"><div class="pill p0">65歲或以上女性</div></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+var ROOT=document.querySelector('[data-composition-id="mg_quarter"]');
+var DUR=+ROOT.dataset.dur||4.6; var CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+function c(i,d){return CUES.length>i?CUES[i]:d;}
+function q(s){return ROOT.querySelector(s);} function qa(s){return ROOT.querySelectorAll(s);}
+var tl=gsap.timeline({paused:true});
+if(!ROOT.dataset.noin) tl.fromTo(q('.bg'),{opacity:0},{opacity:1,duration:0.3},0);
+function pill(el,t){ tl.fromTo(el,{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.8)'},t); }
+// 疊樓工具：喺 B（容器）入面由下而上砌 N 層，回傳每層資料
+function stack(B,N,wins){ var y=0,F=[];
+  for(var i=0;i<N;i++){ var d=document.createElement('div'); d.className='disc'; B.appendChild(d);
+    var f=document.createElement('div'); f.className='fl';
+    f.innerHTML='<div class="wing l"></div><div class="wing r"></div><div class="body"></div><div class="glow"></div>'+(wins?[0,1,2,3].map(function(k){return '<div class="win" style="left:'+(52+k*94)+'px"></div>'}).join(''):'');
+    B.appendChild(f); y+=22; d.style.top=(-y)+'px'; y+=118; f.style.top=(-y)+'px'; F.push({f:f,d:d,top:y}); }
+  return {F:F,h:y}; }
+function squash(F,ks,t){ ks.forEach(function(k){ tl.to(F[k].f,{scaleY:0.48,scaleX:1.1,duration:0.7,ease:'power2.inOut'},t); tl.to(F[k].f.querySelector('.glow'),{opacity:0.85,duration:0.5},t+0.15); });
+  var loss=0; F.forEach(function(o,i){ var d=0; ks.forEach(function(k){ if(i>k) d+=118*0.52; }); if(d){ tl.to([o.f,o.d],{y:d,duration:0.7,ease:'power2.inOut'},t); } });
+  ks.forEach(function(){loss+=118*0.52}); return loss; }
+function dust(B,F,k,t){ for(var p=0;p<10;p++){ var s=document.createElement('div'); s.className='dust'; s.style.left=(p%2?250:-266)+'px'; s.style.top=(-(F[k].top-60))+'px'; B.appendChild(s);
+  tl.fromTo(s,{opacity:0.9,x:0,y:0,scale:1},{opacity:0,x:(p%2?1:-1)*(60+p*14),y:-30+p*9,scale:0.3,duration:0.7,ease:'power2.out'},t+p*0.02); } }
+
+var t0=c(0,0.3);
+tl.fromTo(q('.odo'),{opacity:0,y:30},{opacity:1,y:0,duration:0.35,ease:'back.out(1.6)'},Math.max(0.05,t0-0.2));
+tl.fromTo(q('.c0'),{y:0},{y:-200*12,duration:1.1,ease:'power3.out'},t0);
+tl.fromTo(q('.c1'),{y:0},{y:-200*15,duration:1.4,ease:'power3.out'},t0);
+qa('.pp').forEach(function(p,i){ tl.fromTo(p,{opacity:0,y:40},{opacity:1,y:0,duration:0.35,ease:'back.out(1.7)'},c(1,0.8)+i*0.12); });
+var th=c(1,0.8)+0.7; tl.to(q('.pp3 .glow'),{opacity:1,duration:0.3},th);
+tl.fromTo(q('.pp3'),{scale:1},{scale:1.1,transformOrigin:'50% 100%',duration:0.22,yoyo:true,repeat:3},th);
+pill(q('.p0'),c(2,2.0));
+
+if(!ROOT.dataset.nofade) tl.to(ROOT.children,{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27);
+tl.set({}, {}, DUR);
+window.__timelines["mg_quarter"]=tl;
+})();
+</script>
+</body></html>

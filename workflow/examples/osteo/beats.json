@@ -1,0 +1,278 @@
+[
+ {
+  "name": "b01",
+  "t0": 8.0,
+  "dur": 1.94,
+  "tier": "tier2",
+  "mode": "card",
+  "card": "kallaway.t2.label.keyword",
+  "slots": {
+   "term": "骨質疏鬆",
+   "note": "",
+   "top": "1120"
+  },
+  "cues": "0.21",
+  "skipcaps": [
+   8.212
+  ],
+  "sfx": [
+   {
+    "t": 8.3,
+    "sfx": "SFX-011"
+   }
+  ]
+ },
+ {
+  "name": "b02",
+  "t0": 10.909,
+  "dur": 2.77,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "kallaway.x.image.full",
+  "slots": {
+   "img": "assets/img/op01_family.png",
+   "title": "長輩變矮？",
+   "pos": "50% 60%",
+   "big": "",
+   "tags": "",
+   "zoom": "1"
+  },
+  "cues": "0.14",
+  "sfx": [
+   {
+    "t": 10.955,
+    "sfx": "SFX-002"
+   }
+  ],
+  "skipcaps": []
+ },
+ {
+  "name": "b03",
+  "t0": 15.909,
+  "dur": 2.058,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "kallaway.x.image.full",
+  "slots": {
+   "img": "assets/img/op01b_compare.png",
+   "title": "長輩變矮？",
+   "pos": "50% 62%",
+   "big": "一年比一年矮",
+   "tags": "",
+   "zoom": "1"
+  },
+  "cues": "0,0.14",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 16.0,
+    "sfx": "SFX-011"
+   }
+  ]
+ },
+ {
+  "name": "b05",
+  "t0": 23.5,
+  "dur": 2.7,
+  "tier": "tier2",
+  "mode": "card",
+  "card": "kallaway.t2.label.keyword",
+  "slots": {
+   "term": "可能是徵兆",
+   "note": "",
+   "top": "1120"
+  },
+  "cues": "0.06",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 23.561,
+    "sfx": "SFX-005"
+   }
+  ]
+ },
+ {
+  "name": "b06",
+  "t0": 26.197,
+  "dur": 6.3,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "mg_spine",
+  "slots": {},
+  "cues": "2.12,3.79,4.97",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "b07",
+  "t0": 31.894,
+  "dur": 10.65,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "mg_tower",
+  "slots": {},
+  "cues": "0.18,3.55,5.88,7.97,9.42",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "b08",
+  "t0": 45.53,
+  "dur": 4.55,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "mg_quarter",
+  "slots": {},
+  "cues": "0.12,0.36,1.45",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "b09",
+  "t0": 52.773,
+  "dur": 1.64,
+  "tier": "tier2",
+  "mode": "card",
+  "card": "kallaway.t2.label.keyword",
+  "slots": {
+   "term": "完全沒有病徵",
+   "note": "",
+   "top": "1120"
+  },
+  "cues": "0.18",
+  "skipcaps": [
+   52.991
+  ],
+  "sfx": [
+   {
+    "t": 52.955,
+    "sfx": "SFX-010"
+   }
+  ]
+ },
+ {
+  "name": "b10",
+  "t0": 54.409,
+  "dur": 4.32,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "kallaway.x.image.full",
+  "slots": {
+   "img": "assets/img/op05_fall.png",
+   "title": "",
+   "pos": "50% 62%",
+   "big": "跌倒骨折才發現",
+   "tags": "",
+   "zoom": "1"
+  },
+  "cues": "1.36",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 54.455,
+    "sfx": "SFX-002"
+   },
+   {
+    "t": 55.773,
+    "sfx": "SFX-011"
+   }
+  ]
+ },
+ {
+  "name": "b11",
+  "t0": 61.045,
+  "dur": 5.39,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "mg_height",
+  "slots": {},
+  "cues": "0.12,2.48",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "b12",
+  "t0": 76.167,
+  "dur": 5.28,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "kallaway.x.image.full",
+  "slots": {
+   "img": "assets/img/op06_doctor.png",
+   "title": "可以怎樣做？",
+   "pos": "50% 60%",
+   "big": "找醫生評估",
+   "tags": "骨質密度掃描",
+   "zoom": "1"
+  },
+  "cues": "0.05,1.36,2.41",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 76.197,
+    "sfx": "SFX-002"
+   },
+   {
+    "t": 77.53,
+    "sfx": "SFX-011"
+   },
+   {
+    "t": 78.576,
+    "sfx": "SFX-005"
+   }
+  ]
+ },
+ {
+  "name": "b13",
+  "t0": 80.849,
+  "dur": 8.05,
+  "tier": "tier1",
+  "mode": "full",
+  "card": "mg_tscore",
+  "slots": {},
+  "cues": "0.18,1.41,2.36,4.27,6.09",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "b14",
+  "t0": 88.303,
+  "dur": 5.52,
+  "tier": "tier1",
+  "mode": "card",
+  "card": "kallaway.t1.overview.checklist",
+  "slots": {
+   "title": "保持骨骼健康",
+   "i1": "足夠鈣質",
+   "i2": "維他命D",
+   "i3": "負重運動",
+   "i4": "",
+   "p1": "assets/img/op07_calcium.png",
+   "p2": "assets/img/op08_vitd.png",
+   "p3": "assets/img/op09_exercise.png",
+   "p4": "",
+   "img": "",
+   "pos": ""
+  },
+  "cues": "0.11,1.11,2.98,4.61",
+  "sfx": [
+   {
+    "t": 88.348,
+    "sfx": "SFX-014"
+   },
+   {
+    "t": 89.409,
+    "sfx": "SFX-033"
+   },
+   {
+    "t": 91.288,
+    "sfx": "SFX-033"
+   },
+   {
+    "t": 92.909,
+    "sfx": "SFX-033"
+   }
+  ],
+  "skipcaps": []
+ }
+]

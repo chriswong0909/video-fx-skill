@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:#F2F7FC}
+#main{position:relative;width:1080px;height:1920px;overflow:hidden;background:#F2F7FC;font-family:"Noto Sans TC",sans-serif}
+#cam{position:absolute;inset:0;z-index:2;overflow:hidden}
+#camInner{position:absolute;inset:0;transform-origin:540px 420px}
+#camInner video{width:1080px;height:1920px;object-fit:cover;display:block}
+.cardhost{position:absolute;inset:0;z-index:12}
+.cardhost.t1{z-index:14}
+#vig{position:absolute;inset:0;z-index:6;background:radial-gradient(ellipse 70% 55% at 50% 40%,rgba(0,0,0,0) 40%,rgba(0,0,0,.72) 100%)}
+#flash{position:absolute;inset:0;z-index:7;background:#fff;opacity:0}
+#hook{position:absolute;left:52px;right:52px;top:1120px;z-index:9;text-align:center;font:900 116px/1.15 "Noto Sans TC",sans-serif;color:#fff;
+  -webkit-text-stroke:3px #0B2A3A;paint-order:stroke fill;text-shadow:0 6px 24px rgba(0,0,0,.55);white-space:nowrap;opacity:0}
+#hook .hk1{display:block;opacity:0}
+#hook .stamp{display:inline-block;margin-top:24px;padding:10px 40px 18px;border:10px solid #D7262E;border-radius:22px;color:#D7262E;background:rgba(255,255,255,.92);-webkit-text-stroke:0;text-shadow:none;font-size:108px;transform:rotate(-6deg);opacity:0;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+#hook .ink{position:absolute;left:50%;top:205px;width:520px;height:220px;margin-left:-260px;border-radius:40%;border:6px solid rgba(215,38,46,.6);opacity:0}
+#tag{position:absolute;left:620px;top:1150px;width:400px;height:230px;z-index:16;opacity:0}
+#logo{position:absolute;left:742px;top:228px;width:278px;height:131px;z-index:40}
+#capwrap{position:absolute;left:52px;right:52px;top:1400px;z-index:20;display:flex;justify-content:center}
+.cap{position:absolute;top:0;max-width:976px;padding:10px 30px 16px;border-radius:0;background:#186baa;color:#fff;
+  font:900 76px/1.2 "Noto Sans TC",sans-serif;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0}
+</style>
+</head>
+<body>
+<div id="main" data-composition-id="main" data-start="0" data-duration="{END}" data-width="1080" data-height="1920">
+  <div id="cam"><div id="camInner">
+    <video id="v" src="assets/fast.mp4" muted playsinline data-start="0" data-duration="{END}" data-track-index="1"></video>
+  </div></div>
+  <div id="vig" class="clip" data-start="0" data-duration="3.2" data-track-index="2"></div>
+  <div id="flash" class="clip" data-start="0" data-duration="1.2" data-track-index="3"></div>
+  <div id="hook" class="clip" data-start="0" data-duration="2.85" data-track-index="5"><span class="hk1">骨質疏鬆</span><span class="stamp">是一種病</span><i class="ink"></i></div>
+  <img id="tag" class="clip" src="assets/brand/nametag.png" data-start="3.2" data-duration="2.8" data-track-index="6" />
+  <!--CARDS-->
+  <div id="capwrap"></div>
+  <img id="logo" src="assets/brand/logo_1min.png" />
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+const D=/*DATA*/;
+const END=D.END;
+const tl=gsap.timeline({paused:true});
+tl.to({}, {duration:END}, 0);
+// 鏡頭
+D.CAM.forEach(function(c){ if(c[3]>0) tl.to('#camInner',{scale:c[1],y:c[2],duration:c[3],ease:'power2.inOut'},c[0]); else tl.set('#camInner',{scale:c[1],y:c[2]},c[0]); });
+// 開場：03 Text Stamp
+tl.set('#hook',{opacity:1},0.1); tl.fromTo('#hook .hk1',{opacity:0,y:30},{opacity:1,y:0,duration:0.3,ease:'power3.out'},0.14);
+tl.fromTo('#hook .stamp',{opacity:0,scale:2.4,rotation:-14},{opacity:1,scale:1,rotation:-6,duration:0.16,ease:'power4.in'},0.72);
+tl.set('#hook .ink',{opacity:0.9,scale:0.7},0.88); tl.to('#hook .ink',{opacity:0,scale:1.4,duration:0.5,ease:'power2.out'},0.89);
+tl.set('#flash',{opacity:0.25},0.88); tl.to('#flash',{opacity:0,duration:0.3},0.9);
+[0.88,0.92,0.96,1.0,1.04].forEach(function(t,i){ tl.set('#main',{x:(i%2?-1:1)*(10-i*2),y:(i%2?1:-1)*(6-i)},t); });
+tl.set('#main',{x:0,y:0},1.08);
+tl.to('#hook',{opacity:0,y:-20,duration:0.25},2.55);
+tl.to('#vig',{opacity:0,duration:0.4},2.8);
+// 名牌
+tl.fromTo('#tag',{opacity:0,y:30,scale:0.9},{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.6)'},3.25);
+tl.to('#tag',{opacity:0,y:20,duration:0.25},5.7);
+// 字幕
+var W=document.getElementById('capwrap');
+D.CAPS.forEach(function(c,i){ var d=document.createElement('div'); d.className='cap'; d.id='cap'+i; d.textContent=c[2];
+  var n=c[2].length; if(n>12) d.style.fontSize=Math.max(64,Math.floor(900/n))+'px';
+  W.appendChild(d); tl.set(d,{opacity:1},c[0]); tl.set(d,{opacity:0},c[1]); });
+window.__timelines=window.__timelines||{}; window.__timelines['main']=tl;
+</script>
+</body>
+</html>

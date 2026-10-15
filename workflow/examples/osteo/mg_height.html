@@ -1,0 +1,105 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mg_height{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif;color:#0B2A3A}
+#mg_height .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 38%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#mg_height .title{position:absolute;left:0;right:0;top:385px;text-align:center;font:900 96px/1.1 "Noto Sans TC",sans-serif;color:#0B2A3A;opacity:0;z-index:20;white-space:nowrap}
+#mg_height .title em{font-style:normal;color:#1A80D0}
+#mg_height .pills{position:absolute;left:52px;right:52px;top:1265px;display:flex;justify-content:center;gap:22px;z-index:20}
+#mg_height .pill{padding:12px 36px 18px;border-radius:999px;background:linear-gradient(180deg,#3B97E0,#1A80D0);color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(11,42,58,.22);opacity:0;white-space:nowrap}
+#mg_height .pill.dark{background:linear-gradient(180deg,#6A6A6A,#545454)}
+#mg_height .pill.red{background:linear-gradient(180deg,#E8474E,#C81F28)}
+#mg_height .mark{position:absolute;height:0;border-top:7px dashed #1A80D0;opacity:0;z-index:6}
+/* 椎骨／樓層 */
+#mg_height .fl{position:absolute;left:-230px;width:460px;height:118px;transform-origin:50% 100%}
+#mg_height .fl .body{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFFDF8 0%,#F6EBDA 45%,#E6D3B6 100%);
+  box-shadow:inset 0 10px 14px rgba(255,255,255,.9),inset 0 -14px 18px rgba(160,120,70,.22),0 14px 24px rgba(11,42,58,.16)}
+#mg_height .fl .wing{position:absolute;top:34px;width:120px;height:52px;border-radius:26px;background:linear-gradient(180deg,#FBF4E8,#E2CDAE);box-shadow:inset 0 -6px 8px rgba(160,120,70,.2),0 6px 12px rgba(11,42,58,.12)}
+#mg_height .fl .wing.l{left:-92px} #mg_height .fl .wing.r{right:-92px}
+#mg_height .fl .win{position:absolute;top:34px;width:74px;height:50px;border-radius:14px;background:linear-gradient(160deg,#BFE4FA 0%,#7DBDE8 55%,#4F98CF 100%);box-shadow:inset 0 3px 0 rgba(255,255,255,.7),inset 0 -4px 6px rgba(20,60,110,.25)}
+#mg_height .fl .glow{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFF3B0,#FFDE59 55%,#F2C230);opacity:0}
+#mg_height .disc{position:absolute;left:-150px;width:300px;height:22px;border-radius:11px;background:linear-gradient(180deg,#CFEAFB,#8CC6EC);box-shadow:inset 0 3px 0 rgba(255,255,255,.7)}
+#mg_height .roof{position:absolute;left:-250px;width:500px;height:34px;border-radius:17px;background:linear-gradient(180deg,#4DA3E6,#1A80D0 60%,#1468AE);box-shadow:0 10px 18px rgba(26,128,208,.35)}
+#mg_height .shadow{position:absolute;left:-330px;top:-20px;width:660px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.28),rgba(11,42,58,0))}
+#mg_height .dust{position:absolute;width:16px;height:16px;border-radius:50%;background:#FFDE59;opacity:0}
+
+#mg_height .t1,#mg_height .t2{display:inline-block}
+#mg_height .ruler{position:absolute;left:150px;top:560px;width:70px;height:640px;border-radius:18px;background:linear-gradient(90deg,#FFFFFF,#EAF2F9);box-shadow:inset 0 2px 0 #fff,0 10px 24px rgba(11,42,58,.16)}
+#mg_height .ruler i{position:absolute;left:0;height:5px;border-radius:3px;background:#9FB7C9}
+#mg_height .ruler b{position:absolute;left:84px;font:700 40px/1 "Noto Sans TC";color:#7E98AB;transform:translateY(-50%)}
+#mg_height .fig{position:absolute;left:470px;top:580px;width:300px;height:620px;transform-origin:150px 620px;scale:1.0}
+#mg_height .leg{position:absolute;top:420px;width:66px;height:200px;border-radius:30px 30px 18px 18px;background:linear-gradient(90deg,#8C7A66,#B9A58C 45%,#8C7A66)}
+#mg_height .leg.a{left:84px} #mg_height .leg.b{left:150px}
+#mg_height .shoe{position:absolute;top:596px;width:92px;height:34px;border-radius:18px;background:linear-gradient(180deg,#F4F4F4,#CFD8DF)}
+#mg_height .up{position:absolute;left:0;top:0;width:300px;height:440px;transform-origin:150px 430px}
+#mg_height .torso{position:absolute;left:52px;top:150px;width:196px;height:300px;border-radius:90px 90px 40px 40px;background:linear-gradient(90deg,#8B6FC6,#B49BE6 45%,#8B6FC6);box-shadow:inset 0 -14px 20px rgba(60,30,110,.25)}
+#mg_height .spine{position:absolute;left:198px;top:178px;width:24px;height:240px}
+#mg_height .spine i{position:absolute;left:0;width:24px;height:30px;border-radius:9px;background:rgba(255,255,255,.85);box-shadow:0 2px 4px rgba(60,30,110,.25)}
+#mg_height .arm{position:absolute;top:180px;width:56px;height:230px;border-radius:28px;background:linear-gradient(90deg,#8B6FC6,#A68BDB);transform-origin:28px 20px}
+#mg_height .arm.l{left:34px;transform:rotate(8deg)} #mg_height .arm.r{left:210px;transform:rotate(-8deg)}
+#mg_height .neck{position:absolute;left:126px;top:122px;width:48px;height:44px;background:#F0C9A6;border-radius:12px}
+#mg_height .head{position:absolute;left:84px;top:6px;width:132px;height:132px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#FBE2CB,#F0C9A6 60%,#E2B48E);box-shadow:0 6px 14px rgba(11,42,58,.15)}
+#mg_height .hair{position:absolute;left:78px;top:-6px;width:144px;height:78px;border-radius:72px 72px 30px 30px;background:linear-gradient(180deg,#F2F4F6,#C7CED6)}
+#mg_height .bun{position:absolute;left:118px;top:-44px;width:64px;height:58px;border-radius:50%;background:linear-gradient(180deg,#F6F7F9,#C9D0D8)}
+#mg_height .eye{position:absolute;top:70px;width:14px;height:18px;border-radius:50%;background:#3A2A22}
+#mg_height .glass{position:absolute;top:58px;width:46px;height:40px;border-radius:50%;border:5px solid #8A6A50}
+#mg_height .pain{position:absolute;left:176px;top:210px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(229,57,53,.95) 22%,rgba(229,57,53,.45) 45%,rgba(229,57,53,0) 70%);opacity:0}
+#mg_height .ring{position:absolute;left:176px;top:210px;width:120px;height:120px;border-radius:50%;border:6px solid rgba(229,57,53,.8);opacity:0}
+#mg_height .arrow{position:absolute;left:840px;top:640px;width:70px;height:150px;opacity:0}
+#mg_height .ground{position:absolute;left:150px;top:1192px;width:780px;height:40px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.22),rgba(11,42,58,0))}
+
+</style></head>
+<body>
+<div id="mg_height" data-composition-id="mg_height" data-start="0" data-width="1080" data-height="1920">
+  <div class="bg"></div>
+<div class="title"><span class="t1">身高下降</span><span class="t2">・<em>背部痛</em></span></div><div class="ground"></div><div class="ruler"><i style="top:20px;width:56px"></i><i style="top:64px;width:36px"></i><i style="top:108px;width:56px"></i><i style="top:152px;width:36px"></i><i style="top:196px;width:56px"></i><i style="top:240px;width:36px"></i><i style="top:284px;width:56px"></i><i style="top:328px;width:36px"></i><i style="top:372px;width:56px"></i><i style="top:416px;width:36px"></i><i style="top:460px;width:56px"></i><i style="top:504px;width:36px"></i><i style="top:548px;width:56px"></i><i style="top:592px;width:36px"></i></div><div class="mark" style="left:150px;width:660px;top:540px"></div><div class="fig"><div class="leg a"></div><div class="leg b"></div><div class="shoe" style="left:70px"></div><div class="shoe" style="left:144px"></div><div class="up"><div class="arm l"></div><div class="arm r"></div><div class="torso"></div><div class="spine"><i style="top:0px"></i><i style="top:36px"></i><i style="top:72px"></i><i style="top:108px"></i><i style="top:144px"></i><i style="top:180px"></i><i style="top:216px"></i></div><div class="neck"></div><div class="head"></div><div class="hair"></div><div class="bun"></div><div class="glass" style="left:104px"></div><div class="glass" style="left:154px"></div><div class="eye" style="left:120px"></div><div class="eye" style="left:170px"></div><div class="pain"></div><div class="ring"></div></div></div><svg class="arrow" viewBox="0 0 70 150"><path d="M35 0 V120 M8 96 L35 140 L62 96" fill="none" stroke="#545454" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+var ROOT=document.querySelector('[data-composition-id="mg_height"]');
+var DUR=+ROOT.dataset.dur||5.6; var CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+function c(i,d){return CUES.length>i?CUES[i]:d;}
+function q(s){return ROOT.querySelector(s);} function qa(s){return ROOT.querySelectorAll(s);}
+var tl=gsap.timeline({paused:true});
+if(!ROOT.dataset.noin) tl.fromTo(q('.bg'),{opacity:0},{opacity:1,duration:0.3},0);
+function pill(el,t){ tl.fromTo(el,{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.8)'},t); }
+// 疊樓工具：喺 B（容器）入面由下而上砌 N 層，回傳每層資料
+function stack(B,N,wins){ var y=0,F=[];
+  for(var i=0;i<N;i++){ var d=document.createElement('div'); d.className='disc'; B.appendChild(d);
+    var f=document.createElement('div'); f.className='fl';
+    f.innerHTML='<div class="wing l"></div><div class="wing r"></div><div class="body"></div><div class="glow"></div>'+(wins?[0,1,2,3].map(function(k){return '<div class="win" style="left:'+(52+k*94)+'px"></div>'}).join(''):'');
+    B.appendChild(f); y+=22; d.style.top=(-y)+'px'; y+=118; f.style.top=(-y)+'px'; F.push({f:f,d:d,top:y}); }
+  return {F:F,h:y}; }
+function squash(F,ks,t){ ks.forEach(function(k){ tl.to(F[k].f,{scaleY:0.48,scaleX:1.1,duration:0.7,ease:'power2.inOut'},t); tl.to(F[k].f.querySelector('.glow'),{opacity:0.85,duration:0.5},t+0.15); });
+  var loss=0; F.forEach(function(o,i){ var d=0; ks.forEach(function(k){ if(i>k) d+=118*0.52; }); if(d){ tl.to([o.f,o.d],{y:d,duration:0.7,ease:'power2.inOut'},t); } });
+  ks.forEach(function(){loss+=118*0.52}); return loss; }
+function dust(B,F,k,t){ for(var p=0;p<10;p++){ var s=document.createElement('div'); s.className='dust'; s.style.left=(p%2?250:-266)+'px'; s.style.top=(-(F[k].top-60))+'px'; B.appendChild(s);
+  tl.fromTo(s,{opacity:0.9,x:0,y:0,scale:1},{opacity:0,x:(p%2?1:-1)*(60+p*14),y:-30+p*9,scale:0.3,duration:0.7,ease:'power2.out'},t+p*0.02); } }
+
+tl.set(q('.title'),{opacity:1},0); tl.fromTo(q('.t1'),{opacity:0},{opacity:0},0); tl.fromTo(q('.t2'),{opacity:0},{opacity:0},0);
+tl.fromTo(q('.ruler'),{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:0.5,ease:'power3.out'},0.15);
+tl.set(q('.fig'),{transformOrigin:'150px 620px'},0); tl.fromTo(q('.fig'),{opacity:0,y:60,scale:1.0},{opacity:1,y:0,duration:0.5,ease:'back.out(1.5)'},0.25);
+tl.to(q('.mark'),{opacity:1,duration:0.3},0.6);
+var t0=c(0,0.2)+0.3;
+tl.to(q('.fig'),{scaleY:0.88,duration:1.1,ease:'power2.inOut'},t0);
+tl.to(qa('.spine i'),{scaleY:0.7,duration:1.1,ease:'power2.inOut',stagger:0.03},t0);
+tl.fromTo(q('.arrow'),{opacity:0,y:-40},{opacity:1,y:30,duration:0.9,ease:'power2.out'},t0+0.2);
+tl.to(q('.mark'),{borderTopColor:'#545454',duration:0.3},t0+0.6);
+tl.fromTo(q('.t1'),{opacity:0,y:-20},{opacity:1,y:0,duration:0.4,ease:'back.out(1.8)'},c(0,0.2));
+var t1=c(1,3.1);
+tl.to(q('.up'),{rotation:22,duration:0.9,ease:'power2.inOut'},t1-0.45);
+tl.to(qa('.arm'),{rotation:-18,duration:0.9,ease:'power2.inOut'},t1-0.45);
+tl.fromTo(q('.pain'),{opacity:0,scale:0.6},{opacity:1,scale:1.15,duration:0.45,yoyo:true,repeat:5,ease:'sine.inOut'},t1);
+tl.fromTo(q('.ring'),{opacity:0.9,scale:0.7},{opacity:0,scale:1.8,duration:0.8,repeat:2,ease:'power1.out'},t1);
+tl.fromTo(q('.t2'),{opacity:0,y:-20},{opacity:1,y:0,duration:0.4,ease:'back.out(1.8)'},t1);
+
+if(!ROOT.dataset.nofade) tl.to(ROOT.children,{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27);
+tl.set({}, {}, DUR);
+window.__timelines["mg_height"]=tl;
+})();
+</script>
+</body></html>

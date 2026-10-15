@@ -1,0 +1,109 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mg_tower{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif;color:#0B2A3A}
+#mg_tower .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 38%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#mg_tower .title{position:absolute;left:0;right:0;top:385px;text-align:center;font:900 96px/1.1 "Noto Sans TC",sans-serif;color:#0B2A3A;opacity:0;z-index:20;white-space:nowrap}
+#mg_tower .title em{font-style:normal;color:#1A80D0}
+#mg_tower .pills{position:absolute;left:52px;right:52px;top:1265px;display:flex;justify-content:center;gap:22px;z-index:20}
+#mg_tower .pill{padding:12px 36px 18px;border-radius:999px;background:linear-gradient(180deg,#3B97E0,#1A80D0);color:#fff;font:900 76px/1 "Noto Sans TC",sans-serif;border:4px solid rgba(255,255,255,.92);box-shadow:0 12px 28px rgba(11,42,58,.22);opacity:0;white-space:nowrap}
+#mg_tower .pill.dark{background:linear-gradient(180deg,#6A6A6A,#545454)}
+#mg_tower .pill.red{background:linear-gradient(180deg,#E8474E,#C81F28)}
+#mg_tower .mark{position:absolute;height:0;border-top:7px dashed #1A80D0;opacity:0;z-index:6}
+/* 椎骨／樓層 */
+#mg_tower .fl{position:absolute;left:-230px;width:460px;height:118px;transform-origin:50% 100%}
+#mg_tower .fl .body{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFFDF8 0%,#F6EBDA 45%,#E6D3B6 100%);
+  box-shadow:inset 0 10px 14px rgba(255,255,255,.9),inset 0 -14px 18px rgba(160,120,70,.22),0 14px 24px rgba(11,42,58,.16)}
+#mg_tower .fl .wing{position:absolute;top:34px;width:120px;height:52px;border-radius:26px;background:linear-gradient(180deg,#FBF4E8,#E2CDAE);box-shadow:inset 0 -6px 8px rgba(160,120,70,.2),0 6px 12px rgba(11,42,58,.12)}
+#mg_tower .fl .wing.l{left:-92px} #mg_tower .fl .wing.r{right:-92px}
+#mg_tower .fl .win{position:absolute;top:34px;width:74px;height:50px;border-radius:14px;background:linear-gradient(160deg,#BFE4FA 0%,#7DBDE8 55%,#4F98CF 100%);box-shadow:inset 0 3px 0 rgba(255,255,255,.7),inset 0 -4px 6px rgba(20,60,110,.25)}
+#mg_tower .fl .glow{position:absolute;inset:0;border-radius:44px;background:linear-gradient(180deg,#FFF3B0,#FFDE59 55%,#F2C230);opacity:0}
+#mg_tower .disc{position:absolute;left:-150px;width:300px;height:22px;border-radius:11px;background:linear-gradient(180deg,#CFEAFB,#8CC6EC);box-shadow:inset 0 3px 0 rgba(255,255,255,.7)}
+#mg_tower .roof{position:absolute;left:-250px;width:500px;height:34px;border-radius:17px;background:linear-gradient(180deg,#4DA3E6,#1A80D0 60%,#1468AE);box-shadow:0 10px 18px rgba(26,128,208,.35)}
+#mg_tower .shadow{position:absolute;left:-330px;top:-20px;width:660px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.28),rgba(11,42,58,0))}
+#mg_tower .dust{position:absolute;width:16px;height:16px;border-radius:50%;background:#FFDE59;opacity:0}
+
+#mg_tower #bld{position:absolute;left:540px;top:1215px;width:0;height:0;transform:scale(0.8)}
+#mg_tower .bf{position:absolute;left:-220px;width:440px;height:112px;transform-origin:50% 100%}
+#mg_tower .bf .wall{position:absolute;inset:0;background:linear-gradient(90deg,#E9EEF4 0%,#FFFFFF 18%,#F4F7FA 60%,#D9E2EC 100%);box-shadow:inset 0 -10px 0 #C9D5E1,inset 0 -12px 0 #B8C7D6}
+#mg_tower .bf .w{position:absolute;top:18px;width:86px;height:62px;border-radius:6px;background:linear-gradient(160deg,#D8F0FF 0%,#8CC8F0 50%,#4F98CF 100%);box-shadow:inset 0 0 0 5px #FFFFFF,0 3px 6px rgba(11,42,58,.18)}
+#mg_tower .bf .w::after{content:"";position:absolute;left:41px;top:5px;width:4px;bottom:5px;background:#FFFFFF}
+#mg_tower .bf .bal{position:absolute;top:70px;width:110px;height:24px;border-radius:4px;background:repeating-linear-gradient(90deg,#9AAFC2 0 4px,transparent 4px 14px),linear-gradient(180deg,#B7C7D6,#9AAFC2);opacity:.9}
+#mg_tower .bf .warn{position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,222,89,.0),rgba(255,222,89,.75));opacity:0}
+#mg_tower .bf .crack{position:absolute;left:0;top:0;width:440px;height:112px;opacity:0}
+#mg_tower .gnd{position:absolute;left:-240px;top:-150px;width:480px;height:150px}
+#mg_tower .gnd .wall{position:absolute;inset:0;background:linear-gradient(90deg,#CFD9E3,#EEF2F6 30%,#E2E9F0 70%,#C3CFDB);border-radius:6px 6px 0 0}
+#mg_tower .gnd .door{position:absolute;left:180px;top:46px;width:120px;height:104px;border-radius:10px 10px 0 0;background:linear-gradient(180deg,#6FA9D6,#2E6FA6)}
+#mg_tower .gnd .awn{position:absolute;left:150px;top:26px;width:180px;height:26px;border-radius:8px;background:linear-gradient(180deg,#3B97E0,#1A80D0)}
+#mg_tower .gnd .sw{position:absolute;top:50px;width:90px;height:60px;border-radius:6px;background:linear-gradient(160deg,#D8F0FF,#7DBDE8);box-shadow:inset 0 0 0 5px #fff}
+#mg_tower .rf{position:absolute;left:-235px;width:470px;height:40px}
+#mg_tower .rf .par{position:absolute;left:0;right:0;bottom:0;height:26px;border-radius:6px 6px 0 0;background:linear-gradient(180deg,#B9C8D6,#94A9BC)}
+#mg_tower .rf .tank{position:absolute;left:300px;bottom:24px;width:92px;height:70px;border-radius:12px 12px 4px 4px;background:linear-gradient(90deg,#4DA3E6,#1A80D0 60%,#1468AE)}
+#mg_tower .rf .ant{position:absolute;left:90px;bottom:24px;width:6px;height:80px;background:#7E98AB}
+#mg_tower .sky{position:absolute;left:-330px;top:-20px;width:660px;height:60px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.28),rgba(11,42,58,0))}
+
+</style></head>
+<body>
+<div id="mg_tower" data-composition-id="mg_tower" data-start="0" data-width="1080" data-height="1920">
+  <div class="bg"></div>
+<div class="title">脊椎 = <em>一棟樓</em></div><div class="mark" style="left:200px;width:680px"></div><div id="bld"><div class="sky"></div><div class="gnd"><div class="wall"></div><div class="sw" style="left:30px"></div><div class="sw" style="left:360px"></div><div class="awn"></div><div class="door"></div></div></div><div class="pills"><div class="pill p0">壓扁</div><div class="pill p1">變矮</div><div class="pill dark p2">向前傾斜</div></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+var ROOT=document.querySelector('[data-composition-id="mg_tower"]');
+var DUR=+ROOT.dataset.dur||10.4; var CUES=(ROOT.dataset.cues||'').split(',').filter(Boolean).map(Number);
+function c(i,d){return CUES.length>i?CUES[i]:d;}
+function q(s){return ROOT.querySelector(s);} function qa(s){return ROOT.querySelectorAll(s);}
+var tl=gsap.timeline({paused:true});
+if(!ROOT.dataset.noin) tl.fromTo(q('.bg'),{opacity:0},{opacity:1,duration:0.3},0);
+function pill(el,t){ tl.fromTo(el,{opacity:0,y:30,scale:0.7},{opacity:1,y:0,scale:1,duration:0.45,ease:'back.out(1.8)'},t); }
+// 疊樓工具：喺 B（容器）入面由下而上砌 N 層，回傳每層資料
+function stack(B,N,wins){ var y=0,F=[];
+  for(var i=0;i<N;i++){ var d=document.createElement('div'); d.className='disc'; B.appendChild(d);
+    var f=document.createElement('div'); f.className='fl';
+    f.innerHTML='<div class="wing l"></div><div class="wing r"></div><div class="body"></div><div class="glow"></div>'+(wins?[0,1,2,3].map(function(k){return '<div class="win" style="left:'+(52+k*94)+'px"></div>'}).join(''):'');
+    B.appendChild(f); y+=22; d.style.top=(-y)+'px'; y+=118; f.style.top=(-y)+'px'; F.push({f:f,d:d,top:y}); }
+  return {F:F,h:y}; }
+function squash(F,ks,t){ ks.forEach(function(k){ tl.to(F[k].f,{scaleY:0.48,scaleX:1.1,duration:0.7,ease:'power2.inOut'},t); tl.to(F[k].f.querySelector('.glow'),{opacity:0.85,duration:0.5},t+0.15); });
+  var loss=0; F.forEach(function(o,i){ var d=0; ks.forEach(function(k){ if(i>k) d+=118*0.52; }); if(d){ tl.to([o.f,o.d],{y:d,duration:0.7,ease:'power2.inOut'},t); } });
+  ks.forEach(function(){loss+=118*0.52}); return loss; }
+function dust(B,F,k,t){ for(var p=0;p<10;p++){ var s=document.createElement('div'); s.className='dust'; s.style.left=(p%2?250:-266)+'px'; s.style.top=(-(F[k].top-60))+'px'; B.appendChild(s);
+  tl.fromTo(s,{opacity:0.9,x:0,y:0,scale:1},{opacity:0,x:(p%2?1:-1)*(60+p*14),y:-30+p*9,scale:0.3,duration:0.7,ease:'power2.out'},t+p*0.02); } }
+
+var B=q('#bld'), N=5, FH=112, F=[], y=150;
+var CR='<svg class="crack" viewBox="0 0 440 112"><path d="M60 0 L80 30 L66 52 L92 80 L80 112 M300 0 L286 26 L312 48 L294 76 L318 112 M180 112 L196 84 L184 64 L206 40" fill="none" stroke="#545454" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+for(var i=0;i<N;i++){ var f=document.createElement('div'); f.className='bf';
+  f.innerHTML='<div class="wall"></div><div class="warn"></div>'+[0,1,2,3].map(function(k){return '<div class="w" style="left:'+(22+k*104)+'px"></div>'}).join('')+'<div class="bal" style="left:24px"></div><div class="bal" style="left:306px"></div>'+CR;
+  y+=FH; f.style.top=(-y)+'px'; B.appendChild(f); F.push(f); }
+var rf=document.createElement('div'); rf.className='rf'; rf.innerHTML='<div class="ant"></div><div class="tank"></div><div class="par"></div>'; y+=40; rf.style.top=(-y)+'px'; B.appendChild(rf);
+q('.mark').style.top=(1215-y*0.8-18)+'px';
+tl.fromTo(q('.title'),{opacity:0,y:-24},{opacity:1,y:0,duration:0.4,ease:'power3.out'},c(0,0.2));
+tl.fromTo(q('.gnd'),{scaleY:0,transformOrigin:'50% 100%'},{scaleY:1,duration:0.4,ease:'back.out(1.6)'},0.3);
+var st=0.6;
+F.forEach(function(f,i){ tl.fromTo(f,{y:-800,opacity:0},{y:0,opacity:1,duration:0.5,ease:'bounce.out'},st+i*0.3);
+  tl.fromTo(f,{scaleY:1},{scaleY:0.88,scaleX:1.04,duration:0.08,yoyo:true,repeat:1,ease:'sine.inOut'},st+i*0.3+0.45); });
+tl.fromTo(rf,{y:-800,opacity:0},{y:0,opacity:1,duration:0.5,ease:'bounce.out'},st+N*0.3);
+tl.to(q('.mark'),{opacity:1,duration:0.3},st+N*0.3+0.5);
+F.forEach(function(f,i){ tl.fromTo(f.querySelector('.wall'),{filter:'brightness(1)'},{filter:'brightness(1.12)',duration:0.15,yoyo:true,repeat:1},c(1,3.9)+i*0.15); });
+var ks=[1,2], t2=c(2,6.6)-0.2, loss=0;
+ks.forEach(function(k){ tl.to(F[k],{scaleY:0.5,scaleX:1.06,duration:0.7,ease:'power2.inOut'},t2); tl.to(F[k].querySelector('.warn'),{opacity:1,duration:0.5},t2+0.15); tl.to(F[k].querySelector('.crack'),{opacity:1,duration:0.2},t2+0.3); loss+=FH*0.5; });
+F.forEach(function(f,i){ var d=0; ks.forEach(function(k){ if(i>k) d+=FH*0.5; }); if(d) tl.to(f,{y:d,duration:0.7,ease:'power2.inOut'},t2); });
+tl.to(rf,{y:loss,duration:0.7,ease:'power2.inOut'},t2);
+dust(B,[{top:150+FH*2.5}],0,t2+0.3); pill(q('.p0'),c(2,6.6));
+tl.to(q('.mark'),{borderTopColor:'#545454',duration:0.2},c(3,8.9)-0.1); tl.fromTo(B,{x:0,scale:0.8},{x:8,scale:0.8,duration:0.05,yoyo:true,repeat:5},c(3,8.9)-0.1); pill(q('.p1'),c(3,8.9));
+var tt=c(4,10.3)-0.3, PIV=-(150+2*FH), dd=FH;
+[[F[3],-(150+4*FH),0],[F[4],-(150+5*FH),0],[rf,-(150+5*FH+40),15]].forEach(function(o){
+  var oy=PIV-(o[1]+dd); tl.to(o[0],{rotation:7,transformOrigin:o[2]+'px '+oy+'px',duration:0.9,ease:'power2.inOut'},tt); });
+[F[1],F[2]].forEach(function(f){ tl.fromTo(f,{clipPath:'polygon(0% 0%,100% 0%,100% 100%,0% 100%)'},{clipPath:'polygon(0% 0%,100% 55%,100% 100%,0% 100%)',duration:0.9,ease:'power2.inOut'},tt); });
+pill(q('.p2'),c(4,10.3));
+
+if(!ROOT.dataset.nofade) tl.to(ROOT.children,{opacity:0,duration:0.25,ease:'power2.in'},DUR-0.27);
+tl.set({}, {}, DUR);
+window.__timelines["mg_tower"]=tl;
+})();
+</script>
+</body></html>
