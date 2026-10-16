@@ -120,7 +120,7 @@ def scan(src, scale):
     demo = []
     for m in re.finditer(r"'([^'\n$]{1,24})'|\"([^\"\n$]{1,24})\"", src):
         s = m.group(1) or m.group(2)
-        if (re.search(r"[　-鿿＀-￯]", s) or re.fullmatch(r"\d{2,}", s)) and s not in demo: demo.append(s)
+        if (re.search(r"[\\u3000-\\u9fff\\uff00-\\uffef]", s) or re.fullmatch(r"\d{2,}", s)) and s not in demo: demo.append(s)
     return {"fonts": sorted(set(re.findall(r"F\.(\w+)", src)) & set(FKEY)),
             "sizes": [(s, round(s * scale, 1)) for s in sizes],
             "small": [(s, round(s * scale, 1)) for s in sizes if s * scale < MIN_FX_PX],
@@ -265,7 +265,7 @@ CARD = r'''<!doctype html>
         const MISS = {}; (ROOT.dataset.miss || '').split('|').forEach(function (s) { const k = s.split(':'); if (k[0]) MISS[k[0]] = k[1] || ''; });
         /* ===== text-motion-40 code/_header.js（原作；只改 TL 一行）===== */
 @@HEADER@@
-        /* 缺字 fallback：該字體缺咥要顯示嘅字，成段改用品牌中文字體（同粗度），唔混兩款 */
+        /* 缺字 fallback：該字體缺咗要顯示嘅字，成段改用品牌中文字體（同粗度），唔混兩款 */
         const BRAND = "'ExtBrand';font-weight:900";
         function FF(key, text) { const m = MISS[key] || ''; for (const ch of String(text)) { if (m.indexOf(ch) >= 0) return BRAND; } return F[key]; }
         /* ===== 原作 effect：@@CODE@@ ===== */
