@@ -77,9 +77,10 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 ## 5. 關卡：外部效果配對（必做；Treatment 之後、節拍表之前；用戶 2026-10-15）
 風格包揀定之後，替重點位（hook、標題、關鍵詞、數字、轉場）去外部效果來源搵 match 嘅效果。細節、規則、配對表格式全部喺 **`workflow/external-effects.md`**（開工前必讀）。
 - 來源清單：**text-motion-40**（本機 `~/Documents/GitHub/text-motion-40/`，GitHub `chriswong0909/text-motion-40`；先讀 `README.md` 使用規則，再用 `EFFECTS.md`／`effects.json` 揀款；本機搵唔到就用 GitHub MCP 讀）。清單之後會再加，加咗寫入 `workflow/external-effects.md`。
-- 逐個重點位最多提 2 個候選；**揀之前一定開 `strips/` 分格圖**（需要時睇 `clips/`），EFFECTS.md 標 ⚠ 嘅款（01、02、17、18、20、33）冇睇圖唔准用；一條片外部效果以 2–3 款為主。
-- 出**配對表**俾用戶批：重點位｜原句｜候選效果（編號＋名）｜點解 match｜分格圖。批咗先入節拍表。用 `python3 tools/ext_effects.py table matches.json out.html` 出（分格圖內嵌），再用 Artifact 發佈。
-- 全部唔適合 → 可以一款都唔用，配對表照出（列出睇過嘅同原因），Treatment 同步寫明。用戶問卷選「今次唔使」就跳過本節。
+- 逐個重點位最多提 2 個候選；揀之前開 `strips/` 分格圖睇動作（需要時睇 `clips/` 或 `site/index.html`），EFFECTS.md 標 ⚠ 嘅款（01、02、17、18、20、33）冇睇圖唔准用；一條片外部效果以 2–3 款為主。
+- 出**配對表**俾用戶批：重點位｜原句｜候選效果（編號＋名）｜點解 match｜**場景設計（呢位要畫咩場景）**｜分格圖。批咗先入節拍表。用 `python3 tools/ext_effects.py table matches.json out.html` 出，再用 Artifact 發佈。
+- 全部唔適合 → 可以一款都唔用，配對表照出，Treatment 同步寫明。用戶問卷選「今次唔使」就跳過本節。
+- **做卡：動作取自原作，場景自己設計**（2026-10-16 起；照搬原作 code 做出嚟明顯差過手作場景，已放棄）：由 `code/` 抽動作參數（時間、緩動、stagger），場景按 Healthy Days 品牌同內容設計（淺色、tokens、效果字 ≥ 76px）。**先出一張定格畫面俾用戶批，批咗先做全動畫**；驗收要同最新批咗嘅正式片場景**並排對比**，唔係淨係對分格圖。批咗 `cards.py verify` 入庫，片完將場景抽成庫卡（文字數字做 slot），下次同作用位直接用。已入庫：`kallaway.x.stat.odometer`(#29)、`contrast.split`(#32)、`meter.liquid`(#37)、`text.typewriter`(#27)。細節 `workflow/external-effects.md` 第 3 節。
 
 ## 6. 關卡：節拍表
 按 `workflow/beats.md` 寫 `storyboards/<project>-beats.json`：每拍＝錨點原句、開始 t0／長度 dur、mode（person／full／card／split／pip）、卡 id、slots、cues、`skipcaps`（要收起嘅字幕開始秒數）、`sfx`（落地秒數、聲效、原因）、`ext`（外部效果：例如 `text-motion-40 #29 Odometer`，冇就 `"冇"`）。
@@ -89,7 +90,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 - 砌專案（第 8 節 1–3）→ lint → 逐拍截圖 → 出節拍表頁（Artifact 發佈，之後每輪改完用同一連結更新）→ 問確認。用戶意見改完要再截圖自己睇過先交。
 
 ## 7. 新卡預覽（併入節拍表）
-- 節拍表用到但未有 9:16 版嘅卡：`cards.py adapt <id>`，按 `workflow/style-packs.md` 改（安全區、字級、data-cues、品牌色、出場動畫），用 `npx hyperframes snapshot` 出關鍵格／短 render 俾用戶睇。批咗 `cards.py verify <id> --note "…" [--source "text-motion-40#29"]`（外部效果卡一定要記 source；做法見 `workflow/external-effects.md`）。
+- 節拍表用到但未有 9:16 版嘅卡：`cards.py adapt <id>`，按 `workflow/style-packs.md` 改（安全區、字級、data-cues、品牌色、出場動畫），用 `npx hyperframes snapshot` 出關鍵格／短 render 俾用戶睇。批咗 `cards.py verify <id> --note "…" [--source "text-motion-40#29"]`（外部效果卡一定要記 source；做法見 `workflow/external-effects.md`）。外部效果卡先出一張定格俾用戶批，再用 `snapshot` 截多格，同最新批咗嘅正式片場景並排對比（冇就對 `strips/` 睇動作），睇完先交節拍表／用戶。
 - 已驗證嘅卡唔使再批，除非 slot 內容長過上限。
 
 ## 8. Build + QA + 渲染
