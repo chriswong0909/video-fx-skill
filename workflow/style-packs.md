@@ -1,6 +1,6 @@
 # 用風格包卡（9:16 用到先改）
 
-> 風格包負責全片基礎；重點位另外要做**外部效果配對**（`workflow/external-effects.md`）。外部效果做成卡時，照本檔改 9:16 規則 + 該檔「用效果時嘅規則」，入庫時 `portrait.json` 記 `source`（例如 `text-motion-40#29`）。
+> 風格包負責全片基礎；重點位另外要做**外部效果配對**（`workflow/external-effects.md`）。外部效果做成卡：**動作取自 text-motion-40 原作，場景按品牌自己設計**（唔係搬原作 code），規則見 `workflow/external-effects.md` 第 3 節；入庫時 `portrait.json` 記 `source`（例如 `text-motion-40#29`）。
 
 ## 卡嘅種類（新手包分類）
 - **tier1 全屏**（蓋住講者）：`section` 章節／標題、`stat` 大數字、`overview` 清單／步驟／對比、`quote`、`thesis`。
@@ -26,6 +26,16 @@ python3 tools/cards.py show kallaway.t1.overview.checklist                    # 
    - 空 slot 自動隱藏（參考 checklist 嘅 i4）。
 3. 預覽：砌一個 15 秒測試專案（講者片段 + logo + 卡），`npx hyperframes snapshot --at …` 自己先睇，再 render draft 俾用戶。
 4. 用戶批咗：`python3 tools/cards.py verify <id> --note "doctor2 用過；title ≤ 8 字"`。
+
+## 外部效果卡（動作取自 text-motion-40，場景自設；2026-10-16 改）
+唔係複製 16:9 卡重排，亦唔係搬原作程式碼：動作（時間、緩動、stagger）取自 text-motion-40 `code/`，場景按品牌自己設計成一張庫卡。流程、規格、已入庫卡見 `workflow/external-effects.md` 第 3 節。
+```
+python3 tools/cards.py list --style kallaway --portrait        # 已入庫：kallaway.x.stat.odometer／contrast.split／meter.liquid／text.typewriter
+python3 tools/cards.py use kallaway.x.meter.liquid --project ~/hf/<proj> --name beat05 --dur 4 \
+  --slots '{"glyph":"鈣","level":"80","pill":"每日鈣質要達標"}' --cues 0.5,2.3 --brand healthy-days
+```
+- 同普通卡一樣要守：IG 安全區、效果字 ≥ 76px、`data-dur`／`data-cues`、host z-index、顏色只讀品牌 tokens。
+- 新款：先做場景、出一張定格俾用戶批，批咗 `cards.py verify <id> --source "text-motion-40#N（動作）"`。`cards.py adapt --ext N` 只做起點／對照，唔做正式卡預設。
 
 ## 主題（淺／深）
 - 品牌檔可以有兩個版本：`brands/<brand>/tokens-<style>.css`（預設）同 `tokens-<style>-dark.css`。Healthy Days 預設**淺色**（用戶 2026-10-01：深色太暗黑），`--brand healthy-days:dark` 用深色。
