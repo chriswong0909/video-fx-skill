@@ -3846,24 +3846,19 @@
    "file": "cards/tier1/t1-overview-checklist.html",
    "slots": [
     {
-     "name": "title",
-     "type": "richtext"
+     "name": "title"
     },
     {
-     "name": "i1",
-     "type": "text"
+     "name": "i1"
     },
     {
-     "name": "i2",
-     "type": "text"
+     "name": "i2"
     },
     {
-     "name": "i3",
-     "type": "text"
+     "name": "i3"
     },
     {
-     "name": "i4",
-     "type": "text"
+     "name": "i4"
     },
     {
      "name": "p1"
@@ -3876,6 +3871,12 @@
     },
     {
      "name": "p4"
+    },
+    {
+     "name": "img"
+    },
+    {
+     "name": "pos"
     }
    ],
    "duration": {
@@ -4297,24 +4298,25 @@
    "file": "cards/tier1/t1-overview-flow.html",
    "slots": [
     {
-     "name": "title",
-     "type": "richtext"
+     "name": "title"
     },
     {
-     "name": "n1",
-     "type": "text"
+     "name": "n1"
     },
     {
-     "name": "n2",
-     "type": "text"
+     "name": "n2"
     },
     {
-     "name": "n3",
-     "type": "text"
+     "name": "n3"
     },
     {
-     "name": "n4",
-     "type": "text"
+     "name": "n4"
+    },
+    {
+     "name": "img"
+    },
+    {
+     "name": "pos"
     }
    ],
    "duration": {
@@ -7089,12 +7091,13 @@
    "file": "cards/tier2/t2-lt-glasscard.html",
    "slots": [
     {
-     "name": "name",
-     "type": "text"
+     "name": "name"
     },
     {
-     "name": "role",
-     "type": "text"
+     "name": "role"
+    },
+    {
+     "name": "box"
     }
    ],
    "duration": {
@@ -8671,12 +8674,13 @@
    "file": "cards/tier2/t2-lb-keyword.html",
    "slots": [
     {
-     "name": "term",
-     "type": "richtext"
+     "name": "term"
     },
     {
-     "name": "note",
-     "type": "text"
+     "name": "note"
+    },
+    {
+     "name": "top"
     }
    ],
    "duration": {
@@ -9067,12 +9071,16 @@
    "file": "cards/tier2/t2-lb-qmark.html",
    "slots": [
     {
-     "name": "term",
-     "type": "richtext"
+     "name": "detail"
     },
     {
-     "name": "detail",
-     "type": "richtext"
+     "name": "term"
+    },
+    {
+     "name": "term2"
+    },
+    {
+     "name": "top"
     }
    ],
    "duration": {
@@ -9582,6 +9590,9 @@
     },
     {
      "name": "tags"
+    },
+    {
+     "name": "box"
     }
    ],
    "duration": {
@@ -9605,6 +9616,9 @@
     },
     {
      "name": "l2"
+    },
+    {
+     "name": "top"
     }
    ],
    "duration": {
@@ -9612,6 +9626,173 @@
     "max": 6
    },
    "custom": "Healthy Days 自家問題字卡（訪問片：旁白問、講者聽）"
+  },
+  {
+   "id": "kallaway.x.photo.full",
+   "tier": "tier1",
+   "purpose": "image",
+   "treatment": "full",
+   "file": "cards-9x16/kallaway.x.photo.full.html",
+   "slots": [
+    {
+     "name": "img"
+    },
+    {
+     "name": "pos"
+    },
+    {
+     "name": "zoom"
+    }
+   ],
+   "duration": {
+    "min": 2,
+    "max": 10
+   },
+   "custom": "自家圖片卡，純 Kallaway 文法（唔帶 Healthy Days 標題條／膠囊），字用 label 卡疊"
+  },
+  {
+   "id": "kallaway.x.photo.split",
+   "tier": "tier2",
+   "purpose": "image",
+   "treatment": "split",
+   "file": "cards-9x16/kallaway.x.photo.split.html",
+   "slots": [
+    {
+     "name": "img"
+    },
+    {
+     "name": "pos"
+    }
+   ],
+   "duration": {
+    "min": 2,
+    "max": 10
+   },
+   "custom": "自家圖片卡，純 Kallaway 文法（唔帶 Healthy Days 標題條／膠囊），字用 label 卡疊"
+  },
+  {
+   "id": "kallaway.x.photo.frame",
+   "tier": "tier2",
+   "purpose": "image",
+   "treatment": "frame",
+   "file": "cards-9x16/kallaway.x.photo.frame.html",
+   "slots": [
+    {
+     "name": "img"
+    },
+    {
+     "name": "pos"
+    },
+    {
+     "name": "box"
+    }
+   ],
+   "duration": {
+    "min": 2,
+    "max": 10
+   },
+   "custom": "自家圖片卡，純 Kallaway 文法（唔帶 Healthy Days 標題條／膠囊），字用 label 卡疊"
+  },
+  {
+   "id": "kallaway.x.stat.odometer",
+   "tier": "tier1",
+   "purpose": "stat",
+   "treatment": "odometer-people",
+   "file": "cards-9x16/kallaway.x.stat.odometer.html",
+   "slots": [
+    {
+     "name": "num"
+    },
+    {
+     "name": "unit"
+    },
+    {
+     "name": "n"
+    },
+    {
+     "name": "hl"
+    },
+    {
+     "name": "pill"
+    },
+    {
+     "name": "title"
+    }
+   ],
+   "duration": {
+    "min": 3,
+    "max": 8
+   },
+   "custom": "Healthy Days 自家比例數字卡：動作跟 text-motion-40 #29，外觀跟骨質疏鬆篇 mg_quarter（用戶批）"
+  },
+  {
+   "id": "kallaway.x.contrast.split",
+   "tier": "tier1",
+   "purpose": "contrast",
+   "treatment": "split-myth-fact",
+   "file": "cards-9x16/kallaway.x.contrast.split.html",
+   "slots": [
+    {
+     "name": "myth"
+    },
+    {
+     "name": "fact"
+    },
+    {
+     "name": "tag"
+    }
+   ],
+   "duration": {
+    "min": 3,
+    "max": 8
+   },
+   "custom": "HealthyDays迷思／事實反差卡：動作跟text-motion-40#32，場景自設（盲測）"
+  },
+  {
+   "id": "kallaway.x.meter.liquid",
+   "tier": "tier1",
+   "purpose": "meter",
+   "treatment": "liquid-fill",
+   "file": "cards-9x16/kallaway.x.meter.liquid.html",
+   "slots": [
+    {
+     "name": "glyph"
+    },
+    {
+     "name": "level"
+    },
+    {
+     "name": "unit"
+    },
+    {
+     "name": "pill"
+    }
+   ],
+   "duration": {
+    "min": 3,
+    "max": 8
+   },
+   "custom": "HealthyDays液體充滿量表卡：動作跟text-motion-40#37，場景自設（盲測）"
+  },
+  {
+   "id": "kallaway.x.text.typewriter",
+   "tier": "tier1",
+   "purpose": "text",
+   "treatment": "typewriter-card",
+   "file": "cards-9x16/kallaway.x.text.typewriter.html",
+   "slots": [
+    {
+     "name": "l1"
+    },
+    {
+     "name": "l2"
+    }
+   ],
+   "duration": {
+    "min": 3,
+    "max": 8
+   },
+   "custom": "HealthyDays兩行打字提問卡：動作跟text-motion-40#27，場景自設（盲測）"
   }
  ]
 }

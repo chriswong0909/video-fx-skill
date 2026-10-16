@@ -4,7 +4,8 @@
   訪問片用：旁白／主持問問題時，講者聆聽鏡頭嘅胸口位（top 1010，離面遠）浮一張白色毛玻璃卡，
   左上角品牌藍圓形編號（Q1、Q2…），卡入面係問題原句（口語照寫），最多兩行。講者一開口就收。
   呢張卡佔咗字幕位，問題嗰句字幕唔出（skipcaps）。
-  Slots: num（例如 Q2，≤ 3 字）, l1（第一行，≤ 10 字）, l2（第二行，≤ 10 字，可留空）。
+  Slots: num（例如 Q2，≤ 3 字）, l1（第一行，≤ 10 字）, l2（第二行，≤ 10 字，可留空）,
+         top（可選，卡頂 px，預設 1010 胸口位；闊鏡訪問位上面有白牆可以寫 300，離頭頂要 ≥ 130px）。
   data-cues：第一個＝卡同第一行出現，第二個＝第二行出現（講到嗰度）。
 -->
 <html>
@@ -28,11 +29,13 @@
       #x-question .line { display: block; font: 900 82px/1.22 var(--font-display); color: var(--head); white-space: nowrap; }
       #x-question .line.l2 { color: var(--accent); }
       #x-question .line:empty { display: none; }
+      #x-question .pos { display: none; }
     </style>
   </head>
   <body>
     <div id="x-question" data-composition-id="x-question" data-start="0" data-width="1080" data-height="1920">
       <div class="glow"></div>
+      <i class="pos" data-slot="top"></i>
       <div class="wrap"><div class="card">
         <div class="bar"></div>
         <div class="num" data-slot="num">Q2</div>
@@ -50,6 +53,8 @@
       const DUR = +ROOT.dataset.dur || 3;
       /* 一行長過 10 個字自動縮細（唔細過字幕 76px） */
       ROOT.querySelectorAll('.line').forEach(function (el) { const n = el.textContent.trim().length; if (n > 10) el.style.fontSize = Math.max(76, Math.floor(840 / n)) + 'px'; });
+      const TOP = parseFloat(ROOT.querySelector('.pos').textContent);
+      if (TOP) { ROOT.querySelector('.wrap').style.top = TOP + 'px'; ROOT.querySelector('.glow').style.top = (TOP - 50) + 'px'; }
       const hasL2 = !!ROOT.querySelector('.l2').textContent.trim();
       const t0 = CUES.length ? Math.max(0, CUES[0] - 0.25) : 0.05;
       const t2 = CUES.length > 1 ? CUES[1] : t0 + 1.0;

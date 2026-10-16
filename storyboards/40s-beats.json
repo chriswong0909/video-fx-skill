@@ -1,0 +1,473 @@
+[
+ {
+  "name": "q1",
+  "t0": 0,
+  "dur": 3.5,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.label.qmark",
+  "brand": "fin-channel",
+  "anchor": "主持：會唔會有一個憂慮，就係覺得AI會取代咗老師",
+  "slots": {
+   "detail": "Q1",
+   "term": "AI 會取代老師？",
+   "term2": "",
+   "top": "300"
+  },
+  "cues": "0.25",
+  "why": "Hook A：第一鏡真人闊鏡，問題卡放白牆（離頭頂約 150px）。卡喺 0 秒出，早過講出嚟（hook 例外）",
+  "skipcaps": [
+   1.24
+  ],
+  "sfx": [
+   {
+    "t": 0.1,
+    "sfx": "SFX-011",
+    "vol": 0.3,
+    "why": "問題卡落地（開場重音）"
+   },
+   {
+    "t": 0.45,
+    "sfx": "SFX-083",
+    "vol": 0.2,
+    "why": "疑問音：對住問題「AI 會取代老師？」"
+   }
+  ],
+  "notspoken": [
+   "term"
+  ]
+ },
+ {
+  "name": "pip1",
+  "t0": 3.6,
+  "dur": 4.05,
+  "mode": "pip",
+  "tier": "tier2",
+  "card": "kallaway.x.photo.frame",
+  "brand": "fin-channel",
+  "anchor": "主持：佢哋會唔會覺得AI俾我嘅判斷會更加準確",
+  "slots": {
+   "img": "assets/img/img1-robot-teacher.jpg",
+   "pos": "38% 36%",
+   "box": "56,520,404,560"
+  },
+  "cues": "0.35",
+  "why": "圖 1 機械人老師：邊緣發光圖片框放主持旁邊（推近鏡，左邊空位）。Q2 當一般字幕（用戶 2026-10-04）。3.57 接位用轉鏡頭遮",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 3.57,
+    "sfx": "SFX-002",
+    "vol": 0.3,
+    "why": "轉鏡頭（遮接位）"
+   },
+   {
+    "t": 3.8,
+    "sfx": "SFX-416",
+    "vol": 0.06,
+    "why": "電腦運作聲：機械人老師圖片框出現，襯住成句「AI…判斷」",
+    "dur": 3.6
+   },
+   {
+    "t": 7.22,
+    "sfx": "SFX-033",
+    "vol": 0.2,
+    "why": "確認音：對住「準確」"
+   }
+  ]
+ },
+ {
+  "name": "name",
+  "t0": 7.8,
+  "dur": 1.7,
+  "mode": "person",
+  "tier": "tier2",
+  "card": "kallaway.t2.lower-third.glasscard",
+  "brand": "fin-channel",
+  "anchor": "陳大文：其實老師呢件事",
+  "slots": {
+   "name": "陳大文",
+   "role": "教育專家",
+   "box": "540,1090"
+  },
+  "cues": "0.12",
+  "why": "陳大文第一次開口：轉去佢單人鏡，名牌喺右下（唔遮面）",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 7.69,
+    "sfx": "SFX-059",
+    "vol": 0.25,
+    "why": "推近去陳大文"
+   },
+   {
+    "t": 7.95,
+    "sfx": "SFX-260",
+    "vol": 0.6,
+    "why": "紙卡滑入：名牌"
+   }
+  ]
+ },
+ {
+  "name": "img2",
+  "t0": 9.5,
+  "dur": 2.07,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.photo.full",
+  "brand": "fin-channel",
+  "anchor": "陳大文：唔止係改卷",
+  "slots": {
+   "img": "assets/img/img2-ai-marking.jpg",
+   "pos": "50% 60%",
+   "zoom": "1.12"
+  },
+  "cues": "",
+  "why": "圖 2 AI 改卷。逗號位切入，俾陳大文同名牌先出 1.8 秒；大字用風格包關鍵詞卡疊喺圖片上面",
+  "skipcaps": [
+   9.56
+  ],
+  "sfx": [
+   {
+    "t": 9.5,
+    "sfx": "SFX-378",
+    "vol": 0.22,
+    "why": "掃描下掃聲：AI 機械手掃描試卷"
+   },
+   {
+    "t": 10.32,
+    "sfx": "SFX-035",
+    "vol": 0.22,
+    "why": "剔號確認音：對住「改卷」同圖入面嘅剔號"
+   }
+  ]
+ },
+ {
+  "name": "kw2",
+  "parent": "img2",
+  "t0": 9.5,
+  "dur": 2.07,
+  "mode": "full",
+  "tier": "tier2",
+  "z": 16,
+  "card": "kallaway.t2.label.keyword",
+  "brand": "fin-channel",
+  "anchor": "",
+  "slots": {
+   "term": "唔止係改卷",
+   "note": "",
+   "top": "400"
+  },
+  "cues": "0.34",
+  "why": "",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "split3",
+  "t0": 11.57,
+  "dur": 4.8,
+  "mode": "split",
+  "tier": "tier2",
+  "card": "kallaway.x.photo.split",
+  "brand": "fin-channel",
+  "anchor": "陳大文：仲有好多範圍，包括點樣教學生、教學生教得更加好",
+  "slots": {
+   "img": "assets/img/img3-teacher-class.jpg",
+   "pos": "50% 30%"
+  },
+  "cues": "",
+  "why": "圖 3 老師教學生，上圖下人；關鍵詞講到先出",
+  "skipcaps": [
+   13.2,
+   14.74
+  ],
+  "sfx": [
+   {
+    "t": 11.57,
+    "sfx": "SFX-306",
+    "vol": 0.7,
+    "why": "翻書聲：切入老師教學生（課室）"
+   },
+   {
+    "t": 14.04,
+    "sfx": "SFX-081",
+    "vol": 0.5,
+    "why": "撥弦：關鍵詞「教學生」"
+   },
+   {
+    "t": 15.28,
+    "sfx": "SFX-390",
+    "vol": 0.2,
+    "why": "升級音：對住「教得更加好」"
+   }
+  ]
+ },
+ {
+  "name": "kw3",
+  "parent": "split3",
+  "t0": 13.6,
+  "dur": 2.77,
+  "mode": "split",
+  "tier": "tier2",
+  "z": 16,
+  "card": "kallaway.t2.label.keyword",
+  "brand": "fin-channel",
+  "anchor": "",
+  "slots": {
+   "term": "教學生",
+   "note": "教得更加好",
+   "top": "590"
+  },
+  "cues": "0.44,1.68",
+  "why": "",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "flow4",
+  "t0": 16.37,
+  "dur": 8.0,
+  "mode": "card",
+  "tier": "tier1",
+  "card": "kallaway.t1.overview.flow",
+  "brand": "fin-channel",
+  "anchor": "陳大文：就算我哋出份報告出嚟／講俾學生聽有咩錯／然後我哋出啲練習出嚟／話俾學生聽／你試下咁做會好啲",
+  "slots": {
+   "img": "assets/img/img4-ai-report.jpg",
+   "pos": "50% 25%",
+   "title": "AI 做到嘅",
+   "n1": "報告",
+   "n2": "錯處",
+   "n3": "練習",
+   "n4": "建議"
+  },
+  "cues": "0.2,1.13,3.57,5.01,6.49",
+  "why": "資訊卡 1（流程）：圖 4 AI 報告做底，四步跟住講嘅時間逐行出。16.37 接位用全屏入場遮",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 16.37,
+    "sfx": "SFX-417",
+    "vol": 0.06,
+    "why": "電腦運作聲：AI 報告畫面，襯住成段流程",
+    "dur": 7.9
+   },
+   {
+    "t": 17.5,
+    "sfx": "SFX-007",
+    "vol": 0.45,
+    "why": "打字聲：第 1 步「報告」（出報告）"
+   },
+   {
+    "t": 19.94,
+    "sfx": "SFX-041",
+    "vol": 0.4,
+    "why": "錯誤提示音：第 2 步「錯處」"
+   },
+   {
+    "t": 21.38,
+    "sfx": "SFX-087",
+    "vol": 0.3,
+    "why": "刮擦聲（似寫字）：第 3 步「練習」"
+   },
+   {
+    "t": 22.86,
+    "sfx": "SFX-008",
+    "vol": 0.25,
+    "why": "叮：第 4 步「建議」"
+   }
+  ],
+  "notspoken": [
+   "n2",
+   "n4"
+  ]
+ },
+ {
+  "name": "hold1",
+  "t0": 24.37,
+  "dur": 3.52,
+  "mode": "person",
+  "tier": "none",
+  "card": "",
+  "brand": "",
+  "anchor": "陳大文：但實際上去到真係幫學生去了解佢",
+  "slots": {},
+  "cues": "",
+  "why": "轉折位，留返俾陳大文（單人鏡慢推），只出字幕",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 24.37,
+    "sfx": "SFX-018",
+    "vol": 0.25,
+    "why": "低頻下沉：電腦聲收、返去真人，「但實際上」轉折"
+   }
+  ]
+ },
+ {
+  "name": "img5",
+  "t0": 27.89,
+  "dur": 2.58,
+  "mode": "full",
+  "tier": "tier1",
+  "card": "kallaway.x.photo.full",
+  "brand": "fin-channel",
+  "anchor": "陳大文：譬如佢真係好唔鍾意作文／點解佢唔鍾意作文呢",
+  "slots": {
+   "img": "assets/img/img5-student-stuck.jpg",
+   "pos": "50% 50%",
+   "zoom": "1.12"
+  },
+  "cues": "",
+  "why": "圖 5 學生苦惱；第二句「點解…」照出字幕",
+  "skipcaps": [
+   27.92
+  ],
+  "sfx": [
+   {
+    "t": 27.89,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入全屏圖"
+   },
+   {
+    "t": 28.5,
+    "sfx": "SFX-365",
+    "vol": 0.18,
+    "why": "低音下滑（洩氣）：對住「好唔鍾意作文」"
+   },
+   {
+    "t": 29.3,
+    "sfx": "SFX-084",
+    "vol": 0.18,
+    "why": "疑問音：對住「點解…呢」"
+   }
+  ]
+ },
+ {
+  "name": "kw5",
+  "parent": "img5",
+  "t0": 27.89,
+  "dur": 2.58,
+  "mode": "full",
+  "tier": "tier2",
+  "z": 16,
+  "card": "kallaway.t2.label.keyword",
+  "brand": "fin-channel",
+  "anchor": "",
+  "slots": {
+   "term": "好唔鍾意作文",
+   "note": "",
+   "top": "400"
+  },
+  "cues": "0.5",
+  "why": "",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "hold2",
+  "t0": 30.47,
+  "dur": 2.2,
+  "mode": "person",
+  "tier": "none",
+  "card": "",
+  "brand": "",
+  "anchor": "陳大文：好唔鍾意譬如ICT或者某啲科",
+  "slots": {},
+  "cues": "",
+  "why": "返闊鏡（見到主持聽緊），只出字幕",
+  "skipcaps": [],
+  "sfx": []
+ },
+ {
+  "name": "split6",
+  "t0": 32.67,
+  "dur": 2.54,
+  "mode": "split",
+  "tier": "tier2",
+  "card": "kallaway.x.photo.split",
+  "brand": "fin-channel",
+  "anchor": "陳大文：可能都係由老師去開解／老師去了解佢",
+  "slots": {
+   "img": "assets/img/img6-teacher-listening.jpg",
+   "pos": "50% 52%"
+  },
+  "cues": "",
+  "why": "圖 6 老師聽學生講，上圖下人；字幕照出，「開解／了解」留俾下一張清單卡。32.67 接位用入場遮",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 32.67,
+    "sfx": "SFX-001",
+    "vol": 0.3,
+    "why": "切入上圖下人（遮接位）"
+   },
+   {
+    "t": 33.58,
+    "sfx": "SFX-077",
+    "vol": 0.4,
+    "why": "打開聲：對住「開解」"
+   }
+  ]
+ },
+ {
+  "name": "list7",
+  "t0": 35.21,
+  "dur": 4.12,
+  "mode": "card",
+  "tier": "tier1",
+  "card": "kallaway.t1.overview.checklist",
+  "brand": "fin-channel",
+  "anchor": "陳大文：老師去令佢真係知道自己差啲咩先會更加好",
+  "slots": {
+   "img": "assets/img/img7-student-progress.jpg",
+   "pos": "50% 0%",
+   "title": "老師嘅角色",
+   "i1": "開解",
+   "i2": "了解",
+   "i3": "知道自己差啲咩",
+   "i4": ""
+  },
+  "cues": "0.2,0.4,0.8,1.27",
+  "why": "資訊卡 2（清單，payoff）：圖 7 學生進步做底；頭兩項啱啱講完即出，第三項講到先出",
+  "skipcaps": [],
+  "sfx": [
+   {
+    "t": 35.21,
+    "sfx": "SFX-062",
+    "vol": 0.25,
+    "why": "放大聲：切入清單卡"
+   },
+   {
+    "t": 35.61,
+    "sfx": "SFX-033",
+    "vol": 0.2,
+    "why": "剔號確認：「開解」"
+   },
+   {
+    "t": 36.01,
+    "sfx": "SFX-033",
+    "vol": 0.2,
+    "why": "剔號確認：「了解」"
+   },
+   {
+    "t": 36.48,
+    "sfx": "SFX-034",
+    "vol": 0.22,
+    "why": "剔號確認：「知道自己差啲咩」"
+   },
+   {
+    "t": 38.5,
+    "sfx": "SFX-388",
+    "vol": 0.2,
+    "why": "升級音（收結）：對住「先會更加好」"
+   }
+  ],
+  "notspoken": [
+   "i1",
+   "i2"
+  ]
+ }
+]

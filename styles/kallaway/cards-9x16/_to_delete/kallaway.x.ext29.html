@@ -1,0 +1,115 @@
+<!doctype html>
+<!--
+  text-motion-40 #29 Odometer（計數器）· 外部效果卡 · 由 `cards.py adapt --ext 29` 產生（2026-10-16）
+  原作程式碼：text-motion-40/code/29_Odometer.js ＋ code/_header.js，全部包喺 IIFE（function scope）入面，唔會同其他卡／主檔撞名。
+  已做：TL() 由 repeat:5 改 paused；播放次數由 data-freeze／data-loops 控制；顏色讀 ext-bg／ext-fg／ext-hi／ext-ink（預設跟品牌 tokens）；
+        舞台 487×160 成個放大 2 倍；缺字 fallback 用 FF(字體key, 文字)。
+  已換字（29 專用，2026-10-16）：slot num／unit／label（見 effect 註解）。
+  仍要人手做：
+   1. 換字：示範字 12480、累計、人 → 抽成 data-slot，按字數調字級同位置，唔好出界。
+   2. 字級：效果字要 ≥ 76px（舞台單位 ×2）。目前 <76px：28px→56px
+   3. data-freeze（凍結喺原作第幾秒；預設 0，0＝播完整個 2 秒循環）或 data-loops（1＝只播一次，數字，auto＝按 dur）。
+   4. hyperframes snapshot 每 0.75 秒 8 格，同 text-motion-40/strips/29_Odometer.jpg 並排對比；批咗 cards.py verify kallaway.x.ext29 --source text-motion-40#29
+  
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      @font-face { font-family: 'Dela Gothic One'; src: url(assets/fonts/Dela_Gothic_One.ttf); font-display: block; }
+      @font-face { font-family: 'Zen Kaku Gothic New'; src: url(assets/fonts/Zen_Kaku_Gothic_New.ttf); font-weight: 900; font-display: block; }
+      @font-face { font-family: 'ExtBrand'; src: url(assets/fonts/sans900.woff2) format('woff2'); font-weight: 900; font-display: block; }  /* 缺字 fallback：Noto Sans TC 900 子集 */
+      html, body { margin: 0; background: transparent; }
+      #x-ext29 { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden;
+        --ext-bg: var(--ink, #0B2A3A); --ext-fg: var(--paper, #FFFFFF); --ext-hi: var(--accent-2, #13B8D0); --ext-ink: var(--ink, #0B2A3A); }
+      #x-ext29 .panel { position: absolute; left: 53px; top: 1010px; width: 974px; height: 320px; border-radius: 40px; overflow: hidden;
+        box-shadow: var(--glass-shadow, 0 18px 48px rgba(11, 42, 58, 0.18)); }
+      #x-ext29 .stage { position: absolute; left: 0; top: 0; width: 487px; height: 160px; transform: scale(2); transform-origin: 0 0; overflow: hidden; }
+      #x-ext29 .pos, #x-ext29 .sl { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-ext29" data-composition-id="x-ext29" data-start="0" data-width="1080" data-height="1920">
+      <i class="pos" data-slot="top"></i>
+      <i class="sl" data-slot="num">25</i><i class="sl" data-slot="unit">%</i><i class="sl" data-slot="label">女性</i>
+      <div class="panel"><div class="stage"></div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const ROOT = document.querySelector('[data-composition-id="x-ext29"]');
+        const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+        const DUR = +ROOT.dataset.dur || 4;
+        const SPEED = +ROOT.dataset.speed || 1;
+        const LOOPS = ROOT.dataset.loops || '1';
+        const cs = getComputedStyle(ROOT);
+        const tok = function (n, d) { return (cs.getPropertyValue(n) || '').trim() || d; };
+        const c = { bg: tok('--ext-bg', '#0B2A3A'), fg: tok('--ext-fg', '#FFFFFF'), hi: tok('--ext-hi', '#13B8D0'), ink: tok('--ext-ink', '#0B2A3A') };
+        const MISS = {}; (ROOT.dataset.miss || '').split('|').forEach(function (s) { const k = s.split(':'); if (k[0]) MISS[k[0]] = k[1] || ''; });
+        /* ===== text-motion-40 code/_header.js（原作；只改 TL 一行）===== */
+        // 共用工具（原作者參考程式碼）
+        // 舞台 487×160，c = { bg 背景, fg 主字色, hi 強調色, ink 深色 }
+        const PW = 487, PH = 160, CX = 243, CY = 82;
+        const F = { dela: "'Dela Gothic One'", antique: "'Zen Antique'", reggae: "'Reggae One'", rock: "'RocknRoll One'", dot: "'DotGothic16'", train: "'Train One'", rampart: "'Rampart One'", zen: "'Zen Kaku Gothic New'" }; // Zen Kaku Gothic New は Black(900) を使う
+        function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; let t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+        function mk(p, css, txt) { const d = document.createElement('div'); d.style.cssText = 'position:absolute;' + css; if (txt != null) d.textContent = txt; p.appendChild(d); return d; }
+        function ctr(el) { gsap.set(el, { xPercent: -50, yPercent: -50 }); return el; }
+        // centred text helper
+        function tx(p, txt, size, font, color, extra) { return ctr(mk(p, `left:50%;top:${CY}px;font:400 ${size}px/1 ${font};color:${color};white-space:nowrap;${extra || ''}`, txt)); }
+        const TL = () => gsap.timeline({ paused: true }); /* 原作係 repeat:5（預覽用）；播放次數改由 data-freeze／data-loops 控制 */
+        function steps(tl, n, fn) { for (let i = 0; i < n; i++) fn(i * 2 / n, i / n, i); }
+        function rgba(hex, a) { const h = hex.replace('#', ''); return `rgba(${parseInt(h.slice(0, 2), 16)},${parseInt(h.slice(2, 4), 16)},${parseInt(h.slice(4, 6), 16)},${a})`; }
+        const fract = x => x - Math.floor(x);
+        /* 缺字 fallback：該字體缺咗要顯示嘅字，成段改用品牌中文字體（同粗度），唔混兩款 */
+        const BRAND = "'ExtBrand';font-weight:900";
+        function FF(key, text) { const m = MISS[key] || ''; for (const ch of String(text)) { if (m.indexOf(ch) >= 0) return BRAND; } return F[key]; }
+        /* ===== 原作 effect：29_Odometer.js ===== */
+        /* 29 Odometer：數字滾動往上加。換字＋版面（2026-10-16 改）：
+           slot num（≤5 位數字，預設 25）、unit（單位，≤2 字，預設 %）、label（左邊說明，≤6 字，預設 女性）；
+           舞台 487×160 放大 2 倍，所以字級 38 舞台單位＝76px（label／unit）；數字 62 舞台單位＝124px。
+           整組 [label][數字][unit] 置中，超出舞台就整組縮細（會 console.warn，字會 <76px，應該縮短文字）。
+           缺字：label 同 unit 一齊檢查（FF('zen', label+unit)，任何一個缺字就兩樣一齊改品牌字體，唔混兩款）；數字用 FF('dela', 數字)。 */
+        function effect(S, c) { const tl = TL();
+          const slot = function (n, d) { const e = ROOT.querySelector('[data-slot="' + n + '"]'); const v = e ? e.textContent.trim() : ''; return v || d; };
+          const target = slot('num', '25').replace(/[^0-9]/g, '').slice(0, 5) || '0', unitTxt = slot('unit', '%'), labTxt = slot('label', '女性');
+          const N = target.length, TW = 58, GAP = 16, LS = 38, GP = 14;
+          const cw = function (t, s) { let w = 0; for (const ch of String(t)) w += (ch.charCodeAt(0) < 128 ? 0.78 : 1) * s; return w; };   /* 估闊度：半形 0.78、全形 1 */
+          const digitsW = N * TW - 4 + (N > 2 ? GAP : 0), labW = cw(labTxt, LS), unitW = cw(unitTxt, LS);
+          const total = labW + (labW ? GP : 0) + digitsW + (unitW ? GP : 0) + unitW;
+          const k = Math.min(1, 455 / total); if (k < 1) console.warn('[ext29] 文字太長，整組縮到 ' + k.toFixed(2) + '，字會 <76px');
+          const g = mk(S, 'left:0;top:0;width:487px;height:160px'); gsap.set(g, { scale: k, transformOrigin: '50% 50%' });
+          const x0 = (487 - total) / 2, dx0 = x0 + labW + (labW ? GP : 0);
+          if (labTxt) mk(g, `left:${x0}px;top:${80 - LS / 2}px;font:400 ${LS}px/1 ${FF('zen', labTxt + unitTxt)};color:${c.hi};white-space:nowrap`, labTxt);
+          if (unitTxt) mk(g, `left:${dx0 + digitsW + GP}px;top:${80 - LS / 2}px;font:400 ${LS}px/1 ${FF('zen', labTxt + unitTxt)};color:${c.hi};white-space:nowrap`, unitTxt);
+          const dfont = FF('dela', target);
+          target.split('').forEach(function (d, i) { const col = mk(g, `left:${dx0 + i * TW + (i > 1 ? GAP : 0)}px;top:38px;width:54px;height:84px;overflow:hidden;background:${c.fg};border-radius:8px`);
+            const strip = mk(col, 'left:0;top:0;width:100%'); let h = ''; for (let q = 0; q < 20; q++) h += `<div style="height:84px;font:400 62px/84px ${dfont};color:${c.ink};text-align:center">${q % 10}</div>`; strip.innerHTML = h;
+            tl.fromTo(strip, { y: 0 }, { y: -84 * (10 + Number(d)), duration: 1.1 + i * .12, ease: 'power3.out' }, .1);
+            if (i === 1 && N > 2) mk(g, `left:${dx0 + 2 * TW - 6}px;top:114px;width:6px;height:6px;border-radius:50%;background:${c.hi}`); });
+          tl.freeze = 0.1 + 1.1 + 0.12 * (N - 1) + 0.3;      /* 最後一位滾停後再留 0.3 秒就凍結（原作之後係 loop 用嘅淡出，單次播放唔要） */
+          return tl; }
+        const stage = ROOT.querySelector('.stage'), panel = ROOT.querySelector('.panel');
+        const TOP = parseFloat(ROOT.querySelector('.pos').textContent);
+        if (TOP) panel.style.top = TOP + 'px';
+        panel.style.background = c.bg;
+        const et = effect(stage, c);                       /* 原作回傳 paused timeline；由下面主時間線 seek，唔自己播 */
+        const FREEZE = ROOT.dataset.freeze !== undefined ? +ROOT.dataset.freeze : (et.freeze !== undefined ? et.freeze : 0);   /* effect 可設 tl.freeze＝建議凍結秒數 */
+        const tl = gsap.timeline({ paused: true });
+        const t0 = CUES.length ? Math.max(0, CUES[0] - 0.25) : 0.05;
+        const CYCLE = 2;                                   /* 原作一個循環 2 秒 */
+        const nLoops = LOOPS === 'auto' ? Math.max(1, Math.round((DUR - 0.4 - t0) * SPEED / CYCLE)) : Math.max(1, +LOOPS || 1);
+        tl.fromTo(panel, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.2, ease: 'power2.out' }, Math.max(0, t0 - 0.05));
+        if (nLoops === 1) {
+          const to = FREEZE > 0 ? FREEZE : CYCLE;
+          tl.add(et.tweenFromTo(0, to, { duration: to / SPEED, ease: 'none' }), t0);
+        } else {
+          for (let k = 0; k < nLoops; k++) tl.add(et.tweenFromTo(0, CYCLE, { duration: CYCLE / SPEED, ease: 'none' }), t0 + k * CYCLE / SPEED);
+        }
+        tl.to(panel, { autoAlpha: 0, y: 20, duration: 0.3, ease: 'power2.in' }, DUR - 0.32).set({}, {}, 7);
+        window.__timelines["x-ext29"] = tl;
+      })();
+    </script>
+  </body>
+</html>

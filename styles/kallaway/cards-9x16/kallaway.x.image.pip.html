@@ -5,6 +5,7 @@
   借舊效果庫 FX-058（圓角相片插入）+ Kallaway 玻璃卡入場（向上浮入 + 模糊對焦）。短例子用（2–5 秒）。
   Slots: img, pos（圖片焦點，預設 50% 62%）, tags（可選，膠囊，用「、」分，≤ 3 個，每個 ≤ 4 字）。
   膠囊字 76px（唔細過字幕），佔咗字幕位，所以用呢張卡嗰句字幕唔出（skipcaps）。
+  box（可選，「left,top,闊,高」px：圖片框放講者旁邊，例如單人推近鏡時放空嗰邊；唔寫＝胸口置中 500×460）。
   data-cues：第一個＝圖片框出現，之後每個膠囊一個。
 -->
 <html>
@@ -36,6 +37,7 @@
         <div class="tag-row" data-slot="tags">生活習慣、飲食、藥物</div>
       </div>
       <i class="pos" data-slot="pos">50% 62%</i>
+      <i class="pos box" data-slot="box"></i>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <script>
@@ -46,7 +48,11 @@
       const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
       const DUR = +ROOT.dataset.dur || 5;
       const IMG = ROOT.querySelector('.frame img');
-      IMG.style.objectPosition = (ROOT.querySelector('.pos').textContent.trim() || '50% 62%');
+      IMG.style.objectPosition = (ROOT.querySelector('.pos:not(.box)').textContent.trim() || '50% 62%');
+      const BOX = ROOT.querySelector('.box').textContent.split(',').map(Number).filter(function (n) { return !isNaN(n); });
+      if (BOX.length === 4) { const ST = ROOT.querySelector('.stack'), FR = ROOT.querySelector('.frame'), GL = ROOT.querySelector('.glow');
+        ST.style.left = BOX[0] + 'px'; ST.style.right = 'auto'; ST.style.top = BOX[1] + 'px'; ST.style.width = BOX[2] + 'px'; FR.style.width = BOX[2] + 'px'; FR.style.height = BOX[3] + 'px'; FR.style.boxSizing = 'border-box';
+        GL.style.left = (BOX[0] - 80) + 'px'; GL.style.top = (BOX[1] - 40) + 'px'; GL.style.width = (BOX[2] + 160) + 'px'; GL.style.height = (BOX[3] + 120) + 'px'; }
       const row = ROOT.querySelector('.tag-row');
       const tags = row.textContent.split(/[、,，]/).map(s => s.trim()).filter(Boolean);
       row.textContent = '';

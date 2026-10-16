@@ -347,7 +347,8 @@ def cmd_mix(args):
     for i, c in enumerate(cues, 1):
         d = dirs[c['sfx']]; vol = float(c.get('vol', read_fm(os.path.join(d, 'sound.md')).get('volume', 0.35)))
         inputs += ['-i', os.path.join(d, 'sound.mp3')]; ms = int(round(float(c['t']) * 1000))
-        parts.append(f"[{i}:a]aresample=48000,aformat=channel_layouts=stereo,volume={vol},adelay={ms}|{ms}[s{i}]"); labels.append(f'[s{i}]')
+        trim = f"atrim=0:{float(c['dur'])},afade=t=out:st={max(0, float(c['dur']) - 0.4)}:d=0.4," if c.get('dur') else ''   # dur：長聲效（環境聲）只用頭幾秒，尾段淡出
+        parts.append(f"[{i}:a]{trim}aresample=48000,aformat=channel_layouts=stereo,volume={vol},adelay={ms}|{ms}[s{i}]"); labels.append(f'[s{i}]')
     graph = ';'.join(parts + [f"[0:a]aresample=48000,aformat=channel_layouts=stereo[v]"]) + ';' + ''.join(['[v]'] + labels[1:]) + \
         f"amix=inputs={len(labels)}:duration=first:normalize=0:dropout_transition=0,alimiter=limit=0.97[out]"
     ff(*inputs, '-filter_complex', graph, '-map', '[out]', '-c:a', 'aac', '-b:a', '256k', args.out)

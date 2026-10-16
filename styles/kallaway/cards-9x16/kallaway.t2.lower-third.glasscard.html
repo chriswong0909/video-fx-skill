@@ -1,0 +1,49 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier2 · lower-third · GLASSCARD — 9:16 直向中文版（名牌）
+  由 cards/tier2/t2-lt-glasscard.html 改：毛玻璃名牌，卡邊一圈品牌色發光邊；姓名 84px，職銜 60px（前面一粒發光點）。
+  放講者旁邊下方（唔遮面、唔放下巴／胸口正中），講者第一次開口先出。
+  Slots: name（≤ 5 字）, role（≤ 6 字）, box（可選「left,top」px，預設 560,1090）。data-cues：第一個＝卡出現。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #t2-lt-glass { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #t2-lt-glass .card { position: absolute; left: 560px; top: 1090px; padding: 26px 48px 30px; background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--stroke) solid var(--glass-border); border-radius: var(--radius); box-shadow: var(--glass-shadow), 0 0 0 2px rgba(var(--accent-rgb), 0.55), 0 0 26px rgba(var(--accent-rgb), 0.24), inset 0 1px 0 var(--glass-hi); overflow: hidden; }
+      #t2-lt-glass .card::before { content: ""; position: absolute; top: 0; left: 12px; right: 12px; height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.75) 40%, rgba(255,255,255,0.75) 60%, transparent); }
+      #t2-lt-glass .name { font: 900 84px/1.12 var(--font-display); color: var(--head); text-shadow: var(--textglow); white-space: nowrap; margin-bottom: 8px; }
+      #t2-lt-glass .role { font: 700 60px/1.2 var(--font-body); color: var(--text-dim); white-space: nowrap; }
+      #t2-lt-glass .role::before { content: ""; display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: var(--accent);
+        box-shadow: 0 0 12px rgba(var(--accent-rgb), 0.8); margin-right: 18px; vertical-align: middle; position: relative; top: -4px; }
+      #t2-lt-glass .pos { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="t2-lt-glass" data-composition-id="t2-lt-glass" data-start="0" data-width="1080" data-height="1920">
+      <i class="pos" data-slot="box"></i>
+      <div class="card"><div class="name" data-slot="name">陳大文</div><div class="role" data-slot="role">教育專家</div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="t2-lt-glass"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 4;
+      const CARD = ROOT.querySelector('.card');
+      const BOX = ROOT.querySelector('.pos').textContent.split(',').map(Number).filter(function (n) { return !isNaN(n); });
+      if (BOX.length >= 2) { CARD.style.left = BOX[0] + 'px'; CARD.style.top = BOX[1] + 'px'; }
+      const t0 = CUES.length ? CUES[0] : 0.1;
+      tl.from(CARD, { autoAlpha: 0, x: 40, y: 24, scale: 0.93, filter: "blur(12px)", transformOrigin: "right bottom", duration: 0.6, ease: "back.out(1.4)" }, t0)
+        .from(ROOT.querySelector('.name'), { opacity: 0, x: -20, filter: "blur(8px)", duration: 0.45, ease: "power4.out" }, t0 + 0.25)
+        .from(ROOT.querySelector('.role'), { opacity: 0, x: -14, filter: "blur(6px)", duration: 0.4, ease: "power3.out" }, t0 + 0.38)
+        .to(CARD, { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, DUR - 0.32)
+        .set({}, {}, 7);
+      window.__timelines["t2-lt-glass"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+  KALLAWAY · 自家卡 · NAMETAG — 名牌（9:16）
+  冇品牌名牌樣板嘅頻道用：白色毛玻璃卡，左邊品牌色直條，姓名 84px，下面職銜膠囊 60px。
+  放講者旁邊下方（唔遮面、唔放下巴／胸口正中），講者第一次開口先出，停 2–5 秒。
+  Slots: name（≤ 5 字）, role（≤ 6 字）, box（可選「left,top」px，預設 560,1120 右下）。
+  data-cues：第一個＝名牌出現，第二個＝職銜膠囊。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-nametag { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #x-nametag .plate { position: absolute; left: 560px; top: 1120px; padding: 22px 44px 28px 52px; box-sizing: border-box;
+        background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+        border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi); box-shadow: var(--glass-shadow); border-radius: 32px; overflow: hidden; }
+      #x-nametag .bar { position: absolute; left: 0; top: 0; bottom: 0; width: 14px; background: var(--accent); }
+      #x-nametag .name { font: 900 84px/1.15 var(--font-display); color: var(--head); white-space: nowrap; }
+      #x-nametag .role { display: inline-block; margin-top: 12px; padding: 8px 26px 12px; border-radius: 999px; background: var(--accent); color: #fff;
+        font: 900 60px/1.1 var(--font-display); white-space: nowrap; }
+      #x-nametag .pos { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-nametag" data-composition-id="x-nametag" data-start="0" data-width="1080" data-height="1920">
+      <i class="pos" data-slot="box"></i>
+      <div class="plate"><div class="bar"></div>
+        <div class="name" data-slot="name">陳大文</div>
+        <div class="role" data-slot="role">教育專家</div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="x-nametag"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 4;
+      const PL = ROOT.querySelector('.plate');
+      const BOX = ROOT.querySelector('.pos').textContent.split(',').map(Number).filter(function (n) { return !isNaN(n); });
+      if (BOX.length >= 2) { PL.style.left = BOX[0] + 'px'; PL.style.top = BOX[1] + 'px'; }
+      const t0 = CUES.length ? CUES[0] : 0.2;
+      const t1 = CUES.length > 1 ? CUES[1] : t0 + 0.3;
+      tl.from(PL, { autoAlpha: 0, x: 70, filter: "blur(14px)", duration: 0.55, ease: "power4.out" }, t0)
+        .from(ROOT.querySelector('.bar'), { scaleY: 0, transformOrigin: "50% 0%", duration: 0.4, ease: "power3.out" }, t0 + 0.15)
+        .from(ROOT.querySelector('.role'), { opacity: 0, scale: 0.7, transformOrigin: "0% 50%", duration: 0.4, ease: "back.out(1.8)" }, t1)
+        .to(PL, { autoAlpha: 0, x: 30, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, DUR - 0.32)
+        .set({}, {}, 7);
+      window.__timelines["x-nametag"] = tl;
+    </script>
+  </body>
+</html>

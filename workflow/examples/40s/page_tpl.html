@@ -1,0 +1,75 @@
+<title>40S 節拍表</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* 版面：直向分鏡格，左截圖右說明；品牌深寶藍 #203699 做主色，淺紫藍做第二色 */
+:root{
+  --bg:#F3F5FC; --panel:#FFFFFF; --ink:#0E1A4D; --dim:#55608A; --line:#D5DAEE;
+  --accent:#203699; --warm:#6E86E8; --ok:#1F7A55; --person:#3D4A63; --note:#7A5A12;
+  --f-body:"Noto Sans TC",system-ui,sans-serif; --f-mono:"JetBrains Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1026;--panel:#141B3A;--ink:#E6EAFA;--dim:#A0AAD0;--line:#283260;--accent:#8FA2F5;--warm:#B9C5F7;--ok:#62C79B;--person:#B8C2DA;--note:#E3C877;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1026;--panel:#141B3A;--ink:#E6EAFA;--dim:#A0AAD0;--line:#283260;--accent:#8FA2F5;--warm:#B9C5F7;--ok:#62C79B;--person:#B8C2DA;--note:#E3C877;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 15px/1.65 var(--f-body);margin:0}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 60px;display:flex;flex-direction:column;gap:20px}
+h1{font-size:28px;font-weight:900;margin:0;text-wrap:balance}
+h2{font-size:17px;font-weight:900;margin:0 0 8px}
+.sub{color:var(--dim);margin:4px 0 0}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px}
+.summary div{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.summary b{display:block;font-size:12px;color:var(--dim);font-weight:700;letter-spacing:.04em}
+.bar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin-top:6px}
+.bar i{display:block} .bar .p{background:var(--person)} .bar .f{background:var(--accent)} .bar .x{background:var(--warm)}
+.ask{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:10px;padding:14px 18px}
+.ask ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+.beats{display:flex;flex-direction:column;gap:14px}
+.beat{display:grid;grid-template-columns:auto 1fr;gap:18px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.shots{display:flex;gap:8px}
+figure{margin:0;width:170px;max-width:100%}
+figure img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid var(--line)}
+figcaption{font:500 11px var(--f-mono);color:var(--dim);text-align:center;margin-top:3px}
+.info{min-width:0}
+.meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:6px}
+.id{font:500 13px var(--f-mono);color:var(--dim)}
+.time{font:500 14px var(--f-mono);font-variant-numeric:tabular-nums}
+.pill{font-size:12px;font-weight:700;border-radius:999px;padding:1px 10px;border:1px solid currentColor;white-space:nowrap}
+.pill.m-p{color:var(--person)} .pill.m-f{color:var(--accent)} .pill.m-x{color:var(--warm)}
+.s-ok{color:var(--ok)} .s-new{color:var(--note)} .src{color:var(--dim);font-size:13px}
+.spoken{font-size:17px;font-weight:700;margin:0 0 10px}
+dl{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;margin:0}
+dt{color:var(--dim);font-size:13px;white-space:nowrap} dd{margin:0;min-width:0;overflow-wrap:anywhere}
+code{font:500 13px var(--f-mono);color:var(--accent)}
+.sfx{margin:0;padding:0;list-style:none} .sfx .t{font:500 13px var(--f-mono);font-variant-numeric:tabular-nums;color:var(--dim)}
+.grade{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+.grade img{display:block;width:100%;max-width:560px;border-radius:8px;border:1px solid var(--line)}
+.grade p{margin:0 0 10px;color:var(--dim)}
+@media (max-width:600px){.beat{grid-template-columns:1fr}figure{width:150px}}
+</style>
+<div class="wrap">
+<header>
+<h1>40S 節拍表</h1>
+<p class="sub">AI 會唔會取代老師｜兩人訪問｜39.3 秒 9:16｜Kallaway 淺色 × 品牌色 #203699｜第 3 版（草稿 1 用呢版）。每格都係專案入面嘅真截圖。</p>
+</header>
+<div class="summary">
+<div><b>畫面比例（目標 40／40／20）</b>人物 %%P%%%｜全屏 %%F%%%｜人物加圖片 %%X%%%<div class="bar"><i class="p" style="width:%%P%%%"></i><i class="f" style="width:%%F%%%"></i><i class="x" style="width:%%X%%%"></i></div></div>
+<div><b>圖片同資訊卡</b>7 張圖全部用晒；資訊卡 2 張（流程、清單）</div>
+<div><b>聲效</b>%%NSFX%% 個，冇背景音樂；草稿先聽到</div>
+<div><b>接位</b>3.57 轉鏡頭、16.37 同 32.67 用全屏／上圖下人入場遮</div>
+</div>
+<div class="ask"><h2>第 2 版改咗（照你 3 點意見）</h2><ol>
+<li><b>冇橙色。</b>所有卡只用品牌藍 #203699，配淺紫藍、深海軍藍同白。之前「暖橙＝老師」嘅分色取消。</li>
+<li><b>冇 Healthy Days 元素。</b>拎走咗左上標題條、實色膠囊、圓章問題卡。問題卡、名牌、流程、清單、關鍵詞全部改用 Kallaway 風格包原卡（玻璃卡、發光邊、漸變發光字、虛線箭咀）。風格包冇圖片卡，圖片只做底（全屏／上圖下人／發光邊框），字用風格包關鍵詞卡疊上去。</li>
+<li><b>字幕</b>改返白字加黑／深灰光暈。</li>
+</ol></div>
+<div class="ask"><h2>仲要你決定</h2><ol>
+<li><b>圖 3、6、7 本身係橙色調</b>（生成嗰陣用暖光代表老師）。卡已經冇橙色，但圖仲係。要全片統一藍色調，我可以重新生成呢 3 張（要用 Canva 額度）。</li>
+<li><b>Q1 問題卡放白牆</b>（離頭頂約 150px，冇遮面）。想落返胸口位就講。</li>
+<li><b>圖 2 由 7.8 秒延後到 9.5 秒先入</b>，俾陳大文同名牌先出約 1.7 秒。</li>
+<li><b>畫面比例 %%P%%／%%F%%／%%X%%</b>（目標 40／40／20）。要貼近目標，最易係圖 1 或圖 6 改做淨人物。</li>
+<li><b>唔係原句嘅卡字：</b>流程卡「錯處」「建議」（Treatment 已批），同標題「AI 做到嘅」「老師嘅角色」（我加嘅分題）。</li>
+</ol></div>
+<section class="beats">
+%%BEATS%%
+</section>
+<section class="grade"><h2>調色前後（9 秒）</h2><p>左：原片。右：GR-006 新聞中性（你揀嘅）。</p><img src="%%GRADE%%" alt="調色前後對比：左邊原片，右邊 GR-006"></section>
+</div>

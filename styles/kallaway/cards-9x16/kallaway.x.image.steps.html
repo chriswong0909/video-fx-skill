@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+  KALLAWAY · 自家卡 · IMAGE STEPS — 全屏圖片做底嘅資訊卡（9:16）
+  全屏圖片慢推，下半一疊白色毛玻璃行逐行出現（講到先出），圖片主體留喺上半。
+  mode=flow：流程（品牌色圓形編號，行與行之間有箭咀連住）；mode=list：清單（剔號）。
+  資訊卡時段唔出字幕。全片最多 2 張。
+  Slots: img, pos（圖片焦點，預設 50% 30%）, zoom（預設 1）, mode（flow／list）,
+         title（左上標題條，只放段落標題，≤ 6 字，84px；可留空）, i1–i4（每行 ≤ 8 字，80px；空嘅行自動隱藏）。
+  data-cues 次序：title（寫 0＝一開始已喺度）→ 每行一個。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; }
+      #x-img-steps { position: absolute; inset: 0; width: 1080px; height: 1920px; background: var(--canvas); overflow: hidden; font-family: var(--font-display); }
+      #x-img-steps .pic { position: absolute; inset: 0; overflow: hidden; }
+      #x-img-steps .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 30%; }
+      #x-img-steps .scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 1150px;
+        background: linear-gradient(to top, rgba(8, 12, 40, 0.78) 0%, rgba(8, 12, 40, 0.52) 55%, rgba(8, 12, 40, 0) 100%); }
+      #x-img-steps .pos { display: none; }
+      #x-img-steps .ttag { position: absolute; left: 0; top: 228px; height: 128px; display: flex; align-items: center; gap: 24px; box-sizing: border-box;
+        padding: 0 56px 0 44px; background: var(--tag, var(--accent)); border-radius: 0 999px 999px 0; box-shadow: 0 10px 28px rgba(8, 12, 40, 0.30); max-width: 760px; overflow: hidden; }
+      #x-img-steps .ttag i { width: 22px; height: 22px; border-radius: 50%; background: #fff; flex: 0 0 auto; }
+      #x-img-steps .tx { font: 900 84px/1 var(--font-display); color: #fff; white-space: nowrap; }
+      #x-img-steps .rows { position: absolute; left: 84px; right: 84px; bottom: 380px; display: flex; flex-direction: column; }
+      #x-img-steps .step { display: flex; flex-direction: column; }
+      #x-img-steps .line { display: flex; align-items: center; gap: 32px; padding: 20px 40px 22px 28px; border-radius: 34px;
+        background: var(--glass-bg-dark); border: 1.5px solid var(--glass-border); border-top: 1.5px solid var(--glass-hi); box-shadow: var(--glass-shadow); }
+      #x-img-steps .badge { width: 92px; height: 92px; flex: 0 0 auto; border-radius: 50%; background: var(--accent); color: #fff;
+        font: 800 56px/92px var(--font-display); text-align: center; box-shadow: 0 0 0 6px rgba(var(--accent-rgb), 0.18); position: relative; }
+      #x-img-steps .badge svg { position: absolute; left: 20px; top: 20px; width: 52px; height: 52px; display: none; }
+      #x-img-steps .badge svg path { fill: none; stroke: #fff; stroke-width: 4.4; stroke-linecap: round; stroke-linejoin: round; }
+      #x-img-steps .rows.list .badge svg { display: block; }
+      #x-img-steps .rows.list .badge b { display: none; }
+      #x-img-steps .badge b { font-weight: 800; }
+      #x-img-steps .rt { font: 900 80px/1.15 var(--font-display); color: var(--head); white-space: nowrap; }
+      #x-img-steps .conn { height: 30px; position: relative; }
+      #x-img-steps .conn u { position: absolute; left: 68px; top: 0; width: 12px; height: 30px; background: #fff; border-radius: 6px; display: block; }
+      #x-img-steps .conn s { position: absolute; left: 54px; top: 10px; width: 0; height: 0; border-left: 20px solid transparent; border-right: 20px solid transparent; border-top: 22px solid #fff; display: block; }
+      #x-img-steps .rows.list .conn { height: 20px; }
+      #x-img-steps .rows.list .conn u, #x-img-steps .rows.list .conn s { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-img-steps" data-composition-id="x-img-steps" data-start="0" data-width="1080" data-height="1920">
+      <div class="pic"><img data-slot="img" src="assets/img/k01_pump.jpg" alt="" /></div>
+      <div class="scrim"></div>
+      <i class="pos p-pos" data-slot="pos">50% 30%</i>
+      <i class="pos p-zoom" data-slot="zoom">1</i>
+      <i class="pos p-mode" data-slot="mode">flow</i>
+      <div class="ttag"><i></i><div class="tx" data-slot="title"></div></div>
+      <div class="rows">
+        <div class="step" id="x-st-1"><div class="line"><div class="badge"><b>1</b><svg viewBox="0 0 36 36"><path d="M6 18 L15 27 L30 10" /></svg></div><div class="rt" data-slot="i1">第一步</div></div></div>
+        <div class="step" id="x-st-2"><div class="conn"><u></u><s></s></div><div class="line"><div class="badge"><b>2</b><svg viewBox="0 0 36 36"><path d="M6 18 L15 27 L30 10" /></svg></div><div class="rt" data-slot="i2">第二步</div></div></div>
+        <div class="step" id="x-st-3"><div class="conn"><u></u><s></s></div><div class="line"><div class="badge"><b>3</b><svg viewBox="0 0 36 36"><path d="M6 18 L15 27 L30 10" /></svg></div><div class="rt" data-slot="i3"></div></div></div>
+        <div class="step" id="x-st-4"><div class="conn"><u></u><s></s></div><div class="line"><div class="badge"><b>4</b><svg viewBox="0 0 36 36"><path d="M6 18 L15 27 L30 10" /></svg></div><div class="rt" data-slot="i4"></div></div></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="x-img-steps"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 6;
+      const IMG = ROOT.querySelector('.pic img');
+      IMG.style.objectPosition = (ROOT.querySelector('.p-pos').textContent.trim() || '50% 30%');
+      const Z = parseFloat(ROOT.querySelector('.p-zoom').textContent) || 1;
+      const MODE = (ROOT.querySelector('.p-mode').textContent.trim() || 'flow');
+      if (MODE === 'list') ROOT.querySelector('.rows').classList.add('list');
+      tl.fromTo(IMG, { scale: Z }, { scale: Z * 1.07, duration: DUR, ease: "none" }, 0);
+      let ci = 0; const next = function (d) { return CUES.length > ci ? CUES[ci++] : (ci++, d); };
+      const TAG = ROOT.querySelector('.ttag'); const hasTitle = !!ROOT.querySelector('.tx').textContent.trim();
+      if (!hasTitle) TAG.style.display = 'none';
+      else { const t = next(0.2); if (t > 0.01) tl.fromTo(TAG, { xPercent: -110 }, { xPercent: 0, duration: 0.4, ease: "power3.out" }, Math.max(0, t - 0.15)); }
+      tl.from(ROOT.querySelector('.scrim'), { opacity: 0, duration: 0.5, ease: "power2.out" }, 0);
+      let shown = 0;
+      [1, 2, 3, 4].forEach(function (n) {
+        const st = ROOT.querySelector('#x-st-' + n);
+        if (!st.querySelector('.rt').textContent.trim()) { st.style.display = 'none'; return; }
+        const t = next(0.6 + shown * 0.5); shown++;
+        const cn = st.querySelector('.conn');
+        if (cn) tl.from(cn, { opacity: 0, scaleY: 0, transformOrigin: "50% 0%", duration: 0.22, ease: "power2.out" }, Math.max(0, t - 0.12));
+        tl.from(st.querySelector('.line'), { opacity: 0, y: 34, scale: 0.94, filter: "blur(10px)", duration: 0.5, ease: "back.out(1.5)" }, t)
+          .from(st.querySelector('.badge'), { scale: 0, transformOrigin: "50% 50%", duration: 0.36, ease: "back.out(2.2)" }, t + 0.12);
+      });
+      tl.set({}, {}, 7);
+      window.__timelines["x-img-steps"] = tl;
+    </script>
+  </body>
+</html>

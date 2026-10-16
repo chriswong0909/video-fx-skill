@@ -54,6 +54,36 @@
   "verified": false,
   "note": "黎青龍護肝篇新做，等用戶喺節拍表批；每行 ≤ 10 字"
  },
+ "kallaway.t2.label.qmark": {
+  "file": "cards-9x16/kallaway.t2.label.qmark.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
+ "kallaway.t2.lower-third.glasscard": {
+  "file": "cards-9x16/kallaway.t2.lower-third.glasscard.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
+ "kallaway.t1.overview.flow": {
+  "file": "cards-9x16/kallaway.t1.overview.flow.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
+ "kallaway.x.photo.full": {
+  "file": "cards-9x16/kallaway.x.photo.full.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
+ "kallaway.x.photo.split": {
+  "file": "cards-9x16/kallaway.x.photo.split.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
+ "kallaway.x.photo.frame": {
+  "file": "cards-9x16/kallaway.x.photo.frame.html",
+  "verified": false,
+  "note": "40S 新改，等用戶喺節拍表批"
+ },
  "kallaway.x.stat.odometer": {
   "file": "cards-9x16/kallaway.x.stat.odometer.html",
   "verified": true,

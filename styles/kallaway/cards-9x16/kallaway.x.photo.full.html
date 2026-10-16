@@ -1,0 +1,45 @@
+<!doctype html>
+<!--
+  KALLAWAY · 自家卡 · PHOTO FULL — 全屏圖片（9:16，純 Kallaway 文法）
+  新手包 Kallaway 冇圖片卡。呢張只做一件事：全屏圖片慢推（Kallaway 嘅 slow camera push），底部一抹品牌色光暈 + 暗角 + 微粒。
+  唔帶任何字：要字就喺上面疊風格包嘅 label 卡（例如 kallaway.t2.label.keyword，用 top slot 放喺圖片留白位）。
+  句與句之間切入。
+  Slots: img, pos（圖片焦點，預設 50% 50%）, zoom（預設 1；> 1 由頂部放大）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; }
+      #x-photo-full { position: absolute; inset: 0; width: 1080px; height: 1920px; background: #060a22; overflow: hidden; }
+      #x-photo-full .pic { position: absolute; inset: 0; overflow: hidden; }
+      #x-photo-full .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 55%; }
+      #x-photo-full .bloom { position: absolute; inset: 0; background: radial-gradient(120% 46% at 50% 108%, rgba(var(--accent-rgb), 0.50) 0%, rgba(var(--accent-rgb), 0.16) 45%, transparent 72%); mix-blend-mode: screen; }
+      #x-photo-full .vig { position: absolute; inset: 0; background: radial-gradient(125% 125% at 50% 45%, transparent 58%, rgba(4, 8, 28, 0.42) 100%); }
+      #x-photo-full .pos { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-photo-full" data-composition-id="x-photo-full" data-start="0" data-width="1080" data-height="1920">
+      <div class="pic"><img data-slot="img" src="assets/img/x.jpg" alt="" /></div>
+      <div class="bloom"></div><div class="vig"></div>
+      <i class="pos p-pos" data-slot="pos">50% 50%</i><i class="pos p-zoom" data-slot="zoom">1</i>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="x-photo-full"]');
+      const DUR = +ROOT.dataset.dur || 5;
+      const IMG = ROOT.querySelector('.pic img');
+      IMG.style.objectPosition = (ROOT.querySelector('.p-pos').textContent.trim() || '50% 50%');
+      const Z = parseFloat(ROOT.querySelector('.p-zoom').textContent) || 1;
+      if (Z > 1) IMG.style.transformOrigin = '50% 0%';
+      tl.fromTo(IMG, { scale: Z }, { scale: Z * 1.07, duration: DUR, ease: "none" }, 0)
+        .fromTo(ROOT.querySelector('.bloom'), { opacity: 0.55 }, { opacity: 1, duration: 1.2, ease: "sine.inOut", repeat: 1, yoyo: true }, 0)
+        .set({}, {}, 7);
+      window.__timelines["x-photo-full"] = tl;
+    </script>
+  </body>
+</html>

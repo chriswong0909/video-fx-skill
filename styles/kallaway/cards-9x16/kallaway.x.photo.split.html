@@ -1,0 +1,43 @@
+<!doctype html>
+<!--
+  KALLAWAY · 自家卡 · PHOTO SPLIT — 上圖下人（9:16，純 Kallaway 文法）
+  畫面上半（0–860）係圖片（慢推），下半係講者（主檔將講者鏡頭向下移）。圖片底邊係一條品牌色發光線（edge-lit），線下面一抹光暈落喺講者頭頂。
+  唔帶字：要字就疊風格包 label 卡。句與句之間切入。
+  Slots: img, pos（圖片焦點，預設 50% 50%）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-photo-split { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; }
+      #x-photo-split .panel { position: absolute; left: 0; right: 0; top: 0; height: 860px; overflow: hidden; background: #060a22; }
+      #x-photo-split .panel img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 60%; }
+      #x-photo-split .edge { position: absolute; left: 0; right: 0; top: 856px; height: 8px; background: linear-gradient(90deg, rgba(var(--accent-rgb), 0.35), #fff 50%, rgba(var(--accent-rgb), 0.35));
+        box-shadow: 0 0 18px rgba(var(--accent-rgb), 0.95), 0 0 50px rgba(var(--accent-rgb), 0.6); }
+      #x-photo-split .fall { position: absolute; left: 0; right: 0; top: 864px; height: 150px; background: linear-gradient(to bottom, rgba(var(--accent-rgb), 0.30), transparent); }
+      #x-photo-split .pos { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-photo-split" data-composition-id="x-photo-split" data-start="0" data-width="1080" data-height="1920">
+      <div class="panel"><img data-slot="img" src="assets/img/x.jpg" alt="" /></div>
+      <div class="fall"></div><div class="edge"></div>
+      <i class="pos" data-slot="pos">50% 50%</i>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="x-photo-split"]');
+      const DUR = +ROOT.dataset.dur || 5;
+      const IMG = ROOT.querySelector('.panel img');
+      IMG.style.objectPosition = (ROOT.querySelector('.pos').textContent.trim() || '50% 50%');
+      tl.fromTo(IMG, { scale: 1.0 }, { scale: 1.06, duration: DUR, ease: "none" }, 0)
+        .from(ROOT.querySelector('.edge'), { scaleX: 0, transformOrigin: "50% 50%", duration: 0.5, ease: "expo.out" }, 0)
+        .set({}, {}, 7);
+      window.__timelines["x-photo-split"] = tl;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+  KALLAWAY · tier2 · label · QMARK — 9:16 直向中文版（問題卡）
+  由 cards/tier2/t2-lb-qmark.html 改：原卡係「發光大引號 + 一句說話 + 玻璃註」；訪問片用嚟做問題卡，
+  大引號位改做發光編號（Q1、Q2…），右邊係問題原句（最多兩行，第二行漸變發光），成組放入一塊有發光邊嘅玻璃。
+  講者一開口就收。呢張卡交代咗問題，嗰句字幕唔出（skipcaps）。
+  Slots: detail（編號，例如 Q1，≤ 3 字）, term（第一行 ≤ 9 字）, term2（第二行 ≤ 9 字，可留空）,
+         top（卡頂 px，預設 1010 胸口位；闊鏡上面有白牆可以寫 300，離頭頂 ≥ 130px）。
+  data-cues：第一個＝卡同第一行，第二個＝第二行（講到嗰度）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #t2-lb-qmk { position: absolute; inset: 0; width: 1080px; height: 1920px; background: transparent; overflow: hidden; font-family: var(--font-display); }
+      #t2-lb-qmk .local-glow { position: absolute; left: 120px; top: 950px; width: 840px; height: 440px; border-radius: 50%;
+        background: radial-gradient(ellipse at 50% 50%, rgba(var(--accent-rgb), 0.26) 0%, rgba(var(--accent-rgb), 0.08) 55%, transparent 78%); filter: blur(50px); }
+      #t2-lb-qmk .wrap { position: absolute; left: 52px; right: 52px; top: 1010px; display: flex; justify-content: center; }
+      #t2-lb-qmk .glass { background: var(--glass-bg-dark); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); border: var(--stroke) solid var(--glass-border); border-radius: var(--radius); box-shadow: var(--glass-shadow), 0 0 0 2px rgba(var(--accent-rgb), 0.55), 0 0 26px rgba(var(--accent-rgb), 0.24), inset 0 1px 0 var(--glass-hi);
+        padding: 26px 48px 30px 40px; display: flex; align-items: center; gap: 34px; position: relative; overflow: hidden; }
+      #t2-lb-qmk .glass::before { content: ""; position: absolute; top: 0; left: 14px; right: 14px; height: 1px;
+        background: linear-gradient(90deg, transparent, var(--glass-hi) 40%, var(--glass-hi) 60%, transparent); }
+      #t2-lb-qmk .qmark { font: 800 128px/0.9 var(--font-display); color: var(--accent); text-shadow: var(--textglow-accent), 0 0 60px rgba(var(--accent-rgb), 0.35); flex-shrink: 0; }
+      #t2-lb-qmk .rule { width: 4px; align-self: stretch; border-radius: 2px; flex-shrink: 0;
+        background: linear-gradient(180deg, transparent, var(--accent) 25%, var(--accent) 75%, transparent); box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.6); }
+      #t2-lb-qmk .term { display: block; font: 900 82px/1.22 var(--font-display); color: var(--head); white-space: nowrap; text-shadow: var(--textglow); }
+      #t2-lb-qmk .term.t2 { background: linear-gradient(100deg, var(--grad-start) 0%, var(--accent) 70%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; text-shadow: none; }
+      #t2-lb-qmk .term:empty { display: none; }
+      #t2-lb-qmk .pos { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="t2-lb-qmk" data-composition-id="t2-lb-qmk" data-start="0" data-width="1080" data-height="1920">
+      <div class="local-glow"></div>
+      <i class="pos" data-slot="top"></i>
+      <div class="wrap"><div class="glass">
+        <div class="qmark" data-slot="detail">Q1</div>
+        <div class="rule"></div>
+        <div class="quote-block"><span class="term t1" data-slot="term">食護肝保健品</span><span class="term t2" data-slot="term2">真係有用？</span></div>
+      </div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      const ROOT = document.querySelector('[data-composition-id="t2-lb-qmk"]');
+      const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+      const DUR = +ROOT.dataset.dur || 3;
+      const TOP = parseFloat(ROOT.querySelector('.pos').textContent);
+      if (TOP) { ROOT.querySelector('.wrap').style.top = TOP + 'px'; ROOT.querySelector('.local-glow').style.top = (TOP - 60) + 'px'; }
+      ROOT.querySelectorAll('.term').forEach(function (el) { const n = el.textContent.trim().length; if (n > 9) el.style.fontSize = Math.max(76, Math.floor(740 / n)) + 'px'; });
+      const has2 = !!ROOT.querySelector('.t2').textContent.trim();
+      const t0 = CUES.length ? Math.max(0, CUES[0] - 0.25) : 0.05;
+      const t2 = CUES.length > 1 ? CUES[1] : t0 + 1.0;
+      tl.from(ROOT.querySelector('.local-glow'), { autoAlpha: 0, scale: 0.55, transformOrigin: "50% 50%", duration: 1.1, ease: "expo.out" }, t0)
+        .from(ROOT.querySelector('.glass'), { autoAlpha: 0, y: 44, scale: 0.94, filter: "blur(14px)", duration: 0.6, ease: "back.out(1.4)" }, t0)
+        .from(ROOT.querySelector('.qmark'), { opacity: 0, y: -22, scale: 1.15, filter: "blur(14px)", duration: 0.55, ease: "power4.out" }, t0 + 0.12)
+        .from(ROOT.querySelector('.rule'), { scaleY: 0, transformOrigin: "50% 0%", duration: 0.4, ease: "power3.out" }, t0 + 0.2)
+        .from(ROOT.querySelector('.t1'), { opacity: 0, x: -22, filter: "blur(9px)", duration: 0.5, ease: "power4.out" }, t0 + 0.2);
+      if (has2) tl.from(ROOT.querySelector('.t2'), { opacity: 0, x: -22, filter: "blur(9px)", duration: 0.5, ease: "power4.out" }, Math.max(t0 + 0.4, t2 - 0.1));
+      tl.to([ROOT.querySelector('.wrap'), ROOT.querySelector('.local-glow')], { autoAlpha: 0, scale: 0.96, filter: "blur(10px)", duration: 0.3, ease: "power2.in" }, DUR - 0.32)
+        .set({}, {}, 7);
+      window.__timelines["t2-lb-qmk"] = tl;
+    </script>
+  </body>
+</html>

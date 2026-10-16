@@ -3,7 +3,8 @@
   KALLAWAY · tier1 · overview · CHECKLIST — 9:16 直向中文版
   由 cards/tier1/t1-overview-checklist.html 改：直向單欄、字放大、2–4 行（空嘅行自動隱藏）、
   逐行出現時間讀 data-cues（第一個數＝標題，之後每行一個，秒數由卡開始計）。
-  Slots: title（≤ 8 字，可用 <em> 標一個重點詞）, i1–i4（每行 ≤ 7 字）, p1–p4（可選：每行圓形縮圖路徑，有圖就取代剔號）。
+  可選 img：全屏圖片做底（慢推），成組貼底（圖片主體留喺上半），標題改白色發光字，行距收窄。
+  Slots: img, pos（圖片焦點，預設 50% 20%）, title（≤ 8 字，可用 <em> 標一個重點詞）, i1–i4（每行 ≤ 7 字）, p1–p4（可選：每行圓形縮圖路徑，有圖就取代剔號）。
 -->
 <html>
   <head>
@@ -60,6 +61,17 @@
         font-family: var(--font-display); font-weight: 900; font-size: 76px;
         color: var(--head); line-height: 1.15;
       }
+      #t1-ov-check .pic { position: absolute; inset: 0; overflow: hidden; z-index: 2; display: none; }
+      #t1-ov-check .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transform-origin: 50% 30%; }
+      #t1-ov-check .scrim { position: absolute; left: 0; right: 0; bottom: 0; height: 1300px; z-index: 2; display: none;
+        background: linear-gradient(to top, rgba(6, 10, 34, 0.86) 0%, rgba(6, 10, 34, 0.62) 55%, rgba(6, 10, 34, 0) 100%); }
+      #t1-ov-check .layout.has-img { justify-content: flex-end; }
+      #t1-ov-check .layout.has-img .card-title { color: #fff; margin-bottom: 44px; text-shadow: 0 0 26px rgba(var(--accent-rgb), 0.95), 0 0 60px rgba(var(--accent-rgb), 0.6), 0 2px 10px rgba(0,0,0,0.5); }
+      #t1-ov-check .layout.has-img .card-title em { color: #fff; }
+      #t1-ov-check .layout.has-img .rows { gap: 22px; }
+      #t1-ov-check .layout.has-img .row { padding: 24px 48px; gap: 36px; }
+      #t1-ov-check .layout.has-img .check-wrap { width: 92px; height: 92px; background: rgba(var(--accent-rgb), 0.14); }
+      #t1-ov-check .pos { display: none; }
       #t1-ov-check .vignette { position: absolute; inset: 0; pointer-events: none; z-index: 6; background: var(--vignette); }
       #t1-ov-check .grain {
         position: absolute; inset: -40px; background: var(--tex-grain); background-size: 200px 200px;
@@ -71,6 +83,8 @@
     <div id="t1-ov-check" data-composition-id="t1-ov-check" data-start="0" data-width="1080" data-height="1920">
       <div class="bloom"></div>
       <div class="grid"></div>
+      <div class="pic"><img class="bgimg" data-slot="img" src="" alt="" /></div><div class="scrim"></div>
+      <i class="pos" data-slot="pos">50% 20%</i>
       <div class="layout">
         <div class="card-title" data-slot="title">開工前<em>檢查</em>清單</div>
         <div class="rows">
@@ -90,6 +104,10 @@
       const ROOT = document.querySelector('[data-composition-id="t1-ov-check"]');
       const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
       const tTitle = CUES.length ? CUES[0] : 0.5;
+      const BG = ROOT.querySelector('.bgimg'); const hasImg = !!BG.getAttribute('src');
+      if (hasImg) { ROOT.querySelector('.layout').classList.add('has-img'); ROOT.querySelector('.pic').style.display = 'block'; ROOT.querySelector('.scrim').style.display = 'block';
+        ROOT.querySelector('.vignette').style.display = 'none'; BG.style.objectPosition = (ROOT.querySelector('.pos').textContent.trim() || '50% 20%');
+        tl.fromTo(BG, { scale: 1 }, { scale: 1.07, duration: +ROOT.dataset.dur || 7, ease: 'none' }, 0); }
       const A = getComputedStyle(ROOT).getPropertyValue('--accent-rgb').trim() || '55,189,248';
       const rows = [1, 2, 3, 4].filter(n => document.querySelector('#chk-row-' + n + ' .row-text').textContent.trim());
       [1, 2, 3, 4].forEach(n => { const r = document.getElementById('chk-row-' + n); const im = r.querySelector('.thumb'); if (im && im.getAttribute('src')) r.classList.add('has-thumb'); });

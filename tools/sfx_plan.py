@@ -23,7 +23,7 @@ def main(ev_path, out_path):
     ev = json.load(open(ev_path)); cues = []
     for e in sorted(ev, key=lambda e: e['t']):
         p = peak(e['sfx']); t = max(0.0, e['t'] - p)
-        cues.append({'sfx': e['sfx'], 't': round(t, 3), 'vol': e.get('vol', 0.3)})
+        cues.append({'sfx': e['sfx'], 't': round(t, 3), 'vol': e.get('vol', 0.3), **({'dur': e['dur']} if e.get('dur') else {})})
         print(f"{e['t']:6.2f}s 落地 ← {e['sfx']}（peak {p:.3f}s）開始 {t:6.2f}s  {e.get('why','')}")
     gaps = [b['t'] - a['t'] for a, b in zip(cues, cues[1:])]
     if gaps and min(gaps) < 0.15: print('! 有兩個聲效相隔少過 0.15 秒，會疊埋')
