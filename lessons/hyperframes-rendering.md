@@ -68,6 +68,15 @@
 - 卡入面嘅根元素 id 唔好用嚟加 class（掛入主檔後搵唔到）：用 `ROOT.querySelector('.rows')` 呢類內部元素。
 - 主檔 manifest：每個 slot 要對返自己嘅 cue 時間，唔好全部用第一個 cue（qa.py 會報「早過講出嚟」）。
 
+## 外部效果卡（text-motion-40 程式碼）技術記錄（2026-10-16）
+> 注意：照搬原作 code 做卡已放棄（效果明顯差過手作場景）；以下技術點只喺用 `adapt --ext` 起手或抽動作參數時用。正式做法見 `workflow/external-effects.md` 第 3 節。
+- 盲測補充：複雜字用 stroke 做輪廓會見到內部重疊線；需每格重算嘅動作（波浪）用 proxy tween＋`onUpdate`；字換內容用兩層 opacity 交換，唔好用 `.call()`。
+- 原作程式碼全部用全域 `const`（`F、TL、mk…`）：一定包 IIFE，否則同其他卡撞名。原作 `TL()` 係 `repeat:5`，要改 paused，由卡主 timeline 用 `et.tweenFromTo(0, 秒, {duration, ease:'none'})` 驅動；單次播放用 `tl.freeze` 凍結，循環用多段 tween（有限次數）。實測可任意次序 seek（snapshot 亂序截圖一致）。
+- 原作程式碼用 template literal（反引號）：喺 HyperFrames lint／snapshot 冇問題（唔好同「querySelector 唔好用 template literal」混淆，嗰個係選擇器字串）。
+- host（主檔 `.cardhost`）要帶 `data-speed／freeze／loops／miss` 同 `style="--ext-bg:…"`：卡用 `getComputedStyle(ROOT)` 讀，而 ROOT 會先搵到 host；`cards.py use` 印出嘅 snippet 已包。
+- 日文原作字體缺繁體字（例如「歲」）；`hyperframes lint` 唔接受冇 @font-face 嘅字體，品牌字體子集用 `ext_effects.py brandfont`（Google Fonts `&text=`，要 woff2）。
+- 本機 VM `~/.cache/ms-playwright` 會被清走，`npx hyperframes snapshot` 報「Chrome Headless Shell is not available」：`cd ~/hf && npx playwright install chromium-headless-shell`（約 1 分鐘），`env.sh` 路徑唔使改。
+
 ## 雲端工作區會被重置（2026-10-15，骨質疏鬆篇）
-- 剪到一半雲端容器被回收，專案檔（index 模板、beats、caps、MG 腳本、剪接 plan）全部冇咗，要靠對話記錄逐步重建，嘢咗一個鐘。
+- 剪到一半雲端容器被回收，專案檔（index 模板、beats、caps、MG 腳本、剪接 plan）全部冇咗，要靠對話記錄逐步重建，嘥咗一個鐘。
 - 規則：每出一版草稿，就將專案腳本（唔包大片）tar 一份 commit 返用戶電腦 `work/`；重建步驟寫喺 `workflow/examples/osteo/README.md`。
