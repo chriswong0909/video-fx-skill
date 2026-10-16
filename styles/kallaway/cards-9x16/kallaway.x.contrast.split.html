@@ -1,0 +1,69 @@
+<!doctype html>
+<!--
+  KALLAWAY × Healthy Days · 自家卡 · CONTRAST SPLIT — 迷思／事實 反差（全屏 9:16，淺色）
+  盲測（2026-10-16）：動作取自 text-motion-40 #32 Split Halves（字由中線切開，上半向右上、下半向左下，原作位移 56/22px 放大到 120/48px，0.45s power3.out；中間浮出一句；再 power3.inOut 合返）。
+  場景為本卡自行設計（白卡＋迷思字灰藍→切開→縫中「其實」藍膠囊→合返變成品牌藍嘅事實）。冇參考任何舊成品。顏色全讀品牌 tokens。
+  Slots: myth（迷思，≤8 字）, fact（事實，≤8 字）, tag（縫中字，預設「其實」，≤4 字）
+  data-cues：1＝開始切開（預設 1.1）；2＝合返變事實（預設 切開＋1.0）。全屏卡，字幕照出；效果字 ≥ 76px。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-contrast-split { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; font-family: var(--font-display, "Noto Sans TC", sans-serif); color: var(--head, #0B2A3A);
+        --ac: var(--accent, #1A80D0); --navy: var(--head, #0B2A3A); }
+      #x-contrast-split .bg { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 38%, #FFFFFF 0%, #EAF3FB 55%, #D3E5F4 100%); }
+      #x-contrast-split .card { position: absolute; left: 50px; right: 50px; top: 620px; height: 560px; border-radius: 56px; background: linear-gradient(180deg, #FFFFFF, #EEF4FA); box-shadow: inset 0 4px 0 #fff, 0 24px 56px rgba(11, 42, 58, 0.18); opacity: 0; }
+      #x-contrast-split .half { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 900; white-space: nowrap; }
+      #x-contrast-split .half.t { clip-path: inset(0 0 50% 0); }
+      #x-contrast-split .half.b { clip-path: inset(50% 0 0 0); }
+      #x-contrast-split .half span { position: absolute; }
+      #x-contrast-split .m { color: #7D93A5; }
+      #x-contrast-split .f { color: var(--ac); opacity: 0; }
+      #x-contrast-split .tag { position: absolute; left: 50%; top: 50%; margin: -62px 0 0 -130px; width: 260px; height: 124px; line-height: 118px; text-align: center; border-radius: 999px; z-index: 5;
+        background: linear-gradient(180deg, color-mix(in srgb, var(--ac) 80%, #fff), var(--ac)); color: #fff; font: 900 84px/118px var(--font-display, "Noto Sans TC", sans-serif); border: 4px solid rgba(255,255,255,.92); box-shadow: 0 12px 28px rgba(11,42,58,.25); opacity: 0; white-space: nowrap; }
+      #x-contrast-split .sl { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-contrast-split" data-composition-id="x-contrast-split" data-start="0" data-width="1080" data-height="1920">
+      <div class="bg"></div>
+      <i class="sl" data-slot="myth">多飲牛奶就夠</i><i class="sl" data-slot="fact">仲要做負重運動</i><i class="sl" data-slot="tag">其實</i>
+      <div class="card"><div class="half t"></div><div class="half b"></div><div class="tag"></div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const ROOT = document.querySelector('[data-composition-id="x-contrast-split"]');
+        const DUR = +ROOT.dataset.dur || 4.6;
+        const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+        const c = function (i, d) { return CUES.length > i ? CUES[i] : d; };
+        const q = function (s) { return ROOT.querySelector(s); }, qa = function (s) { return ROOT.querySelectorAll(s); };
+        const slot = function (n, d) { const e = q('[data-slot="' + n + '"]'); const v = e ? e.textContent.trim() : ''; return v === '' ? d : v; };
+        const myth = slot('myth', '多飲牛奶就夠'), fact = slot('fact', '仲要做負重運動'), tagT = slot('tag', '其實');
+        const size = function (t) { return Math.min(170, Math.floor(740 / Math.max(1, t.length))); };
+        qa('.half').forEach(function (h) { h.innerHTML = '<span class="m" style="font-size:' + size(myth) + 'px"></span><span class="f" style="font-size:' + size(fact) + 'px"></span>'; h.querySelector('.m').textContent = myth; h.querySelector('.f').textContent = fact; });
+        q('.tag').textContent = tagT;
+        const T = q('.half.t'), B = q('.half.b'), tag = q('.tag');
+        const tl = gsap.timeline({ paused: true });
+        const t1 = c(0, 1.1), t2 = c(1, t1 + 1.0);
+        tl.fromTo(q('.bg'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+        tl.fromTo(q('.card'), { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.5)' }, 0.15);
+        /* 動作 #32：切開（原作 56/22 → 放大 120/48；0.45s power3.out），縫中字 0.25s 由窄展開，切開時換字，合返 power3.inOut */
+        tl.fromTo(T, { x: 0, y: 0 }, { x: 120, y: -48, duration: 0.45, ease: 'power3.out' }, t1);
+        tl.fromTo(B, { x: 0, y: 0 }, { x: -120, y: 48, duration: 0.45, ease: 'power3.out' }, t1);
+        tl.fromTo(tag, { opacity: 0, scaleX: 0.2 }, { opacity: 1, scaleX: 1, duration: 0.25, ease: 'back.out(1.6)' }, t1 + 0.15);
+        tl.to(qa('.m'), { opacity: 0, duration: 0.01 }, t1 + 0.5);
+        tl.to(qa('.f'), { opacity: 1, duration: 0.01 }, t1 + 0.5);
+        tl.to(tag, { opacity: 0, duration: 0.15 }, t2 - 0.1);
+        tl.to([T, B], { x: 0, y: 0, duration: 0.4, ease: 'power3.inOut' }, t2);
+        tl.fromTo(q('.card'), { scale: 1 }, { scale: 1.04, duration: 0.18, yoyo: true, repeat: 1, ease: 'power2.out' }, t2 + 0.4);
+        tl.to(ROOT.children, { opacity: 0, duration: 0.25, ease: 'power2.in' }, DUR - 0.27).set({}, {}, 7);
+        window.__timelines["x-contrast-split"] = tl;
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<!--
+  KALLAWAY × Healthy Days · 自家卡 · TEXT TYPEWRITER — 提問／兩行打字（全屏 9:16，淺色）
+  盲測（2026-10-16）：動作取自 text-motion-40 #27 Typewriter（逐字打出 0.1s/字、兩行先後、游標跟住行尾、第二行用強調色）。
+  場景為本卡自行設計：白色卡片（像搜尋框／便條），第一行深藍問句，第二行品牌藍答案，游標閃動。冇參考任何舊成品。顏色全讀品牌 tokens。
+  Slots: l1（第一行，≤ 9 字）, l2（第二行，≤ 8 字）
+  data-cues：1＝第一行開始打（預設 0.6）；2＝第二行開始打（預設 第一行完＋0.35）。全屏卡，字幕照出；效果字 ≥ 76px（第一行 88px、第二行 104px）。
+-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../tokens.css" />
+    <style>
+      html, body { margin: 0; background: transparent; }
+      #x-text-typewriter { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: hidden; font-family: var(--font-display, "Noto Sans TC", sans-serif); color: var(--head, #0B2A3A);
+        --ac: var(--accent, #1A80D0); --navy: var(--head, #0B2A3A); }
+      #x-text-typewriter .bg { position: absolute; inset: 0; background: radial-gradient(120% 70% at 50% 38%, #FFFFFF 0%, #EAF3FB 55%, #D3E5F4 100%); }
+      #x-text-typewriter .card { position: absolute; left: 60px; right: 60px; top: 700px; padding: 70px 56px 78px; border-radius: 48px; background: linear-gradient(180deg, #FFFFFF, #EEF4FA); box-shadow: inset 0 4px 0 #fff, 0 24px 56px rgba(11,42,58,.18); opacity: 0; }
+      #x-text-typewriter .dots { position: absolute; left: 44px; top: 24px; display: flex; gap: 12px; }
+      #x-text-typewriter .dots i { width: 16px; height: 16px; border-radius: 50%; background: #CFDCE8; }
+      #x-text-typewriter .ln { height: 148px; white-space: nowrap; display: flex; align-items: center; font-weight: 900; }
+      #x-text-typewriter .l1 { color: var(--navy); }
+      #x-text-typewriter .l2 { color: var(--ac); margin-top: 18px; height: 168px; }
+      #x-text-typewriter .cur { display: inline-block; width: 10px; height: 1em; margin-left: 8px; background: var(--ac); border-radius: 3px; opacity: 0; }
+      #x-text-typewriter .sl { display: none; }
+    </style>
+  </head>
+  <body>
+    <div id="x-text-typewriter" data-composition-id="x-text-typewriter" data-start="0" data-width="1080" data-height="1920">
+      <div class="bg"></div>
+      <i class="sl" data-slot="l1">你知唔知？</i><i class="sl" data-slot="l2">骨質疏鬆好靜靜</i>
+      <div class="card"><div class="dots"><i></i><i></i><i></i></div>
+        <div class="ln l1"><span class="t"></span><span class="cur"></span></div>
+        <div class="ln l2"><span class="t"></span><span class="cur"></span></div></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const ROOT = document.querySelector('[data-composition-id="x-text-typewriter"]');
+        const DUR = +ROOT.dataset.dur || 4.6;
+        const CUES = (ROOT.dataset.cues || '').split(',').filter(Boolean).map(Number);
+        const c = function (i, d) { return CUES.length > i ? CUES[i] : d; };
+        const q = function (s) { return ROOT.querySelector(s); };
+        const slot = function (n, d) { const e = q('[data-slot="' + n + '"]'); const v = e ? e.textContent.trim() : ''; return v === '' ? d : v; };
+        const s1 = Array.from(slot('l1', '你知唔知？')), s2 = Array.from(slot('l2', '骨質疏鬆好靜靜'));
+        q('.l1').style.fontSize = Math.min(130, Math.floor(848 / Math.max(1, s1.length))) + 'px'; q('.l2').style.fontSize = Math.min(150, Math.floor(848 / Math.max(1, s2.length))) + 'px';
+        const tl = gsap.timeline({ paused: true });
+        const ST = 0.1; /* #27：每字 0.1 秒 */
+        const t1 = c(0, 0.6), t2 = c(1, t1 + s1.length * ST + 0.35);
+        tl.fromTo(q('.bg'), { opacity: 0 }, { opacity: 1, duration: 0.3 }, 0);
+        tl.fromTo(q('.card'), { opacity: 0, y: 40, scale: 0.94 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: 'back.out(1.5)' }, 0.1);
+        const type = function (sel, arr, t0) {
+          const el = q(sel + ' .t'), cu = q(sel + ' .cur');
+          tl.set(el, { textContent: '' }, 0);
+          tl.set(cu, { opacity: 1 }, t0);
+          arr.forEach(function (_, i) { tl.set(el, { textContent: arr.slice(0, i + 1).join('') }, t0 + (i + 1) * ST); });
+          return cu; };
+        const cu1 = type('.l1', s1, t1), cu2 = type('.l2', s2, t2);
+        tl.set(cu1, { opacity: 0 }, t2);
+        /* 游標閃動（最後一行打完後） */
+        const tEnd = t2 + s2.length * ST;
+        tl.to(cu2, { opacity: 0, duration: 0.01, repeat: Math.max(1, Math.floor((DUR - tEnd) / 0.5)), repeatDelay: 0.24, yoyo: true }, tEnd + 0.25);
+        tl.fromTo(q('.l2'), { scale: 1 }, { scale: 1.05, transformOrigin: '0% 50%', duration: 0.18, yoyo: true, repeat: 1 }, tEnd);
+        tl.to(ROOT.children, { opacity: 0, duration: 0.25, ease: 'power2.in' }, DUR - 0.27).set({}, {}, 7);
+        window.__timelines["x-text-typewriter"] = tl;
+      })();
+    </script>
+  </body>
+</html>
