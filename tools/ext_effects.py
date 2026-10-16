@@ -120,7 +120,7 @@ def scan(src, scale):
     demo = []
     for m in re.finditer(r"'([^'\n$]{1,24})'|\"([^\"\n$]{1,24})\"", src):
         s = m.group(1) or m.group(2)
-        if (re.search(r"[\\u3000-\\u9fff\\uff00-\\uffef]", s) or re.fullmatch(r"\d{2,}", s)) and s not in demo: demo.append(s)
+        if (re.search(r"[　-鿿＀-￯]", s) or re.fullmatch(r"\d{2,}", s)) and s not in demo: demo.append(s)
     return {"fonts": sorted(set(re.findall(r"F\.(\w+)", src)) & set(FKEY)),
             "sizes": [(s, round(s * scale, 1)) for s in sizes],
             "small": [(s, round(s * scale, 1)) for s in sizes if s * scale < MIN_FX_PX],
