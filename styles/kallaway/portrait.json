@@ -53,5 +53,29 @@
   "file": "cards-9x16/kallaway.x.question.html",
   "verified": false,
   "note": "黎青龍護肝篇新做，等用戶喺節拍表批；每行 ≤ 10 字"
+ },
+ "kallaway.x.stat.odometer": {
+  "file": "cards-9x16/kallaway.x.stat.odometer.html",
+  "verified": true,
+  "note": "2026-10-16 用戶批定格效果（盲測／對正式版）",
+  "source": "text-motion-40#29（動作）"
+ },
+ "kallaway.x.contrast.split": {
+  "file": "cards-9x16/kallaway.x.contrast.split.html",
+  "verified": true,
+  "note": "2026-10-16 用戶批定格效果（盲測／對正式版）",
+  "source": "text-motion-40#32（動作）"
+ },
+ "kallaway.x.meter.liquid": {
+  "file": "cards-9x16/kallaway.x.meter.liquid.html",
+  "verified": true,
+  "note": "2026-10-16 用戶批定格效果（盲測／對正式版）",
+  "source": "text-motion-40#37（動作）"
+ },
+ "kallaway.x.text.typewriter": {
+  "file": "cards-9x16/kallaway.x.text.typewriter.html",
+  "verified": true,
+  "note": "2026-10-16 用戶批定格效果（盲測／對正式版）",
+  "source": "text-motion-40#27（動作）"
  }
 }

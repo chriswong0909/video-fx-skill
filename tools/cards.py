@@ -4,8 +4,12 @@
   python3 tools/cards.py list  [--style kallaway] [--tier tier1] [--purpose stat] [--portrait]
   python3 tools/cards.py show  <card-id>                      # slots、時長、有冇 9:16 版
   python3 tools/cards.py adapt <card-id>                      # 複製 16:9 原卡做 9:16 起點（之後人手改版面）
+  python3 tools/cards.py adapt --ext 29 [--style kallaway] [--scale 2] [--top 1010] [--freeze 1.6]
+        → 外部效果卡（text-motion-40 原作程式碼做起點）：header＋effect 包喺 IIFE、TL 改 paused、顏色讀品牌 tokens、
+          舞台放大放 panel、登記 <style>.x.ext29（未驗證）。之後人手換字／調字級，見 workflow/external-effects.md
   python3 tools/cards.py use   <card-id> --project DIR --name beat03 --dur 8
                                [--slots '{"title":"…"}'] [--cues 0.9,1.4] [--brand healthy-days]
+                               [--speed 1] [--freeze 秒] [--loops 1|3|auto] [--colors bg=#..,fg=#..,hi=#..,ink=#..]   # 後四個只用於外部效果卡
         → DIR/compositions/beat03.html（tokens 內嵌、slot 已填、時長已設、gsap 本地）＋ 印出掛載用 snippet
   python3 tools/cards.py verify <card-id> [--note "…"] [--source "text-motion-40#29"]  # 你批咗嘅 9:16 卡標記為已驗證（外部效果卡記來源）
 
@@ -57,7 +61,15 @@ def cmd_show(a):
     print(json.dumps(c, ensure_ascii=False, indent=1))
     print('9:16 版：', json.dumps(p.get(c['id']), ensure_ascii=False) if p.get(c['id']) else '未有（用 adapt 開始改）')
 
+def ext_mod():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import ext_effects
+    return ext_effects
+
 def cmd_adapt(a):
+    if a.ext:
+        ext_mod().build_card(a.ext, a.style, a.scale, a.top, a.freeze, a.force); return
+    if not a.card: sys.exit('✗ 要俾 card-id，或者用 --ext 編號')
     style, s, p, c = find(a.card)
     src = os.path.join(SD, style, c['file']); dst_rel = f"cards-9x16/{c['id']}.html"; dst = os.path.join(SD, style, dst_rel)
     if os.path.exists(dst) and not a.force: sys.exit(f'✗ 已經有 9:16 版：{dst_rel}（--force 覆蓋）')
@@ -114,6 +126,27 @@ def cmd_use(a):
         if allowed and k not in allowed: print(f'! slot「{k}」唔喺卡嘅 slots（{", ".join(sorted(allowed))}）')
         t = fill_slot(t, k, v)
     extra = f' data-dur="{a.dur}"' + (f' data-cues="{a.cues}"' if a.cues else '')
+    ext = pv.get('ext')
+    if ext:                                              # 外部效果卡：顏色、字體、缺字、播放參數
+        X = ext_mod(); ov = dict(kv.split('=', 1) for kv in a.colors.split(',')) if a.colors else {}
+        colors, lines = X.check_colors(imports + css, ov)
+        print('顏色（角色 → 品牌色）：', colors); [print(l) for l in lines]
+        fdst = os.path.join(a.project, 'assets', 'fonts'); os.makedirs(fdst, exist_ok=True)
+        for k in ext['fonts']: shutil.copy(os.path.join(X.TM, 'fonts', X.FKEY[k]), fdst)
+        shown = ''.join(re.sub(r'<[^>]+>', '', v) for v in slots.values())
+        miss = X.missing(shown, ext['fonts'])
+        if miss:
+            print('! 原作字體缺字：' + '；'.join(f'{X.FAM[k]}缺「{v}」' for k, v in miss.items()) + ' → 用到嗰段自動改用品牌字體 Noto Sans TC 900')
+            have = X.brand_chars(os.path.join(a.project, 'assets', 'fonts', 'sans900.woff2')); need = {ch for ch in shown if not ch.isspace()}
+            lack = need if have is None else need - have
+            if lack: print(f'  要補品牌字體子集：python3 tools/ext_effects.py brandfont --project {a.project} --text "{"".join(sorted(need))}"' + ('（讀唔到現有子集，先 pip install brotli fonttools）' if have is None else ''))
+            else: print('  ✓ 專案 assets/fonts/sans900.woff2 已有所需字')
+            extra += ' data-miss="' + '|'.join(f'{k}:{v}' for k, v in miss.items()) + '"'
+        if a.speed: extra += f' data-speed="{a.speed}"'
+        if a.freeze is not None: extra += f' data-freeze="{a.freeze}"'
+        if a.loops: extra += f' data-loops="{a.loops}"'
+        if all(colors.get(r, '').startswith('#') for r in ('bg', 'fg', 'hi', 'ink')):
+            extra += ' style="' + ';'.join(f'--ext-{r}:{colors[r]}' for r in ('bg', 'fg', 'hi', 'ink')) + '"'
     t = re.sub(r'(data-composition-id="' + re.escape(cid) + r'")', lambda m: m.group(1) + extra, t, count=1)
     t = re.sub(r'tl\.set\(\{\},\s*\{\},\s*[\d.]+\)', f'tl.set({{}}, {{}}, {a.dur})', t)
     t = re.sub(r'\.set\(\{\},\s*\{\},\s*[\d.]+\)', f'.set({{}}, {{}}, {a.dur})', t)
@@ -143,9 +176,12 @@ if __name__ == '__main__':
     sp = ap.add_subparsers(dest='cmd', required=True)
     x = sp.add_parser('list'); x.add_argument('--style'); x.add_argument('--tier'); x.add_argument('--purpose'); x.add_argument('--portrait', action='store_true')
     x = sp.add_parser('show'); x.add_argument('card')
-    x = sp.add_parser('adapt'); x.add_argument('card'); x.add_argument('--force', action='store_true')
+    x = sp.add_parser('adapt'); x.add_argument('card', nargs='?'); x.add_argument('--force', action='store_true')
+    x.add_argument('--ext'); x.add_argument('--style', default='kallaway'); x.add_argument('--scale', type=float, default=2.0)
+    x.add_argument('--top', type=int, default=1010); x.add_argument('--freeze', type=float, default=0)
     x = sp.add_parser('use'); x.add_argument('card'); x.add_argument('--project', required=True); x.add_argument('--name', required=True)
     x.add_argument('--dur', type=float, required=True); x.add_argument('--slots'); x.add_argument('--cues'); x.add_argument('--brand')
+    x.add_argument('--speed'); x.add_argument('--freeze', type=float); x.add_argument('--loops'); x.add_argument('--colors')
     x = sp.add_parser('verify'); x.add_argument('card'); x.add_argument('--note'); x.add_argument('--source')
     a = ap.parse_args()
     {'list': cmd_list, 'show': cmd_show, 'adapt': cmd_adapt, 'use': cmd_use, 'verify': cmd_verify}[a.cmd](a)
