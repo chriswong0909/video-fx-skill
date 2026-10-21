@@ -1,15 +1,16 @@
 ---
 name: "video-fx"
-description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像卡（醫生口播、知識短片、Healthy Days 等）時使用：先問三輪需求，自動降噪檢查，剪停頓，用風格包（Kallaway／Vox）加生成圖片，重點位做外部效果配對（text-motion-40）批後先入節拍表，節拍表逐拍真截圖連聲效批核先 render，QA 後入庫同步 GitHub。"
+description: "用 HyperFrames 剪片、加動態字幕、圖片同動態圖像卡（醫生口播、知識短片、Healthy Days 等），或者只係替 VO 片做部分 motion graphic 素材時使用：風格包、外部效果配對、Canva 生圖、節拍表真截圖、QA、入庫同步 GitHub。"
 ---
 
 # video-fx：風格包剪片 skill
 
-**核心改變（2026-10-01，2026-10-02 用 doctor2 實戰後補充，2026-10-14 加降噪前置步驟，2026-10-15 骨質疏鬆篇規則）：** 一條片嘅視覺由**一個風格包**負責（新手包 `kallaway` 或 `vox-explainer`），
+**核心改變（2026-10-01，2026-10-02 用 doctor2 實戰後補充，2026-10-14 加降噪前置步驟，2026-10-15 骨質疏鬆篇規則，2026-10-21 加模式 E 純 MG 素材）：** 一條片嘅視覺由**一個風格包**負責（新手包 `kallaway` 或 `vox-explainer`），
 唔再由效果庫逐個效果揀。風格包 = 一套完整設計（DESIGN.md + tokens.css + 數百張卡），每張卡係獨立 composition，
 文字放 `data-slot`，顏色字體緩動讀 tokens。品牌（例如 Healthy Days）只覆蓋顏色同加品牌固定元素（logo、名牌、字幕）。
 舊效果庫（`effects/`）降級做**技巧參考**：查「某種效果點做」先睇，唔直接放入片。
 風格包負責全片基礎，重點位（hook、標題、關鍵詞、數字、轉場）另外**必須做「外部效果配對」**（2026-10-15 起，第 5 節、`workflow/external-effects.md`）。
+**只做部分 MG 素材（冇講者、交俾其他 agent 剪）→ 直接跳去第 10 節模式 E。**
 
 LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果目錄網頁：https://claude.ai/artifact/S4J778bzGTX56umuae9ZAQ（「風格包卡（主力）」分頁＝兩套風格包全部卡，標住邊張已有 9:16 版）。
 
@@ -20,7 +21,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 ```
 
 ## 核心原則
-1. **一定先問需求（硬性）**：收到素材第一件事係問三輪問題（第 1 節）。未確認需求摘要唔好轉錄、分析、出方案。測試片都要問。
+1. **一定先問需求（硬性）**：收到素材第一件事係問三輪問題（第 1 節）。未確認需求摘要唔好轉錄、分析、出方案。測試片都要問。（模式 E 用第 10 節精簡版。）
 2. **風格包做基礎，外部效果補重點位**（用戶 2026-10-15 改）：一條片一個風格包（`styles/kallaway`——Healthy Days 預設用**淺色版** `--brand healthy-days`；或 `styles/vox-explainer`），負責全片基礎設計（卡、字體、tokens），呢點不變，風格包規則讀 `styles/<style>/DESIGN.md`。**揀定風格包之後，必須再睇外部效果來源**（清單見 `workflow/external-effects.md`，現有：text-motion-40），為重點位（hook、標題、關鍵詞、數字、轉場）揀 match 嘅效果，做成風格包嘅卡。睇完覺得全部唔適合，可以一款都唔用，但**要喺 Treatment 寫明睇過邊啲、點解唔用**。舊效果庫效果照舊唔直接放入片。
 3. **卡片用到先改 9:16**：`python3 tools/cards.py list --style kallaway --portrait` 睇已有直向版嘅卡。要用嘅卡未有直向版 → `cards.py adapt <id>` 複製做起點，再按 `workflow/style-packs.md` 改版面，出預覽俾用戶批，批咗 `cards.py verify <id>`。改好嘅卡永久入庫，下次直接用。
 4. **少而長嘅卡（新手包 video-beats 原則）**：一個話題一張卡，卡跟住話題存在（唔係每句閃一張）；tier1 全屏卡係重點標點（全片 2–4 張），tier2 支援卡（關鍵詞、清單、名牌）保留講者。每張卡答到一條問題：觀眾要記住乜？邊個概念要結構？邊個數字值得強調？見 `workflow/beats.md`。
@@ -46,7 +47,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 ## 0. 連接 LIBRARY（同問卷同步做）
 1. get_device_info；未有 `~/Documents/GitHub/video-fx-skill` 就 device_request_folder_access。
 2. 讀 `styles/README.md`、選用風格包嘅 `DESIGN.md`、`brands/*.md`、`lessons/*.md`（必讀）、`workflow/beats.md`、`workflow/style-packs.md`。
-3. LIBRARY 攞唔到：用 Artifact `action: read` 讀效果目錄網頁（`<script id="fxdata">` 有效果、聲效、調色、風格包卡 JSON）。
+3. LIBRARY 攞唔到：用 Artifact `action: read` 讀效果目錄網頁（`<script id="fxdata">` 有效果、聲效、調色、風格包卡 JSON）；或者用 GitHub MCP 讀 `chriswong0909/video-fx-skill` 同 `chriswong0909/text-motion-40`。
 
 ## 1. 開工問卷（強制）
 已講過嘅預選並寫明「你講咗 X，確認？」；只有用戶明確講「唔使問」先可以跳過。完整選項見 `workflow/intake.md`。
@@ -116,9 +117,27 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 | B B-roll 插片 | 已剪好嘅片按字插動態卡 | `modes/broll.md` |
 | C 無真人講解 | 旁白 + 全動態／生成鏡頭 | `modes/explainer.md` |
 | D 產品／品牌宣傳 | 網址、UI 截圖做宣傳 | `modes/promo.md` |
+| E 純 MG 素材（交俾其他 agent／剪接師） | 只做部分全屏 MG 片段，冇講者 | 本檔第 10 節、`lessons/mg-only.md` |
 
 ## 原則
 - 同用戶講廣東話，簡潔，新手友善；用到嘅卡註明卡 id。
 - 未睇過實際畫面唔好話「適合」；推薦之前先出預覽。工具做唔到嘅嘢（例如 Canva 圖變片）要查清楚先答，唔好估。
 - 用戶每次指出嘅通用問題（位置、字級、跳鏡、聲效）要寫入 `brands/` 或 `lessons/`，下條片唔好再犯。
 - 唔作假帳號、假數據、假認證；示意圖標明「示意」；生成素材前講明額度。
+- 用戶已經批咗嘅方向、已授權嘅任務，直接做完，唔好逐步再問。
+
+## 10. 模式 E：純 MG 素材（用戶 2026-10-10 漱口水篇、2026-10-20／21 超級食物篇學到；細節 `lessons/mg-only.md`）
+用戶只要一條 VO 片嘅部分 motion graphic（例如約 30%，或者「最少 5 個位」），其餘畫面交俾其他 agent 時用。分鏡思考可以先用 /health-reel-program，但**製作一律跟本 skill**（品牌、外部效果、精緻度、QA）。用戶已多次授權呢類任務：批咗方向就直接做晒，唔好逐步再問。
+- **問卷精簡版（只問未知嘅）**：交付物（MG 片段）、邊幾段（可由我揀）、品牌（預設 Healthy Days 淺色 kallaway）、字幕（素材唔包，最後統一加）、聲效（要包）。
+- **揀位**：揀有數字、對比、機制、法規、清單嘅句子；長度跟句子，一段 3–8 秒；ASR（faster-whisper）攞逐句時間，開頭結尾對準 VO 句邊。
+- **節奏**：一句 VO 一個主畫面，畫面停得耐、睇得切；唔好每 0.6 秒換拍子，亦唔好成段慢放令畫面遲過 VO（v2 太快、v4 拉慢 20% 都唔得）。轉場唔用斜向 wipe／速度線；震動只留俾蓋章、重擊。
+- **唔重複字幕（2026-10-21）**：成品會有字幕，所以預設**唔加頂部標題／super**；只喺佢補充字幕冇嘅資訊先加（例如數字對比、單位、來源）。資訊由畫面本身講：計數器、標籤、印章、量表、實物。
+- **唔加時間線類元素**：唔好每段加標題、步驟點、步驟卡、進度條（「唔想你強行每次加條類似 timeline 既嘢」）。
+- **背景要跟主題**：唔好沿用上一條片嘅背景元素（例如漱口水片水泡）。品牌淺色底（#F2F7FC 漸層＋底部淡藍光）＋同內容有關嘅淡紋理：價錢→貨架線、歷史→舊紙啡黃、法例→文件線、食物→暖光＋穀粒、營養→標籤表格線。
+- **精緻 2D 向量**：tag、卡、量表、收據都要漸層＋內高光＋柔陰影；玻璃卡（白 74% + 白邊 + 內高光）；章用 #03 Text Stamp（2.6→1 倍 0.16s power4.in、1.06 回彈、油墨斑駁遮罩、輕震＋白閃）；數字用 #29 Odometer（逐位滾、後一位慢 0.12s）；重點字（如真係要）用 #38 螢光筆 #ffde59。HD 色：警示紅 #e8452c、正面綠 #1f9d6b，唔用橙。
+- **對稱元素要一致**：成對嘅 tag／卡（例如 $$$ vs $）底要一樣長，只係內容唔同；中間符號（＝）放最上層，唔好被主體遮。同一個字唔好喺畫面出兩次（super 同章撞字）。
+- **實物用 Canva 生成圖＋MG 郁**：食物、包裝、道具用 Canva `generate-image`（「isolated on a pure white background, high-end product photography, soft studio lighting, soft shadow, ultra sharp, no text/logos」）。落地：`separate-image-layers` → 等 job → `export-design` PNG → curl 下載（get-assets 只得 200px 縮圖，簽名 URL 改唔到尺寸）→ 本機 `rembg`（isnet-general-use）去背、按 alpha bbox 裁邊。兩件物件喺同一張圖會去背失敗（例如椰子後半透明）→ 只裁用一件或重生成。唔生成片，動態全部 MG；生成圖唔加字，中文字由 MG 疊。
+- **物件放入容器要分層**：籃、箱、袋、杯沿真實開口畫 clip-path，分「後半＋把手」同「前沿」兩層，物件夾喺中間，落點對準開口（先喺原圖畫格線定座標）。交片前逐格睇所有重疊位。
+- **安全區**：字 212–1340 之內（1380–1556 留俾字幕），左右 52px；HD 右上 logo 位（x 742–1020、y 228–360）留空；主體圖形唔好出界；效果字 ≥ 76px。
+- **流程**：（如需要）配對表 → MG 代表段一張定格俾用戶批 → 批咗直接做晒全部段 → 逐段抽格自己 QA（疊安全框）→ 交。
+- **交付**：每段一個素材檔（只有聲效、冇 VO、冇字幕），檔名寫 VO 時間碼（例 `SF_MG4_街市蔬果平靚正_37.68-44.32.mp4`），另出 `_preview_配VO`；素材由對應 VO 秒數開始放就啱位。聲效我聽唔到，交片時講明要用戶試聽。
