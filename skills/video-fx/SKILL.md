@@ -29,6 +29,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 6. **畫面比例同圖片**（用戶 2026-10-15 更新）：口播片預設大約 **30–40% 見人物，其餘全屏（圖片／motion graphic，資訊卡最多 2 張）；上圖下人最多一段；尾 shot 一定係主角**；抽象概念用 motion graphic（比喻要畫比喻本身）；問卷要確認。Kallaway 冇圖片卡，用三張自家卡：`kallaway.x.image.full`（全屏圖）、`kallaway.x.image.split`（上圖下人）、`kallaway.x.image.pip`（胸口位圖片框，框入面張圖固定唔郁）。清單卡可以每行配圓形縮圖（slot p1–p4）。圖片用 Canva `generate-image` 生成，提示詞跟品牌檔「圖片風格」；**先試 2 張俾用戶定風格，批咗先全批生成**；落圖要用戶同意（`workflow/assets.md` 嘅分層 → 匯出 → curl）。Canva 連接冇「圖變片」，唔好話做到。
 7. **節拍表＝真截圖**：先砌好專案，再用 `npx hyperframes snapshot --at …` 逐拍截圖，出一頁（Artifact）：每拍有截圖、時間、原句、卡 id、卡上字、**聲效（幾秒、邊個聲、對住咩動作）**、**字幕出唔出**。唔好用文字描述代替，唔好等到草稿先出現聲效。範例腳本喺 `workflow/examples/doctor2-k/`（build.py、page.py、page_tpl.html、sheet.sh）。
 8. **品牌固定元素**：`brands/<brand>.md`（Healthy Days：右上 logo 常駐、名牌樣板、字幕方框、title tag）照舊，疊喺風格包上面；品牌色經 `brands/<brand>/tokens-<style>.css` 覆蓋風格包 tokens。
+9. **設計原則（方向性）**：比喻忠於本體、畫面唔空唔單調、效果有變化、主體完整見到——讀 `lessons/design-principles.md`，每條片自己判斷做法，唔再逐個細節立規則。
 
 **硬性規則**
 - **跳鏡同剪口窒先跟 `lessons/jump-cuts.md`**（剪位分類、轉鏡規則、溶接、同步）。
