@@ -23,3 +23,7 @@
 - **攞原圖（已驗證，唔使用戶登入）**：`separate-image-layers`（asset_id = 生成圖嘅 media id）→ 等 job 完成攞 design id → `export-design`（`{"type":"png","width":1200}`）→ 用返回嘅 export-download 網址 `curl` 落載（網址有時限，即刻下載）→ commit 去素材資料夾。1200×1200 夠全屏卡用。
 - 下載前要用戶同意（一次過同意整批即可）；分層設計會留喺用戶 Canva 帳戶，可以之後喺 Canva 刪。
 - 素材關卡問確認時就要講明呢一步，唔好生成完先發現。
+
+## Canva 額度用完（用戶 2026-10-26）
+- Canva 生圖額度用完／冷卻中 → 改用 Higgsfield 最平嘅圖片 model 生成（先 `models_explore` 揀最平），提示詞同風格照品牌檔。
+- 慳額度做法：一次生成「貼紙表」（3×3 或 3×2 格、純白底、物件唔掂埋），再用 numpy 按格切＋由邊界 flood-fill 白底去背，一張圖出 6–9 件素材。

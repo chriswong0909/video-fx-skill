@@ -1,0 +1,6536 @@
+{
+ "source": "https://kittenjam-motion-library.vercel.app/",
+ "captured": "2026-10-26",
+ "note": "索引只記名稱、分類、時機、技術、場景同一句說明；唔存程式碼同提示詞。原作屬網站同原創作者，只供個人學習參考。tier：A=影片可用／B=可能可用／C=網頁專用。",
+ "count": 327,
+ "items": [
+  {
+   "id": 1,
+   "zh": "閃電砸落",
+   "en": "Lightning Strike",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "伴隨閃電閃光重重砸下",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 2,
+   "zh": "雷射切斷",
+   "en": "Laser Cut",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "雷射把文字一刀兩斷",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 3,
+   "zh": "硬幣翻轉",
+   "en": "Coin Flip",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "文字像硬幣一樣翻轉彈跳",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 4,
+   "zh": "爆炸四散",
+   "en": "Explode Out",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "轉場切換",
+    "強調重點"
+   ],
+   "desc": "文字向四面八方炸飛",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 5,
+   "zh": "粒子消散",
+   "en": "Disintegrate",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "文字化為粒子消散",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 6,
+   "zh": "心跳放大",
+   "en": "Heartbeat Zoom",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "隨心跳放大並擴散波紋",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 7,
+   "zh": "文字萬花筒",
+   "en": "Text Kaleido",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "背景裝飾",
+    "Logo・品牌"
+   ],
+   "desc": "文字萬花筒旋轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 8,
+   "zh": "倒數砸落",
+   "en": "Number Slam",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "數字資訊",
+    "標題・Hero"
+   ],
+   "desc": "倒數數字重重砸下",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 9,
+   "zh": "波浪文字",
+   "en": "Wave Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "文字像波浪上下起伏",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 10,
+   "zh": "定格晃動",
+   "en": "Stop Motion",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "定格動畫般喀喀晃動",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 11,
+   "zh": "文字雨",
+   "en": "Letter Rain",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "文字如雨般落下",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 12,
+   "zh": "放大鏡",
+   "en": "Magnifier Lens",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "用放大鏡放大文字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 13,
+   "zh": "亂碼解讀",
+   "en": "Scramble Decode",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "標題・Hero",
+    "數字資訊"
+   ],
+   "desc": "從亂碼解讀成正確文字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 14,
+   "zh": "骨牌倒下",
+   "en": "Domino Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "文字像骨牌一樣倒下",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 15,
+   "zh": "漸層流動",
+   "en": "Gradient Flow",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "漸層在文字中流動",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 16,
+   "zh": "圓環文字",
+   "en": "Circle Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "Logo・品牌",
+    "背景裝飾"
+   ],
+   "desc": "文字圓環反向旋轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 17,
+   "zh": "水面倒影",
+   "en": "Water Reflection",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "在水面搖曳的倒影",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 18,
+   "zh": "逐字彈跳",
+   "en": "Letter Bounce",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動 Canva 風格 Canva Bounce 彈跳",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "文字逐字彈跳",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 19,
+   "zh": "文字旗幟",
+   "en": "Text Flag",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "文字像旗子般飄揚",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 20,
+   "zh": "重力反轉",
+   "en": "Gravity Flip",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "重力反轉往上彈",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 21,
+   "zh": "磁鐵吸附",
+   "en": "Magnet Pull",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "Logo・品牌",
+    "標題・Hero"
+   ],
+   "desc": "文字像被磁鐵吸過來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 22,
+   "zh": "脈動格子",
+   "en": "Word Pulse Grid",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "格狀文字隨波膨脹",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 23,
+   "zh": "字重變粗",
+   "en": "Weight Grow",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "細字逐漸變粗",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 24,
+   "zh": "文字扇",
+   "en": "Text Fan",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "Logo・品牌",
+    "標題・Hero"
+   ],
+   "desc": "同一字像扇子般展開",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 25,
+   "zh": "卡拉OK小球",
+   "en": "Karaoke Ball",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "小球跳動，逐字點亮",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 26,
+   "zh": "鐘擺搖晃",
+   "en": "Swing Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "Logo・品牌"
+   ],
+   "desc": "從上方一點如鐘擺搖晃",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 27,
+   "zh": "像素溶解",
+   "en": "Pixel Dissolve",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "化成方塊溶解消失再復原",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 28,
+   "zh": "圓環換字",
+   "en": "Rotating Words",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "數字資訊",
+    "Logo・品牌"
+   ],
+   "desc": "在圓環中切換單字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 29,
+   "zh": "殘影疾走",
+   "en": "Blur Trail",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "拖著殘影疾馳而過",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 30,
+   "zh": "棋盤翻轉",
+   "en": "Checker Words",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "棋盤格文字依波浪翻轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 31,
+   "zh": "∞ 軌道",
+   "en": "Roller Path",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "文字沿 ∞ 軌道奔馳",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 32,
+   "zh": "洗牌重排",
+   "en": "Shuffle Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "文字互換位置後排整齊",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 33,
+   "zh": "文字漩渦",
+   "en": "Text Spiral",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "背景裝飾",
+    "轉場切換"
+   ],
+   "desc": "文字沿漩渦旋轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 34,
+   "zh": "顫抖穩定",
+   "en": "Jitter Settle",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "顫抖後慢慢穩定",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 35,
+   "zh": "彈性拉伸",
+   "en": "Elastic Wave Stretch",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "文字縱向拉伸成波浪",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 36,
+   "zh": "墨水暈開",
+   "en": "Ink Bleed",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "墨水暈開成形",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 37,
+   "zh": "文字聚集",
+   "en": "Letter Assemble",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "散落的文字聚集",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 38,
+   "zh": "字體樣本",
+   "en": "Text Mosaic",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "不同字體依序發光",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 39,
+   "zh": "崩落",
+   "en": "Crumble Down",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "文字崩塌掉落",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 40,
+   "zh": "漂浮",
+   "en": "Float Drift",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "背景裝飾",
+    "Logo・品牌"
+   ],
+   "desc": "輕飄飄地浮動",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 41,
+   "zh": "文字爆開",
+   "en": "Word Burst",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場 Canva 風格 Canva Pop 跳出",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "單字咚一聲彈出來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 42,
+   "zh": "逐字敲擊",
+   "en": "Letter Sequence",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "一個字一個字砸上來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 43,
+   "zh": "印章",
+   "en": "Text Stamp",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場 Canva 風格 Canva Stomp 重擊",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "像蓋章一樣一個個蓋上去",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 44,
+   "zh": "衝擊放大",
+   "en": "Punch Zoom",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "從深處飛出、後面拖著殘影",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 45,
+   "zh": "動態堆疊",
+   "en": "Kinetic Stack",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "衝擊登場",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "詞一個個飛進來疊起來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 46,
+   "zh": "穿越放大",
+   "en": "Text Zoom Through",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "衝進字裡，接到下一個詞",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 47,
+   "zh": "擠壓彈跳",
+   "en": "Text Squeeze",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "逐字律動",
+   "uses": [
+    "強調重點",
+    "轉場切換"
+   ],
+   "desc": "像橡皮一樣壓扁再換字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 48,
+   "zh": "巨字滑過",
+   "en": "Huge Text Scroll",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "超大字一快一慢橫越畫面",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 49,
+   "zh": "直書逆走",
+   "en": "Vertical Typography",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "直排文字往反方向流",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 50,
+   "zh": "斜線帶",
+   "en": "Diagonal Text Bands",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾",
+    "轉場切換"
+   ],
+   "desc": "斜斜的帶子，文字反向跑",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 51,
+   "zh": "緞帶",
+   "en": "Text Ribbon",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "文字沿著波浪線流動",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 52,
+   "zh": "跑馬燈",
+   "en": "Marquee",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾",
+    "數字資訊"
+   ],
+   "desc": "字體、速度都不同的帶子疊在一起",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 53,
+   "zh": "直書三層",
+   "en": "Parallax Columns",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "三層直排文字一起流動",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 54,
+   "zh": "封鎖膠帶",
+   "en": "Tape Cross",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "強調重點",
+    "背景裝飾"
+   ],
+   "desc": "寫著字的膠帶交叉成 X",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 55,
+   "zh": "文字隧道",
+   "en": "Text Tunnel",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "從文字中間穿過去",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 56,
+   "zh": "文字走廊",
+   "en": "Text Corridor",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "地板牆壁都是字，一路往前",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 57,
+   "zh": "圓柱",
+   "en": "Text Cylinder",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "Logo・品牌"
+   ],
+   "desc": "文字圓柱反向旋轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 58,
+   "zh": "圓環隧道",
+   "en": "Ring Text Tunnel",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "轉場切換",
+    "背景裝飾"
+   ],
+   "desc": "一圈圈文字撲面而來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 59,
+   "zh": "軌道",
+   "en": "Text Orbit",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "Logo・品牌"
+   ],
+   "desc": "單字帶著景深繞圈",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 60,
+   "zh": "方塊",
+   "en": "Text Cube",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "轉場切換",
+    "數字資訊"
+   ],
+   "desc": "四面寫字的方塊直向翻轉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 61,
+   "zh": "立體字",
+   "en": "Extrude Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "3D 空間旋轉",
+   "uses": [
+    "Logo・品牌",
+    "標題・Hero"
+   ],
+   "desc": "立體字的厚度方向轉一圈",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 62,
+   "zh": "翻牌",
+   "en": "Split Flap",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "像車站時刻表一樣翻到定位",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 63,
+   "zh": "翻卡",
+   "en": "Flip Cards",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "一張張翻面換字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 64,
+   "zh": "打字機",
+   "en": "Typewriter",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換 Canva 風格 Canva Typewriter 打字機",
+   "uses": [
+    "標題・Hero",
+    "數字資訊"
+   ],
+   "desc": "一個字一個字打出來再換掉",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 65,
+   "zh": "拉霸",
+   "en": "Slot Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "滾輪轉一轉停下來",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 66,
+   "zh": "計數器",
+   "en": "Odometer",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "數字滾動往上加",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 67,
+   "zh": "標題切換",
+   "en": "Headline Swap",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換",
+   "uses": [
+    "數字資訊",
+    "轉場切換"
+   ],
+   "desc": "新聞標題一個換一個",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 68,
+   "zh": "LED 看板",
+   "en": "LED Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "數字資訊",
+    "背景裝飾"
+   ],
+   "desc": "點點組成的電子字",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 69,
+   "zh": "空心字",
+   "en": "Outline Text",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "空心字一行一行被填滿",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 70,
+   "zh": "故障切片",
+   "en": "Glitch Slices",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "消散退場",
+   "uses": [
+    "強調重點",
+    "轉場切換"
+   ],
+   "desc": "大字被切成好幾條錯開",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 71,
+   "zh": "圖案遮罩",
+   "en": "Text Mask Pattern",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "文字變成窗，條紋從裡面流過",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 72,
+   "zh": "長陰影",
+   "en": "Long Shadow",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "Logo・品牌"
+   ],
+   "desc": "長長的影子轉一圈",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 73,
+   "zh": "液體填滿",
+   "en": "Liquid Fill",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "空心字被液體慢慢裝滿",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 74,
+   "zh": "螢光筆",
+   "en": "Highlight Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "質感填色",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "螢光筆從字後面劃過",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 75,
+   "zh": "斜線反轉",
+   "en": "Split Invert",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "文字切換 Canva 風格 Canva Block 區塊",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "斜線掃過，兩區互換",
+   "added": "2026-10-15",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 76,
+   "zh": "逐字升起",
+   "en": "Split Rise",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "Canva 風格 Canva Ascend Rise 上升",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "每個字從遮罩下方滑上來",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 77,
+   "zh": "亂碼揭示",
+   "en": "Scramble Reveal",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "標題・Hero",
+    "數字資訊"
+   ],
+   "desc": "亂碼逐步解出正確文字",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 78,
+   "zh": "打字換句",
+   "en": "Typing Swap",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "Canva 風格 Canva Typewriter 打字機",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "打字、刪除、換下一句",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 79,
+   "zh": "彈性落下",
+   "en": "Elastic Drop",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "Canva 風格 Canva Bounce 彈跳",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "字從天而降並彈性晃動",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 80,
+   "zh": "3D 翻字",
+   "en": "3D Char Flip",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "每個字沿 X 軸翻轉登場",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 81,
+   "zh": "隨機散聚",
+   "en": "Random Scatter",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "字從四處飛來再散開",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 82,
+   "zh": "格狀擴散",
+   "en": "Grid Stagger",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "格子從中心向外一波波縮放",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 83,
+   "zh": "遮罩換詞",
+   "en": "Word Rotator",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "標題・Hero",
+    "轉場切換"
+   ],
+   "desc": "固定前綴、後面的詞輪播替換",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 84,
+   "zh": "數字累加",
+   "en": "Number Counter",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "數字滾動累加並同步進度條",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 85,
+   "zh": "磁力文字",
+   "en": "Magnetic Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "介面互動",
+    "Logo・品牌"
+   ],
+   "desc": "游標靠近時字被推開",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 86,
+   "zh": "逐行揭示",
+   "en": "Line Reveal",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "一行行從遮罩下翻上來",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 87,
+   "zh": "壓扁彈跳",
+   "en": "Squash Bounce",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "落地壓扁、回彈伸展",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 88,
+   "zh": "手繪圈重點",
+   "en": "Draw Highlight",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "手繪圓圈與底線畫出來",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 89,
+   "zh": "形狀變形",
+   "en": "Shape Morph",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "Logo・品牌",
+    "轉場切換"
+   ],
+   "desc": "圓、星、心、雲朵互相變形",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 90,
+   "zh": "路徑飛行",
+   "en": "Path Flight",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "紙飛機沿曲線飛行並轉向",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 91,
+   "zh": "版面重排",
+   "en": "Flip Layout",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "介面互動",
+    "轉場切換"
+   ],
+   "desc": "格狀與橫排之間平滑重排",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 92,
+   "zh": "捲動揭示",
+   "en": "Scroll Reveal",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "捲動效果"
+   ],
+   "desc": "捲到時淡入、進度條同步",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 93,
+   "zh": "橫向捲動",
+   "en": "Horizontal Scroll",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "捲動效果"
+   ],
+   "desc": "往下捲、內容往左滑",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 94,
+   "zh": "視差圖層",
+   "en": "Parallax Layers",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "捲動效果",
+    "背景裝飾"
+   ],
+   "desc": "遠中近景以不同速度移動",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 95,
+   "zh": "磁吸按鈕",
+   "en": "Magnetic Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "按鈕被游標吸過去並彈回",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 96,
+   "zh": "游標跟隨",
+   "en": "Cursor Follower",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "拖尾圓點與反相圓圈",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 97,
+   "zh": "拖曳甩動",
+   "en": "Drag & Toss",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "卡片可拖曳並帶慣性甩出",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 98,
+   "zh": "發牌展開",
+   "en": "Card Deal",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "轉場切換",
+    "介面互動"
+   ],
+   "desc": "卡片從底部發牌成扇形",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 99,
+   "zh": "彩紙爆發",
+   "en": "Confetti Burst",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "受重力影響的彩紙噴發",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 100,
+   "zh": "滾輪加速跑馬燈",
+   "en": "Velocity Marquee",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "捲動觸發",
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "",
+   "uses": [
+    "背景裝飾",
+    "介面互動"
+   ],
+   "desc": "滾輪或拖曳讓跑馬燈加速傾斜",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 101,
+   "zh": "捲動導覽點",
+   "en": "Scroll Spy Dot Nav",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發",
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "捲動導覽 側邊導覽點 錨點導覽 頁面進度導覽 Scroll Spy Navigation Dot Navigation",
+   "uses": [
+    "介面互動",
+    "捲動效果"
+   ],
+   "desc": "側邊導覽點隨捲動亮起，點了跳到該段",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 102,
+   "zh": "文字翻滾按鈕",
+   "en": "Rolling Text Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 hover 懸停 文字翻滾 Roll Text Button Hover Stagger CTA",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "hover 時字逐一往上翻滾、按鈕反轉、箭頭轉向",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 103,
+   "zh": "游標擴散填滿按鈕",
+   "en": "Direction-aware Fill Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 hover 方向感知 擴散 填色 漣漪 從滑鼠位置 Direction Aware Hover Fill Ripple Button CTA",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "從滑鼠進入的位置擴散填滿，離開時往出口收回",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 104,
+   "zh": "卡片依序浮現",
+   "en": "Staggered Card Reveal",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "卡片 群組 列表 進場 依序 錯開 浮現 淡入 Stagger Fade Up Grid Reveal List Entrance",
+   "uses": [
+    "介面互動",
+    "轉場切換"
+   ],
+   "desc": "一組卡片從左上往右下依序浮上、由模糊變清楚",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 105,
+   "zh": "3D 傾斜視差圖片",
+   "en": "Tilt Parallax Image",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "圖片 照片 hover 懸停 3D 傾斜 視差 反光 Tilt Parallax Glare Image Hover Card",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "hover 時圖片跟著游標 3D 傾斜，景物分層視差、反光與說明滑出",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 106,
+   "zh": "流動光暈漸層",
+   "en": "Aurora Gradient",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "背景 極光 漸層 光暈 Aurora Mesh Gradient Blob Glow Hero 背景",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "幾團模糊光暈緩慢漂移交融，像極光一樣流動",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 107,
+   "zh": "聚光網格",
+   "en": "Spotlight Grid",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "背景 網格 格線 聚光 游標 光暈 Spotlight Grid Pattern Cursor Glow SaaS",
+   "uses": [
+    "背景裝飾",
+    "介面互動"
+   ],
+   "desc": "細格線背景，游標附近的格線被點亮並帶柔光",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 108,
+   "zh": "粒子連線",
+   "en": "Particle Network",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "背景 粒子 連線 網路 星座 Particles Network Constellation particles.js Canvas",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "漂浮的粒子靠近時自動連線，游標會吸引附近粒子",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 109,
+   "zh": "光澤掃過按鈕",
+   "en": "Shine Sweep Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊",
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 光澤 反光 掃光 閃光 Shine Sweep Glint Shimmer Button CTA",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "一道斜向光澤定時掃過按鈕，hover 時加快並浮起",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 110,
+   "zh": "旋轉光邊按鈕",
+   "en": "Rotating Gradient Border",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 邊框 漸層 旋轉 發光 Glow Border Conic Gradient Animated Border Button",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "按鈕外框的漸層光持續繞圈旋轉，帶柔和外光",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 111,
+   "zh": "愛心按讚爆開",
+   "en": "Like Burst",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊",
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 按讚 喜歡 愛心 點擊 回饋 微互動 Like Heart Burst Micro-interaction Twitter",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "點擊愛心時彈跳放大，周圍噴出小圓點與光圈",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 112,
+   "zh": "卡片浮起",
+   "en": "Hover Lift Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "卡片 hover 浮起 陰影 縮圖 放大 Hover Lift Card Shadow Zoom 作品集 商品",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "hover 時卡片上浮、陰影加深，縮圖在框內放大",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 113,
+   "zh": "光暈邊框卡片",
+   "en": "Spotlight Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "卡片 光暈 邊框 聚光 游標 發光 Spotlight Card Glow Border Linear Vercel",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "游標經過時，卡片邊框與內部被一團光照亮",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 114,
+   "zh": "骨架載入",
+   "en": "Skeleton Shimmer",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "循環待機",
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "骨架 載入 讀取 佔位 Skeleton Loading Shimmer Placeholder Loader",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "內容載入前顯示骨架，光澤掃過後淡入真正內容",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 115,
+   "zh": "圖片遮罩揭示",
+   "en": "Image Clip Reveal",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "圖片 照片 遮罩 揭示 進場 clip-path Image Reveal Mask Wipe Zoom",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "圖片從下往上被揭開，同時由放大慢慢縮回原尺寸",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 116,
+   "zh": "前後對比滑桿",
+   "en": "Before / After Slider",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "拖曳手勢",
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "圖片 比較 對比 前後 滑桿 拖曳 Before After Compare Slider Image Comparison",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "拖曳中間的把手，左右比較兩張圖的差異",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 117,
+   "zh": "導覽列捲動縮小",
+   "en": "Shrinking Sticky Header",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "CSS",
+   "style": "導覽列 頁首 選單 header navbar 捲動 縮小 黏著 毛玻璃 Sticky Shrink Header On Scroll",
+   "uses": [
+    "捲動效果",
+    "介面互動"
+   ],
+   "desc": "往下捲時導覽列變矮、Logo 縮小，並加上毛玻璃底",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 118,
+   "zh": "通知堆疊",
+   "en": "Toast Stack",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "通知 提示 訊息 吐司 彈出 Toast Notification Snackbar Alert Stack",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "通知從右下角依序彈入堆疊，幾秒後滑出消失",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 119,
+   "zh": "懸停放大游標",
+   "en": "Hover Expand Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "游標 自訂游標 放大 懸停 VIEW 查看 Custom Cursor Hover Expand Portfolio",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "小圓點游標移到作品上時放大成寫著文字的圓",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 120,
+   "zh": "清單懸停預覽圖",
+   "en": "Hover Image Reveal",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "游標 清單 列表 預覽 圖片 浮出 跟隨 Hover Image Reveal List Preview Follow Cursor Portfolio",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "滑過作品清單時，預覽圖跟著游標浮出並隨移動傾斜",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 121,
+   "zh": "游標拖尾軌跡",
+   "en": "Cursor Trail",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊",
+    "循環待機"
+   ],
+   "tech": "Canvas",
+   "style": "游標 拖尾 軌跡 線條 殘影 Cursor Trail Line Comet Canvas",
+   "uses": [
+    "介面互動",
+    "背景裝飾"
+   ],
+   "desc": "游標後面拖著一條漸細漸淡的線條",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 122,
+   "zh": "點擊漣漪",
+   "en": "Click Ripple",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "游標 點擊 漣漪 波紋 回饋 Click Ripple Wave Feedback Material",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "在畫面任何位置點擊，都會從點擊處擴散出波紋",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 123,
+   "zh": "旋轉文字環游標",
+   "en": "Rotating Text Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊",
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "游標 文字環 環狀文字 旋轉 圓形文字 Rotating Text Ring Circular Text Cursor Badge SCROLL",
+   "uses": [
+    "介面互動",
+    "Logo・品牌"
+   ],
+   "desc": "一圈環狀文字繞著游標持續旋轉",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 124,
+   "zh": "手電筒探照",
+   "en": "Flashlight Reveal",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "游標 手電筒 探照 聚光燈 揭示 遮罩 Flashlight Spotlight Reveal Mask Cursor Hidden",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "畫面一片暗，只有游標附近像手電筒一樣照出隱藏內容",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 125,
+   "zh": "柔和上浮",
+   "en": "Gentle Fade Up",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "區塊 段落 標題 上浮 淡入 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy Canva 風格 Canva Rise 上升",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "區塊內元素依閱讀順序由上到下輕輕浮現",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 126,
+   "zh": "逐行淡入",
+   "en": "Soft Line Fade",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "段落 內文 逐行 模糊 文案 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy Canva 風格 Canva Fade Clarify 淡入 清晰",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "段落一行一行從微模糊變清楚，帶出閱讀節奏",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 127,
+   "zh": "時間軸延伸",
+   "en": "Timeline Draw",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場",
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "時間軸 流程 步驟 歷程 線條 延伸 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "一條線往下延伸，碰到哪個步驟就出現哪一步",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 128,
+   "zh": "Z 字閱讀動線",
+   "en": "Z-pattern Reveal",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "首頁 Hero 版面 Z 字 F 字 閱讀模式 Logo 導覽 圖片 行動按鈕 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "首頁版面依 Z 字閱讀順序依序出現",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 129,
+   "zh": "步驟依序連接",
+   "en": "Connected Steps",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "步驟 流程 1 2 3 連接線 教學 結帳 Onboarding 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "步驟卡之間的連接線畫過去後，下一步才出現",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 130,
+   "zh": "行動按鈕提示",
+   "en": "Gentle CTA Cue",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "CTA 行動呼籲 按鈕 提示 光暈 擴散 注意力 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "強調重點",
+    "介面互動"
+   ],
+   "desc": "內容出現後，按鈕外圍輕輕擴散光暈，把視線帶到按鈕",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 131,
+   "zh": "柔邊遮罩揭示",
+   "en": "Soft Mask Reveal",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "圖片 照片 遮罩 柔邊 漸層 揭示 羽化 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "標題・Hero",
+    "轉場切換"
+   ],
+   "desc": "圖片由左到右被一道柔和的漸層邊緣揭開",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 132,
+   "zh": "左右交錯淡入",
+   "en": "Zigzag Cascade",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場",
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "圖文 列表 左右 交錯 Z 字 往下 介紹 特色 溫和 柔和 輕柔 引導 動線 視線 閱讀順序 低調 Subtle Gentle Soft Entrance Visual Flow Hierarchy",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "圖文列表左右交錯出現，視線呈 Z 字往下走",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 133,
+   "zh": "上傳 SVG 描繪",
+   "en": "Draw Your SVG",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "SVG 上傳 自訂 線條 描邊 手繪 筆畫 Logo 插畫 Line Drawing Stroke Draw Upload Custom",
+   "uses": [
+    "Logo・品牌",
+    "強調重點"
+   ],
+   "desc": "上傳自己的線條 SVG，看它像用筆一筆一筆畫出來",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 134,
+   "zh": "手寫簽名",
+   "en": "Signature Writing",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "簽名 手寫 草寫 書寫 筆尖 Signature Handwriting Cursive Pen Write On",
+   "uses": [
+    "Logo・品牌",
+    "標題・Hero"
+   ],
+   "desc": "一顆筆尖沿著簽名路徑書寫，最後補上一道底線",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 135,
+   "zh": "線條插畫逐筆描繪",
+   "en": "Line Illustration Draw",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "插畫 線條插畫 逐筆 描繪 手繪 圖解 Line Art Illustration Draw Sketch",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "線條插畫一筆一筆畫完，最後主體淡淡浮現",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 136,
+   "zh": "圖示描邊 hover",
+   "en": "Icon Stroke Redraw",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "圖示 icon 線條圖示 hover 重繪 描邊 選單 導覽 Icon Stroke Draw Hover Menu",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過線條圖示時，筆畫重新描一次並微微上浮",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 137,
+   "zh": "流程連線流動",
+   "en": "Flowing Connectors",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "流程圖 架構圖 節點 連線 虛線 流動 資料流 Flow Diagram Connector Dashed Line Data Flow",
+   "uses": [
+    "數字資訊",
+    "背景裝飾"
+   ],
+   "desc": "節點之間的虛線持續流動，小圓點沿線傳遞",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 138,
+   "zh": "波浪分隔線",
+   "en": "Wave Divider",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "波浪 分隔線 區塊分隔 水波 海浪 Wave Divider Section Separator Liquid",
+   "uses": [
+    "背景裝飾",
+    "轉場切換"
+   ],
+   "desc": "區塊底部多層波浪以不同速度緩慢流動",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 139,
+   "zh": "圓環進度",
+   "en": "Circular Progress",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "進度 圓環 百分比 儀表 數據 統計 Progress Ring Donut Percentage Gauge Stats",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "圓環描到指定百分比，中間數字同步累加",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 140,
+   "zh": "打勾完成",
+   "en": "Success Checkmark",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "成功 完成 打勾 勾選 確認 送出 付款 狀態 Success Check Done Confirm Tick",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "先畫一個圓，再打勾並輕彈，最後浮出成功訊息",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 141,
+   "zh": "開關切換",
+   "en": "Toggle Switch",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "開關 切換 switch toggle 設定 iOS 圓鈕 App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "圓鈕滑到另一側時略微拉長，軌道跟著切換狀態",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 142,
+   "zh": "下拉重新整理",
+   "en": "Pull to Refresh",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "下拉 重新整理 刷新 列表 手勢 Pull Refresh Spinner Gesture App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "往下拉列表，轉圈圖示出現，放開後載入並彈回",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 143,
+   "zh": "底部抽屜",
+   "en": "Bottom Sheet",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "底部抽屜 底部選單 彈出 分享 動作選單 Bottom Sheet Action Sheet Drawer Modal App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "背景變暗，選單從底部帶一點彈性滑上來",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 144,
+   "zh": "底部導覽列切換",
+   "en": "Tab Bar Indicator",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換",
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "底部導覽列 分頁 tab bar 導覽 指示器 切換 Bottom Navigation Indicator Gooey App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "點選分頁時，膠囊指示器拉長滑到新位置，圖示輕彈",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 145,
+   "zh": "滑動刪除",
+   "en": "Swipe to Delete",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "拖曳手勢",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "滑動 刪除 左滑 列表 手勢 收合 Swipe Delete Gesture List Dismiss App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "列表項目往左滑露出刪除，滑到底就收合移除",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 146,
+   "zh": "按鈕載入成功",
+   "en": "Loading Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "按鈕 載入 送出 轉圈 成功 打勾 狀態 Loading Button Submit Spinner Success Morph App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "按下後按鈕縮成圓形轉圈，完成時打勾再恢復",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 147,
+   "zh": "數量步進器",
+   "en": "Number Stepper",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "數量 加減 步進器 購物車 計數 Stepper Counter Quantity Plus Minus Cart App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "按加減時按鈕回饋，數字往上或往下滾動切換",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 148,
+   "zh": "輸入框浮動標籤",
+   "en": "Floating Label Input",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊",
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "輸入框 表單 標籤 浮動 聚焦 Floating Label Input Focus Form Material App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "點進輸入框時，提示文字縮小浮到上方，底線從中間展開",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 149,
+   "zh": "星星評分",
+   "en": "Star Rating",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "評分 星星 評價 回饋 Rating Stars Review Feedback App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "點選評分時，星星由左到右依序點亮並彈跳",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 150,
+   "zh": "啟動頁轉場",
+   "en": "Splash to Home",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "啟動頁 開場 splash 載入 Logo 首頁 轉場 Launch Screen Intro Zoom Through App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "轉場切換",
+    "Logo・品牌"
+   ],
+   "desc": "啟動 Logo 彈出呼吸，再放大穿過畫面進入首頁",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 151,
+   "zh": "錯誤震動提示",
+   "en": "Shake on Error",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "錯誤 震動 搖晃 驗證 密碼 登入 表單 Shake Error Validation Wrong Password Login App 手機 行動裝置 微互動 Mobile App Micro-interaction",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "輸入錯誤時欄位左右震動，下方滑出錯誤訊息",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 152,
+   "zh": "捲動逐字點亮",
+   "en": "Scroll Text Reveal",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "逐字 點亮 段落 文案 Apple 官網 Text Reveal Highlight On Scroll 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "標題・Hero",
+    "捲動效果"
+   ],
+   "desc": "段落的字隨著捲動一個個由淡轉亮",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 153,
+   "zh": "捲動放大全幅圖片",
+   "en": "Scroll Zoom to Full",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "圖片 放大 全幅 全螢幕 展開 Zoom Image Expand Full Screen Fullbleed 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "標題・Hero",
+    "捲動效果",
+    "轉場切換"
+   ],
+   "desc": "小圖隨捲動放大到充滿畫面，最後浮出標題",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 154,
+   "zh": "黏著堆疊卡片",
+   "en": "Sticky Stacking Cards",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "卡片 堆疊 黏著 sticky 疊起來 服務介紹 Stacking Cards Sticky Stack Deck 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "介面互動",
+    "捲動效果"
+   ],
+   "desc": "卡片一張張捲上來疊住，下面那張縮小變暗",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 155,
+   "zh": "數據捲到才計數",
+   "en": "Count Up on Scroll",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "捲動觸發",
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "數據 統計 計數 數字 成果 KPI Count Up Stats Numbers On Scroll 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "數字資訊",
+    "捲動效果"
+   ],
+   "desc": "數據區塊捲進畫面時，數字才從零開始累加",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 156,
+   "zh": "往下捲隱藏導覽列",
+   "en": "Hide Header on Scroll",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "導覽列 頁首 選單 header navbar 隱藏 顯示 方向 Headroom Hide On Scroll Down Show On Scroll Up 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "介面互動",
+    "捲動效果",
+    "App 介面"
+   ],
+   "desc": "往下捲時導覽列收起，往回捲時立刻滑出",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 157,
+   "zh": "捲動繪製路徑",
+   "en": "Scroll Draw Path",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "路徑 曲線 線條 繪製 時間軸 旅程 故事 Scroll Path Draw SVG Line Journey Story 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "捲動效果",
+    "數字資訊"
+   ],
+   "desc": "一條曲線隨捲動一路畫下去，串起各個段落",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 158,
+   "zh": "圖框內視差",
+   "en": "Image Parallax in Frame",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "圖片 視差 圖框 照片 景深 Image Parallax Frame Inner Parallax Gallery 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "圖片在框裡移動得比捲動慢，產生深度",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 159,
+   "zh": "捲動橫移大字",
+   "en": "Scroll Marquee Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "大字 橫移 跑馬燈 反向 標題 Scroll Marquee Big Type Horizontal Text Kinetic 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "背景裝飾",
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "三行大字隨捲動左右反向移動，中間一行空心",
+   "added": "2026-10-16",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 160,
+   "zh": "章節主題切換",
+   "en": "Section Theme Switch",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "捲動觸發",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "背景 主題 切換 章節 區塊 Section Theme Background Change On Scroll Chapters 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "背景裝飾",
+    "捲動效果",
+    "轉場切換"
+   ],
+   "desc": "捲到不同章節時，整個頁面背景與文字配置跟著切換",
+   "added": "2026-10-16",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 161,
+   "zh": "圓形擴張轉場",
+   "en": "Circle Reveal Transition",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "轉場 圓形 遮罩 擴張 揭開 章節 Circle Reveal Clip Path Transition Section 捲動 滾動 scroll ScrollTrigger scrub 捲動觸發",
+   "uses": [
+    "轉場切換",
+    "捲動效果"
+   ],
+   "desc": "捲動時圓形遮罩從中央擴大，揭開下一章",
+   "added": "2026-10-16",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 162,
+   "zh": "連結底線滑入",
+   "en": "Underline Slide Link",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "連結 底線 選單 導覽 link underline nav menu hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過連結時底線從左長出，離開時往右收走",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 163,
+   "zh": "空心字填滿",
+   "en": "Outline Text Fill",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "空心字 描邊 填滿 大標 outline stroke text fill hover hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "標題・Hero",
+    "介面互動"
+   ],
+   "desc": "滑過空心大字時，從左到右被填滿成實心",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 164,
+   "zh": "卡片 3D 翻面",
+   "en": "Flip Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "卡片 翻轉 翻面 正反面 3D flip card hover back side hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過卡片時 3D 翻到背面，顯示更多資訊",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 165,
+   "zh": "圖片圓形展開",
+   "en": "Circle to Card Image",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "圖片 圓形 展開 縮圖 頭像 團隊 image shape expand circle hover hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "圓形縮圖在滑過時展開成直式圓角卡片並浮出標題",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 166,
+   "zh": "Dock 放大選單",
+   "en": "Dock Magnify",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "Dock 放大 圖示 選單 macOS 工具列 magnify icons toolbar hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "游標掃過一排圖示時，靠近的圖示放大並推開鄰居",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 167,
+   "zh": "選單滑塊跟隨",
+   "en": "Sliding Nav Highlight",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "選單 導覽 滑塊 膠囊 highlight 跟隨 nav pill hover indicator tabs hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "滑過選單項目時，背景膠囊滑塊跟著移到該項目",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 168,
+   "zh": "展開式圖片面板",
+   "en": "Expanding Panels",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "圖片 面板 展開 手風琴 相簿 gallery accordion expanding panels flex hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "一排窄圖片面板，滑過的那一片展開變寬並顯示標題",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 169,
+   "zh": "提示框彈出",
+   "en": "Tooltip Pop",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "提示框 tooltip 說明 小提示 氣泡 popover hover hint hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "滑過圖示時，提示框從下方帶彈性彈出",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 170,
+   "zh": "逐字跳動",
+   "en": "Letter Hover Bounce",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "文字 逐字 跳動 彈跳 俏皮 letter bounce hover playful hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "滑過文字時，碰到的每個字各自彈跳一下",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 171,
+   "zh": "邊框描繪按鈕",
+   "en": "Border Draw Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "按鈕 邊框 描邊 線條 畫出 border draw outline button hover hover 懸停 滑鼠移入 滑過 互動",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "滑過按鈕時，四條邊框依序畫出圍住按鈕",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 172,
+   "zh": "星空穿越",
+   "en": "Warp Speed",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "星空 星星 穿越 太空 光速 隧道 Starfield Warp Hyperspace Space Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "星星從中心往外飛成光線，游標移入時加速",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 173,
+   "zh": "流場線條",
+   "en": "Flow Field",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "流場 氣流 線條 生成藝術 有機 Flow Field Generative Art Perlin Noise Lines Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "上千條細線順著看不見的氣流緩慢流動，游標會攪動氣流",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 174,
+   "zh": "飄落花瓣",
+   "en": "Falling Petals",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "花瓣 櫻花 飄落 下雪 天氣 季節 Petals Sakura Snow Weather Falling Particles Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "花瓣緩緩旋轉飄落，游標經過會把花瓣吹開",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 175,
+   "zh": "數字雨",
+   "en": "Matrix Rain",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "Canvas",
+   "style": "數字雨 駭客 程式碼 字元 矩陣 科技 Matrix Code Rain Hacker Digital Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾"
+   ],
+   "desc": "一行行字元像下雨一樣往下落，帶殘影拖尾",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 176,
+   "zh": "融合球",
+   "en": "Metaballs",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "融合球 液體 黏液 有機 熔岩燈 Metaballs Liquid Blob Gooey Lava Lamp Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "幾顆圓球漂浮移動，靠近時像液體一樣黏在一起",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 177,
+   "zh": "文字粒子化",
+   "en": "Particle Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊",
+    "進場"
+   ],
+   "tech": "Canvas",
+   "style": "文字 粒子 點陣 吹散 聚合 互動標題 Particle Text Interactive Typography Scatter Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "文字由許多小點組成，游標靠近會被吹散，離開後聚回",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 178,
+   "zh": "磁力點陣",
+   "en": "Magnetic Dot Grid",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "點陣 圓點 網格 磁力 排斥 互動背景 Dot Grid Repel Magnetic Interactive Background Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾",
+    "介面互動"
+   ],
+   "desc": "滿版小圓點，游標經過時被推開並放大",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 179,
+   "zh": "水波漣漪",
+   "en": "Water Ripple",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "水波 漣漪 水面 波紋 折射 Water Ripple Wave Refraction Liquid Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "游標滑過或點擊的地方，畫面像水面一樣泛起漣漪",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 180,
+   "zh": "刮刮樂揭示",
+   "en": "Scratch Reveal",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "Canvas",
+   "style": "刮刮樂 刮開 揭曉 抽獎 優惠券 遊戲化 Scratch Card Reveal Lottery Coupon Gamification Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "介面互動",
+    "強調重點",
+    "App 介面"
+   ],
+   "desc": "用游標或手指刮開表層，露出底下的內容",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 181,
+   "zh": "煙火",
+   "en": "Fireworks",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "懸停・點擊",
+    "循環待機"
+   ],
+   "tech": "Canvas",
+   "style": "煙火 慶祝 爆炸 粒子 活動 節慶 Fireworks Celebration Particles Explosion Click Canvas 粒子 particles requestAnimationFrame 互動背景",
+   "uses": [
+    "強調重點",
+    "背景裝飾"
+   ],
+   "desc": "點擊的位置升起煙火並炸開，沒操作時自動施放",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 182,
+   "zh": "呼吸",
+   "en": "Breathe",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "呼吸 脈動 放大縮小 待機 Pulse Breathing Idle Canva 風格 Canva Breathe 呼吸 簡報 社群貼文 動畫",
+   "uses": [
+    "強調重點",
+    "Logo・品牌"
+   ],
+   "desc": "元素緩慢放大縮小，像在呼吸一樣循環",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 183,
+   "zh": "漂移",
+   "en": "Drift",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "漂移 緩慢 橫移 淡入淡出 簡報 Drift Slow Slide Fade Canva 風格 Canva Drift 漂移 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "轉場切換"
+   ],
+   "desc": "文字從側邊淡入後持續緩慢漂移，再淡出",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 184,
+   "zh": "平移",
+   "en": "Pan",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "平移 滑入 滑出 動態模糊 轉場 Pan Slide Motion Blur Transition Canva 風格 Canva Pan 平移 簡報 社群貼文 動畫",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "圖片帶動態模糊從側邊快速滑入，停留後滑出另一側",
+   "added": "2026-10-17",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 185,
+   "zh": "翻滾",
+   "en": "Tumble",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "翻滾 旋轉 登場 逐字 俏皮 Tumble Spin Rotate In Canva 風格 Canva Tumble 翻滾 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "每個字從縮小狀態旋轉翻滾著登場",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 186,
+   "zh": "霓虹閃爍",
+   "en": "Neon Flicker",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機",
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "霓虹 燈管 閃爍 發光 招牌 夜店 Neon Glow Flicker Sign Canva 風格 Canva Neon 霓虹 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌",
+    "強調重點"
+   ],
+   "desc": "文字像霓虹燈管一樣不規則閃爍後點亮",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 187,
+   "zh": "剪貼簿",
+   "en": "Scrapbook",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "剪貼簿 拼貼 手帳 照片 貼紙 膠帶 Scrapbook Collage Sticker Photo Journal Canva 風格 Canva Scrapbook 剪貼簿 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "照片、膠帶、貼紙和標題一個個歪歪地貼上來",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 188,
+   "zh": "合併",
+   "en": "Merge",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "合併 拼合 上下 切半 左右 滑入 Merge Split Halves Join Canva 風格 Canva Merge 合併 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "轉場切換"
+   ],
+   "desc": "文字上下兩半分別從左右滑入，合成完整的字",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 189,
+   "zh": "展開",
+   "en": "Spread",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "CSS",
+   "style": "展開 字距 擴散 模糊 聚焦 Spread Letter Spacing Tracking Expand Canva 風格 Canva Spread 展開 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "字疊在一起從模糊中往兩側展開成正常字距",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 190,
+   "zh": "滑行",
+   "en": "Skate",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "滑行 溜冰 傾斜 煞車 速度感 Skate Skew Slide Brake Canva 風格 Canva Skate 滑行 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "轉場切換"
+   ],
+   "desc": "文字像溜冰一樣斜著滑進來，煞車後擺正",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 191,
+   "zh": "緩慢推鏡",
+   "en": "Ken Burns",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "推鏡 慢速 放大 平移 相片 紀錄片 Ken Burns Slow Zoom Pan Photo Canva 風格 Canva Photo Zoom 相片放大 簡報 社群貼文 動畫",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "圖片持續緩慢放大並微微平移，像紀錄片的推鏡",
+   "added": "2026-10-17",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 192,
+   "zh": "Logo 組合登場",
+   "en": "Logo Build Reveal",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "Logo 標誌 品牌 開場 組合 描繪 Logo Reveal Brand Intro Build SVG 圖形",
+   "uses": [
+    "Logo・品牌",
+    "標題・Hero"
+   ],
+   "desc": "標誌的圓、方塊、圓點依序畫出組合，再滑出品牌名",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 193,
+   "zh": "音訊波形",
+   "en": "Audio Waveform",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "音訊 波形 音樂 播放器 等化器 Podcast Audio Waveform Equalizer Visualizer SVG 圖形",
+   "uses": [
+    "數字資訊",
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "一排長條像音訊波形一樣隨機跳動",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 194,
+   "zh": "漸層光流線條",
+   "en": "Flowing Gradient Stroke",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "漸層 線條 流動 光點 彗星 無限符號 Gradient Stroke Flow Comet Infinity Loop SVG 圖形",
+   "uses": [
+    "背景裝飾",
+    "Logo・品牌"
+   ],
+   "desc": "線條上的漸層持續流動，一道光點沿線繞行",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 195,
+   "zh": "液體填充圖示",
+   "en": "Liquid Fill Icon",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "液體 填充 波浪 進度 百分比 載入 Liquid Fill Wave Progress Loading Icon SVG 圖形",
+   "uses": [
+    "數字資訊",
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "圖示內的液面帶著波浪慢慢上升，百分比同步增加",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 196,
+   "zh": "雷達掃描",
+   "en": "Radar Sweep",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "雷達 掃描 搜尋 定位 科技 地圖 Radar Scan Sweep Ping Search Tech SVG 圖形",
+   "uses": [
+    "數字資訊",
+    "背景裝飾"
+   ],
+   "desc": "掃描扇形持續繞圈，掃過的位置亮起光點",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 197,
+   "zh": "折線圖繪製",
+   "en": "Line Chart Draw",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場",
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "折線圖 圖表 數據 成長 趨勢 Dashboard Line Chart Graph Data Visualization SVG 圖形",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "折線由左到右畫出，資料點依序彈出，下方面積淡入",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 198,
+   "zh": "長條圖成長",
+   "en": "Bar Chart Grow",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場",
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "長條圖 柱狀圖 圖表 數據 統計 Dashboard Bar Chart Column Graph Data SVG 圖形",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "長條依序由下往上長出並略微回彈，數值同步累加",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 199,
+   "zh": "圓餅圖分段",
+   "en": "Donut Chart Segments",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場",
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "圓餅圖 環圈圖 甜甜圈圖 比例 圖表 數據 Donut Pie Chart Segments Data SVG 圖形",
+   "uses": [
+    "數字資訊"
+   ],
+   "desc": "環圈圖一段接一段畫出，圖例依序滑入",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 200,
+   "zh": "幾何載入動畫",
+   "en": "Geometric Loader",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "載入 讀取 loading 等待 幾何 彈跳 Loader Spinner Geometric Shapes Bounce SVG 圖形",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "圓形、方形、三角形依序彈跳翻轉，作為載入中提示",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 201,
+   "zh": "SVG 濾鏡水波扭曲",
+   "en": "Turbulence Distortion",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "濾鏡 扭曲 水波 液態 熱浪 迷幻 SVG Filter Turbulence Displacement Distortion Liquid SVG 圖形",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "文字像隔著水面一樣持續波動扭曲",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 202,
+   "zh": "頁面轉場簾幕",
+   "en": "Curtain Page Transition",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "頁面轉場 換頁 簾幕 遮罩 SPA 路由 Page Transition Curtain Wipe Router 版面 頁面 網頁結構",
+   "uses": [
+    "轉場切換"
+   ],
+   "desc": "切換頁面時三片簾幕依序落下蓋住，再往下收走露出新頁",
+   "added": "2026-10-17",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 203,
+   "zh": "漢堡選單展開",
+   "en": "Hamburger Menu Reveal",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "漢堡選單 選單 全螢幕 導覽 手機版 叉叉 Hamburger Menu Overlay Fullscreen Nav Toggle 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "三條線變成叉叉，全螢幕選單從按鈕處圓形擴散展開",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 204,
+   "zh": "側邊抽屜推移",
+   "en": "Push Side Drawer",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "側邊選單 抽屜 推移 縮小 off-canvas 手機 Side Drawer Push Menu Off Canvas Scale 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "開啟選單時整個內容頁縮小推到右側，露出底下的選單",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 205,
+   "zh": "彈出視窗",
+   "en": "Modal Dialog",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "彈窗 對話框 視窗 確認 modal dialog popup 背景模糊 Overlay 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "背景模糊變暗，視窗從稍小稍低的位置彈性浮出",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 206,
+   "zh": "手風琴問答",
+   "en": "Accordion FAQ",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "手風琴 常見問題 FAQ 展開 收合 摺疊 Accordion Collapse Expand Details 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "點開問題時答案區平滑展開，加號轉成叉叉，同時收起其他題",
+   "added": "2026-10-17",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 207,
+   "zh": "分頁標籤切換",
+   "en": "Directional Tabs",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "分頁 頁籤 標籤 tab 切換 方向 內容 Tabs Directional Slide Indicator 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "底線指示器滑到新分頁，內容依切換方向左右滑動交替",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 208,
+   "zh": "作品篩選重排",
+   "en": "Filterable Grid",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "篩選 分類 作品集 格狀 重排 補位 Filter Grid Portfolio Isotope Reflow Flip 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "切換分類時，不符合的作品縮小消失，其他作品平滑補位",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 209,
+   "zh": "Bento 格局展開",
+   "en": "Bento Grid Expand",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "Bento 便當盒 格局 網格 展開 放大 特色介紹 Bento Grid Expand Hover Feature 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "滑過便當盒格局的某一格，那一格變大、其他格同步讓位",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 210,
+   "zh": "左右分割捲動",
+   "en": "Split Screen Scroll",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "分割畫面 左右 雙欄 固定 圖片切換 說故事 Split Screen Sticky Image Scrollytelling 版面 頁面 網頁結構",
+   "uses": [
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "右側文字往下捲，左側固定的圖片跟著切換對應的段落",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 211,
+   "zh": "回到頂部進度環",
+   "en": "Back to Top Progress",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發",
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "回到頂部 頂端 進度環 閱讀進度 捲動進度 Back To Top Scroll Progress Ring Button 版面 頁面 網頁結構",
+   "uses": [
+    "介面互動",
+    "捲動效果"
+   ],
+   "desc": "捲動後右下角浮出按鈕，外圈顯示閱讀進度，點了回到頂部",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 212,
+   "zh": "焦點卡片輪播",
+   "en": "Focus Carousel",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換",
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "輪播 carousel slider 焦點 中間放大 coverflow 作品 輪播圖 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "中間的卡片放大清楚，兩側縮小變淡，左右切換",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 213,
+   "zh": "左右滑卡",
+   "en": "Swipe Card Stack",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "拖曳手勢",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "滑卡 左滑右滑 交友 Tinder 卡片堆疊 甩出 Swipe Cards Stack Like Dislike 卡片 群組",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "最上面的卡片可以拖曳甩出，下一張補上來",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 214,
+   "zh": "疊卡散開",
+   "en": "Stack Fan Out",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "疊卡 散開 扇形 展開 作品集 Stack Spread Fan Cards Hover 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "一疊微歪的卡片，滑過時向兩側散開成一排",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 215,
+   "zh": "價格方案切換",
+   "en": "Pricing Toggle",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "價格 方案 訂閱 月付 年付 定價表 Pricing Table Plans Toggle Monthly Yearly SaaS 卡片 群組",
+   "uses": [
+    "數字資訊",
+    "介面互動"
+   ],
+   "desc": "月付／年付切換時，各方案價格滾動更新，推薦方案突出",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 216,
+   "zh": "卡片展開詳情",
+   "en": "Card Expand Detail",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "卡片 展開 詳情 放大 共享元素 shared element transition Expand Detail Flip 卡片 群組",
+   "uses": [
+    "介面互動",
+    "轉場切換"
+   ],
+   "desc": "點擊卡片時它平滑放大成詳情面板，其他卡片淡出",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 217,
+   "zh": "無限捲動卡片牆",
+   "en": "Infinite Card Wall",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "跑馬燈 卡片牆 評價 客戶 Logo 牆 無限 Infinite Marquee Testimonials Logo Wall 卡片 群組",
+   "uses": [
+    "背景裝飾",
+    "數字資訊"
+   ],
+   "desc": "兩排卡片朝相反方向無限移動，滑鼠移上去就暫停",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 218,
+   "zh": "評論輪播",
+   "en": "Testimonial Slider",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "評論 推薦 客戶見證 輪播 引言 Testimonial Review Quote Slider Carousel 卡片 群組",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "引言淡出上移換下一則，頭像跟著切換，進度條計時",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 219,
+   "zh": "瀑布流依序落下",
+   "en": "Masonry Cascade",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "瀑布流 masonry Pinterest 圖庫 進場 落下 Masonry Grid Cascade Gallery 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "高低不一的瀑布流卡片，一排排帶微微旋轉落下就位",
+   "added": "2026-10-17",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 220,
+   "zh": "聚焦淡化其他",
+   "en": "Focus Dim Siblings",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "聚焦 淡化 其他卡片 hover 突顯 Focus Dim Siblings Highlight Spotlight 卡片 群組",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過某張卡片時它浮起，其他卡片變淡、縮小",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 221,
+   "zh": "加入購物車飛入",
+   "en": "Add to Cart Fly",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "購物車 加入 電商 飛入 拋物線 回饋 Add To Cart Fly Ecommerce Shop Feedback 卡片 群組",
+   "uses": [
+    "介面互動",
+    "App 介面",
+    "強調重點"
+   ],
+   "desc": "點加入購物車，商品縮圖以弧線飛進購物車，數字跳一下",
+   "added": "2026-10-17",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 222,
+   "zh": "顆粒漸層",
+   "en": "Grain Gradient",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "顆粒 雜訊 底片 噪點 漸層 質感 Grain Noise Film Gradient Texture 網格漸層 mesh gradient 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "柔和的大片漸層緩慢流動，上面疊一層細微跳動的底片顆粒",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 223,
+   "zh": "復古透視網格",
+   "en": "Retro Grid Horizon",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "復古 合成波 synthwave vaporwave 透視 網格 地板 地平線 夕陽 80年代 Retro Grid Horizon Perspective 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "地平線上一顆條紋夕陽，透視網格地板不斷往前推進",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 224,
+   "zh": "散景光點",
+   "en": "Bokeh Lights",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "散景 光點 柔焦 泡泡 漂浮 上飄 夢幻 Bokeh Lights Bubbles Floating Blur 背景 氛圍",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "大小不一的柔焦光點緩緩上飄、淡入淡出",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 226,
+   "zh": "同心圓擴散",
+   "en": "Pulse Rings",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "同心圓 擴散 脈動 雷達 聲波 直播 定位 訊號 Pulse Rings Ripple Radar Signal Live 背景 氛圍",
+   "uses": [
+    "背景裝飾",
+    "強調重點",
+    "App 介面"
+   ],
+   "desc": "中心點規律脈動，一圈圈圓環向外擴散後淡出",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 227,
+   "zh": "旋轉光芒",
+   "en": "Sunburst Rays",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "光芒 放射 太陽光 旋轉 慶祝 得獎 抽獎 Sunburst Rays Rotating God Rays Conic 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "強調重點",
+    "背景裝飾"
+   ],
+   "desc": "放射狀光芒在標題後方緩緩旋轉，中心最亮往外淡出",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 228,
+   "zh": "閃爍星空",
+   "en": "Twinkling Sky",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "星空 星星 閃爍 流星 夜空 宇宙 視差 Twinkling Stars Night Sky Shooting Star Canvas particles requestAnimationFrame 互動背景 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "滿天星星各自閃爍，偶爾劃過一道流星，游標移動時星空微微視差",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 229,
+   "zh": "景深視差圖層",
+   "en": "Depth Parallax",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "視差 景深 圖層 立體 滑鼠 游標 Mouse Parallax Depth Layers 3D Hero 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "前中後三層圖形依距離不同幅度跟著游標反向移動，產生立體感",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 230,
+   "zh": "起伏線條",
+   "en": "Wavy Lines",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "Canvas",
+   "style": "線條 波浪 起伏 布料 地形 等高線 Wavy Lines Wave Field Terrain Canvas 互動背景 requestAnimationFrame 背景 氛圍",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "一整片細線像布料般起伏，游標經過的地方被輕輕拱起",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 231,
+   "zh": "漂浮幾何",
+   "en": "Floating Shapes",
+   "comp": "bg",
+   "comp_zh": "背景・氛圍",
+   "when": [
+    "循環待機",
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "漂浮 幾何 圖形 隨機 裝飾 背景 Floating Shapes Geometric Random Decoration 背景 氛圍",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero"
+   ],
+   "desc": "圓形、方塊、三角形、圓環等幾何圖形在背景隨機緩慢漂浮旋轉",
+   "added": "2026-10-19",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 232,
+   "zh": "立體按壓按鈕",
+   "en": "3D Press Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "立體 按壓 實體 按鍵 3D Pressable Button Push Tactile 遊戲 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "按鈕下方有一層厚度，按下時整顆往下壓、厚度消失，像實體按鍵",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 233,
+   "zh": "果凍彈跳按鈕",
+   "en": "Jelly Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "果凍 彈跳 Q彈 壓扁 拉長 Jelly Rubber Squash Stretch Bounce Button 按鈕",
+   "uses": [
+    "介面互動",
+    "強調重點",
+    "App 介面"
+   ],
+   "desc": "滑過或點擊時按鈕像果凍一樣被壓扁、拉長再彈回",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 234,
+   "zh": "按鈕漣漪回饋",
+   "en": "Ripple Click",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "漣漪 水波 點擊 回饋 Material Design Ripple Click Feedback Ink 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "從手指點下的位置擴散出一圈漣漪，Material Design 經典回饋",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 235,
+   "zh": "滑動確認",
+   "en": "Slide to Confirm",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "滑動 確認 解鎖 付款 拖曳 Slide To Unlock Confirm Swipe Button Payment 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "拖曳圓鈕滑到底才確認，未到底會彈回，文字有流光提示",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 236,
+   "zh": "長按確認",
+   "en": "Hold to Confirm",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "長按 按住 確認 刪除 危險操作 進度 Hold To Confirm Long Press Delete Destructive 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "按住不放時進度慢慢填滿，放開就退回，填滿才執行，適合刪除等危險操作",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 237,
+   "zh": "箭頭接力按鈕",
+   "en": "Icon Slide Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "箭頭 圖示 滑入 滑出 接力 Icon Slide Arrow Button Hover CTA 按鈕",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "滑過時右側箭頭往右滑出，同時新箭頭從左側滑入、文字讓位",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 238,
+   "zh": "霓虹呼吸按鈕",
+   "en": "Neon Glow Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "循環待機",
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "霓虹 發光 光暈 呼吸 Neon Glow Pulse Button Cyberpunk 按鈕",
+   "uses": [
+    "介面互動",
+    "強調重點",
+    "標題・Hero"
+   ],
+   "desc": "外框與光暈像呼吸般忽明忽暗，滑過時填滿並大量發光",
+   "added": "2026-10-19",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 239,
+   "zh": "複製成功回饋",
+   "en": "Copy Feedback",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "複製 剪貼簿 打勾 提示 tooltip 回饋 Copy To Clipboard Feedback Check Code 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "按下複製後圖示旋轉變成打勾，上方彈出「已複製」小提示",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 240,
+   "zh": "展開文字按鈕",
+   "en": "Expanding Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "展開 浮動按鈕 FAB 加號 圖示按鈕 Expanding Icon Button Floating Action Reveal Label 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "平常只有圓形「+」圖示，滑過時向右展開出文字、加號旋轉",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 241,
+   "zh": "紙飛機送出",
+   "en": "Send Plane Button",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "送出 紙飛機 寄出 訊息 表單 成功 Send Paper Plane Submit Button Success 按鈕",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "按下送出，紙飛機從按鈕飛走，文字換成「已送出」再恢復",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 242,
+   "zh": "勾選框打勾",
+   "en": "Animated Checkbox",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "勾選框 核取方塊 打勾 待辦 清單 todo Checkbox Check Animation Todo List 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "勾選時方框彈一下、勾勾像用筆畫出來，項目文字加上刪除線",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 243,
+   "zh": "分段控制器",
+   "en": "Segmented Control",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "分段控制 切換 頁籤 tabs 滑塊 Segmented Control Tabs Pill Switcher iOS 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "一排選項底下有一塊滑塊，點哪個就帶點彈性滑過去並改變寬度",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 244,
+   "zh": "密碼強度條",
+   "en": "Password Strength",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "密碼 強度 註冊 驗證 表單 Password Strength Meter Signup Validation 表單 控制項",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "輸入密碼時下方的強度條逐格長出，依強弱改變並顯示提示",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 245,
+   "zh": "滑桿數值氣泡",
+   "en": "Range Slider Bubble",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "CSS",
+   "style": "滑桿 拉桿 數值 氣泡 範圍 音量 Range Slider Tooltip Bubble Value Input 表單 控制項",
+   "uses": [
+    "介面互動",
+    "數字資訊"
+   ],
+   "desc": "拖曳滑桿時上方彈出數值氣泡，跟著把手移動，放開時縮回",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 246,
+   "zh": "驗證碼輸入",
+   "en": "OTP Input",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "驗證碼 OTP 一次性密碼 簡訊 登入 PIN Code Input Verification Auto Focus 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "四格驗證碼，輸入一格自動跳下一格；正確時依序跳起，錯誤時整排抖動",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 247,
+   "zh": "展開搜尋框",
+   "en": "Expanding Search",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "搜尋 放大鏡 展開 收合 導覽列 Expanding Search Bar Icon Input Header 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "平常只有一個放大鏡圓鈕，點下後向左展開成搜尋框",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 248,
+   "zh": "下拉選單展開",
+   "en": "Dropdown Reveal",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "下拉選單 選單 展開 選項 依序 Dropdown Select Menu Stagger Reveal 表單 控制項",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "點開下拉選單時面板從上方彈出，選項一個接一個滑入，箭頭翻轉",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 249,
+   "zh": "標籤輸入",
+   "en": "Tag Input",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "CSS",
+   "style": "標籤 tag chip 輸入 關鍵字 興趣 Tag Input Chips Token Field 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "輸入文字按 Enter 變成彈出的標籤，按 × 或倒退鍵時標籤縮小消失",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 250,
+   "zh": "水滴單選",
+   "en": "Liquid Radio",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "單選 radio 選項 水滴 液態 拉伸 Liquid Radio Button Gooey Morph 表單 控制項",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "切換單選項時，選中的圓點被拉長成水滴滑到新選項，再彈回圓形",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 251,
+   "zh": "拖放上傳",
+   "en": "File Drop Upload",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "拖曳手勢",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "上傳 檔案 拖放 拖曳 進度條 Drag Drop File Upload Dropzone Progress 表單 控制項",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "檔案拖進區塊時框線亮起、圖示上浮；放下後出現檔案列，進度條跑完打勾",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 252,
+   "zh": "反色混合游標",
+   "en": "Blend Difference Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "反色 反轉 混合模式 difference 游標 圓形 Blend Mode Invert Cursor Hero 游標 滑鼠",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "一顆圓形游標，經過文字時放大，重疊的地方顏色反轉",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 253,
+   "zh": "黏性游標",
+   "en": "Sticky Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "黏性 吸附 磁吸 變形 包覆 導覽 Sticky Cursor Magnetic Morph Nav 游標 滑鼠",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "游標靠近按鈕時被吸附，變形包住整顆按鈕，按鈕也被輕輕拉動",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 254,
+   "zh": "速度拉伸游標",
+   "en": "Velocity Stretch Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "速度 拉伸 拉長 彈性 方向 Velocity Stretch Squash Cursor Elastic 游標 滑鼠",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "圓形游標依移動速度沿著方向拉長，停下來時恢復圓形",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 255,
+   "zh": "情境標籤游標",
+   "en": "Contextual Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "情境 標籤 游標 播放 查看 拖曳 作品集 Contextual Label Cursor View Play Drag Portfolio 游標 滑鼠",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "游標移到不同內容上，變成對應動作的大圓圈加文字，例如播放、查看、拖曳",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 256,
+   "zh": "十字準星座標",
+   "en": "Crosshair Cursor",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "十字 準星 座標 瞄準 科技 藍圖 Crosshair Coordinates Cursor Blueprint Tech 游標 滑鼠",
+   "uses": [
+    "介面互動",
+    "數字資訊",
+    "標題・Hero"
+   ],
+   "desc": "橫豎兩條細線跟著游標，旁邊即時顯示座標數字",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 257,
+   "zh": "眼睛跟隨",
+   "en": "Following Eyes",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊",
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "眼睛 眼珠 跟隨 盯著 可愛 吉祥物 404 Googly Eyes Follow Cursor Mascot 游標 滑鼠",
+   "uses": [
+    "介面互動",
+    "Logo・品牌"
+   ],
+   "desc": "一對大眼睛的眼珠一直盯著游標轉，偶爾眨眼",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 258,
+   "zh": "放大鏡游標",
+   "en": "Magnifier Lens",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "放大鏡 放大 鏡片 細節 商品 Magnifier Lens Zoom Loupe Cursor Product 游標 滑鼠",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "游標變成圓形放大鏡，鏡片裡的內容放大顯示",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 260,
+   "zh": "黏液拖尾",
+   "en": "Gooey Trail",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "黏液 融合 拖尾 液態 Gooey Blob Trail Cursor SVG Filter Liquid 游標 滑鼠",
+   "uses": [
+    "標題・Hero",
+    "背景裝飾"
+   ],
+   "desc": "一串圓球跟著游標，彼此像黏液一樣融合拉絲",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 261,
+   "zh": "點擊噴出小物",
+   "en": "Click Confetti Pop",
+   "comp": "cursor",
+   "comp_zh": "游標",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "GSAP",
+   "style": "點擊 噴出 愛心 星星 彩紙 回饋 可愛 Click Burst Hearts Confetti Pop Particles 游標 滑鼠",
+   "uses": [
+    "強調重點",
+    "介面互動"
+   ],
+   "desc": "在畫面任何地方點擊，就從那裡噴出愛心星星等小圖案再落下",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 262,
+   "zh": "框內微放大",
+   "en": "Hover Zoom in Frame",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "hover 放大 縮放 圖片放大 框內 固定框 overflow hidden 作品集 商品圖 Image Zoom Hover Scale Thumbnail Gallery 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過圖片時，圖片在固定的框內慢慢微放大，標題從底部浮上來",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 263,
+   "zh": "滑過放大檢視",
+   "en": "Hover Zoom & Pan",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "放大 檢視 細節 商品圖 電商 跟隨游標 平移 Zoom Pan Hover Product Detail Ecommerce 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過圖片時放大兩倍，放大的位置跟著游標移動，看商品細節",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 264,
+   "zh": "低飽和喚醒",
+   "en": "Saturate on Hover",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "灰階 去色 飽和度 喚醒 濾鏡 作品集 團隊照片 Grayscale Saturate Filter Hover Team 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "圖片平常是低飽和、偏暗，滑過時恢復鮮豔並微微放大",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 265,
+   "zh": "商品圖切換",
+   "en": "Image Swap on Hover",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊",
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "商品 電商 第二張圖 換圖 切換 Image Swap Hover Product Card Ecommerce Second Image 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "電商商品卡片滑過時，換成第二張角度的照片，下方圓點跟著切換",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 266,
+   "zh": "滑過預覽影片",
+   "en": "Hover to Play Video",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "影片 預覽 自動播放 縮圖 播放鍵 YouTube Video Preview Hover Play Thumbnail 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "影片縮圖平常靜止，滑過時播放鍵縮小消失、畫面開始播放、進度條前進",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 267,
+   "zh": "點圖放大燈箱",
+   "en": "Lightbox Zoom",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "燈箱 lightbox 放大 圖片檢視 相簿 Modal Zoom Gallery Photo Viewer Flip 圖片 媒體",
+   "uses": [
+    "介面互動",
+    "轉場切換"
+   ],
+   "desc": "點一下縮圖，它從原位置平滑放大到畫面中央，背景變暗；再點縮回",
+   "added": "2026-10-19",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 268,
+   "zh": "縮圖列相簿",
+   "en": "Thumbnail Gallery",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "切換",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "相簿 縮圖 大圖 商品圖 輪播 Gallery Thumbnails Slider Product Images Carousel 圖片 媒體",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "點下方縮圖，大圖從側邊推入換張並微微縮回，指示條滑到目前縮圖",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 269,
+   "zh": "切片轉場",
+   "en": "Slice Transition",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "切換",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "切片 直條 轉場 換圖 百葉窗 Slice Strips Image Transition Slideshow Venetian 圖片 媒體",
+   "uses": [
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "圖片被切成直條，一條上一條下依序滑走，露出下一張",
+   "added": "2026-10-19",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 270,
+   "zh": "拍立得洗牌",
+   "en": "Photo Stack Shuffle",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "拍立得 照片 堆疊 洗牌 相簿 Polaroid Photo Stack Shuffle Deck 圖片 媒體",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "一疊微歪的拍立得照片，點一下最上面那張被抽走、塞回最底下",
+   "added": "2026-10-19",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 271,
+   "zh": "故障錯位圖片",
+   "en": "Glitch Image",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "故障 glitch 錯位 色版 訊號 賽博 Glitch Image RGB Split Distortion Cyberpunk 圖片 媒體",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "滑過時圖片分出兩層色版左右錯位、一段段閃爍，像訊號不良",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 272,
+   "zh": "捲動翻轉卡片",
+   "en": "Scroll Flip Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "翻轉 翻面 3D 卡片 正反面 捲動 Scroll Flip Card 3D RotateY 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "介面互動"
+   ],
+   "desc": "往下捲時卡片立體翻轉到背面，同時微微放大",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 273,
+   "zh": "捲動旋轉立方體",
+   "en": "Scroll Rotating Cube",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "立方體 3D 旋轉 方塊 cube 捲動 Scroll Rotate Cube Faces 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "一個 3D 立方體隨捲動旋轉，每一面寫著不同的關鍵字",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 274,
+   "zh": "穿越大字轉場",
+   "en": "Zoom Through Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "放大 穿越 大字 鏡頭 轉場 Zoom Through Text Scale Scroll Transition 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "轉場切換",
+    "標題・Hero"
+   ],
+   "desc": "巨大的標題隨捲動不斷放大，鏡頭像穿過字母進入下一個畫面",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 275,
+   "zh": "捲動速度傾斜",
+   "en": "Scroll Velocity Skew",
+   "comp": "media",
+   "comp_zh": "圖片・媒體",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "傾斜 歪斜 速度 慣性 skew 捲動 Scroll Velocity Skew Images List 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "介面互動"
+   ],
+   "desc": "圖片列表在快速捲動時跟著速度歪斜，停下來就回正",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 276,
+   "zh": "散落文字聚合",
+   "en": "Scattered Assemble",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "散落 聚合 組合 字母 飛回 拼湊 Scattered Letters Assemble Scroll 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "散落在四處、翻轉縮放的字母，隨著捲動飛回原位組成標題",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 277,
+   "zh": "捲動形狀變形",
+   "en": "Scroll Shape Morph",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "變形 形狀 morph 星星 愛心 SVG 捲動 Scroll Shape Morph 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "強調重點"
+   ],
+   "desc": "一個圖形隨捲動依序變形成星星、愛心、方塊，邊變邊轉",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 278,
+   "zh": "捲動扇形展開",
+   "en": "Scroll Fan Out",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "扇形 展開 卡片 疊卡 作品 捲動 Scroll Fan Out Cards Spread 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "疊在一起的卡片隨捲動展開成一把扇子",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 279,
+   "zh": "模糊對焦",
+   "en": "Blur to Focus",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "模糊 對焦 清晰 blur 景深 捲動 Blur To Focus Scroll Depth 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "標題・Hero"
+   ],
+   "desc": "段落標題捲進畫面時由模糊變清楚，捲出時又慢慢糊掉",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 280,
+   "zh": "沿曲線跑的文字",
+   "en": "Text Along Path",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "曲線 路徑 文字 跑馬燈 textPath 波浪 捲動 Text On Path Curve Scroll 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "背景裝飾",
+    "強調重點"
+   ],
+   "desc": "一行文字沿著彎曲的線條移動，捲動決定它跑到哪裡",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 281,
+   "zh": "對開門轉場",
+   "en": "Split Doors Reveal",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "對開 開門 拉開 分割 轉場 揭開 Split Doors Curtain Reveal Scroll Transition 捲動觸發 ScrollTrigger",
+   "uses": [
+    "捲動效果",
+    "轉場切換"
+   ],
+   "desc": "整個畫面從中間切開成左右兩扇門，隨捲動往兩側拉開，露出下一段",
+   "added": "2026-10-19",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 282,
+   "zh": "上下切開文字",
+   "en": "Split Text Hover",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "切開 分割 上下 錯開 標題 clip-path Split Text Slice Hover Reveal hover 懸停 滑過",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "滑過時標題沿水平中線切成上下兩半，往反方向錯開，中間露出一行小字",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 283,
+   "zh": "字距展開",
+   "en": "Letter Spacing Expand",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "字距 拉開 字重 呼吸 選單 導覽 Letter Spacing Tracking Expand Weight Hover Menu hover 懸停 滑過",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "滑過時字母間距慢慢拉開、字重變粗，像深呼吸一樣",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 284,
+   "zh": "清單列滑入填滿",
+   "en": "List Row Fill",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "清單 列表 服務項目 選單 底色 填滿 箭頭 List Row Hover Fill Sweep Arrow Services Menu hover 懸停 滑過",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過清單某一列時，底色從左邊刷進來，文字往右讓位、箭頭滑出",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 285,
+   "zh": "圖示微動畫",
+   "en": "Icon Micro-animations",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "圖示 icon 微動畫 鈴鐺 愛心 齒輪 垃圾桶 Icon Micro Animation Bell Heart Gear Trash Hover hover 懸停 滑過",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "滑過圖示時各自做出符合意思的小動作：鈴鐺搖、愛心跳、齒輪轉、垃圾桶掀蓋",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 286,
+   "zh": "資訊面板滑上",
+   "en": "Card Info Slide Up",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "卡片 資訊 面板 滑上 說明 作品 Card Info Slide Up Overlay Details Hover hover 懸停 滑過",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "圖片卡片平常只露出標題，滑過時資訊面板從底部滑上來，圖片同時上移放大",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 287,
+   "zh": "社群圖示填滿",
+   "en": "Social Icon Fill",
+   "comp": "button",
+   "comp_zh": "按鈕",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "社群 圖示 icon 填滿 頁尾 IG Threads Social Icon Fill Hover Footer hover 懸停 滑過",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "圓形社群圖示滑過時底色從下往上填滿，圖示往上換成另一個、按鈕微微浮起",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 288,
+   "zh": "螢光筆劃記",
+   "en": "Highlighter Hover",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "螢光筆 標記 劃重點 highlight 重點 Highlighter Marker Hover Emphasis Text hover 懸停 滑過",
+   "uses": [
+    "強調重點"
+   ],
+   "desc": "段落中的重點詞滑過時，背後像用螢光筆由左往右劃過一道",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 289,
+   "zh": "全息閃卡",
+   "en": "Holographic Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "全息 閃卡 炫彩 箔 卡牌 寶可夢 傾斜 反光 Holographic Foil Card Tilt Glare Shiny Trading Card hover 懸停 滑過",
+   "uses": [
+    "標題・Hero",
+    "介面互動"
+   ],
+   "desc": "收藏卡跟著游標立體傾斜，表面的炫彩箔光和反光跟著角度流動",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 290,
+   "zh": "連結預覽卡",
+   "en": "Link Preview Popover",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "連結 預覽 彈出 小卡 popover tooltip 超連結 Link Preview Hover Card Wiki hover 懸停 滑過",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過文章中的連結時，上方彈出一張小卡，預覽連結頁面的圖片與標題",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 291,
+   "zh": "表格十字高亮",
+   "en": "Table Crosshair Highlight",
+   "comp": "control",
+   "comp_zh": "表單・控制項",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "表格 資料 列 欄 高亮 十字 Table Row Column Highlight Crosshair Hover Data hover 懸停 滑過",
+   "uses": [
+    "數字資訊",
+    "介面互動"
+   ],
+   "desc": "滑過表格某一格時，整列與整欄淡淡亮起，該格放大突顯",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 292,
+   "zh": "手寫描繪",
+   "en": "Handwriting Draw",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "手寫 簽名 筆畫 描繪 書寫 Handwriting Signature Stroke Draw Text SVG 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "文字的筆畫像用筆一筆一筆寫出來，寫完後填滿",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 293,
+   "zh": "字重波浪",
+   "en": "Weight Wave",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "字重 粗細 可變字體 波浪 呼吸 Variable Font Weight Wave Breathing 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "每個字的粗細輪流變化，像一道波浪從左掃到右",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 294,
+   "zh": "光源投影字",
+   "en": "Light Source Shadow",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "光源 投影 陰影 長陰影 立體 游標 Light Source Long Shadow Cursor 3D Text 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "游標像一盞燈，文字的長陰影永遠朝游標的反方向延伸",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 295,
+   "zh": "圖片填字",
+   "en": "Image Filled Text",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "圖片 填字 鏤空 背景 文字遮罩 Image Text Background Clip Knockout Mask 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "大字裡面填的是一張風景圖片，圖片在字裡緩慢平移縮放",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 296,
+   "zh": "逐字模糊浮現",
+   "en": "Blur In Letters",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "模糊 浮現 逐字 柔和 進場 Blur In Letters Soft Reveal Stagger 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "每個字從模糊、略大的狀態依序變清楚並落定",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 297,
+   "zh": "劃掉改寫",
+   "en": "Strike & Rewrite",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "劃掉 刪除線 改寫 修正 手寫 文案 Strikethrough Rewrite Correction Copywriting 文字 標題 動態文字",
+   "uses": [
+    "強調重點",
+    "標題・Hero"
+   ],
+   "desc": "一個詞被一筆劃掉，上面再用手寫字一個字一個字寫出新的詞",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 298,
+   "zh": "聊天訊息出現",
+   "en": "Chat Message Pop",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "進場",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "聊天 訊息 對話框 泡泡 輸入中 打字中 客服 Chat Bubble Typing Indicator Message Pop 文字 標題 動態文字",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "對方先出現「輸入中」的三個點，接著變成訊息，再彈出你的回覆",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 299,
+   "zh": "殘影堆疊",
+   "en": "Echo Stack",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "殘影 堆疊 複製 空心 立體 迴聲 Echo Stack Outline Layers Repeat Text 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "文字後面疊著好幾層空心的複製，依序往斜後方展開再收回",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 301,
+   "zh": "多語問候切換",
+   "en": "Multilingual Greeting",
+   "comp": "text",
+   "comp_zh": "文字",
+   "when": [
+    "切換",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "多語 問候 你好 Hello 切換 國際 Multilingual Greeting Hello Languages Rotate 文字 標題 動態文字",
+   "uses": [
+    "標題・Hero"
+   ],
+   "desc": "不同語言的「你好」輪流出現，模糊淡入淡出，外框寬度平滑跟著變",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 302,
+   "zh": "拖曳排序清單",
+   "en": "Drag to Reorder",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "拖曳 排序 重新排列 清單 待辦 sortable Drag Reorder List Sortable 卡片 群組",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "拖住某一列上下移動，其他列自動讓位，放開時彈回定位並更新編號",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 304,
+   "zh": "多選卡片",
+   "en": "Selectable Cards",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "選取 多選 勾選 卡片 操作列 Selectable Cards Multi Select Checkbox Action Bar 卡片 群組",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "點卡片選取時出現框線與打勾，底部彈出「已選 N 項」的操作列",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 305,
+   "zh": "邊框聚光網格",
+   "en": "Border Spotlight Grid",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "邊框 聚光 光暈 網格 功能介紹 SaaS Linear Border Spotlight Glow Grid Feature Cards 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "游標在卡片群之間移動時，靠近的卡片邊框和內部被一團光照亮",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 306,
+   "zh": "3D 環形輪播",
+   "en": "3D Ring Carousel",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "循環待機",
+    "拖曳手勢"
+   ],
+   "tech": "GSAP",
+   "style": "3D 環形 旋轉木馬 輪播 圓環 Ring Carousel 3D Rotate Gallery Drag 卡片 群組",
+   "uses": [
+    "標題・Hero",
+    "介面互動"
+   ],
+   "desc": "卡片圍成一圈在 3D 空間緩慢旋轉，可以用滑鼠左右拖轉",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 307,
+   "zh": "翻牌配對遊戲",
+   "en": "Memory Match",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "翻牌 配對 記憶 遊戲 小遊戲 互動 Memory Match Card Game Flip Pairs 卡片 群組",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "點兩張卡片翻開，一樣就留下並彈一下，不一樣就翻回去",
+   "added": "2026-10-20",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 308,
+   "zh": "數據儀表卡片",
+   "en": "Stat Cards",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "儀表板 數據 統計 KPI 折線 sparkline 後台 Dashboard Stat Cards KPI Sparkline Count Up 卡片 群組",
+   "uses": [
+    "數字資訊",
+    "介面互動"
+   ],
+   "desc": "三張數據卡片依序浮上來，數字累加、迷你折線圖畫出、成長率淡入",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 309,
+   "zh": "翻頁書",
+   "en": "Page Flip Book",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "翻頁 書本 書頁 雜誌 型錄 電子書 Page Flip Book Magazine Catalog 3D 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "點一下書頁就以書脊為軸立體翻到左邊，翻完再一起翻回第一頁",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 310,
+   "zh": "照片堆展開",
+   "en": "Stack to Grid",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "照片 堆疊 展開 網格 相簿 整理 Photo Pile Stack To Grid Spread Flip 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "一疊散亂的照片，點一下平滑排成整齊的網格，再點收回成一疊",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 311,
+   "zh": "對折邀請卡",
+   "en": "Folding Card",
+   "comp": "card",
+   "comp_zh": "卡片・群組",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "卡片 對折 邀請卡 賀卡 打開 3D Folding Greeting Invitation Card Open 卡片 群組",
+   "uses": [
+    "介面互動",
+    "標題・Hero"
+   ],
+   "desc": "像實體卡片一樣，封面以左邊為軸立體打開，露出裡面的圖片和文字",
+   "added": "2026-10-20",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 312,
+   "zh": "頂部載入進度條",
+   "en": "Top Loading Bar",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "載入 進度條 頂部 換頁 NProgress YouTube Loading Bar Page Load Progress 版面 頁面",
+   "uses": [
+    "轉場切換",
+    "介面互動"
+   ],
+   "desc": "換頁時頁面頂端一條細線快速跑到一半、慢慢爬，載完衝到底消失，內容再依序浮現",
+   "added": "2026-10-21",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 313,
+   "zh": "步驟進度條",
+   "en": "Step Progress",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "步驟 進度 多步驟 表單 結帳 精靈 Stepper Multi Step Form Wizard Progress Checkout 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "多步驟表單上方的步驟圓點，完成的打勾、目前這步放大，連接線跟著填滿",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 314,
+   "zh": "大型下拉選單",
+   "en": "Mega Menu",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "懸停・點擊"
+   ],
+   "tech": "CSS",
+   "style": "大型選單 下拉 導覽列 多欄 mega menu Dropdown Navigation Header 版面 頁面",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "滑過導覽列項目時，下方展開一大塊多欄選單，各欄依序滑入",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 315,
+   "zh": "推入換頁",
+   "en": "Push Navigation",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "推入 換頁 返回 導覽 iOS 堆疊 Push Pop Navigation Stack Page Transition App 版面 頁面",
+   "uses": [
+    "轉場切換",
+    "App 介面"
+   ],
+   "desc": "點清單項目，新頁面從右邊推進來、舊頁面往左退並變暗；按返回則反向",
+   "added": "2026-10-21",
+   "tier": "B",
+   "status": "indexed"
+  },
+  {
+   "id": 316,
+   "zh": "空狀態插畫",
+   "en": "Empty State",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "空狀態 無結果 找不到 404 插畫 Empty State No Results Illustration 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "沒有搜尋結果時，空箱子彈跳落下、蓋子掀開冒出問號，文字與按鈕依序出現",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 317,
+   "zh": "Cookie 同意橫幅",
+   "en": "Cookie Banner",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "進場",
+    "退場"
+   ],
+   "tech": "GSAP",
+   "style": "Cookie 同意 橫幅 隱私 GDPR 提示 Consent Banner Privacy Notice 版面 頁面",
+   "uses": [
+    "介面互動"
+   ],
+   "desc": "底部彈出 Cookie 同意卡片，餅乾圖示晃一下；按下按鈕後縮回滑走",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 318,
+   "zh": "浮動按鈕展開選單",
+   "en": "Speed Dial FAB",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "浮動按鈕 FAB 展開 快捷 動作 Speed Dial Floating Action Button Menu 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "右下角的「+」按鈕點開時轉成「×」，上方依序彈出幾個小動作按鈕和標籤",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 319,
+   "zh": "無限捲動載入",
+   "en": "Infinite Scroll",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "捲動觸發"
+   ],
+   "tech": "GSAP",
+   "style": "無限捲動 載入更多 分頁 動態牆 Infinite Scroll Load More Feed Pagination 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面",
+    "捲動效果"
+   ],
+   "desc": "捲到底時出現轉圈的「載入更多」，新內容接著一張張浮上來",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 320,
+   "zh": "側欄收合",
+   "en": "Collapsible Sidebar",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "CSS",
+   "style": "側邊欄 收合 展開 後台 儀表板 Collapsible Sidebar Nav Dashboard Admin 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "後台側邊欄按一下收成只剩圖示，文字淡出，主內容區同步變寬",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 321,
+   "zh": "指令面板",
+   "en": "Command Palette",
+   "comp": "layout",
+   "comp_zh": "版面・頁面",
+   "when": [
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "指令面板 快捷鍵 搜尋 Cmd K Command Palette Spotlight Quick Search 版面 頁面",
+   "uses": [
+    "介面互動",
+    "App 介面"
+   ],
+   "desc": "按 ⌘K 跳出搜尋面板，邊打字邊篩選指令，選中的那項亮起、按 Enter 執行",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  },
+  {
+   "id": 322,
+   "zh": "地圖路線導航",
+   "en": "Map Route",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場",
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "地圖 路線 導航 地標 定位 旅程 外送 物流 Map Route Path Pin Delivery Journey 圖形 SVG",
+   "uses": [
+    "數字資訊",
+    "標題・Hero"
+   ],
+   "desc": "地圖上的地標針依序落下，路線從起點畫到終點，小圓點沿路線前進",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 323,
+   "zh": "即時時鐘",
+   "en": "Analog Clock",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "時鐘 指針 秒針 即時 時間 Clock Analog Watch Time Real-time 圖形 SVG",
+   "uses": [
+    "數字資訊",
+    "介面互動"
+   ],
+   "desc": "顯示現在時間的指針時鐘，秒針每秒跳一格並帶一點回彈",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 324,
+   "zh": "天氣圖示動畫",
+   "en": "Animated Weather Icons",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "天氣 圖示 太陽 雲 雨 閃電 icon Weather Icons Animated Sun Cloud Rain Thunder 圖形 SVG",
+   "uses": [
+    "介面互動",
+    "App 介面",
+    "數字資訊"
+   ],
+   "desc": "晴天太陽緩轉、雲朵飄動、雨滴落下、閃電閃一下",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 325,
+   "zh": "選取框螞蟻線",
+   "en": "Marching Ants Selection",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "選取框 虛線 螞蟻線 控制點 設計工具 Figma Marching Ants Selection Box Handles 圖形 SVG",
+   "uses": [
+    "介面互動",
+    "強調重點"
+   ],
+   "desc": "虛線選取框的線條持續流動，四角有控制點，框的大小改變時尺寸數字即時更新",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 326,
+   "zh": "有機流動色塊",
+   "en": "Organic Blob",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "CSS",
+   "style": "有機 色塊 斑點 流動 變形 液態 Blob Organic Shape Morph Liquid 圖形 SVG",
+   "uses": [
+    "背景裝飾",
+    "標題・Hero",
+    "強調重點"
+   ],
+   "desc": "一團不規則的柔軟色塊持續緩慢變形，後面還有一層淡淡的影子",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 327,
+   "zh": "成就徽章解鎖",
+   "en": "Badge Unlock",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "徽章 成就 解鎖 獎勵 遊戲化 Badge Achievement Unlock Reward Gamification 圖形 SVG",
+   "uses": [
+    "強調重點",
+    "App 介面"
+   ],
+   "desc": "六角形徽章描邊畫出、星星從大縮小蓋上去、四周光芒放射",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 328,
+   "zh": "心電圖線條",
+   "en": "ECG Heartbeat Line",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "心電圖 心跳 波形 健康 醫療 監測 ECG Heartbeat Pulse Monitor Health 圖形 SVG",
+   "uses": [
+    "數字資訊",
+    "App 介面"
+   ],
+   "desc": "心電圖的波形由左往右畫出，發光的游標點沿線前進，旁邊心跳數字跳動",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 329,
+   "zh": "樹枝生長",
+   "en": "Growing Plant",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場"
+   ],
+   "tech": "GSAP",
+   "style": "樹 生長 植物 枝條 葉子 成長 永續 Growing Tree Plant Branches Leaves Growth 圖形 SVG",
+   "uses": [
+    "標題・Hero",
+    "Logo・品牌"
+   ],
+   "desc": "樹幹先長出來，再分出枝條，最後葉子一片片冒出",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 330,
+   "zh": "齒輪連動",
+   "en": "Gear Train",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "循環待機"
+   ],
+   "tech": "GSAP",
+   "style": "齒輪 連動 機械 運轉 設定 系統 Gears Cogs Mechanism Rotation Settings 圖形 SVG",
+   "uses": [
+    "背景裝飾",
+    "數字資訊"
+   ],
+   "desc": "三個大小不同的齒輪咬合在一起，依齒數比例以不同速度互相帶動",
+   "added": "2026-10-21",
+   "tier": "A",
+   "status": "indexed"
+  },
+  {
+   "id": 331,
+   "zh": "指紋掃描解鎖",
+   "en": "Fingerprint Scan",
+   "comp": "shape",
+   "comp_zh": "圖形・SVG",
+   "when": [
+    "進場",
+    "切換"
+   ],
+   "tech": "GSAP",
+   "style": "指紋 掃描 解鎖 生物辨識 驗證 登入 Fingerprint Scan Biometric Unlock Auth 圖形 SVG",
+   "uses": [
+    "App 介面",
+    "介面互動"
+   ],
+   "desc": "指紋紋路一圈圈畫出，掃描光條上下掃過，成功後外框發光並打勾",
+   "added": "2026-10-21",
+   "tier": "C",
+   "status": "indexed"
+  }
+ ]
+}
