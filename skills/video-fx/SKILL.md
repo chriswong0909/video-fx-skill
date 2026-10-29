@@ -48,7 +48,8 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 ## 0. 連接 LIBRARY（同問卷同步做）
 1. get_device_info；未有 `~/Documents/GitHub/video-fx-skill` 就 device_request_folder_access。
 2. 讀 `styles/README.md`、選用風格包嘅 `DESIGN.md`、`brands/*.md`、`lessons/*.md`（必讀）、`workflow/beats.md`、`workflow/style-packs.md`。
-3. LIBRARY 攞唔到：用 Artifact `action: read` 讀效果目錄網頁（`<script id="fxdata">` 有效果、聲效、調色、風格包卡 JSON）；或者用 GitHub MCP 讀 `chriswong0909/video-fx-skill` 同 `chriswong0909/text-motion-40`。
+3. 本機規則：跑 `scutil --get LocalHostName`（或 `hostname -s`），如果有 `machines/<名>.md` 就讀，入面規則覆蓋本檔嘅通用做法（例如生圖工具）；冇就照本檔做。
+4. LIBRARY 攞唔到：用 Artifact `action: read` 讀效果目錄網頁（`<script id="fxdata">` 有效果、聲效、調色、風格包卡 JSON）；或者用 GitHub MCP 讀 `chriswong0909/video-fx-skill` 同 `chriswong0909/text-motion-40`。
 
 ## 1. 開工問卷（強制）
 已講過嘅預選並寫明「你講咗 X，確認？」；只有用戶明確講「唔使問」先可以跳過。完整選項見 `workflow/intake.md`。
