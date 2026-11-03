@@ -4,7 +4,7 @@
 
 ## 退地
 - `python3 tools/matte.py 片.mp4 cut.webm`（RobustVideoMatting ONNX，CPU，會參考前後格，頭髮唔閃）。
-- 一定用**已剪好、已調色**嘅片做（同 HyperFrames 講者片同一條），咟全畫面講者同退地講者顏色一致、時間一致。
+- 一定用**已剪好、已調色**嘅片做（同 HyperFrames 講者片同一條），咁全畫面講者同退地講者顏色一致、時間一致。
 - HyperFrames：`<video src="assets/cut.webm">` 放喺 MG 上層（z 高過卡），由 0 秒同講者片同步播。
 - 唔用：方框／分割畫面（用戶否定，「要將人物退地」）；HyperFrames 內建 remove-background（320px 遮罩、逐格閃）。
 
