@@ -29,3 +29,11 @@
 - `grades/GR-###-slug/grade.md`：front matter id, name, name_en, video_types, default_for, mood_zh, filters（ffmpeg 4.4 相容：curves、eq、colorchannelmixer、colorlevels、vignette；唔好用 huesaturation）、status。
 - 跟參考片色調：由參考片抽幾格，對比 analyze 數據（曝光、飽和、光暗位偏色），寫 curves r/g/b 去接近；寫入新 GR 預設，source 寫 ref slug。
 - `python3 tools/grade.py previews` 重做效果目錄預覽圖（樣本 `grades/_sample.mp4` 係使用者自己片段，唔入 git）。
+
+## 白平衡先校正（彩虹飲食法篇 2026-11）
+- 用戶話「片偏黃」= 原片白平衡問題，要喺**原片**校正（ffmpeg 重新出片），唔好喺 HyperFrames 用 CSS filter 頂住。
+- 揀畫面入面應該係白色嘅嘢做參考（醫生白袍最好），量佢 RGB 平均，計 gain 令佢變中性；**只校正大約一半**（全校正通常太冷）。今次：`colorchannelmixer=rr=0.88:gg=1.03:bb=1.19`。
+- ffmpeg `grayworld`（自動灰世界）會過冷變藍，唔用。
+- 出原片｜方案 A｜方案 B 並排對比圖自己睇，揀白袍白、膚色自然嗰個。
+- 有退地講者（`lessons/speaker-cutout-layout.md`）：先校正，再用校正後嘅片退地，兩者顏色先一致。
+- 太暗另外提亮（今次 brightness ×1.12、contrast 1.02、saturate 1.06）。
