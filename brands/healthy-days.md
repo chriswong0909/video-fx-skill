@@ -89,5 +89,10 @@ Healthy Days 出品、「1分鐘醫聊室」系列醫生片（例如江振昌醫
 - **開場大字**：唔用黃色效果；用紅框蓋章（Text Stamp）。心電圖線只限心臟題材。
 - **名牌**：用用戶俾嘅名牌圖，可以自由移位，預設右下角。
 - **Motion graphic 風格＝精緻 2D 向量**：漸層＋內高光＋柔陰影＋彈跌（bounce）＋擠壓回彈＋塵粒；全屏置中，標題 top 385、膠囊 top 1265，避開 logo。範例 `workflow/examples/osteo/mg_*.html`、生成器 `mg2.py`。
-- **BGM**：用戶提供嘅三條（Breakthrough Technology／Clock Struck Twice／Only In Dreams），一條片揀一條由頭用到尾，**音量 10%**，頭 0.6 秒淡入、尾 2 秒淡出。唔好中途換歌。
+- **BGM**：用戶提供嘅三條（Breakthrough Technology／Clock Struck Twice／Only In Dreams），**檔案喺庫入面 `sounds/bgm/`（見該資料夾 INDEX.md），唔使問用戶**；一條片揀一條由頭用到尾，**音量 10%**，頭 0.6 秒淡入、尾 2 秒淡出。唔好中途換歌。
 - 迷你浮框（pip）同靜態去背圖：繼續禁用。
+
+## 2026-11-02 護肝篇 v3（跟新規則重做）：用戶定
+- **#32 上下裂開（Split Halves）以後唔用**（用戶：「呢個效果以後都不過用」）。反駁位用 #03 蓋章，或者淨影講者加字幕。
+- 比例照用戶當條片批咗嘅（今條 40/40/20 唔改）；BGM 照品牌規則加（今條揀 Breakthrough Technology，10%）。
+- 新場景：`workflow/examples/lai-liver/fx_stamp.html`（#03 蓋章：胸口位玻璃卡灰字問題＋紅框章＋紅線劃走）、`mg_regrow.html`（#29 數字滾動「2至3個星期」＋肝由一半長滿、笑臉、綠剔）。
