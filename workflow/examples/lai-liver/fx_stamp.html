@@ -1,0 +1,45 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<!-- 0:37 反駁蓋章：動作取自 text-motion-40 #03 Text Stamp（2.6→1 倍 0.16s power4.in、1.06 回彈、輕震＋白閃）；場景：講者胸口位玻璃卡，灰字問題＋紅框章 -->
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#fxs{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif}
+#fxs .flash{position:absolute;inset:0;background:#fff;opacity:0}
+#fxs .grp{position:absolute;left:110px;right:110px;top:990px;height:370px}
+#fxs .glass{position:absolute;left:0;right:0;top:0;height:150px;border-radius:30px;background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(240,246,252,.80));border:3px solid rgba(255,255,255,.95);box-shadow:inset 0 3px 0 #fff,0 18px 40px rgba(11,42,58,.22);opacity:0}
+#fxs .q{position:absolute;left:0;right:0;top:28px;text-align:center;font:900 84px/1.1 "Noto Sans TC",sans-serif;color:#5A6F7D;white-space:nowrap}
+#fxs .q .ln{position:absolute;left:12%;right:12%;top:50%;height:8px;margin-top:-2px;border-radius:4px;background:#E8452C;transform-origin:left center;transform:scaleX(0)}
+#fxs .stampw{position:absolute;left:0;right:0;top:170px;text-align:center}
+#fxs .stamp{display:inline-block;padding:6px 44px 16px;border:12px solid #E8452C;border-radius:26px;color:#E8452C;background:rgba(255,255,255,.88);font:900 128px/1.1 "Noto Sans TC",sans-serif;letter-spacing:6px;opacity:0;
+  -webkit-mask-image:radial-gradient(circle at 18% 30%,transparent 0 7px,#000 8px),radial-gradient(circle at 63% 72%,transparent 0 5px,#000 6px),radial-gradient(circle at 84% 22%,transparent 0 4px,#000 5px),radial-gradient(circle at 40% 85%,transparent 0 6px,#000 7px);
+  -webkit-mask-composite:source-in;mask-composite:intersect;box-shadow:0 10px 24px rgba(232,69,44,.18)}
+</style></head>
+<body>
+<div id="fxs" data-composition-id="fxs" data-start="0" data-width="1080" data-height="1920">
+  <div class="flash"></div>
+  <div class="grp"><div class="glass"><div class="q">11點才排毒？<i class="ln"></i></div></div>
+    <div class="stampw"><span class="stamp">沒有可能</span></div></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="fxs"]');
+const DUR=+ROOT.dataset.dur||3.1; const C=(ROOT.dataset.cues||'0.3,1.2').split(',').map(Number);
+const g=ROOT.querySelector('.grp'), st=ROOT.querySelector('.stamp');
+const tl=gsap.timeline({paused:true});
+tl.fromTo(ROOT.querySelector('.glass'),{opacity:0,y:30,scale:.94},{opacity:1,y:0,scale:1,duration:.35,ease:'back.out(1.6)'},0.02)
+  .fromTo(st,{opacity:0,scale:2.6,rotation:-14},{opacity:1,scale:1,rotation:-6,duration:.16,ease:'power4.in'},C[0])
+  .to(st,{scale:1.06,duration:.07,ease:'power1.out'},C[0]+.16).to(st,{scale:1,duration:.1,ease:'power1.in'},C[0]+.23)
+  .fromTo(ROOT.querySelector('.flash'),{opacity:.38},{opacity:0,duration:.18,ease:'power1.out'},C[0]+.16)
+  .to(g,{keyframes:[{x:-9,y:4,duration:.03},{x:8,y:-3,duration:.03},{x:-5,y:2,duration:.03},{x:3,y:-1,duration:.03},{x:0,y:0,duration:.03}]},C[0]+.16)
+  .fromTo(ROOT.querySelector('.ln'),{scaleX:0},{scaleX:1,duration:.3,ease:'power2.out'},C[0]+.3)
+  .to(st,{scale:1.08,duration:.08,ease:'power2.out'},C[1]).to(st,{scale:1,duration:.14,ease:'power2.in'},C[1]+.08)
+  .to(g,{keyframes:[{x:-6,duration:.03},{x:5,duration:.03},{x:-3,duration:.03},{x:0,duration:.03}]},C[1]+.08)
+  .to(st,{scale:1.03,duration:(DUR-C[1]-0.6),ease:'none'},C[1]+.25)
+  .to(g,{opacity:0,duration:.25,ease:'power2.in'},DUR-.27).set({}, {}, DUR);
+window.__timelines["fxs"]=tl;
+})();
+</script>
+</body></html>
