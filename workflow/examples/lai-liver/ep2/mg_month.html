@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<!-- ep2 Q9「如果刻意減肥，2至3個月」：肝由黃色脂肪肝慢慢變返健康紅色，再滾出 2至3個月（#29）。原 1:10 「2至3個星期，肝便長回完全一樣」：數字動作取自 text-motion-40 #29 Odometer（逐位滾、後一位慢 0.12s、power3.out）；
+     場景自設：淺色全屏＋淡細胞紋理、白色滾輪數字、肝臟由一半重新長滿（虛線係未長返嘅部分）、長滿後回彈＋綠剔。 -->
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#mgm{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif;color:#0B2A3A}
+#mgm .bg{position:absolute;inset:0;background:radial-gradient(120% 70% at 50% 40%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#mgm .cell{position:absolute;border-radius:50%;border:3px solid rgba(26,128,208,.10);background:radial-gradient(circle at 40% 38%,rgba(255,255,255,.7),rgba(19,184,208,.06))}
+#mgm .cell i{position:absolute;left:35%;top:35%;width:30%;height:30%;border-radius:50%;background:rgba(26,128,208,.10)}
+#mgm .odo{position:absolute;left:0;right:0;top:420px;display:flex;justify-content:center;align-items:center;gap:18px;opacity:0}
+#mgm .tile{position:relative;width:150px;height:200px;border-radius:24px;overflow:hidden;background:linear-gradient(180deg,#FFFFFF,#E7EFF7);box-shadow:inset 0 3px 0 #fff,0 14px 28px rgba(11,42,58,.18)}
+#mgm .tile::after{content:"";position:absolute;left:0;right:0;top:99px;height:3px;background:rgba(11,42,58,.12)}
+#mgm .col{position:absolute;left:0;top:0;width:150px}
+#mgm .col b{display:block;height:200px;font:900 170px/200px "Noto Sans TC",sans-serif;text-align:center;color:#1A80D0}
+#mgm .w{font:900 110px/1 "Noto Sans TC",sans-serif;color:#0B2A3A;opacity:0}
+#mgm .liver{position:absolute;left:190px;top:760px;width:700px;height:525px;transform-origin:50% 60%}
+#mgm .shadow{position:absolute;left:250px;top:1235px;width:580px;height:46px;border-radius:50%;background:radial-gradient(closest-side,rgba(11,42,58,.22),rgba(11,42,58,0))}
+#mgm .ok{position:absolute;left:800px;top:770px;width:120px;height:120px;border-radius:50%;background:linear-gradient(180deg,#34C08A,#1F9D6B);box-shadow:inset 0 3px 0 rgba(255,255,255,.5),0 10px 22px rgba(31,157,107,.35);opacity:0}
+#mgm .ok svg{position:absolute;left:24px;top:26px;width:72px;height:72px}
+#mgm .spark{position:absolute;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#fff 0 30%,rgba(255,222,89,.9) 31%,rgba(255,222,89,0) 70%);opacity:0}
+</style></head>
+<body>
+<div id="mgm" data-composition-id="mgm" data-start="0" data-width="1080" data-height="1920">
+  <div class="bg"></div><div class="cells"></div>
+  <div class="odo"><div class="tile"><div class="col c1"></div></div><span class="w w1">至</span><div class="tile"><div class="col c2"></div></div><span class="w w2">個月</span></div>
+  <div class="shadow"></div>
+  <svg class="liver" viewBox="0 0 240 180">
+    <defs>
+      <linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E07466"/><stop offset="1" stop-color="#B9483D"/></linearGradient>
+      <linearGradient id="ly" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F3CF7A"/><stop offset="1" stop-color="#D9A54A"/></linearGradient>
+      <clipPath id="grow"><rect class="gr" x="0" y="0" width="240" height="180"/></clipPath>
+    </defs>
+    <path d="M16 66 C14 36 46 20 96 19 C146 18 198 24 226 38 C238 44 236 56 222 63 C198 76 168 90 142 110 C120 128 98 150 68 155 C38 160 18 134 16 104 Z" fill="none" stroke="none"/>
+    <path d="M16 66 C14 36 46 20 96 19 C146 18 198 24 226 38 C238 44 236 56 222 63 C198 76 168 90 142 110 C120 128 98 150 68 155 C38 160 18 134 16 104 Z" fill="url(#ly)"/>
+    <g clip-path="url(#grow)">
+      <path d="M16 66 C14 36 46 20 96 19 C146 18 198 24 226 38 C238 44 236 56 222 63 C198 76 168 90 142 110 C120 128 98 150 68 155 C38 160 18 134 16 104 Z" fill="url(#lg)"/>
+      <path d="M58 56 C80 40 124 34 158 42" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="10" stroke-linecap="round"/>
+      <path d="M142 110 C126 90 124 56 134 24" fill="none" stroke="rgba(120,30,25,.22)" stroke-width="4" stroke-linecap="round"/>
+      <g class="face" opacity="0"><circle cx="74" cy="80" r="9" fill="#2A1410"/><circle cx="108" cy="78" r="9" fill="#2A1410"/><circle cx="77" cy="77" r="3" fill="#fff"/><circle cx="111" cy="75" r="3" fill="#fff"/><path d="M80 98 Q92 110 104 97" fill="none" stroke="#2A1410" stroke-width="5" stroke-linecap="round"/><ellipse cx="60" cy="96" rx="8" ry="5" fill="#F29A8C" opacity=".7"/><ellipse cx="122" cy="93" rx="8" ry="5" fill="#F29A8C" opacity=".7"/></g>
+    </g>
+  </svg>
+  <div class="ok"><svg viewBox="0 0 24 24"><path d="M4 12.5 L10 18 L20 6" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="sparks"></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="mgm"]');
+const DUR=+ROOT.dataset.dur||4.14; const C=(ROOT.dataset.cues||'2.6,0.45').split(',').map(Number);
+// 背景淡細胞（固定位置，唔用 random）
+const P=[[70,250,120],[880,1460,150],[120,1500,90],[930,640,80],[60,980,70],[980,1080,110],[520,1600,60],[300,300,60]];
+const cs=ROOT.querySelector('.cells'); P.forEach(function(p,i){const d=document.createElement('div');d.className='cell';d.style.cssText='left:'+p[0]+'px;top:'+p[1]+'px;width:'+p[2]+'px;height:'+p[2]+'px';d.appendChild(document.createElement('i'));cs.appendChild(d);});
+function fill(col,n){for(let i=0;i<=n;i++){const b=document.createElement('b');b.textContent=i%10;col.appendChild(b);}}
+const c1=ROOT.querySelector('.c1'), c2=ROOT.querySelector('.c2'); fill(c1,12); fill(c2,13);
+const SP=[[300,820],[760,860],[250,1100],[820,1150],[520,760],[640,1210]];
+const ss=ROOT.querySelector('.sparks'); SP.forEach(function(p){const d=document.createElement('div');d.className='spark';d.style.left=p[0]+'px';d.style.top=p[1]+'px';ss.appendChild(d);});
+const tl=gsap.timeline({paused:true});
+const lv=ROOT.querySelector('.liver'), gr=ROOT.querySelector('.gr');
+tl.fromTo(ROOT.querySelector('.bg'),{opacity:0},{opacity:1,duration:.25,ease:'power1.out'},0)
+  .fromTo(ROOT.querySelectorAll('.cell'),{scale:.6,opacity:0},{scale:1,opacity:1,duration:.5,stagger:.04,ease:'power2.out'},0.05)
+  .to(ROOT.querySelectorAll('.cell'),{y:-30,duration:DUR,ease:'none'},0.05)
+  .fromTo(ROOT.querySelector('.odo'),{opacity:0,y:60},{opacity:1,y:0,duration:.35,ease:'back.out(1.6)'},C[0]-0.3)
+  .fromTo(c1,{y:0},{y:-12*200,duration:.9,ease:'power3.out'},C[0])
+  .fromTo(c2,{y:0},{y:-13*200,duration:.9,ease:'power3.out'},C[0]+.12)
+  .fromTo(ROOT.querySelector('.w1'),{opacity:0,scale:.6},{opacity:1,scale:1,duration:.3,ease:'back.out(2)'},C[0]+.5)
+  .fromTo(ROOT.querySelector('.w2'),{opacity:0,x:-20},{opacity:1,x:0,duration:.3,ease:'power3.out'},C[0]+.75)
+  .fromTo(lv,{opacity:0,scale:.85},{opacity:1,scale:1,duration:.4,ease:'back.out(1.7)'},0.35)
+  .fromTo(ROOT.querySelector('.shadow'),{opacity:0},{opacity:1,duration:.4},0.35)
+  .fromTo(gr,{attr:{x:240,width:0}},{attr:{x:0,width:240},duration:1.9,ease:'power1.inOut'},C[1])
+  .to(ROOT.querySelectorAll('.spark'),{keyframes:[{opacity:1,scale:1.4,duration:.25},{opacity:0,scale:.4,duration:.35}],stagger:.18},C[1]+.2)
+  .to(lv,{scaleX:1.06,scaleY:.95,duration:.12,ease:'power2.out'},C[1]+1.6)
+  .to(lv,{scaleX:1,scaleY:1,duration:.35,ease:'elastic.out(1,.45)'},C[1]+1.72)
+  .fromTo(ROOT.querySelector('.face'),{opacity:0},{opacity:1,duration:.2},C[1]+1.9)
+  .fromTo(ROOT.querySelector('.ok'),{opacity:0,scale:0,rotation:-30},{opacity:1,scale:1,rotation:0,duration:.35,ease:'back.out(2.2)'},C[1]+1.7)
+  .to(lv,{scale:1.03,duration:Math.max(.3,DUR-C[1]-2.35),ease:'none'},C[1]+2.07)
+  .to(ROOT.querySelector('#mgm'),{opacity:0,duration:.25,ease:'power2.in'},DUR-.27).set({}, {}, DUR);
+window.__timelines["mgm"]=tl;
+})();
+</script>
+</body></html>
