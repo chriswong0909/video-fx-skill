@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<!-- ep2 Q7：SPS 跑步肝仔；原地跑上下彈＋背景速度線向左流 -->
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#sjog{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif}
+#sjog .stage{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;background:radial-gradient(120% 70% at 50% 45%,#FFFFFF 0%,#EAF3FB 55%,#D3E5F4 100%)}
+#sjog .deco{position:absolute;border-radius:50%}
+#sjog .subj{position:absolute;left:170px;top:540px;width:740px;height:925px;transform-origin:50% 92%}
+#sjog .subj img{width:100%;height:100%;object-fit:contain;display:block}
+#sjog .bigw{position:absolute;left:0;right:0;top:380px;text-align:center;opacity:0}
+#sjog .big{display:inline-block;padding:10px 30px 18px;border-radius:22px;background-color:rgba(255,255,255,.82);box-shadow:inset 0 3px 0 #fff,0 14px 30px rgba(11,42,58,.16);font:900 110px/1.15 "Noto Sans TC",sans-serif;color:#0B2A3A;letter-spacing:3px;white-space:nowrap;
+  background-image:linear-gradient(#ffde59,#ffde59);background-repeat:no-repeat;background-position:30px 84%;background-size:0% 40%}
+#sjog .edge{position:absolute;left:0;right:0;top:-50px;height:8px;background:linear-gradient(90deg,rgba(26,128,208,.15),#1A80D0 50%,rgba(26,128,208,.15));box-shadow:0 0 22px rgba(26,128,208,.55);display:none}
+#sjog .ln{position:absolute;height:10px;border-radius:5px;background:rgba(26,128,208,.16)}
+</style></head>
+<body>
+<div id="sjog" data-composition-id="sjog" data-start="0" data-width="1080" data-height="1920">
+  <div class="stage"><div class="subj"><img src="assets/sps/jog_a.png" alt="" /></div><i class="ln" style="left:900px;top:780px;width:180px"></i><i class="ln" style="left:980px;top:980px;width:120px"></i><i class="ln" style="left:860px;top:1180px;width:220px"></i><i class="ln" style="left:1000px;top:1380px;width:140px"></i><i class="ln" style="left:920px;top:640px;width:100px"></i><div class="bigw"><span class="big">做運動更好</span></div></div>
+  <div class="edge"></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="sjog"]');
+const DUR=+ROOT.dataset.dur||3.6; const C=(ROOT.dataset.cues||'2.05').split(',').map(Number);
+const S=ROOT.querySelector('.subj'), BW=ROOT.querySelector('.bigw'), BG=ROOT.querySelector('.big'), ST=ROOT.querySelector('.stage');
+const tl=gsap.timeline({paused:true});
+tl.fromTo(ST,{clipPath:'inset(0 0 0% 0)'},{clipPath:'inset(0 0 0% 0)',duration:.35,ease:'power3.out'},0)
+  .fromTo(ROOT.querySelector('.edge'),{scaleX:0},{scaleX:1,duration:.4,ease:'power3.out'},0.05)
+  .fromTo(ROOT.querySelectorAll('.deco'),{scale:.5,opacity:0},{scale:1,opacity:1,duration:.5,stagger:.05,ease:'power2.out'},0.05)
+  .to(ROOT.querySelectorAll('.deco'),{y:-40,duration:DUR,ease:'none'},0.05)
+  .fromTo(BW,{opacity:0,y:30,scale:.92},{opacity:1,y:0,scale:1,duration:.35,ease:'back.out(1.7)'},C[0])
+  .fromTo(BG,{backgroundSize:'0% 40%'},{backgroundSize:'calc(100% - 60px) 40%',duration:.45,ease:'power2.out'},C[0]+.3);
+tl.fromTo(S,{x:700,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},0.05).to(S,{y:-34,duration:.19,yoyo:true,repeat:Math.floor((DUR-.6)/0.19),ease:'sine.inOut'},0.5).fromTo(ROOT.querySelectorAll('.ln'),{x:0},{x:-1300,duration:1.1,repeat:Math.ceil(DUR/1.1),stagger:.12,ease:'none'},0.1);
+tl.to(ROOT.querySelector('#sjog'),{opacity:0,duration:.25,ease:'power2.in'},DUR-.27).set({}, {}, DUR);
+window.__timelines["sjog"]=tl;
+})();
+</script>
+</body></html>

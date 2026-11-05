@@ -1,0 +1,42 @@
+<!doctype html>
+<html><head><meta charset="utf-8" />
+<!-- ep2 Q6：上半畫面 MG（下半教授），SPS 肝仔推開白飯；推嘅動作來回 -->
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700;900&display=swap");
+html,body{margin:0;background:transparent}
+#srice{position:absolute;inset:0;width:1080px;height:1920px;overflow:hidden;font-family:"Noto Sans TC",sans-serif}
+#srice .stage{position:absolute;left:0;top:0;width:1080px;height:860px;overflow:hidden;background:linear-gradient(180deg,#E6F1FB 0%,#F7FBFF 100%)}
+#srice .deco{position:absolute;border-radius:50%}
+#srice .subj{position:absolute;left:290px;top:330px;width:500px;height:520px;transform-origin:50% 92%}
+#srice .subj img{width:100%;height:100%;object-fit:contain;display:block}
+#srice .bigw{position:absolute;left:60px;right:auto;top:250px;text-align:center;opacity:0}
+#srice .big{display:inline-block;padding:10px 30px 18px;border-radius:22px;background-color:rgba(255,255,255,.82);box-shadow:inset 0 3px 0 #fff,0 14px 30px rgba(11,42,58,.16);font:900 96px/1.15 "Noto Sans TC",sans-serif;color:#0B2A3A;letter-spacing:3px;white-space:nowrap;
+  background-image:linear-gradient(#ffde59,#ffde59);background-repeat:no-repeat;background-position:30px 84%;background-size:0% 40%}
+#srice .edge{position:absolute;left:0;right:0;top:852px;height:8px;background:linear-gradient(90deg,rgba(26,128,208,.15),#1A80D0 50%,rgba(26,128,208,.15));box-shadow:0 0 22px rgba(26,128,208,.55);display:block}
+
+</style></head>
+<body>
+<div id="srice" data-composition-id="srice" data-start="0" data-width="1080" data-height="1920">
+  <div class="stage"><div class="deco" style="left:60px;top:620px;width:90px;height:90px;background:rgba(255,255,255,.9)"></div><div class="deco" style="left:940px;top:160px;width:70px;height:70px;background:rgba(26,128,208,.10)"></div><div class="deco" style="left:900px;top:640px;width:110px;height:110px;background:rgba(26,128,208,.08)"></div><div class="subj"><img src="assets/sps/rice_a.png" alt="" /></div><div class="bigw"><span class="big">吃少一點</span></div></div>
+  <div class="edge"></div>
+</div>
+<script src="assets/gsap.min.js"></script>
+<script>
+window.__timelines = window.__timelines || {};
+(function(){
+const ROOT=document.querySelector('[data-composition-id="srice"]');
+const DUR=+ROOT.dataset.dur||7.3; const C=(ROOT.dataset.cues||'0.2').split(',').map(Number);
+const S=ROOT.querySelector('.subj'), BW=ROOT.querySelector('.bigw'), BG=ROOT.querySelector('.big'), ST=ROOT.querySelector('.stage');
+const tl=gsap.timeline({paused:true});
+tl.fromTo(ST,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:.35,ease:'power3.out'},0)
+  .fromTo(ROOT.querySelector('.edge'),{scaleX:0},{scaleX:1,duration:.4,ease:'power3.out'},0.05)
+  .fromTo(ROOT.querySelectorAll('.deco'),{scale:.5,opacity:0},{scale:1,opacity:1,duration:.5,stagger:.05,ease:'power2.out'},0.05)
+  .to(ROOT.querySelectorAll('.deco'),{y:-40,duration:DUR,ease:'none'},0.05)
+  .fromTo(BW,{opacity:0,y:30,scale:.92},{opacity:1,y:0,scale:1,duration:.35,ease:'back.out(1.7)'},C[0])
+  .fromTo(BG,{backgroundSize:'0% 40%'},{backgroundSize:'calc(100% - 60px) 40%',duration:.45,ease:'power2.out'},C[0]+.3);
+tl.fromTo(S,{x:-500,opacity:0},{x:0,opacity:1,duration:.45,ease:'power3.out'},0.1).to(S,{x:22,rotation:2,duration:.28,yoyo:true,repeat:Math.floor((DUR-1)/0.28),ease:'sine.inOut'},0.6);
+tl.to(ROOT.querySelector('#srice'),{opacity:0,duration:.25,ease:'power2.in'},DUR-.27).set({}, {}, DUR);
+window.__timelines["srice"]=tl;
+})();
+</script>
+</body></html>
