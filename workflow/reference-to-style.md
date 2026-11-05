@@ -8,6 +8,7 @@
    ```
    bash scripts/analyze-ref.sh ref.mp4 refs/<slug>/work          # 每 0.5 秒一格 sheet、剪接點、靜音
    python3 tools/ref_style.py refs/<slug>/work ref.mp4 refs/<slug>  # 自動量度 → style-guide.md 骨架
+   python3 tools/match.py scenes ref.mp4 refs/<slug>/shots.json     # PySceneDetect 逐鏡時間；抽格揀每鏡中間格就唔會漏鏡
    ```
    `ref_style.py` 會自動填：鏡頭長度（平均／中位／最短／最長）、每 10 秒剪幾多下、主色板（6 色 hex + 佔比）、亮度／飽和度、有冇顆粒（高頻噪聲）。
    可以輔助用 Higgsfield `video_analysis_create` 拎一份鏡頭描述（要 credits，先問）。

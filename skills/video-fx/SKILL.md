@@ -42,7 +42,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 - **左上標題條只做段落標題／分題**（84px），內容字用圖片頂部白底大字（big）或者膠囊（tags）。
 - **跳鏡喺句與句之間**（長句可以喺逗號位）：轉機位、全屏入場退場都對返句邊。轉鏡細節跟 `lessons/jump-cuts.md`（闊／近兩款差距 ≥30%，只喺句與句之間轉；句中剪位用溶接）。
 - **唔加未要求嘅元素**；素材唔好靜靜雞降級（`workflow/assets.md`，Canva 第一，生成圖唔使醫生審核）。
-- **基本調色**每條片都做：`tools/grade.py recommend` → `grade.py apply clean.mp4 <GR-id> graded.mp4`，HyperFrames 用 graded.mp4（音軌用 clean.mp4），唔好再疊調色 filter。片偏黃／偏色先喺原片校正白平衡（白袍做參考、只校正一半，見 `lessons/color-grading.md`）。
+- **基本調色**每條片都做：`tools/grade.py recommend` → `grade.py apply clean.mp4 <GR-id> graded.mp4`，HyperFrames 用 graded.mp4（音軌用 clean.mp4），唔好再疊調色 filter。**多機位／分段錄**（闊近兩部機、Teleprompter 幾段）先用 `tools/match.py color` 夾到主機位再調色；手持片先 `match.py stab`（腳架片唔跑）；見 `lessons/match-scenes-stab.md`。片偏黃／偏色先喺原片校正白平衡（白袍做參考、只校正一半，見 `lessons/color-grading.md`）。
 - **講者退地版面（選用）**：用戶要「全程見到講者」就用 `tools/matte.py` 退地，講者企全畫面／下方正中／右下，直接跳 shot、字幕置中、主 MG 唔准被遮（`lessons/speaker-cutout-layout.md`）。唔用方框分割畫面。
 - **HyperFrames 坑**（`lessons/hyperframes-rendering.md`）：掛載卡嘅 host 一定要有 `data-composition-id`、`data-dur`、`data-cues`（`cards.py use` 印出嘅 snippet 已有）同 z-index（`.cardhost{position:absolute;inset:0;z-index:12}`，全屏 `.t1` 14），否則卡會喺講者後面、逐項時間唔啱；沿用舊主檔要刪走 `.card`、`.row` 呢類通用 class 規則；卡入面資產路徑用根目錄相對（`assets/…`，唔好 `../`）；querySelector 唔好用 template literal；visibility 會繼承（子元素用 opacity）；全屏層 z ≥ 5；`tl.to({}, {duration:END}, 0)` 墊底；唔好 `immediateRender:false`。
 
@@ -73,7 +73,7 @@ LIBRARY＝`~/Documents/GitHub/video-fx-skill/`（同 GitHub 同步）。效果�
 - 轉錄 `tools/asr.py`（faster-whisper turbo，language=yue，逐字時間）→ 改字表出 chars.json（`tools/words-template.py`）；低把握度字標出俾用戶核對。
 - 剪停頓 `tools/cut.py analyze → review → apply`（醫療限定詞永不自動剪；每接位要轉機位或推鏡）。
 - 調色 `tools/grade.py analyze / recommend / compare`。
-- 有參考片：`workflow/reference-to-style.md`（只拎文法）；參考片風格同兩個風格包都唔夾 → 同用戶講，考慮按新手包 GUIDE 開新風格包（`styles/GUIDE-kit.md` build loop）。
+- 有參考片：`workflow/reference-to-style.md`（只拎文法；`tools/match.py scenes` 抓鏡頭同剪接節奏）；參考片風格同兩個風格包都唔夾 → 同用戶講，考慮按新手包 GUIDE 開新風格包（`styles/GUIDE-kit.md` build loop）。
 
 ## 4. 關卡：Treatment
 一頁表（`workflow/director.md`）：核心一句、觀眾問題、三個 hook 選項、結構（hook → 2–4 段 → payoff，寫 clean.mp4 時間）、**風格包**、品牌、字幕、調色、聲效密度、剪輯節奏、**畫面比例**、圖片清單（每張對應邊句）、**外部效果**（有配對就寫「見配對表」；一款都唔用就寫明睇過邊啲、點解唔用）。停低等確認。
